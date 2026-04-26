@@ -15,10 +15,12 @@ ROOT         = os.path.dirname(HERE)
 ARTIFACTS    = os.path.join(ROOT, "artifacts")
 
 # Default location of the main capstone CLEAN/intermediary folder.
-# Change this if your local checkout lives elsewhere.
+# Resolves relative to this file so the repo is portable across machines and
+# parent folders (e.g. Portfolio/ vs leoss14.github.io/). Override with the
+# CAPSTONE_INTERMEDIARY environment variable if your data lives elsewhere.
 INTERMEDIARY = os.environ.get(
     "CAPSTONE_INTERMEDIARY",
-    "/Users/leoss/Desktop/GitHub/Portfolio/projects/capstone/New code/intermediary",
+    os.path.join(HERE, "intermediary"),
 )
 
 os.makedirs(ARTIFACTS, exist_ok=True)

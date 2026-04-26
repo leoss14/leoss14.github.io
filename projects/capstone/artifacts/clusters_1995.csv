@@ -1,70 +1,50 @@
 Country Code,Country,ClusterLabels
-ALB,Albania,Forestry Intensive
-DZA,Algeria,Oil Exporters
 AGO,Angola,Oil Exporters
-ARG,Argentina,Oil Exporters
-AZE,Azerbaijan,Oil Exporters
+ALB,Albania,Mixed Producers 1
+ARE,United Arab Emirates,Oil Exporters
+ARG,Argentina,Diversified Producers
+AZE,Azerbaijan,Petrostates
 BHR,Bahrain,Petrostates
-BLR,Belarus,Forestry Intensive
-BEN,Benin,Forestry Intensive
-BOL,Bolivia,Major Producers
-BIH,Bosnia and Herzegovina,Forestry Intensive
-BWA,Botswana,Mining Exporters
-BRA,Brazil,Major Producers
-BFA,Burkina Faso,Forestry Intensive
-CMR,Cameroon,Oil Exporters
-CHN,China,Major Producers
-COL,Colombia,Major Producers
-COD,"Congo, Dem. Rep.",Forestry Intensive
+BIH,Bosnia and Herzegovina,Mixed Producers 1
+BOL,Bolivia,Diversified Producers
+BWA,Botswana,Diversified Producers
+CHN,China,Diversified Producers
+CMR,Cameroon,Diversified Producers
+COD,"Congo, Dem. Rep.",Mixed Producers 1
 COG,"Congo, Rep.",Oil Exporters
-CIV,Cote d'Ivoire,Forestry Intensive
-DOM,Dominican Republic,Forestry Intensive
-ECU,Ecuador,Oil Exporters
-EGY,"Egypt, Arab Rep.",Oil Exporters
-GNQ,Equatorial Guinea,Oil Exporters
-SWZ,Eswatini,Forestry Intensive
-ETH,Ethiopia,Forestry Intensive
+COL,Colombia,Diversified Producers
+DOM,Dominican Republic,Mixed Producers 1
+DZA,Algeria,Petrostates
+ECU,Ecuador,Diversified Producers
+EGY,"Egypt, Arab Rep.",Diversified Producers
 GAB,Gabon,Oil Exporters
-GHA,Ghana,Forestry Intensive
-GTM,Guatemala,Forestry Intensive
-GIN,Guinea,Forestry Intensive
-HND,Honduras,Forestry Intensive
-IND,India,Forestry Intensive
-IDN,Indonesia,Major Producers
-IRN,"Iran, Islamic Rep.",Major Producers
+GHA,Ghana,Diversified Producers
+GIN,Guinea,Diversified Producers
+GNQ,Equatorial Guinea,Oil Exporters
+IDN,Indonesia,Diversified Producers
+IND,India,Mixed Producers 1
+IRN,"Iran, Islamic Rep.",Oil Exporters
 IRQ,Iraq,Oil Exporters
-JAM,Jamaica,Forestry Intensive
-KAZ,Kazakhstan,Major Producers
-KEN,Kenya,Forestry Intensive
-KWT,Kuwait,Petrostates
-LAO,Lao PDR,Forestry Intensive
-LBR,Liberia,Forestry Intensive
-MDG,Madagascar,Forestry Intensive
-MWI,Malawi,Forestry Intensive
-MYS,Malaysia,Oil Exporters
-MLI,Mali,Forestry Intensive
-MRT,Mauritania,Forestry Intensive
-MEX,Mexico,Major Producers
+JAM,Jamaica,Diversified Producers
+KAZ,Kazakhstan,Diversified Producers
+KWT,Kuwait,Oil Exporters
+LBR,Liberia,Mixed Producers 1
+MEX,Mexico,Diversified Producers
+MMR,Myanmar,Mixed Producers 1
 MNG,Mongolia,Mining Exporters
-MOZ,Mozambique,Forestry Intensive
-MMR,Myanmar,Forestry Intensive
-NIC,Nicaragua,Forestry Intensive
-NER,Niger,Forestry Intensive
+MRT,Mauritania,Mixed Producers 1
+MYS,Malaysia,Diversified Producers
 NGA,Nigeria,Oil Exporters
-OMN,Oman,Petrostates
-PAK,Pakistan,Forestry Intensive
-PER,Peru,Major Producers
+OMN,Oman,Oil Exporters
+PAK,Pakistan,Mixed Producers 1
+PER,Peru,Diversified Producers
 QAT,Qatar,Petrostates
-SAU,Saudi Arabia,Petrostates
-ZAF,South Africa,Mining Exporters
-TZA,Tanzania,Forestry Intensive
-TUN,Tunisia,Oil Exporters
-UGA,Uganda,Forestry Intensive
-UKR,Ukraine,Major Producers
-ARE,United Arab Emirates,Petrostates
-UZB,Uzbekistan,Major Producers
-VEN,"Venezuela, RB",Petrostates
-VNM,Viet Nam,Forestry Intensive
+SAU,Saudi Arabia,Oil Exporters
+TUN,Tunisia,Diversified Producers
+UKR,Ukraine,Diversified Producers
+UZB,Uzbekistan,Petrostates
+VEN,"Venezuela, RB",Oil Exporters
+VNM,Viet Nam,Mixed Producers 1
 YEM,"Yemen, Rep.",Oil Exporters
-ZMB,Zambia,Forestry Intensive
-ZWE,Zimbabwe,Mining Exporters
+ZAF,South Africa,Diversified Producers
+ZWE,Zimbabwe,Diversified Producers
