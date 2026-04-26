@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Leonardo Luksic for research, data analysis work, and collaboration enquiries.">
+    <meta property="og:title" content="Contact - Leonardo Luksic">
+    <meta property="og:description" content="Contact Leonardo Luksic for research, data analysis work, and collaboration enquiries.">
+    <meta property="og:type" content="website">
+    <title>Contact - Leonardo Luksic</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--grey-100);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: border-color 0.2s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--accent);
+        }
+
+        .contact-item .label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+        }
+
+        .contact-item a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav>
+            <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true">
+            <a href="index.html" class="nav-home" aria-label="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 8.5V16C5 16.3 5.2 16.5 5.5 16.5H8.5V12.5C8.5 12.2 8.7 12 9 12H11C11.3 12 11.5 12.2 11.5 12.5V16.5H14.5C14.8 16.5 15 16.3 15 16V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-home-label">Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </nav>
+    </div>
+
+    <!-- Page Header -->
+    <div class="project-hero" style="padding-bottom: 1.5rem;">
+        <h1>Contact</h1>
+        <p class="subtitle">For enquiries about work, research, or collaboration</p>
+    </div>
+
+    <!-- Contact -->
+    <section style="max-width: 800px; margin: 0 auto;">
+        <div class="contact-grid">
+            <div class="contact-item">
+                <p class="label">Email</p>
+                <a href="mailto:l.luksic@lse.ac.uk">l.luksic@lse.ac.uk</a>
+            </div>
+            <div class="contact-item">
+                <p class="label">LinkedIn</p>
+                <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank">Leonardo Luksic</a>
+            </div>
+            <div class="contact-item">
+                <p class="label">GitHub</p>
+                <a href="https://github.com/leoss14" target="_blank">leoss14</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
+            <a href="mailto:l.luksic@lse.ac.uk" class="social-link">Email</a>
+        </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+</body>
+</html>

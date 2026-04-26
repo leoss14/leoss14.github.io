@@ -1,0 +1,24 @@
+# Exclude large files (GitHub blocks >100 MB)
+*.zip
+*.pkl
+
+# Exclude large data files
+*.shp
+*.dbf
+*.sbn
+*.sbx
+*.shx
+projects/*/data/
+projects/uber/data/
+projects/Chile/data/
+
+# Notebook executed outputs (duplicates)
+*_executed.ipynb
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

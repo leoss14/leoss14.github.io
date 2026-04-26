@@ -1,0 +1,242 @@
+/* =============================================
+   SHARED PROJECT PAGE OVERRIDES
+   Consistent across all project detail pages
+   ============================================= */
+
+/* Section spacing */
+section { padding: 3.75rem clamp(1.5rem, 5vw, 6rem); }
+
+/* ---- Viz containers ---- */
+.viz-container h4 {
+    margin: 0;
+    padding: 1rem clamp(1rem, 3vw, 1.5rem);
+    background: var(--grey-100);
+    border-bottom: 1px solid var(--border);
+    font-size: 1.05rem;
+}
+.viz-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+.viz-grid .viz-container { margin: 0; }
+
+/* ---- Pull quote ---- */
+.pull-quote {
+    background: #fef2f2;
+    border-left: 5px solid var(--accent);
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--navy);
+    border-radius: 0 8px 8px 0;
+}
+
+/* ---- Highlight box (dark navy) ---- */
+.highlight-box {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+}
+.highlight-box h3,
+.highlight-box h4 { color: var(--white); border: none; padding-bottom: 0; margin-top: 0; }
+.highlight-box p,
+.highlight-box li { color: rgba(255, 255, 255, 0.92); font-size: 1.05rem; }
+
+/* ---- Note box ---- */
+.note-box {
+    background: var(--grey-100);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 2rem 0;
+}
+.note-box h4 {
+    color: var(--navy);
+    margin: 0 0 0.75rem;
+    border: none;
+    padding: 0;
+    font-size: 1.12rem;
+}
+.note-box p { margin-bottom: 0.6rem; }
+.note-box p:last-child { margin-bottom: 0; }
+
+/* ---- Image containers ---- */
+.img-container {
+    padding: 1.5rem;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--grey-100);
+}
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* ---- Full-width banded sections ---- */
+.full-width-section {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+.full-width-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 6rem);
+}
+
+/* ---- Section label ---- */
+.section-label {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+}
+
+/* ---- Two-column layout ---- */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* ---- Results table ---- */
+.results-table { font-size: 1rem; }
+.results-table th {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.results-table td.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+}
+.results-table .highlight-row td {
+    background: rgba(194, 58, 58, 0.06);
+    font-weight: 600;
+}
+
+/* ---- Divider with label ---- */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin: 3.5rem 0 2rem;
+}
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: var(--grey-200);
+}
+.divider span {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+/* ---- Conclusion / takeaway cards ---- */
+.conclusion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.conclusion-card {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.75rem;
+    background: var(--grey-100);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s ease;
+}
+.conclusion-card:hover {
+    box-shadow: var(--shadow-md);
+}
+.conclusion-number {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+    padding-top: 0.15rem;
+}
+.conclusion-content h4 {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+    line-height: 1.35;
+}
+.conclusion-content p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+/* ---- Equation box ---- */
+.equation-box {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    padding: 1.25rem;
+    background: var(--grey-100);
+    border-radius: 6px;
+    margin: 1.5rem 0;
+}
+
+/* ---- Chart caption boxes ---- */
+.chart-caption {
+    background: var(--grey-100);
+    border-left: 3px solid var(--navy);
+    padding: 0.9rem 1.25rem;
+    margin-bottom: 0;
+    border-radius: 0 6px 0 0;
+}
+.chart-caption h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 0.2rem;
+    padding: 0;
+    border: none;
+    letter-spacing: -0.01em;
+}
+.chart-caption p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin: 0;
+}
+.chart-caption + .viz-container {
+    border-radius: 0 0 8px 8px;
+}
+
+/* ---- Mobile responsive ---- */
+@media (max-width: 768px) {
+    .viz-grid { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; }
+    .conclusion-grid { grid-template-columns: 1fr; }
+    .compare-bars { grid-template-columns: 1fr; gap: 1.5rem; }
+    p { font-size: 1rem; }
+}

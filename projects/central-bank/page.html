@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="US Monetary Policy Rules Under Inflation Regimes. Regime-switching and econometric analysis of Federal Reserve interest rate decisions using 70 years of data.">
+    <meta property="og:title" content="US Monetary Policy Rules | Leonardo Luksic">
+    <meta property="og:description" content="US Monetary Policy Rules Under Inflation Regimes. Regime-switching and econometric analysis of Federal Reserve interest rate decisions using 70 years of data.">
+    <meta property="og:type" content="website">
+    <title>US Monetary Policy Rules | Leonardo Luksic</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/project-shared.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav>
+            <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true">
+            <a href="../../index.html" class="nav-home" aria-label="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 8.5V16C5 16.3 5.2 16.5 5.5 16.5H8.5V12.5C8.5 12.2 8.7 12 9 12H11C11.3 12 11.5 12.2 11.5 12.5V16.5H14.5C14.8 16.5 15 16.3 15 16V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-home-label">Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+            <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="project-hero" style="padding-top: calc(var(--nav-height) + 4.5rem); padding-bottom: 3.5rem;">
+        <h1 style="font-size: clamp(2.4rem, 5vw, 3.2rem); max-width: 850px; margin-bottom: 1.5rem;">US Monetary Policy Rules Under Inflation Regimes</h1>
+        <p class="subtitle" style="font-size: 1.15rem; max-width: 780px; line-height: 1.8; color: var(--text-secondary);">
+            How does the Federal Reserve set interest rates, and does it respond to inflation
+            differently depending on whether prices are rising quickly or slowly? This project
+            estimates the Fed's policy rule across seven decades using regime-switching models and
+            monthly data from FRED, testing whether the conventional story of a decisive shift
+            in the early 1980s holds up under more careful measurement of the unemployment gap
+            and inflation expectations.
+        </p>
+        <div class="project-meta-bar" style="margin-top: 2rem;">
+            <div class="meta-item">
+                <span class="meta-label">Period</span>
+                <span class="meta-value">1954&ndash;2025</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Observations</span>
+                <span class="meta-value">833 months</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Source</span>
+                <span class="meta-value">FRED</span>
+            </div>
+  
+        </div>
+    </section>
+
+
+    <!-- BACKGROUND -->
+    <section id="overview">
+        <span class="section-label">Background</span>
+        <h2>Concepts &amp; Research Design</h2>
+
+        <p>
+            <strong>The Taylor rule</strong> is a formula that describes how the Federal Reserve
+            should adjust short-term interest rates in response to inflation deviating from a target
+            (typically 2%) and unemployment deviating from its "natural" level. The structural form
+            includes a smoothing parameter (&rho;) that captures the Fed's tendency to adjust rates
+            gradually rather than all at once. The equation estimated in this project is:
+        </p>
+
+        <div class="equation-box">
+            i<sub>t</sub> = &rho; &middot; i<sub>t&minus;1</sub> + (1 &minus; &rho;) &middot; [r* + &pi;<sub>t</sub> + a<sub>&pi;</sub>(&pi;<sub>t</sub> &minus; 2) + a<sub>u</sub>(u<sub>t</sub> &minus; u<sub>t</sub><sup>*</sup>)]
+        </div>
+
+        <p>
+            <strong>The Taylor principle</strong> is the key test of whether the Fed is doing enough
+            to control inflation. It requires that when inflation rises by 1 percentage point, the
+            Fed raises interest rates by more than 1 point (1 + a<sub>&pi;</sub> &gt; 1), so that
+            real (inflation-adjusted) borrowing costs actually increase. If 1 + a<sub>&pi;</sub> &lt; 1,
+            real rates fall during inflationary episodes, potentially allowing inflation to spiral.
+        </p>
+        <p>
+            <strong>Markov-switching models</strong> (Hamilton, 1989) identify distinct economic
+            "regimes" from the data by estimating the probability of being in each state today given
+            which state the economy was in yesterday. Unlike Gaussian Mixture Models, which cluster
+            data points by similarity regardless of when they occurred, Markov-switching models account
+            for temporal dependence, producing transition probabilities and expected durations for each
+            regime. This matters because inflation regimes are persistent, not random.
+        </p>
+        <p>
+            <strong>CBO NAIRU</strong> (Non-Accelerating Inflation Rate of Unemployment) is the
+            Congressional Budget Office's estimate of the time-varying natural rate of unemployment.
+            It ranges from 4.3% to 6.2% over the sample period. Earlier studies used a fixed 5%
+            benchmark, which overstates the unemployment gap during the 1970s and early 1980s when
+            NAIRU was estimated at 5.8&ndash;6.2%.
+        </p>
+
+        <div class="divider"><span>Research Question</span></div>
+
+        <p style="font-size: 1.2rem; color: var(--navy); font-weight: 600; text-align: center; max-width: 720px; margin: 0 auto 2.5rem;">
+            Does the Fed respond to inflation differently across regimes, and does the conventional
+            finding of a structural break near 1980 survive more careful measurement?
+        </p>
+
+        <p>
+            The central finding is that the conventional story depends heavily on measurement choices.
+            The 1980 structural break disappears when the unemployment gap is measured against
+            time-varying NAIRU. The Taylor principle result differs depending on whether realized or
+            expected inflation is used. And the apparent 12-month persistence of inflation is largely
+            a statistical artifact of mixing two regimes with different average levels.
+        </p>
+
+        <div class="divider"><span>Analytical Approach</span></div>
+
+        <p>
+            The analysis proceeds in four stages. First, <strong>regime identification</strong> using
+            a 2-state Markov-switching model classifies each month into low or high inflation. Second,
+            <strong>regime-conditional Taylor rules</strong> are estimated via nonlinear least squares
+            with block-bootstrap HAC standard errors, using both realized and expected inflation. Third,
+            <strong>structural break tests</strong> (sup-Wald, Chow) check whether the Volcker-era
+            policy shift survives NAIRU-adjusted measurement. Fourth, <strong>forecasting experiments</strong>
+            test whether regime awareness improves inflation prediction at horizons from 1 to 12 months.
+        </p>
+    </section>
+
+
+    <!-- DATA -->
+    <section>
+        <span class="section-label">Data</span>
+        <h2>Sources &amp; Variables</h2>
+
+        <p>
+            Eight monthly economic indicators from FRED, spanning July 1954 to December 2025.
+            After merging and computing derived variables (inflation, gaps, lags, spreads),
+            the working sample contains 833 monthly observations.
+        </p>
+
+        <div class="viz-container">
+            <img src="outputs/data_overview.png" alt="US Economic Indicators" style="width: 100%; display: block;">
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+            Monthly US economic indicators, 1954&ndash;2025. Recession periods shaded. The CBO NAIRU (dashed) varies from 4.3% to 6.2% over the sample.
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Variable</th>
+                    <th style="text-align: left;">FRED Series</th>
+                    <th style="text-align: left;">Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>CPI</strong></td><td>CPIAUCSL</td><td>Compute year-over-year inflation</td></tr>
+                <tr><td><strong>Unemployment</strong></td><td>UNRATE</td><td>Labour market slack</td></tr>
+                <tr><td><strong>CBO NAIRU</strong></td><td>NROU (quarterly, interpolated)</td><td>Time-varying natural rate for unemployment gap</td></tr>
+                <tr><td><strong>Expected Inflation</strong></td><td>MICH (from 1978; adaptive proxy before)</td><td>Forward-looking inflation measure</td></tr>
+                <tr><td><strong>Fed Funds Rate</strong></td><td>FEDFUNDS</td><td>Policy instrument (dependent variable)</td></tr>
+                <tr><td><strong>Capacity Utilisation</strong></td><td>TCU</td><td>Real-economy output measure</td></tr>
+                <tr><td><strong>10-Year Treasury</strong></td><td>GS10</td><td>Yield curve spread</td></tr>
+                <tr><td><strong>Financial Conditions</strong></td><td>NFCI (weekly, resampled monthly)</td><td>Financial stress indicator</td></tr>
+            </tbody>
+        </table>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">833</div>
+                <div class="stat-label">Monthly Observations</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">71 yrs</div>
+                <div class="stat-label">1954&ndash;2025</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">NBER Recessions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Fed Chairs</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================================================================== -->
+    <!-- PART I: INFLATION REGIMES                                          -->
+    <!-- ================================================================== -->
+
+    <section id="regimes" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part I</span>
+            <h2>Inflation Regimes</h2>
+
+            <p>
+                The US economy does not have one stable inflation rate. It alternates between distinct
+                regimes with different typical inflation levels, different volatility, and different
+                persistence. The 2-state Markov-switching model identifies a low-inflation state
+                (average 2.4%, expected duration 11.5 years) and a high-inflation state (average 7.4%,
+                expected duration 3.6 years).
+            </p>
+
+            <div class="viz-container">
+                <img src="outputs/ms_regime_probabilities_k2.png" alt="Markov-Switching Regime Probabilities" style="width: 100%; display: block;">
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+                Smoothed regime probabilities from the 2-state Markov-switching model. The high-inflation regime concentrates in the 1970s and early 1980s, with a brief reappearance during the post-COVID episode.
+            </p>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Regime</th>
+                        <th style="text-align: right;">Mean &pi;</th>
+                        <th style="text-align: right;">Mean u</th>
+                        <th style="text-align: right;">Mean FFR</th>
+                        <th style="text-align: right;">Spread</th>
+                        <th style="text-align: right;">E[Duration]</th>
+                        <th style="text-align: right;">N</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Low inflation</strong></td>
+                        <td class="num">2.4%</td>
+                        <td class="num">5.8%</td>
+                        <td class="num">3.6%</td>
+                        <td class="num">+1.33 pp</td>
+                        <td class="num">11.5 yrs</td>
+                        <td class="num">622</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High inflation</strong></td>
+                        <td class="num">7.4%</td>
+                        <td class="num">6.0%</td>
+                        <td class="num">8.0%</td>
+                        <td class="num">&minus;0.05 pp</td>
+                        <td class="num">3.6 yrs</td>
+                        <td class="num">211</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="viz-container">
+                <img src="outputs/ms_regime_context_k2.png" alt="Regime Context" style="width: 100%; display: block;">
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+                Inflation regimes overlaid on macroeconomic context. Chair tenures labelled. Bottom panel: unemployment against CBO NAIRU, which varies from 4.3% to 6.2% over the sample.
+            </p>
+
+            <p>
+                Monthly transition probabilities are high for both states: P(stay low) = 0.993 and
+                P(stay high) = 0.977. The low-inflation regime lasts roughly three times as long on
+                average, reflecting the difficulty of transitioning out of high inflation versus the
+                relative stability of anchored expectations. BIC favours a 4-regime specification, but
+                the 4-regime model has a near-singular covariance matrix (condition number
+                2.55 &times; 10<sup>18</sup>), making individual parameter estimates unreliable. The
+                2-regime model is retained as the primary specification.
+            </p>
+
+            <div class="note-box">
+                <h4>Robustness: Pre-2020 Sample</h4>
+                <p>
+                    Re-estimating on data ending at 2019:12 produces stable parameters: the low-inflation
+                    mean shifts from 2.4% to 2.3%, the high-inflation mean from 7.4% to 6.5%, and
+                    transition probabilities barely move. The regime structure is not driven by
+                    the post-2020 price dynamics.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================================================================== -->
+    <!-- PART II: TAYLOR RULES                                              -->
+    <!-- ================================================================== -->
+
+    <section id="taylor">
+        <span class="section-label">Part II</span>
+        <h2>Regime-Conditional Taylor Rules</h2>
+
+        <p>
+            The structural Taylor rule is estimated via nonlinear least squares within each inflation
+            regime, using CBO NAIRU for the unemployment gap. Standard errors are corrected for serial
+            correlation using a block bootstrap (resampling year-long blocks of data 500 times).
+            Both realized CPI inflation and expected inflation (Michigan Survey of Consumers) are tested.
+        </p>
+
+        <div class="viz-container">
+            <img src="outputs/taylor_by_regime.png" alt="Taylor Rule Parameters by Regime" style="width: 100%; display: block;">
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+            Structural Taylor rule parameters estimated within each inflation regime. Error bars show 95% HAC-bootstrapped confidence intervals, substantially wider than naive OLS standard errors.
+        </p>
+
+        <h3>Realized Inflation Specification</h3>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Sample</th>
+                    <th style="text-align: right;">&rho;</th>
+                    <th style="text-align: right;">r*</th>
+                    <th style="text-align: right;">a<sub>&pi;</sub></th>
+                    <th style="text-align: right;">a<sub>u</sub></th>
+                    <th style="text-align: right;">1 + a<sub>&pi;</sub></th>
+                    <th style="text-align: left;">Taylor Principle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Full sample</td>
+                    <td class="num">0.974</td>
+                    <td class="num">1.90</td>
+                    <td class="num">&minus;0.08</td>
+                    <td class="num">&minus;1.59</td>
+                    <td class="num">0.92</td>
+                    <td>Violated (point est.)</td>
+                </tr>
+                <tr style="background: var(--error-bg);">
+                    <td><strong>Low inflation</strong></td>
+                    <td class="num">0.991</td>
+                    <td class="num">1.92</td>
+                    <td class="num">&minus;0.37</td>
+                    <td class="num">&minus;1.97</td>
+                    <td class="num"><strong>0.63</strong></td>
+                    <td><strong>Violated</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>High inflation</strong></td>
+                    <td class="num">0.964</td>
+                    <td class="num">0.45</td>
+                    <td class="num">0.20</td>
+                    <td class="num">&minus;3.16</td>
+                    <td class="num"><strong>1.20</strong></td>
+                    <td>Weakly satisfied</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Expected Inflation Specification</h3>
+
+        <p>
+            Using Michigan Survey of Consumers expected inflation (from 1978), with an adaptive
+            expectations proxy (trailing 12-month mean of realized inflation) for earlier periods.
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Sample</th>
+                    <th style="text-align: right;">&rho;</th>
+                    <th style="text-align: right;">r*</th>
+                    <th style="text-align: right;">a<sub>&pi;</sub></th>
+                    <th style="text-align: right;">a<sub>u</sub></th>
+                    <th style="text-align: right;">1 + a<sub>&pi;</sub></th>
+                    <th style="text-align: left;">Taylor Principle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Full sample</td>
+                    <td class="num">0.979</td>
+                    <td class="num">1.77</td>
+                    <td class="num">0.18</td>
+                    <td class="num">&minus;2.16</td>
+                    <td class="num">1.18</td>
+                    <td>Weakly satisfied</td>
+                </tr>
+                <tr style="background: var(--error-bg);">
+                    <td><strong>Low inflation</strong></td>
+                    <td class="num">0.992</td>
+                    <td class="num">1.83</td>
+                    <td class="num">&minus;0.39</td>
+                    <td class="num">&minus;2.30</td>
+                    <td class="num"><strong>0.61</strong></td>
+                    <td><strong>Violated</strong></td>
+                </tr>
+                <tr style="background: var(--success-bg);">
+                    <td><strong>High inflation</strong></td>
+                    <td class="num">0.973</td>
+                    <td class="num">1.26</td>
+                    <td class="num">0.42</td>
+                    <td class="num">&minus;4.34</td>
+                    <td class="num"><strong>1.42</strong></td>
+                    <td><strong>Satisfied</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="viz-container">
+            <img src="outputs/taylor_principle_by_regime.png" alt="Taylor Principle by Regime" style="width: 100%; display: block;">
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+            The Taylor principle (1 + a<sub>&pi;</sub>) by regime under both specifications. The expected-inflation specification produces a clearer separation.
+        </p>
+
+        <div class="pull-quote">
+            The difference between specifications is itself a finding: the Fed appears to have
+            tracked expected rather than realized inflation, consistent with Boivin (2006). Using
+            realized inflation understates the policy response because the Fed was reacting to its
+            own forecasts, not to outcomes. With expected inflation, the high-inflation regime
+            satisfies the Taylor principle at 1.42; with realized inflation, it does not clearly
+            satisfy it in either regime.
+        </div>
+
+        <div class="note-box">
+            <h4>Why Standard Errors Matter Here</h4>
+            <p>
+                Standard confidence intervals assume independent observations. Monthly economic data
+                is not independent: this month's inflation is highly correlated with last month's.
+                The block bootstrap (resampling year-long blocks 500 times) produces more honest
+                uncertainty estimates. After correction, se(a<sub>&pi;</sub>) triples from 0.24 to 0.67,
+                and the 95% CI on the Taylor principle spans [&minus;0.39, 2.23], encompassing both
+                violation and satisfaction. The point estimates are informative, but the uncertainty
+                is real.
+            </p>
+        </div>
+
+        <div class="divider"><span>Prescription vs. Actual</span></div>
+
+        <h3 style="margin-top: 1rem;">Taylor Prescription vs. Actual Policy</h3>
+
+        <p>
+            If the Fed followed the estimated Taylor rule exactly, what interest rate would it
+            prescribe at each point in time? The gap between this "prescribed" rate and the actual
+            rate reveals when the Fed was tighter or looser than the rule implies. The rule is
+            re-estimated at each month using only data available up to that point, so the
+            prescription reflects real-time information.
+        </p>
+
+        <div class="viz-container">
+            <img src="outputs/taylor_prescription_vs_actual.png" alt="Taylor Prescription vs Actual" style="width: 100%; display: block;">
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+            Expanding-window Taylor rule prescription (red) versus actual fed funds rate (blue). Bottom panel: discretionary gap, coloured by direction.
+        </p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">+0.31 pp</div>
+                <div class="stat-label">Mean Discretionary Gap</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">&minus;0.07 pp</div>
+                <div class="stat-label">Gap in Low-Inflation Regime</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">+1.34 pp</div>
+                <div class="stat-label">Gap in High-Inflation Regime</div>
+            </div>
+        </div>
+
+        <p>
+            With NAIRU-adjusted measurement, the average discretionary gap is near zero (+0.31 pp),
+            in contrast to the large negative gap found with a fixed 5% benchmark. In the low-inflation
+            regime, the Fed tracks the rule closely (&minus;0.07 pp). In the high-inflation regime,
+            the Fed was actually tighter than the rule would prescribe (+1.34 pp), reflecting the
+            Volcker-era commitment to disinflation beyond what the estimated rule implied.
+        </p>
+    </section>
+
+
+    <!-- ================================================================== -->
+    <!-- PART III: STRUCTURAL BREAKS & YIELD CURVE                          -->
+    <!-- ================================================================== -->
+
+    <section id="breaks" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part III</span>
+            <h2>Structural Break Detection</h2>
+
+            <p>
+                A structural break is a point in time where the statistical relationship between
+                variables permanently changes. Previous research (Clarida, Gali and Gertler, 2000)
+                found a decisive break around 1980 when Volcker took over: the Fed supposedly started
+                responding much more aggressively to inflation. The sup-Wald test checks every possible
+                break date and identifies the most statistically significant one.
+            </p>
+
+            <div class="pull-quote">
+                When the unemployment gap is measured against CBO's time-varying natural rate rather
+                than a fixed 5%, no candidate break date exceeds the statistical significance
+                threshold. The apparent break near August 1980 found in earlier work does not survive
+                this more careful measurement.
+            </div>
+
+            <div class="note-box">
+                <h4>Why the Break Disappears</h4>
+                <p>
+                    CBO NAIRU varies from 4.3% to 6.2% over the sample. In the 1970s and early 1980s,
+                    NAIRU was estimated at 5.8&ndash;6.2%, well above 5%. Using a fixed 5% benchmark
+                    overstated the unemployment gap during this period, making the reaction function
+                    appear to respond differently before and after Volcker. When the gap is measured
+                    against the time-varying natural rate, some of what looked like a change in policy
+                    was actually a change in labour market structure.
+                </p>
+                <p>
+                    The Chow test at the 1982&ndash;83 transition remains marginally significant
+                    (F = 2.94, p = 0.03), but the break is not dominant enough to survive the sup-Wald
+                    procedure. The Greenspan, Bernanke, Yellen, and Powell tenures remain statistically
+                    indistinguishable from each other.
+                </p>
+            </div>
+
+            <div class="divider"><span>Yield Curve</span></div>
+
+            <h3 style="margin-top: 1rem;">Recession Prediction &amp; Regime Transitions</h3>
+
+            <p>
+                The "yield curve" refers to the gap between long-term and short-term interest rates.
+                When long-term rates fall below short-term rates (an "inversion"), it has historically
+                signalled an approaching recession. Two questions are tested: does this signal also
+                predict inflation regime transitions, and how reliable is the recession signal when
+                evaluated one episode at a time?
+            </p>
+
+            <div class="viz-container">
+                <img src="outputs/yield_curve_regimes.png" alt="Yield Curve and Regime Transitions" style="width: 100%; display: block;">
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+                10Y-FFR spread with regime transition dates overlaid. Inversions precede some transitions but the relationship is not systematic.
+            </p>
+
+            <div class="note-box">
+                <h4>Null Result: No Regime-Transition Signal</h4>
+                <p>
+                    Logistic regression of "regime change within 12 months" on the term spread:
+                    coefficient = &minus;0.009, p = 0.89. The bond market's recession-prediction ability
+                    operates through expectations of future rate cuts, a different channel from the
+                    supply shocks and expectation anchoring that drive inflation regime dynamics.
+                </p>
+            </div>
+
+            <h3>Recession Prediction Robustness</h3>
+
+            <p>
+                Standard tests train on early data and test on later data, which can be misleading if
+                some recessions are easier to predict than others. Instead, leave-one-recession-out
+                (LORO) cross-validation trains the model on six recessions and tests on the held-out
+                episode, repeated for each of the seven recessions.
+            </p>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Recession</th>
+                        <th style="text-align: right;">Full Model AUC</th>
+                        <th style="text-align: right;">Spread-Only AUC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1973&ndash;74 Oil Crisis</td><td class="num">0.939</td><td class="num">1.000</td></tr>
+                    <tr><td>1980 Volcker I</td><td class="num">0.746</td><td class="num">0.842</td></tr>
+                    <tr><td>1981&ndash;82 Volcker II</td><td class="num">1.000</td><td class="num">0.838</td></tr>
+                    <tr style="background: var(--error-bg);"><td><strong>1990&ndash;91</strong></td><td class="num"><strong>0.279</strong></td><td class="num"><strong>0.314</strong></td></tr>
+                    <tr><td>2001 Dot-com</td><td class="num">0.750</td><td class="num">0.750</td></tr>
+                    <tr style="background: var(--error-bg);"><td><strong>2007&ndash;09 GFC</strong></td><td class="num"><strong>0.490</strong></td><td class="num"><strong>0.350</strong></td></tr>
+                    <tr><td>2020 COVID</td><td class="num">1.000</td><td class="num">0.995</td></tr>
+                    <tr class="highlight-row"><td><strong>Average LORO</strong></td><td class="num"><strong>0.743</strong></td><td class="num"><strong>0.727</strong></td></tr>
+                </tbody>
+            </table>
+
+            <p>
+                The average LORO AUC (0.74) is substantially below the simple time-split estimate (0.78).
+                Performance varies widely: the model fails on the mild 1990&ndash;91 recession (AUC 0.28)
+                and the 2007&ndash;09 GFC (AUC 0.49), while COVID is trivially predictable from extreme
+                preceding indicators. The yield curve is a useful but unreliable recession signal.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ================================================================== -->
+    <!-- PART IV: INFLATION FORECASTING                                     -->
+    <!-- ================================================================== -->
+
+    <section id="forecasting">
+        <span class="section-label">Part IV</span>
+        <h2>Inflation Forecasting</h2>
+
+        <p>
+            Can knowing which inflation regime the economy is in help predict future inflation?
+            Six forecasting approaches are compared at horizons from 1 to 12 months, using
+            expanding cross-validation (train on all past data, test on the next period).
+            R&sup2; measures forecast quality: positive means the model beats a naive guess of the
+            historical average; negative means it does worse.
+        </p>
+
+        <div class="viz-container">
+            <img src="outputs/forecast_regime_comparison.png" alt="Forecast Comparison" style="width: 100%; display: block;">
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+            Forecast MSE and R&sup2; by horizon. All models produce positive R&sup2; at 1 month, but performance deteriorates rapidly; by 6 months, no model outperforms the historical mean.
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Model</th>
+                    <th style="text-align: right;">1m R&sup2;</th>
+                    <th style="text-align: right;">3m R&sup2;</th>
+                    <th style="text-align: right;">6m R&sup2;</th>
+                    <th style="text-align: right;">12m R&sup2;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-row">
+                    <td><strong>AR (lags only)</strong></td>
+                    <td class="num"><strong>+0.62</strong></td>
+                    <td class="num"><strong>+0.04</strong></td>
+                    <td class="num">&minus;2.23</td>
+                    <td class="num">&minus;13.4</td>
+                </tr>
+                <tr>
+                    <td>Pooled Ridge</td>
+                    <td class="num">+0.43</td>
+                    <td class="num">&minus;0.53</td>
+                    <td class="num">&minus;4.98</td>
+                    <td class="num">&minus;27.0</td>
+                </tr>
+                <tr>
+                    <td>Ridge + regime indicator</td>
+                    <td class="num">+0.54</td>
+                    <td class="num">&minus;0.26</td>
+                    <td class="num">&minus;3.99</td>
+                    <td class="num">&minus;21.6</td>
+                </tr>
+                <tr>
+                    <td>Ridge + regime probabilities</td>
+                    <td class="num">+0.55</td>
+                    <td class="num">&minus;0.23</td>
+                    <td class="num">&minus;3.84</td>
+                    <td class="num">&minus;20.7</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>Regime-conditional</strong></td>
+                    <td class="num">+0.61</td>
+                    <td class="num">+0.03</td>
+                    <td class="num">&minus;2.78</td>
+                    <td class="num">&minus;14.3</td>
+                </tr>
+                <tr>
+                    <td>Random Forest</td>
+                    <td class="num">+0.51</td>
+                    <td class="num">&minus;0.43</td>
+                    <td class="num">&minus;3.25</td>
+                    <td class="num">&minus;25.9</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="viz-container" style="margin-top: 2rem;">
+            <img src="outputs/forecast_regime_improvement.png" alt="Regime Improvement" style="width: 100%; display: block;">
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+            Percentage change in MSE from regime-aware models vs. the pooled Ridge baseline. Negative values indicate improvement.
+        </p>
+
+        <p>
+            At 1 month, the simple AR is hard to beat (R&sup2; = 0.62). The regime-conditional model
+            comes close (0.61). At 3 months, only the AR and regime-conditional model produce positive
+            R&sup2;. By 6 months, all models are worse than the historical mean. Regime awareness
+            identifies which distribution you are sampling from, but not where within that distribution
+            the economy will be a year out.
+        </p>
+
+        <div class="divider"><span>Why 12-Month Forecasting Fails</span></div>
+
+        <p>
+            <strong>Autocorrelation</strong> measures how much this month's inflation tells you about
+            inflation N months from now. A value near 1 means strong predictability; near 0 means
+            little signal remains.
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Sample</th>
+                    <th style="text-align: right;">AC(1)</th>
+                    <th style="text-align: right;">AC(3)</th>
+                    <th style="text-align: right;">AC(6)</th>
+                    <th style="text-align: right;">AC(12)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Low-inflation regime (n=622)</td>
+                    <td class="num">0.950</td>
+                    <td class="num">0.792</td>
+                    <td class="num">0.598</td>
+                    <td class="num"><strong>0.283</strong></td>
+                </tr>
+                <tr>
+                    <td>High-inflation regime (n=211)</td>
+                    <td class="num">0.987</td>
+                    <td class="num">0.934</td>
+                    <td class="num">0.816</td>
+                    <td class="num"><strong>0.505</strong></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>Full sample</strong></td>
+                    <td class="num"><strong>0.990</strong></td>
+                    <td class="num"><strong>0.955</strong></td>
+                    <td class="num"><strong>0.893</strong></td>
+                    <td class="num"><strong>0.731</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pull-quote">
+            This is an instance of Simpson's paradox. Full-sample autocorrelation at 12 months is
+            0.73, which makes inflation appear persistent and forecastable a year ahead. But this
+            is mostly because the sample mixes periods of low inflation (averaging 2.4%) with
+            periods of high inflation (averaging 7.4%). Within the low-inflation regime, AC(12)
+            drops to 0.28. Roughly 40&ndash;60% of the apparent persistence comes from mixing the
+            two distributions, not from inflation actually being predictable within either one.
+        </div>
+
+        <div class="viz-container">
+            <img src="outputs/forecast_subsample_stability.png" alt="Subsample Stability" style="width: 100%; display: block;">
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+            12-month forecast R&sup2; is negative across every historical subsample, regardless of model. The forecasting failure is structural.
+        </p>
+    </section>
+
+
+    <!-- CONCLUSIONS -->
+    <section id="conclusions" style="padding-bottom: 2.5rem;">
+        <span class="section-label">Synthesis</span>
+        <h2>Conclusions</h2>
+        <p style="max-width: 760px; margin-bottom: 2.5rem;">
+            The regime-switching, Taylor rule, structural break, and forecasting results point to
+            four main findings about US monetary policy over the past seven decades.
+        </p>
+
+        <div class="conclusion-grid">
+            <div class="conclusion-card">
+                <div class="conclusion-number">01</div>
+                <div class="conclusion-content">
+                    <h4>Specification determines the Taylor principle result</h4>
+                    <p>
+                        With CBO NAIRU and expected inflation, the principle is satisfied in the
+                        high-inflation regime (1.42) but not the low-inflation regime (0.61). With
+                        realized inflation, it is not clearly satisfied anywhere. HAC standard errors
+                        are large enough that neither regime is statistically distinguishable from the
+                        threshold.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">02</div>
+                <div class="conclusion-content">
+                    <h4>No structural breaks with time-varying NAIRU</h4>
+                    <p>
+                        The apparent structural break near 1980 disappears when the unemployment gap
+                        is measured against CBO NAIRU. Some of what looked like a change in policy
+                        behaviour was a change in labour market structure. The Chow test at 1982&ndash;83
+                        remains marginally significant (p = 0.03), but the sup-Wald procedure does not
+                        detect a dominant break.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">03</div>
+                <div class="conclusion-content">
+                    <h4>Inflation persistence is largely compositional</h4>
+                    <p>
+                        Inflation's apparent 12-month persistence is 40&ndash;60% a statistical artifact
+                        of mixing two regimes with different average levels. Within either regime, the
+                        forecasting signal decays rapidly. All models fail beyond 3 months in every
+                        subsample tested.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">04</div>
+                <div class="conclusion-content">
+                    <h4>Simple models outperform complex ones</h4>
+                    <p>
+                        The 4-parameter structural Taylor rule recovers interpretable coefficients. The
+                        AR(12) is the strongest forecasting model at short horizons. The logistic
+                        regression with the term spread alone performs comparably to multivariate
+                        classifiers. With 833 observations spanning multiple structural regimes, complex
+                        models tend to overfit and deteriorate when conditions shift.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- LIMITATIONS -->
+    <section>
+        <h2>Limitations</h2>
+
+        <div class="two-col">
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Standard Errors</h4>
+                <p>
+                    Even with block-bootstrap HAC correction, the standard errors on Taylor rule
+                    coefficients are large enough to make the core results statistically ambiguous.
+                    The very high smoothing parameter (&rho; &gt; 0.96) absorbs most variation,
+                    leaving little for other coefficients. This is a feature of the data, not a
+                    fixable estimation problem.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Expected Inflation Proxy</h4>
+                <p>
+                    The Michigan Survey is available only from 1978. For the pre-1978 period, a
+                    trailing 12-month mean of realized inflation serves as an adaptive expectations
+                    proxy. This is a rough approximation that may not capture the Fed's actual
+                    information set during the Burns era.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Regime Model Stability</h4>
+                <p>
+                    The Markov-switching model produces near-singular covariance matrices for some
+                    parameters. Regime assignments are reliable but standard errors on individual
+                    coefficients should be interpreted with caution. BIC prefers 4 regimes, but
+                    the 4-regime model has severe numerical instability.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Real-Time Data</h4>
+                <p>
+                    All estimates use revised data. Real-time vintage data (what the Fed actually
+                    observed at each decision point) would provide a stricter test of the Taylor
+                    rule's descriptive accuracy. The break test uses the first-difference reaction
+                    function, not the structural NLS form.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- METHODOLOGICAL NOTES -->
+    <section id="methods" class="summary-section full-width-section">
+        <div class="container">
+            <h2>Methodological Notes</h2>
+
+            <div class="two-col">
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Data Processing</h4>
+                    <p>
+                        8 monthly series from FRED (1954&ndash;2025). CBO NAIRU interpolated from
+                        quarterly to monthly. Michigan Survey from 1978; adaptive proxy (trailing
+                        12-month CPI mean) for earlier periods. Derived variables: YoY inflation,
+                        unemployment gap (NAIRU-adjusted), term spread (10Y - FFR), capacity gap.
+                        833 complete monthly observations.
+                    </p>
+                </div>
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Statistical Methods</h4>
+                    <p>
+                        Markov-switching: 2-state model (Hamilton 1989), EM algorithm. Taylor rule:
+                        nonlinear least squares, block-bootstrap HAC SE (500 draws, 12-month blocks).
+                        Break tests: Chow test, sup-Wald (Andrews 1993). Forecasting: expanding-window
+                        CV, 6 models (AR, pooled Ridge, Ridge + regime, regime-conditional, Random
+                        Forest), 4 horizons (1, 3, 6, 12 months). Recession prediction: logistic
+                        regression, LORO CV across 7 NBER recessions.
+                    </p>
+                </div>
+            </div>
+
+            <p style="margin-top: 1rem; color: var(--text-secondary); line-height: 1.75; font-size: 0.95rem;">
+                <strong>Authors:</strong> Leonardo Luksic, Krisha Chandnani, Ignacio Orueta
+            </p>
+            <p style="margin-top: 0.75rem; color: var(--text-secondary); line-height: 1.75; font-size: 0.95rem;">
+                <strong>References:</strong>
+                Hamilton (1989), <em>Econometrica</em>;
+                Taylor (1993), <em>Carnegie-Rochester Conference</em>;
+                Clarida, Gali &amp; Gertler (2000), <em>QJE</em>;
+                Andrews (1993), <em>Econometrica</em>;
+                Bai &amp; Perron (1998), <em>Econometrica</em>;
+                Lubik &amp; Schorfheide (2004), <em>AER</em>;
+                Boivin (2006), <em>JMCB</em>;
+                Stock &amp; Watson (2007), <em>JMCB</em>.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin: 2.5rem 0;">
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Markov-Switching</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Nonlinear Least Squares</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Block Bootstrap HAC</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Sup-Wald Break Test</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Time Series CV</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">FRED Data</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Python</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Statsmodels</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Scikit-learn</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
+            <a href="/cdn-cgi/l/email-protection#0e6220627b657d676d4e627d6b206f6d207b65" class="social-link">Email</a>
+        </div>
+    </footer>
+    <script da

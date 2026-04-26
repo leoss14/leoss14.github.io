@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Geographic Evolution of Uber Demand in NYC. Spatial analysis of how ride-hailing pickup patterns shifted between 2018 and 2025.">
+    <meta property="og:title" content="Uber NYC Demand Analysis | Leonardo Luksic">
+    <meta property="og:description" content="Geographic Evolution of Uber Demand in NYC. Spatial analysis of how ride-hailing pickup patterns shifted between 2018 and 2025.">
+    <meta property="og:type" content="website">
+    <title>Uber NYC Demand Analysis | Leonardo Luksic</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/project-shared.css">
+    <style>
+        .strength-badge { font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 3px; color: white; display: inline-block; font-size: 0.82rem; letter-spacing: 0.02em; }
+        .strength-strong { background: #2d6a4f; }
+        .strength-moderate { background: #b5830b; }
+        .strength-weak { background: #c1121f; }
+        .scorecard-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; margin-top: 1.5rem; }
+        .scorecard-table th { text-align: left; padding: 0.75rem 1rem; background: var(--bg-alt, #f8f9fa); border-bottom: 2px solid var(--border, #dde1e7); }
+        .scorecard-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; vertical-align: top; }
+        .scorecard-table .notes-cell { font-size: 0.87rem; color: #555; line-height: 1.55; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav>
+            <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true">
+            <a href="../../index.html" class="nav-home" aria-label="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 8.5V16C5 16.3 5.2 16.5 5.5 16.5H8.5V12.5C8.5 12.2 8.7 12 9 12H11C11.3 12 11.5 12.2 11.5 12.5V16.5H14.5C14.8 16.5 15 16.3 15 16V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-home-label">Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+            <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="project-hero" style="padding-top: calc(var(--nav-height) + 4.5rem); padding-bottom: 3.5rem;">
+        <h1 style="font-size: clamp(2.4rem, 5vw, 3.2rem); max-width: 850px; margin-bottom: 1.5rem;">Geographic Evolution of Uber Demand in NYC</h1>
+        <p class="subtitle" style="font-size: 1.15rem; max-width: 780px; line-height: 1.8; color: var(--text-secondary);">
+            Between January 2018 and January 2025, Uber grew from handling one in five for-hire
+            vehicle trips in New York City to three in four. This project uses NYC Taxi and Limousine
+            Commission trip records to document how the spatial distribution of pickups shifted over
+            that period, and evaluates whether the observed changes align with predictions derived
+            from value-based dispatch algorithms described in the academic literature.
+        </p>
+        <div class="project-meta-bar" style="margin-top: 2rem;">
+            <div class="meta-item">
+                <span class="meta-label">Trips Analyzed</span>
+                <span class="meta-value">20M+</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Period</span>
+                <span class="meta-value">Jan 2018 &ndash; Jan 2025</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Uber Market Share</span>
+                <span class="meta-value">23% &rarr; 75%</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- BACKGROUND -->
+    <section id="overview">
+        <span class="section-label">Background</span>
+        <h2>Dispatch Algorithms and Spatial Theory</h2>
+
+        <p>
+            Ride-hailing platforms must decide which driver to assign to each incoming passenger
+            request. This dispatch rule has consequences not just for the individual ride, but
+            for how driver supply distributes itself across a city over time. Two approaches
+            represent opposite ends of the design spectrum, and each implies a different spatial
+            footprint.
+        </p>
+
+        <p>
+            <strong>Greedy matching</strong> assigns the closest available driver to each request,
+            minimizing immediate pickup time. The rule is simple but myopic: it ignores where the
+            driver ends up after the trip. A driver two minutes away in Midtown might take a fare
+            to an isolated area, earning well on that single ride but then waiting 30 minutes for
+            the next one. Meanwhile, a more distant driver could have served the same trip and
+            ended up better positioned for subsequent pickups.
+        </p>
+        <p>
+            <strong>MDP-based matching</strong> (Markov Decision Process), described in Xu et al.
+            (2018), takes the opposite approach. Instead of minimizing pickup distance, it
+            maximizes long-run system value. The algorithm learns a value for each geographic zone
+            at each time of day, built from millions of historical trip observations. Each dispatch
+            decision evaluates:
+            <em>Immediate Fare + Future Position Value &minus; Current Position Value</em>. Drivers
+            in low-value zones receive priority for trips to high-value destinations; trips to
+            high-demand areas are valued because they position drivers well for the next ride.
+        </p>
+
+        <div class="note-box" style="margin-top: 2rem;">
+            <h4>Worked Example</h4>
+            <p>
+                A passenger in Midtown requests a trip to JFK Airport. Two drivers are available.
+                <strong>Driver A</strong> is 2 minutes away, already in Midtown. Under greedy
+                matching, Driver A takes the fare but then sits in the JFK queue for 30 minutes,
+                and Midtown loses a well-positioned driver.
+                <strong>Driver B</strong> is 5 minutes away, on the Upper East Side. Under MDP
+                matching, Driver B gets the airport fare because Driver B has less to lose by
+                leaving a lower-value zone. Driver A stays in high-demand Midtown and picks up
+                the next ride quickly. Both end up better off. Xu et al. (2018) report that
+                MDP-based dispatch improved trip completion rates by 0.5% to 5% across 20+ cities.
+            </p>
+        </div>
+
+        <p>
+            The spatial implication is that MDP matching should redistribute supply toward zones
+            with high future value (like airports, which position drivers for lucrative return
+            fares) and away from zones where drivers are already saturated. Over time, this should
+            produce a more even demand surface, lower spatial clustering of high-activity
+            neighbourhoods, and more trips completed locally as drivers are matched to nearby
+            riders more efficiently.
+        </p>
+
+        <div class="divider"><span>Research Question</span></div>
+
+        <p style="font-size: 1.2rem; color: var(--navy); font-weight: 600; text-align: center; max-width: 720px; margin: 0 auto 2.5rem;">
+            How did the spatial distribution of Uber pickups in NYC change between 2018 and 2025,
+            and are the observed patterns consistent with value-based algorithmic dispatch?
+        </p>
+
+        <div class="divider"><span>Analytical Approach</span></div>
+
+        <p>
+            The analysis proceeds in three stages. First, <strong>geographic analysis</strong>
+            compares the spatial distribution of Uber pickups and dropoffs across NYC's 263 TLC
+            taxi zones. This uses K-means clustering (a method that groups zones into geographic
+            demand centres based on their coordinates), the Gini coefficient (a standard measure
+            of inequality, here applied to how unevenly pickups are distributed across zones),
+            Lorenz curves, and origin-destination flow analysis between clusters.
+        </p>
+        <p>
+            Second, <strong>spatial autocorrelation analysis</strong> tests whether high-demand
+            zones cluster together geographically and how that clustering changed. This uses
+            global Moran's I (a statistic measuring the degree to which nearby zones have similar
+            demand levels) and LISA maps (Local Indicators of Spatial Association, which identify
+            individual hot spots and cold spots at the zone level).
+        </p>
+        <p>
+            Third, <strong>temporal analysis</strong> examines whether hourly and daily demand
+            patterns shifted between years, both at the aggregate level and within each geographic
+            cluster. This serves as a control: if the geographic changes were driven by shifts in
+            rider behaviour (remote work, post-pandemic commuting), then <em>when</em> people use
+            the service should have shifted alongside <em>where</em> they use it. Stable temporal
+            patterns alongside shifting geography would point more toward supply-side reallocation.
+            Jensen-Shannon divergence quantifies the degree of temporal shift at the cluster level.
+        </p>
+    </section>
+
+
+    <!-- MARKET CONTEXT -->
+    <section>
+        <span class="section-label">Context</span>
+        <h2>Market Context</h2>
+
+        <p>
+            Before interpreting any spatial changes, it is important to understand what happened to
+            the broader for-hire vehicle market between 2018 and 2025. Uber's growth did not occur
+            in a vacuum: it absorbed the entire traditional FHV sector, which has implications for
+            how the geographic redistribution should be interpreted.
+        </p>
+
+        <div class="viz-container">
+            <h4>FHV Market Share: Uber vs. Lyft vs. Other Operators</h4>
+            <iframe src="outputs/ext1_market_share_stacked.html" height="500"></iframe>
+            <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 0.75rem; margin-bottom: 0;">
+                In 2018, traditional FHV operators (community car services, black cars, luxury
+                limousines) handled 61% of all for-hire trips. By 2025, that category had been
+                entirely eliminated. Lyft also grew, from 16% to 25%.
+            </p>
+        </div>
+
+        <p>
+            The elimination of the "Other FHV" category is a structural confounder. Uber in 2025
+            is not simply doing more of what Uber did in 2018; it is also handling trips that
+            previously belonged to an entirely different operator pool with different geographic
+            coverage. Traditional car services were disproportionately concentrated in outer-borough
+            neighbourhoods (community livery bases served specific ethnic and geographic communities).
+            Some of the spatial dispersion observed in Uber's 2025 pickup distribution may therefore
+            reflect the absorption of these trip patterns rather than algorithmic redistribution.
+        </p>
+    </section>
+
+
+    <!-- TESTABLE PREDICTIONS -->
+    <section>
+        <span class="section-label">Predictions</span>
+        <h2>Testable Predictions from MDP Theory</h2>
+
+        <p>
+            If Uber deployed value-based matching between 2018 and 2025, six specific spatial
+            changes should follow. Each prediction derives from a concrete mechanism in the
+            dispatch model and can be tested against the data.
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Prediction</th>
+                    <th style="text-align: left;">Mechanism</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Increased airport demand</strong></td>
+                    <td>Airports carry high destination value: drivers completing airport trips are positioned for lucrative return fares into Manhattan</td>
+                </tr>
+                <tr>
+                    <td><strong>Manhattan core decline</strong></td>
+                    <td>Driver saturation in central Manhattan reduces the marginal value of sending additional supply there</td>
+                </tr>
+                <tr>
+                    <td><strong>Lower geographic concentration</strong></td>
+                    <td>By routing supply toward underserved zones, the system reduces the gap in activity levels across the city</td>
+                </tr>
+                <tr>
+                    <td><strong>Lower spatial autocorrelation</strong></td>
+                    <td>Active supply redistribution narrows the divide between high-activity and low-activity neighbourhoods</td>
+                </tr>
+                <tr>
+                    <td><strong>More localised trip completion</strong></td>
+                    <td>Efficient matching pairs riders with nearby drivers, increasing the share of trips that start and end within the same geographic area</td>
+                </tr>
+                <tr>
+                    <td><strong>Stable geographic structure</strong></td>
+                    <td>The algorithm reallocates supply within existing demand patterns rather than reorganizing the city's spatial layout</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <!-- ================================================================== -->
+    <!-- PART I: GEOGRAPHIC ANALYSIS                                        -->
+    <!-- ================================================================== -->
+
+    <section id="geographic" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part I</span>
+            <h2>Geographic Analysis</h2>
+
+            <h3 style="margin-top: 1.5rem;">2018 Baseline</h3>
+
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="stat-highlight">
+                    <div class="value">19.8M</div>
+                    <div class="label">Total FHV Trips (Jan 2018)</div>
+                </div>
+                <div class="stat-highlight">
+                    <div class="value">22.7%</div>
+                    <div class="label">Uber Market Share</div>
+                </div>
+                <div class="stat-highlight">
+                    <div class="value">0.511</div>
+                    <div class="label">Gini Coefficient</div>
+                </div>
+            </div>
+
+            <p>
+                In January 2018, Uber accounted for 4.5 million of 19.8 million for-hire vehicle
+                trips in NYC, roughly one in five. Pickups were heavily concentrated in Manhattan:
+                Midtown Center, East Village, and Union Square led in volume, and Manhattan zones
+                accounted for approximately 60% of all Uber pickups. K-means clustering on zone
+                centroid coordinates identified six geographic demand centres. The two Manhattan
+                clusters alone comprised nearly 59% of trips.
+            </p>
+
+            <div class="viz-container">
+                <h4>2018 Demand Clusters (K-Means, k=6)</h4>
+                <iframe src="outputs/cluster_map_2018.html" height="650"></iframe>
+                <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 0.75rem; margin-bottom: 0;">
+                    Each zone is coloured by its dominant pickup cluster. Hover for trip counts
+                    and cluster assignments.
+                </p>
+            </div>
+
+            <div class="content-grid" style="margin-top: 2rem;">
+                <div class="content-card">
+                    <div class="card-header"><h3>Top Pickup Zones</h3></div>
+                    <div class="card-body">
+                        <p><strong>1.</strong> Midtown Center (1.9% of all pickups)</p>
+                        <p><strong>2.</strong> East Village (1.8%)</p>
+                        <p><strong>3.</strong> Union Square (1.8%)</p>
+                        <p style="margin-top: 1rem; color: var(--text-muted); margin-bottom: 0;">Manhattan zones accounted for ~60% of total pickups</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-header"><h3>Temporal Profile</h3></div>
+                    <div class="card-body">
+                        <p><strong>Peak hour:</strong> 6 PM (evening commute)</p>
+                        <p><strong>Busiest day:</strong> Saturday</p>
+                        <p><strong>Morning rush:</strong> 7&ndash;9 AM</p>
+                        <p style="margin-top: 1rem; color: var(--text-muted); margin-bottom: 0;">Evening peak comprised roughly 18% of daily demand</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"><span>2025 Snapshot</span></div>
+
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="stat-highlight">
+                    <div class="value">20.4M</div>
+                    <div class="label">Total FHV Trips (Jan 2025)</div>
+                </div>
+                <div class="stat-highlight">
+                    <div class="value">75.3%</div>
+                    <div class="label">Uber Market Share</div>
+                </div>
+                <div class="stat-highlight">
+                    <div class="value">0.440</div>
+                    <div class="label">Gini Coefficient (&minus;14%)</div>
+                </div>
+            </div>
+
+            <div class="compare-bars">
+                <div class="compare-bar-group">
+                    <div class="bar-label">Market Share</div>
+                    <div class="bar-row">
+                        <span class="bar-year">2018</span>
+                        <div class="bar-track"><div class="bar-fill fill-2018" style="width: 22.7%;"></div></div>
+                        <span class="bar-value">22.7%</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-year">2025</span>
+                        <div class="bar-track"><div class="bar-fill fill-2025" style="width: 75.3%;"></div></div>
+                        <span class="bar-value">75.3%</span>
+                    </div>
+                </div>
+                <div class="compare-bar-group">
+                    <div class="bar-label">Geographic Concentration (Gini)</div>
+                    <div class="bar-row">
+                        <span class="bar-year">2018</span>
+                        <div class="bar-track"><div class="bar-fill fill-2018" style="width: 51.1%;"></div></div>
+                        <span class="bar-value">0.511</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-year">2025</span>
+                        <div class="bar-track"><div class="bar-fill fill-2025" style="width: 44%;"></div></div>
+                        <span class="bar-value">0.440</span>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                By January 2025, Uber handled 15.4 million trips, three in four for-hire vehicle
+                rides in the city. Total FHV volume remained roughly flat at 20.4 million, so
+                Uber's growth came almost entirely at the expense of other operators. Two geographic
+                shifts stand out. First, JFK Airport displaced Midtown Center as the top pickup
+                zone, and combined airport pickup share rose 48%. Second, the Gini coefficient
+                fell from 0.511 to 0.440, meaning demand became more evenly distributed across
+                zones rather than more concentrated. Uber's expanded market share did not simply
+                amplify the existing Manhattan-centric pattern; it dispersed pickups toward
+                airports and outer-borough areas that had lower activity in 2018.
+            </p>
+
+            <div class="viz-container">
+                <h4>2025 Demand Clusters (K-Means, k=6)</h4>
+                <iframe src="outputs/cluster_map_2025.html" height="650"></iframe>
+                <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 0.75rem; margin-bottom: 0;">
+                    Compare with the 2018 map above. The cluster structure is broadly preserved,
+                    but the relative weight of airport and outer-borough clusters increased.
+                </p>
+            </div>
+
+            <div class="content-grid" style="margin-top: 2rem;">
+                <div class="content-card">
+                    <div class="card-header"><h3>Airport Zones</h3></div>
+                    <div class="card-body">
+                        <p><strong>Combined share:</strong> +48% vs 2018</p>
+                        <p><strong>JFK Airport:</strong> Top pickup zone in 2025</p>
+                        <p><strong>LaGuardia:</strong> Substantial growth</p>
+                        <p style="margin-top: 1rem; color: var(--text-muted); margin-bottom: 0;">
+                            Airports displaced Manhattan core as top demand centres
+                        </p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-header"><h3>Manhattan Core</h3></div>
+                    <div class="card-body">
+                        <p><strong>Average decline:</strong> &minus;35% across top zones</p>
+                        <p><strong>Union Sq, Midtown, East Village:</strong> &minus;34 to &minus;39%</p>
+                        <p><strong>Net effect:</strong> Retained volume but lost relative share</p>
+                        <p style="margin-top: 1rem; color: var(--text-muted); margin-bottom: 0;">
+                            Central zones still active, but no longer dominant
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Pickup Density Change</h3>
+
+            <p>
+                The choropleth below maps the change in each zone's share of total pickups
+                (in percentage points) between 2018 and 2025. Blue zones gained share; red zones
+                lost it. Airport zones in Queens are the largest gainers, several central Manhattan
+                zones show the steepest declines, and parts of Brooklyn and the Bronx picked up
+                modest share, consistent with the falling Gini coefficient.
+            </p>
+
+            <div class="viz-container">
+                <h4>Change in Pickup Share by Zone (2018 &rarr; 2025)</h4>
+                <iframe src="outputs/pickup_density_change.html" height="700"></iframe>
+            </div>
+
+            <h3>Geographic Concentration</h3>
+
+            <p>
+                The Lorenz curve plots the cumulative share of pickups against the cumulative
+                share of taxi zones, ranked from lowest to highest demand. A perfectly even
+                distribution would trace the diagonal; the further the curve bows below it, the
+                more concentrated demand is. The Gini coefficient quantifies this gap. Between
+                2018 and 2025, the Gini fell from 0.511 to 0.440: the 2025 curve sits closer to
+                the diagonal across its range, indicating that pickups spread more evenly across
+                zones.
+            </p>
+
+            <div class="viz-container">
+                <h4>Lorenz Curves: Pickup Concentration (2018 vs. 2025)</h4>
+                <iframe src="outputs/lorenz_curve.html" height="600"></iframe>
+            </div>
+
+            <p>
+                To confirm that this decline is not a sampling artifact, a bootstrap procedure
+                resampled zone-level trip counts 1,000 times for each year to produce 95%
+                confidence intervals around the Gini coefficient. The 2018 interval
+                (0.475&ndash;0.541) and the 2025 interval (0.402&ndash;0.473) do not overlap,
+                indicating that the concentration decline is statistically robust (see
+                <a href="#appendix">Appendix</a> for the full bootstrap distribution).
+            </p>
+
+            <h3>Borough-Level Distribution</h3>
+
+            <p>
+                Aggregating by borough provides a macro view of the redistribution. Because Uber's
+                total trip volume more than tripled, absolute counts rose in every borough. The
+                relevant comparison is the shift in relative shares.
+            </p>
+
+            <div class="viz-container">
+                <h4>Pickup Counts by Borough (2018 vs. 2025)</h4>
+                <iframe src="outputs/fix_borough_pct.html" height="500"></iframe>
+            </div>
+
+            <p>
+                Manhattan retained the majority of pickups (~68%) but with reduced dominance.
+                Brooklyn grew from 18% to 20%, Queens held at around 9%, and the Bronx picked
+                up modest share. The outer-borough gains represent expansion into areas that were
+                less served in 2018, not a substitution away from Manhattan in absolute terms.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ================================================================== -->
+    <!-- OD FLOW ANALYSIS                                                   -->
+    <!-- ================================================================== -->
+
+    <section>
+        <span class="section-label">Part I (continued)</span>
+        <h2>Origin-Destination Flow Changes</h2>
+
+        <p>
+            While density maps show where trips start and end, they do not capture how trips
+            flow between areas. The heatmap below shows the change in trip share for each
+            pickup-dropoff cluster pair between 2018 and 2025. Each cell represents the change
+            (in percentage points) in the fraction of all trips flowing between that origin and
+            destination. The 2025 clusters are aligned to their 2018 geographic matches.
+        </p>
+
+        <div class="viz-container">
+            <h4>Change in OD Flow Share by Cluster Pair (2025 minus 2018)</h4>
+            <iframe src="outputs/fix_od_change.html" height="500"></iframe>
+        </div>
+    </section>
+
+
+    <!-- ================================================================== -->
+    <!-- SPATIAL AUTOCORRELATION                                            -->
+    <!-- ================================================================== -->
+
+    <section id="spatial" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part I (continued)</span>
+            <h2>Spatial Autocorrelation</h2>
+
+            <p>
+                The Gini coefficient measures overall concentration but is indifferent to
+                geography: it treats zones as interchangeable regardless of where they sit on the
+                map. Moran's I addresses this by testing whether high-demand zones tend to cluster
+                together geographically. A high Moran's I means nearby zones have similar demand
+                levels (high near high, low near low), indicating spatial polarization. A lower
+                value means demand is more patchy, with less of a clean divide between core and
+                periphery.
+            </p>
+
+            <div class="pull-quote">
+                Global Moran's I fell from 0.55 in 2018 to 0.28 in 2025 (both significant at
+                p&lt;0.001). Demand is still spatially structured, but the divide between
+                high-activity and low-activity neighbourhoods narrowed considerably. Combined with
+                the falling Gini, this means demand became both less concentrated overall and less
+                spatially polarized.
+            </div>
+
+            <p>
+                LISA (Local Indicators of Spatial Association) maps showing zone-level hot spots
+                and cold spots, along with pickup/dropoff balance statistics, are available in the
+                <a href="#appendix">Appendix</a>. The key finding from that analysis is that the
+                contiguous cold-spot block across eastern Queens and the Bronx contracted
+                substantially between 2018 and 2025, as many outer-borough zones gained enough
+                activity to become statistically indistinguishable from their neighbours.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- CLUSTER MOVEMENT + LOCALIZATION -->
+    <section>
+        <h3 style="margin-top: 0;">Cluster Movement</h3>
+
+        <p>
+            To measure how demand centres shifted geographically, each 2018 K-means cluster
+            centroid was matched to its nearest 2025 counterpart by geographic proximity (not
+            index order), and the displacement was computed using the Haversine formula. The map
+            below shows arrows from each 2018 centroid to its 2025 match, with line thickness
+            proportional to shift distance.
+        </p>
+
+        <div class="viz-container">
+            <h4>Cluster Centroid Shifts: 2018 &rarr; 2025</h4>
+            <iframe src="outputs/fix_cluster_shifts.html" height="700"></iframe>
+        </div>
+
+        <p>
+            The six centroids shifted 4.22 km on average. The largest displacement (11.6 km) was
+            the Brooklyn/Borough Park cluster, which moved toward Staten Island. Most other
+            shifts were modest (under 3 km), directed toward airports and outer-borough transit
+            nodes. The scale of these movements, relative to the full extent of NYC, indicates
+            reallocation within an existing spatial structure rather than a wholesale geographic
+            reorganization.
+        </p>
+
+        <h3>Trip Localization</h3>
+
+        <p>
+            A direct test of whether trips are completing more locally is to measure, for each
+            pickup zone, what fraction of its dropoffs land in the same zone or in one of the five
+            geographically nearest zones (based on centroid distance). Unlike the intra-cluster
+            share metric used elsewhere, this measure is boundary-independent: it does not depend
+            on how K-means clusters are drawn, only on fixed zone geography.
+        </p>
+
+        <p>
+            Mean localization rose from 29.9% in 2018 to 33.4% in 2025. The distribution shifted
+            modestly rightward across zones. This is a real but small increase, and weaker evidence
+            for the "more localised matching" prediction than the cluster-based metric (63% to 72%)
+            would suggest. The discrepancy confirms that part of the intra-cluster increase was an
+            artifact of differently shaped cluster boundaries.
+        </p>
+
+        <div class="viz-container">
+            <h4>Zone-Level Localization Distribution (2018 vs. 2025)</h4>
+            <iframe src="outputs/fix_localization_pct.html" height="450"></iframe>
+            <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 0.75rem; margin-bottom: 0;">
+                Percentage of each zone's trips where the dropoff falls in the same zone or
+                one of its 5 nearest neighbours.
+            </p>
+        </div>
+
+        <h3>Trip Distance</h3>
+
+        <p>
+            As a complementary measure, the great-circle distance between pickup and dropoff zone
+            centroids was computed for all trips with valid origin and destination data. If MDP
+            matching were producing shorter, more efficient local trips, average distances should
+            decline or remain stable.
+        </p>
+
+        <p>
+            In practice, mean trip distance increased slightly from 4.96 km to 5.27 km, and median
+            distance from 3.46 km to 3.56 km. This cuts against the "more localised matching"
+            prediction, and suggests that at least some of the spatial redistribution involved
+            longer trips (plausibly airport rides, which are among the longest in the dataset).
+        </p>
+
+        <div class="viz-container">
+            <h4>Trip Distance Distribution (2018 vs. 2025)</h4>
+            <iframe src="outputs/fix_trip_distance.html" height="450"></iframe>
+        </div>
+
+        <div class="viz-container" style="margin-top: 1.5rem;">
+            <h4>Median Trip Distance by Cluster</h4>
+            <iframe src="outputs/fix_distance_by_cluster.html" height="450"></iframe>
+        </div>
+    </section>
+
+
+    <!-- ================================================================== -->
+    <!-- PART II: TEMPORAL PATTERNS                                         -->
+    <!-- ================================================================== -->
+
+    <section id="temporal" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part II</span>
+            <h2>Temporal Demand Patterns</h2>
+
+            <p>
+                The temporal dimension serves as a diagnostic. If the geographic redistribution
+                documented above were driven by changes in rider behaviour (remote work patterns,
+                post-pandemic commuting, evolving leisure habits), then <em>when</em> people use
+                the service should have shifted alongside <em>where</em> they use it. If temporal
+                patterns remain stable while geographic patterns change, the evidence points more
+                toward supply-side reallocation.
+            </p>
+
+            <h3>Hourly Profile</h3>
+
+            <div class="viz-container">
+                <h4>Hourly Pickup Distribution (2018 vs. 2025)</h4>
+                <iframe src="outputs/fix_hourly_patterns.html" height="450"></iframe>
+            </div>
+
+            <p>
+                The hourly curves track each other closely. The peak hour remained at 6 PM in both
+                years. The busiest day shifted from Saturday (2018) to Friday (2025), but the
+                overall weekly shape changed only modestly. The 2025 curve sits higher in absolute
+                terms (reflecting Uber's tripled trip volume), but the relative distribution
+                across hours is nearly identical.
+            </p>
+
+            <h3>Temporal Change by Cluster</h3>
+
+            <p>
+                Rather than comparing the aggregate hour-by-day heatmap, the panels below show
+                the change in temporal demand distribution for each geographic cluster separately.
+                Each cell shows how the share of that cluster's trips at a given hour and day
+                shifted between 2018 and 2025 (in percentage points). Most cells are near zero,
+                confirming temporal stability at the cluster level.
+            </p>
+
+            <div class="viz-container">
+                <h4>Temporal Change by Cluster (2025 minus 2018, pp)</h4>
+                <iframe src="outputs/fix_cluster_heatmap_changes.html" height="500"></iframe>
+            </div>
+
+            <h3>Quantifying Temporal Stability</h3>
+
+            <p>
+                To move beyond visual comparison, the Jensen-Shannon divergence (JSD) was
+                computed for each cluster. JSD is a standard measure of how different two
+                probability distributions are: a value of 0 means two distributions are
+                identical, and higher values indicate more divergence. Applied here, it compares
+                the 24-hour demand profile of each cluster in 2018 with its matched cluster in
+                2025. The aggregate JSD across all trips was 0.0025, confirming minimal change.
+            </p>
+
+            <p>
+                The per-cluster breakdown reveals that this stability was not perfectly uniform.
+                Brooklyn (JSD&nbsp;=&nbsp;0.0099) and the Bronx (JSD&nbsp;=&nbsp;0.0057)
+                shifted roughly two to four times more than Manhattan clusters
+                (JSD&nbsp;&asymp;&nbsp;0.002). While all values remain very low in absolute
+                terms, the pattern suggests that outer-borough areas experienced more temporal
+                change than central Manhattan.
+            </p>
+
+            <div class="viz-container">
+                <h4>Temporal Shift by Cluster (Jensen-Shannon Divergence)</h4>
+                <iframe src="outputs/fix_jsd_by_cluster.html" height="450"></iframe>
+            </div>
+
+            <h3>Hourly Compositional Breakdown</h3>
+
+            <p>
+                Aggregate temporal stability can mask compositional shifts: if Manhattan demand fell
+                and outer-borough demand rose by similar proportions across all hours, the
+                aggregate hourly curve would look identical even though the spatial composition of
+                each hour changed. The stacked bars below decompose each hour's demand by cluster.
+            </p>
+
+            <div class="viz-container">
+                <h4>Cluster Share of Demand by Hour (2018 vs. 2025)</h4>
+                <iframe src="outputs/fix_hourly_composition.html" height="450"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================================================================== -->
+    <!-- DEMAND TYPOLOGY                                                    -->
+    <!-- ================================================================== -->
+
+    <section>
+        <span class="section-label">Part II (continued)</span>
+        <h2>Demand Typology</h2>
+
+        <p>
+            The geographic clusters used throughout this analysis group zones by physical
+            location. An alternative approach clusters zones by their hourly demand shape:
+            the 24-dimensional vector describing what fraction of a zone's trips occur at each
+            hour. This identifies zones that behave similarly regardless of where they sit on
+            the map. Each zone's hourly profile was standardized and grouped using K-means
+            (k=4). Four demand types emerged in both years.
+        </p>
+
+        <div class="viz-container">
+            <h4>Demand Profile Types: 2018</h4>
+            <iframe src="outputs/fix_demand_profiles_2018.html" height="450"></iframe>
+            <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 0.75rem; margin-bottom: 0;">
+                Each line shows the average hourly demand profile for zones of that type.
+                Morning-peak zones (airports, transit hubs) have demand concentrated before 10 AM;
+                evening-peak zones see activity build through the afternoon.
+            </p>
+        </div>
+
+        <div class="viz-container" style="margin-top: 1.5rem;">
+            <h4>Demand Profile Types: 2025</h4>
+            <iframe src="outputs/fix_demand_profiles_2025.html" height="450"></iframe>
+        </div>
+
+        <div class="viz-container" style="margin-top: 1.5rem;">
+            <h4>Demand Type Map: 2018</h4>
+            <iframe src="outputs/fix_demand_map_2018.html" height="650"></iframe>
+            <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 0.75rem; margin-bottom: 0;">
+                Zones coloured by their demand type. Hover for zone name and type assignment.
+            </p>
+        </div>
+            <iframe src="outputs/fix_demand_map_2018.html" height="650"></iframe>
+        </div>
+
+        <div class="viz-container" style="margin-top: 1.5rem;">
+            <h4>Demand Type Map: 2025</h4>
+            <iframe src="outputs/fix_demand_map_2025.html" height="650"></iframe>
+        </div>
+    </section>
+
+
+    <!-- ================================================================== -->
+    <!-- PART III: SYNTHESIS                                                -->
+    <!-- ================================================================== -->
+
+    <section id="synthesis">
+        <span class="section-label">Part III</span>
+        <h2>Prediction Scorecard</h2>
+
+        <p>
+            Each of the six predictions derived from MDP theory was evaluated against the data.
+            All six are directionally consistent with the observed patterns, but the strength of
+            evidence varies. Predictions are rated as
+            <span class="strength-badge strength-strong">Strong</span> (large effect, less
+            vulnerable to alternative explanations),
+            <span class="strength-badge strength-moderate">Moderate</span> (directionally
+            consistent but with meaningful confounders or methodological caveats), or
+            <span class="strength-badge strength-weak">Weak</span> (fragile metric or evidence
+            too sensitive to analytical choices).
+        </p>
+
+        <table class="scorecard-table">
+            <thead>
+                <tr>
+                    <th>Prediction</th>
+                    <th>Result</th>
+                    <th>Strength</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Airport growth</strong></td>
+                    <td>JFK + LaGuardia combined pickup share rose 48%</td>
+                    <td><span class="strength-badge strength-strong">Strong</span></td>
+                    <td class="notes-cell">Clear directional change with large magnitude. However, airport ground transportation policies also changed over this period (terminal access restrictions for non-app hails), which could independently drive this.</td>
+                </tr>
+                <tr>
+                    <td><strong>Manhattan core decline</strong></td>
+                    <td>Top-3 zones lost 34&ndash;39% of their pickup share</td>
+                    <td><span class="strength-badge strength-strong">Strong</span></td>
+                    <td class="notes-cell">Large, consistent decline across multiple central zones. Post-pandemic remote work is an equally plausible explanation that cannot be ruled out with this design.</td>
+                </tr>
+                <tr>
+                    <td><strong>Lower concentration</strong></td>
+                    <td>Gini: 0.511 to 0.440; bootstrap 95% CIs do not overlap</td>
+                    <td><span class="strength-badge strength-moderate">Moderate</span></td>
+                    <td class="notes-cell">Direction is correct and statistically confirmed by bootstrap. Without a counterfactual, it is unclear whether this exceeds what market share growth alone would produce (more trips = more zones with non-trivial activity).</td>
+                </tr>
+                <tr>
+                    <td><strong>Reduced spatial clustering</strong></td>
+                    <td>Moran's I: 0.55 to 0.28 (both p&lt;0.001)</td>
+                    <td><span class="strength-badge strength-strong">Strong</span></td>
+                    <td class="notes-cell">Nearly halved. This is the most robust finding because Moran's I is less mechanically affected by volume growth than the Gini coefficient.</td>
+                </tr>
+                <tr>
+                    <td><strong>More localised matching</strong></td>
+                    <td>Zone localization: 29.9% to 33.4%; trip distance: 4.96 to 5.27 km</td>
+                    <td><span class="strength-badge strength-weak">Weak</span></td>
+                    <td class="notes-cell">The boundary-independent localization metric shows a modest increase, but mean trip distance rose, contradicting the prediction. The intra-cluster metric (63% to 72%) overstates the effect due to cluster boundary differences.</td>
+                </tr>
+                <tr>
+                    <td><strong>Stable structure</strong></td>
+                    <td>Mean centroid shift: 4.22 km; aggregate temporal JSD: 0.0025</td>
+                    <td><span class="strength-badge strength-moderate">Moderate</span></td>
+                    <td class="notes-cell">Centroid shifts are small on average, but one cluster shifted 11.6 km. Temporal JSD is low overall, but outer-borough clusters (Brooklyn, Bronx) shifted 2&ndash;4x more than Manhattan clusters. Compositional analysis shows the spatial mix within each hour did change.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pull-quote" style="margin-top: 2.5rem;">
+            The combination of stable temporal patterns and reduced spatial autocorrelation is
+            the most informative signal. <em>When</em> people use the service did not change
+            substantially, but <em>where</em> demand concentrates, and how sharply it clusters
+            geographically, shifted. Both the Gini coefficient and Moran's I fell, indicating
+            that demand became more evenly distributed in aggregate and less spatially polarized.
+            These patterns are consistent with a dispatch system that routes supply toward
+            underserved zones, but the evidence is qualified by the elimination of the traditional
+            FHV sector, rising trip distances, and the difficulty of separating algorithmic effects
+            from post-pandemic behavioural shifts.
+        </div>
+    </section>
+
+
+    <!-- INTERPRETATION -->
+    <section id="interpretation" style="padding-bottom: 2.5rem;">
+        <span class="section-label">Synthesis</span>
+        <h2>Interpretation</h2>
+
+        <p style="max-width: 760px; margin-bottom: 2.5rem;">
+            The geographic, temporal, spatial autocorrelation, and trip flow results point to
+            five main observations.
+        </p>
+
+        <div class="conclusion-grid">
+            <div class="conclusion-card">
+                <div class="conclusion-number">01</div>
+                <div class="conclusion-content">
+                    <h4>Supply-side reallocation, not demand-side reorganization</h4>
+                    <p>
+                        Temporal patterns (peak hours, daily distribution) remained stable between
+                        years while geographic patterns shifted substantially. The aggregate
+                        Jensen-Shannon divergence of 0.0025 between the 2018 and 2025 hourly
+                        profiles confirms this quantitatively. If changes in rider behaviour were
+                        the primary driver, both dimensions should have moved. The stability of
+                        the temporal dimension points toward mechanisms operating on where drivers
+                        are dispatched, not on when or why riders request trips. However,
+                        compositional analysis reveals that the spatial mix within each hour did
+                        shift, with outer-borough clusters contributing more to each hour in 2025.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">02</div>
+                <div class="conclusion-content">
+                    <h4>Spatial dispersion within a stable structure</h4>
+                    <p>
+                        Both inequality measures declined: the Gini fell from 0.511 to 0.440
+                        (bootstrap CIs non-overlapping) and Moran's I from 0.55 to 0.28. Previously
+                        underserved outer-borough zones gained enough activity to become
+                        statistically indistinguishable from their surroundings. The 4.22 km average
+                        cluster centroid shift indicates these changes occurred within the existing
+                        geographic structure of NYC demand, not through fundamental reorganization.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">03</div>
+                <div class="conclusion-content">
+                    <h4>Airport zones replaced Manhattan core as the top demand centres</h4>
+                    <p>
+                        JFK displaced Midtown Center as the highest-volume pickup zone. Combined
+                        airport pickup share rose 48%, while the top-3 Manhattan zones declined
+                        34&ndash;39%. Under MDP theory, airports carry high future position value
+                        because drivers completing airport trips are well-positioned for return
+                        fares, making them attractive dispatch destinations for the algorithm.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">04</div>
+                <div class="conclusion-content">
+                    <h4>Trip localization is weak and distances increased</h4>
+                    <p>
+                        The boundary-independent localization metric rose modestly (29.9% to 33.4%),
+                        but mean trip distance increased from 4.96 km to 5.27 km. These results
+                        partially contradict the prediction that MDP matching should produce shorter,
+                        more local trips. The increase in airport trips, which are among the longest
+                        in the dataset, likely accounts for the distance increase and represents a
+                        trade-off: MDP matching may improve system-wide efficiency while producing
+                        longer individual trips to high-value destinations.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">05</div>
+                <div class="conclusion-content">
+                    <h4>The traditional FHV sector was eliminated</h4>
+                    <p>
+                        The "Other FHV" category went from 61% of all for-hire trips to 0%. This
+                        is the largest structural confounder. Traditional car services served
+                        specific outer-borough communities; their absorption by Uber means that
+                        some of the geographic dispersion reflects the inheritance of pre-existing
+                        trip patterns rather than algorithmic redistribution. Lyft also grew (16%
+                        to 25%), further complicating the attribution of spatial changes to Uber's
+                        dispatch algorithm specifically.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- LIMITATIONS -->
+    <section>
+        <h2>Limitations</h2>
+
+        <div class="two-col">
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Temporal Coverage</h4>
+                <p>
+                    The data covers January only in each year. Seasonal variation is not captured,
+                    and results may differ in summer months or during holiday periods. A fuller
+                    analysis would compare multiple months across years. Intermediate January
+                    snapshots (2019&ndash;2024) would show whether the spatial changes were gradual
+                    or discontinuous around specific events.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Market Structure</h4>
+                <p>
+                    The elimination of the traditional FHV sector (61% of 2018 trips) is the
+                    dominant confounder. Uber's 2025 geographic footprint partly reflects the
+                    absorption of trips that previously belonged to community car services with
+                    different spatial coverage. Separating algorithmic effects from market
+                    consolidation effects would require data on the geographic profile of the
+                    absorbed operators.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Algorithm Opacity</h4>
+                <p>
+                    Uber's actual dispatch algorithm is proprietary. The MDP framework used here
+                    derives from Xu et al. (2018), a published research paper. The analysis tests
+                    predictions from that framework against observable patterns, but cannot confirm
+                    which specific algorithm Uber deployed or when.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Distance Measurement</h4>
+                <p>
+                    Trip distances are computed as great-circle distances between zone centroids,
+                    not actual trip routes. This approximation understates true distances (roads are
+                    not straight lines) and conflates trips within the same zone as zero distance.
+                    Actual trip duration and fare data, where available, would provide better
+                    measures of trip length and efficiency.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Cluster Boundaries</h4>
+                <p>
+                    K-means clusters are fit independently per year. The intra-cluster trip share
+                    increase (63% to 72%) is partly an artifact of differently drawn boundaries.
+                    The zone-level localization metric (29.9% to 33.4%) is boundary-independent
+                    and provides a more conservative estimate of localization change.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Alternative Explanations</h4>
+                <p>
+                    Post-pandemic commuting behaviour, airport ground transportation policy
+                    changes, the 2019 TLC vehicle cap, Uber's own pricing adjustments, and the
+                    competitive dynamics between Uber and Lyft are all plausible contributors
+                    that cannot be isolated in a two-period comparison.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- METHODOLOGICAL NOTES -->
+    <section id="methods" class="summary-section full-width-section">
+        <div class="container">
+            <h2>Methodological Notes</h2>
+
+            <div class="two-col">
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Data</h4>
+                    <p>
+                        NYC TLC public trip records (Parquet format). January 2018: 19.8M total FHV
+                        trips (4.5M Uber, 3.1M Lyft, 12.2M other). January 2025: 20.4M total FHV
+                        trips (15.4M Uber, 5.0M Lyft, 0 other). 263 TLC taxi zones. Uber identified
+                        via dispatching base number (2018) and HVFHS license number (2025). Zone
+                        centroids from NYC Open Data shapefile.
+                    </p>
+                </div>
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Geographic Methods</h4>
+                    <p>
+                        K-means clustering (k=6) on zone centroid lat/lon. Clusters matched across
+                        years by geographic proximity (Haversine distance). Gini coefficient and
+                        Lorenz curves for concentration. Bootstrap confidence intervals on Gini
+                        (1,000 iterations resampling zones). Zone-level localization (K=5 nearest
+                        zones by centroid distance). Trip distance via vectorized Haversine on
+                        centroid coordinates.
+                    </p>
+                </div>
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Spatial Methods</h4>
+                    <p>
+                        Global Moran's I and local LISA (KNN weights, k=6, row-standardized) for
+                        spatial autocorrelation. Kolmogorov-Smirnov test for distributional
+                        comparison of pickup/dropoff mismatch ratios. Levene's test for variance
+                        equality.
+                    </p>
+                </div>
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Temporal Methods</h4>
+                    <p>
+                        Jensen-Shannon divergence (JSD) between 2018 and 2025 hourly pickup
+                        distributions, computed at aggregate and per-cluster levels. Demand
+                        typology clustering via K-means (k=4) on standardized 24-dimensional
+                        hourly profile vectors per zone.
+                    </p>
+                </div>
+            </div>
+
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 1rem;">
+                <strong>Reference:</strong> Xu et al. (2018). "Large-scale order dispatch in on-demand
+                ride-hailing platforms." <em>KDD '18.</em> MDP framework based on published research.
+                Analysis independent of any proprietary system.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin: 2.5rem 0;">
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">K-Means Clustering</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Geospatial Analysis</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Spatial Autocorrelation (LISA)</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Markov Decision Process</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Gini Coefficient</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Bootstrap CI</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Jensen-Shannon Divergence</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">OD Flow Analysis</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">NYC TLC Data</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Python</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">PySAL / GeoPandas</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Plotly</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- APPENDIX                                                           -->
+    <!-- ================================================================== -->
+
+    <section id="appendix" class="summary-section full-width-section">
+        <div class="container">
+            <h2>Appendix</h2>
+
+            <h3>Bootstrap Gini Confidence Intervals</h3>
+
+            <p>
+                Zone-level trip counts were resampled 1,000 times with replacement, and the Gini
+                coefficient recomputed for each iteration. The resulting distributions for 2018
+                and 2025 do not overlap at the 95% level, confirming the observed decline is not
+                a sampling artifact.
+            </p>
+
+            <div class="viz-container">
+                <h4>Bootstrap Distribution of Gini Coefficients</h4>
+                <iframe src="outputs/ext9_bootstrap_gini.html" height="450"></iframe>
+            </div>
+
+            <h3>LISA Cluster Maps</h3>
+
+            <p>
+                Local Indicators of Spatial Association (LISA) identify statistically significant
+                spatial clusters. Red zones are hot spots (high demand surrounded by high demand);
+                blue zones are cold spots. The spatial weights matrix uses K=6 nearest neighbours
+                with row standardization.
+            </p>
+
+            <div class="viz-container">
+                <h4>LISA Map: 2018 (Global Moran's I = 0.55, p &lt; 0.001)</h4>
+                <iframe src="outputs/lisa_map_2018.html" height="700"></iframe>
+            </div>
+
+            <div class="viz-container" style="margin-top: 1.5rem;">
+                <h4>LISA Map: 2025 (Global Moran's I = 0.28, p &lt; 0.001)</h4>
+                <iframe src="outputs/lisa_map_2025.html" height="700"></iframe>
+            </div>
+
+            <h3>Pickup/Dropoff Balance</h3>
+
+            <p>
+                The pickup-to-dropoff ratio per zone (PU/(PU+DO)) measures whether a zone is a
+                net origin or destination. A value of 0.5 indicates perfect balance. The KS test
+                detected a significant distributional shift (D&nbsp;=&nbsp;0.21,
+                p&nbsp;&lt;&nbsp;0.001), while Levene's test found no change in variance
+                (p&nbsp;=&nbsp;0.95).
+            </p>
+
+            <div class="viz-container">
+                <h4>Pickup/Dropoff Ratio Distribution (2018 vs. 2025)</h4>
+                <iframe src="outputs/ext10_mismatch_ratios.html" height="500"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
+            <a href="/cdn-cgi/l/email-protection#224e0c4e5749514b41624e51470c43410c5749" class="social-link">Email</a>
+        </div>
+    </footer>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leonardo Luksic - Data Science Portfolio. Applied econometrics, clustering methods, and spatial analysis for policy evaluation and business analytics. MPA in Data Science, LSE.">
+    <meta property="og:title" content="Leonardo Luksic - Data Science Portfolio">
+    <meta property="og:description" content="Leonardo Luksic - Data Science Portfolio. Applied econometrics, clustering methods, and spatial analysis for policy evaluation and business analytics. MPA in Data Science, LSE.">
+    <meta property="og:type" content="website">
+    <title>Leonardo Luksic - Data Science Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav>
+            <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true">
+            <a href="index.html" class="nav-home" aria-label="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 8.5V16C5 16.3 5.2 16.5 5.5 16.5H8.5V12.5C8.5 12.2 8.7 12 9 12H11C11.3 12 11.5 12.2 11.5 12.5V16.5H14.5C14.8 16.5 15 16.3 15 16V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-home-label">Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Leonardo Luksic</h1>
+                <div class="subtitle">Data Scientist</div>
+                <div class="tagline">MPA in Data Science for Public Policy · LSE</div>
+                <p class="hero-description">
+                    I work on applied econometrics, clustering methods, and spatial analysis 
+                    for policy evaluation and business analytics. Current focus: natural resource 
+                    economics with Moody's Ratings.
+                </p>
+                <div class="hero-cta">
+                    <a href="projects.html" class="cta-btn btn-primary">View Projects</a>
+                    <a href="contact.html" class="cta-btn btn-secondary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Showcase -->
+    <section class="showcase-section">
+        <h2 class="section-title">From the Work</h2>
+        <p class="section-subtitle">
+            Outputs from recent projects. Click any visualization to expand or follow through
+            to the full write-up.
+        </p>
+
+        <div class="showcase-grid">
+
+            <!-- Row 1: Capstone production map + Uber -->
+            <div class="showcase-item" data-type="iframe" data-src="projects/capstone/outputs/cluster/map_production.html" data-link="projects/capstone/page.html">
+                <div class="showcase-frame">
+                    <iframe src="projects/capstone/outputs/cluster/map_production.html" loading="lazy" title="Global resource production clusters"></iframe>
+                    <div class="showcase-overlay"></div>
+                </div>
+                <div class="showcase-caption">
+                    <span class="showcase-project">Moody's Capstone</span>
+                    <span class="showcase-title">Resource production intensity across 208 countries, 2019</span>
+                </div>
+            </div>
+
+            <div class="showcase-item" data-type="iframe" data-src="projects/uber/outputs/1_uber_2018_clusters.html" data-link="projects/uber/page.html">
+                <div class="showcase-frame">
+                    <iframe src="projects/uber/outputs/1_uber_2018_clusters.html" loading="lazy" title="Uber NYC demand clusters"></iframe>
+                    <div class="showcase-overlay"></div>
+                </div>
+                <div class="showcase-caption">
+                    <span class="showcase-project">Uber NYC</span>
+                    <span class="showcase-title">Spatial demand clusters, 2018 pickup geography</span>
+                </div>
+            </div>
+
+            <!-- Row 2: PCA scatter + Taylor rule -->
+            <div class="showcase-item" data-type="iframe" data-src="projects/capstone/outputs/cluster/pca_scatter_clusters.html" data-link="projects/capstone/page.html">
+                <div class="showcase-frame">
+                    <iframe src="projects/capstone/outputs/cluster/pca_scatter_clusters.html" loading="lazy" title="PCA scatter of country clusters"></iframe>
+                    <div class="showcase-overlay"></div>
+                </div>
+                <div class="showcase-caption">
+                    <span class="showcase-project">Moody's Capstone</span>
+                    <span class="showcase-title">PCA projection of country clusters by extraction profile</span>
+                </div>
+            </div>
+
+            <div class="showcase-item" data-type="img" data-src="projects/central-bank/outputs/taylor_prescription_vs_actual.png" data-link="projects/central-bank/page.html">
+                <div class="showcase-frame showcase-frame-img">
+                    <img src="projects/central-bank/outputs/taylor_prescription_vs_actual.png" alt="Taylor rule prescription vs actual Fed rate" loading="lazy">
+                </div>
+                <div class="showcase-caption">
+                    <span class="showcase-project">Monetary Policy</span>
+                    <span class="showcase-title">Taylor rule prescription versus actual federal funds rate, 1955-2024</span>
+                </div>
+            </div>
+
+            <!-- Row 3: Pink tax charts -->
+            <div class="showcase-item" data-type="iframe" data-src="projects/pink-tax/outputs/charts/regression/04_price_distributions.html" data-link="projects/pink-tax/page.html">
+                <div class="showcase-frame">
+                    <iframe src="projects/pink-tax/outputs/charts/regression/04_price_distributions.html" loading="lazy" title="Price distributions by gendered product category"></iframe>
+                    <div class="showcase-overlay"></div>
+                </div>
+                <div class="showcase-caption">
+                    <span class="showcase-project">Pink Tax</span>
+                    <span class="showcase-title">Price distributions across gendered product categories in UK supermarkets</span>
+                </div>
+            </div>
+
+            <div class="showcase-item" data-type="iframe" data-src="projects/pink-tax/outputs/charts/validation/color_importance.html" data-link="projects/pink-tax/page.html">
+                <div class="showcase-frame">
+                    <iframe src="projects/pink-tax/outputs/charts/validation/color_importance.html" loading="lazy" title="Feature importance for gender classification"></iframe>
+                    <div class="showcase-overlay"></div>
+                </div>
+                <div class="showcase-caption">
+                    <span class="showcase-project">Pink Tax</span>
+                    <span class="showcase-title">Colour feature importance in predicting target gender of consumer products</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Fullscreen Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+            <a class="lightbox-link" id="lightbox-link" href="#" target="_self">View full project &rarr;</a>
+            <div class="lightbox-content" id="lightbox-content"></div>
+        </div>
+
+        <div class="showcase-cta">
+            <a href="projects.html" class="cta-btn btn-secondary">All projects and write-ups &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
+            <a href="mailto:l.luksic@lse.ac.uk" class="social-link">Email</a>
+        </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script>
+    (function() {
+        var lightbox = document.getElementById('lightbox');
+        var content = document.getElementById('lightbox-content');
+        var link = document.getElementById('lightbox-link');
+        var closeBtn = document.getElementById('lightbox-close');
+
+        document.querySelectorAll('.showcase-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                var type = item.dataset.type;
+                var src = item.dataset.src;
+                var projectLink = item.dataset.link;
+
+                content.innerHTML = '';
+
+                if (type === 'iframe') {
+                    var iframe = document.createElement('iframe');
+                    iframe.src = src;
+                    iframe.style.cssText = 'width:100%;height:100%;border:none;';
+                    content.appendChild(iframe);
+                } else {
+                    var img = document.createElement('img');
+                    img.src = src;
+                    img.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;';
+                    content.appendChild(img);
+                }
+
+                link.href = projectLink;
+                lightbox.classList.add('lightbox-open');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('lightbox-open');
+            document.body.style.overflow = '';
+            content.innerHTML = '';
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+    })();
+    </script>
+
+</body>
+</html>

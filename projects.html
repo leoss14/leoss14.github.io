@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data science projects by Leonardo Luksic. Econometric analysis, machine learning, spatial statistics, and policy evaluation.">
+    <meta property="og:title" content="Projects - Leonardo Luksic">
+    <meta property="og:description" content="Data science projects by Leonardo Luksic. Econometric analysis, machine learning, spatial statistics, and policy evaluation.">
+    <meta property="og:type" content="website">
+    <title>Projects - Leonardo Luksic</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav>
+            <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true">
+            <a href="index.html" class="nav-home" aria-label="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 8.5V16C5 16.3 5.2 16.5 5.5 16.5H8.5V12.5C8.5 12.2 8.7 12 9 12H11C11.3 12 11.5 12.2 11.5 12.5V16.5H14.5C14.8 16.5 15 16.3 15 16V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-home-label">Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </nav>
+    </div>
+
+    <!-- Projects Section -->
+    <section style="padding-top: calc(var(--nav-height) + 4rem);">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">Selected work in econometrics, machine learning, and spatial analysis.</p>
+        <div class="projects-grid">
+
+            <!-- Moody's Capstone -->
+            <div class="project-card" onclick="location.href='projects/capstone/page.html'">
+                <div class="project-header">
+                    <div class="project-tag">Economic Complexity</div>
+                    <h3 class="project-title">Industrial Upgrading in Resource-Rich Markets</h3>
+                    <p class="project-desc">
+                        Capstone with Moody's Ratings. Panel of 54 resource-rich developing
+                        countries over 1995 to 2019, testing which structural conditions allow
+                        commodity exporters to develop value-added industries. Case studies on
+                        the Republic of Congo, Azerbaijan, and Chile.
+                    </p>
+                </div>
+                <div class="project-body">
+                    <div class="project-skills">
+                        <span class="skill-tag">Pooled OLS</span>
+                        <span class="skill-tag">LASSO / Ridge / ElasticNet</span>
+                        <span class="skill-tag">Random Forest</span>
+                        <span class="skill-tag">PCA / K-Means</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-link">View Details &rarr;</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RL Monetary Policy -->
+            <div class="project-card" onclick="location.href='projects/central-bank/page.html'">
+                <div class="project-header">
+                    <div class="project-tag">Econometrics</div>
+                    <h3 class="project-title">US Monetary Policy Rules</h3>
+                    <p class="project-desc">
+                        Regime-switching analysis of Federal Reserve interest rate decisions using 
+                        70 years of macroeconomic data. Estimates Taylor rule parameters across 
+                        inflation regimes and tests for structural breaks in policy behaviour.
+                    </p>
+                </div>
+                <div class="project-body">
+                    <div class="project-skills">
+                        <span class="skill-tag">Markov-Switching</span>
+                        <span class="skill-tag">Taylor Rule</span>
+                        <span class="skill-tag">Structural Breaks</span>
+                        <span class="skill-tag">Bootstrap Inference</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-link">View Details &rarr;</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Uber Spatial Analysis -->
+            <div class="project-card" onclick="location.href='projects/uber/page.html'">
+                <div class="project-header">
+                    <div class="project-tag">Spatial Analysis</div>
+                    <h3 class="project-title">Uber NYC Demand Patterns</h3>
+                    <p class="project-desc">
+                        Descriptive analysis of how Uber pickup geography shifted between 2018 and 2025. 
+                        Documents increased concentration at airports (+48%) and decline in Manhattan core zones.
+                    </p>
+                </div>
+                <div class="project-body">
+                    <div class="project-skills">
+                        <span class="skill-tag">K-Means</span>
+                        <span class="skill-tag">Moran's I / LISA</span>
+                        <span class="skill-tag">Gini / Lorenz</span>
+                        <span class="skill-tag">GeoPandas</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-link">View Details &rarr;</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Pink Tax Analysis -->
+            <div class="project-card" onclick="location.href='projects/pink-tax/page.html'">
+                <div class="project-header">
+                    <div class="project-tag">Text Analysis</div>
+                    <h3 class="project-title">Pink Tax Classification</h3>
+                    <p class="project-desc">
+                        Building a classifier to identify gendered products in UK supermarket data using 
+                        TF-IDF text features and color extraction from product images. 84% accuracy vs human labels.
+                    </p>
+                </div>
+                <div class="project-body">
+                    <div class="project-skills">
+                        <span class="skill-tag">TF-IDF</span>
+                        <span class="skill-tag">Gradient Boosting</span>
+                        <span class="skill-tag">Color Extraction</span>
+                        <span class="skill-tag">Web Scraping</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-link">View Details &rarr;</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Chile mineral supply chain -->
+            <div class="project-card" onclick="location.href='projects/Chile/page.html'">
+                <div class="project-header">
+                    <div class="project-tag">Spatial &amp; Network Analysis</div>
+                    <h3 class="project-title">Chile Mineral Supply Chain</h3>
+                    <p class="project-desc">
+                        Facility-level network of mineral production, refinement, and export
+                        in Chile across 17 commodities. Combines Sernageomin, COCHILCO, Aduanas,
+                        and USGS data into a single mapped pipeline covering 363+ facilities.
+                    </p>
+                </div>
+                <div class="project-body">
+                    <div class="project-skills">
+                        <span class="skill-tag">Network Analysis</span>
+                        <span class="skill-tag">GeoPandas</span>
+                        <span class="skill-tag">Leaflet</span>
+                        <span class="skill-tag">Web Scraping</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-link">View Details &rarr;</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
+            <a href="mailto:l.luksic@lse.ac.uk" class="social-link">Email</a>
+        </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Italian Export Market Analysis. Product-level trade data from the Atlas of Economic Complexity, examining Italy's export structure, comparative advantages, and diversification opportunities across 1,241 products and 9 sectors (1995-2022).">
+    <meta property="og:title" content="Italian Export Market Analysis | Leonardo Luksic">
+    <meta property="og:description" content="Italian Export Market Analysis. Product-level trade data from the Atlas of Economic Complexity.">
+    <meta property="og:type" content="website">
+    <title>Italian Export Market Analysis | Leonardo Luksic</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/project-shared.css">
+    <style>
+        .viz-container { position:relative; width:100%; border-radius:8px; overflow:hidden; margin:1.5rem 0; }
+        .viz-container iframe { width:100%; border:none; display:block; border-radius:8px; background:#fafafa; }
+        .two-col .viz-container iframe { min-height:420px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav>
+            <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true">
+            <a href="../../index.html" class="nav-home" aria-label="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 8.5V16C5 16.3 5.2 16.5 5.5 16.5H8.5V12.5C8.5 12.2 8.7 12 9 12H11C11.3 12 11.5 12.2 11.5 12.5V16.5H14.5C14.8 16.5 15 16.3 15 16V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-home-label">Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+            <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></label>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="project-hero" style="padding-top: calc(var(--nav-height) + 4.5rem); padding-bottom: 3.5rem;">
+        <h1 style="font-size: clamp(2.4rem, 5vw, 3.2rem); max-width: 850px; margin-bottom: 1.5rem;">Italian Export Market Analysis</h1>
+        <p class="subtitle" style="font-size: 1.15rem; max-width: 780px; line-height: 1.8; color: var(--text-secondary);">
+            Product-level trade data from the Atlas of Economic Complexity, examining Italy's export structure, comparative advantages, and diversification opportunities across 1,241 products and 9 sectors (1995–2022). Part of a broader growth diagnostic for PP413 at the LSE School of Public Policy.
+        </p>
+        <div class="project-meta-bar" style="margin-top: 2rem;">
+            <div class="meta-item"><span class="meta-label">Classification</span><span class="meta-value">HS-92, 4-digit</span></div>
+            <div class="meta-item"><span class="meta-label">Period</span><span class="meta-value">1995&ndash;2022</span></div>
+            <div class="meta-item"><span class="meta-label">Products</span><span class="meta-value">1,241 across 9 sectors</span></div>
+        </div>
+    </section>
+
+
+    <!-- BACKGROUND -->
+    <section id="context">
+        <span class="section-label">Background</span>
+        <h2>Concepts &amp; Approach</h2>
+
+        <p>
+            The analysis draws on the economic complexity framework developed by Hidalgo and Hausmann,
+            which measures a country&rsquo;s productive capabilities through the sophistication and
+            diversity of its exports. Rather than treating all export revenue equally, this framework
+            distinguishes between products that require advanced knowledge, institutional capacity,
+            and specialised inputs (pharmaceuticals, precision instruments, turbines) and those that
+            do not (raw materials, simple manufactures). Countries that export many complex products
+            tend to have higher incomes and faster growth.
+        </p>
+        <p>
+            Four metrics structure the analysis. <strong>Revealed Comparative Advantage (RCA)</strong>
+            compares Italy&rsquo;s share of a product in its own export basket to that product&rsquo;s
+            share in world trade; an RCA above 1.0 means Italy exports proportionally more of that
+            product than the global average. <strong>Product Complexity Index (PCI)</strong> ranks each
+            product by how many countries can competitively produce it and how diversified those countries
+            are; higher PCI indicates rarer, more sophisticated capabilities.
+            <strong>Distance</strong> measures how far a product sits from Italy&rsquo;s current export
+            basket in the product space. <strong>Complexity Outlook Gain (COG)</strong> estimates the
+            improvement in a country&rsquo;s overall complexity position if it were to develop a
+            comparative advantage in a given product.
+        </p>
+
+        <div class="divider"><span>Data &amp; Pipeline</span></div>
+
+        <p>
+            The source data is the Harvard Growth Lab&rsquo;s Atlas of Economic Complexity dataset,
+            covering bilateral trade flows at the HS-92 4-digit product level. The pipeline computes
+            product-level and sector-level metrics for 2022 and time-series trends from 1995 to 2022
+            using 5-year rolling averages. Products are grouped into nine sectors: Agriculture,
+            Chemicals, Electronics, Machinery, Metals, Minerals, Stone, Textiles, and Vehicles.
+        </p>
+    </section>
+
+
+    <!-- PART I: THE DUAL ECONOMY -->
+    <section>
+        <span class="section-label">Part I</span>
+        <h2>A Dual Export Economy</h2>
+
+        <p>
+            Italy&rsquo;s ten largest exports by value immediately reveal a tension at the core of
+            its trade profile. The list mixes high-complexity manufactured goods (packaged
+            pharmaceuticals at $33B, thermostat valves at $8.3B with a PCI of 1.42, vehicle parts
+            at $14B) with products that require far less sophisticated capabilities (trunks and
+            leather goods at $10.7B, precious jewellery at $9.5B, leather shoes at $8.2B). Italy
+            generates large revenues from both ends of the complexity spectrum, but the lower end
+            contributes a disproportionate share.
+        </p>
+
+        <div class="viz-container">
+            <iframe loading="lazy" src="outputs/exports_value_product.html" height="500"></iframe>
+        </div>
+
+        <p>
+            The sector-level view makes this clearer. Machinery is Italy&rsquo;s largest sector
+            ($123B) and its most complex (weighted PCI of 1.12). But the next three sectors by
+            size, Chemicals ($112B), Agriculture ($92B), and Textiles ($69B), average PCIs of
+            0.71, &minus;0.54, and &minus;0.43 respectively. Agriculture and Textiles together
+            account for over $160 billion in exports while pulling the country&rsquo;s overall
+            complexity downward.
+        </p>
+
+        <div class="two-col">
+            <div class="viz-container">
+                <h4>Sector Export Value</h4>
+                <iframe loading="lazy" src="outputs/sector_value.html" height="420"></iframe>
+            </div>
+            <div class="viz-container">
+                <h4>Sector Product Complexity</h4>
+                <iframe loading="lazy" src="outputs/sector_pci.html" height="420"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PART II: DOMINANCE IN LOW COMPLEXITY -->
+    <section id="dominance" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part II</span>
+            <h2>Dominance in Low-Complexity Niches</h2>
+
+            <p>
+                Italy&rsquo;s strongest comparative advantages and highest global market shares
+                concentrate in products with low or negative complexity. Patent leather commands 64%
+                of world exports at a PCI of &minus;0.35. Wool stock holds 51% (PCI &minus;0.16),
+                chamois leather 48% (PCI &minus;0.65), and tomatoes 40% (PCI &minus;1.50). Carded
+                wool fabric is the only product in the top ten by market share with a PCI above 1.0.
+            </p>
+            <p>
+                This is the signature of a specialisation trap: Italy has built deep comparative
+                advantages in mature niches where few competitors invest because the products offer
+                limited growth potential. Meanwhile, Italy&rsquo;s most complex exports (oxometallic
+                salts at PCI 3.25, precious compounds at PCI 2.77, machining centres at PCI 2.22)
+                remain small in absolute terms, from $36M to $439M. The standout exception is
+                Machines n.e.c. at $5.9B with a PCI of 2.05, but it is an outlier.
+            </p>
+
+            <div class="two-col">
+                <div class="viz-container">
+                    <h4>Top Products by Global Market Share</h4>
+                    <iframe loading="lazy" src="outputs/exports_ms_product.html" height="480"></iframe>
+                </div>
+                <div class="viz-container">
+                    <h4>Most Complex Products Exported</h4>
+                    <iframe loading="lazy" src="outputs/exports_pci_product.html" height="480"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PART III: NET EXPORTS -->
+    <section>
+        <span class="section-label">Part III</span>
+        <h2>Net Exports: Machinery Carries the Economy</h2>
+
+        <p>
+            Gross export figures overstate competitive strength in sectors where Italy simultaneously
+            imports large quantities of similar goods. Net exports (exports minus imports) show where
+            Italy is a genuine supplier to the world.
+        </p>
+        <p>
+            The net picture is stark. Machinery generates $52.6B in net exports, more than the next
+            five positive sectors combined. Textiles ($25.7B net), Stone ($11.8B), Agriculture ($9.9B),
+            Vehicles ($9.4B), and Chemicals ($9.4B) are all positive but at considerably smaller
+            scale. On the deficit side, Minerals records &minus;$93.4B, reflecting Italy&rsquo;s
+            near-total dependence on imported energy. Electronics is also negative at &minus;$8.2B,
+            meaning Italy consumes more electronic goods than it produces.
+        </p>
+        <p>
+            At the product level, thermostat valves ($5.7B net, PCI 1.42) and Machines n.e.c.
+            ($3.4B net, PCI 2.05) drive the machinery surplus. But the largest individual net
+            exporters also include wine ($7.6B, PCI &minus;0.51), trunks ($7.6B, PCI &minus;0.51),
+            and jewellery ($7.2B, PCI 0.29), again underscoring the dependence on low-complexity
+            goods for trade surpluses.
+        </p>
+
+        <div class="two-col">
+            <div class="viz-container">
+                <h4>Net Exports by Sector</h4>
+                <iframe loading="lazy" src="outputs/net_sector_value.html" height="420"></iframe>
+            </div>
+            <div class="viz-container">
+                <h4>Top Products by Net Export Value</h4>
+                <iframe loading="lazy" src="outputs/net_exports_value_product.html" height="420"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PART IV: TRENDS -->
+    <section id="trends" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part IV</span>
+            <h2>Sectoral Trends (1995&ndash;2022)</h2>
+
+            <p>
+                Three decades of data reveal how Italy&rsquo;s export composition has shifted. The
+                volume chart shows which sectors have gained or lost structural weight. The complexity
+                chart tracks whether each sector has been upgrading its product mix. All lines use
+                5-year rolling averages.
+            </p>
+            <p>
+                Two patterns stand out. First, Machinery and Chemicals have grown steadily in volume,
+                while Textiles and Stone, once pillars of the export basket, have stagnated. The 1995
+                treemap makes this visible: Textiles occupied a much larger share of total exports
+                than it does today. Second, the complexity trends show limited upgrading across most
+                sectors. Italy&rsquo;s Economic Complexity Index has actually declined over the past
+                decade, despite remaining the third-highest among its peer group. New products added
+                to the basket over the last 15 years contributed $2.4 billion, but 80% of that came
+                from tobacco processing, a pattern more characteristic of Spain or Greece than of
+                Germany or South Korea.
+            </p>
+
+            <div class="viz-container">
+                <iframe loading="lazy" src="outputs/export_value_trends.html" height="500"></iframe>
+            </div>
+
+            <div class="viz-container">
+                <iframe loading="lazy" src="outputs/pci_trends.html" height="500"></iframe>
+            </div>
+
+            <p>
+                Market share trends complete the picture. Even in sectors where Italy retains
+                comparative advantages (RCA above 1.0), its absolute market share has been declining,
+                meaning other countries are growing faster in the same products. Italy is not losing
+                its niches outright, but it is failing to grow them or to break into new ones.
+            </p>
+
+            <div class="two-col">
+                <div class="viz-container">
+                    <h4>RCA Trends</h4>
+                    <iframe loading="lazy" src="outputs/rca_trends.html" height="420"></iframe>
+                </div>
+                <div class="viz-container">
+                    <h4>Market Share Trends</h4>
+                    <iframe loading="lazy" src="outputs/market_share_trends.html" height="420"></iframe>
+                </div>
+            </div>
+
+            <div class="divider"><span>Export Composition Baseline</span></div>
+
+            <h3>1995 Export Basket</h3>
+            <p>
+                The treemap decomposes Italy&rsquo;s 1995 export basket by sector and product.
+                Comparing it to the 2022 rankings above shows where structural weight has shifted:
+                Textiles and Stone have contracted, while Chemicals and Machinery have expanded.
+            </p>
+
+            <div class="viz-container">
+                <iframe loading="lazy" src="outputs/exports_1995_treemap.html" height="650"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PART V: FIRM SIZE -->
+    <section>
+        <span class="section-label">Part V</span>
+        <h2>The Firm Size Problem</h2>
+
+        <p>
+            The growth diagnostic conducted for PP413 connects the export data to Italy&rsquo;s
+            underlying structural problem. More than 90% of all Italian firms are micro-enterprises
+            employing fewer than 10 workers, far more than any other major European economy. The
+            share of employment in micro and small firms accounts for about 55%, compared to roughly
+            30% in France or Germany.
+        </p>
+        <p>
+            Smaller firms produce fewer products, target fewer markets, and are less productive.
+            Most post-recession export growth has been driven by larger firms; small firms&rsquo;
+            exports have failed to keep pace since 2008. The overreliance on low-complexity sectors
+            can be attributed in large part to these smaller firms, which lack the scale and
+            capabilities to enter complex product markets.
+        </p>
+        <p>
+            The diagnostic identifies the cause: Italy&rsquo;s labour regulations and tax system
+            create sharp size-based thresholds that discourage expansion. Firms cluster below
+            regulatory cutoffs (15 employees for employment protections, revenue thresholds for
+            preferential tax regimes). This produces a self-reinforcing cycle: regulation keeps
+            firms small, small firms invest less in productivity and innovation, lower productivity
+            limits their ability to produce complex goods, and the absence of complex exports holds
+            back overall economic growth.
+        </p>
+    </section>
+
+
+    <!-- PART VI: OPPORTUNITIES -->
+    <section id="opportunities" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part VI</span>
+            <h2>Diversification Opportunities</h2>
+
+            <p>
+                The opportunity analysis identifies products where Italy does not hold a comparative
+                advantage (RCA below 1.0) but which exceed a minimum complexity threshold (PCI above
+                1.49). Each candidate is scored using three normalised variables: proximity to
+                Italy&rsquo;s current export basket, product complexity, and complexity outlook gain.
+                Three strategies apply different weights.
+            </p>
+            <p>
+                A notable finding is that all three strategies largely converge on the same products.
+                Cermets (PCI 1.80), flat-rolled alloy steel (PCI 1.76), instruments for chemical
+                analysis (PCI 1.61), and cermet utensil articles (PCI 2.14) appear in all three
+                top-10 lists. This happens because the most promising candidates are both close to
+                Italy&rsquo;s existing capabilities and high in complexity outlook gain. They cluster
+                in Metals, Machinery, and Chemicals, sectors where Italy already has productive
+                infrastructure but has not developed comparative advantages in these specific products.
+            </p>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-header"><h3>Low Hanging Fruit</h3></div>
+                    <div class="card-body">
+                        <p><strong>Weights:</strong> 75% proximity, 10% PCI, 15% COG</p>
+                        <p>Nearest products. Modest complexity gains, achievable short-term.</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-header"><h3>Balanced Strategy</h3></div>
+                    <div class="card-body">
+                        <p><strong>Weights:</strong> 50% proximity, 25% PCI, 25% COG</p>
+                        <p>Middle path between feasibility and structural upgrading.</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-header"><h3>Strategic Bets</h3></div>
+                    <div class="card-body">
+                        <p><strong>Weights:</strong> 40% proximity, 20% PCI, 40% COG</p>
+                        <p>Highest structural payoff. Requires longer time horizons.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                The scatter below shows the Balanced Strategy candidates. Horizontal axis is normalised
+                distance (lower = closer), vertical axis is normalised product complexity, and bubble
+                size reflects global export value.
+            </p>
+
+            <div class="viz-container">
+                <iframe loading="lazy" src="outputs/Balanced_Strategy.html" height="550"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- METHODOLOGY -->
+    <section id="methods" class="summary-section full-width-section">
+        <div class="container">
+            <h2>Methodological Notes</h2>
+            <div class="two-col">
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Data Processing</h4>
+                    <p>
+                        Source: Harvard Growth Lab Atlas of Economic Complexity (atlas_2022.dta).
+                        HS-92, 4-digit (1,241 products excluding &ldquo;Other&rdquo;). Product
+                        names from external CSV lookup. Net exports = export_value minus import_value.
+                        Sector mapping restricted to 2022 to prevent merge duplicates.
+                    </p>
+                </div>
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Metrics &amp; Aggregation</h4>
+                    <p>
+                        Product-level: RCA, PCI, distance, COG, market share, PCI percentile.
+                        Sector-level: export-value-weighted PCI, summed volumes, computed RCA and
+                        market shares. Time-series: 5-year rolling averages. PCI weighting uses gross
+                        export values to avoid zero-weight instability.
+                    </p>
+                </div>
+            </div>
+            <div class="two-col">
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Opportunity Scoring</h4>
+                    <p>
+                        Candidates: RCA &lt; 1.0 and PCI &gt; 1.49. Distance, PCI, COG min-max
+                        normalised. Proximity = 1 minus normalised distance. Three weighted composite
+                        scores per strategy.
+                    </p>
+                </div>
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Visualization</h4>
+                    <p>
+                        Interactive Plotly HTML embeds. Unified portfolio style: IBM Plex Sans,
+                        #fafafa background, muted 9-colour sector palette. Treemap via Plotly Express.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
+            <a href="/cdn-cgi/l/email-protection#b6da98dac3ddc5dfd5f6dac5d398d7d598c3dd" class="social-link">Email</a>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+feature,short,cat,r
+Political corruption index,Pol. Corruption,Governance,-0.4222235276896964
+"Death rates, crude per 1000 people",Death Rates,Human Capital & Infra,-0.35980808184455826
+Total natural resources rents (% of GDP),NR Rents,Resource Rents,-0.355847720720144
+Agriculture,Agriculture,Macro & Structure,-0.29807370505607234
+Lending interest rate (%),Lending Rate,Finance & Investment,-0.2666620852328191
+Oil rents (% of GDP),Oil Rents,Resource Rents,-0.22410583384775598
+Mineral rents (% of GDP),Mineral Rents,Resource Rents,-0.21146582104263903
+Capital depreciation rate,Depreciation,Finance & Investment,-0.11626223942163796
+"Inflation, consumer prices (annual %)",Inflation,Finance & Investment,-0.11529767380045847
+Landlocked,Landlocked,Macro & Structure,-0.08179423417628572
+Industry,Industry,Macro & Structure,-0.06521374594857854
+Adjusted savings: gross savings (% of GNI),Savings,Finance & Investment,-0.04109313326231208
+Real interest rate (%),Interest Rate,Finance & Investment,-0.03151651803101443
+"Primary net lending, General government, Percent of GDP",Primary Lending,Governance,-0.022093002904386913
+Natural gas rents (% of GDP),Gas Rents,Resource Rents,0.020424018135696474
+Trade (% of GDP),Trade,Macro & Structure,0.04516623871108136
+"Gross fixed capital formation, all, Constant prices, Percent of GDP",Capital Formation,Finance & Investment,0.10466662183651353
+Share of investment in GDP,Investment Share,Finance & Investment,0.13557312834034504
+Government revenue,Gov Revenue,Governance,0.21158609891397998
+Property rights,Property Rights,Governance,0.24869392808360066
+Mobile cellular subscriptions (per 100 people),Mobile Subs,Human Capital & Infra,0.2535965853612902
+Political stability — estimate,Political Stability,Governance,0.29453165409789966
+Urban population (% of total population),Urban Population,Macro & Structure,0.33006543463008275
+Rule of law index,Rule of Law,Governance,0.37987776148056934
+Services,Services,Macro & Structure,0.423141144833935
+Manufacturing,Manufacturing,Macro & Structure,0.4249841350332538
+"GDP per capita (constant prices, PPP)",GDP per Capita,Macro & Structure,0.4708062240295226
+Human capital index,Human Capital,Human Capital & Infra,0.5145018585696006
+"Life expectancy at birth, total (years)",Life Expectancy,Human Capital & Infra,0.5652313089806265
+Access to electricity (% of population),Electricity Access,Human Capital & Infra,0.593257644492692
+Domestic credit to private sector (% of GDP),Domestic Credit,Finance & Investment,0.6373797664600135

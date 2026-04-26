@@ -1,0 +1,70 @@
+Country Code,Country,ClusterLabels
+ALB,Albania,Forestry Intensive
+DZA,Algeria,Oil Exporters
+AGO,Angola,Oil Exporters
+ARG,Argentina,Oil Exporters
+AZE,Azerbaijan,Oil Exporters
+BHR,Bahrain,Petrostates
+BLR,Belarus,Forestry Intensive
+BEN,Benin,Forestry Intensive
+BOL,Bolivia,Major Producers
+BIH,Bosnia and Herzegovina,Forestry Intensive
+BWA,Botswana,Mining Exporters
+BRA,Brazil,Major Producers
+BFA,Burkina Faso,Forestry Intensive
+CMR,Cameroon,Oil Exporters
+CHN,China,Major Producers
+COL,Colombia,Major Producers
+COD,"Congo, Dem. Rep.",Forestry Intensive
+COG,"Congo, Rep.",Oil Exporters
+CIV,Cote d'Ivoire,Forestry Intensive
+DOM,Dominican Republic,Forestry Intensive
+ECU,Ecuador,Oil Exporters
+EGY,"Egypt, Arab Rep.",Oil Exporters
+GNQ,Equatorial Guinea,Oil Exporters
+SWZ,Eswatini,Forestry Intensive
+ETH,Ethiopia,Forestry Intensive
+GAB,Gabon,Oil Exporters
+GHA,Ghana,Forestry Intensive
+GTM,Guatemala,Forestry Intensive
+GIN,Guinea,Forestry Intensive
+HND,Honduras,Forestry Intensive
+IND,India,Forestry Intensive
+IDN,Indonesia,Major Producers
+IRN,"Iran, Islamic Rep.",Major Producers
+IRQ,Iraq,Oil Exporters
+JAM,Jamaica,Forestry Intensive
+KAZ,Kazakhstan,Major Producers
+KEN,Kenya,Forestry Intensive
+KWT,Kuwait,Petrostates
+LAO,Lao PDR,Forestry Intensive
+LBR,Liberia,Forestry Intensive
+MDG,Madagascar,Forestry Intensive
+MWI,Malawi,Forestry Intensive
+MYS,Malaysia,Oil Exporters
+MLI,Mali,Forestry Intensive
+MRT,Mauritania,Forestry Intensive
+MEX,Mexico,Major Producers
+MNG,Mongolia,Mining Exporters
+MOZ,Mozambique,Forestry Intensive
+MMR,Myanmar,Forestry Intensive
+NIC,Nicaragua,Forestry Intensive
+NER,Niger,Forestry Intensive
+NGA,Nigeria,Oil Exporters
+OMN,Oman,Petrostates
+PAK,Pakistan,Forestry Intensive
+PER,Peru,Major Producers
+QAT,Qatar,Petrostates
+SAU,Saudi Arabia,Petrostates
+ZAF,South Africa,Mining Exporters
+TZA,Tanzania,Forestry Intensive
+TUN,Tunisia,Oil Exporters
+UGA,Uganda,Forestry Intensive
+UKR,Ukraine,Major Producers
+ARE,United Arab Emirates,Petrostates
+UZB,Uzbekistan,Major Producers
+VEN,"Venezuela, RB",Petrostates
+VNM,Viet Nam,Forestry Intensive
+YEM,"Yemen, Rep.",Oil Exporters
+ZMB,Zambia,Forestry Intensive
+ZWE,Zimbabwe,Mining Exporters

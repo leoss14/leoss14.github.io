@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chile Mineral Supply Chain. A directed network model of Chilean mining, linking 461 facilities across extraction, processing, and export stages for 32 minerals using COCHILCO, Sernageomin, and Aduanas data.">
+    <meta property="og:title" content="Chile Mineral Supply Chain | Leonardo Luksic">
+    <meta property="og:description" content="A directed network model linking mines, smelters, refineries, and export ports across 32 minerals using COCHILCO, Sernageomin, and Aduanas data.">
+    <meta property="og:type" content="website">
+    <title>Chile Mineral Supply Chain | Leonardo Luksic</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/project-shared.css">
+    <style>
+        /* Route-flow: unique to this page, no shared equivalent */
+        .route-flow {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.6rem;
+        }
+        .route-flow .stage {
+            padding: 0.2rem 0.55rem;
+            background: var(--grey-100);
+            border-radius: 4px;
+            font-size: 0.82rem;
+        }
+        .route-flow .arrow-r {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav>
+            <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true">
+            <a href="../../index.html" class="nav-home" aria-label="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 8.5V16C5 16.3 5.2 16.5 5.5 16.5H8.5V12.5C8.5 12.2 8.7 12 9 12H11C11.3 12 11.5 12.2 11.5 12.5V16.5H14.5C14.8 16.5 15 16.3 15 16V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-home-label">Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+            <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="project-hero">
+        <h1>Chile Mineral Supply Chain</h1>
+        <p class="subtitle">
+            Chile is the world&rsquo;s largest copper producer, supplying roughly a quarter of
+            global output alongside significant volumes of lithium, molybdenum, gold, silver,
+            iron, and iodine. This project builds a directed network of the Chilean mineral
+            supply chain, connecting 461 facilities across extraction, processing, and export
+            stages using official production statistics, georeferenced facility registers,
+            and customs records.
+        </p>
+    </section>
+
+
+    <!-- OVERVIEW -->
+    <section id="overview">
+        <span class="section-label">Overview</span>
+        <h2>Motivation &amp; Approach</h2>
+
+        <p>
+            Understanding how minerals flow from mine to market requires connecting several
+            layers of data that are typically published in isolation. Chile&rsquo;s copper
+            commission (COCHILCO) publishes production volumes by company; the geological
+            survey (Sernageomin) maintains a georeferenced register of mining facilities; and
+            customs agencies record which ports ship which products to which countries. None
+            of these sources, on their own, describes the complete supply chain. This project
+            assembles them into a single directed network where each node is a physical
+            facility and each edge represents a material flow between stages.
+        </p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">461</div>
+                <div class="stat-label">Facilities mapped</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1,938</div>
+                <div class="stat-label">Directed edges</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">32</div>
+                <div class="stat-label">Minerals with production data</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$62B</div>
+                <div class="stat-label">Estimated total value (2024)</div>
+            </div>
+        </div>
+
+        <p>
+            The pipeline matches COCHILCO production data to individual facilities, estimates
+            monetary values using 2024 commodity prices, and constructs edges from mines
+            through processing plants and smelters to export ports and destination countries.
+            Copper and molybdenum are matched at the company level. Gold, silver, iron, and
+            zinc are allocated to facilities by distributing regional totals proportionally
+            to declared resource tonnages. Non-metallic minerals (lithium compounds, iodine,
+            nitrates, potash, salt, and others) are allocated equally among facilities in the
+            matching region that are tagged with the relevant commodity.
+        </p>
+    </section>
+
+
+    <!-- PRODUCTION VALUE -->
+    <section id="production" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part I</span>
+            <h2>Production Value</h2>
+
+            <p>
+                The treemap below shows Chile&rsquo;s estimated mineral production value in
+                2024, broken into four groups: base metals (copper, molybdenum, iron, zinc,
+                lead), precious metals (gold, silver), battery and strategic minerals (lithium
+                carbonate, lithium hydroxide, lithium sulfate, iodine), and industrial minerals
+                (nitrates, potash, salt, boric acid, and others). Rectangle size is proportional
+                to estimated USD value. Copper accounts for roughly $48 billion of the $62
+                billion total, which compresses all other minerals into a narrow band of the
+                chart. The non-copper breakdown is shown separately further below.
+            </p>
+
+            <div class="chart-caption">
+                <h4>Estimated Production Value by Mineral (2024)</h4>
+            </div>
+            <div class="viz-container" style="margin-top: 0;">
+                <iframe loading="lazy" src="output/New%20graphs/01_treemap_mineral_value.html"
+                        style="width:100%;height:580px;border:none;"
+                        title="Mineral Production Value Treemap"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FACILITY MAP -->
+    <section>
+        <span class="section-label">Part II</span>
+        <h2>Mining Geography</h2>
+
+        <p>
+            Chilean mining activity concentrates along the northern half of the country.
+            Antofagasta hosts 136 facilities (including Escondida, the world&rsquo;s largest
+            copper mine, and the Salar de Atacama lithium operations), Atacama has 95, and
+            Coquimbo 48. The map below plots every producing facility, sized by estimated
+            value and colored by mineral group. The geographic pattern is clear: large-value
+            copper and lithium operations cluster in the Atacama Desert, iron mining sits in
+            Atacama and Coquimbo, and smaller industrial mineral operations are scattered
+            further south.
+        </p>
+
+        <div class="chart-caption" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+            <h4>Producing Facilities by Location and Mineral Group</h4>
+        </div>
+        <div class="viz-container" style="margin-top: 0; max-width: 700px; margin-left: auto; margin-right: auto;">
+            <iframe loading="lazy"
+                    src="output/New%20graphs/03_facility_map.html"
+                    style="width: 100%; height: 640px; border: none;"
+                    title="Chile Mineral Facility Map"></iframe>
+        </div>
+    </section>
+
+
+    <!-- TOP FACILITIES -->
+    <section id="facilities" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part III</span>
+            <h2>Highest-Value Facilities</h2>
+
+            <p>
+                The stacked bar chart ranks producing facilities by total estimated value.
+                Each segment represents a different mineral, so a copper mine that also
+                produces molybdenum and gold will show multiple colors. A button in the top
+                right switches to a copper-excluded view, which re-sorts and rescales the
+                chart to show which facilities matter most outside of copper. Clicking
+                individual minerals in the legend also toggles them on and off.
+            </p>
+            <p>
+                Where the pipeline allocates production equally across facilities in the same
+                region (for minerals without company-level data), those clusters are collapsed
+                into single entries labelled with the count of grouped facilities, to avoid
+                overstating the number of distinct operations.
+            </p>
+
+            <div class="chart-caption">
+                <h4>Top Facilities by Estimated Mineral Value</h4>
+            </div>
+            <div class="viz-container" style="margin-top: 0;">
+                <iframe loading="lazy" src="output/New%20graphs/02_top_facilities_bar.html"
+                        style="width:100%;height:640px;border:none;"
+                        title="Top Facilities by Mineral Value"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- REGIONAL DISTRIBUTION -->
+    <section>
+        <span class="section-label">Part IV</span>
+        <h2>Regional Distribution</h2>
+
+        <p>
+            The tile cartogram below compares Chile&rsquo;s 12 producing regions on three
+            dimensions: estimated mineral value, surface area, and population. Each tile
+            represents a fixed unit (approximately $1 billion in value, 10,000 km&sup2; of
+            area, or 250,000 people), so the number of tiles in each column directly encodes
+            magnitude. The countries tends to hold most of its mining deposits in Antofagasta and
+            Atacama, while most of the population lives in and around the area of Santiago, the capital.
+        </p>
+
+        <div class="chart-caption" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+            <h4>Mineral Value, Area, and Population by Region</h4>
+        </div>
+        <div class="viz-container" style="margin-top: 0; max-width: 1100px; margin-left: auto; margin-right: auto;">
+            <iframe loading="lazy" src="output/New%20graphs/06b_regional_tile_cartogram.html"
+                    style="width:100%;height:750px;border:none;"
+                    title="Regional Tile Cartogram: Value vs Area vs Population"></iframe>
+        </div>
+
+        <p style="margin-top: 2.5rem;">
+            The sunburst below provides a different cut of the same data, drilling from
+            region (inner ring) to mineral group (middle ring) to individual mineral (outer
+            ring). Regions with less than 2% of total value are collapsed into &ldquo;Other
+            regions&rdquo;, and minerals below $300 million within a given region-group pair
+            are grouped into lighter-shaded segments. Hover over any segment for the full
+            value.
+        </p>
+
+        <div class="chart-caption">
+            <h4>Region, Mineral Group, and Mineral Drilldown</h4>
+        </div>
+        <div class="viz-container" style="margin-top: 0;">
+            <iframe loading="lazy" src="output/New%20graphs/07_sunburst_region_mineral.html"
+                    style="width:100%;height:640px;border:none;"
+                    title="Region / Mineral Group / Mineral Sunburst"></iframe>
+        </div>
+    </section>
+
+
+    <!-- EXPORTS -->
+    <section id="exports" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part V</span>
+            <h2>Export Destinations</h2>
+
+            <p>
+                Export routing in the pipeline combines COCHILCO national-level volumes by
+                destination country with Aduanas customs records showing the share of each
+                product passing through each Chilean port in 2024. The choropleth below maps
+                export destinations for all minerals on a log-scaled color axis. Buttons
+                across the top switch between an all-minerals aggregate and the three largest
+                export commodities (copper, lithium, iodine); a dropdown on the right provides
+                access to the remaining minerals. Each commodity uses a distinct color palette.
+            </p>
+            <p>
+                China is the dominant buyer of Chilean copper, absorbing roughly 54% of total
+                copper exports. Japan (~11%) and the United States (~10%) follow. For
+                non-copper minerals, destinations are more dispersed: lithium goes primarily
+                to China, South Korea, and Japan for battery production; molybdenum to Belgium,
+                the Netherlands, and South Korea; iodine to the United States, Belgium, and
+                China. Gold is routed via air freight to refining hubs in the UK and
+                Switzerland.
+            </p>
+
+            <div class="chart-caption">
+                <h4>Export Destinations by Commodity (USD, log scale)</h4>
+            </div>
+            <div class="viz-container" style="margin-top: 0;">
+                <iframe loading="lazy" src="output/New%20graphs/05_export_choropleth.html"
+                        style="width:100%;height:520px;border:none;"
+                        title="Export Destination Choropleth"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- NON-COPPER -->
+    <section>
+        <span class="section-label">Part VI</span>
+        <h2>Beyond Copper</h2>
+
+        <p>
+            Copper&rsquo;s scale ($48 billion) compresses the rest of Chile&rsquo;s mineral
+            economy in any chart that includes it. The horizontal bar below isolates all
+            non-copper minerals on a logarithmic axis, making it possible to compare
+            categories that span several orders of magnitude. Lithium carbonate ($3.3
+            billion), gold ($2.2 billion), molybdenum ($1.8 billion), and iodine ($1.7
+            billion) form a second tier of billion-dollar minerals. Further down, nitrates,
+            iron, silver, and lithium derivatives sit in the hundreds of millions, followed
+            by industrial minerals (potash, salt, boric acid, ulexite) in the tens of
+            millions.
+        </p>
+
+        <div class="chart-caption">
+            <h4>Non-Copper Mineral Values (log scale)</h4>
+        </div>
+        <div class="viz-container" style="margin-top: 0;">
+            <iframe loading="lazy" src="output/New%20graphs/10_non_copper_value_bar.html"
+                    style="width:100%;height:670px;border:none;"
+                    title="Non-Copper Mineral Values (Log Scale)"></iframe>
+        </div>
+    </section>
+
+
+    <!-- AGGREGATE MAP -->
+    <section id="aggregate" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part VII</span>
+            <h2>Aggregate Supply Chain Map</h2>
+
+            <p>
+                The map below combines the facility-level data with the supply chain edges
+                into a single aggregate view: mines and processing plants are sized by
+                estimated value, domestic edges show material flows between stages, and export
+                routes connect ports to their main destination countries. This is the full
+                network in one picture, from extraction through processing to international
+                markets.
+            </p>
+
+            <div class="chart-caption">
+                <h4>Full Supply Chain Network</h4>
+            </div>
+            <div class="viz-container" style="margin-top: 0;">
+                <iframe loading="lazy" src="output/New%20graphs/chile_supply_chain_map.html"
+                        style="width:100%;height:700px;border:none;"
+                        title="Aggregate Supply Chain Map"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PROCESSING ROUTES -->
+    <section>
+        <span class="section-label">Reference</span>
+        <h2>Processing Routes</h2>
+
+        <p>
+            How ore reaches export depends on its type. The pipeline models several distinct
+            processing chains:
+        </p>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-header"><h3>Copper (Sulphide)</h3></div>
+                <div class="card-body">
+                    <div class="route-flow">
+                        <span class="stage">Mine</span><span class="arrow-r">&rarr;</span>
+                        <span class="stage">Concentrator</span><span class="arrow-r">&rarr;</span>
+                        <span class="stage">Smelter</span><span class="arrow-r">&rarr;</span>
+                        <span class="stage">Refinery</span><span class="arrow-r">&rarr;</span>
+                        <span class="stage">Port</span>
+                    </div>
+                    <p>
+                        Sulphide ores are crushed and floated to produce concentrate
+                        (25&ndash;30% Cu), smelted to blister (~99% Cu), and electrorefined
+                        to cathode (99.99% Cu). Much is exported as concentrate due to limited
+                        domestic smelting capacity.
+                    </p>
+                </div>
+            </div>
+            <div class="content-card">
+                <div class="card-header"><h3>Copper (Oxide)</h3></div>
+                <div class="card-body">
+                    <div class="route-flow">
+                        <span class="stage">Mine</span><span class="arrow-r">&rarr;</span>
+                        <span class="stage">SX-EW Plant</span><span class="arrow-r">&rarr;</span>
+                        <span class="stage">Port</span>
+                    </div>
+                    <p>
+                        Oxide ores are leached on heap pads and treated by solvent extraction
+                        and electrowinning (SX-EW) to produce cathode directly, bypassing the
+                        concentrator-smelter chain.
+                    </p>
+                </div>
+            </div>
+            <div class="content-card">
+                <div class="card-header"><h3>Molybdenum</h3></div>
+                <div class="card-body">
+                    <div class="route-flow">
+                        <span class="stage">Cu Mine</span><span class="arrow-r">&rarr;</span>
+                        <span class="stage">Mo Plant</span><span class="arrow-r">&rarr;</span>
+                        <span class="stage">Port</span>
+                    </div>
+                    <p>
+                        Recovered as a by-product of copper flotation. Molybdenite concentrate
+                        is separated and roasted to produce molybdenum oxide, most of which is
+                        exported.
+                    </p>
+                </div>
+            </div>
+            <div class="content-card">
+                <div class="card-header"><h3>Lithium</h3></div>
+                <div class="card-body">
+                    <div class="route-flow">
+                        <span class="stage">Brine</span><span class="arrow-r">&rarr;</span>
+                        <span class="stage">Evaporation</span><span class="arrow-r">&rarr;</span>
+                        <span class="stage">Chemical Plant</span><span class="arrow-r">&rarr;</span>
+                        <span class="stage">Port</span>
+                    </div>
+                    <p>
+                        Extracted from brine at the Salar de Atacama by SQM and Albemarle.
+                        Brine is pumped into solar evaporation ponds and concentrated before
+                        chemical processing into lithium carbonate or hydroxide.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- DATA SOURCES -->
+    <section id="methods" class="summary-section full-width-section">
+        <div class="container">
+            <h2>Data Sources</h2>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-header"><h3>COCHILCO</h3></div>
+                    <div class="card-body">
+                        <p>
+                            Chile&rsquo;s copper commission. Company-level production for copper
+                            and molybdenum, regional aggregates for all other minerals, export
+                            destination volumes by product type, and commodity prices from the
+                            annual statistical yearbook (Anuario). Data period: 2005 to 2024.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-header"><h3>Sernageomin + USGS</h3></div>
+                    <div class="card-body">
+                        <p>
+                            Georeferenced register of all mining facilities in Chile: mines,
+                            concentrators, SX-EW plants, smelters, refineries, and ports.
+                            Includes coordinates, operator names, facility types, and
+                            reserve/resource tonnages.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-header"><h3>Aduanas Customs</h3></div>
+                    <div class="card-body">
+                        <p>
+                            Port-level export records providing shipment volumes and FOB values
+                            by product type and destination country. Used to derive port shares
+                            and validate the pipeline&rsquo;s export routing.
+                            Reference year: 2024.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="card-header"><h3>Commodity Prices</h3></div>
+                    <div class="card-body">
+                        <p>
+                            Parsed from COCHILCO Anuario tables (LME copper, exchange-reported
+                            metals, lithium/iodine bands), supplemented by implied FOB unit
+                            values from export data and USGS Mineral Commodity Summaries for
+                            industrial minerals without exchange prices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
+            <a href="/cdn-cgi/l/email-protection#b6da98dac3ddc5dfd5f6dac5d398d7d598c3dd" class="social-link">Email</a>
+        </div>
+    </footer>
+
+</body>
+</html>

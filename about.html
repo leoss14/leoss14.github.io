@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Leonardo Luksic. Education at LSE, Bocconi, and Yale-NUS. Background in econometrics, spatial analysis, and public policy.">
+    <meta property="og:title" content="About - Leonardo Luksic">
+    <meta property="og:description" content="About Leonardo Luksic. Education at LSE, Bocconi, and Yale-NUS. Background in econometrics, spatial analysis, and public policy.">
+    <meta property="og:type" content="website">
+    <title>About - Leonardo Luksic</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ---- About page layout ---- */
+        .about-content {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 3rem clamp(1.5rem, 5vw, 6rem) 4rem;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            text-align: justify;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ---- Section headings ---- */
+        .about-content h2 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--grey-200);
+        }
+
+        /* ---- Education items ---- */
+        .education-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.5rem 2rem;
+            align-items: baseline;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--grey-200);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            line-height: 1.4;
+        }
+
+        .edu-year {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .edu-institution {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.95rem;
+            grid-column: 1 / -1;
+        }
+
+        .edu-note {
+            font-size: 0.93rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            grid-column: 1 / -1;
+            margin-top: 0.15rem;
+            text-align: justify;
+        }
+
+        /* ---- Experience items ---- */
+        .experience-item {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--grey-200);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-role {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+        }
+
+        .exp-date {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .exp-company {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-description {
+            font-size: 0.93rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* ---- Skills (rendered by skills.js) ---- */
+        .skills-category-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-top: 1.25rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .skills-category-label:first-child {
+            margin-top: 0.75rem;
+        }
+
+        .skills-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .skill-tag {
+            padding: 0.35rem 0.8rem;
+            background: var(--grey-100);
+            border: 1px solid var(--grey-200);
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* ---- Languages grid ---- */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .lang-item {
+            text-align: center;
+            padding: 1.25rem 1rem;
+            background: var(--grey-100);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+
+        .lang-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .lang-level {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ---- Interests row ---- */
+        .interests-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .interest-tag {
+            padding: 0.45rem 1rem;
+            background: var(--grey-100);
+            border: 1px solid var(--grey-200);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* ---- Mobile ---- */
+        @media (max-width: 640px) {
+            .education-item {
+                grid-template-columns: 1fr;
+            }
+
+            .edu-year {
+                text-align: left;
+                order: -1;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                gap: 0.15rem;
+            }
+
+            .languages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav>
+            <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true">
+            <a href="index.html" class="nav-home" aria-label="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 8.5V16C5 16.3 5.2 16.5 5.5 16.5H8.5V12.5C8.5 12.2 8.7 12 9 12H11C11.3 12 11.5 12.2 11.5 12.5V16.5H14.5C14.8 16.5 15 16.3 15 16V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-home-label">Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html" aria-current="page">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </nav>
+    </div>
+
+    <!-- Page Header -->
+    <div class="project-hero" style="padding-bottom: 1.5rem;">
+        <h1>About</h1>
+    </div>
+
+    <!-- Content -->
+    <div class="about-content">
+
+        <p>
+            I am a graduate student at the London School of Economics, completing an MPA in
+            Data Science for Public Policy. My work sits at the intersection of applied econometrics,
+            machine learning, and spatial analysis, with applications in economic development,
+            sovereign risk assessment, and market analysis. I am a native Italian and Croatian speaker,
+            fluent in English, with conversational French.
+        </p>
+        <p>
+            My current capstone, in partnership with Moody's Ratings, is titled
+            <em>Industrial Upgrading in Emerging Markets with Rich Natural Resources</em>.
+            It uses a panel of 54 resource-rich developing countries from 1995 to 2019 to
+            test which structural factors allow some commodity exporters to develop
+            value-added industries while others remain locked into low-complexity
+            production. The Economic Complexity Index (ECI) serves as the dependent
+            variable. The pipeline draws on World Bank, IMF, V-Dem, USGS, and Energy
+            Institute sources, applies pooled OLS with country-clustered standard errors
+            alongside regularised regression and Random Forest for variable importance,
+            and includes case studies of the Republic of Congo, Azerbaijan, and Chile.
+        </p>
+        <p>
+            Other recent work includes regime-switching analysis of US monetary policy rules using
+            70 years of Federal Reserve data, spatial demand analysis of ride-hailing markets in
+            New York City, and a classification pipeline for gender-based pricing in UK supermarket
+            products. Before LSE, my undergraduate dissertation at Bocconi used fixed-effects panel
+            models to examine geographic variation in credit access for financially constrained firms
+            across Northern Italian provinces.
+        </p>
+        <p>
+            Outside of academic work, I serve as Senior Editor for Podcasts at The Public Sphere
+            Journal (LSE School of Public Policy), producing and editing long-form academic interviews
+            that structure complex research for non-specialist audiences. I also designed a quantitative
+            scoring methodology for an interactive political matching tool used in the 2024 European
+            Parliament elections in Greece, which generated over 10,000 completed surveys and ranked
+            first on Google for related search terms.
+        </p>
+
+        <!-- Education -->
+        <h2>Education</h2>
+
+        <div class="education-item">
+            <div class="edu-degree">MPA in Data Science for Public Policy</div>
+            <div class="edu-year">Sep 2024 &ndash; Jun 2026</div>
+            <div class="edu-institution">London School of Economics and Political Science</div>
+            <div class="edu-note">Capstone with Moody's Ratings on industrial upgrading in resource-rich emerging markets, using a 54-country panel from 1995 to 2019 with pooled OLS, regularised regression, and Random Forest. Coursework in Applied Machine Learning, Advanced Empirical Methods (DiD, IV, RDD), Network Analysis, Spatial Statistics, and Data Science for Public Policy.</div>
+        </div>
+        <div class="education-item">
+            <div class="edu-degree">BSc in International Politics and Government (108/110)</div>
+            <div class="edu-year">Sep 2021 &ndash; Jul 2024</div>
+            <div class="edu-institution">Universit&agrave; Commerciale Luigi Bocconi, Milan</div>
+            <div class="edu-note">Dissertation on geographic variation in credit access for financially constrained firms across Northern Italian provinces, using fixed-effects panel models and engaging with banking regulation and firm financing literature. Coursework in Policy Evaluation (DiD, IV, RDD), Quantitative Methods, Behavioural Economics, and Computer Science.</div>
+        </div>
+        <div class="education-item">
+            <div class="edu-degree">Foreign Exchange Program</div>
+            <div class="edu-year">Jan &ndash; Jun 2024</div>
+            <div class="edu-institution">Yale-NUS College, Singapore</div>
+        </div>
+
+        <!-- Experience -->
+        <h2>Experience</h2>
+
+        <div class="experience-item">
+            <div class="exp-header">
+                <div class="exp-role">Operations &amp; E-Commerce Intern</div>
+                <div class="exp-date">Aug 2024 &ndash; Aug 2025</div>
+            </div>
+            <div class="exp-company">Gibi Trieste, Italy</div>
+            <div class="exp-description">
+                Built an inventory tracking system in Excel linking Vix Commerce order data to warehouse stock counts, replacing a manual process that had caused repeated fulfilment errors. Managed product listings, photography, and pricing across two online marketplaces, growing the e-commerce share from near zero to 20% of company revenue within eight months.
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="exp-header">
+                <div class="exp-role">Political Analytics &amp; User Engagement</div>
+                <div class="exp-date">Apr &ndash; Jul 2024</div>
+            </div>
+            <div class="exp-company">Methexi Political Compass (Remote)</div>
+            <div class="exp-description">
+                Designed a quantitative scoring methodology for an interactive political matching tool used in the 2024 European Parliament elections in Greece, validating ideological classifications across all response combinations and documenting the methodology for external stakeholders. Achieved first-page Google ranking for &ldquo;Political Compass&rdquo; in Greece, generating over 10,000 completed surveys and a 40% click-through rate through organic distribution.
+            </div>
+        </div>
+
+        <!-- Technical Skills (rendered from shared database) -->
+        <h2>Technical Skills</h2>
+        <div id="skills-container"></div>
+
+        <!-- Languages -->
+        <h2>Languages</h2>
+
+        <div class="languages-grid">
+            <div class="lang-item">
+                <div class="lang-name">Italian</div>
+                <div class="lang-level">Native</div>
+            </div>
+            <div class="lang-item">
+                <div class="lang-name">Croatian</div>
+                <div class="lang-level">Native</div>
+            </div>
+            <div class="lang-item">
+                <div class="lang-name">English</div>
+                <div class="lang-level">Fluent</div>
+            </div>
+            <div class="lang-item">
+                <div class="lang-name">French</div>
+                <div class="lang-level">Conversational</div>
+            </div>
+        </div>
+
+        <!-- Interests -->
+        <h2>Interests</h2>
+
+        <div class="interests-row">
+            <span class="interest-tag">Hiking</span>
+            <span class="interest-tag">Bouldering</span>
+            <span class="interest-tag">Geography</span>
+            <span class="interest-tag">Electoral Politics</span>
+            <span class="interest-tag">Debate</span>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
+            <a href="mailto:l.luksic@lse.ac.uk" class="social-link">Email</a>
+        </div>
+    </footer>
+
+    <script src="js/skills.js"></script>
+    <script src="js/nav.js"></script>
+    <script>
+        // Render all technical categories (excluding 'software' for the about page)
+        renderSkills('skills-container', [
+            'languages',
+            'python',
+            'methods_ml',
+            'methods_econ',
+            'methods_spatial',
+            'methods_network',
+            'data_tools'
+        ]);
+    </script>
+</body>
+</html>

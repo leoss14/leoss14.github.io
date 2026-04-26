@@ -1,0 +1,1718 @@
+#!/usr/bin/env python3
+"""
+generate_charts.py — Presentation-quality interactive Plotly figures
+Replicates (and improves on) all report charts for the Resource Curse / ECI Capstone.
+
+Reads from:
+  intermediary/                — capstone panel data + clusters (inside this script's folder)
+  ml_cache.pkl                 — cached model coefficients (auto-created on first run)
+
+Writes to: outputs/
+
+Run:  /usr/local/bin/python3.10 generate_charts.py
+"""
+
+import os, sys, math, pickle, warnings
+warnings.filterwarnings("ignore")
+
+import numpy as np
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
+from plotly.subplots import make_subplots
+
+# ── Paths ─────────────────────────────────────────────────────────────────────
+HERE   = os.path.dirname(os.path.abspath(__file__))     # code/v2/
+V1     = os.path.join(HERE, "intermediary")
+OUT    = os.path.join(HERE, "outputs")
+CACHE  = os.path.join(HERE, "ml_cache.pkl")
+os.makedirs(OUT, exist_ok=True)
+
+# ── Design system ─────────────────────────────────────────────────────────────
+FONT  = "IBM Plex Sans, system-ui, -apple-system, sans-serif"
+NAVY  = "#1a2744"
+SUBTT = "#6b7280"
+BG    = "#fafafa"
+GRID  = "#e5e7eb"
+CFG   = dict(displayModeBar=False, displaylogo=False, responsive=True)
+
+CLUSTER_COLORS = {
+    "Petrostates":        "#E63946",
+    "Oil Exporters":      "#457B9D",
+    "Major Producers":    "#2A9D8F",
+    "Mining Exporters":   "#E9C46A",
+    "Forestry Intensive": "#8B5CF6",
+}
+
+def base_layout(**kw):
+    d = dict(
+        template="plotly_white",
+        plot_bgcolor=BG, paper_bgcolor=BG,
+        font=dict(family=FONT, size=12, color=NAVY),
+        margin=dict(l=60, r=40, t=60, b=50),
+        height=560,
+    )
+    d.update(kw)
+    return d
+
+def title(text, sub=None):
+    t = dict(text=text if sub is None else
+             f"{text}<br><sup style='font-size:11px;font-weight:normal;color:{SUBTT}'>{sub}</sup>",
+             x=0.5, xanchor="center",
+             font=dict(size=16, color=NAVY, family=FONT))
+    return t
+
+def save(fig, name):
+    path = os.path.join(OUT, name)
+    fig.write_html(path, config=CFG, include_plotlyjs="cdn")
+    print(f"  → {name}")
+
+# ── Load capstone data ────────────────────────────────────────────────────────
+print("\n=== Loading capstone data ===")
+
+master      = pd.read_csv(os.path.join(V1, "Master.csv"))
+cl1995      = pd.read_csv(os.path.join(V1, "clusters1995.csv"))
+cl_agg      = pd.read_csv(os.path.join(V1, "clusters_k5_agg.csv"))
+
+# ── Forest-adjusted sample selection ──────────────────────────────────────────
+# Subtract forest and coal rents from total NR rents, apply 1% threshold,
+# guarantee Gulf states inclusion.
+GULF_STATES = ["BHR", "KWT", "OMN", "QAT", "SAU", "ARE"]
+
+_base = master[master["Year"] == 1995].copy()
+_base["NR_adj"] = (_base["Total natural resources rents (% of GDP)"].fillna(0)
+                   - _base["Forestry rents (% of GDP)"].fillna(0))
+_base["NR_adj"] = _base["NR_adj"].clip(lower=0)
+include_lst = _base[_base["NR_adj"] >= 1.0]["Country Code"].unique().tolist()
+for g in GULF_STATES:
+    if g not in include_lst:
+        include_lst.append(g)
+print(f"  Forest-adjusted sample (≥1% + Gulf): {len(include_lst)} countries")
+
+panel = master[(master["Year"].between(1995, 2019)) &
+               (master["Country Code"].isin(include_lst))].copy()
+panel = panel.sort_values(["Country Code", "Year"]).reset_index(drop=True)
+
+cl_map = cl1995[["Country Code", "ClusterLabels"]].drop_duplicates("Country Code")
+panel  = panel.merge(cl_map, on="Country Code", how="left")
+panel["Log_GDP_pc"]   = np.log(panel["GDP per capita (constant prices, PPP)"].replace(0, np.nan))
+panel["Prod_pc"]      = panel["Total_Production_Value"] / panel["Population"].replace(0, np.nan)
+panel["Bubble"]       = np.sqrt(panel["Prod_pc"].fillna(0))
+bmin, bmax            = panel["Bubble"].min(), panel["Bubble"].max()
+panel["Bubble_Scaled"] = 8 + (panel["Bubble"] - bmin) / (bmax - bmin + 1e-9) * 42
+
+print(f"  Panel: {panel['Country Code'].nunique()} countries, {len(panel):,} obs, 1995-2019")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 01  ECI VS LOG GDP — ANIMATED SCATTER WITH TRAILING PATHS
+# ══════════════════════════════════════════════════════════════════════════════
+print("\n01 ECI animated scatter …")
+
+data05 = panel.dropna(subset=["Log_GDP_pc", "Economic Complexity Index", "ClusterLabels"]).copy()
+years  = sorted(data05["Year"].unique())
+
+cdata = {}
+for cc, cdf in data05.groupby("Country Code"):
+    cdf = cdf.sort_values("Year")
+    if cdf["Year"].min() > 1995:
+        continue
+    cdata[cc] = dict(
+        years  = cdf["Year"].values,
+        x      = cdf["Log_GDP_pc"].values,
+        y      = cdf["Economic Complexity Index"].values,
+        size   = cdf["Bubble_Scaled"].values,
+        name   = cdf["Country Name"].iloc[0],
+        code   = cc,
+        clust  = cdf["ClusterLabels"].iloc[0],
+    )
+
+valid_cc = list(cdata.keys())
+
+fig01 = go.Figure()
+
+# Initial state — dots + tail lines up to year[0]
+for lbl in sorted(set(cdata[cc]["clust"] for cc in valid_cc)):
+    color   = CLUSTER_COLORS.get(lbl, "#aaa")
+    cc_list = [cc for cc in valid_cc if cdata[cc]["clust"] == lbl]
+    first   = True
+    for cc in cc_list:
+        cd = cdata[cc]
+        i0 = 0
+        fig01.add_trace(go.Scatter(
+            x=[cd["x"][i0]], y=[cd["y"][i0]], mode="markers+text",
+            marker=dict(size=cd["size"][i0], color=color, opacity=0.85,
+                        line=dict(width=1.5, color="white")),
+            text=[cc], textposition="top center",
+            textfont=dict(size=8, color="#333"),
+            name=lbl, legendgroup=lbl, showlegend=first,
+            customdata=[[cd["name"]]],
+            hovertemplate="<b>%{customdata[0]}</b><br>Log GDP/cap: %{x:.2f}<br>ECI: %{y:.2f}<extra></extra>",
+        ))
+        first = False
+
+# Frames
+frames = []
+for yr in years:
+    fd = []
+    for lbl in sorted(set(cdata[cc]["clust"] for cc in valid_cc)):
+        color   = CLUSTER_COLORS.get(lbl, "#aaa")
+        cc_list = [cc for cc in valid_cc if cdata[cc]["clust"] == lbl]
+        for cc in cc_list:
+            cd    = cdata[cc]
+            mask  = cd["years"] <= yr
+            idxs  = np.where(mask)[0]
+            if len(idxs) == 0:
+                xi, yi, si = cd["x"][0], cd["y"][0], cd["size"][0]
+                tx, ty = [xi], [yi]
+            else:
+                i   = idxs[-1]
+                xi, yi, si = cd["x"][i], cd["y"][i], cd["size"][i]
+                tx  = cd["x"][idxs].tolist() + [None]
+                ty  = cd["y"][idxs].tolist() + [None]
+
+            fd.append(go.Scatter(
+                x=[xi], y=[yi], mode="markers+text",
+                marker=dict(size=si, color=color, opacity=0.85,
+                            line=dict(width=1.5, color="white")),
+                text=[cc], textposition="top center",
+                textfont=dict(size=8),
+                customdata=[[cd["name"]]],
+                hovertemplate="<b>%{customdata[0]}</b><br>Log GDP/cap: %{x:.2f}<br>ECI: %{y:.2f}<extra></extra>",
+            ))
+    frames.append(go.Frame(data=fd, name=str(yr)))
+
+fig01.frames = frames
+
+x_rng = [data05["Log_GDP_pc"].min()-0.2, data05["Log_GDP_pc"].max()+0.2]
+y_rng = [data05["Economic Complexity Index"].min()-0.3, data05["Economic Complexity Index"].max()+0.3]
+
+fig01.update_layout(**base_layout(height=620, margin=dict(l=70,r=40,t=80,b=110)),
+    title=title("Evolution of Economic Complexity vs Income",
+                "Bubble size = Production per Capita · Resource Profile (k=5 clusters, 1995 assignment)"),
+    xaxis=dict(title="Log GDP per capita (PPP)", range=x_rng, gridcolor=GRID),
+    yaxis=dict(title="Economic Complexity Index", range=y_rng, gridcolor=GRID,
+               zeroline=True, zerolinecolor="#ccc"),
+    legend=dict(title="Resource Profile", x=1.01, y=0.99,
+                font=dict(size=11), bgcolor="rgba(250,250,250,0.9)",
+                bordercolor=GRID, borderwidth=1),
+    updatemenus=[dict(
+        type="buttons", showactive=True, x=0.98, y=-0.13, xanchor="right",
+        buttons=[
+            dict(label="▶  Play", method="animate",
+                 args=[None, dict(frame=dict(duration=600, redraw=True),
+                                  transition=dict(duration=300))]),
+            dict(label="⏸  Pause", method="animate",
+                 args=[[None], dict(frame=dict(duration=0), mode="immediate")]),
+        ],
+    )],
+    sliders=[dict(
+        active=0, len=0.82, x=0.02, y=-0.10,
+        currentvalue=dict(prefix="Year: ", font=dict(size=14, color=NAVY)),
+        steps=[dict(
+            args=[[str(y)], dict(frame=dict(duration=400, redraw=True), mode="immediate")],
+            method="animate", label=str(y),
+        ) for y in years],
+        font=dict(size=10),
+    )],
+)
+save(fig01, "01_eci_animated_scatter.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 02  DATASET VARIABLES TREEMAP
+# ══════════════════════════════════════════════════════════════════════════════
+print("02 Dataset variables treemap …")
+
+# Each entry: (full_name, short_label)
+VAR_GROUPS = {
+    "Identifiers": [
+        ("Country Code",              "Country Code"),
+        ("Country Name",              "Country Name"),
+        ("Year",                      "Year"),
+        ("Economic Complexity Index", "ECI"),
+    ],
+    "Resource Dependence": [
+        ("Oil rents (% of GDP)",                  "Oil Rents"),
+        ("Natural gas rents (% of GDP)",           "Gas Rents"),
+        ("Mineral rents (% of GDP)",               "Mineral Rents"),
+        ("Forestry rents (% of GDP)",              "Forestry Rents"),
+        ("Total natural resources rents (% of GDP)","Total NR Rents"),
+        ("Total_Production",                       "Total Production"),
+        ("Total_Reserves",                         "Total Reserves"),
+        ("Total_Production_Value",                 "Production Value"),
+        ("Total_Reserves_Value",                   "Reserves Value"),
+        ("Hydrocarbons_Dominant",                  "Hydrocarbons Dom."),
+        ("Subsoil_Metals_Dominant",                "Subsoil Metals Dom."),
+        ("Precious_Metals_Dominant",               "Precious Metals Dom."),
+    ],
+    "Economic Structure": [
+        ("Trade (% of GDP)", "Trade"),
+        ("Industry",         "Industry"),
+        ("Manufacturing",    "Manufacturing"),
+        ("Agriculture",      "Agriculture"),
+        ("Services",         "Services"),
+    ],
+    "Macroeconomic Indicators": [
+        ("GDP per capita (constant prices, PPP)",                                        "GDP per Capita"),
+        ("Share of investment in GDP",                                                   "Investment Share"),
+        ("Share of government spending in GDP",                                          "Gov. Spending Share"),
+        ("Share of consumption in GDP",                                                  "Consumption Share"),
+        ("Inflation, consumer prices (annual %)",                                        "Inflation"),
+        ("Gross fixed capital formation, all, Constant prices, Percent of GDP",          "Gross Fixed Cap."),
+        ("Capital depreciation rate",                                                    "Depreciation Rate"),
+    ],
+    "Fiscal & Financial": [
+        ("Government revenue",                                          "Gov. Revenue"),
+        ("Primary net lending, General government, Percent of GDP",    "Primary Net Lending"),
+        ("Adjusted savings: gross savings (% of GNI)",                 "Gross Savings"),
+        ("Domestic credit to private sector (% of GDP)",               "Domestic Credit"),
+        ("Lending interest rate (%)",                                  "Lending Rate"),
+        ("Real interest rate (%)",                                     "Real Rate"),
+        ("Use of IMF credit (DOD, current US$)",                       "IMF Credit"),
+    ],
+    "Governance": [
+        ("Rule of law index",             "Rule of Law"),
+        ("Political corruption index",    "Pol. Corruption"),
+        ("Clientelism index",             "Clientelism"),
+        ("Political stability — estimate","Pol. Stability"),
+        ("Property rights",               "Property Rights"),
+    ],
+    "Human Capital": [
+        ("Human capital index",                "Human Capital Index"),
+        ("Death rates, crude per 1000 people", "Death Rate"),
+        ("Life expectancy at birth, total (years)", "Life Expectancy"),
+    ],
+    "Infrastructure": [
+        ("Access to electricity (% of population)",        "Electricity Access"),
+        ("Mobile cellular subscriptions (per 100 people)", "Mobile Subs."),
+    ],
+    "Structural": [
+        ("Landlocked",                              "Landlocked"),
+        ("Urban population (% of total population)","Urban Population"),
+        ("knn_reliance_pct",                        "NR Reliance (KNN)"),
+    ],
+}
+
+GRP_COLORS = {
+    "Identifiers":           "#546E7A",
+    "Resource Dependence":   "#E67E22",
+    "Economic Structure":    "#2980B9",
+    "Macroeconomic Indicators":"#8E44AD",
+    "Fiscal & Financial":    "#C0392B",
+    "Governance":            "#16A085",
+    "Human Capital":         "#27AE60",
+    "Infrastructure":        "#1A9E8F",
+    "Structural":            "#7D3C98",
+}
+
+# Short group labels shown on parent tiles
+GRP_LABELS = {
+    "Identifiers":             "Identifiers",
+    "Resource Dependence":     "Resource Dependence",
+    "Economic Structure":      "Economic Structure",
+    "Macroeconomic Indicators":"Macro Indicators",
+    "Fiscal & Financial":      "Fiscal & Financial",
+    "Governance":              "Governance",
+    "Human Capital":           "Human Capital",
+    "Infrastructure":          "Infrastructure",
+    "Structural":              "Structural",
+}
+
+t_ids, t_labels, t_parents, t_vals, t_cols, t_hover = [], [], [], [], [], []
+for grp, vars_ in VAR_GROUPS.items():
+    g_short = GRP_LABELS[grp]
+    g_col   = GRP_COLORS[grp]
+    t_ids.append(grp); t_labels.append(g_short); t_parents.append("")
+    t_vals.append(len(vars_)); t_cols.append(g_col + "99"); t_hover.append(f"{grp}<br>{len(vars_)} variables")
+    for full, short in vars_:
+        t_ids.append(f"{grp}|{full}"); t_labels.append(short); t_parents.append(grp)
+        t_vals.append(1); t_cols.append(g_col); t_hover.append(full)
+
+n_vars = sum(len(v) for v in VAR_GROUPS.values())
+fig02 = go.Figure(go.Treemap(
+    ids=t_ids, labels=t_labels, parents=t_parents, values=t_vals,
+    customdata=t_hover,
+    textinfo="label",
+    textfont=dict(size=12, family=FONT, color="white"),
+    insidetextfont=dict(size=11, family=FONT, color="white"),
+    outsidetextfont=dict(size=11, family=FONT, color=NAVY),
+    marker=dict(colors=t_cols, cornerradius=6, line=dict(width=2, color="white")),
+    hovertemplate="<b>%{customdata}</b><extra></extra>",
+    branchvalues="total",
+    tiling=dict(packing="squarify", pad=3),
+))
+fig02.update_layout(
+    **base_layout(height=560, margin=dict(l=10, r=10, t=75, b=10)),
+    title=title("Dataset Variables Map",
+                f"{n_vars} variables · {len(VAR_GROUPS)} thematic groups · hover for full name"),
+)
+save(fig02, "02_variables_treemap.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 03  DATA SOURCES BUBBLE CHART
+# ══════════════════════════════════════════════════════════════════════════════
+print("03 Data sources bubble chart …")
+
+DS_MATRIX = [
+    # (indicator_group, source, count)
+    ("Resource Rents",    "World Bank",  4),
+    ("Finance",           "World Bank",  4),
+    ("Macro",             "World Bank",  4),
+    ("GDP Structure",     "World Bank",  8),
+    ("Demographics",      "World Bank",  3),
+    ("Infrastructure",    "World Bank",  2),
+    ("Human Capital",     "PWT 11.0",    1),
+    ("Finance",           "PWT 11.0",    2),
+    ("Macro",             "PWT 11.0",    2),
+    ("GDP Structure",     "PWT 11.0",    3),
+    ("Finance",           "IMF",         4),
+    ("Macro",             "IMF",         2),
+    ("Governance",        "V-Dem",      12),
+    ("NR Production",     "EI / OWID",  16),
+    ("NR Prices",         "EI / USGS",  16),
+    ("Geography",         "Other",       1),
+    ("Dependent Variable","Other",       1),
+]
+
+SRC_ORDER = ["World Bank", "V-Dem", "PWT 11.0", "IMF", "EI / OWID", "EI / USGS", "Other"]
+IND_ORDER = ["Geography","Dependent Variable","NR Prices","NR Production",
+             "Resource Rents","Finance","Macro","GDP Structure",
+             "Demographics","Infrastructure","Human Capital","Governance"]
+SRC_COLORS = {
+    "World Bank":"#2980B9","V-Dem":"#E74C3C","PWT 11.0":"#27AE60",
+    "IMF":"#E67E22","EI / OWID":"#8E44AD","EI / USGS":"#1ABC9C","Other":"#95A5A6",
+}
+
+ds_df = pd.DataFrame(DS_MATRIX, columns=["indicator","source","count"])
+
+fig03 = go.Figure()
+for src in SRC_ORDER:
+    sub = ds_df[ds_df["source"] == src]
+    fig03.add_trace(go.Scatter(
+        x=[src]*len(sub), y=sub["indicator"],
+        mode="markers+text",
+        marker=dict(
+            size=sub["count"]*6+12,
+            color=SRC_COLORS[src],
+            opacity=0.88,
+            line=dict(width=1.5, color="white"),
+        ),
+        text=sub["count"].astype(str),
+        textfont=dict(color="white", size=11, family=FONT),
+        textposition="middle center",
+        name=src,
+        customdata=list(zip(sub["indicator"], sub["count"])),
+        hovertemplate="<b>%{customdata[0]}</b><br>Source: " + src +
+                      "<br>Variables: <b>%{customdata[1]}</b><extra></extra>",
+    ))
+
+fig03.update_layout(
+    **base_layout(height=520, margin=dict(l=140, r=40, t=70, b=60)),
+    title=title("Data Sources by Macro-Indicator Group",
+                "Bubble size proportional to number of variables from that source"),
+    xaxis=dict(title="", categoryorder="array", categoryarray=SRC_ORDER,
+               tickangle=-30, gridcolor=GRID, tickfont=dict(size=11)),
+    yaxis=dict(title="", categoryorder="array", categoryarray=IND_ORDER[::-1],
+               gridcolor=GRID, tickfont=dict(size=11)),
+    showlegend=False,
+)
+save(fig03, "03_data_sources_bubble.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 04  CORRELATION WITH ECI — HORIZONTAL BAR
+# ══════════════════════════════════════════════════════════════════════════════
+print("04 Correlation bar chart …")
+
+CAT_MAP = {
+    "Total natural resources rents (% of GDP)": ("NR Rents",          "Resource Rents"),
+    "Oil rents (% of GDP)":                      ("Oil Rents",         "Resource Rents"),
+    "Mineral rents (% of GDP)":                  ("Mineral Rents",     "Resource Rents"),
+    "Natural gas rents (% of GDP)":              ("Gas Rents",         "Resource Rents"),
+    "GDP per capita (constant prices, PPP)":     ("GDP per Capita",    "Macro & Structure"),
+    "Manufacturing":                             ("Manufacturing",     "Macro & Structure"),
+    "Agriculture":                               ("Agriculture",       "Macro & Structure"),
+    "Services":                                  ("Services",          "Macro & Structure"),
+    "Industry":                                  ("Industry",          "Macro & Structure"),
+    "Trade (% of GDP)":                          ("Trade",             "Macro & Structure"),
+    "Urban population (% of total population)":  ("Urban Population",  "Macro & Structure"),
+    "Domestic credit to private sector (% of GDP)": ("Domestic Credit","Finance & Investment"),
+    "Adjusted savings: gross savings (% of GNI)":("Savings",          "Finance & Investment"),
+    "Gross fixed capital formation, all, Constant prices, Percent of GDP":
+                                                 ("Capital Formation", "Finance & Investment"),
+    "Share of investment in GDP":                ("Investment Share",  "Finance & Investment"),
+    "Real interest rate (%)":                    ("Interest Rate",     "Finance & Investment"),
+    "Lending interest rate (%)":                 ("Lending interest rate (%)","Finance & Investment"),
+    "Inflation, consumer prices (annual %)":     ("Inflation",         "Finance & Investment"),
+    "Capital depreciation rate":                 ("Depreciation",      "Finance & Investment"),
+    "Human capital index":                       ("Human Capital",     "Human Capital & Infra"),
+    "Life expectancy at birth, total (years)":   ("Life Expectancy",   "Human Capital & Infra"),
+    "Access to electricity (% of population)":   ("Electricity Access","Human Capital & Infra"),
+    "Mobile cellular subscriptions (per 100 people)":("Mobile Subs",  "Human Capital & Infra"),
+    "Death rates, crude per 1000 people":        ("Death Rates",       "Human Capital & Infra"),
+    "Rule of law index":                         ("Rule of Law",       "Governance"),
+    "Political stability — estimate":            ("Political Stability","Governance"),
+    "Property rights":                           ("Property Rights",   "Governance"),
+    "Political corruption index":                ("Pol. Corruption",   "Governance"),
+    "Government revenue":                        ("Gov Revenue",       "Governance"),
+    "Primary net lending, General government, Percent of GDP":
+                                                 ("Primary Lending",   "Governance"),
+    "Landlocked":                                ("Landlocked",        "Macro & Structure"),
+}
+
+CAT_COLORS = {
+    "Resource Rents":         "#E74C3C",
+    "Macro & Structure":      "#8B5CF6",
+    "Finance & Investment":   "#E67E22",
+    "Human Capital & Infra":  "#1ABC9C",
+    "Governance":             "#3498DB",
+}
+
+eci_col = "Economic Complexity Index"
+corr_rows = []
+for col, (short, cat) in CAT_MAP.items():
+    if col not in panel.columns:
+        continue
+    sub = panel[[col, eci_col]].dropna()
+    if len(sub) < 20:
+        continue
+    r = float(np.corrcoef(sub[col], sub[eci_col])[0, 1])
+    corr_rows.append(dict(feature=col, short=short, cat=cat, r=r))
+
+corr_df = pd.DataFrame(corr_rows).sort_values("r").reset_index(drop=True)
+
+fig04 = go.Figure()
+fig04.add_vline(x=0, line=dict(color="#ccc", width=1.5))
+for cat in CAT_COLORS:
+    sub = corr_df[corr_df["cat"] == cat]
+    if len(sub) == 0:
+        continue
+    fig04.add_trace(go.Bar(
+        y=sub["short"], x=sub["r"], orientation="h",
+        name=cat, legendgroup=cat,
+        marker=dict(color=CAT_COLORS[cat], opacity=0.87,
+                    line=dict(color="white", width=0.4)),
+        customdata=list(zip(sub["feature"], sub["r"])),
+        hovertemplate="<b>%{y}</b><br>%{customdata[0]}<br>Pearson r = %{x:.3f}<extra></extra>",
+    ))
+fig04.update_layout(
+    **base_layout(height=600, margin=dict(l=140,r=40,t=70,b=70)),
+    title=None,
+    barmode="overlay",
+    xaxis=dict(title="Pearson r with ECI", gridcolor=GRID,
+               zeroline=False, range=[-0.5, 0.7]),
+    yaxis=dict(gridcolor=GRID, tickfont=dict(size=11)),
+    legend=dict(title="Category", x=1.01, y=0.99, font=dict(size=11),
+                bgcolor="rgba(250,250,250,0.9)", bordercolor=GRID, borderwidth=1),
+)
+save(fig04, "04_correlation_bar.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 05  NATURAL RESOURCE CLUSTERS — WORLD CHOROPLETH (1995)
+# ══════════════════════════════════════════════════════════════════════════════
+print("05 Cluster world map …")
+
+cl95_map = cl1995[["Country Code", "Country", "ClusterLabels"]].drop_duplicates("Country Code")
+
+fig05 = go.Figure()
+for lbl in sorted(cl95_map["ClusterLabels"].dropna().unique()):
+    sub   = cl95_map[cl95_map["ClusterLabels"] == lbl]
+    color = CLUSTER_COLORS.get(lbl, "#aaa")
+    fig05.add_trace(go.Choropleth(
+        locations=sub["Country Code"],
+        z=[1]*len(sub),
+        colorscale=[[0, color], [1, color]],
+        showscale=False, showlegend=True, name=lbl,
+        text=sub["Country"],
+        hovertemplate="<b>%{text}</b><br>" + lbl + "<extra></extra>",
+        marker=dict(line=dict(color="white", width=0.7)),
+    ))
+
+fig05.update_geos(
+    projection_type="natural earth",
+    showcountries=True, countrycolor="#d0d0d0",
+    showcoastlines=False,
+    showland=True, landcolor="#f2f4f6",
+    showocean=True, oceancolor="#dce9f5",
+    showframe=False,
+)
+fig05.update_layout(
+    **base_layout(height=560, margin=dict(l=0, r=0, t=70, b=80)),
+    title=None,
+    legend=dict(
+        orientation="h",
+        xanchor="center", x=0.5,
+        yanchor="top",    y=-0.04,
+        font=dict(size=12, family=FONT),
+        bgcolor="rgba(250,250,250,0.95)",
+        bordercolor=GRID, borderwidth=1,
+        tracegroupgap=0,
+    ),
+    geo=dict(bgcolor=BG),
+)
+save(fig05, "05_cluster_world_map.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 06  MEDIAN ECI BY CLUSTER OVER TIME
+# ══════════════════════════════════════════════════════════════════════════════
+print("06 Median ECI by cluster …")
+
+traj = (panel.dropna(subset=["ClusterLabels", "Economic Complexity Index"])
+              .groupby(["Year", "ClusterLabels"])["Economic Complexity Index"]
+              .agg(["median", "std", "count"]).reset_index())
+traj.columns = ["Year", "ClusterLabels", "median", "std", "n"]
+traj["se"] = traj["std"] / np.sqrt(traj["n"])
+
+fig06 = go.Figure()
+for lbl in sorted(traj["ClusterLabels"].unique()):
+    sub   = traj[traj["ClusterLabels"] == lbl].sort_values("Year")
+    color = CLUSTER_COLORS.get(lbl, "#999")
+    # CI band
+    def hex_rgba(h, a):
+        r_, g_, b_ = int(h[1:3],16), int(h[3:5],16), int(h[5:7],16)
+        return f"rgba({r_},{g_},{b_},{a})"
+    fig06.add_trace(go.Scatter(
+        x=sub["Year"].tolist() + sub["Year"].tolist()[::-1],
+        y=(sub["median"]+sub["se"]).tolist() + (sub["median"]-sub["se"]).tolist()[::-1],
+        fill="toself", fillcolor=hex_rgba(color, 0.12),
+        line=dict(width=0), showlegend=False, hoverinfo="skip", legendgroup=lbl,
+    ))
+    fig06.add_trace(go.Scatter(
+        x=sub["Year"], y=sub["median"],
+        mode="lines+markers", name=lbl, legendgroup=lbl,
+        line=dict(color=color, width=2.4),
+        marker=dict(size=5, color=color),
+        customdata=list(zip(sub["n"], sub["std"])),
+        hovertemplate=(
+            "<b>" + lbl + "</b> · %{x}<br>"
+            "Median ECI: <b>%{y:.3f}</b><br>"
+            "Countries: %{customdata[0]}<extra></extra>"
+        ),
+    ))
+
+fig06.update_layout(
+    **base_layout(height=480, margin=dict(l=70,r=40,t=70,b=60)),
+    title=None,
+    xaxis=dict(title="Year", gridcolor=GRID, dtick=5),
+    yaxis=dict(title="Median ECI", gridcolor=GRID,
+               zeroline=True, zerolinecolor="#ccc"),
+    legend=dict(x=1.01, y=0.99, font=dict(size=11),
+                bgcolor="rgba(250,250,250,0.9)", bordercolor=GRID, borderwidth=1),
+)
+save(fig06, "06_median_eci_by_cluster.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 07 + 08 + 09  ML MODELS — LASSO/RIDGE/EN + RF + FORECAST
+# ══════════════════════════════════════════════════════════════════════════════
+print("\n=== ML models ===")
+
+from sklearn.linear_model import LassoCV, RidgeCV, ElasticNetCV
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import r2_score
+import statsmodels.api as sm
+
+ml_df = master[(master["Year"].between(1995, 2019)) &
+               (master["Country Code"].isin(include_lst))].copy()
+ml_df = ml_df.sort_values(["Country Code", "Year"]).reset_index(drop=True)
+ml_df = ml_df.merge(cl_map, on="Country Code", how="left")
+
+ml_df["Total_Production_Value_Per_Capita"] = (
+    ml_df["Total_Production_Value"] / ml_df["Population"].replace(0, np.nan))
+ml_df["L1_ECI"] = ml_df.groupby("Country Code")["Economic Complexity Index"].shift(1)
+ml_df["ECI_delta"] = ml_df["Economic Complexity Index"] - ml_df["L1_ECI"]
+ml_df = ml_df.dropna(subset=["L1_ECI", "Economic Complexity Index"])
+
+LOG_COLS = [
+    "Human capital index", "Total_Production_Value_Per_Capita",
+    "Gross fixed capital formation, all, Constant prices, Percent of GDP",
+    "Government revenue", "Use of IMF credit (DOD, current US$)",
+]
+ml_df[LOG_COLS] = np.log1p(ml_df[LOG_COLS]).replace([np.inf, -np.inf], np.nan)
+
+hci_m  = ml_df["Human capital index"].mean()
+prod_m = ml_df["Total_Production_Value_Per_Capita"].mean()
+gfcf_m = ml_df["Gross fixed capital formation, all, Constant prices, Percent of GDP"].mean()
+ml_df["HCI_x_ProductionValue"]  = ((ml_df["Human capital index"] - hci_m) *
+                                    (ml_df["Total_Production_Value_Per_Capita"] - prod_m))
+ml_df["GFCF_x_ProductionValue"] = ((ml_df["Gross fixed capital formation, all, Constant prices, Percent of GDP"] - gfcf_m) *
+                                    (ml_df["Total_Production_Value_Per_Capita"] - prod_m))
+
+BASE_FEATS = [
+    "Total_Production_Value_Per_Capita", "Human capital index",
+    "Rule of law index", "Political stability \u2014 estimate",
+    "Trade (% of GDP)",
+    "Gross fixed capital formation, all, Constant prices, Percent of GDP",
+    "Share of investment in GDP", "Domestic credit to private sector (% of GDP)",
+    "Landlocked", "Urban population (% of total population)",
+    "Government revenue", "Capital depreciation rate",
+    "Use of IMF credit (DOD, current US$)", "Real interest rate (%)",
+    "Inflation, consumer prices (annual %)", "Access to electricity (% of population)",
+    "Adjusted savings: gross savings (% of GNI)", "L1_ECI",
+    "Forestry rents (% of GDP)",
+]
+ALL_FEATS = BASE_FEATS + ["HCI_x_ProductionValue", "GFCF_x_ProductionValue"]
+NAME_MAP  = {
+    "Total_Production_Value_Per_Capita": "Production Value",
+    "Human capital index": "Human Capital",
+    "Rule of law index": "Rule of Law",
+    "Political stability \u2014 estimate": "Political Stability",
+    "Trade (% of GDP)": "Trade",
+    "Gross fixed capital formation, all, Constant prices, Percent of GDP": "Capital Formation",
+    "Share of investment in GDP": "Investment Share",
+    "Domestic credit to private sector (% of GDP)": "Domestic Credit",
+    "Landlocked": "Landlocked",
+    "Urban population (% of total population)": "Urban Population",
+    "Government revenue": "Gov Revenue",
+    "Capital depreciation rate": "Depreciation",
+    "Use of IMF credit (DOD, current US$)": "IMF Credit",
+    "Real interest rate (%)": "Real Rate",
+    "Inflation, consumer prices (annual %)": "Inflation",
+    "Access to electricity (% of population)": "Electricity",
+    "Adjusted savings: gross savings (% of GNI)": "Gross Savings",
+    "L1_ECI": "Lagged ECI",
+    "Forestry rents (% of GDP)": "Forestry rents (% GDP)",
+    "HCI_x_ProductionValue":  "HC \u00d7 Production",
+    "GFCF_x_ProductionValue": "GFCF \u00d7 Production",
+}
+SHORT = [NAME_MAP.get(f, f) for f in ALL_FEATS]
+EXCL  = "Lagged ECI"
+
+ml_df = ml_df.dropna(subset=ALL_FEATS)
+print(f"  ML sample: {ml_df['Country Code'].nunique()} countries, {len(ml_df):,} obs")
+
+# Panel temporal CV
+class PanelTemporalCV:
+    def __init__(self, years, n_splits=5, gap=1, min_train_years=8):
+        uy  = np.sort(np.unique(years))
+        ec  = uy[0] + min_train_years - 1
+        lc  = uy[-1] - gap - 1
+        self.cutoffs  = np.unique(np.linspace(ec, lc, n_splits).astype(int))
+        self.n_splits = len(self.cutoffs)
+        self.years    = np.asarray(years)
+        self.gap      = gap
+    def split(self, X=None, y=None, groups=None):
+        for c in self.cutoffs:
+            ti = np.where(self.years <= c)[0]
+            vi = np.where(self.years > c + self.gap)[0]
+            if len(ti) and len(vi):
+                yield ti, vi
+    def get_n_splits(self, X=None, y=None, groups=None):
+        return self.n_splits
+
+train_df = ml_df[ml_df["Year"] <= 2014].copy()
+test_df  = ml_df[ml_df["Year"] >= 2015].copy()
+
+scaler  = StandardScaler()
+X_train = scaler.fit_transform(train_df[ALL_FEATS].values)
+X_test  = scaler.transform(test_df[ALL_FEATS].values)
+y_train = train_df["Economic Complexity Index"].values
+y_test  = test_df["Economic Complexity Index"].values
+
+tscv = PanelTemporalCV(train_df["Year"].values, n_splits=5, gap=1, min_train_years=8)
+
+# Load from cache or refit (invalidate if sample changed)
+_cache_valid = False
+if os.path.exists(CACHE):
+    with open(CACHE, "rb") as f:
+        cache = pickle.load(f)
+    if cache.get("n_countries") == ml_df["Country Code"].nunique():
+        _cache_valid = True
+
+if _cache_valid:
+    print("  Loading ML models from cache …")
+    with open(CACHE, "rb") as f:
+        cache = pickle.load(f)
+    lasso   = cache["lasso"]
+    ridge   = cache["ridge"]
+    elastic = cache["elastic"]
+    rf      = cache["rf"]
+    fc_lasso   = cache["fc_lasso"]
+    fc_ridge   = cache["fc_ridge"]
+    fc_elastic = cache["fc_elastic"]
+    fc_rf      = cache["fc_rf"]
+    scaler_full = cache["scaler_full"]
+if not _cache_valid:
+    print("  Fitting LASSO …")
+    lasso   = LassoCV(cv=tscv, random_state=42, max_iter=10000).fit(X_train, y_train)
+    print("  Fitting Ridge …")
+    ridge   = RidgeCV(alphas=np.logspace(-3, 3, 100), cv=tscv).fit(X_train, y_train)
+    print("  Fitting Elastic Net …")
+    elastic = ElasticNetCV(l1_ratio=[0.5], cv=tscv, random_state=42, max_iter=10000).fit(X_train, y_train)
+    print("  Fitting Random Forest …")
+    rf      = RandomForestRegressor(n_estimators=200, max_depth=4, min_samples_leaf=10,
+                                     random_state=42, n_jobs=-1, oob_score=True).fit(X_train, y_train)
+    # Retrain on full sample for forecasting
+    X_full_raw  = ml_df[ALL_FEATS].values
+    y_full      = ml_df["Economic Complexity Index"].values
+    scaler_full = StandardScaler()
+    X_full      = scaler_full.fit_transform(X_full_raw)
+    tscv_full   = PanelTemporalCV(ml_df["Year"].values, n_splits=5, gap=1, min_train_years=8)
+    print("  Fitting full-sample models for forecasting …")
+    fc_lasso   = LassoCV(cv=tscv_full, random_state=42, max_iter=10000).fit(X_full, y_full)
+    fc_ridge   = RidgeCV(alphas=np.logspace(-3, 3, 100), cv=tscv_full).fit(X_full, y_full)
+    fc_elastic = ElasticNetCV(l1_ratio=[0.5], cv=tscv_full, random_state=42, max_iter=10000).fit(X_full, y_full)
+    fc_rf      = RandomForestRegressor(n_estimators=200, max_depth=4, min_samples_leaf=10,
+                                        random_state=42, n_jobs=-1).fit(X_full, y_full)
+    with open(CACHE, "wb") as f:
+        pickle.dump(dict(lasso=lasso, ridge=ridge, elastic=elastic, rf=rf,
+                         fc_lasso=fc_lasso, fc_ridge=fc_ridge, fc_elastic=fc_elastic,
+                         fc_rf=fc_rf, scaler_full=scaler_full,
+                         n_countries=ml_df["Country Code"].nunique()), f)
+    print("  Saved to cache.")
+
+def minmax(a):
+    lo, hi = a.min(), a.max()
+    return (a - lo) / (hi - lo + 1e-12)
+
+imp = pd.DataFrame({"Feature": ALL_FEATS, "Short": SHORT})
+imp["LASSO"]       = minmax(np.abs(lasso.coef_))
+imp["Ridge"]       = minmax(np.abs(ridge.coef_))
+imp["Elastic Net"] = minmax(np.abs(elastic.coef_))
+imp["RF"]          = minmax(rf.feature_importances_)
+imp["avg"]         = imp[["LASSO","Ridge","Elastic Net","RF"]].mean(axis=1)
+imp_show = imp[imp["Short"] != EXCL].sort_values("avg", ascending=False).reset_index(drop=True)
+
+
+# ── CHART 07: LASSO/Ridge/EN Coefficients ─────────────────────────────────────
+print("07 LASSO/Ridge/EN coefficients …")
+
+coef_df = pd.DataFrame({"Feature": ALL_FEATS, "Short": SHORT})
+coef_df["LASSO"]       = lasso.coef_
+coef_df["Ridge"]       = ridge.coef_
+coef_df["Elastic Net"] = elastic.coef_
+coef_df = coef_df[coef_df["Short"] != EXCL].copy()
+coef_df["abs_avg"] = coef_df[["LASSO","Ridge","Elastic Net"]].abs().mean(axis=1)
+coef_df = coef_df.sort_values("abs_avg", ascending=True).reset_index(drop=True)
+# Truncate to top 12 by absolute magnitude (page request: only show most important)
+coef_df = coef_df.tail(12).reset_index(drop=True)
+
+MC = {"LASSO": "#c23a3a", "Ridge": "#3498DB", "Elastic Net": "#2e7d4a"}
+fig07 = go.Figure()
+fig07.add_vline(x=0, line=dict(color="#c9cfd6", width=1.5))
+for m, col in MC.items():
+    fig07.add_trace(go.Bar(
+        y=coef_df["Short"], x=coef_df[m], name=m, orientation="h",
+        marker=dict(color=col, opacity=0.88, line=dict(color="white", width=0.5)),
+        hovertemplate=f"%{{y}}: %{{x:+.4f}}<extra>{m}</extra>",
+    ))
+fig07.update_layout(
+    **base_layout(height=560, margin=dict(l=165,r=40,t=70,b=70)),
+    title=None,
+    barmode="group",
+    xaxis=dict(title="Coefficient (standardised inputs)", gridcolor=GRID),
+    yaxis=dict(gridcolor=GRID, tickfont=dict(size=11)),
+    legend=dict(x=1.01, y=0.99, font=dict(size=11),
+                bgcolor="rgba(250,250,250,0.9)", bordercolor=GRID, borderwidth=1),
+)
+save(fig07, "07_lasso_ridge_en_coefficients.html")
+
+
+# ── CHART 08: RF Feature Importance ──────────────────────────────────────────
+print("08 RF feature importance …")
+
+rf_show = imp_show.sort_values("RF", ascending=True).tail(12).copy()  # top 12 only (page request)
+fig08 = go.Figure(go.Bar(
+    y=rf_show["Short"], x=rf_show["RF"], orientation="h",
+    marker=dict(color="#c97030", opacity=0.9, line=dict(color="white", width=0.5)),
+    hovertemplate="%{y}: %{x:.4f}<extra>Random Forest (MDI)</extra>",
+))
+fig08.update_layout(
+    **base_layout(height=500, margin=dict(l=165,r=40,t=70,b=70)),
+    title=None,
+    xaxis=dict(title="Feature Importance (MDI, normalised)", gridcolor=GRID),
+    yaxis=dict(gridcolor=GRID, tickfont=dict(size=11)),
+    showlegend=False,
+)
+save(fig08, "08_rf_feature_importance.html")
+
+
+# ── CHART 09: ECI FORECAST 2020-2030 ─────────────────────────────────────────
+print("09 ECI forecast trajectories …")
+
+FORECAST_YEARS  = list(range(2020, 2031))
+trend_feats     = [f for f in BASE_FEATS if f != "L1_ECI"]
+
+def extrapolate_country(cdf, yrs):
+    last5 = cdf.tail(5)
+    rows  = []
+    for yr in yrs:
+        row = {"Year": yr, "Country Code": cdf["Country Code"].iloc[0],
+               "Country Name": cdf["Country Name"].iloc[0]}
+        for feat in trend_feats:
+            vals = last5[feat].dropna().values
+            if len(vals) >= 2:
+                slope, intercept = np.polyfit(np.arange(len(vals)), vals, 1)
+                steps = yr - int(last5["Year"].iloc[-1])
+                row[feat] = float(intercept + slope * (len(vals) - 1 + steps))
+            else:
+                row[feat] = float(vals[-1]) if len(vals) else 0.0
+        rows.append(row)
+    return rows
+
+future_rows = []
+for cc, cdf in ml_df.groupby("Country Code"):
+    future_rows.extend(extrapolate_country(cdf, FORECAST_YEARS))
+future_df = pd.DataFrame(future_rows)
+
+records = []
+fc_models = {"LASSO": fc_lasso, "Ridge": fc_ridge, "Elastic Net": fc_elastic, "RF": fc_rf}
+for cc, cdf in ml_df.groupby("Country Code"):
+    last_eci = float(cdf.sort_values("Year")["Economic Complexity Index"].iloc[-1])
+    fsub     = future_df[future_df["Country Code"] == cc].sort_values("Year")
+    running  = {n: last_eci for n in fc_models}
+    for _, frow in fsub.iterrows():
+        preds = {}
+        for name, model in fc_models.items():
+            row2 = frow.copy()
+            row2["L1_ECI"] = running[name]
+            row2["HCI_x_ProductionValue"]  = ((row2["Human capital index"] - hci_m) *
+                                               (row2["Total_Production_Value_Per_Capita"] - prod_m))
+            row2["GFCF_x_ProductionValue"] = ((row2["Gross fixed capital formation, all, Constant prices, Percent of GDP"] - gfcf_m) *
+                                               (row2["Total_Production_Value_Per_Capita"] - prod_m))
+            x_vec = np.array([row2.get(f, 0) for f in ALL_FEATS]).reshape(1, -1)
+            pred  = model.predict(scaler_full.transform(x_vec))[0]
+            preds[name] = pred
+            running[name] = pred
+        rec = {"Country Code": cc, "Country Name": frow["Country Name"],
+               "Year": int(frow["Year"]), "Last_Known_ECI": last_eci,
+               "Ensemble": float(np.mean(list(preds.values())))}
+        rec.update(preds)
+        records.append(rec)
+
+forecast_df = pd.DataFrame(records)
+forecast_df["ECI_std"] = forecast_df[list(fc_models.keys())].std(axis=1)
+
+ranking = (forecast_df.groupby("Country Code")
+           .agg(Country=("Country Name","first"),
+                ECI_2019=("Last_Known_ECI","first"),
+                ECI_2030=("Ensemble","last"))
+           .reset_index())
+ranking["Total_Change"] = ranking["ECI_2030"] - ranking["ECI_2019"]
+ranking = ranking.sort_values("Total_Change", ascending=False).reset_index(drop=True)
+
+top3    = ranking.head(3)["Country Code"].tolist()
+bottom3 = ranking.tail(3)["Country Code"].tolist()
+print(f"  Top 3 improvers: {top3}")
+print(f"  Bottom 3 decliners: {bottom3}")
+
+hist = (master[master["Country Code"].isin(include_lst)]
+        [["Country Code","Country Name","Year","Economic Complexity Index"]].dropna())
+all_cc = hist["Country Code"].unique().tolist()
+cc_name09 = master.groupby("Country Code")["Country Name"].first().to_dict()
+TOP_C  = "#2e7d4a"
+BOT_C  = "#c23a3a"
+GREY_L = "#9aafc4"
+
+def hex_rgba(h, a):
+    r_, g_, b_ = int(h[1:3],16), int(h[3:5],16), int(h[5:7],16)
+    return f"rgba({r_},{g_},{b_},{a})"
+
+figZ = make_subplots(rows=1, cols=2, horizontal_spacing=0.08, shared_yaxes=True,
+                     subplot_titles=[
+                         f"Top 3 improvers: {' · '.join(cc_name09.get(c, c) for c in top3)}",
+                         f"Bottom 3 decliners: {' · '.join(cc_name09.get(c, c) for c in bottom3)}",
+                     ])
+
+for panel_i, (highlight, h_col) in enumerate([(top3, TOP_C), (bottom3, BOT_C)], 1):
+    # Background lines for non-highlighted countries removed (page request)
+    # to reduce visual noise; only the 6 highlighted countries are drawn.
+    for cc in highlight:
+        h = hist[hist["Country Code"] == cc].sort_values("Year")
+        f = forecast_df[forecast_df["Country Code"] == cc].sort_values("Year")
+        if len(h) == 0: continue
+        cname = h["Country Name"].iloc[0]
+        figZ.add_trace(go.Scatter(
+            x=h["Year"], y=h["Economic Complexity Index"], mode="lines",
+            line=dict(color=h_col, width=2.2), showlegend=False,
+            name=cname,
+            hovertemplate=f"<b>{cname}</b><br>%{{x}}: ECI=%{{y:.3f}}<extra></extra>",
+        ), row=1, col=panel_i)
+        if len(f) == 0: continue
+        f = f.sort_values("Year")
+        last_y = float(h["Economic Complexity Index"].iloc[-1])
+        last_x = int(h["Year"].iloc[-1])
+        bx = [last_x] + f["Year"].tolist()
+        by = [last_y] + f["Ensemble"].tolist()
+        bstd = [0.0]  + f["ECI_std"].tolist()
+        upper = [y+s for y, s in zip(by, bstd)]
+        lower = [y-s for y, s in zip(by, bstd)]
+        figZ.add_trace(go.Scatter(
+            x=bx+bx[::-1], y=upper+lower[::-1],
+            fill="toself", fillcolor=hex_rgba(h_col, 0.10),
+            line=dict(width=0), showlegend=False, hoverinfo="skip",
+        ), row=1, col=panel_i)
+        figZ.add_trace(go.Scatter(
+            x=bx, y=by, mode="lines",
+            line=dict(color=h_col, width=1.8, dash="dash"),
+            showlegend=False, hoverinfo="skip",
+        ), row=1, col=panel_i)
+        # Inline label
+        xref = "x" if panel_i == 1 else "x2"
+        yref = "y" if panel_i == 1 else "y2"
+        figZ.add_annotation(
+            x=2030, y=by[-1], xref=xref, yref=yref,
+            text=f"<b>{cc_name09.get(cc, cc)}</b>", showarrow=True, ax=14, ay=0,
+            arrowwidth=1, arrowcolor=h_col,
+            font=dict(size=9, color=h_col), xanchor="left",
+        )
+    figZ.add_vline(x=2019.5, line=dict(color="#aaa", width=1.2, dash="dot"),
+                   row=1, col=panel_i)
+    figZ.update_xaxes(title_text="Year", gridcolor=GRID, dtick=5,
+                       range=[1994, 2033], row=1, col=panel_i)
+
+figZ.update_yaxes(title_text="Economic Complexity Index", gridcolor=GRID,
+                   row=1, col=1)
+figZ.update_yaxes(gridcolor=GRID, row=1, col=2)
+figZ.update_layout(
+    template="plotly_white", plot_bgcolor=BG, paper_bgcolor=BG,
+    font=dict(family=FONT, size=11, color=NAVY),
+    height=580, margin=dict(l=70,r=50,t=80,b=50),
+    title=None,
+    showlegend=False,
+)
+save(figZ, "09_eci_forecast_trajectories.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 10  COUNTRY ECI TRAJECTORY COMPARATORS (with dropdown)
+# ══════════════════════════════════════════════════════════════════════════════
+print("10 ECI trajectory comparators …")
+
+colors = {"CHL": "#c23a3a", "AZE": "#4a6fa5", "COG": "#2e7d4a"}
+CODE_TO_NAME = master.groupby("Country Code")["Country Name"].first().to_dict()
+
+traj_panel = master[master["Year"].between(1995, 2019)].dropna(
+    subset=["Economic Complexity Index"]).copy()
+
+fig10 = go.Figure()
+for cc, col in colors.items():
+    sub = traj_panel[traj_panel["Country Code"] == cc].sort_values("Year")
+    if len(sub) == 0:
+        continue
+    nm = CODE_TO_NAME.get(cc, cc)
+    fig10.add_trace(go.Scatter(
+        x=sub["Year"], y=sub["Economic Complexity Index"],
+        mode="lines+markers", name=nm,
+        line=dict(color=col, width=2.5),
+        marker=dict(size=5, color=col),
+        hovertemplate=f"<b>{nm}</b> · %{{x}}: ECI=%{{y:.3f}}<extra></extra>",
+    ))
+
+fig10.update_layout(
+    **base_layout(height=500, margin=dict(l=70, r=40, t=100, b=60)),
+    title=title("ECI Trajectory: Case Study Countries",
+                "1995–2019 · Chile, Azerbaijan, Congo"),
+    xaxis=dict(title="Year", gridcolor=GRID, dtick=5),
+    yaxis=dict(title="Economic Complexity Index", gridcolor=GRID,
+               zeroline=True, zerolinecolor="#ccc"),
+    legend=dict(x=1.01, y=0.99, font=dict(size=11),
+                bgcolor="rgba(250,250,250,0.9)", bordercolor=GRID, borderwidth=1),
+)
+save(fig10, "10_eci_trajectory_comparators.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 11  CLUSTER SANKEY TRANSITIONS 1995 → 2019
+# ══════════════════════════════════════════════════════════════════════════════
+print("\n11 Cluster Sankey transitions …")
+
+# Build cluster assignments for 1995 and 2019
+cl_panel = panel.dropna(subset=["ClusterLabels"]).copy()
+cl_1995 = cl_panel[cl_panel["Year"] == 1995][["Country Code", "ClusterLabels"]].drop_duplicates("Country Code")
+cl_2019 = cl_panel[cl_panel["Year"] == 2019][["Country Code", "ClusterLabels"]].drop_duplicates("Country Code")
+cl_1995.columns = ["Country Code", "Cluster_1995"]
+cl_2019.columns = ["Country Code", "Cluster_2019"]
+trans = cl_1995.merge(cl_2019, on="Country Code", how="inner")
+
+labels_95 = sorted(trans["Cluster_1995"].unique())
+labels_19 = sorted(trans["Cluster_2019"].unique())
+all_labels_s = [f"{l} (1995)" for l in labels_95] + [f"{l} (2019)" for l in labels_19]
+
+node_colors = []
+for l in labels_95:
+    node_colors.append(CLUSTER_COLORS.get(l, "#aaa"))
+for l in labels_19:
+    node_colors.append(CLUSTER_COLORS.get(l, "#aaa"))
+
+sources, targets, values, link_colors = [], [], [], []
+for c95 in labels_95:
+    for c19 in labels_19:
+        n = len(trans[(trans["Cluster_1995"] == c95) & (trans["Cluster_2019"] == c19)])
+        if n > 0:
+            si = labels_95.index(c95)
+            ti = len(labels_95) + labels_19.index(c19)
+            sources.append(si); targets.append(ti); values.append(n)
+            c = CLUSTER_COLORS.get(c95, "#aaa")
+            r_, g_, b_ = int(c[1:3],16), int(c[3:5],16), int(c[5:7],16)
+            link_colors.append(f"rgba({r_},{g_},{b_},0.35)")
+
+fig11 = go.Figure(go.Sankey(
+    node=dict(pad=20, thickness=25, label=all_labels_s, color=node_colors,
+              line=dict(color="white", width=1)),
+    link=dict(source=sources, target=targets, value=values, color=link_colors),
+))
+fig11.update_layout(
+    **base_layout(height=560, margin=dict(l=20,r=20,t=70,b=40)),
+    title=None,
+)
+save(fig11, "11_cluster_sankey_transitions.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 12  REGRESSION MODELS 3a / 3b — COEFFICIENT COMPARISON
+# ══════════════════════════════════════════════════════════════════════════════
+print("\n12 Regression coefficient comparison (3a vs 3b) …")
+
+# Prepare regression data
+reg_df = ml_df.copy()
+reg_df["log_HCI"]  = reg_df["Human capital index"]  # already log-transformed
+reg_df["log_GFCF"] = reg_df["Gross fixed capital formation, all, Constant prices, Percent of GDP"]
+reg_df["log_Production_Value"] = reg_df["Total_Production_Value_Per_Capita"]
+
+# Mean-centre for interactions
+_hci_m  = reg_df["log_HCI"].mean()
+_gfcf_m = reg_df["log_GFCF"].mean()
+_prod_m = reg_df["log_Production_Value"].mean()
+_frt_m  = reg_df["Forestry rents (% of GDP)"].mean()
+
+reg_df["log_HCI_x_log_Production"]  = (reg_df["log_HCI"] - _hci_m)  * (reg_df["log_Production_Value"] - _prod_m)
+reg_df["log_GFCF_x_log_Production"] = (reg_df["log_GFCF"] - _gfcf_m) * (reg_df["log_Production_Value"] - _prod_m)
+reg_df["log_HCI_x_forestry_rents"]  = (reg_df["log_HCI"] - _hci_m)  * (reg_df["Forestry rents (% of GDP)"] - _frt_m)
+reg_df["log_GFCF_x_forestry_rents"] = (reg_df["log_GFCF"] - _gfcf_m) * (reg_df["Forestry rents (% of GDP)"] - _frt_m)
+
+REG_VARS = ["log_HCI", "log_GFCF", "Political stability \u2014 estimate",
+            "Rule of law index", "log_Production_Value",
+            "Forestry rents (% of GDP)", "Trade (% of GDP)"]
+INTERACT = ["log_HCI_x_log_Production", "log_GFCF_x_log_Production",
+            "log_HCI_x_forestry_rents", "log_GFCF_x_forestry_rents"]
+REG_SHORT = {
+    "log_HCI": "Human Capital", "log_GFCF": "Capital Formation",
+    "Political stability \u2014 estimate": "Political Stability",
+    "Rule of law index": "Rule of Law", "log_Production_Value": "Production Value",
+    "Forestry rents (% of GDP)": "Forestry Rents", "Trade (% of GDP)": "Trade",
+    "log_HCI_x_log_Production": "HCI × Production",
+    "log_GFCF_x_log_Production": "GFCF × Production",
+    "log_HCI_x_forestry_rents": "HCI × Forestry",
+    "log_GFCF_x_forestry_rents": "GFCF × Forestry",
+    "ECI_lag1": "Lagged ECI",
+}
+
+reg_df["ECI_lag1"] = reg_df.groupby("Country Code")["Economic Complexity Index"].shift(1)
+
+# Model 3a: no lag
+cols_3a = REG_VARS + INTERACT + ["Economic Complexity Index", "Country Code"]
+r3a = reg_df[cols_3a].dropna()
+y3a = r3a["Economic Complexity Index"]
+X3a = sm.add_constant(r3a[REG_VARS + INTERACT])
+m3a_raw = sm.OLS(y3a, X3a).fit()
+_m3a_rob = m3a_raw.get_robustcov_results(cov_type="cluster", groups=r3a["Country Code"])
+
+from types import SimpleNamespace
+def _wrap_rob(rob, cols):
+    """Wrap robust results so params/bse are pd.Series with named index."""
+    ns = SimpleNamespace()
+    ns.params    = pd.Series(rob.params, index=cols)
+    ns.bse       = pd.Series(rob.bse,   index=cols)
+    ns.rsquared  = rob.rsquared
+    ns.nobs      = rob.nobs
+    return ns
+
+m3a = _wrap_rob(_m3a_rob, X3a.columns)
+
+# Model 3b: with lag
+cols_3b = REG_VARS + INTERACT + ["ECI_lag1", "Economic Complexity Index", "Country Code"]
+r3b = reg_df[cols_3b].dropna()
+y3b = r3b["Economic Complexity Index"]
+X3b = sm.add_constant(r3b[REG_VARS + INTERACT + ["ECI_lag1"]])
+m3b_raw = sm.OLS(y3b, X3b).fit()
+_m3b_rob = m3b_raw.get_robustcov_results(cov_type="cluster", groups=r3b["Country Code"])
+m3b = _wrap_rob(_m3b_rob, X3b.columns)
+
+print(f"  Model 3a: R²={m3a.rsquared:.4f}, N={int(m3a.nobs)}")
+print(f"  Model 3b: R²={m3b.rsquared:.4f}, N={int(m3b.nobs)}")
+
+# Plot
+plot_vars = REG_VARS + INTERACT
+fig12 = go.Figure()
+offset = 0.15
+for mi, (model, mname, col) in enumerate([(m3b, "Headline (with lagged ECI)", "#c23a3a")]):
+    coefs = [model.params.get(v, np.nan) for v in plot_vars]
+    ci_lo = [model.params.get(v, 0) - 1.96 * model.bse.get(v, 0) for v in plot_vars]
+    ci_hi = [model.params.get(v, 0) + 1.96 * model.bse.get(v, 0) for v in plot_vars]
+    shorts = [REG_SHORT.get(v, v) for v in plot_vars]
+    ypos = [i + (mi - 0.5) * offset for i in range(len(plot_vars))]
+
+    fig12.add_trace(go.Scatter(
+        x=coefs, y=ypos, mode="markers", name=f"Model {mname}",
+        marker=dict(size=8, color=col, symbol="circle"),
+        error_x=dict(type="data",
+                     array=[h - c for c, h in zip(coefs, ci_hi)],
+                     arrayminus=[c - l for c, l in zip(coefs, ci_lo)],
+                     color=col, thickness=1.5),
+        customdata=list(zip(shorts, coefs, ci_lo, ci_hi)),
+        hovertemplate="<b>%{customdata[0]}</b><br>Coef: %{customdata[1]:.4f}<br>"
+                      "95% CI: [%{customdata[2]:.4f}, %{customdata[3]:.4f}]<extra></extra>",
+    ))
+
+fig12.add_vline(x=0, line=dict(color="#ccc", width=1.5))
+fig12.update_layout(
+    **base_layout(height=560, margin=dict(l=170,r=40,t=70,b=70)),
+    title=None,
+    xaxis=dict(title="Coefficient", gridcolor=GRID),
+    yaxis=dict(tickvals=list(range(len(plot_vars))),
+               ticktext=[REG_SHORT.get(v, v) for v in plot_vars],
+               gridcolor=GRID, tickfont=dict(size=11)),
+    legend=dict(x=1.01, y=0.99, font=dict(size=11),
+                bgcolor="rgba(250,250,250,0.9)", bordercolor=GRID, borderwidth=1),
+)
+save(fig12, "12_coef_comparison_3a_3b.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 13  ECI VS HUMAN CAPITAL BY PRODUCTION VALUE QUARTILE
+# ══════════════════════════════════════════════════════════════════════════════
+print("13 ECI vs HCI by production quartile …")
+
+scatter_df = reg_df[["log_HCI", "Economic Complexity Index",
+                      "Total_Production_Value_Per_Capita", "Country Code"]].dropna().copy()
+scatter_df["Prod_Q"] = pd.qcut(scatter_df["Total_Production_Value_Per_Capita"], 4,
+                                labels=["Q1 (lowest)", "Q2", "Q3", "Q4 (highest)"])
+Q_COLORS = {"Q1 (lowest)": "#4a6fa5", "Q2": "#2e7d4a", "Q3": "#c9a227", "Q4 (highest)": "#c23a3a"}
+
+fig13 = go.Figure()
+for q in ["Q1 (lowest)", "Q2", "Q3", "Q4 (highest)"]:
+    sub = scatter_df[scatter_df["Prod_Q"] == q]
+    fig13.add_trace(go.Scatter(
+        x=sub["log_HCI"], y=sub["Economic Complexity Index"],
+        mode="markers", name=q,
+        marker=dict(size=5, color=Q_COLORS[q], opacity=0.5),
+        hovertemplate=f"{q}<br>HCI: %{{x:.2f}}<br>ECI: %{{y:.3f}}<extra></extra>",
+    ))
+    # Trendline
+    mask = sub["log_HCI"].notna() & sub["Economic Complexity Index"].notna()
+    if mask.sum() > 5:
+        slope, intercept = np.polyfit(sub.loc[mask, "log_HCI"], sub.loc[mask, "Economic Complexity Index"], 1)
+        xr = np.linspace(sub["log_HCI"].min(), sub["log_HCI"].max(), 50)
+        fig13.add_trace(go.Scatter(
+            x=xr, y=intercept + slope * xr, mode="lines",
+            line=dict(color=Q_COLORS[q], width=2, dash="dot"),
+            showlegend=False, hoverinfo="skip",
+        ))
+
+fig13.update_layout(
+    **base_layout(height=520, margin=dict(l=70,r=40,t=70,b=60)),
+    title=None,
+    xaxis=dict(title="Human Capital Index (log)", gridcolor=GRID),
+    yaxis=dict(title="Economic Complexity Index", gridcolor=GRID,
+               zeroline=True, zerolinecolor="#ccc"),
+    legend=dict(title="NR Production quartile", x=1.01, y=0.99, font=dict(size=11),
+                bgcolor="rgba(250,250,250,0.9)", bordercolor=GRID, borderwidth=1),
+)
+save(fig13, "13_eci_hci_production_interaction.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 14  ECI DISTRIBUTION 1995 VS 2019
+# ══════════════════════════════════════════════════════════════════════════════
+print("14 ECI distribution comparison …")
+
+eci95 = panel[panel["Year"] == 1995]["Economic Complexity Index"].dropna()
+eci19 = panel[panel["Year"] == 2019]["Economic Complexity Index"].dropna()
+
+fig14 = go.Figure()
+fig14.add_trace(go.Histogram(x=eci95, name="1995", marker_color="#4a6fa5",
+                              opacity=0.7, nbinsx=20,
+                              hovertemplate="1995<br>ECI bin: %{x:.2f}<br>Count: %{y}<extra></extra>"))
+fig14.add_trace(go.Histogram(x=eci19, name="2019", marker_color="#c23a3a",
+                              opacity=0.7, nbinsx=20,
+                              hovertemplate="2019<br>ECI bin: %{x:.2f}<br>Count: %{y}<extra></extra>"))
+fig14.update_layout(
+    **base_layout(height=440, margin=dict(l=70,r=40,t=70,b=60)),
+    title=title("ECI Distribution: 1995 vs 2019", "forest-adjusted sample"),
+    barmode="overlay",
+    xaxis=dict(title="Economic Complexity Index", gridcolor=GRID),
+    yaxis=dict(title="Count", gridcolor=GRID),
+    legend=dict(x=0.85, y=0.95, font=dict(size=12)),
+)
+save(fig14, "14_eci_distribution_comparison.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 15  OOS R² — ECI LEVELS AND ΔECI
+# ══════════════════════════════════════════════════════════════════════════════
+print("15 Out-of-sample R² …")
+
+# Fit delta-ECI models
+y_train_d = train_df["ECI_delta"].values
+y_test_d  = test_df["ECI_delta"].values
+
+lasso_d   = LassoCV(cv=tscv, random_state=42, max_iter=10000).fit(X_train, y_train_d)
+ridge_d   = RidgeCV(alphas=np.logspace(-3, 3, 100), cv=tscv).fit(X_train, y_train_d)
+elastic_d = ElasticNetCV(l1_ratio=[0.5], cv=tscv, random_state=42, max_iter=10000).fit(X_train, y_train_d)
+rf_d      = RandomForestRegressor(n_estimators=200, max_depth=4, min_samples_leaf=10,
+                                   random_state=42, n_jobs=-1).fit(X_train, y_train_d)
+
+models_level = {"LASSO": lasso, "Ridge": ridge, "Elastic Net": elastic, "Random Forest": rf}
+models_delta = {"LASSO": lasso_d, "Ridge": ridge_d, "Elastic Net": elastic_d, "Random Forest": rf_d}
+
+r2_data = []
+for mname in models_level:
+    ml_ = models_level[mname]
+    md_ = models_delta[mname]
+    r2_data.append(dict(Model=mname, Target="ECI Level",
+                        Train=r2_score(y_train, ml_.predict(X_train)),
+                        Test=r2_score(y_test, ml_.predict(X_test))))
+    r2_data.append(dict(Model=mname, Target="ΔECI",
+                        Train=r2_score(y_train_d, md_.predict(X_train)),
+                        Test=r2_score(y_test_d, md_.predict(X_test))))
+
+r2_df = pd.DataFrame(r2_data)
+
+fig15 = make_subplots(rows=1, cols=2, subplot_titles=["ECI Level", "ΔECI"],
+                       horizontal_spacing=0.12)
+bar_colors = {"LASSO": "#c23a3a", "Ridge": "#4a6fa5", "Elastic Net": "#2e7d4a", "Random Forest": "#c97030"}
+
+for ci, tgt in enumerate(["ECI Level", "ΔECI"], 1):
+    sub = r2_df[r2_df["Target"] == tgt]
+    fig15.add_trace(go.Bar(
+        x=sub["Model"], y=sub["Train"], name="Train" if ci == 1 else None,
+        marker_color=[bar_colors[m] for m in sub["Model"]],
+        opacity=0.4, showlegend=(ci == 1), legendgroup="train",
+        hovertemplate="%{x}<br>Train R²: %{y:.3f}<extra></extra>",
+    ), row=1, col=ci)
+    fig15.add_trace(go.Bar(
+        x=sub["Model"], y=sub["Test"], name="Test" if ci == 1 else None,
+        marker_color=[bar_colors[m] for m in sub["Model"]],
+        opacity=0.9, showlegend=(ci == 1), legendgroup="test",
+        hovertemplate="%{x}<br>Test R²: %{y:.3f}<extra></extra>",
+    ), row=1, col=ci)
+
+fig15.update_layout(
+    **base_layout(height=460, margin=dict(l=70,r=40,t=80,b=60)),
+    title=title("Out-of-Sample R²: ECI Levels and ΔECI",
+                "Train: 1995–2014 · Test: 2015–2019"),
+    barmode="group",
+    legend=dict(x=0.85, y=0.95, font=dict(size=11)),
+)
+fig15.update_yaxes(title_text="R²", gridcolor=GRID, row=1, col=1)
+fig15.update_yaxes(gridcolor=GRID, row=1, col=2)
+save(fig15, "15_oos_r2_levels_delta.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 16  80% PREDICTION INTERVALS
+# ══════════════════════════════════════════════════════════════════════════════
+print("16 Prediction intervals …")
+
+preds_all = np.column_stack([m.predict(X_test) for m in models_level.values()])
+ensemble_mean = preds_all.mean(axis=1)
+ensemble_lo   = np.percentile(preds_all, 10, axis=1)
+ensemble_hi   = np.percentile(preds_all, 90, axis=1)
+
+test_sorted = test_df.copy()
+test_sorted["pred"] = ensemble_mean
+test_sorted["lo"]   = ensemble_lo
+test_sorted["hi"]   = ensemble_hi
+test_sorted = test_sorted.sort_values("pred").reset_index(drop=True)
+
+fig16 = go.Figure()
+fig16.add_trace(go.Scatter(
+    x=list(range(len(test_sorted))), y=test_sorted["hi"],
+    mode="lines", line=dict(width=0), showlegend=False, hoverinfo="skip",
+))
+fig16.add_trace(go.Scatter(
+    x=list(range(len(test_sorted))), y=test_sorted["lo"],
+    mode="lines", line=dict(width=0), fill="tonexty",
+    fillcolor="rgba(74,111,165,0.15)", showlegend=False, hoverinfo="skip",
+))
+fig16.add_trace(go.Scatter(
+    x=list(range(len(test_sorted))), y=test_sorted["pred"],
+    mode="lines", name="Ensemble prediction",
+    line=dict(color="#4a6fa5", width=1.5),
+))
+fig16.add_trace(go.Scatter(
+    x=list(range(len(test_sorted))),
+    y=test_sorted["Economic Complexity Index"],
+    mode="markers", name="Actual ECI",
+    marker=dict(size=4, color="#c23a3a", opacity=0.6),
+    hovertemplate="%{text}<br>Actual: %{y:.3f}<extra></extra>",
+    text=test_sorted["Country Code"] + " " + test_sorted["Year"].astype(str),
+))
+fig16.update_layout(
+    **base_layout(height=460, margin=dict(l=70,r=40,t=70,b=60)),
+    title=title("80% Prediction Intervals (Test Set, 2015–2019)",
+                "Ensemble of LASSO, Ridge, EN, RF · Band = 10th–90th percentile"),
+    xaxis=dict(title="Observation (sorted by prediction)", gridcolor=GRID),
+    yaxis=dict(title="Economic Complexity Index", gridcolor=GRID),
+    legend=dict(x=0.02, y=0.98, font=dict(size=11)),
+)
+save(fig16, "16_prediction_intervals.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 17  FOREST RENT DECOMPOSITION — TOP 20
+# ══════════════════════════════════════════════════════════════════════════════
+print("17 Forest rent decomposition …")
+
+rent_cols = ["Oil rents (% of GDP)", "Natural gas rents (% of GDP)",
+             "Mineral rents (% of GDP)", "Forestry rents (% of GDP)"]
+rent_short = {"Oil rents (% of GDP)": "Oil", "Natural gas rents (% of GDP)": "Gas",
+              "Mineral rents (% of GDP)": "Mineral", "Forestry rents (% of GDP)": "Forestry"}
+rent_colors = {"Oil": "#1a2744", "Gas": "#4a6fa5", "Mineral": "#c9a227", "Forestry": "#2e7d4a"}
+
+latest = panel[panel["Year"] == 2019].copy()
+for c in rent_cols:
+    latest[c] = latest[c].fillna(0)
+latest["Total_Rents"] = latest[rent_cols].sum(axis=1)
+top20 = latest.nlargest(20, "Total_Rents").sort_values("Total_Rents", ascending=True)
+
+fig17 = go.Figure()
+for c in rent_cols:
+    s = rent_short[c]
+    fig17.add_trace(go.Bar(
+        y=top20["Country Name"], x=top20[c], name=s, orientation="h",
+        marker_color=rent_colors[s],
+        hovertemplate=f"%{{y}}<br>{s}: %{{x:.1f}}%<extra></extra>",
+    ))
+fig17.update_layout(
+    **base_layout(height=560, margin=dict(l=160,r=40,t=70,b=60)),
+    title=None,
+    barmode="stack",
+    xaxis=dict(title="Rents (% of GDP)", gridcolor=GRID),
+    yaxis=dict(gridcolor=GRID, tickfont=dict(size=11)),
+    legend=dict(orientation="h", x=0.5, xanchor="center", y=-0.12, font=dict(size=11)),
+)
+save(fig17, "17_forest_rent_decomposition.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 18  COEFFICIENT COMPARISON ACROSS SAMPLE DEFINITIONS (forest-adjusted)
+# ══════════════════════════════════════════════════════════════════════════════
+print("18 Coefficient comparison across samples …")
+
+# Build forest-adjusted rents
+master_adj = master.copy()
+master_adj["NR_adj"] = (master_adj["Total natural resources rents (% of GDP)"].fillna(0)
+                         - master_adj["Forestry rents (% of GDP)"].fillna(0))
+master_adj["NR_adj"] = master_adj["NR_adj"].clip(lower=0)
+
+# Gulf states always included
+GULF = ["BHR", "KWT", "OMN", "QAT", "SAU", "ARE"]
+
+# Sample definitions
+def get_sample(threshold):
+    base = master_adj[master_adj["Year"] == 1995].copy()
+    selected = base[base["NR_adj"] >= threshold]["Country Code"].unique().tolist()
+    for g in GULF:
+        if g not in selected:
+            selected.append(g)
+    return selected
+
+samples = {
+    "Main sample": include_lst,
+    "Adj ≥3%": get_sample(3),
+    "Adj ≥2%": get_sample(2),
+    "Adj ≥1%": get_sample(1),
+}
+
+# Fit Model 3a on each sample, collect coefficients
+sample_results = {}
+for sname, slist in samples.items():
+    sdf = ml_df[ml_df["Country Code"].isin(slist)].copy()
+    sdf["log_HCI"]  = sdf["Human capital index"]
+    sdf["log_GFCF"] = sdf["Gross fixed capital formation, all, Constant prices, Percent of GDP"]
+    sdf["log_Production_Value"] = sdf["Total_Production_Value_Per_Capita"]
+    _h, _g, _p, _f = sdf["log_HCI"].mean(), sdf["log_GFCF"].mean(), sdf["log_Production_Value"].mean(), sdf["Forestry rents (% of GDP)"].mean()
+    sdf["log_HCI_x_log_Production"]  = (sdf["log_HCI"] - _h) * (sdf["log_Production_Value"] - _p)
+    sdf["log_GFCF_x_log_Production"] = (sdf["log_GFCF"] - _g) * (sdf["log_Production_Value"] - _p)
+    sdf["log_HCI_x_forestry_rents"]  = (sdf["log_HCI"] - _h) * (sdf["Forestry rents (% of GDP)"] - _f)
+    sdf["log_GFCF_x_forestry_rents"] = (sdf["log_GFCF"] - _g) * (sdf["Forestry rents (% of GDP)"] - _f)
+
+    cols_ = REG_VARS + INTERACT + ["Economic Complexity Index", "Country Code"]
+    sdf2 = sdf[cols_].dropna()
+    if len(sdf2) < 30:
+        continue
+    y_ = sdf2["Economic Complexity Index"]
+    X_ = sm.add_constant(sdf2[REG_VARS + INTERACT])
+    raw_ = sm.OLS(y_, X_).fit()
+    rob_ = raw_.get_robustcov_results(cov_type="cluster", groups=sdf2["Country Code"])
+    sample_results[sname] = _wrap_rob(rob_, X_.columns)
+
+SAMP_COLORS = {"Main sample": "#4a6fa5", "Adj ≥3%": "#c23a3a", "Adj ≥2%": "#2e7d4a", "Adj ≥1%": "#c9a227"}
+key_vars = ["log_HCI", "log_GFCF", "log_Production_Value", "log_HCI_x_log_Production", "log_GFCF_x_log_Production"]
+
+fig18 = go.Figure()
+fig18.add_vline(x=0, line=dict(color="#ccc", width=1.5))
+for si, (sname, rob) in enumerate(sample_results.items()):
+    coefs = [rob.params.get(v, np.nan) for v in key_vars]
+    ci_lo = [rob.params.get(v, 0) - 1.96 * rob.bse.get(v, 0) for v in key_vars]
+    ci_hi = [rob.params.get(v, 0) + 1.96 * rob.bse.get(v, 0) for v in key_vars]
+    ypos = [i + (si - 1.5) * 0.12 for i in range(len(key_vars))]
+    fig18.add_trace(go.Scatter(
+        x=coefs, y=ypos, mode="markers", name=sname,
+        marker=dict(size=7, color=SAMP_COLORS.get(sname, "#999")),
+        error_x=dict(type="data",
+                     array=[h - c for c, h in zip(coefs, ci_hi)],
+                     arrayminus=[c - l for c, l in zip(coefs, ci_lo)],
+                     color=SAMP_COLORS.get(sname, "#999"), thickness=1.3),
+    ))
+fig18.update_layout(
+    **base_layout(height=460, margin=dict(l=170,r=40,t=70,b=60)),
+    title=None,
+    xaxis=dict(title="Coefficient", gridcolor=GRID),
+    yaxis=dict(tickvals=list(range(len(key_vars))),
+               ticktext=[REG_SHORT.get(v, v) for v in key_vars],
+               gridcolor=GRID, tickfont=dict(size=11)),
+    legend=dict(x=1.01, y=0.99, font=dict(size=11),
+                bgcolor="rgba(250,250,250,0.9)", bordercolor=GRID, borderwidth=1),
+)
+save(fig18, "18_coef_comparison_across_samples.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 19  R² COMPARISON ACROSS SAMPLES
+# ══════════════════════════════════════════════════════════════════════════════
+print("19 R² comparison across samples …")
+
+r2_bars = [(sname, rob.rsquared) for sname, rob in sample_results.items()]
+r2_s = pd.DataFrame(r2_bars, columns=["Sample", "R2"])
+
+fig19 = go.Figure(go.Bar(
+    x=r2_s["Sample"], y=r2_s["R2"],
+    marker_color=[SAMP_COLORS.get(s, "#999") for s in r2_s["Sample"]],
+    text=[f"{r:.3f}" for r in r2_s["R2"]], textposition="outside",
+    hovertemplate="%{x}<br>R² = %{y:.4f}<extra></extra>",
+))
+fig19.update_layout(
+    **base_layout(height=400, margin=dict(l=70,r=40,t=70,b=60)),
+    title=None,
+    xaxis=dict(gridcolor=GRID),
+    yaxis=dict(title="R²", gridcolor=GRID, range=[0, max(r2_s["R2"])*1.15]),
+)
+save(fig19, "19_r2_comparison_across_samples.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 20  TOTAL VS ADJUSTED RENTS SCATTER
+# ══════════════════════════════════════════════════════════════════════════════
+print("20 Total vs adjusted rents scatter …")
+
+rent_compare = master_adj[master_adj["Year"] == 2019][
+    ["Country Code", "Country Name", "Total natural resources rents (% of GDP)", "NR_adj"]
+].dropna().copy()
+rent_compare.columns = ["Country Code", "Country Name", "Total_NR", "Adjusted_NR"]
+
+fig20 = go.Figure()
+fig20.add_trace(go.Scatter(
+    x=rent_compare["Total_NR"], y=rent_compare["Adjusted_NR"],
+    mode="markers+text", text=rent_compare["Country Code"],
+    textposition="top center", textfont=dict(size=8, color="#555"),
+    marker=dict(size=8, color="#4a6fa5", opacity=0.7),
+    hovertemplate="<b>%{text}</b><br>Total: %{x:.1f}%<br>Adjusted: %{y:.1f}%<extra></extra>",
+))
+maxv = max(rent_compare["Total_NR"].max(), rent_compare["Adjusted_NR"].max()) * 1.05
+fig20.add_trace(go.Scatter(x=[0, maxv], y=[0, maxv], mode="lines",
+                            line=dict(color="#ccc", dash="dash", width=1),
+                            showlegend=False, hoverinfo="skip"))
+fig20.update_layout(
+    **base_layout(height=480, margin=dict(l=70,r=40,t=70,b=60)),
+    title=None,
+    xaxis=dict(title="Total NR Rents (% of GDP)", gridcolor=GRID),
+    yaxis=dict(title="Adjusted NR Rents (% of GDP)", gridcolor=GRID),
+    showlegend=False,
+)
+save(fig20, "20_rent_adj_vs_orig_scatter.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 21  LASSO COEFFICIENT STABILITY ACROSS SAMPLES
+# ══════════════════════════════════════════════════════════════════════════════
+print("21 LASSO coefficient stability …")
+
+lasso_coefs = {}
+for sname, slist in samples.items():
+    sdf = ml_df[ml_df["Country Code"].isin(slist)].copy()
+    sdf = sdf.dropna(subset=ALL_FEATS)
+    if len(sdf) < 50:
+        continue
+    train_s = sdf[sdf["Year"] <= 2014]
+    sc_s = StandardScaler()
+    Xs = sc_s.fit_transform(train_s[ALL_FEATS].values)
+    ys = train_s["Economic Complexity Index"].values
+    tscv_s = PanelTemporalCV(train_s["Year"].values, n_splits=5, gap=1, min_train_years=8)
+    lasso_s = LassoCV(cv=tscv_s, random_state=42, max_iter=10000).fit(Xs, ys)
+    lasso_coefs[sname] = dict(zip(SHORT, lasso_s.coef_))
+
+excl_idx = SHORT.index(EXCL) if EXCL in SHORT else None
+show_feats = [s for s in SHORT if s != EXCL]
+
+fig21 = go.Figure()
+for si, (sname, cdict) in enumerate(lasso_coefs.items()):
+    vals = [cdict.get(s, 0) for s in show_feats]
+    fig21.add_trace(go.Bar(
+        y=show_feats, x=vals, name=sname, orientation="h",
+        marker_color=SAMP_COLORS.get(sname, "#999"), opacity=0.85,
+        hovertemplate=f"%{{y}}: %{{x:.4f}}<extra>{sname}</extra>",
+    ))
+fig21.add_vline(x=0, line=dict(color="#ccc", width=1.5))
+fig21.update_layout(
+    **base_layout(height=580, margin=dict(l=165,r=40,t=70,b=60)),
+    title=None,
+    barmode="group",
+    xaxis=dict(title="LASSO Coefficient", gridcolor=GRID),
+    yaxis=dict(gridcolor=GRID, tickfont=dict(size=10)),
+    legend=dict(x=1.01, y=0.99, font=dict(size=11),
+                bgcolor="rgba(250,250,250,0.9)", bordercolor=GRID, borderwidth=1),
+)
+save(fig21, "21_lasso_coefficient_stability.html")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# APPENDIX B CHARTS
+# ══════════════════════════════════════════════════════════════════════════════
+print("\n=== Appendix B charts ===")
+
+# ── B1: Cluster map k=5 (1995) ───────────────────────────────────────────────
+print("B1 Cluster map (k=5, 1995) …")
+# Reuse fig05 which already shows k=5 1995 clusters
+save(fig05, "B1_cluster_map_k5_1995.html")
+
+# ── B2: ML Feature Importance Consensus ──────────────────────────────────────
+print("B2 ML feature importance consensus …")
+
+# Normalised absolute coefficients (min-max 0-1), excluding lagged ECI
+cons_df = imp_show.sort_values("avg", ascending=False).head(15).iloc[::-1].copy()
+lin_models_names = ["LASSO", "Ridge", "Elastic Net"]
+LIN_COLORS = {"LASSO": "#c23a3a", "Ridge": "#4a6fa5", "Elastic Net": "#2e7d4a"}
+LIN_SYMBOLS = {"LASSO": "circle", "Ridge": "square", "Elastic Net": "triangle-up"}
+
+figB2 = go.Figure()
+# Connecting lines (range across models)
+for _, row in cons_df.iterrows():
+    vals = [row[m] for m in lin_models_names if not np.isnan(row[m])]
+    if len(vals) >= 2:
+        figB2.add_shape(type="line",
+                        x0=min(vals), x1=max(vals), y0=row["Short"], y1=row["Short"],
+                        line=dict(color="#b0c0d4", width=2))
+for m in lin_models_names:
+    figB2.add_trace(go.Scatter(
+        x=cons_df[m], y=cons_df["Short"], mode="markers", name=m,
+        marker=dict(size=10, color=LIN_COLORS[m], symbol=LIN_SYMBOLS[m],
+                    line=dict(width=1, color="white")),
+        hovertemplate=f"%{{y}}: %{{x:.3f}}<extra>{m}</extra>",
+    ))
+figB2.update_layout(
+    **base_layout(height=520, margin=dict(l=165,r=40,t=70,b=60)),
+    title=title("ML Feature Importance Consensus",
+                "Normalised |coefficients| (0–1) · Lagged ECI excluded"),
+    xaxis=dict(title="Normalised Feature Importance (min-max, 0–1)", gridcolor=GRID, range=[-0.02, 1.05]),
+    yaxis=dict(gridcolor=GRID, tickfont=dict(size=11)),
+    legend=dict(x=0.75, y=0.05, font=dict(size=11),
+                bgcolor="rgba(250,250,250,0.9)", bordercolor=GRID, borderwidth=1),
+)
+save(figB2, "B2_ml_feature_importance_consensus.html")
+
+# ── B3: Train vs Test R² ─────────────────────────────────────────────────────
+print("B3 Train vs test R² …")
+# Reuse fig15 (already built above)
+save(fig15, "B3_ml_train_vs_test_r2.html")
+
+# ── B4: Coefficient Forest Plot (Models 3a–3d) ──────────────────────────────
+print("B4 Coefficient forest plot (3a–3d) …")
+
+# Fit 3c (all lagged) and 3d (log ECI)
+reg_df["ECI_lag1"] = reg_df.groupby("Country Code")["Economic Complexity Index"].shift(1)
+for v in REG_VARS + ["Forestry rents (% of GDP)"]:
+    reg_df[f"{v}_lag1"] = reg_df.groupby("Country Code")[v].shift(1)
+
+# Model 3c: all regressors lagged
+lag_vars = [f"{v}_lag1" for v in REG_VARS]
+# Recompute interactions on lagged values
+_hci_l  = reg_df["log_HCI_lag1"].mean() if "log_HCI_lag1" in reg_df.columns else reg_df["Human capital index"].mean()
+cols_3c_need = lag_vars + ["ECI_lag1", "Economic Complexity Index", "Country Code"]
+r3c = reg_df[cols_3c_need].dropna()
+if len(r3c) > 50:
+    y3c = r3c["Economic Complexity Index"]
+    X3c = sm.add_constant(r3c[lag_vars + ["ECI_lag1"]])
+    m3c_raw = sm.OLS(y3c, X3c).fit()
+    _m3c_rob = m3c_raw.get_robustcov_results(cov_type="cluster", groups=r3c["Country Code"])
+    m3c = _wrap_rob(_m3c_rob, X3c.columns)
+else:
+    m3c = None
+
+# Model 3d: log(ECI) as dependent
+reg_df["log_ECI"] = np.log(reg_df["Economic Complexity Index"].clip(lower=0.001) + 2)
+cols_3d = REG_VARS + INTERACT + ["log_ECI", "Country Code"]
+r3d = reg_df[cols_3d].dropna()
+if len(r3d) > 50:
+    y3d = r3d["log_ECI"]
+    X3d = sm.add_constant(r3d[REG_VARS + INTERACT])
+    m3d_raw = sm.OLS(y3d, X3d).fit()
+    _m3d_rob = m3d_raw.get_robustcov_results(cov_type="cluster", groups=r3d["Country Code"])
+    m3d = _wrap_rob(_m3d_rob, X3d.columns)
+else:
+    m3d = None
+
+SPEC_COLORS_B4 = {"3a": "#4a6fa5", "3b": "#c23a3a", "3c": "#2e7d4a", "3d": "#d4853b"}
+b4_vars = REG_VARS  # core regressors only (interactions excluded for clarity)
+
+figB4 = go.Figure()
+figB4.add_vline(x=0, line=dict(color="#ccc", width=1.5))
+for si, (mname, model, vars_used) in enumerate([
+    ("3a", m3a, REG_VARS),
+    ("3b", m3b, REG_VARS),
+    ("3c", m3c, lag_vars if m3c else []),
+    ("3d", m3d, REG_VARS),
+]):
+    if model is None:
+        continue
+    coefs, ci_lo, ci_hi = [], [], []
+    for vi, v in enumerate(b4_vars):
+        if mname == "3c":
+            vv = f"{v}_lag1"
+        else:
+            vv = v
+        c = model.params.get(vv, np.nan)
+        se = model.bse.get(vv, 0)
+        coefs.append(c)
+        ci_lo.append(c - 1.96 * se)
+        ci_hi.append(c + 1.96 * se)
+
+    ypos = [i + (si - 1.5) * 0.12 for i in range(len(b4_vars))]
+    figB4.add_trace(go.Scatter(
+        x=coefs, y=ypos, mode="markers", name=f"Model {mname}",
+        marker=dict(size=7, color=SPEC_COLORS_B4[mname]),
+        error_x=dict(type="data",
+                     array=[h - c for c, h in zip(coefs, ci_hi)],
+                     arrayminus=[c - l for c, l in zip(coefs, ci_lo)],
+                     color=SPEC_COLORS_B4[mname], thickness=1.3),
+    ))
+
+figB4.update_layout(
+    **base_layout(height=480, margin=dict(l=170,r=40,t=70,b=60)),
+    title=title("Coefficient Forest Plot: Models 3a–3d",
+                "95% CI · Country-clustered SE · Core regressors only"),
+    xaxis=dict(title="Coefficient (95% CI)", gridcolor=GRID),
+    yaxis=dict(tickvals=list(range(len(b4_vars))),
+               ticktext=[REG_SHORT.get(v, v) for v in b4_vars],
+               gridcolor=GRID, tickfont=dict(size=11)),
+    legend=dict(x=1.01, y=0.99, font=dict(size=11),
+                bgcolor="rgba(250,250,250,0.9)", bordercolor=GRID, borderwidth=1),
+)
+save(figB4, "B4_reg_coefficient_forest_3a_3d.html")
+
+# ── B5: HCI × Production Interaction ─────────────────────────────────────────
+print("B5 HCI × NR Production interaction …")
+# Reuse fig13 (already built above)
+save(fig13, "B5_reg_hci_production_interaction.html")
+
+
+# ── Done ──────────────────────────────────────────────────────────────────────
+print(f"\n✓ All charts saved to: {OUT}")
+print("  Open any .html file in a browser to view.")
