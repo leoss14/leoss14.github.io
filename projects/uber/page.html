@@ -9,7 +9,7 @@
     <meta property="og:description" content="Geographic Evolution of Uber Demand in NYC. Spatial analysis of how ride-hailing pickup patterns shifted between 2018 and 2025.">
     <meta property="og:type" content="website">
     <title>Uber NYC Demand Analysis | Leonardo Luksic</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/project-shared.css">
     <style>
@@ -50,29 +50,19 @@
     </div>
 
     <!-- Hero -->
-    <section class="project-hero" style="padding-top: calc(var(--nav-height) + 4.5rem); padding-bottom: 3.5rem;">
-        <h1 style="font-size: clamp(2.4rem, 5vw, 3.2rem); max-width: 850px; margin-bottom: 1.5rem;">Geographic Evolution of Uber Demand in NYC</h1>
-        <p class="subtitle" style="font-size: 1.15rem; max-width: 780px; line-height: 1.8; color: var(--text-secondary);">
-            Between January 2018 and January 2025, Uber grew from handling one in five for-hire
-            vehicle trips in New York City to three in four. This project uses NYC Taxi and Limousine
-            Commission trip records to document how the spatial distribution of pickups shifted over
-            that period, and evaluates whether the observed changes align with predictions derived
-            from value-based dispatch algorithms described in the academic literature.
+    <section class="project-hero">
+        <h1>Geographic Evolution of Uber Demand in NYC</h1>
+        <p class="subtitle">
+            Between January 2018 and January 2025, Uber's share of for-hire vehicle trips in
+            New York City rose from roughly one in five to three in four. This project uses
+            NYC Taxi and Limousine Commission trip records (around 20 million rides per month
+            in each window) to document how pickup geography shifted across that growth period,
+            and tests whether the observed changes match the predictions of value-based dispatch
+            algorithms documented in the academic literature. Concentration at the three major
+            airports rose by 48%; pickup activity in central Manhattan declined; and trip-distance
+            distributions widened rather than tightened, against what naive "more localised
+            matching" arguments would predict.
         </p>
-        <div class="project-meta-bar" style="margin-top: 2rem;">
-            <div class="meta-item">
-                <span class="meta-label">Trips Analyzed</span>
-                <span class="meta-value">20M+</span>
-            </div>
-            <div class="meta-item">
-                <span class="meta-label">Period</span>
-                <span class="meta-value">Jan 2018 &ndash; Jan 2025</span>
-            </div>
-            <div class="meta-item">
-                <span class="meta-label">Uber Market Share</span>
-                <span class="meta-value">23% &rarr; 75%</span>
-            </div>
-        </div>
     </section>
 
 
@@ -603,11 +593,6 @@
         </p>
 
         <div class="viz-container">
-            <h4>Trip Distance Distribution (2018 vs. 2025)</h4>
-            <iframe src="outputs/fix_trip_distance.html" height="450"></iframe>
-        </div>
-
-        <div class="viz-container" style="margin-top: 1.5rem;">
             <h4>Median Trip Distance by Cluster</h4>
             <iframe src="outputs/fix_distance_by_cluster.html" height="450"></iframe>
         </div>
@@ -1126,9 +1111,8 @@
         <div class="social-links">
             <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
             <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
-            <a href="/cdn-cgi/l/email-protection#224e0c4e5749514b41624e51470c43410c5749" class="social-link">Email</a>
+            <a href="mailto:l.luksic@lse.ac.uk" class="social-link">Email</a>
         </div>
     </footer>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 </html>

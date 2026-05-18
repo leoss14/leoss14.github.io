@@ -9,7 +9,7 @@
     <meta property="og:description" content="US Monetary Policy Rules Under Inflation Regimes. Regime-switching and econometric analysis of Federal Reserve interest rate decisions using 70 years of data.">
     <meta property="og:type" content="website">
     <title>US Monetary Policy Rules | Leonardo Luksic</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/project-shared.css">
 </head>
@@ -40,31 +40,18 @@
     </div>
 
     <!-- Hero -->
-    <section class="project-hero" style="padding-top: calc(var(--nav-height) + 4.5rem); padding-bottom: 3.5rem;">
-        <h1 style="font-size: clamp(2.4rem, 5vw, 3.2rem); max-width: 850px; margin-bottom: 1.5rem;">US Monetary Policy Rules Under Inflation Regimes</h1>
-        <p class="subtitle" style="font-size: 1.15rem; max-width: 780px; line-height: 1.8; color: var(--text-secondary);">
-            How does the Federal Reserve set interest rates, and does it respond to inflation
-            differently depending on whether prices are rising quickly or slowly? This project
-            estimates the Fed's policy rule across seven decades using regime-switching models and
-            monthly data from FRED, testing whether the conventional story of a decisive shift
-            in the early 1980s holds up under more careful measurement of the unemployment gap
-            and inflation expectations.
+    <section class="project-hero">
+        <h1>US Monetary Policy Rules Under Inflation Regimes</h1>
+        <p class="subtitle">
+            The conventional story about US monetary policy is that the Federal Reserve became
+            decisively more aggressive on inflation around 1980, when Paul Volcker took over.
+            This project tests that claim using regime-switching models on 71 years of monthly
+            FRED data, identifying high and low inflation regimes from the data itself rather
+            than imposing a fixed break date. The 1980 structural break largely disappears once
+            the unemployment gap is measured against the CBO's time-varying natural rate (NAIRU)
+            instead of a fixed 5% benchmark, and the Taylor principle result depends on whether
+            realised or expected inflation is used.
         </p>
-        <div class="project-meta-bar" style="margin-top: 2rem;">
-            <div class="meta-item">
-                <span class="meta-label">Period</span>
-                <span class="meta-value">1954&ndash;2025</span>
-            </div>
-            <div class="meta-item">
-                <span class="meta-label">Observations</span>
-                <span class="meta-value">833 months</span>
-            </div>
-            <div class="meta-item">
-                <span class="meta-label">Source</span>
-                <span class="meta-value">FRED</span>
-            </div>
-  
-        </div>
     </section>
 
 
@@ -913,7 +900,9 @@
         <div class="social-links">
             <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
             <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
-            <a href="/cdn-cgi/l/email-protection#0e6220627b657d676d4e627d6b206f6d207b65" class="social-link">Email</a>
+            <a href="mailto:l.luksic@lse.ac.uk" class="social-link">Email</a>
         </div>
     </footer>
-    <script da
+        <script src="../../js/nav.js"></script>
+</body>
+</html>

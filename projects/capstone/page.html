@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Beyond the Resource Curse: industrial upgrading in resource-rich emerging markets. Capstone with Moody's Ratings testing how financial depth, energy infrastructure, and human capital mediate the relationship between natural resource production and economic complexity, using fixed-effects panel regression and machine learning across 38 resource-rich developing countries from 1995 to 2019.">
+    <meta name="description" content="Beyond the Resource Curse: industrial upgrading in resource-rich emerging markets. Capstone with Moody's Ratings testing how financial depth, energy infrastructure, and human capital mediate the relationship between natural resource production and economic complexity, using fixed-effects panel regression and machine learning across 56 resource-rich developing countries from 1995 to 2019.">
     <meta property="og:title" content="Beyond the Resource Curse | Leonardo Luksic">
     <meta property="og:description" content="Capstone with Moody's Ratings on industrial upgrading in resource-rich emerging markets. Three pillars (financial depth, infrastructure, human capital) drive diversification.">
     <meta property="og:type" content="website">
     <title>Beyond the Resource Curse | Leonardo Luksic</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/project-shared.css">
     <!-- MathJax for equation rendering -->
@@ -45,32 +45,21 @@
     </div>
 
     <!-- Hero -->
-    <section class="project-hero" style="padding-top: calc(var(--nav-height) + 4.5rem); padding-bottom: 3.5rem;">
-        <h1 style="font-size: clamp(2.4rem, 5vw, 3.2rem); max-width: 850px; margin-bottom: 1.5rem;">Beyond the Resource Curse</h1>
-        <p class="subtitle" style="font-size: 1.15rem; max-width: 780px; line-height: 1.8; color: var(--text-secondary);">
+    <section class="project-hero">
+        <h1>Beyond the Resource Curse</h1>
+        <p class="subtitle">
             Capstone with Moody's Ratings on industrial upgrading in resource-rich emerging
             markets. The work tests which structural conditions allow commodity exporters
             to develop value-added industries, and identifies three pillars (financial
             depth, energy infrastructure, and human capital) that consistently predict
             sustained diversification. The analysis combines clustering, fixed-effects
-            panel regression, and machine learning across a panel of 38 resource-rich
-            developing countries from 1995 to 2019, with case studies of the Republic of
-            Congo, Azerbaijan, and Chile.
+            panel regression, and machine learning across a panel of 56 developing
+            countries observed from 1995 to 2019. The sample is selected on three
+            criteria: forest-rent-adjusted natural resource rents above 1% of GDP, not
+            classified as high-income by the World Bank in 1995, and a force-include for
+            the six Gulf states. Case studies of the Republic of Congo, Azerbaijan, and
+            Chile illustrate how the binding constraint shifts with country context.
         </p>
-        <div class="project-meta-bar" style="margin-top: 2rem;">
-            <div class="meta-item">
-                <span class="meta-label">Countries</span>
-                <span class="meta-value">38</span>
-            </div>
-            <div class="meta-item">
-                <span class="meta-label">Period</span>
-                <span class="meta-value">1995&ndash;2019</span>
-            </div>
-            <div class="meta-item">
-                <span class="meta-label">Partner</span>
-                <span class="meta-value">Moody&rsquo;s Ratings</span>
-            </div>
-        </div>
     </section>
 
 
@@ -233,7 +222,7 @@
             in Data. The cluster analysis (Part II) uses cross-sectional data on the
             full set of countries with valid production data. The fixed-effects panel
             regression (Part III) and the ML pipeline (Part IV) use a balanced panel of
-            <strong>38 resource-rich developing countries</strong> with reasonably
+            <strong>56 resource-rich developing countries</strong> with reasonably
             complete coverage of the regression covariates.
         </p>
 
@@ -247,18 +236,23 @@
         <div class="note-box">
             <h4>A note on sample definition</h4>
             <p>
-                The 38-country sample is constructed from the World Bank&rsquo;s Adjusted
-                Net Savings indicators by selecting countries with extractive resource rents
-                (oil, gas, coal, and minerals) above 5% of GDP in 1995. The World Bank&rsquo;s
-                <em>total</em> natural resource rents variable also includes forest rents,
-                which inflates dependence scores for several forestry-driven economies that
-                would otherwise enter the sample. Forest rents are subtracted before the
-                5%-of-GDP threshold is applied, and Gulf states whose oil rents are unambiguous
-                are guaranteed inclusion. The
+                The sample is selected on three criteria applied to the 1995 snapshot.
+                <em>First</em>, countries with extractive resource rents (oil, gas, coal,
+                and minerals) above 1% of GDP are retained. The World Bank&rsquo;s total
+                natural resource rents indicator also includes forest rents, which
+                inflates dependence scores for several forestry-driven economies; forest
+                rents are subtracted before the threshold is applied. <em>Second</em>,
+                countries classified as high-income by the World Bank in 1995 (Australia,
+                Brunei, Canada, Norway, and others) are dropped, which restricts the
+                sample to developing economies even where extractive rents are large.
+                <em>Third</em>, the six Gulf states (Bahrain, Kuwait, Oman, Qatar, Saudi
+                Arabia, United Arab Emirates) are force-included regardless of either
+                criterion; several were high-income in 1995, and their 1995 rent shares
+                understate the oil sectors that come online later in the panel. The
                 <a href="#robustness" style="color: var(--accent);">Robustness section</a>
-                re-estimates the headline specification on three alternative sample definitions
-                (including the uncorrected total-rents construction) to confirm that the
-                main results do not depend on this choice.
+                re-estimates the headline specification on three alternative sample
+                definitions (including the uncorrected total-rents construction) to
+                confirm that the main results do not depend on these choices.
             </p>
         </div>
     </section>
@@ -355,63 +349,76 @@
             <p>
                 Not all resource-rich countries are alike. Some are petrostates with minimal
                 manufacturing; others are mining economies with growing industrial bases; some
-                produce a wide spread of resources at globally significant scale. To make sense
-                of this variety, countries are grouped by similarity across their resource
-                production profiles, economic complexity, and human capital.
+                produce a wide spread of resources at moderate scale. To make sense of this
+                variety, countries are grouped by similarity across three subsoil rent shares
+                (oil, gas, mineral, all as % of GDP) and log production per capita.
             </p>
             <p>
-                The grouping uses K-means clustering, an algorithm that assigns each country to
-                the cluster whose average profile it most closely resembles. Five groups emerge.
-                The technical details of dimensionality reduction and cluster selection are in
-                the <a href="#appendix">appendix</a>.
+                The grouping uses K-means clustering with k=5, fit on country-level means
+                across the 1995-2019 panel so cluster assignments reflect each country&rsquo;s
+                structural resource profile rather than a single year&rsquo;s outcome.
+                Forestry rents are deliberately excluded from the clustering features, because
+                the sample already subtracts forest rents at selection; including them again
+                would reintroduce the same distortion. Cluster names are derived from each
+                centroid, not hard-coded. The technical details of dimensionality reduction
+                and cluster diagnostics are in the <a href="#appendix">appendix</a>.
             </p>
 
             <div class="content-grid">
                 <div class="content-card">
-                    <div class="card-header"><h3>Petrostates</h3></div>
+                    <div class="card-header"><h3>Diversified Producers (27)</h3></div>
                     <div class="card-body">
-                        <p>Examples: Iraq, Kuwait, Libya, Saudi Arabia, Angola.</p>
-                        <p>Extreme oil dependence as a share of GDP, low economic complexity, weak
-                        education and health outcomes. The classic resource curse profile.</p>
+                        <p>Examples: Argentina, China, India, Indonesia, Malaysia, Mexico,
+                        South Africa.</p>
+                        <p>The largest cluster, covering countries with modest resource
+                        intensity across multiple categories. Most have growing manufacturing
+                        sectors and middle-income status. Resources contribute meaningfully to
+                        GDP but are not the dominant growth engine.</p>
                     </div>
                 </div>
                 <div class="content-card">
-                    <div class="card-header"><h3>Oil Exporters</h3></div>
+                    <div class="card-header"><h3>Oil Exporters (15)</h3></div>
                     <div class="card-body">
-                        <p>Examples: Norway, UAE, Brunei, Trinidad &amp; Tobago, Azerbaijan.</p>
-                        <p>Substantial oil and gas production combined with higher economic
-                        complexity and stronger human capital than the Petrostate group.
-                        These are countries that have at least partially overcome the curse.</p>
+                        <p>Examples: Angola, Iran, Iraq, Kazakhstan, Saudi Arabia, UAE,
+                        Venezuela.</p>
+                        <p>Oil and gas dominate exports and government revenue, with
+                        hydrocarbon rents typically 20-40% of GDP. Wide variation within the
+                        cluster: the Gulf states combine high oil dependence with stronger
+                        institutions and human capital; Angola, Venezuela, and Yemen show the
+                        classic resource-curse profile.</p>
                     </div>
                 </div>
                 <div class="content-card">
-                    <div class="card-header"><h3>Major Producers</h3></div>
+                    <div class="card-header"><h3>Petrostates (6)</h3></div>
                     <div class="card-body">
-                        <p>Examples: Australia, Canada, Russia, USA, China.</p>
-                        <p>Globally significant production across multiple resource categories
-                        (oil, gas, coal, metals), but with diversified, complex economies in
-                        which extraction is not the dominant growth engine.</p>
+                        <p>Members: Algeria, Bahrain, Qatar, Russia, Trinidad and Tobago,
+                        Uzbekistan.</p>
+                        <p>Highest hydrocarbon production per capita in the sample. Extraction
+                        generates exceptionally large per-capita value, allowing rents to
+                        substitute for broader productive capacity in the short run. Notable
+                        within-cluster heterogeneity: Qatar and Bahrain are wealthy small
+                        economies; Russia is a continental producer; Uzbekistan and Trinidad
+                        and Tobago are mid-income.</p>
                     </div>
                 </div>
                 <div class="content-card">
-                    <div class="card-header"><h3>Mining Exporters</h3></div>
+                    <div class="card-header"><h3>Mining Exporters (5)</h3></div>
                     <div class="card-body">
-                        <p>Examples: Chile, Peru, DRC, Mongolia, Bolivia.</p>
-                        <p>Metals and minerals production dominates the export basket. Mid-range
-                        economic complexity and human capital, with downstream processing and
-                        manufacturing linkages that vary substantially across countries.</p>
+                        <p>Members: Chile, Guinea, Mongolia, Papua New Guinea, Peru.</p>
+                        <p>Metals and minerals dominate the export basket. Mid-range economic
+                        complexity and human capital, with downstream processing and
+                        manufacturing linkages that vary substantially. Chile and Peru have
+                        stronger institutions; Mongolia and Guinea remain more constrained.</p>
                     </div>
                 </div>
                 <div class="content-card">
-                    <div class="card-header"><h3>Forestry Intensive</h3></div>
+                    <div class="card-header"><h3>Mixed Producers (3)</h3></div>
                     <div class="card-body">
-                        <p>Examples: Republic of Congo, Cambodia, Liberia, Mozambique,
-                        Solomon Islands.</p>
-                        <p>Forestry rents account for an unusually large share of GDP. This
-                        cluster is partially excluded from the regression analysis (see the
-                        <a href="#robustness" style="color: var(--accent);">Robustness section</a>),
-                        because forest rents distort the World Bank&rsquo;s composite
-                        natural-resource-rents indicator.</p>
+                        <p>Members: Dominican Republic, Liberia, Mauritania.</p>
+                        <p>Small residual cluster of low-intensity, low-production economies
+                        that do not fit cleanly into any dominant-resource category. Iron ore,
+                        nickel, and gold appear in different proportions, but no single resource
+                        defines the group.</p>
                     </div>
                 </div>
             </div>
@@ -422,7 +429,7 @@
     <section>
         <h3 style="margin-top: 0;">Cluster Geography</h3>
         <div class="viz-container">
-            <h4>Country Cluster Assignments (k=5, 1995)</h4>
+            <h4>Country Cluster Assignments (k=5, panel means 1995-2019)</h4>
             <iframe loading="lazy"
                     src="outputs/05_cluster_world_map.html"
                     style="height:550px"
@@ -845,7 +852,7 @@
                 <div class="conclusion-content">
                     <h4>Different Starting Points Need Different Strategies</h4>
                     <p>
-                        The six-cluster typology and the three case studies confirm that
+                        The five-cluster typology and the three case studies confirm that
                         the binding constraint shifts as countries develop. Congo faces
                         failures in all three pillars simultaneously; Azerbaijan faces a
                         governance and Dutch Disease problem; Chile has the institutions and
@@ -865,14 +872,15 @@
         <h2>Sample Sensitivity</h2>
 
         <p>
-            The 38-country headline sample is constructed by subtracting forest rents from
-            the World Bank&rsquo;s total natural resource rents indicator and re-applying
-            a 5%-of-GDP threshold in 1995, with Gulf states guaranteed inclusion. To
-            confirm that the main findings do not depend on this construction, the headline
-            specification is re-estimated on three alternative sample definitions, including
-            the uncorrected total-rents subsample (which adds forestry-driven economies)
-            and intermediate variants. HAC-panel standard errors (Bartlett kernel, 3 lags)
-            are also reported as a more conservative inference alternative.
+            The 56-country headline sample is constructed by subtracting forest rents from
+            the World Bank&rsquo;s total natural resource rents indicator, applying a
+            1%-of-GDP threshold, dropping 1995 high-income economies, and force-including
+            the six Gulf states. To confirm that the main findings do not depend on this
+            construction, the headline specification is re-estimated on three alternative
+            sample definitions, including the uncorrected total-rents subsample (which
+            adds forestry-driven economies) and intermediate variants. HAC-panel standard
+            errors (Bartlett kernel, 3 lags) are also reported as a more conservative
+            inference alternative.
         </p>
 
         <div class="theory-box">
@@ -997,9 +1005,10 @@
                         price (USD). All features standardised (mean=0, SD=1) before PCA,
                         clustering, and regularised regression. Missing values handled by linear
                         interpolation (capped at three years) followed by KNN imputation
-                        (k=5, distance-weighted). The 38-country headline sample is constructed
-                        by subtracting forest rents from World Bank Adjusted Net Savings, applying
-                        a 5%-of-GDP threshold in 1995, and guaranteeing Gulf-state inclusion. The
+                        (k=5, distance-weighted). The 56-country headline sample is constructed
+                        by subtracting forest rents from World Bank Adjusted Net Savings,
+                        applying a 1%-of-GDP threshold, dropping 1995 high-income economies,
+                        and force-including the six Gulf states. The
                         <a href="#robustness" style="color: var(--accent);">Robustness section</a>
                         reports estimates on three alternative sample definitions.
                     </p>
@@ -1007,11 +1016,13 @@
                 <div class="note-box">
                     <h4 style="color: var(--accent);">Statistical Methods</h4>
                     <p>
-                        PCA: 2 components, 55.7% variance explained. K-means: k=6,
-                        silhouette = 0.344. Panel regression: two-way fixed effects (country
-                        and year) with country-clustered standard errors. The headline
-                        specification includes lagged ECI and four interaction terms
-                        (HCI &times; Prod, GFCF &times; Prod, HCI &times; Forest, GFCF &times; Forest).
+                        PCA: 2 components, 50.6% variance explained (PC1 28.6%, PC2 22.0%).
+                        K-means: k=5 on country panel means across 1995-2019, using oil,
+                        gas, and mineral rent shares plus log production per capita. Panel
+                        regression: two-way fixed effects (country and year) with
+                        country-clustered standard errors. The headline specification
+                        includes lagged ECI and four interaction terms (HCI &times; Prod,
+                        GFCF &times; Prod, HCI &times; Forest, GFCF &times; Forest).
                         ML pipeline: regularised regression (LASSO, Ridge, Elastic Net) and
                         Random Forest, with cross-validation and a temporal train/test split.
                         Bootstrap inference: 200 country-block resamples.
@@ -1113,20 +1124,20 @@
         <p>
             PCA takes the clustering variables (resource rent shares, economic complexity, and human
             capital) and finds the two combinations that capture the most variation. The first two
-            components together explain about 55% of total variation. Clustering is performed on the
+            components together explain about 51% of total variation. Clustering is performed on the
             original variables, not on the components; the scatter plot below is a simplified
             projection for visualisation.
         </p>
 
         <div class="two-col">
             <div class="note-box">
-                <h4>PC1: Economic Development (~34%)</h4>
+                <h4>PC1: Economic Development (~29%)</h4>
                 <p>Loads positively on Economic Complexity and Human Capital. Separates advanced
                 manufacturing economies from low-income, resource-dependent ones. The dominant axis
                 of variation in the dataset.</p>
             </div>
             <div class="note-box">
-                <h4>PC2: Hydrocarbon Intensity (~21%)</h4>
+                <h4>PC2: Hydrocarbon Intensity (~22%)</h4>
                 <p>Driven by oil and natural gas rent shares. Identifies energy exporters as a
                 distinct axis, separating petrostates from countries whose resource base is
                 concentrated in metals or forestry.</p>

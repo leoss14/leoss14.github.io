@@ -28,12 +28,29 @@ os.makedirs(ARTIFACTS, exist_ok=True)
 
 # ── Sample definition ───────────────────────────────────────────────────────
 # Forest-adjusted: subtract forest rents from total NR rents, apply 1% threshold,
-# guarantee Gulf states inclusion. This is the headline sample used by every
-# chart. Other thresholds (3%, 2%, 1%) are computed inside notebook 4 for the
-# across-samples robustness charts.
+# drop countries classified as high-income by WDI in 1995, then guarantee Gulf
+# states inclusion. The income filter is what restricts the sample to developing
+# resource-rich countries; without it, Norway, Australia, Canada and similar
+# advanced economies would pass the 1% threshold.
 GULF_STATES = ["BHR", "KWT", "OMN", "QAT", "SAU", "ARE"]
 NR_THRESHOLD = 1.0  # percent of GDP, after subtracting forestry
 YEAR_MIN, YEAR_MAX = 1995, 2019
+
+# WDI high-income economies, FY1997 classification (1995 Atlas-method GNI per
+# capita, threshold = $9,656). Source: World Bank historical Country and
+# Lending Groups. Dependent territories already filtered upstream in NB1
+# (AND, ATG, ABW, BMU, CYM, FRO, GRL, MAC, NCL, PYF, etc.) are not listed.
+# Gulf states that were high-income in 1995 (ARE, BHR, KWT, QAT) are in this
+# set but get added back by GULF_STATES.
+HIGH_INCOME_1995 = {
+    # OECD high-income members in 1995
+    "AUS", "AUT", "BEL", "CAN", "CHE", "DEU", "DNK", "ESP", "FIN", "FRA",
+    "GBR", "GRC", "IRL", "ISL", "ITA", "JPN", "LUX", "NLD", "NOR", "NZL",
+    "PRT", "SWE", "USA",
+    # Non-OECD high-income in 1995
+    "ARE", "BHR", "BHS", "BRB", "BRN", "CYP", "HKG", "ISR", "KWT", "MLT",
+    "QAT", "SGP",
+}
 
 
 # ── Variable lists ──────────────────────────────────────────────────────────

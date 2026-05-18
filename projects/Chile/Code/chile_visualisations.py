@@ -26,7 +26,7 @@ NEW_OUT_DIR  = os.path.join(DIR_OUTPUT, "New graphs")
 
 # ── DESIGN SYSTEM ─────────────────────────────────────────────────────────────
 
-FONT = "IBM Plex Sans, system-ui, -apple-system, sans-serif"
+FONT = "Public Sans, system-ui, -apple-system, sans-serif"
 
 STYLE = dict(
     font_family   = FONT,
@@ -575,7 +575,7 @@ if __name__ == "__main__":
                 x: allNames[name], y: name,
                 text: '  ' + fmtUsd(allNames[name]),
                 showarrow: false, xanchor: 'left',
-                font: {size: 10, color: '#555', family: 'IBM Plex Sans, sans-serif'}
+                font: {size: 10, color: '#555', family: 'Public Sans, sans-serif'}
             };
         });
 
@@ -1888,7 +1888,7 @@ if __name__ == "__main__":
         "#sc-info-panel{"
         "position:fixed;right:14px;top:50%;transform:translateY(-50%);"
         "background:#fff;border:1px solid #dde1e7;border-radius:8px;"
-        "padding:12px 15px;font-family:'IBM Plex Sans',sans-serif;font-size:12px;"
+        "padding:12px 15px;font-family:'Public Sans',sans-serif;font-size:12px;"
         "width:240px;box-shadow:0 4px 14px rgba(0,0,0,0.13);z-index:9999;"
         "display:none;pointer-events:none;line-height:1.5;"
         "}\n"

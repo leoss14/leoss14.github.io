@@ -9,7 +9,7 @@
     <meta property="og:description" content="Investigating Gender Price Differences in UK Retail Products. Machine learning classification and econometric analysis of the pink tax across 12,800 supermarket products from three UK retailers.">
     <meta property="og:type" content="website">
     <title>Pink Tax Analysis | Leonardo Luksic</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/project-shared.css">
 </head>
@@ -40,33 +40,19 @@
     </div>
 
     <!-- Hero -->
-    <section class="project-hero" style="padding-top: calc(var(--nav-height) + 4.5rem); padding-bottom: 3.5rem;">
-        <h1 style="font-size: clamp(2.4rem, 5vw, 3.2rem); max-width: 850px; margin-bottom: 1.5rem;">Investigating Gender Price Differences in UK Retail Products</h1>
-        <p class="subtitle" style="font-size: 1.15rem; max-width: 780px; line-height: 1.8; color: var(--text-secondary);">
-            Products marketed to women are often said to cost more than comparable products for men.
-            This project tests that claim across 12,800 supermarket products from three UK retailers,
-            first building a machine learning classifier to identify gendered products from text and
-            color features, then running a series of regressions that progressively control for
-            product category, store, and product characteristics.
+    <section class="project-hero">
+        <h1>Investigating Gender Price Differences in UK Retail Products</h1>
+        <p class="subtitle">
+            Products marketed to women are widely claimed to cost more than comparable products
+            for men. This project tests that claim across 12,832 personal-care and hygiene
+            products from Tesco, Morrisons, and ASDA, first building a machine learning
+            classifier (histogram gradient boosting, F1 = 0.79 against human labels) that
+            identifies the target gender of a product from text and colour features, then
+            running OLS, quantile, and bootstrap regressions that progressively control for
+            category, store, and within-product characteristics. The raw price gap mostly
+            reflects composition: women's and men's product baskets contain different items,
+            not the same items at different prices.
         </p>
-        <div class="project-meta-bar" style="margin-top: 2rem;">
-            <div class="meta-item">
-                <span class="meta-label">Products</span>
-                <span class="meta-value">12,832</span>
-            </div>
-            <div class="meta-item">
-                <span class="meta-label">Retailers</span>
-                <span class="meta-value">Tesco, Morrisons, ASDA</span>
-            </div>
-            <div class="meta-item">
-                <span class="meta-label">Categories</span>
-                <span class="meta-value">Personal care &amp; hygiene</span>
-            </div>
-            <div class="meta-item">
-                <span class="meta-label">Programme</span>
-                <span class="meta-value">MPA Data Science, LSE</span>
-            </div>
-        </div>
     </section>
 
 
@@ -985,7 +971,7 @@
         <div class="social-links">
             <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
             <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
-            <a href="/cdn-cgi/l/email-protection#97fbf2f8f9f6e5f3f8b9fbe2fce4fef4d7f0faf6fefbb9f4f8fa" class="social-link">Email</a>
+            <a href="mailto:l.luksic@lse.ac.uk" class="social-link">Email</a>
         </div>
         <p><strong>Gender Price Differences in UK Retail Products</strong></p>
         <p>Machine Learning &amp; Econometric Analysis</p>
@@ -996,4 +982,7 @@
     <script src="../../js/skills.js"></script>
     <script>
         // Render skill tags for this project
-        renderSkills('sk
+        renderSkills('skills-tags', ['methods_ml', 'methods_econ', 'data_tools']);
+    </script>
+</body>
+</html>

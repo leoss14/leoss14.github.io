@@ -13,7 +13,7 @@ OUT_DIR   = os.path.abspath(os.path.join(HERE, "..", "outputs"))
 ARTIFACTS = os.path.abspath(os.path.join(HERE, "..", "artifacts"))
 os.makedirs(OUT_DIR, exist_ok=True)
 
-FONT  = "IBM Plex Sans, system-ui, -apple-system, sans-serif"
+FONT  = "Public Sans, system-ui, -apple-system, sans-serif"
 NAVY  = "#1a2744"
 SUBTT = "#6b7280"
 BG    = "#fafafa"

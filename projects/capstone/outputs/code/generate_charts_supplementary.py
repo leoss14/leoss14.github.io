@@ -87,7 +87,7 @@ print(f"  intermediary/: {V1}")
 print(f"  outputs/:      {OUT}")
 
 # ── Design system (mirrors V5) ────────────────────────────────────────────────
-FONT  = "IBM Plex Sans, system-ui, -apple-system, sans-serif"
+FONT  = "Public Sans, system-ui, -apple-system, sans-serif"
 NAVY  = "#1a2744"
 ACC   = "#c23a3a"
 SUBTT = "#6b7280"

@@ -29,7 +29,7 @@ CACHE  = os.path.join(HERE, "ml_cache.pkl")
 os.makedirs(OUT, exist_ok=True)
 
 # ── Design system ─────────────────────────────────────────────────────────────
-FONT  = "IBM Plex Sans, system-ui, -apple-system, sans-serif"
+FONT  = "Public Sans, system-ui, -apple-system, sans-serif"
 NAVY  = "#1a2744"
 SUBTT = "#6b7280"
 BG    = "#fafafa"

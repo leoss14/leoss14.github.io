@@ -57,7 +57,7 @@ AIRPORT_LABELS = {132: 'JFK', 138: 'LaGuardia', 1: 'Newark (EWR)'}
 
 # ── Unified style system ─────────────────────────────────────────────────
 STYLE = {
-    'font_family': 'IBM Plex Sans, -apple-system, BlinkMacSystemFont, sans-serif',
+    'font_family': 'Public Sans, -apple-system, BlinkMacSystemFont, sans-serif',
     'tick_size': 11,
     'axis_title_size': 13,
     'legend_size': 11,
