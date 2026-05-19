@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chile: copper, lithium and the mineral supply chain</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a1a2e; background: #fff; }
+#map { width: 100%; height: 100%; }
+#legend { position: absolute; bottom: 12px; right: 12px; z-index: 1000; display: flex; flex-direction: column; gap: 8px; max-width: 230px; font-size: 12px; color: #2d3748; }
+#legend .section { background: #fff; border: 1px solid #dde1e7; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+#legend .section-title { background: #1a2744; color: #fff; font-size: 12px; font-weight: 600; padding: 6px 11px; letter-spacing: 0; }
+#legend .row { display: flex; align-items: center; gap: 7px; padding: 3px 11px; }
+#legend .row:first-of-type { padding-top: 7px; }
+#legend .row:last-child { padding-bottom: 8px; }
+#legend .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.15); }
+#legend .ring { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; background: #fff; border: 1.8px solid #1d4e89; }
+#legend .square { width: 9px; height: 9px; flex-shrink: 0; background: #1a2744; border: 1.5px solid #fff; box-shadow: 0 0 0 1px #1a2744; }
+#legend .line { width: 18px; height: 0; flex-shrink: 0; }
+#legend .size-row { display: flex; align-items: center; gap: 8px; padding: 6px 11px 8px 11px; }
+#legend .scale-circ { background: #1a2744; border-radius: 50%; opacity: 0.55; flex-shrink: 0; }
+.leaflet-popup-content-wrapper { border-radius: 3px; }
+.leaflet-popup-content { font-family: 'Public Sans', sans-serif; font-size: 12.5px; color: #1a1a2e; margin: 10px 14px; line-height: 1.45; }
+.leaflet-popup-content h4 { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+.leaflet-popup-content table { font-size: 12px; border-collapse: collapse; margin-top: 4px; }
+.leaflet-popup-content td { padding: 1px 8px 1px 0; vertical-align: top; }
+.leaflet-popup-content td.k { color: #6b7280; font-weight: 500; }
+.leaflet-tooltip { font-family: 'Public Sans', sans-serif; font-size: 12px; }
+.seg-wrap { display: flex; padding: 6px 8px 8px 8px; gap: 4px; }
+.seg-btn { flex: 1; background: #fff; border: 1px solid #dde1e7; color: #2d3748; font-family: inherit; font-size: 11.5px; font-weight: 500; padding: 5px 8px; border-radius: 4px; cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+.seg-btn:hover { background: #f3f4f6; }
+.seg-btn.active { background: #1a2744; color: #fff; border-color: #1a2744; }
+#legend.mode-export .domestic-only { display: none; }
+#legend.mode-domestic .export-only { display: none; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="legend" class="mode-domestic">
+    <div class="section">
+      <div class="section-title">View</div>
+      <div class="seg-wrap">
+        <button class="seg-btn active" data-mode="domestic">Domestic</button>
+        <button class="seg-btn" data-mode="export">Exports</button>
+      </div>
+    </div>
+    <div class="section domestic-only">
+      <div class="section-title">Facilities</div>
+      <div class="row"><div class="dot" style="background:#1d4e89"></div> Mine (filled)</div>
+      <div class="row"><div class="ring"></div> Processing plant</div>
+      <div class="row"><div class="square"></div> Export port</div>
+    </div>
+    <div class="section">
+      <div class="section-title">Commodities</div>
+      <div class="row"><div class="dot" style="background:#1d4e89"></div> Copper</div>
+      <div class="row"><div class="dot" style="background:#d4853b"></div> Gold</div>
+      <div class="row"><div class="dot" style="background:#b0bec5"></div> Silver</div>
+      <div class="row"><div class="dot" style="background:#1b7837"></div> Lithium</div>
+      <div class="row"><div class="dot" style="background:#7b4f9e"></div> Molybdenum</div>
+      <div class="row"><div class="dot" style="background:#8b4513"></div> Iron</div>
+      <div class="row"><div class="dot" style="background:#2196f3"></div> Nitrate</div>
+      <div class="row"><div class="dot" style="background:#9c27b0"></div> Iodine</div>
+      <div class="row"><div class="dot" style="background:#ff9800"></div> Boron, salt, other</div>
+    </div>
+    <div class="section export-only">
+      <div class="section-title">Import value</div>
+      <div class="size-row">
+        <div class="scale-circ" style="width:5px;height:5px"></div>
+        <div class="scale-circ" style="width:9px;height:9px"></div>
+        <div class="scale-circ" style="width:15px;height:15px"></div>
+        <span style="color:#6b7280;font-size:11px;margin-left:4px">smaller / larger</span>
+      </div>
+    </div>
+</div>
+<script src="data/chile_full.js"></script>
+<script src="data/country_dots.js"></script>
+<script>
+// Data references
+var facilities = chileFullData.facilities;
+var domesticEdges = chileFullData.domestic_edges;
+var exportEdges = chileFullData.export_edges;
+var ports = chileFullData.ports;
+var commodityColors = chileFullData.commodity_colors;
+
+function commodityColor(c) { return commodityColors[c] || '#888'; }
+
+// Antimeridian handling. Lines from Chilean ports (around lon -70) to East Asian importers
+// (China, Japan, Korea at +120 to +150) naturally span more than 180 degrees of longitude.
+// Shift those endpoints into negative-longitude space so the rendered path crosses the
+// Pacific rather than wrapping around the Atlantic and Eurasia. World copies are enabled,
+// so the dots still display correctly when the user pans east into positive longitudes.
+var CHILE_REF_LON = -70;
+function shiftLon(lon) {
+  if (lon - CHILE_REF_LON > 180) return lon - 360;
+  if (lon - CHILE_REF_LON < -180) return lon + 360;
+  return lon;
+}
+countryDotsData.forEach(function(c) { c.lon = shiftLon(c.lon); });
+exportEdges.forEach(function(e) { e.country_lon = shiftLon(e.country_lon); });
+
+// Map setup
+var DOMESTIC_VIEW = { center: [-26, -69.5], zoom: 6 };
+var EXPORT_VIEW = { center: [5, -90], zoom: 1.5 };
+
+var map = L.map('map', {
+  center: DOMESTIC_VIEW.center,
+  zoom: DOMESTIC_VIEW.zoom,
+  minZoom: 1.5,
+  maxZoom: 11,
+  zoomSnap: 0.5,
+  zoomDelta: 0.5,
+  preferCanvas: true,
+  attributionControl: false,
+  zoomControl: true,
+  worldCopyJump: true
+});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {maxZoom: 19, noWrap: false}).addTo(map);
+L.control.attribution({prefix: false, position: 'bottomleft'}).addAttribution('© OpenStreetMap, CartoDB').addTo(map);
+
+// Two layer groups, one per mode. Ports are shared and live in their own always-on layer.
+var domesticLayer = L.layerGroup().addTo(map);
+var exportLayer = L.layerGroup();
+var portsLayer = L.layerGroup().addTo(map);
+
+// === Domestic layer: mine-to-port routing within Chile ===
+// Edges first as a thin underlay so node markers read on top.
+domesticEdges.forEach(function(e) {
+  var color = commodityColor(e.commodity);
+  var line = L.polyline([[e.from_lat, e.from_lon], [e.to_lat, e.to_lon]], {
+    color: color, weight: 1.1, opacity: 0.40, smoothFactor: 1.5
+  });
+  var distLabel = (e.distance != null) ? Math.round(e.distance) + ' km' : '';
+  line.bindTooltip(e.commodity + ' (' + (e.product || 'concentrate') + (distLabel ? ', ' + distLabel : '') + ')', {sticky: true});
+  line.addTo(domesticLayer);
+});
+
+// Facility nodes. Mines are filled circles in commodity colour; downstream plants are
+// hollow rings in the same colour so the production step reads visually.
+var plantTypes = {'plant':1, 'sx_ew':1, 'smelter':1, 'concentrator':1, 'mo_plant':1, 're_plant':1};
+var typeLabels = {mine:'Mine', plant:'Processing plant', sx_ew:'SX-EW plant',
+  smelter:'Smelter', concentrator:'Concentrator', mo_plant:'Mo plant', re_plant:'Re plant', port:'Port'};
+
+facilities.forEach(function(f) {
+  if (f.type === 'port') return; // ports drawn separately with their own visual treatment
+  var color = commodityColor(f.dominant);
+  var isPlant = !!plantTypes[f.type];
+  var marker;
+  if (isPlant) {
+    marker = L.circleMarker([f.lat, f.lon], {
+      radius: 4.5, fillColor: '#fff', color: color, weight: 1.8, fillOpacity: 1
+    });
+  } else {
+    marker = L.circleMarker([f.lat, f.lon], {
+      radius: 3.2, fillColor: color, color: '#1a1a2e', weight: 0.5, fillOpacity: 0.85
+    });
+  }
+  var typeLabel = typeLabels[f.type] || f.type;
+  var commLabel = f.dominant || 'unspecified';
+  marker.bindTooltip(f.name + ' (' + typeLabel + ', ' + commLabel + ')', {direction: 'top', offset: [0, -4]});
+  var popup = '<h4>' + f.name + '</h4><table>'
+    + '<tr><td class="k">Type</td><td>' + typeLabel + '</td></tr>'
+    + '<tr><td class="k">Commodity</td><td>' + commLabel + '</td></tr>'
+    + '</table>';
+  marker.bindPopup(popup, {maxWidth: 260});
+  marker.addTo(domesticLayer);
+});
+
+// Ports as filled navy squares (shared across both modes).
+ports.forEach(function(p) {
+  var icon = L.divIcon({
+    className: 'port-marker',
+    html: '<div style="width:11px;height:11px;background:#1a2744;border:1.5px solid #fff;box-shadow:0 0 0 1px #1a2744;"></div>',
+    iconSize: [11, 11], iconAnchor: [5.5, 5.5]
+  });
+  var marker = L.marker([p.lat, p.lon], {icon: icon, riseOnHover: true});
+  var popup = '<h4>' + p.name + ' (port)</h4><table>'
+    + '<tr><td class="k">Region</td><td>' + p.region + '</td></tr>'
+    + '<tr><td class="k">Products</td><td>' + p.products + '</td></tr>'
+    + '<tr><td class="k">Key users</td><td>' + p.key_users + '</td></tr>'
+    + '</table>';
+  marker.bindPopup(popup, {maxWidth: 280});
+  marker.bindTooltip(p.name + ' (export port)', {direction: 'top', offset: [0, -6]});
+  marker.addTo(portsLayer);
+});
+
+// === Export layer: port-to-country flows + import-country dots ===
+// Aggregate to (port, country) pairs so the map shows one routing line per pair,
+// with the full commodity composition surfaced via popup.
+var exportPairs = {};
+exportEdges.forEach(function(e) {
+  var key = e.port + '||' + e.country;
+  if (!exportPairs[key]) {
+    exportPairs[key] = {
+      port: e.port, country: e.country,
+      port_lat: e.port_lat, port_lon: e.port_lon,
+      country_lat: e.country_lat, country_lon: e.country_lon,
+      commodities: []
+    };
+  }
+  exportPairs[key].commodities.push({
+    commodity: e.commodity, value: e.value, unit: e.unit, product: e.product
+  });
+});
+
+Object.values(exportPairs).forEach(function(pair) {
+  // Dominant commodity for line colour is the first one listed in the source data
+  // (commodities are not strictly value-rankable across mixed units of USD, kMT and MT).
+  var dominant = pair.commodities[0].commodity;
+  var color = commodityColor(dominant);
+  var line = L.polyline([[pair.port_lat, pair.port_lon], [pair.country_lat, pair.country_lon]], {
+    color: color, weight: 0.9, opacity: 0.35, smoothFactor: 1.5
+  });
+  var rows = pair.commodities.map(function(c) {
+    var unitLabel = c.unit === '$USD' ? '$' : (c.unit === '$M_FOB' ? '$ FOB' : (c.unit === 'kMT' ? 'kMT' : c.unit));
+    var valStr;
+    if (c.unit === '$USD' && c.value >= 1e6) valStr = '$' + (c.value/1e6).toFixed(1) + 'M';
+    else if (c.unit === '$USD') valStr = '$' + Math.round(c.value).toLocaleString();
+    else valStr = c.value.toLocaleString(undefined, {maximumFractionDigits: 1}) + ' ' + unitLabel;
+    return '<tr><td class="k">' + c.commodity + '</td><td>' + valStr + ' (' + c.product + ')</td></tr>';
+  }).join('');
+  var popup = '<h4>' + pair.port + ' &rarr; ' + pair.country + '</h4><table>' + rows + '</table>';
+  line.bindPopup(popup, {maxWidth: 320});
+  line.bindTooltip(pair.port + ' to ' + pair.country, {sticky: true});
+  line.addTo(exportLayer);
+});
+
+// Country dots sized by total non-copper import value (sqrt scaling so visual area
+// is proportional to value). Copper concentrate flows are captured separately in the
+// port-level data; the country totals here reflect the basket of refined and processed
+// minerals where Chilean origin is identifiable from FOB customs declarations.
+var maxTotal = Math.max.apply(null, countryDotsData.map(function(c) { return c.total; }));
+function countryRadius(t) {
+  if (!t || t <= 0) return 3;
+  return 3 + 14 * Math.sqrt(t / maxTotal);
+}
+
+countryDotsData.forEach(function(c) {
+  var top = c.shares[0];
+  var topColor = commodityColor(top.commodity);
+  var r = countryRadius(c.total);
+  var m = L.circleMarker([c.lat, c.lon], {
+    radius: r, fillColor: topColor, color: '#1a1a2e', weight: 0.7, fillOpacity: 0.78
+  });
+  var shareRows = c.shares.filter(function(s) { return s.pct >= 0.5; })
+    .slice(0, 8).map(function(s) {
+      return '<tr><td class="k">' + s.commodity + '</td><td>' + s.pct.toFixed(1) + '%</td></tr>';
+    }).join('');
+  var totalLabel;
+  if (c.total >= 1e9) totalLabel = '$' + (c.total/1e9).toFixed(2) + 'B';
+  else if (c.total >= 1e6) totalLabel = '$' + (c.total/1e6).toFixed(0) + 'M';
+  else totalLabel = '$' + Math.round(c.total).toLocaleString();
+  var popup = '<h4>' + c.name + '</h4>'
+    + '<div style="color:#6b7280;margin-bottom:4px">Imports from Chile: ' + totalLabel
+    + '<br><span style="font-size:11px">share of commodity basket, top entries</span></div>'
+    + '<table>' + shareRows + '</table>';
+  m.bindPopup(popup, {maxWidth: 280});
+  m.bindTooltip(c.name + ': ' + totalLabel + ' (top: ' + top.commodity + ')', {direction: 'top', offset: [0, -r]});
+  m.addTo(exportLayer);
+});
+
+// === Mode toggle ===
+document.querySelectorAll('.seg-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var mode = btn.getAttribute('data-mode');
+    document.querySelectorAll('.seg-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var legend = document.getElementById('legend');
+    legend.classList.remove('mode-domestic', 'mode-export');
+    legend.classList.add('mode-' + mode);
+    if (mode === 'domestic') {
+      if (map.hasLayer(exportLayer)) map.removeLayer(exportLayer);
+      domesticLayer.addTo(map);
+      map.flyTo(DOMESTIC_VIEW.center, DOMESTIC_VIEW.zoom, {duration: 1.0});
+    } else {
+      if (map.hasLayer(domesticLayer)) map.removeLayer(domesticLayer);
+      exportLayer.addTo(map);
+      map.flyTo(EXPORT_VIEW.center, EXPORT_VIEW.zoom, {duration: 1.0});
+    }
+  });
+});
+</script>
+</body>
+</html>

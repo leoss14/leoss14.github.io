@@ -29,8 +29,8 @@
         section h4 { font-size: 1.02rem; }
         /* Card headers: ensure inline h4 inherits white on navy (h3 was the only one explicitly set globally) */
         .card-header h4 { color: var(--white); }
-        /* Small explanatory line under a chart title, sits inside viz-container above the iframe */
-        .viz-container .viz-note { margin: 0; padding: 0.65rem clamp(1rem, 3vw, 1.5rem) 0.9rem; background: var(--grey-100); border-bottom: 1px solid var(--border); font-size: 0.9rem; line-height: 1.55; color: var(--text-muted); }
+        /* Small explanatory line under a chart, sits inside viz-container below the iframe */
+        .viz-container .viz-note { margin: 0; padding: 0.7rem clamp(1rem, 3vw, 1.5rem) 0.85rem; background: var(--grey-100); border-top: 1px solid var(--border); font-size: 0.9rem; line-height: 1.55; color: var(--text-muted); }
         /* Vertical box stack used in the ML section (mirrors cluster-card row pattern) */
         .ml-row { border-left: 3px solid; padding: 0.7rem 1.15rem; background: var(--grey-100); }
         .ml-row h4 { margin: 0 0 0.25rem; font-size: 1rem; color: var(--navy); }
@@ -76,20 +76,13 @@
         <div class="hero-inner">
             <span class="section-label">Capstone with Moody's Ratings</span>
             <h1>Beyond the Resource Curse</h1>
-            <hr class="hero-rule">
-            <p class="subtitle">
-                Industrial upgrading in resource-rich developing economies. Across 107
-                countries observed from 1995 to 2019, three structural variables (financial
-                depth, electricity access, and human capital) consistently predict gains in
-                economic complexity. Resource intensity, on its own, does not.
-            </p>
         </div>
     </section>
 
 
     <!-- SUMMARY -->
     <section id="overview">
-        <h2>Project Overview</h2>
+        <span class="section-label">Project Overview</span>
 
         <h3>Research Question</h3>
         <p>
@@ -114,7 +107,7 @@
                 <div class="card-header"><h4 style="margin: 0;">Unsupervised Learning</h4></div>
                 <div class="card-body">
                     <p>PCA reduces the data to its main dimensions; K-means assigns each
-                    country to one of five clusters based on its resource and development
+                    country to one of four clusters based on its resource and development
                     profile, providing structural peer groups for comparison.</p>
                 </div>
             </div>
@@ -155,7 +148,7 @@
 
     <!-- DATA -->
     <section>
-        <h2>Sample and Coverage</h2>
+        <span class="section-label">Sample and Coverage</span>
 
         <h3>Panel Construction</h3>
         <p>
@@ -184,19 +177,20 @@
             <h4>Resource Production Intensity (Per Capita)</h4>
             <iframe loading="lazy"
                 src="outputs/22_production_intensity_map.html"
-                style="height:580px;"></iframe>
+                style="height:520px; width:100%;"></iframe>
         </div>
 
         <div class="note-box" style="margin-top: 1.75rem;">
             <h4>Resource Diversity &amp; Intensity (Top 5, 2019)</h4>
             <p>
-                Three descriptive rankings on the production data. <em>Diversity</em> is
-                Shannon entropy across resource types (oil, gas, coal, metals) with a
-                power-weighted reward for market share; <em>Intensity</em> is production
-                value as a share of GDP; <em>Absolute</em> is total production value in
-                USD. None of these enters the regression: they describe the global
-                production landscape that motivates the resource-curse question, not the
-                channels through which it operates.
+                Three descriptive rankings on the raw production data.
+                <em>Diversity</em> measures how broadly a country&rsquo;s output is
+                spread across resource types (oil, gas, coal, metals): a country
+                producing many resources at scale ranks higher than one producing
+                only one. <em>Intensity</em> is total production value as a share
+                of GDP. <em>Absolute</em> is total production value in USD. None
+                of these enters the regression; they describe the global production
+                landscape, not the channels through which the resource curse operates.
             </p>
             <table class="results-table" style="margin: 1rem 0 0; font-size: 0.95rem;">
                 <tbody>
@@ -231,7 +225,7 @@
             <h4>Pearson Correlations with ECI</h4>
             <iframe loading="lazy"
                     src="outputs/04_correlation_bar.html"
-                    height="720"></iframe>
+                    style="height:600px; width:100%;"></iframe>
         </div>
     </section>
 
@@ -247,7 +241,7 @@
             diversified producers operating at moderate scale across multiple commodities.
             The 56 countries with adjusted natural resource rents above 1% of GDP in 1995
             are grouped by similarity across three subsoil rent shares (oil, gas, mineral,
-            all as % of GDP) and log production per capita. K-means with k=5 is fit on
+            all as % of GDP) and log production per capita. K-means with k=4 is fit on
             country-level means across the 1995-2019 panel, so cluster assignments
             reflect each country&rsquo;s structural resource profile rather than a single
             year&rsquo;s outcome. The remaining 51 panel countries are tagged
@@ -258,53 +252,67 @@
 
             <div style="display: flex; flex-direction: column; gap: 0.6rem; margin: 1rem 0 0;">
                 <div style="border-left: 3px solid #2A9D8F; padding: 0.55rem 1rem; background: var(--grey-100);">
-                    <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Diversified Producers <span style="color: var(--text-muted); font-weight: 400;">(27)</span></h4>
-                    <p style="margin: 0; font-size: 0.93rem;">Argentina, China, India, Indonesia, Malaysia, Mexico, South Africa. Modest resource intensity across multiple categories; growing manufacturing sectors and middle-income status.</p>
+                    <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Diversified Producers <span style="color: var(--text-muted); font-weight: 400;">(29)</span></h4>
+                    <p style="margin: 0; font-size: 0.93rem;">Argentina, China, Dominican Republic, India, Indonesia, Malaysia, Mexico, South Africa. Modest resource intensity across multiple categories (total natural-resource rents averaging about 6% of GDP); growing manufacturing sectors and middle-income status.</p>
                 </div>
                 <div style="border-left: 3px solid #457B9D; padding: 0.55rem 1rem; background: var(--grey-100);">
                     <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Oil Exporters <span style="color: var(--text-muted); font-weight: 400;">(15)</span></h4>
-                    <p style="margin: 0; font-size: 0.93rem;">Angola, Iran, Iraq, Kazakhstan, Saudi Arabia, UAE, Venezuela. Hydrocarbon rents typically 20–40% of GDP; wide spread of institutional strength within the group.</p>
+                    <p style="margin: 0; font-size: 0.93rem;">Angola, Iran, Iraq, Kazakhstan, Saudi Arabia, UAE, Venezuela. Oil-dominated rent profile (oil rents averaging about 30% of GDP, gas share negligible); wide spread of institutional strength within the group.</p>
                 </div>
                 <div style="border-left: 3px solid #E63946; padding: 0.55rem 1rem; background: var(--grey-100);">
                     <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Petrostates <span style="color: var(--text-muted); font-weight: 400;">(6)</span></h4>
-                    <p style="margin: 0; font-size: 0.93rem;">Algeria, Bahrain, Qatar, Russia, Trinidad and Tobago, Uzbekistan. Highest per-capita hydrocarbon production; rents large enough to substitute for broader productive capacity in the short run.</p>
+                    <p style="margin: 0; font-size: 0.93rem;">Algeria, Bahrain, Qatar, Russia, Trinidad and Tobago, Uzbekistan. Mixed hydrocarbon profile with a substantial natural-gas component alongside oil (gas rents averaging about 5% of GDP, the highest of any cluster); total hydrocarbon rents around 20% of GDP.</p>
                 </div>
                 <div style="border-left: 3px solid #E9C46A; padding: 0.55rem 1rem; background: var(--grey-100);">
-                    <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Mining Exporters <span style="color: var(--text-muted); font-weight: 400;">(5)</span></h4>
-                    <p style="margin: 0; font-size: 0.93rem;">Chile, Guinea, Mongolia, Papua New Guinea, Peru. Metals and minerals dominate the export basket; downstream processing varies substantially within the group.</p>
-                </div>
-                <div style="border-left: 3px solid #8B5CF6; padding: 0.55rem 1rem; background: var(--grey-100);">
-                    <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Mixed Producers <span style="color: var(--text-muted); font-weight: 400;">(3)</span></h4>
-                    <p style="margin: 0; font-size: 0.93rem;">Dominican Republic, Liberia, Mauritania. Low-intensity, low-production economies that do not fit cleanly into any dominant-resource category.</p>
+                    <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Mining Exporters <span style="color: var(--text-muted); font-weight: 400;">(6)</span></h4>
+                    <p style="margin: 0; font-size: 0.93rem;">Chile, Guinea, Mauritania, Mongolia, Papua New Guinea, Peru. Metals and minerals dominate the rent profile (mineral rents averaging about 7% of GDP); downstream processing varies substantially within the group.</p>
                 </div>
             </div>
 
         <h3>Cluster Geography</h3>
+
+        <p>
+            The map below shows where each cluster sits geographically. Petrostates
+            cluster around the Gulf and the Caspian; mining exporters are spread
+            across the Americas, Africa, and Central Asia; diversified producers
+            cover most of the larger emerging economies. The second chart compares
+            how the Economic Complexity Index has moved within each cluster over
+            time. Diversified Producers and Mining Exporters track close to the
+            global median, while Petrostates and Oil Exporters stay well below it,
+            with little catch-up over the period.
+        </p>
+
         <div class="viz-container">
-            <h4>Country Cluster Assignments (k=5, panel means 1995-2019)</h4>
-            <p class="viz-note">
-                Each country is shaded by its assigned cluster, based on average oil, gas,
-                and mineral rent shares and log production per capita across 1995-2019.
-                The 51 panel countries below the resource-dependence threshold are shaded
-                in grey and labelled &ldquo;Non-resource-dependent&rdquo;.
-            </p>
+            <h4>Country Clusters</h4>
             <iframe loading="lazy"
                     src="outputs/05_cluster_world_map.html"
-                    style="height:600px; width:100%;"
+                    style="height:560px; width:100%;"
                     title="Cluster Map"></iframe>
+            <p class="viz-note">
+                K-means with k=4, fit on country-level means across 1995-2019. Each
+                country is shaded by its assigned cluster, based on average oil, gas,
+                and mineral rent shares and log production per capita. The 51 panel
+                countries below the resource-dependence threshold are shaded in grey
+                and labelled &ldquo;Non-resource-dependent&rdquo;. The 31 economies
+                classified as high-income by WDI in 1995 (excluding the four Gulf
+                states already in the panel) appear in white with a darker outline as
+                a visual comparator: they are not part of the analysis sample, but
+                serve as a reference frontier.
+            </p>
         </div>
 
         <div class="viz-container">
             <h4>Median ECI by Cluster</h4>
-            <p class="viz-note">
-                Median Economic Complexity Index by cluster, 1995-2019. Diversified
-                Producers and Mining Exporters sit closest to the global median;
-                Petrostates and Oil Exporters cluster well below it. Shaded bands show
-                the interquartile range within each cluster.
-            </p>
             <iframe loading="lazy"
                     src="outputs/06_median_eci_by_cluster.html"
-                    style="height:520px; width:100%;"></iframe>
+                    style="height:480px; width:100%;"></iframe>
+            <p class="viz-note">
+                Median Economic Complexity Index by cluster, 1995-2019. Shaded
+                bands show the interquartile range within each cluster. The dotted
+                black line shows the median trajectory of WDI high-income 1995
+                economies (excl. Gulf), included as a reference frontier and not
+                part of the regression sample.
+            </p>
         </div>
     </section>
 
@@ -322,8 +330,7 @@
             channels (human capital and physical capital formation) rather than estimating
             a direct resource effect. Country and year fixed effects absorb time-invariant
             country characteristics and global commodity-price shocks; standard errors are
-            clustered at the country level. Variables entering as interactions are
-            mean-centred (grand mean) before multiplication to reduce collinearity.
+            clustered at the country level.
         </p>
 
         <div class="theory-box" style="text-align: center; padding: 2rem;">
@@ -424,7 +431,7 @@
             <h4>Headline Regression Coefficients</h4>
             <iframe loading="lazy"
                     src="outputs/12_coef_comparison_3a_3b.html"
-                    height="560"></iframe>
+                    style="height:560px; width:100%;"></iframe>
         </div>
     </section>
 
@@ -484,14 +491,41 @@
             <h4>Coefficient Agreement: LASSO, Ridge, and Elastic Net</h4>
             <iframe loading="lazy"
                     src="outputs/07_lasso_ridge_en_coefficients.html"
-                    height="500"></iframe>
+                    style="height:560px; width:100%;"></iframe>
+            <p class="viz-note">
+                Standardised coefficients from three regularised linear models on the
+                same feature set. Bars to the right of zero predict higher ECI; bars
+                to the left predict lower ECI. Agreement across the three models is
+                a stability check.
+            </p>
         </div>
+
+        <p style="margin-top: 1.75rem;">
+            The Random Forest is a different kind of model: instead of fitting a
+            single equation, it averages predictions from hundreds of decision trees,
+            each trained on a random subset of countries and variables. The chart
+            below ranks variables by how much they reduce prediction error across
+            the ensemble. Unlike the regularised regressions, Random Forest captures
+            non-linear effects (where a variable matters more in some ranges than
+            others) and interactions automatically, without having to specify them
+            in advance. The autoregressive lag of ECI dominates because past
+            complexity is a strong predictor of next-year complexity. Among policy
+            variables, Domestic Credit, Electricity Access, and Human Capital
+            consistently rank near the top, mirroring the regularised regression
+            and the headline panel result.
+        </p>
 
         <div class="viz-container">
             <h4>Random Forest Feature Importance</h4>
             <iframe loading="lazy"
                     src="outputs/08_rf_feature_importance.html"
-                    height="500"></iframe>
+                    style="height:500px; width:100%;"></iframe>
+            <p class="viz-note">
+                Feature importance scores from a Random Forest fit on the full
+                20-variable feature set. Bars are normalised mean decrease in
+                impurity; longer bars indicate a variable used more often, and
+                more decisively, in the ensemble&rsquo;s tree splits.
+            </p>
         </div>
     </section>
 
@@ -515,7 +549,7 @@
             <h4>Projected ECI Trajectories (2020&ndash;2030)</h4>
             <iframe loading="lazy"
                     src="outputs/09_eci_forecast_trajectories.html"
-                    height="640" style="width:100%;"></iframe>
+                    style="height:580px; width:100%;"></iframe>
         </div>
 
         <div class="two-col" style="margin-top: 2rem;">
@@ -590,22 +624,6 @@
             </tbody>
         </table>
 
-        <h3>Oil &amp; Gas Infrastructure: Azerbaijan and Republic of the Congo</h3>
-
-        <p>
-            The interactive map below traces upstream production sites, pipelines, and
-            export terminals for the two oil-producing case studies. Country selector in
-            the sidebar; click any feature for facility-level detail.
-        </p>
-
-        <div class="viz-container">
-            <h4>Oil &amp; Gas Infrastructure Map</h4>
-            <iframe loading="lazy"
-                    src="outputs/fused_map.html"
-                    height="640"
-                    style="border:0; width:100%;"></iframe>
-        </div>
-
         <h3>Republic of Congo</h3>
         <p>
             Oil accounts for roughly 40% of GDP, 80% of exports, and 60% of government revenues.
@@ -615,6 +633,13 @@
             of children completing primary school progress to secondary, and the country has around
             23,000 teachers against an estimated need of 48,000.
         </p>
+        <div class="viz-container" style="margin-top: 1.25rem;">
+            <h4>Republic of the Congo: oil fields and the road network</h4>
+            <iframe loading="lazy"
+                    src="outputs/congo_roads_map.html"
+                    style="height:560px; width:100%; border:0;"></iframe>
+            <p class="viz-note">Offshore production around Pointe-Noire alongside the documented road network, classified by surface quality.</p>
+        </div>
         <div class="note-box">
             <h4 style="color: var(--accent);">Policy Recommendations</h4>
             <p><strong>Education investment.</strong> Delink education spending from oil
@@ -638,6 +663,13 @@
             The State Statistical Committee does not publish a Gini coefficient. Non-performing
             loans reached 21% after the 2015&ndash;2016 banking crisis.
         </p>
+        <div class="viz-container" style="margin-top: 1.25rem;">
+            <h4>Azerbaijan: oil and gas infrastructure</h4>
+            <iframe loading="lazy"
+                    src="outputs/azerbaijan_pipelines_map.html"
+                    style="height:560px; width:100%; border:0;"></iframe>
+            <p class="viz-note">Caspian extraction sites and the six export pipelines connecting Azerbaijani fields to Black Sea, Mediterranean and Adriatic terminals.</p>
+        </div>
         <div class="note-box">
             <h4 style="color: var(--accent);">Policy Recommendations</h4>
             <p><strong>Mitigate rent capture.</strong> Establish independent oversight bodies
@@ -663,6 +695,13 @@
             infrastructure and credit access at near-OECD levels, the binding constraint is human
             capital quality and the absence of an R&amp;D ecosystem to anchor downstream processing.
         </p>
+        <div class="viz-container" style="margin-top: 1.25rem;">
+            <h4>Chile: copper, lithium and the mineral supply chain</h4>
+            <iframe loading="lazy"
+                    src="outputs/chile_supply_chain_map.html"
+                    style="height:560px; width:100%; border:0;"></iframe>
+            <p class="viz-note">Production sites, processing plants and Pacific export ports across the northern mining corridor; switch to the Exports view to trace shipments from each port to 70 destination markets.</p>
+        </div>
         <div class="note-box">
             <h4 style="color: var(--accent);">Policy Recommendations</h4>
             <p><strong>Direct lithium revenues toward education quality and applied
@@ -736,7 +775,7 @@
                 <div class="conclusion-content">
                     <h4>Different Starting Points Need Different Strategies</h4>
                     <p>
-                        The five-cluster typology and the three case studies confirm that
+                        The four-cluster typology and the three case studies confirm that
                         the binding constraint shifts as countries develop. Congo faces
                         failures in all three pillars simultaneously; Azerbaijan faces a
                         governance and Dutch Disease problem; Chile has the institutions and
@@ -793,31 +832,6 @@
             </p>
         </div>
 
-        <h3>Forest-Rent Decomposition</h3>
-
-        <p>
-            For each country in the original (uncorrected) high-resource sample, the
-            chart below decomposes total natural resource rents into forest, oil, gas,
-            coal, and mineral components. Countries shaded toward the top of each bar
-            owe most of their high-rent classification to forestry rather than to
-            extractive resources, motivating the forest-adjusted sample used in the
-            headline specification.
-        </p>
-
-        <div class="viz-container">
-            <h4>Forest vs Extractive Rent Decomposition</h4>
-            <iframe loading="lazy"
-                    src="outputs/17_forest_rent_decomposition.html"
-                    height="540"></iframe>
-        </div>
-
-        <div class="viz-container">
-            <h4>Forest-Adjusted vs Original Sample (Country-Level Scatter)</h4>
-            <iframe loading="lazy"
-                    src="outputs/20_rent_adj_vs_orig_scatter.html"
-                    height="500"></iframe>
-        </div>
-
         <h3>Coefficient and R&sup2; Stability Across Samples</h3>
 
         <p>
@@ -832,13 +846,13 @@
                 <h4>Coefficient Stability Across Samples</h4>
                 <iframe loading="lazy"
                         src="outputs/18_coef_comparison_across_samples.html"
-                        height="500"></iframe>
+                        style="height:460px; width:100%;"></iframe>
             </div>
             <div class="viz-container">
                 <h4>R&sup2; Across Samples</h4>
                 <iframe loading="lazy"
                         src="outputs/19_r2_comparison_across_samples.html"
-                        height="500"></iframe>
+                        style="height:400px; width:100%;"></iframe>
             </div>
         </div>
 
@@ -859,25 +873,7 @@
             <h4>LASSO Coefficient Stability (Bootstrap)</h4>
             <iframe loading="lazy"
                     src="outputs/21_lasso_coefficient_stability.html"
-                    height="500"></iframe>
-        </div>
-
-        <h3>Descriptive: ECI vs HCI by Production Quartile</h3>
-
-        <p>
-            The interaction terms in the headline regression are not statistically
-            significant. The descriptive scatter below splits observations by per-capita
-            production quartile and shows the bivariate relationship between log(HCI)
-            and ECI within each quartile. The slope is positive in all quartiles, but
-            sample-size differences and within-group heterogeneity prevent a precise
-            estimate of how the slope shifts with production intensity. The chart is
-            included for descriptive completeness, not as evidence of an effect.
-        </p>
-
-        <div class="viz-container">
-            <iframe loading="lazy"
-                    src="outputs/13_eci_hci_production_interaction.html"
-                    height="520"></iframe>
+                    style="height:600px; width:100%;"></iframe>
         </div>
     </section>
 
@@ -944,8 +940,8 @@
             <div class="note-box">
                 <h4 style="color: var(--accent);">Statistical Methods</h4>
                 <p>
-                    PCA: 2 components, 50.6% variance explained (PC1 28.6%, PC2 22.0%).
-                    K-means: k=5 on country panel means across 1995-2019, using oil,
+                    PCA: 2 components, 50.0% variance explained (PC1 26.9%, PC2 23.1%).
+                    K-means: k=4 on country panel means across 1995-2019, using oil,
                     gas, and mineral rent shares plus log production per capita. Panel
                     regression: two-way fixed effects (country and year) with
                     country-clustered standard errors. The headline specification
@@ -1017,7 +1013,7 @@
             <h4>Economic Complexity vs Resource Dependence (Comparator Trajectories)</h4>
             <iframe loading="lazy"
                     src="outputs/10_eci_trajectory_comparators.html"
-                    height="630"></iframe>
+                    style="height:500px; width:100%;"></iframe>
         </div>
 
         <div class="divider"><span>Supplementary Data</span></div>
@@ -1052,7 +1048,7 @@
             <h4>Resource Portfolio Composition (Top 20 Most Diversified Countries)</h4>
             <iframe loading="lazy"
                     src="outputs/25_resource_portfolio_decomposition.html"
-                    height="720"></iframe>
+                    style="height:580px; width:100%;"></iframe>
         </div>
 
         <h3>Variables and Data Sources</h3>
@@ -1067,38 +1063,45 @@
             <h4>Analytical Variables (Grouped by Theme)</h4>
             <iframe loading="lazy"
                     src="outputs/02_variables_treemap.html"
-                    height="500"></iframe>
+                    style="height:560px; width:100%;"></iframe>
         </div>
 
         <div class="viz-container">
             <h4>Data Sources</h4>
             <iframe loading="lazy"
                     src="outputs/03_data_sources_bubble.html"
-                    height="500"></iframe>
+                    style="height:520px; width:100%;"></iframe>
         </div>
 
         <h3>Principal Component Analysis</h3>
 
         <p>
-            PCA takes the clustering variables (resource rent shares, economic complexity, and human
-            capital) and finds the two combinations that capture the most variation. The first two
-            components together explain about 51% of total variation. Clustering is performed on the
-            original variables, not on the components; the scatter plot below is a simplified
-            projection for visualisation.
+            PCA is computed on ten country-level variables describing each
+            economy&rsquo;s resource and structural profile: production value per
+            capita, total natural-resource rents (% of GDP), oil rents, natural-gas
+            rents, mineral rents and forestry rents (each as % of GDP), GDP per
+            capita, trade openness, manufacturing share, and services share. The
+            first two components together explain about 50% of total variation in
+            this feature set. PCA is used for visualisation only; the clustering
+            in the main analysis is fit on its own narrower feature set (oil, gas,
+            and mineral rent shares plus log production per capita), not on the PCA
+            components.
         </p>
 
         <div class="two-col">
             <div class="note-box">
-                <h4>PC1: Economic Development (~29%)</h4>
-                <p>Loads positively on Economic Complexity and Human Capital. Separates advanced
-                manufacturing economies from low-income, resource-dependent ones. The dominant axis
-                of variation in the dataset.</p>
+                <h4>PC1: Resource Dependence (~27%)</h4>
+                <p>Loads positively on total natural-resource rents, oil rents, and
+                production value; loads negatively on manufacturing and services
+                shares. Separates economies whose output is dominated by extractive
+                sectors from those with more diversified production bases.</p>
             </div>
             <div class="note-box">
-                <h4>PC2: Hydrocarbon Intensity (~22%)</h4>
-                <p>Driven by oil and natural gas rent shares. Identifies energy exporters as a
-                distinct axis, separating petrostates from countries whose resource base is
-                concentrated in metals or forestry.</p>
+                <h4>PC2: Development Scale (~23%)</h4>
+                <p>Loads positively on production value, GDP per capita, trade
+                openness, and services; loads negatively on forestry rents.
+                Separates larger, more open economies from low-income, forestry-reliant
+                ones, cutting across the resource-dependence axis above.</p>
             </div>
         </div>
 
@@ -1106,7 +1109,7 @@
             <h4>PCA Scatter (Coloured by Cluster)</h4>
             <iframe loading="lazy"
                     src="outputs/26_pca_scatter_clusters.html"
-                    height="600"></iframe>
+                    style="height:520px; width:100%;"></iframe>
         </div>
 
         <div class="viz-grid">
@@ -1114,13 +1117,13 @@
                 <h4>PC1 Loadings</h4>
                 <iframe loading="lazy"
                         src="outputs/27_pca_loadings_pc1.html"
-                        height="440"></iframe>
+                        style="height:520px; width:100%;"></iframe>
             </div>
             <div class="viz-container">
                 <h4>PC2 Loadings</h4>
                 <iframe loading="lazy"
                         src="outputs/28_pca_loadings_pc2.html"
-                        height="440"></iframe>
+                        style="height:520px; width:100%;"></iframe>
             </div>
         </div>
 

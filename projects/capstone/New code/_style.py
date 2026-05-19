@@ -42,8 +42,23 @@ def save(fig, name):
 
 
 def hex_rgba(h, a):
-    """Convert a hex colour like #1a2744 to an rgba(...) string with alpha a."""
-    r, g, b = int(h[1:3], 16), int(h[3:5], 16), int(h[5:7], 16)
+    """Convert a hex colour like #1a2744 or short #abc to an rgba(...) string with alpha a.
+
+    Resilient to:
+      - 3-digit short hex (#abc expanded to #aabbcc)
+      - leading/trailing whitespace
+      - missing #
+      - anything malformed -> neutral grey
+    """
+    s = (h or "").strip().lstrip("#")
+    if len(s) == 3:
+        s = "".join(c * 2 for c in s)
+    if len(s) != 6:
+        s = "999999"
+    try:
+        r, g, b = int(s[0:2], 16), int(s[2:4], 16), int(s[4:6], 16)
+    except ValueError:
+        r, g, b = 153, 153, 153
     return f"rgba({r},{g},{b},{a})"
 
 
