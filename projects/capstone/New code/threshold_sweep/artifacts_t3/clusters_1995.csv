@@ -1,0 +1,38 @@
+Country Code,Country,ClusterLabels
+AGO,Angola,Petrostates
+ARE,United Arab Emirates,Petrostates
+AZE,Azerbaijan,Petrostates
+BHR,Bahrain,Oil Exporters
+BOL,Bolivia,Diversified Producers
+CHL,Chile,Mining Exporters
+CMR,Cameroon,Diversified Producers
+COG,"Congo, Rep.",Petrostates
+DZA,Algeria,Oil Exporters
+ECU,Ecuador,Diversified Producers
+EGY,"Egypt, Arab Rep.",Diversified Producers
+GAB,Gabon,Petrostates
+GIN,Guinea,Mining Exporters
+GNQ,Equatorial Guinea,Petrostates
+IDN,Indonesia,Diversified Producers
+IRN,"Iran, Islamic Rep.",Petrostates
+IRQ,Iraq,Petrostates
+KAZ,Kazakhstan,Diversified Producers
+KWT,Kuwait,Petrostates
+LBR,Liberia,Mixed Producers 1
+LBY,Libya,Petrostates
+MEX,Mexico,Diversified Producers
+MNG,Mongolia,Mining Exporters
+MYS,Malaysia,Diversified Producers
+NGA,Nigeria,Diversified Producers
+OMN,Oman,Petrostates
+PNG,Papua New Guinea,Mining Exporters
+QAT,Qatar,Oil Exporters
+RUS,Russian Federation,Oil Exporters
+SAU,Saudi Arabia,Petrostates
+TTO,Trinidad and Tobago,Oil Exporters
+UZB,Uzbekistan,Oil Exporters
+VEN,"Venezuela, RB",Diversified Producers
+VNM,Viet Nam,Diversified Producers
+YEM,"Yemen, Rep.",Diversified Producers
+ZAF,South Africa,Diversified Producers
+ZWE,Zimbabwe,Diversified Producers

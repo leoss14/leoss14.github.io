@@ -1,0 +1,141 @@
+[NbConvertApp] Converting notebook /Users/leoss/Desktop/GitHub/leoss14.github.io/projects/capstone/New code/1_data_prep.ipynb to notebook
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate(nb)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/bin/jupyter-nbconvert", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/leoss/Library/Python/3.12/lib/python/site-packages/jupyter_core/application.py", line 283, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+  File "/Users/leoss/Library/Python/3.12/lib/python/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+    app.start()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbconvert/nbconvertapp.py", line 420, in start
+    self.convert_notebooks()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbconvert/nbconvertapp.py", line 597, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbconvert/nbconvertapp.py", line 563, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbconvert/nbconvertapp.py", line 487, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbconvert/exporters/exporter.py", line 201, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbconvert/exporters/exporter.py", line 220, in from_file
+    return self.from_notebook_node(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbconvert/exporters/notebook.py", line 36, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbconvert/exporters/exporter.py", line 154, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbconvert/exporters/exporter.py", line 353, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbconvert/preprocessors/base.py", line 48, in __call__
+    return self.preprocess(nb, resources)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbconvert/preprocessors/execute.py", line 103, in preprocess
+    self.preprocess_cell(cell, resources, index)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbconvert/preprocessors/execute.py", line 124, in preprocess_cell
+    cell = self.execute_cell(cell, index, store_history=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leoss/Library/Python/3.12/lib/python/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+panel.to_parquet(artifact_path('panel.parquet'), index=False)
+print(f'  Saved panel.parquet ({len(panel):,} rows, {panel.shape[1]} cols)')
+
+clusters_1995[['Country Code', 'Country', 'ClusterLabels']] \
+    .drop_duplicates('Country Code') \
+    .to_csv(artifact_path('clusters_1995.csv'), index=False)
+print(f'  Saved clusters_1995.csv')
+
+pd.Series(include_lst, name='Country Code') \
+    .to_csv(artifact_path('sample.csv'), index=False)
+print(f'  Saved sample.csv ({len(include_lst)} countries)')
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mImportError[0m                               Traceback (most recent call last)
+Cell [0;32mIn[5], line 1[0m
+[0;32m----> 1[0m [43mpanel[49m[38;5;241;43m.[39;49m[43mto_parquet[49m[43m([49m[43martifact_path[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mpanel.parquet[39;49m[38;5;124;43m'[39;49m[43m)[49m[43m,[49m[43m [49m[43mindex[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m)[49m
+[1;32m      2[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m'[39m[38;5;124m  Saved panel.parquet ([39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(panel)[38;5;132;01m:[39;00m[38;5;124m,[39m[38;5;132;01m}[39;00m[38;5;124m rows, [39m[38;5;132;01m{[39;00mpanel[38;5;241m.[39mshape[[38;5;241m1[39m][38;5;132;01m}[39;00m[38;5;124m cols)[39m[38;5;124m'[39m)
+[1;32m      4[0m clusters_1995[[[38;5;124m'[39m[38;5;124mCountry Code[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mCountry[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mClusterLabels[39m[38;5;124m'[39m]] \
+[1;32m      5[0m     [38;5;241m.[39mdrop_duplicates([38;5;124m'[39m[38;5;124mCountry Code[39m[38;5;124m'[39m) \
+[1;32m      6[0m     [38;5;241m.[39mto_csv(artifact_path([38;5;124m'[39m[38;5;124mclusters_1995.csv[39m[38;5;124m'[39m), index[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+
+File [0;32m/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/util/_decorators.py:333[0m, in [0;36mdeprecate_nonkeyword_arguments.<locals>.decorate.<locals>.wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    327[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(args) [38;5;241m>[39m num_allow_args:
+[1;32m    328[0m     warnings[38;5;241m.[39mwarn(
+[1;32m    329[0m         msg[38;5;241m.[39mformat(arguments[38;5;241m=[39m_format_argument_list(allow_args)),
+[1;32m    330[0m         [38;5;167;01mFutureWarning[39;00m,
+[1;32m    331[0m         stacklevel[38;5;241m=[39mfind_stack_level(),
+[1;32m    332[0m     )
+[0;32m--> 333[0m [38;5;28;01mreturn[39;00m [43mfunc[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/frame.py:3113[0m, in [0;36mDataFrame.to_parquet[0;34m(self, path, engine, compression, index, partition_cols, storage_options, **kwargs)[0m
+[1;32m   3032[0m [38;5;250m[39m[38;5;124;03m"""[39;00m
+[1;32m   3033[0m [38;5;124;03mWrite a DataFrame to the binary parquet format.[39;00m
+[1;32m   3034[0m 
+[0;32m   (...)[0m
+[1;32m   3109[0m [38;5;124;03m>>> content = f.read()[39;00m
+[1;32m   3110[0m [38;5;124;03m"""[39;00m
+[1;32m   3111[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpandas[39;00m[38;5;21;01m.[39;00m[38;5;21;01mio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mparquet[39;00m [38;5;28;01mimport[39;00m to_parquet
+[0;32m-> 3113[0m [38;5;28;01mreturn[39;00m [43mto_parquet[49m[43m([49m
+[1;32m   3114[0m [43m    [49m[38;5;28;43mself[39;49m[43m,[49m
+[1;32m   3115[0m [43m    [49m[43mpath[49m[43m,[49m
+[1;32m   3116[0m [43m    [49m[43mengine[49m[43m,[49m
+[1;32m   3117[0m [43m    [49m[43mcompression[49m[38;5;241;43m=[39;49m[43mcompression[49m[43m,[49m
+[1;32m   3118[0m [43m    [49m[43mindex[49m[38;5;241;43m=[39;49m[43mindex[49m[43m,[49m
+[1;32m   3119[0m [43m    [49m[43mpartition_cols[49m[38;5;241;43m=[39;49m[43mpartition_cols[49m[43m,[49m
+[1;32m   3120[0m [43m    [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43mstorage_options[49m[43m,[49m
+[1;32m   3121[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
+[1;32m   3122[0m [43m[49m[43m)[49m
+
+File [0;32m/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/parquet.py:476[0m, in [0;36mto_parquet[0;34m(df, path, engine, compression, index, storage_options, partition_cols, filesystem, **kwargs)[0m
+[1;32m    474[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(partition_cols, [38;5;28mstr[39m):
+[1;32m    475[0m     partition_cols [38;5;241m=[39m [partition_cols]
+[0;32m--> 476[0m impl [38;5;241m=[39m [43mget_engine[49m[43m([49m[43mengine[49m[43m)[49m
+[1;32m    478[0m path_or_buf: FilePath [38;5;241m|[39m WriteBuffer[[38;5;28mbytes[39m] [38;5;241m=[39m io[38;5;241m.[39mBytesIO() [38;5;28;01mif[39;00m path [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m path
+[1;32m    480[0m impl[38;5;241m.[39mwrite(
+[1;32m    481[0m     df,
+[1;32m    482[0m     path_or_buf,
+[0;32m   (...)[0m
+[1;32m    488[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs,
+[1;32m    489[0m )
+
+File [0;32m/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/parquet.py:67[0m, in [0;36mget_engine[0;34m(engine)[0m
+[1;32m     64[0m         [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m err:
+[1;32m     65[0m             error_msgs [38;5;241m+[39m[38;5;241m=[39m [38;5;124m"[39m[38;5;130;01m\n[39;00m[38;5;124m - [39m[38;5;124m"[39m [38;5;241m+[39m [38;5;28mstr[39m(err)
+[0;32m---> 67[0m     [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m(
+[1;32m     68[0m         [38;5;124m"[39m[38;5;124mUnable to find a usable engine; [39m[38;5;124m"[39m
+[1;32m     69[0m         [38;5;124m"[39m[38;5;124mtried using: [39m[38;5;124m'[39m[38;5;124mpyarrow[39m[38;5;124m'[39m[38;5;124m, [39m[38;5;124m'[39m[38;5;124mfastparquet[39m[38;5;124m'[39m[38;5;124m.[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[1;32m     70[0m         [38;5;124m"[39m[38;5;124mA suitable version of [39m[38;5;124m"[39m
+[1;32m     71[0m         [38;5;124m"[39m[38;5;124mpyarrow or fastparquet is required for parquet [39m[38;5;124m"[39m
+[1;32m     72[0m         [38;5;124m"[39m[38;5;124msupport.[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[1;32m     73[0m         [38;5;124m"[39m[38;5;124mTrying to import the above resulted in these errors:[39m[38;5;124m"[39m
+[1;32m     74[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00merror_msgs[38;5;132;01m}[39;00m[38;5;124m"[39m
+[1;32m     75[0m     )
+[1;32m     77[0m [38;5;28;01mif[39;00m engine [38;5;241m==[39m [38;5;124m"[39m[38;5;124mpyarrow[39m[38;5;124m"[39m:
+[1;32m     78[0m     [38;5;28;01mreturn[39;00m PyArrowImpl()
+
+[0;31mImportError[0m: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+

@@ -12,7 +12,10 @@ import os
 # ── Paths ────────────────────────────────────────────────────────────────────
 HERE         = os.path.dirname(os.path.abspath(__file__))
 ROOT         = os.path.dirname(HERE)
-ARTIFACTS    = os.path.join(ROOT, "artifacts")
+ARTIFACTS    = os.environ.get(
+    "CAPSTONE_ARTIFACTS",
+    os.path.join(ROOT, "artifacts"),
+)
 
 # Default location of the main capstone CLEAN/intermediary folder.
 # Resolves relative to this file so the repo is portable across machines and
@@ -33,7 +36,8 @@ os.makedirs(ARTIFACTS, exist_ok=True)
 # resource-rich countries; without it, Norway, Australia, Canada and similar
 # advanced economies would pass the 1% threshold.
 GULF_STATES = ["BHR", "KWT", "OMN", "QAT", "SAU", "ARE"]
-NR_THRESHOLD = 1.0  # percent of GDP, after subtracting forestry
+NR_THRESHOLD = float(os.environ.get("NR_THRESHOLD", 0.0))  # headline sample for regression/ML (0% = all developing economies)
+CLUSTER_NR_THRESHOLD = float(os.environ.get("CLUSTER_NR_THRESHOLD", 1.0))  # subsample used for K-means clustering only
 YEAR_MIN, YEAR_MAX = 1995, 2019
 
 # WDI high-income economies, FY1997 classification (1995 Atlas-method GNI per
@@ -84,7 +88,6 @@ BASE_FEATS = [
     "Access to electricity (% of population)",
     "Adjusted savings: gross savings (% of GNI)",
     "L1_ECI",
-    "Forestry rents (% of GDP)",
 ]
 INTERACTION_FEATS = ["HCI_x_ProductionValue", "GFCF_x_ProductionValue"]
 ALL_FEATS = BASE_FEATS + INTERACTION_FEATS
@@ -96,14 +99,11 @@ REG_VARS = [
     "Political stability \u2014 estimate",
     "Rule of law index",
     "log_Production_Value",
-    "Forestry rents (% of GDP)",
     "Trade (% of GDP)",
 ]
 INTERACT = [
     "log_HCI_x_log_Production",
     "log_GFCF_x_log_Production",
-    "log_HCI_x_forestry_rents",
-    "log_GFCF_x_forestry_rents",
 ]
 
 
@@ -184,11 +184,12 @@ CAT_MAP = {
 
 # ── Colours (kept here so the viz notebooks import them too) ────────────────
 CLUSTER_COLORS = {
-    "Petrostates":        "#E63946",
-    "Oil Exporters":      "#457B9D",
-    "Major Producers":    "#2A9D8F",
-    "Mining Exporters":   "#E9C46A",
-    "Forestry Intensive": "#8B5CF6",
+    "Petrostates":              "#E63946",
+    "Oil Exporters":            "#457B9D",
+    "Diversified Producers":    "#2A9D8F",
+    "Mining Exporters":         "#E9C46A",
+    "Mixed Producers 1":        "#8B5CF6",
+    "Non-resource-dependent":   "#B5B5B5",
 }
 
 CAT_COLORS = {

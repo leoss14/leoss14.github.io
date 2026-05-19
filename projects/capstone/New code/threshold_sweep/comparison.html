@@ -1,0 +1,177 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>Threshold sweep comparison</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body { font-family: 'Public Sans', system-ui, sans-serif; font-size: 17px; line-height: 1.55;
+       color: #222; background: #fafafa; margin: 0; padding: 40px 56px; max-width: 1400px; }
+h1 { font-size: 30px; margin: 0 0 4px; }
+h2 { font-size: 22px; margin: 36px 0 12px; border-bottom: 1px solid #d4d4d4; padding-bottom: 6px; }
+h3 { font-size: 18px; margin: 18px 0 8px; color: #333; }
+h4 { font-size: 15px; margin: 10px 0 4px; }
+.subtitle { color: #666; margin: 0 0 8px; }
+.note { color: #555; font-size: 14px; margin: 4px 0 12px; }
+.mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13.5px; }
+.small { font-size: 14px; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; margin: 8px 0; }
+table.grid { width: 100%; }
+table.grid th, table.grid td { border: 1px solid #d8d8d8; padding: 7px 10px; text-align: center; font-size: 14px; }
+table.grid thead th { position: sticky; top: 0; background: #f0f0f0; z-index: 2; font-weight: 600; }
+table.grid td.label { text-align: left; font-weight: 500; background: #f7f7f7; }
+table.small th, table.small td { border-bottom: 1px solid #e2e2e2; padding: 5px 12px; text-align: left; font-size: 14px; }
+table.small thead th { background: #f0f0f0; }
+td.num { font-family: 'IBM Plex Mono', monospace; text-align: right; }
+td.pos { background: #e7f3eb; }  td.pos .c { color: #1f6b3a; font-weight: 600; }
+td.neg { background: #fbe9e9; }  td.neg .c { color: #a32424; font-weight: 600; }
+td.ns  { background: #f4f4f4; }  td.ns  .c { color: #666; }
+td .c, td .ci { display: block; font-family: 'IBM Plex Mono', monospace; }
+td .c  { font-size: 13.5px; }
+td .ci { font-size: 11.5px; color: #777; margin-top: 2px; }
+td.absent { background: #fcfcfc; color: #bbb; }
+td.ml .rk  { display: block; font-weight: 600; font-size: 13px; }
+td.ml .mag { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #555; }
+td.ml.top { background: #e3edf7; }
+td.ml.mid { background: #f1f5fa; }
+td.ml.low { background: #fcfcfc; color: #777; }
+.diff-block { margin: 10px 0; padding: 10px 14px; background: white; border-left: 3px solid #4a73a8; }
+.cl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; }
+.cl-card { background: white; border: 1px solid #e2e2e2; padding: 10px 14px; border-radius: 3px; }
+.cl-card .cnt { color: #888; font-weight: 400; font-size: 13px; }
+.thr-block { margin: 14px 0 22px; }
+.fc-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+tr.pos td.num { color: #1f6b3a; } tr.neg td.num { color: #a32424; }
+</style></head><body>
+<h1>Threshold sweep: NR_THRESHOLD ∈ {0, 1, 2, 3}</h1>
+<p class="subtitle">Re-runs of the full pipeline with the natural-resource share cut-off varied. Headline pipeline uses 1%.</p>
+<section><h2>1. Sample size</h2>
+<table class="small"><thead><tr><th>Threshold</th><th>Countries</th></tr></thead>
+<tbody><tr><td>0%</td><td class="num">107</td></tr>
+<tr><td>1%</td><td class="num">56</td></tr>
+<tr><td>2%</td><td class="num">48</td></tr>
+<tr><td>3%</td><td class="num">37</td></tr></tbody></table></section>
+<section><h2>2. Sample composition vs 1% baseline</h2>
+<div class="diff-block">
+<h4>0% vs 1% baseline</h4>
+<p><strong>Added (51):</strong> <span class="mono">ARM, BFA, BGD, BGR, BLR, BRA, CIV, CRI, CZE, ETH, GEO, GTM, HND, HRV, HUN, JOR, KEN, KGZ, KOR, LAO, LKA, LTU, MAR, MDG, MKD, MLI, MOZ, MWI, NAM, NER, NIC, NPL, PAN, PHL, POL, RWA, SDN, SEN, SRB, SVK, SVN, SWZ, TCD, TGO, THA, TJK, TUR, TZA, UGA, URY, ZMB</span></p>
+<p><strong>Dropped (0):</strong> <span class="mono">—</span></p>
+</div><div class="diff-block">
+<h4>2% vs 1% baseline</h4>
+<p><strong>Added (0):</strong> <span class="mono">—</span></p>
+<p><strong>Dropped (8):</strong> <span class="mono">ALB, ARG, BIH, BWA, DOM, EST, GHA, PAK</span></p>
+</div><div class="diff-block">
+<h4>3% vs 1% baseline</h4>
+<p><strong>Added (0):</strong> <span class="mono">—</span></p>
+<p><strong>Dropped (19):</strong> <span class="mono">ALB, ARG, BIH, BWA, CHN, COD, COL, DOM, EST, GHA, IND, JAM, MMR, MRT, PAK, PER, ROU, TUN, UKR</span></p>
+</div></section>
+<section><h2>3. Regression coefficients (panel fixed-effects, ECI as outcome)</h2>
+<p class="note">Each cell shows the point estimate with the 95% confidence interval below. Green = positive and significant, red = negative and significant, grey = not significant.</p>
+<div class="scroll"><table class="grid"><thead><tr><th>Variable</th><th>0%</th><th>1%</th><th>2%</th><th>3%</th></tr></thead><tbody><tr><td class="label">Human Capital</td><td class="pos"><span class="c">+0.187</span><span class="ci">[+0.057, +0.317]</span></td><td class="pos"><span class="c">+0.199</span><span class="ci">[+0.001, +0.397]</span></td><td class="ns"><span class="c">+0.216</span><span class="ci">[-0.025, +0.457]</span></td><td class="ns"><span class="c">+0.226</span><span class="ci">[-0.034, +0.486]</span></td></tr><tr><td class="label">Capital Formation</td><td class="pos"><span class="c">+0.020</span><span class="ci">[+0.006, +0.033]</span></td><td class="pos"><span class="c">+0.028</span><span class="ci">[+0.010, +0.046]</span></td><td class="pos"><span class="c">+0.036</span><span class="ci">[+0.013, +0.058]</span></td><td class="pos"><span class="c">+0.031</span><span class="ci">[+0.010, +0.053]</span></td></tr><tr><td class="label">Political Stability</td><td class="ns"><span class="c">+0.012</span><span class="ci">[-0.009, +0.032]</span></td><td class="ns"><span class="c">+0.007</span><span class="ci">[-0.022, +0.037]</span></td><td class="ns"><span class="c">+0.015</span><span class="ci">[-0.021, +0.052]</span></td><td class="ns"><span class="c">+0.010</span><span class="ci">[-0.040, +0.060]</span></td></tr><tr><td class="label">Rule of Law</td><td class="pos"><span class="c">+0.059</span><span class="ci">[+0.007, +0.110]</span></td><td class="ns"><span class="c">+0.043</span><span class="ci">[-0.031, +0.116]</span></td><td class="ns"><span class="c">+0.060</span><span class="ci">[-0.022, +0.142]</span></td><td class="ns"><span class="c">+0.101</span><span class="ci">[-0.008, +0.210]</span></td></tr><tr><td class="label">Production Value</td><td class="neg"><span class="c">-0.007</span><span class="ci">[-0.014, -0.000]</span></td><td class="ns"><span class="c">-0.009</span><span class="ci">[-0.019, +0.001]</span></td><td class="ns"><span class="c">-0.014</span><span class="ci">[-0.030, +0.002]</span></td><td class="ns"><span class="c">-0.010</span><span class="ci">[-0.032, +0.012]</span></td></tr><tr><td class="label">Forestry rents (% GDP)</td><td class="neg"><span class="c">-0.008</span><span class="ci">[-0.013, -0.002]</span></td><td class="ns"><span class="c">-0.008</span><span class="ci">[-0.019, +0.003]</span></td><td class="ns"><span class="c">-0.008</span><span class="ci">[-0.022, +0.005]</span></td><td class="ns"><span class="c">-0.007</span><span class="ci">[-0.024, +0.011]</span></td></tr><tr><td class="label">Trade</td><td class="ns"><span class="c">+0.000</span><span class="ci">[-0.000, +0.001]</span></td><td class="ns"><span class="c">-0.000</span><span class="ci">[-0.001, +0.001]</span></td><td class="ns"><span class="c">+0.000</span><span class="ci">[-0.001, +0.001]</span></td><td class="ns"><span class="c">+0.000</span><span class="ci">[-0.001, +0.001]</span></td></tr><tr><td class="label">HCI × Production</td><td class="ns"><span class="c">+0.009</span><span class="ci">[-0.025, +0.044]</span></td><td class="ns"><span class="c">-0.015</span><span class="ci">[-0.062, +0.031]</span></td><td class="ns"><span class="c">-0.043</span><span class="ci">[-0.098, +0.012]</span></td><td class="ns"><span class="c">-0.008</span><span class="ci">[-0.108, +0.093]</span></td></tr><tr><td class="label">GFCF × Production</td><td class="ns"><span class="c">+0.002</span><span class="ci">[-0.004, +0.008]</span></td><td class="ns"><span class="c">+0.008</span><span class="ci">[-0.001, +0.018]</span></td><td class="ns"><span class="c">+0.005</span><span class="ci">[-0.005, +0.015]</span></td><td class="ns"><span class="c">+0.013</span><span class="ci">[-0.003, +0.029]</span></td></tr><tr><td class="label">HCI × Forestry</td><td class="neg"><span class="c">-0.027</span><span class="ci">[-0.047, -0.006]</span></td><td class="ns"><span class="c">-0.036</span><span class="ci">[-0.093, +0.022]</span></td><td class="ns"><span class="c">-0.041</span><span class="ci">[-0.114, +0.032]</span></td><td class="ns"><span class="c">-0.029</span><span class="ci">[-0.140, +0.083]</span></td></tr><tr><td class="label">GFCF × Forestry</td><td class="ns"><span class="c">+0.003</span><span class="ci">[-0.001, +0.007]</span></td><td class="pos"><span class="c">+0.006</span><span class="ci">[+0.000, +0.011]</span></td><td class="ns"><span class="c">+0.005</span><span class="ci">[-0.002, +0.011]</span></td><td class="pos"><span class="c">+0.012</span><span class="ci">[+0.001, +0.022]</span></td></tr></tbody></table></div></section>
+<section><h2>4. Machine-learning predictor ranks</h2>
+<p class="note">Rank by mean absolute coefficient (LASSO / Ridge / Elastic Net / Random Forest, all standardised). Top 5 highlighted, ranks 6-10 lighter, the rest unshaded.</p>
+<div class="scroll"><table class="grid"><thead><tr><th>Feature</th><th>0%</th><th>1%</th><th>2%</th><th>3%</th></tr></thead><tbody><tr><td class="label">Lagged ECI</td><td class="ml top"><span class="rk">#1</span><span class="mag">0.7122</span></td><td class="ml top"><span class="rk">#1</span><span class="mag">0.6250</span></td><td class="ml top"><span class="rk">#1</span><span class="mag">0.6357</span></td><td class="ml top"><span class="rk">#1</span><span class="mag">0.6029</span></td></tr><tr><td class="label">Electricity</td><td class="ml top"><span class="rk">#2</span><span class="mag">0.0415</span></td><td class="ml top"><span class="rk">#2</span><span class="mag">0.0631</span></td><td class="ml top"><span class="rk">#2</span><span class="mag">0.0781</span></td><td class="ml top"><span class="rk">#2</span><span class="mag">0.0671</span></td></tr><tr><td class="label">Domestic Credit</td><td class="ml top"><span class="rk">#3</span><span class="mag">0.0272</span></td><td class="ml top"><span class="rk">#3</span><span class="mag">0.0447</span></td><td class="ml top"><span class="rk">#3</span><span class="mag">0.0527</span></td><td class="ml top"><span class="rk">#3</span><span class="mag">0.0548</span></td></tr><tr><td class="label">Urban Population</td><td class="ml mid"><span class="rk">#7</span><span class="mag">0.0177</span></td><td class="ml top"><span class="rk">#4</span><span class="mag">0.0265</span></td><td class="ml top"><span class="rk">#4</span><span class="mag">0.0286</span></td><td class="ml top"><span class="rk">#4</span><span class="mag">0.0362</span></td></tr><tr><td class="label">Gross Savings</td><td class="ml mid"><span class="rk">#8</span><span class="mag">0.0117</span></td><td class="ml top"><span class="rk">#5</span><span class="mag">0.0198</span></td><td class="ml top"><span class="rk">#5</span><span class="mag">0.0194</span></td><td class="ml mid"><span class="rk">#6</span><span class="mag">0.0151</span></td></tr><tr><td class="label">Human Capital</td><td class="ml top"><span class="rk">#4</span><span class="mag">0.0243</span></td><td class="ml mid"><span class="rk">#6</span><span class="mag">0.0189</span></td><td class="ml mid"><span class="rk">#10</span><span class="mag">0.0095</span></td><td class="ml mid"><span class="rk">#8</span><span class="mag">0.0120</span></td></tr><tr><td class="label">Political Stability</td><td class="ml top"><span class="rk">#5</span><span class="mag">0.0216</span></td><td class="ml mid"><span class="rk">#10</span><span class="mag">0.0103</span></td><td class="ml low"><span class="rk">#12</span><span class="mag">0.0056</span></td><td class="ml mid"><span class="rk">#7</span><span class="mag">0.0122</span></td></tr><tr><td class="label">Forestry rents (% GDP)</td><td class="ml low"><span class="rk">#14</span><span class="mag">0.0027</span></td><td class="ml mid"><span class="rk">#8</span><span class="mag">0.0122</span></td><td class="ml mid"><span class="rk">#7</span><span class="mag">0.0172</span></td><td class="ml top"><span class="rk">#5</span><span class="mag">0.0196</span></td></tr><tr><td class="label">Depreciation</td><td class="ml low"><span class="rk">#12</span><span class="mag">0.0061</span></td><td class="ml mid"><span class="rk">#7</span><span class="mag">0.0157</span></td><td class="ml mid"><span class="rk">#6</span><span class="mag">0.0180</span></td><td class="ml mid"><span class="rk">#10</span><span class="mag">0.0083</span></td></tr><tr><td class="label">Inflation</td><td class="ml low"><span class="rk">#11</span><span class="mag">0.0062</span></td><td class="ml mid"><span class="rk">#9</span><span class="mag">0.0109</span></td><td class="ml mid"><span class="rk">#9</span><span class="mag">0.0115</span></td><td class="ml mid"><span class="rk">#9</span><span class="mag">0.0092</span></td></tr><tr><td class="label">HC × Production</td><td class="ml mid"><span class="rk">#10</span><span class="mag">0.0080</span></td><td class="ml low"><span class="rk">#14</span><span class="mag">0.0027</span></td><td class="ml low"><span class="rk">#14</span><span class="mag">0.0032</span></td><td class="ml low"><span class="rk">#11</span><span class="mag">0.0079</span></td></tr><tr><td class="label">Production Value</td><td class="ml mid"><span class="rk">#6</span><span class="mag">0.0214</span></td><td class="ml low"><span class="rk">#11</span><span class="mag">0.0074</span></td><td class="ml low"><span class="rk">#18</span><span class="mag">0.0018</span></td><td class="ml low"><span class="rk">#18</span><span class="mag">0.0015</span></td></tr><tr><td class="label">Rule of Law</td><td class="ml mid"><span class="rk">#9</span><span class="mag">0.0114</span></td><td class="ml low"><span class="rk">#20</span><span class="mag">0.0008</span></td><td class="ml low"><span class="rk">#16</span><span class="mag">0.0020</span></td><td class="ml low"><span class="rk">#13</span><span class="mag">0.0050</span></td></tr><tr><td class="label">Landlocked</td><td class="ml low"><span class="rk">#19</span><span class="mag">0.0004</span></td><td class="ml low"><span class="rk">#12</span><span class="mag">0.0057</span></td><td class="ml low"><span class="rk">#11</span><span class="mag">0.0058</span></td><td class="ml low"><span class="rk">#16</span><span class="mag">0.0021</span></td></tr><tr><td class="label">Gov Revenue</td><td class="ml low"><span class="rk">#21</span><span class="mag">0.0000</span></td><td class="ml low"><span class="rk">#13</span><span class="mag">0.0035</span></td><td class="ml mid"><span class="rk">#8</span><span class="mag">0.0139</span></td><td class="ml low"><span class="rk">#21</span><span class="mag">0.0000</span></td></tr><tr><td class="label">GFCF × Production</td><td class="ml low"><span class="rk">#20</span><span class="mag">0.0000</span></td><td class="ml low"><span class="rk">#16</span><span class="mag">0.0018</span></td><td class="ml low"><span class="rk">#15</span><span class="mag">0.0029</span></td><td class="ml low"><span class="rk">#12</span><span class="mag">0.0053</span></td></tr></tbody></table></div></section>
+<section><h2>5. Cluster membership (k-means on panel means, k=5)</h2>
+<div class="thr-block">
+<h3>Threshold 0%</h3>
+<div class="cl-grid"><div class="cl-card">
+<h4>Diversified Producers <span class="cnt">(57)</span></h4>
+<p class="mono small">Albania, Argentina, Armenia, Bangladesh, Belarus, Bolivia, Bosnia and Herzegovina, Botswana, Brazil, Bulgaria, Cameroon, Chad, China, Colombia, Cote d'Ivoire, Croatia, Czechia, Ecuador, Egypt, Arab Rep., Estonia, Eswatini, Georgia, Ghana, Guatemala, Honduras, Hungary, India, Indonesia, Jamaica, Kazakhstan, Lithuania, Malaysia, Mexico, Morocco, Mozambique, Namibia, Nicaragua, Nigeria, North Macedonia, Pakistan, Philippines, Poland, Romania, Serbia, Slovak Republic, Slovenia, South Africa, Sudan, Tajikistan, Tanzania, Thailand, Tunisia, Turkiye, Ukraine, Uruguay, Viet Nam, Zimbabwe</p>
+</div><div class="cl-card">
+<h4>Mixed Producers 1 <span class="cnt">(18)</span></h4>
+<p class="mono small">Burkina Faso, Costa Rica, Dominican Republic, Ethiopia, Jordan, Kenya, Korea, Rep., Liberia, Madagascar, Malawi, Nepal, Niger, Panama, Rwanda, Senegal, Sri Lanka, Togo, Uganda</p>
+</div><div class="cl-card">
+<h4>Petrostates <span class="cnt">(14)</span></h4>
+<p class="mono small">Angola, Azerbaijan, Congo, Rep., Equatorial Guinea, Gabon, Iran, Islamic Rep., Iraq, Kuwait, Libya, Oman, Saudi Arabia, United Arab Emirates, Venezuela, RB, Yemen, Rep.</p>
+</div><div class="cl-card">
+<h4>Mining Exporters <span class="cnt">(11)</span></h4>
+<p class="mono small">Chile, Congo, Dem. Rep., Guinea, Kyrgyz Republic, Lao PDR, Mali, Mauritania, Mongolia, Papua New Guinea, Peru, Zambia</p>
+</div><div class="cl-card">
+<h4>Oil Exporters <span class="cnt">(7)</span></h4>
+<p class="mono small">Algeria, Bahrain, Myanmar, Qatar, Russian Federation, Trinidad and Tobago, Uzbekistan</p>
+</div></div>
+</div><div class="thr-block">
+<h3>Threshold 1%</h3>
+<div class="cl-grid"><div class="cl-card">
+<h4>Diversified Producers <span class="cnt">(27)</span></h4>
+<p class="mono small">Albania, Argentina, Bolivia, Bosnia and Herzegovina, Botswana, Cameroon, China, Colombia, Congo, Dem. Rep., Ecuador, Egypt, Arab Rep., Estonia, Ghana, India, Indonesia, Jamaica, Malaysia, Mexico, Myanmar, Nigeria, Pakistan, Romania, South Africa, Tunisia, Ukraine, Viet Nam, Zimbabwe</p>
+</div><div class="cl-card">
+<h4>Oil Exporters <span class="cnt">(15)</span></h4>
+<p class="mono small">Angola, Azerbaijan, Congo, Rep., Equatorial Guinea, Gabon, Iran, Islamic Rep., Iraq, Kazakhstan, Kuwait, Libya, Oman, Saudi Arabia, United Arab Emirates, Venezuela, RB, Yemen, Rep.</p>
+</div><div class="cl-card">
+<h4>Petrostates <span class="cnt">(6)</span></h4>
+<p class="mono small">Algeria, Bahrain, Qatar, Russian Federation, Trinidad and Tobago, Uzbekistan</p>
+</div><div class="cl-card">
+<h4>Mining Exporters <span class="cnt">(5)</span></h4>
+<p class="mono small">Chile, Guinea, Mongolia, Papua New Guinea, Peru</p>
+</div><div class="cl-card">
+<h4>Mixed Producers 1 <span class="cnt">(3)</span></h4>
+<p class="mono small">Dominican Republic, Liberia, Mauritania</p>
+</div></div>
+</div><div class="thr-block">
+<h3>Threshold 2%</h3>
+<div class="cl-grid"><div class="cl-card">
+<h4>Diversified Producers <span class="cnt">(21)</span></h4>
+<p class="mono small">Bolivia, Cameroon, China, Colombia, Congo, Dem. Rep., Ecuador, Egypt, Arab Rep., India, Indonesia, Jamaica, Kazakhstan, Malaysia, Mexico, Myanmar, Nigeria, Romania, South Africa, Tunisia, Ukraine, Viet Nam, Zimbabwe</p>
+</div><div class="cl-card">
+<h4>Oil Exporters <span class="cnt">(14)</span></h4>
+<p class="mono small">Angola, Azerbaijan, Congo, Rep., Equatorial Guinea, Gabon, Iran, Islamic Rep., Iraq, Kuwait, Libya, Oman, Saudi Arabia, United Arab Emirates, Venezuela, RB, Yemen, Rep.</p>
+</div><div class="cl-card">
+<h4>Petrostates <span class="cnt">(6)</span></h4>
+<p class="mono small">Algeria, Bahrain, Qatar, Russian Federation, Trinidad and Tobago, Uzbekistan</p>
+</div><div class="cl-card">
+<h4>Mining Exporters <span class="cnt">(5)</span></h4>
+<p class="mono small">Chile, Guinea, Mongolia, Papua New Guinea, Peru</p>
+</div><div class="cl-card">
+<h4>Mixed Producers 1 <span class="cnt">(2)</span></h4>
+<p class="mono small">Liberia, Mauritania</p>
+</div></div>
+</div><div class="thr-block">
+<h3>Threshold 3%</h3>
+<div class="cl-grid"><div class="cl-card">
+<h4>Diversified Producers <span class="cnt">(14)</span></h4>
+<p class="mono small">Bolivia, Cameroon, Ecuador, Egypt, Arab Rep., Indonesia, Kazakhstan, Malaysia, Mexico, Nigeria, South Africa, Venezuela, RB, Viet Nam, Yemen, Rep., Zimbabwe</p>
+</div><div class="cl-card">
+<h4>Petrostates <span class="cnt">(12)</span></h4>
+<p class="mono small">Angola, Azerbaijan, Congo, Rep., Equatorial Guinea, Gabon, Iran, Islamic Rep., Iraq, Kuwait, Libya, Oman, Saudi Arabia, United Arab Emirates</p>
+</div><div class="cl-card">
+<h4>Oil Exporters <span class="cnt">(6)</span></h4>
+<p class="mono small">Algeria, Bahrain, Qatar, Russian Federation, Trinidad and Tobago, Uzbekistan</p>
+</div><div class="cl-card">
+<h4>Mining Exporters <span class="cnt">(4)</span></h4>
+<p class="mono small">Chile, Guinea, Mongolia, Papua New Guinea</p>
+</div><div class="cl-card">
+<h4>Mixed Producers 1 <span class="cnt">(1)</span></h4>
+<p class="mono small">Liberia</p>
+</div></div>
+</div></section>
+<section><h2>6. Forecast top movers (mean projected change in ECI, horizon-averaged)</h2>
+<div class="thr-block">
+<h3>Threshold 0%</h3>
+<div class="fc-pair">
+<table class="small"><thead><tr><th>Top 5 risers</th><th>Δ ECI</th></tr></thead>
+<tbody><tr class="pos"><td>Mongolia</td><td class="num">+0.677</td></tr><tr class="pos"><td>Equatorial Guinea</td><td class="num">+0.605</td></tr><tr class="pos"><td>Chile</td><td class="num">+0.556</td></tr><tr class="pos"><td>Ecuador</td><td class="num">+0.538</td></tr><tr class="pos"><td>Myanmar</td><td class="num">+0.401</td></tr></tbody></table>
+<table class="small"><thead><tr><th>Top 5 decliners</th><th>Δ ECI</th></tr></thead>
+<tbody><tr class="neg"><td>Czechia</td><td class="num">-0.445</td></tr><tr class="neg"><td>Slovenia</td><td class="num">-0.409</td></tr><tr class="neg"><td>Hungary</td><td class="num">-0.405</td></tr><tr class="neg"><td>Mexico</td><td class="num">-0.393</td></tr><tr class="neg"><td>Turkiye</td><td class="num">-0.367</td></tr></tbody></table>
+</div></div><div class="thr-block">
+<h3>Threshold 1%</h3>
+<div class="fc-pair">
+<table class="small"><thead><tr><th>Top 5 risers</th><th>Δ ECI</th></tr></thead>
+<tbody><tr class="pos"><td>Mongolia</td><td class="num">+0.698</td></tr><tr class="pos"><td>Chile</td><td class="num">+0.579</td></tr><tr class="pos"><td>Ecuador</td><td class="num">+0.579</td></tr><tr class="pos"><td>Equatorial Guinea</td><td class="num">+0.573</td></tr><tr class="pos"><td>Iraq</td><td class="num">+0.368</td></tr></tbody></table>
+<table class="small"><thead><tr><th>Top 5 decliners</th><th>Δ ECI</th></tr></thead>
+<tbody><tr class="neg"><td>Mexico</td><td class="num">-0.543</td></tr><tr class="neg"><td>Saudi Arabia</td><td class="num">-0.479</td></tr><tr class="neg"><td>Estonia</td><td class="num">-0.426</td></tr><tr class="neg"><td>Zimbabwe</td><td class="num">-0.390</td></tr><tr class="neg"><td>Malaysia</td><td class="num">-0.355</td></tr></tbody></table>
+</div></div><div class="thr-block">
+<h3>Threshold 2%</h3>
+<div class="fc-pair">
+<table class="small"><thead><tr><th>Top 5 risers</th><th>Δ ECI</th></tr></thead>
+<tbody><tr class="pos"><td>Mongolia</td><td class="num">+0.736</td></tr><tr class="pos"><td>Equatorial Guinea</td><td class="num">+0.572</td></tr><tr class="pos"><td>Chile</td><td class="num">+0.537</td></tr><tr class="pos"><td>Ecuador</td><td class="num">+0.523</td></tr><tr class="pos"><td>Iraq</td><td class="num">+0.383</td></tr></tbody></table>
+<table class="small"><thead><tr><th>Top 5 decliners</th><th>Δ ECI</th></tr></thead>
+<tbody><tr class="neg"><td>Mexico</td><td class="num">-0.572</td></tr><tr class="neg"><td>Saudi Arabia</td><td class="num">-0.541</td></tr><tr class="neg"><td>Zimbabwe</td><td class="num">-0.516</td></tr><tr class="neg"><td>Malaysia</td><td class="num">-0.472</td></tr><tr class="neg"><td>Kuwait</td><td class="num">-0.347</td></tr></tbody></table>
+</div></div><div class="thr-block">
+<h3>Threshold 3%</h3>
+<div class="fc-pair">
+<table class="small"><thead><tr><th>Top 5 risers</th><th>Δ ECI</th></tr></thead>
+<tbody><tr class="pos"><td>Mongolia</td><td class="num">+0.757</td></tr><tr class="pos"><td>Equatorial Guinea</td><td class="num">+0.595</td></tr><tr class="pos"><td>Ecuador</td><td class="num">+0.511</td></tr><tr class="pos"><td>Chile</td><td class="num">+0.494</td></tr><tr class="pos"><td>Nigeria</td><td class="num">+0.407</td></tr></tbody></table>
+<table class="small"><thead><tr><th>Top 5 decliners</th><th>Δ ECI</th></tr></thead>
+<tbody><tr class="neg"><td>Saudi Arabia</td><td class="num">-0.590</td></tr><tr class="neg"><td>Mexico</td><td class="num">-0.564</td></tr><tr class="neg"><td>Malaysia</td><td class="num">-0.465</td></tr><tr class="neg"><td>Zimbabwe</td><td class="num">-0.405</td></tr><tr class="neg"><td>Kuwait</td><td class="num">-0.390</td></tr></tbody></table>
+</div></div></section>
+</body></html>
