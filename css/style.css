@@ -490,6 +490,21 @@ section p {
     font-size: 1.05rem;
     line-height: 1.8;
     color: var(--text-secondary);
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+}
+
+/* Short captions and varying-length card text look bad when justified; force left-align. */
+.viz-note,
+.note-box p,
+.chart-caption,
+.project-card p,
+.project-body,
+.project-body p {
+    text-align: left;
+    hyphens: none;
 }
 
 section li {
@@ -1190,30 +1205,41 @@ hr,
 .showcase-frame {
     position: relative;
     width: 100%;
-    height: 280px;
+    /* Default height; individual cards override via inline style to match
+       their underlying chart's natural dimensions. The scale on the iframe
+       below scales the chart proportionally to fit. */
+    height: 320px;
     overflow: hidden;
-    background: var(--grey-100);
+    background: var(--white);
 }
 
 .showcase-frame iframe {
-    width: 200%;
-    height: 200%;
+    /* iframe is rendered at its natural size and scaled down by the
+       --frame-scale custom property (default 0.7). The width/height are
+       set to compensate so the scaled iframe fills the parent. */
+    --frame-scale: 0.7;
+    width: calc(100% / var(--frame-scale));
+    height: calc(100% / var(--frame-scale));
     border: none;
-    transform: scale(0.5);
+    transform: scale(var(--frame-scale));
     transform-origin: top left;
     pointer-events: none;
+    background: var(--white);
 }
 
 .showcase-frame-img {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem;
+    padding: 1rem;
+    background: var(--white);
 }
 
 .showcase-frame-img img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
 }
 
@@ -1276,13 +1302,18 @@ hr,
 }
 
 .lightbox-content {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: min(90vw, 1400px);
+    height: min(85vh, 900px);
+    max-width: 90vw;
+    max-height: 85vh;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .lightbox-content iframe {
@@ -1290,11 +1321,14 @@ hr,
     height: 100%;
     border: none;
     display: block;
+    background: var(--white);
 }
 
 .lightbox-content img {
     max-width: 100%;
     max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
 }
 
@@ -1512,7 +1546,7 @@ footer strong {
     }
 
     .showcase-frame {
-        height: 220px;
+        height: 260px;
     }
     
     .projects-grid { 

@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Investigating Gender Price Differences in UK Retail Products. Machine learning classification and econometric analysis of the pink tax across 12,800 supermarket products from three UK retailers.">
+    <meta property="og:title" content="Pink Tax Analysis | Leonardo Luksic">
+    <meta property="og:description" content="Investigating Gender Price Differences in UK Retail Products. Machine learning classification and econometric analysis of the pink tax across 12,800 supermarket products from three UK retailers.">
+    <meta property="og:type" content="website">
+    <title>Pink Tax Analysis | Leonardo Luksic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/project-shared.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav>
+            <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true">
+            <a href="../../index.html" class="nav-home" aria-label="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 8.5V16C5 16.3 5.2 16.5 5.5 16.5H8.5V12.5C8.5 12.2 8.7 12 9 12H11C11.3 12 11.5 12.2 11.5 12.5V16.5H14.5C14.8 16.5 15 16.3 15 16V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-home-label">Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+            <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="project-hero">
+        <h1>Investigating Gender Price Differences in UK Retail Products</h1>
+        <p class="subtitle">
+            Products marketed to women are widely claimed to cost more than comparable products
+            for men. This project tests that claim across 12,832 personal-care and hygiene
+            products from Tesco, Morrisons, and ASDA, first building a machine learning
+            classifier (histogram gradient boosting, F1 = 0.79 against human labels) that
+            identifies the target gender of a product from text and colour features, then
+            running OLS, quantile, and bootstrap regressions that progressively control for
+            category, store, and within-product characteristics. The raw price gap mostly
+            reflects composition: women's and men's product baskets contain different items,
+            not the same items at different prices.
+        </p>
+    </section>
+
+
+    <!-- BACKGROUND -->
+    <section id="overview">
+        <span class="section-label">Background</span>
+        <h2>Concepts &amp; Research Design</h2>
+
+        <p>
+            <strong>The "pink tax"</strong> refers to the observation that consumer products marketed
+            toward women are priced higher than comparable products aimed at men. The term is widely
+            used in media and policy debates, but the empirical evidence is mixed. Some studies find
+            price premiums on specific items (deodorants, lotions), while others conclude that apparent
+            gaps largely reflect differences in product composition rather than discriminatory pricing.
+            Gonzalez Guittar et al. (2022) studied over 3,000 products and found selective premiums,
+            though men paid more for shaving products. Moshary et al. (2023), using Nielsen scanner
+            data with product ingredient controls, concluded that price gaps reflect product
+            differentiation rather than a systematic "tax."
+        </p>
+        <p>
+            <strong>Gender classification</strong> is the first challenge. Many products signal gender
+            through color choices, language, and brand names rather than stating it explicitly. With
+            roughly 21,000 products in this dataset, manual labeling is impractical. This project
+            automates the task using a supervised classifier trained on products with explicit gender
+            terms (e.g. "for women", "men's"), then applies it to label the remaining products.
+        </p>
+        <p>
+            <strong>TF-IDF</strong> (term frequency-inverse document frequency) converts product text
+            into numerical vectors by measuring how distinctive each word is within the dataset. Words
+            that appear frequently in one product but rarely across all products receive higher weights.
+            This allows the classifier to learn which terms are associated with gendered products.
+            <strong>K-means clustering</strong>, used here for color extraction, groups pixel RGB values
+            from product images into clusters to identify the most prevalent colors in each image.
+        </p>
+
+        <div class="divider"><span>Research Question</span></div>
+
+        <p style="font-size: 1.2rem; color: var(--navy); font-weight: 600; text-align: center; max-width: 720px; margin: 0 auto 2.5rem;">
+            Do products marketed to women cost more than comparable products for men in UK
+            supermarkets? And if so, does the gap persist after controlling for product category?
+        </p>
+
+        <p>
+            The central finding is that apparent price differences between gendered products are driven
+            by category composition, not within-category discrimination. Female products are concentrated
+            in lower-priced categories (personal care, period products), while male products span a wider
+            range including premium grooming items. Once product category is accounted for, the price gap
+            becomes statistically insignificant.
+        </p>
+
+        <div class="divider"><span>Analytical Approach</span></div>
+
+        <p>
+            The analysis proceeds in two stages. First, <strong>supervised classification</strong>
+            labels products by target gender using text features (TF-IDF vectors from product
+            descriptions and category breadcrumbs), color features (dominant colors extracted from
+            product images via K-means), and metadata (store, price). Five classifiers are compared,
+            from logistic regression to histogram gradient boosting. Second, <strong>OLS and quantile
+            regressions</strong> with progressively added controls (store fixed effects, category fixed
+            effects, description TF-IDF) estimate the price differential between female and male
+            products. The key test is whether the female coefficient remains significant after
+            controlling for product category.
+        </p>
+    </section>
+
+
+    <!-- DATA -->
+    <section>
+        <span class="section-label">Data</span>
+        <h2>Sources &amp; Preparation</h2>
+
+        <p>
+            The dataset contains 21,436 products scraped from Tesco, Morrisons, and ASDA. Categories
+            unlikely to be gendered (food, electronics, pet supplies, cleaning products) were excluded,
+            leaving 12,832 products in categories such as personal care, cosmetics, and toiletries.
+        </p>
+
+        <div class="two-col">
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Training Labels</h4>
+                <p>
+                    Two sources: (1) explicit gender terms extracted via regex from product text
+                    ("for women", "men's", etc.), yielding 1,075 female and 844 male products;
+                    (2) 259 products with independent human-coded labels from a separate validation
+                    exercise. The training set was balanced to 844 samples per class (female, male,
+                    neutral), producing 2,532 training observations split 75/25 into training
+                    (1,905) and test (639) sets.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Feature Construction</h4>
+                <p>
+                    329 features total. <strong>Text:</strong> TF-IDF vectors from product descriptions
+                    (150 features) and category breadcrumbs (80 features). <strong>Color:</strong>
+                    dominant colors extracted from product images using K-means, mapped to 31 named
+                    colors, producing 93 binary features (3 color slots &times; 31 colors).
+                    <strong>Metadata:</strong> store ID, price, and unit price (6 features).
+                </p>
+            </div>
+        </div>
+
+        <h3>Color Extraction</h3>
+
+        <p>
+            For products with accessible image URLs, the three most dominant colors were extracted
+            using K-means clustering on pixel RGB values, then matched to the nearest named color
+            from a 31-color palette. Color data was successfully extracted for 5,619 products, all
+            from Morrisons. Tesco and ASDA image URLs had expired at the time of extraction, yielding
+            a 0% success rate across those domains. This coverage limitation means color-based
+            findings should be interpreted with caution.
+        </p>
+
+        <div class="viz-container">
+            <img src="outputs/charts/validation/sample_products_colors.png" alt="Sample products with extracted colors" style="width: 100%; border-radius: 4px;">
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+            Sample products with extracted dominant colors. Some extractions are noisy: the Lacoste cologne
+            is labeled male but extracted colors include pink/salmon from the background.
+        </p>
+    </section>
+
+
+    <!-- PART I: CLASSIFICATION -->
+    <section id="classification" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part I</span>
+            <h2>Gender Classification</h2>
+
+            <p>
+                The classification task assigns each product to one of three classes: female, male,
+                or neutral. Five classifiers were tested on a 75/25 train-test split. Performance is
+                measured on the held-out test set (639 samples). The models range from simple linear
+                classifiers (logistic regression with L1 or L2 regularization) to ensemble methods
+                (gradient boosting, random forest) that combine many decision trees to capture
+                nonlinear relationships and handle sparse or missing features.
+            </p>
+
+            <h3>Model Comparison</h3>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Model</th>
+                        <th style="text-align: right;">Accuracy</th>
+                        <th style="text-align: right;">F1 (Weighted)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight-row">
+                        <td>Histogram Gradient Boosting</td>
+                        <td class="num">79.3%</td>
+                        <td class="num">0.793</td>
+                    </tr>
+                    <tr>
+                        <td>SVM (RBF kernel)</td>
+                        <td class="num">73.1%</td>
+                        <td class="num">0.729</td>
+                    </tr>
+                    <tr>
+                        <td>Logistic Regression (L2)</td>
+                        <td class="num">72.9%</td>
+                        <td class="num">0.730</td>
+                    </tr>
+                    <tr>
+                        <td>Random Forest</td>
+                        <td class="num">72.3%</td>
+                        <td class="num">0.722</td>
+                    </tr>
+                    <tr>
+                        <td>Logistic Regression (L1)</td>
+                        <td class="num">64.9%</td>
+                        <td class="num">0.646</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Histogram gradient boosting performed best, likely because it handles sparse features
+                and missing values (many products lack color data) natively, without requiring
+                imputation. Per-class precision and recall range from 77% to 82% across all three
+                classes, with the neutral class achieving the highest recall at 86%. The model is
+                conservative: it tends to classify uncertain products as neutral, leading to
+                under-classification of gendered products rather than false positives.
+            </p>
+
+            <div class="divider"><span>Human Validation</span></div>
+
+            <p>
+                The test set above uses labels derived from explicit text patterns, which may not
+                reflect how humans would categorize products. A stricter validation uses 200 products
+                with independent human labels. On this set, the best model achieves 70% accuracy.
+                The drop from 79% to 70% is expected: human coders pick up on subtler gendered
+                marketing cues (brand positioning, imagery, packaging design) that text and color
+                features miss.
+            </p>
+
+            <div class="viz-container">
+                <img src="outputs/charts/validation/confusion_vs_human.png" alt="Confusion matrices vs human labels" style="width: 100%; border-radius: 4px;">
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Agreement with human coders across different feature sets. The model under-classifies gendered products rather than over-classifying neutral ones.
+            </p>
+
+            <h3>Feature Importance</h3>
+
+            <p>
+                Feature importance values from the histogram gradient boosting model indicate how
+                strongly each feature pushes the prediction toward a particular gender class.
+                Features are prefixed by source: "bc_" for category breadcrumb terms, "desc_" for
+                product description terms, and "feat_color1_" for the dominant extracted color.
+            </p>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-header" style="background: #c23a3a;"><h3>Female Predictors</h3></div>
+                    <div class="card-body">
+                        <p>bc_removal: +1.05</p>
+                        <p>bc_period: +0.94</p>
+                        <p>bc_intimate: +0.88</p>
+                        <p>desc_protection: +0.70</p>
+                        <p>bc_products: +0.67</p>
+                        <p style="margin-bottom: 0;">feat_color1_lavender: +0.33</p>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-header" style="background: var(--navy);"><h3>Male Predictors</h3></div>
+                    <div class="card-body">
+                        <p>bc_toiletries: +1.86</p>
+                        <p>desc_lynx: +1.04</p>
+                        <p>bc_gel: +0.87</p>
+                        <p>bc_razors: +0.82</p>
+                        <p>bc_blades: +0.67</p>
+                        <p style="margin-bottom: 0;">feat_color1_black: +0.56</p>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-header" style="background: var(--grey-600);"><h3>Neutral Predictors</h3></div>
+                    <div class="card-body">
+                        <p>bc_accessories: +0.78</p>
+                        <p>bc_conditioner: +0.66</p>
+                        <p>bc_marketplace: +0.65</p>
+                        <p>bc_toothpaste: +0.60</p>
+                        <p>bc_care: +0.52</p>
+                        <p style="margin-bottom: 0;">bc_baby: +0.48</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pull-quote">
+                Brand names are strong predictors: "Lynx" for male is among the top features.
+                Category breadcrumbs also encode gender: UK retailers place "toiletries" in
+                male-coded sections and "removal" (hair removal) in female-coded sections, even
+                for functionally similar products. Color features appear lower in the ranking but
+                still contribute: lavender predicts female, black predicts male.
+            </div>
+        </div>
+    </section>
+
+
+    <!-- COLOR ANALYSIS -->
+    <section>
+        <h3 style="margin-top: 0;">Color Patterns</h3>
+
+        <p>
+            The charts below show color distributions in explicitly gendered products alongside
+            LASSO coefficients indicating which colors predict each gender class. LASSO
+            (L1-regularized logistic regression) shrinks irrelevant feature weights to zero,
+            isolating the colors that carry the strongest classification signal.
+        </p>
+
+        <div class="viz-container">
+            <iframe loading="lazy"
+                    src="outputs/charts/validation/color_distribution_by_gender.html"
+                    height="500"></iframe>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem; margin-bottom: 2rem;">
+            Color frequency in products with explicit gender labels. Sample sizes are small (n=32 each).
+        </p>
+
+        <div class="viz-container">
+            <iframe loading="lazy"
+                    src="outputs/charts/validation/color_importance.html"
+                    height="550"></iframe>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+            LASSO coefficients from a binary female/male classifier. Positive values predict female;
+            negative values predict male.
+        </p>
+
+        <p>
+            The patterns match expectations: pinks, purples, and lavender are associated with
+            female products; black, brown, and navy with male products. Some results are less
+            intuitive: tan has a strong female coefficient, likely driven by foundation and
+            cosmetics packaging. These associations reflect marketing conventions rather than
+            any inherent property of the colors.
+        </p>
+
+        <h3>Marginal Contribution of Color Features</h3>
+
+        <p>
+            To isolate the contribution of color features, the same L1 logistic regression
+            was trained with and without the 93 color-based features. The comparison measures
+            the marginal gain from adding color information on top of text and metadata inputs.
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Configuration</th>
+                    <th style="text-align: right;">Accuracy</th>
+                    <th style="text-align: right;">F1</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>With colors</td>
+                    <td class="num">64.9%</td>
+                    <td class="num">0.646</td>
+                </tr>
+                <tr>
+                    <td>Without colors</td>
+                    <td class="num">62.8%</td>
+                    <td class="num">0.622</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td>Difference</td>
+                    <td class="num">+2.2pp</td>
+                    <td class="num">+0.024</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            The improvement is modest at the aggregate level. Color features are most useful when
+            text signals are weak or absent, such as for products with minimal descriptions.
+            Since color data is available only for Morrisons (5,619 of 12,832 products), the
+            contribution is likely underestimated in the full-sample evaluation.
+        </p>
+
+        <div class="viz-container" style="margin-top: 2rem;">
+            <iframe loading="lazy"
+                    src="outputs/charts/validation/color_importance_heatmap.html"
+                    height="600"></iframe>
+        </div>
+    </section>
+
+
+    <!-- FULL DATASET PREDICTIONS -->
+    <section>
+        <h3 style="margin-top: 0;">Full Dataset Predictions</h3>
+
+        <p>
+            Applying the best classifier to all 12,832 filtered products produces the following
+            distribution. Beyond the explicitly labeled products, the model identifies 533 implicitly
+            female and 278 implicitly male products at above 50% confidence: items that lack explicit
+            gender terms but whose text and color patterns suggest gendered marketing.
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Predicted Class</th>
+                    <th style="text-align: right;">Count</th>
+                    <th style="text-align: right;">Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Neutral</td>
+                    <td class="num">9,185</td>
+                    <td class="num">71.6%</td>
+                </tr>
+                <tr>
+                    <td>Female</td>
+                    <td class="num">2,255</td>
+                    <td class="num">17.6%</td>
+                </tr>
+                <tr>
+                    <td>Male</td>
+                    <td class="num">1,392</td>
+                    <td class="num">10.8%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            The high neutral proportion reflects both the genuine prevalence of ungendered products
+            in the dataset and the model's conservative classification tendency. Some products
+            labeled neutral likely carry subtle gendered marketing that the text-and-color feature
+            set cannot detect.
+        </p>
+    </section>
+
+
+    <!-- ================================================================== -->
+    <!-- PART II: ESTIMATING THE PINK TAX                                   -->
+    <!-- ================================================================== -->
+
+    <section id="pricing" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part II</span>
+            <h2>Estimating the Pink Tax</h2>
+
+            <p>
+                With gender labels assigned, the second stage estimates the price differential
+                between female- and male-targeted products. All regressions use log-transformed
+                prices as the dependent variable, so coefficients approximate percentage differences
+                (a coefficient of -0.10 corresponds to roughly a 10% price gap). Standard errors are
+                heteroskedasticity-robust (HC1), which accounts for unequal variance across
+                observations and guards against misleading confidence intervals.
+            </p>
+            <p>
+                The analytical strategy is to add controls progressively. If the female coefficient
+                becomes insignificant after controlling for product category, the implication is that
+                the raw price gap reflects composition effects (women's and men's products fall into
+                different product types with different baseline prices) rather than within-category
+                pricing discrimination.
+            </p>
+
+            <h3>Raw Price Comparison</h3>
+
+            <p>
+                Among the 1,919 explicitly gendered products (1,075 female, 844 male), female
+                products have a lower mean price (&pound;7.03 vs. &pound;8.15) and lower median
+                (&pound;4.00 vs. &pound;4.50). This is the opposite of what a simple "pink tax"
+                narrative would predict.
+            </p>
+
+            <div class="project-meta-bar" style="margin: 2rem 0;">
+                <div class="meta-item">
+                    <span class="meta-label">Female Mean</span>
+                    <span class="meta-value">&pound;7.03</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Male Mean</span>
+                    <span class="meta-value">&pound;8.15</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Raw Gap</span>
+                    <span class="meta-value">&minus;9.3%</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Gendered Products</span>
+                    <span class="meta-value">1,919</span>
+                </div>
+            </div>
+
+            <div class="viz-container">
+                <iframe loading="lazy"
+                    src="outputs/charts/regression/04_price_distributions.html"
+                    height="550"></iframe>
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Price distributions for female and male products. Log prices (top right) show
+                overlapping distributions with female products shifted slightly left.
+            </p>
+
+            <div class="divider"><span>Progressive Controls</span></div>
+
+            <h3>Regression Results</h3>
+
+            <p>
+                The table below shows how the female price coefficient changes as controls are
+                added. Each row introduces a layer of controls to isolate the effect of gender
+                on price. "Fixed effects" (FE) are dummy variables for each store or category,
+                allowing the model to compare products within the same store or product type
+                rather than across them.
+            </p>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Specification</th>
+                        <th style="text-align: left;">Controls</th>
+                        <th style="text-align: right;">% Gap</th>
+                        <th style="text-align: right;">95% CI</th>
+                        <th style="text-align: right;">p-value</th>
+                        <th style="text-align: right;">R&sup2;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>(1) Raw gap</td>
+                        <td>None</td>
+                        <td class="num">&minus;9.3%</td>
+                        <td class="num">[&minus;16.3, &minus;1.7]</td>
+                        <td class="num">0.018**</td>
+                        <td class="num">0.003</td>
+                    </tr>
+                    <tr>
+                        <td>(2) + Store FE</td>
+                        <td>Store</td>
+                        <td class="num">&minus;9.8%</td>
+                        <td class="num">[&minus;16.8, &minus;2.3]</td>
+                        <td class="num">0.012**</td>
+                        <td class="num">0.006</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>(3) + Category FE</td>
+                        <td>Store + Category</td>
+                        <td class="num">+8.4%</td>
+                        <td class="num">[&minus;8.3, +28.0]</td>
+                        <td class="num">0.345</td>
+                        <td class="num">0.672</td>
+                    </tr>
+                    <tr>
+                        <td>(4) + Description</td>
+                        <td>Store + Cat + TF-IDF</td>
+                        <td class="num">+3.7%</td>
+                        <td class="num">[&minus;9.1, +18.4]</td>
+                        <td class="num">0.587</td>
+                        <td class="num">0.738</td>
+                    </tr>
+                    <tr>
+                        <td>(5) Unit price</td>
+                        <td>Store + Category</td>
+                        <td class="num">+0.7%</td>
+                        <td class="num">[&minus;11.8, +15.0]</td>
+                        <td class="num">0.922</td>
+                        <td class="num">0.854</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+                ** p &lt; 0.05. All specifications use log(price) as the dependent variable with HC1
+                robust standard errors. N = 1,919 for specs (1)-(2); 1,374 for specs (3)-(4);
+                743 for spec (5). Spec (5) uses log(unit price) as the dependent variable.
+            </p>
+
+            <div class="pull-quote">
+                The R&sup2; jump from 0.006 to 0.672 when adding category fixed effects is the key
+                result. Product category explains the vast majority of price variation. The raw
+                negative gap arises because female products are concentrated in lower-priced
+                categories (personal care, period products), while male products span a wider
+                range including grooming sets and premium razors. Within the same category, there
+                is no statistically detectable difference.
+            </div>
+
+            <div class="viz-container">
+                <iframe loading="lazy"
+                    src="outputs/charts/regression/01_coefficient_plot.html"
+                    height="450"></iframe>
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Female price coefficient with 95% confidence intervals. The gap is significantly negative
+                without controls, then shifts to a small positive but insignificant estimate with category controls.
+            </p>
+
+            <div class="viz-container" style="margin-top: 2rem;">
+                <iframe loading="lazy"
+                    src="outputs/charts/regression/10_r2_progression.html"
+                    height="400"></iframe>
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Variance explained by each specification. Category controls account for the largest share of price variation.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- THREE-WAY COMPARISON -->
+    <section>
+        <h3 style="margin-top: 0;">Gendered vs. Ungendered Products</h3>
+
+        <p>
+            A three-way comparison using all 12,832 products (with ungendered products as the
+            reference group) shows that both gendered categories are cheaper than ungendered
+            products, with female products especially so. Female products are 16.4% cheaper than
+            ungendered ones (p &lt; 0.001), while male products are 2.9% cheaper (not significant).
+            This suggests gendered products as a whole occupy lower price tiers than the broader
+            product mix, rather than female-targeted products being marked up.
+        </p>
+
+        <div class="viz-container">
+            <iframe loading="lazy"
+                    src="outputs/charts/regression/07_three_way_comparison.html"
+                    height="500"></iframe>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+            Price distributions across all three gender groups. Ungendered products span a wider and higher price range.
+        </p>
+    </section>
+
+
+    <!-- WITHIN-CATEGORY -->
+    <section>
+        <h3 style="margin-top: 0;">Within-Category Analysis</h3>
+
+        <p>
+            Only 11 product categories contain at least 3 female and 3 male products, limiting
+            the scope of within-category comparisons. For these categories, the median price gap
+            is +7.4% (female more expensive) and the weighted mean is +26.2%, though this average
+            is heavily influenced by outlier categories with very small sample sizes. Most individual
+            gaps are not statistically significant, based on bootstrap confidence intervals (1,000
+            resamples).
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Category</th>
+                    <th style="text-align: right;">F</th>
+                    <th style="text-align: right;">M</th>
+                    <th style="text-align: right;">Gap</th>
+                    <th style="text-align: center;">Significant</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Toiletries &gt; Incontinence</td><td class="num">12</td><td class="num">3</td><td class="num">+259%</td><td style="text-align:center;">Yes</td></tr>
+                <tr><td>Toiletries &gt; Gifting</td><td class="num">3</td><td class="num">9</td><td class="num">+30%</td><td style="text-align:center;">No</td></tr>
+                <tr><td>Marketplace &gt; Greeting Cards</td><td class="num">11</td><td class="num">9</td><td class="num">+25%</td><td style="text-align:center;">Yes</td></tr>
+                <tr><td>Toiletries &gt; Incontinence (sub)</td><td class="num">5</td><td class="num">3</td><td class="num">+16%</td><td style="text-align:center;">No</td></tr>
+                <tr><td>Greeting Cards &gt; Birthday</td><td class="num">22</td><td class="num">11</td><td class="num">+10%</td><td style="text-align:center;">No</td></tr>
+                <tr><td>Greeting Cards &gt; Other</td><td class="num">18</td><td class="num">8</td><td class="num">+2%</td><td style="text-align:center;">No</td></tr>
+                <tr><td>Baby &gt; Nappies</td><td class="num">3</td><td class="num">3</td><td class="num">0%</td><td style="text-align:center;">No</td></tr>
+                <tr><td>Health &gt; Medicines</td><td class="num">11</td><td class="num">4</td><td class="num">&minus;35%</td><td style="text-align:center;">No</td></tr>
+                <tr><td>Health &amp; Beauty &gt; Shower</td><td class="num">3</td><td class="num">10</td><td class="num">&minus;55%</td><td style="text-align:center;">Yes</td></tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+            Significance based on 1,000-draw bootstrap 95% confidence intervals.
+        </p>
+
+        <div class="note-box">
+            <h4>Interpreting the Within-Category Results</h4>
+            <p>
+                The +259% outlier in incontinence products is driven by only 3 male comparison
+                products, making it unreliable. The greeting cards category shows a more consistent
+                pattern (+10-25% across sub-categories, one significant), though this likely reflects
+                product differentiation (birthday cards for women may include different materials or
+                designs) rather than identical items at different prices. The shower category shows
+                the reverse: male products are more expensive, driven by premium grooming brands.
+                The direction and magnitude of the gap depends entirely on the product category.
+            </p>
+        </div>
+
+        <div class="viz-container" style="margin-top: 2rem;">
+            <iframe loading="lazy"
+                    src="outputs/charts/regression/03_within_category_gaps.html"
+                    height="650"></iframe>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+            Per-category female price premium with 95% bootstrap CIs. Bold borders indicate statistical significance.
+        </p>
+
+        <div class="viz-container" style="margin-top: 2rem;">
+            <iframe loading="lazy"
+                    src="outputs/charts/regression/06_scatter_by_category.html"
+                    height="500"></iframe>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+            Each point is a product category. Points above the 45-degree line indicate a female premium; below indicates a male premium.
+        </p>
+    </section>
+
+
+    <!-- QUANTILE REGRESSION -->
+    <section>
+        <h3 style="margin-top: 0;">Quantile Regression</h3>
+
+        <p>
+            OLS estimates the effect on the conditional mean, producing a single average price gap.
+            Quantile regression instead estimates the gap at different points of the price
+            distribution: the 10th percentile (budget products), the median, the 90th percentile
+            (premium products), and so on. This reveals whether any pricing asymmetry operates
+            differently at the cheap versus expensive ends of the market.
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Quantile</th>
+                    <th style="text-align: right;">Without Category Controls</th>
+                    <th style="text-align: right;">With Category Controls</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10th</td><td class="num">&minus;12.1% **</td><td class="num">+43.0% ***</td></tr>
+                <tr><td>25th</td><td class="num">0.0%</td><td class="num">+25.0% ***</td></tr>
+                <tr><td>50th (median)</td><td class="num">&minus;10.0% **</td><td class="num">0.0%</td></tr>
+                <tr><td>75th</td><td class="num">0.0%</td><td class="num">0.0%</td></tr>
+                <tr><td>90th</td><td class="num">&minus;20.0% ***</td><td class="num">0.0%</td></tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+            ** p &lt; 0.05, *** p &lt; 0.01. Percentage gaps computed as exp(coef) &minus; 1.
+            N = 1,919 without category controls; 1,374 with category controls.
+            The "with controls" column includes store and category fixed effects (96 categories).
+        </p>
+
+        <div class="viz-container" style="margin-top: 2rem;">
+            <iframe loading="lazy"
+                    src="outputs/charts/regression/02_quantile_regression.html"
+                    height="450"></iframe>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+            Quantile regression coefficients with 95% CIs. Left: store controls only. Right: store + category controls.
+        </p>
+
+        <div class="note-box">
+            <h4>Floor-Price Effect</h4>
+            <p>
+                With category controls, the cheapest female products (10th and 25th percentiles) are
+                25-43% more expensive than the cheapest male equivalents within the same category
+                (p &lt; 0.001), while the gap is zero at the median and above. This could indicate a
+                floor-price effect: budget female products start at a higher baseline, even if mid-range
+                and premium products are priced similarly. However, only 11 of 96 categories contain
+                enough gendered products for within-category comparison, and the number of observations
+                at the tails of these distributions is small, so these estimates should be treated
+                cautiously.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- BY STORE -->
+    <section>
+        <h3 style="margin-top: 0;">Variation by Store</h3>
+
+        <p>
+            Running the raw-gap regression separately by store reveals substantial heterogeneity.
+            Morrisons shows a large and significant female discount of 18.6% (p &lt; 0.001), while
+            the other two stores show no significant gap. A female &times; store interaction model
+            confirms this: the Morrisons interaction is significant (p &lt; 0.001) with a total
+            female effect of &minus;50.6%, while the other stores show no significant interaction.
+            This suggests pricing patterns vary by retailer and that aggregating across stores
+            masks meaningful differences.
+        </p>
+
+        <div class="viz-container">
+            <iframe loading="lazy"
+                    src="outputs/charts/regression/05_by_store.html"
+                    height="450"></iframe>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+            Left: female price premium by store (thick border = p &lt; 0.05). Right: mean prices by gender and store.
+        </p>
+    </section>
+
+
+    <!-- CATEGORY COMPOSITION -->
+    <section>
+        <h3 style="margin-top: 0;">Category Composition</h3>
+
+        <p>
+            Female products are concentrated in period products, hair removal, and intimate care.
+            Male products cluster in toiletries, deodorants, razors, and skincare. These categories
+            have different baseline price levels, which is the primary driver of the raw price gap.
+            The composition effect explains why the female coefficient flips sign once category
+            fixed effects are introduced.
+        </p>
+
+        <div class="viz-container">
+            <iframe loading="lazy"
+                    src="outputs/charts/regression/08_category_composition.html"
+                    height="500"></iframe>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+            Top product categories by gender. Female products are concentrated in fewer, lower-priced categories.
+        </p>
+    </section>
+
+
+    <!-- CONCLUSIONS -->
+    <section id="conclusions" style="padding-bottom: 2.5rem;">
+        <span class="section-label">Synthesis</span>
+        <h2>Conclusions</h2>
+        <p style="max-width: 760px; margin-bottom: 2.5rem;">
+            The classification and regression results point to four main takeaways about gender-based
+            pricing in UK supermarkets.
+        </p>
+
+        <div class="conclusion-grid">
+            <div class="conclusion-card">
+                <div class="conclusion-number">01</div>
+                <div class="conclusion-content">
+                    <h4>No systematic pink tax at the aggregate level</h4>
+                    <p>
+                        Female products are 9-10% cheaper in raw comparisons, and the gap becomes
+                        statistically insignificant (reversing sign to +3.7%) after controlling for
+                        product category. The unit price regression shows essentially zero difference
+                        (+0.7%, p = 0.92). This aligns with Moshary et al.'s conclusion that price
+                        differences between gendered products are explained by product differentiation,
+                        not discriminatory pricing.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">02</div>
+                <div class="conclusion-content">
+                    <h4>Price differences are driven by category composition</h4>
+                    <p>
+                        The R&sup2; jump from 0.006 to 0.672 when adding category fixed effects is
+                        the critical result. Female products are concentrated in lower-priced
+                        categories (period products, hair removal, intimate care) while male products
+                        span a wider price range. The raw gap reflects where gendered products sit
+                        in the category hierarchy, not pricing discrimination within categories.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">03</div>
+                <div class="conclusion-content">
+                    <h4>Within-category results are mixed and limited</h4>
+                    <p>
+                        Only 11 categories had enough gendered products for comparison. Greeting
+                        cards show a small female premium; shower products show a male premium;
+                        most categories lack sufficient sample sizes for meaningful inference. The
+                        quantile regression suggests a possible floor-price effect for the cheapest
+                        products, but the evidence is limited.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">04</div>
+                <div class="conclusion-content">
+                    <h4>Gender segmentation, not pricing, is the real finding</h4>
+                    <p>
+                        The classifier identifies widespread gendered marketing: 28% of filtered
+                        products are labeled female or male. The more substantive observation is
+                        the extent to which retailers segment products by gender through branding,
+                        shelf placement, and product descriptions, regardless of whether this
+                        segmentation translates into price differences.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- LIMITATIONS -->
+    <section>
+        <h2>Limitations</h2>
+
+        <div class="two-col">
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Classification</h4>
+                <p>
+                    Products are classified using explicit keyword matching and a trained classifier.
+                    Both approaches miss implicitly gendered products: items marketed through color,
+                    imagery, or brand positioning without explicit terms. The human-coded sample
+                    (259 products) showed that keyword-based labels miss roughly 23% of gendered
+                    products.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Category Granularity</h4>
+                <p>
+                    Only 11 product categories had sufficient products of both genders for
+                    within-category comparison. Finer-grained categories would improve comparability
+                    but reduce sample sizes further.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Product Equivalence</h4>
+                <p>
+                    The regression controls for category and description text, but does not account
+                    for product quality, ingredients, or size beyond what unit price captures. A
+                    "women's razor" and a "men's razor" in the same breadcrumb category may differ
+                    in blade count, handle design, or packaging.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Data Coverage</h4>
+                <p>
+                    Color features are available only for Morrisons (5,619 of 12,832). The data
+                    covers three UK grocery retailers; results may not generalise to other product
+                    categories (clothing, electronics) or other markets.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- METHODOLOGICAL NOTES -->
+    <section id="methods" class="summary-section full-width-section">
+        <div class="container">
+            <h2>Methodological Notes</h2>
+
+            <div class="two-col">
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Data Processing</h4>
+                    <p>
+                        21,436 raw products from Tesco, Morrisons, ASDA. Filtered to 12,832 in
+                        gendered-relevant categories. Gender labels via regex extraction (1,919
+                        explicit) and human coding (259). Training balanced to 844 per class
+                        (2,532 total), split 75/25. Color extraction via K-means on pixel RGB
+                        values, matched to 31-color palette (5,619 products with color data).
+                    </p>
+                </div>
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Statistical Methods</h4>
+                    <p>
+                        Classification: 5 models (Logistic L1/L2, SVM-RBF, Random Forest,
+                        HistGradientBoosting). Best: HistGB, F1 = 0.793, human agreement 70%.
+                        Regression: OLS with log(price) DV, HC1 robust SE. 96 category FE.
+                        Quantile regression at 5 quantiles. Within-category significance via
+                        1,000-draw bootstrap 95% CIs. Features: 329 (150 desc TF-IDF + 80
+                        breadcrumb TF-IDF + 93 color + 6 metadata).
+                    </p>
+                </div>
+            </div>
+
+            <div id="skills-tags" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin: 2.5rem 0;"></div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
+            <a href="mailto:l.luksic@lse.ac.uk" class="social-link">Email</a>
+        </div>
+        <p><strong>Gender Price Differences in UK Retail Products</strong></p>
+        <p>Machine Learning &amp; Econometric Analysis</p>
+        <p>MPA in Data Science for Public Policy &middot; LSE &middot; 2025</p>
+    </footer>
+
+    <script src="../../js/nav.js"></script>
+    <script src="../../js/skills.js"></script>
+    <script>
+        // Render skill tags for this project
+        renderSkills('skills-tags', ['methods_ml', 'methods_econ', 'data_tools']);
+    </script>
+</body>
+</html>

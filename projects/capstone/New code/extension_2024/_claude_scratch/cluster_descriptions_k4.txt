@@ -1,0 +1,111 @@
+================================================================================
+RESOURCE-RICH CLUSTERS (k=4)
+================================================================================
+
+Threshold: mean wide_resource_share > 0.40 over 1995-2023
+Sample: 64 countries
+Features (7): coal_share, crude_oil_share, refined_oil_share, gas_share,
+              ores_share, base_metals_share, precious_share
+Pipeline: log1p(features) -> PCA(2) -> KMeans(k=4), ensembled across M=5 MICE
+          imputations via co-membership consensus.
+
+--------------------------------------------------------------------------------
+CLUSTER 0 -- MIXED EXTRACTIVES
+--------------------------------------------------------------------------------
+N = 20 countries (aggregate snapshot)
+Median shares: ores 10.0%, precious 7.7%, base_metals 3.8%, refined_oil 2.2%
+
+Diversified resource economies that span multiple categories without being
+dominated by any single one. Mining is the prevailing theme but composition
+varies: some have meaningful precious or fuel side-income (PNG with gas,
+MNG with coal, BOL with gas, MRT with crude oil), others are mining-focused
+with a developed manufacturing sector overlay.
+
+Anchor countries: MNG, PER, PNG, BOL, MRT
+Stable members: ARM, EGY, IDN, JAM, LAO, MMR, NER, RWA, SDN, SEN, SLB,
+                TGO, TTO, ZAF, ZWE
+
+Notable trajectories:
+  GHA: precious cluster (2010) -> mixed (2023) after Jubilee oil field
+  MOZ: base metals (2010) -> mixed in 2023 with coal+gas emerging
+
+--------------------------------------------------------------------------------
+CLUSTER 1 -- HYDROCARBON PETROSTATES
+--------------------------------------------------------------------------------
+N = 23 countries (aggregate snapshot)
+Median shares: crude_oil 59.3%, refined_oil 5.7%, gas 3.4%, base_metals 1.0%
+
+Crude-oil-dominant exporters. Spans classical Gulf petrostates, African oil
+exporters, Latin American oil economies, and post-Soviet petrostates. Some
+have meaningful gas (QAT, DZA, RUS, AZE) or refining (KWT, VEN) but crude
+oil is the unifying axis. At k=5 this cluster splits into pure-crude
+(SAU/IRQ/AGO/NGA) and diversified-hydrocarbon (QAT/RUS/KAZ/ARE) groups.
+
+Anchor countries: SAU, IRQ, AGO, NGA, KWT, RUS, QAT, AZE
+Stable members: ARE, CMR, COG, COL, DZA, ECU, GAB, IRN, LBY, OMN, SYR,
+                TLS, VEN, YEM
+
+Notable trajectories:
+  GUY: enters cluster in 2023 (offshore ExxonMobil discovery, first oil 2019)
+  YEM: exits cluster in 2023 (war collapsed oil infrastructure)
+
+--------------------------------------------------------------------------------
+CLUSTER 2 -- BASE METALS EXPORTERS
+--------------------------------------------------------------------------------
+N = 9 countries (aggregate snapshot)
+Median shares: base_metals 31.8%, ores 4.7%, refined_oil 1.2%, precious 1.1%
+
+Copper, iron, aluminum, and other industrial-metal exporters. Smaller but
+tightly defined group. ZMB (Zambia, 72% copper) and COD (DR Congo, 59%
+base metals from copper-cobalt) are the archetypes. CHL (Chile) sits in
+this cluster despite Chile's mining narrative because copper is processed
+into wirebar and refined copper rather than exported as ore.
+
+Anchor countries: ZMB, COD, CHL, MOZ
+Stable members: BHR (refined oil edge case), BTN, MNE, TJK, UKR
+
+Notable trajectories:
+  MNG: drifts here in 2023 due to coal share growing (58% by 2023),
+       though this is really a coal story not a base metals one;
+       k=6 might separate it. Acceptable approximation at k=4.
+
+--------------------------------------------------------------------------------
+CLUSTER 3 -- PRECIOUS METALS AND STONES
+--------------------------------------------------------------------------------
+N = 12 countries (aggregate snapshot)
+Median shares: precious 34.9%, ores 1.7%, base_metals 1.5%, refined_oil 0.8%
+
+Gold and diamond exporters, predominantly West African. BWA (Botswana)
+dominates the cluster centroid with 81% precious. CAF (Central African
+Republic) is at 64% precious in 1995 and stable.
+
+Anchor countries: BWA, MLI, GHA, GIN, BFA, CAF
+Stable members: GUY (until 2023 oil pulled it out), KGZ, NAM, SUR,
+                TZA, UZB
+
+Notable trajectories:
+  GHA: exits the cluster in 2023 (Jubilee oil; see Cluster 0)
+  YEM: enters in 2023 (oil collapse leaving artisanal gold)
+
+================================================================================
+INTERPRETATION NOTES FOR WRITEUP
+================================================================================
+
+1. The 4-cluster taxonomy is stable across 1995/2010/2023 snapshots. Most
+   countries stay in the same cluster; transitions reflect real economic
+   shifts (new oil discoveries, war-induced collapse, LNG buildouts).
+
+2. The k=4 partition gives a clean cross-time comparison. k=5 splits the
+   petrostate cluster into pure-crude vs. diversified-hydrocarbon, which is
+   the analytical payoff of disaggregating HS27 but only meaningfully visible
+   in the 2010 and 2023 snapshots where N is large enough.
+
+3. Cluster boundaries are determined in 2D PCA space, not in the 7-dim
+   feature space. This means visual closeness on the PC1-PC2 plane is
+   what generates cluster membership; the underlying feature space has
+   more structure that is partly compressed by the projection.
+
+4. The clustering is ensembled across M=5 MICE imputations via co-membership
+   consensus, then agglomeratively clustered on (1 - co_membership) for the
+   final assignment. Stability scores per country are in
+   Master_v2_clusters_RR_silhouette.csv.

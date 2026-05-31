@@ -103,7 +103,7 @@ countryDotsData.forEach(function(c) { c.lon = shiftLon(c.lon); });
 exportEdges.forEach(function(e) { e.country_lon = shiftLon(e.country_lon); });
 
 // Map setup
-var DOMESTIC_VIEW = { center: [-26, -69.5], zoom: 6 };
+var DOMESTIC_VIEW = { center: [-26, -69.5], zoom: 5.5 };
 var EXPORT_VIEW = { center: [5, -90], zoom: 1.5 };
 
 var map = L.map('map', {

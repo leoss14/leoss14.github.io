@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Taylor rule estimated on the anchored-expectations era applied to three US inflation episodes: Burns (1972-75), Volcker (1979-82), and post-COVID (2021-23). Includes Markov-switching regime identification and a finding that inflation persistence is largely compositional.">
+    <meta property="og:title" content="Three Fed Episodes Under One Taylor Rule | Leonardo Luksic">
+    <meta property="og:description" content="A Taylor rule trained on 1985-2007 prescribes rates 5.7pp above what Burns set in the early 1970s, 1.1pp below what Volcker set around 1980, and 5.7pp above what the post-COVID Fed set in 2021-23. The 2021-23 Fed looks numerically identical to the 1970s Fed under this benchmark.">
+    <meta property="og:type" content="website">
+    <title>Three Fed Episodes Under One Taylor Rule | Leonardo Luksic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/project-shared.css">
+    <style>
+        section { padding-top: 2.4rem; padding-bottom: 2.4rem; }
+        .project-hero { padding-top: 8rem; padding-bottom: 2.5rem; }
+        .project-hero .hero-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+        .project-hero .section-label { display: block; margin-bottom: 0.4rem; }
+        .project-hero h1 { text-align: center; font-size: clamp(2.3rem, 4vw, 3rem); line-height: 1.15; margin: 0.5rem 0 1.1rem; }
+        .project-hero .subtitle { text-align: center; max-width: none; margin: 0 auto; font-size: 1.04rem; line-height: 1.65; color: var(--text-secondary); }
+        section h2 { font-size: 1.55rem; line-height: 1.25; margin-top: 0; margin-bottom: 0.9rem; }
+        section h3 { font-size: 1.18rem; line-height: 1.3; margin-top: 1.6rem; margin-bottom: 0.6rem; }
+    </style>
+</head>
+<body>
+
+    <div class="nav-container">
+        <nav>
+            <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true">
+            <a href="../../index.html" class="nav-home" aria-label="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 8.5V16C5 16.3 5.2 16.5 5.5 16.5H8.5V12.5C8.5 12.2 8.7 12 9 12H11C11.3 12 11.5 12.2 11.5 12.5V16.5H14.5C14.8 16.5 15 16.3 15 16V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-home-label">Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+            <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </nav>
+    </div>
+
+    <section class="project-hero">
+        <div class="hero-inner">
+            <span class="section-label">Monetary policy analysis</span>
+            <h1>Three Fed Episodes Under One Taylor Rule</h1>
+            <p class="subtitle">
+                A Markov-switching model identifies two distinct inflation regimes in US monthly data
+                since 1956. The page then estimates a single Taylor rule on the anchored-expectations
+                era (1985 to 2007) and applies it to three episodes where inflation rose above target:
+                Burns in the early 1970s, Volcker around 1980, and the period after COVID-19. Two of
+                these episodes produce numerically identical gaps against the rule.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- BACKGROUND -->
+    <section id="overview">
+        <span class="section-label">Background</span>
+        <h2>Concepts and research design</h2>
+
+        <p>
+            <strong>The Taylor rule</strong> is a formula proposed by John Taylor in 1993 that
+            describes how a central bank should set short-term interest rates in response to two
+            variables. The first is inflation relative to a target, conventionally 2 percent. The
+            second is unemployment relative to its "natural" level, called the unemployment gap. The
+            rule used in this page takes the following form:
+        </p>
+
+        <div class="equation-box">
+            i<sub>t</sub> = c + (1 + a<sub>&pi;</sub>) &middot; &pi;<sub>t</sub> + a<sub>u</sub> &middot; (u<sub>t</sub> &minus; u<sub>t</sub><sup>*</sup>)
+        </div>
+
+        <p>
+            Here i is the policy interest rate, &pi; is current inflation, u is unemployment, and
+            u* is the natural rate of unemployment. The coefficient (1 + a<sub>&pi;</sub>) measures
+            how much the central bank moves rates when inflation moves by one percentage point.
+        </p>
+
+        <p>
+            <strong>The Taylor principle</strong> is the requirement that this coefficient be
+            greater than 1. Intuitively, if inflation rises by 1 point, the nominal interest rate
+            must rise by more than 1 point so that the inflation-adjusted (real) cost of borrowing
+            actually increases. If (1 + a<sub>&pi;</sub>) is less than 1, real rates fall during
+            inflationary episodes, which can allow inflation to accelerate further.
+        </p>
+
+        <p>
+            <strong>Markov-switching models</strong> (Hamilton, 1989) classify each observation
+            into one of several discrete "regimes" while accounting for the fact that economies
+            tend to stay in the same regime for long stretches. The model estimates two things from
+            the data: the average inflation level in each regime, and the monthly probability of
+            transitioning between regimes. Unlike clustering methods that ignore time, Markov-switching
+            models capture the persistence of macroeconomic states.
+        </p>
+
+        <p>
+            <strong>NAIRU</strong> stands for the Non-Accelerating Inflation Rate of Unemployment.
+            It is the unemployment rate at which inflation pressures are neither building nor
+            easing. The Congressional Budget Office publishes a time-varying NAIRU series ranging
+            from 4.3 percent to 6.2 percent over this sample. Earlier studies often used a fixed
+            5 percent benchmark, which overstates the unemployment gap in periods when NAIRU was
+            higher (such as the late 1970s and early 1980s, when CBO estimates were 5.8 to 6.2 percent).
+        </p>
+
+        <div class="divider"><span>Research Question</span></div>
+
+        <div class="pull-quote">
+            How would the Fed of 1985 to 2007, which produced the stable Great Moderation period,
+            have responded to the three episodes when US inflation rose well above target?
+        </div>
+
+        <p>
+            The page approaches this in three stages. First, a Markov-switching model identifies
+            inflation regimes and documents a finding about how to read inflation persistence.
+            Second, a Taylor rule is estimated on the 1985-2007 anchored-expectations period to
+            serve as a benchmark for the modern Fed's average behaviour. Third, that rule is
+            applied to three out-of-sample episodes: the Burns chairmanship of 1972 to 1975, the
+            Volcker chairmanship of 1979 to 1982, and the post-COVID period from 2021 to 2023.
+            The gap between actual and prescribed policy rates gives a quantitative comparison
+            across the three episodes.
+        </p>
+    </section>
+
+
+    <!-- DATA -->
+    <section>
+        <span class="section-label">Data</span>
+        <h2>Sources and variables</h2>
+
+        <p>
+            Eight monthly economic indicators from FRED, spanning July 1954 to December 2025. After
+            merging and computing derived variables (year-over-year inflation, gaps, lags, spreads),
+            the working sample contains 833 monthly observations.
+        </p>
+
+        <div class="viz-container">
+            <img src="outputs/data_overview.png" alt="US Economic Indicators" style="width: 100%; display: block;">
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+            Monthly US economic indicators, 1954 to 2025. Recession periods shaded. The CBO NAIRU
+            (dashed) varies from 4.3 to 6.2 percent over the sample.
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Variable</th>
+                    <th style="text-align: left;">FRED series</th>
+                    <th style="text-align: left;">Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>CPI</strong></td><td>CPIAUCSL</td><td>Year-over-year inflation</td></tr>
+                <tr><td><strong>Unemployment</strong></td><td>UNRATE</td><td>Labour market slack</td></tr>
+                <tr><td><strong>CBO NAIRU</strong></td><td>NROU (quarterly, interpolated)</td><td>Time-varying natural rate for unemployment gap</td></tr>
+                <tr><td><strong>Expected inflation</strong></td><td>MICH (from 1978; adaptive proxy earlier)</td><td>Forward-looking inflation measure</td></tr>
+                <tr><td><strong>Fed funds rate</strong></td><td>FEDFUNDS</td><td>Policy instrument (dependent variable)</td></tr>
+                <tr><td><strong>Capacity utilisation</strong></td><td>TCU</td><td>Real-economy output measure</td></tr>
+                <tr><td><strong>10-year Treasury</strong></td><td>GS10</td><td>Yield curve spread input</td></tr>
+                <tr><td><strong>Financial conditions</strong></td><td>NFCI (weekly, resampled monthly)</td><td>Financial stress indicator</td></tr>
+            </tbody>
+        </table>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">833</div>
+                <div class="stat-label">Monthly observations</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">71 yrs</div>
+                <div class="stat-label">1954 to 2025</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">NBER recessions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Fed chairs</div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- =============================================================== -->
+    <!-- PART I: INFLATION REGIMES                                       -->
+    <!-- =============================================================== -->
+
+    <section id="regimes" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part I</span>
+            <h2>Inflation regimes and the persistence puzzle</h2>
+
+            <p>
+                US inflation does not fluctuate around a single stable mean. It alternates between
+                extended periods of low, anchored inflation and shorter episodes of high, volatile
+                inflation. A two-state Markov-switching model fitted to the monthly CPI year-over-year
+                series identifies the two regimes from the data itself, without imposing dates or
+                thresholds.
+            </p>
+
+            <div class="viz-container">
+                <img src="outputs/ms_regime_probabilities_k2.png" alt="Markov-switching regime probabilities" style="width: 100%; display: block;">
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+                Smoothed regime probabilities from the two-state Markov-switching model. The
+                high-inflation regime concentrates in the 1970s and early 1980s, with a brief
+                reappearance after COVID-19.
+            </p>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Regime</th>
+                        <th style="text-align: right;">Mean &pi;</th>
+                        <th style="text-align: right;">Mean u</th>
+                        <th style="text-align: right;">Mean FFR</th>
+                        <th style="text-align: right;">E[duration]</th>
+                        <th style="text-align: right;">N</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Low inflation</strong></td>
+                        <td class="num">2.4%</td>
+                        <td class="num">5.8%</td>
+                        <td class="num">3.6%</td>
+                        <td class="num">11.5 yrs</td>
+                        <td class="num">622</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High inflation</strong></td>
+                        <td class="num">7.4%</td>
+                        <td class="num">6.0%</td>
+                        <td class="num">8.0%</td>
+                        <td class="num">3.6 yrs</td>
+                        <td class="num">211</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="viz-container">
+                <img src="outputs/ms_regime_context_k2.png" alt="Regime context" style="width: 100%; display: block;">
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+                Inflation regimes overlaid on macroeconomic context. Fed chair tenures are labelled.
+                The bottom panel shows unemployment against the CBO NAIRU.
+            </p>
+
+            <p>
+                Monthly transition probabilities are high for both states: P(stay low) = 0.993
+                and P(stay high) = 0.977. The low-inflation regime lasts roughly three times as
+                long on average, which reflects how difficult it is to exit high inflation once
+                expectations become unanchored. The expected duration of the low regime is 11.5
+                years, of the high regime 3.6 years.
+            </p>
+
+
+            <div class="divider"><span>Compositional Persistence</span></div>
+
+            <h3>Persistence is largely a level-shift artifact</h3>
+
+            <p>
+                A standard descriptive statistic for inflation is its autocorrelation at 12 months,
+                written AC(12). It measures how strongly inflation today predicts inflation a year
+                from now. A value near 1 implies strong predictability; a value near 0 implies
+                that information has decayed.
+            </p>
+
+            <p>
+                On the full sample, AC(12) is 0.73. This number underpins the conventional view
+                that inflation is highly persistent. However, the full-sample number mixes together
+                the low and high regimes. Computed within each regime separately, the picture
+                changes substantially:
+            </p>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Sample</th>
+                        <th style="text-align: right;">N</th>
+                        <th style="text-align: right;">Mean &pi;</th>
+                        <th style="text-align: right;">AC(12)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Full sample</td>
+                        <td class="num">833</td>
+                        <td class="num">3.7%</td>
+                        <td class="num"><strong>0.73</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Low-inflation regime only</td>
+                        <td class="num">622</td>
+                        <td class="num">2.4%</td>
+                        <td class="num">0.28</td>
+                    </tr>
+                    <tr>
+                        <td>High-inflation regime only</td>
+                        <td class="num">211</td>
+                        <td class="num">7.4%</td>
+                        <td class="num">0.50</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pull-quote">
+                Within the low-inflation regime, inflation today tells you very little about
+                inflation a year from now. Most of the apparent 12-month persistence in the full
+                sample comes from the difference between regime means (2.4 percent versus 7.4 percent),
+                not from inflation being predictable within either regime.
+            </div>
+
+            <p>
+                A formal variance decomposition makes this concrete. Total inflation variance over
+                the sample is 7.54. The between-regime component, which measures how far the two
+                regime means sit apart, equals 12.67. The within-regime component, which measures
+                variance around each regime's mean, equals 4.22. The between-regime component is
+                larger than the total because regimes are temporally clustered: data within a regime
+                has below-sample variance, so the within-component is suppressed relative to total
+                variance, while the between-component is amplified by the persistence of regime
+                means.
+            </p>
+
+            <div class="note-box">
+                <h4>Why this matters</h4>
+                <p>
+                    Many forecasting models treat inflation as a single autocorrelated process and
+                    extrapolate from recent values. The decomposition above suggests this works
+                    well in stable regimes (where AC is anyway low) and works poorly across regime
+                    transitions (where the mean shifts discretely). Forecasters who assume the
+                    full-sample AC of 0.73 will systematically misjudge inflation predictability,
+                    overstating it during stable periods and understating regime transitions.
+                </p>
+            </div>
+
+            <div class="note-box">
+                <h4>Robustness: Pre-2020 sample</h4>
+                <p>
+                    Re-estimating the Markov-switching model on data ending December 2019 produces
+                    stable parameters. The low-inflation mean shifts from 2.4 percent to 2.3 percent,
+                    the high-inflation mean from 7.4 percent to 6.5 percent, and transition
+                    probabilities barely move. The regime structure is not driven by the post-2020
+                    inflation episode.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- =============================================================== -->
+    <!-- PART II: TAYLOR RULE FOR THE MODERN FED                         -->
+    <!-- =============================================================== -->
+
+    <section id="taylor">
+        <span class="section-label">Part II</span>
+        <h2>A Taylor rule for the modern Fed</h2>
+
+        <p>
+            Whether the Fed's behaviour changed around 1980 has been debated for decades. The
+            standard finding (Clarida, Gali and Gertler, 2000) is that the Volcker Fed and its
+            successors responded much more aggressively to inflation than the Burns and Miller Feds
+            did. The estimated coefficient (1 + a<sub>&pi;</sub>) crosses from below 1 to above 1
+            at the 1979-08 break date.
+        </p>
+
+        <p>
+            A natural way to test this on the present sample is to split the data at 1979-08 and
+            estimate the Taylor rule on each subsample. The plot below shows (1 + a<sub>&pi;</sub>)
+            from a static OLS regression with HAC-corrected standard errors, computed both for
+            realized CPI inflation and for expected inflation (Michigan Survey from 1978, with an
+            adaptive backward-looking proxy for earlier years). Bars show point estimates; error
+            bars show 95 percent confidence intervals. The horizontal line marks the Taylor
+            principle threshold at 1.
+        </p>
+
+        <div class="viz-container">
+            <img src="outputs/taylor_date_split.png" alt="Taylor coefficients pre and post 1979-08" style="width: 100%; display: block;">
+        </div>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+            Pre and post 1979-08 estimates of (1 + a<sub>&pi;</sub>). The post-1979 expected-inflation
+            estimate is the only one that clearly satisfies the Taylor principle.
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Sample</th>
+                    <th style="text-align: right;">N</th>
+                    <th style="text-align: right;">Realized 1 + a<sub>&pi;</sub></th>
+                    <th style="text-align: right;">Expected 1 + a<sub>&pi;</sub></th>
+                    <th style="text-align: left;">Taylor principle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pre-1979-08</td>
+                    <td class="num">278</td>
+                    <td class="num">0.74 (0.04)</td>
+                    <td class="num">0.76 (0.07)</td>
+                    <td>Violated</td>
+                </tr>
+                <tr style="background: var(--success-bg);">
+                    <td><strong>Post-1979-08</strong></td>
+                    <td class="num">555</td>
+                    <td class="num">1.04 (0.18)</td>
+                    <td class="num"><strong>1.63 (0.29)</strong></td>
+                    <td><strong>Satisfied (expected)</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            The expected-inflation specification produces a sharp break. Pre-1979, the Fed raised
+            rates by about 0.76 percentage points for every 1-point rise in expected inflation,
+            which means real rates fell as inflation rose. Post-1979, the same coefficient is 1.63,
+            comfortably above the threshold. This is consistent with the standard narrative: the
+            Volcker Fed established an aggressive response to expected inflation that subsequent
+            chairs maintained.
+        </p>
+
+        <div class="pull-quote">
+            The post-1979 expected-inflation coefficient of 1.63 (HAC standard error 0.29) gives
+            the cleanest evidence for the Volcker shift available in this sample. It implies that
+            the modern Fed has responded to expected inflation roughly twice as strongly as the
+            Burns Fed did.
+        </div>
+
+
+        <div class="divider"><span>Three caveats</span></div>
+
+        <h3>The break survives NAIRU adjustment</h3>
+
+        <p>
+            An earlier version of this analysis claimed that the 1980 structural break disappears
+            when the unemployment gap is measured against the CBO's time-varying NAIRU rather than
+            a fixed 5 percent benchmark. Direct testing does not support that claim. A Chow break
+            test at 1979-08 produces:
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Unemployment gap specification</th>
+                    <th style="text-align: right;">Chow F</th>
+                    <th style="text-align: right;">p-value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Fixed 5 percent benchmark</td><td class="num">27.94</td><td class="num">&lt; 0.0001</td></tr>
+                <tr><td>CBO NAIRU (time-varying)</td><td class="num">18.09</td><td class="num">&lt; 0.0001</td></tr>
+                <tr><td>No unemployment term</td><td class="num">14.67</td><td class="num">&lt; 0.0001</td></tr>
+            </tbody>
+        </table>
+
+        <p>
+            CBO NAIRU reduces the F-statistic by about a third, but the break remains highly
+            significant. The honest reading is that NAIRU dampens the apparent break without
+            eliminating it. The break is robust to gap measurement.
+        </p>
+
+        <h3>Specification sensitivity</h3>
+
+        <div class="note-box">
+            <h4>Static OLS versus structural form</h4>
+            <p>
+                The (1 + a<sub>&pi;</sub>) estimates above come from a static OLS regression of
+                the policy rate on contemporaneous inflation and unemployment gap. A structural
+                Taylor rule that includes a smoothing term &rho; (the central bank's tendency to
+                change rates gradually) gives different numerical estimates. With &rho; close to 1,
+                the contemporaneous response to a 1-point inflation shock is small while the
+                long-run response can be several times the static OLS coefficient. The two
+                specifications answer different questions: the static OLS captures how rates and
+                inflation comove in the data; the structural form captures the equilibrium response
+                the central bank would deliver if its smoothing parameter is taken seriously.
+                The headline result above uses the static form because it is the simpler check
+                and is what readers typically compute when first inspecting Taylor rule data.
+            </p>
+        </div>
+
+        <h3>Why date-split rather than regime-conditional</h3>
+
+        <p>
+            A Markov-switching framework that defines regimes on inflation itself is a tempting
+            unit of analysis for a Taylor rule, but it does not answer the question of whether the
+            Fed's reaction function changed around Volcker. Estimating (1 + a<sub>&pi;</sub>) within
+            the high-inflation regime gives 0.56 with expected inflation, well below 1, because the
+            high-inflation regime spans both the pre-Volcker Burns period and the disinflation under
+            Volcker himself. The within-regime average masks exactly the policy-regime change that
+            the data are meant to reveal. A clean date split at 1979-08 separates the two policy
+            regimes properly.
+        </p>
+    </section>
+
+
+
+    <!-- =============================================================== -->
+    <!-- PART III: THREE EPISODES UNDER ONE RULE                         -->
+    <!-- =============================================================== -->
+
+    <section id="counterfactual" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part III</span>
+            <h2>Three episodes under one rule</h2>
+
+            <p>
+                The 1985 to 2007 window is the longest stretch of US monetary history with stable,
+                low inflation and a single Fed chair regime (Greenspan, with the late-1980s Volcker
+                tail and the early Bernanke years). A Taylor rule estimated on this window provides
+                a benchmark for what the post-Volcker, anchored-expectations Fed would have done if
+                it had been in charge during inflationary episodes.
+            </p>
+
+            <p>
+                The rule estimated on 1985-01 to 2007-12 (N = 276), using expected inflation and
+                the CBO NAIRU gap, is:
+            </p>
+
+            <div class="equation-box">
+                i<sub>t</sub> = &minus;0.84 + 2.01 &middot; &pi;<sub>t</sub><sup>e</sup> + (&minus;0.72) &middot; (u<sub>t</sub> &minus; u<sub>t</sub><sup>*</sup>)
+            </div>
+
+            <p>
+                The inflation coefficient of 2.01 sits well above the Taylor principle threshold
+                of 1, consistent with the Great Moderation literature: when expected inflation
+                rises by 1 percentage point, this rule prescribes a roughly 2-point increase in
+                the policy rate. The unemployment-gap coefficient of &minus;0.72 says that when
+                unemployment is 1 point above NAIRU (the economy is slack), the rule prescribes
+                cutting rates by about 0.72 points.
+            </p>
+
+            <p>
+                Applying this single rule to three episodes where inflation rose substantially above
+                target produces the following comparison:
+            </p>
+
+            <div class="viz-container">
+                <img src="outputs/taylor_counterfactual.png" alt="Counterfactual Taylor rule applied to three episodes" style="width: 100%; display: block;">
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -1rem;">
+                Actual fed funds rate (navy) against the 1985-2007 rule prescription (red dashed)
+                across three high-inflation episodes. The mean gap (actual minus prescribed) is
+                annotated in each panel.
+            </p>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Episode</th>
+                        <th style="text-align: right;">Mean inflation</th>
+                        <th style="text-align: right;">Actual FFR</th>
+                        <th style="text-align: right;">Rule prescription</th>
+                        <th style="text-align: right;">Gap (Actual &minus; Rule)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: var(--error-bg);">
+                        <td><strong>Burns 1972-75</strong></td>
+                        <td class="num">7.5%</td>
+                        <td class="num">7.37%</td>
+                        <td class="num">13.07%</td>
+                        <td class="num"><strong>&minus;5.69 pp</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Volcker 1979-82</strong></td>
+                        <td class="num">9.8%</td>
+                        <td class="num">13.83%</td>
+                        <td class="num">12.70%</td>
+                        <td class="num">+1.13 pp</td>
+                    </tr>
+                    <tr style="background: var(--error-bg);">
+                        <td><strong>Post-COVID 2021-23</strong></td>
+                        <td class="num">5.4%</td>
+                        <td class="num">2.26%</td>
+                        <td class="num">7.98%</td>
+                        <td class="num"><strong>&minus;5.72 pp</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pull-quote">
+                The Burns Fed of 1972 to 1975 ran 5.7 percentage points below what the modern rule
+                prescribes. The post-COVID Fed of 2021 to 2023 ran 5.7 percentage points below.
+                These two numbers are numerically identical to one decimal place. Under this
+                benchmark, the 2021 to 2023 Fed looks like the 1970s Fed.
+            </div>
+
+
+            <h3>Reading the three episodes</h3>
+
+            <p>
+                The Burns episode shows a Fed that consistently set rates well below what the
+                anchored-era rule prescribes. With inflation averaging 7.5 percent and a small
+                negative unemployment gap, the rule would have prescribed a fed funds rate above
+                13 percent. The actual rate averaged 7.4 percent. This is the textbook description
+                of the Burns Fed: accommodative in the face of rising inflation, with real rates
+                running negative for most of the period.
+            </p>
+
+            <p>
+                The Volcker episode shows the opposite pattern. The actual fed funds rate averaged
+                13.8 percent, slightly above what the rule prescribes (12.7 percent). The 1.1 point
+                positive gap is small relative to the other two episodes and likely reflects the
+                fact that Volcker pursued disinflation more aggressively than a rule estimated on
+                already-anchored expectations would imply.
+            </p>
+
+            <p>
+                The post-COVID episode produces the most striking comparison. Inflation rose to a
+                peak above 9 percent in mid-2022, averaging 5.4 percent across the 2021 to 2023
+                window. The fed funds rate averaged 2.3 percent across the same window, held near
+                zero through most of 2021 and reaching its peak of 5.3 percent only in mid-2023.
+                The anchored-era rule would have prescribed an average rate of 8.0 percent across
+                this period. The 5.7 percentage point average gap matches the Burns gap to one
+                decimal place.
+            </p>
+
+            <div class="note-box">
+                <h4>How to read the gap</h4>
+                <p>
+                    A negative gap (actual below prescribed) does not automatically mean the Fed
+                    was wrong. The rule estimated on 1985-2007 reflects how that Fed responded to
+                    its inflation environment; applying it out of sample to a different inflation
+                    environment is a quantitative benchmark, not a normative prescription. Two
+                    considerations sit on the other side of any "the Fed was too easy" reading:
+                    first, the modern Fed faces dual-mandate constraints around output stability
+                    that may justify slower tightening; second, the post-COVID inflation episode
+                    included supply-side disruption that monetary policy cannot directly address.
+                    Even so, a 5.7 percentage point gap is large relative to the rule's own
+                    standard errors, and the symmetry between Burns and post-COVID is striking
+                    enough to be worth noting.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CONCLUSIONS -->
+    <section id="conclusions" style="padding-bottom: 2.5rem;">
+        <span class="section-label">Synthesis</span>
+        <h2>Conclusions</h2>
+        <p style="max-width: 760px; margin-bottom: 2.5rem;">
+            Three findings emerge from the data, each from a different part of the analysis but
+            adding up to one comparison.
+        </p>
+
+        <div class="conclusion-grid">
+            <div class="conclusion-card">
+                <div class="conclusion-number">01</div>
+                <div class="conclusion-content">
+                    <h4>Inflation persistence is largely compositional</h4>
+                    <p>
+                        Full-sample autocorrelation at 12 months is 0.73, which underpins the
+                        conventional view that inflation is highly persistent. Computed within the
+                        low-inflation regime, the same statistic is 0.28. Most of the apparent
+                        persistence comes from the gap between regime means (2.4 versus 7.4 percent),
+                        not from inflation being predictable within either regime. This has direct
+                        implications for forecasting: extrapolation methods that treat inflation as
+                        a single autoregressive process overstate predictability within stable
+                        regimes and understate transitions between them.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">02</div>
+                <div class="conclusion-content">
+                    <h4>The Volcker shift is real and robust to gap measurement</h4>
+                    <p>
+                        Splitting the sample at 1979-08 produces a clear change in the response
+                        to expected inflation: (1 + a<sub>&pi;</sub>) goes from 0.76 pre-Volcker
+                        to 1.63 post-Volcker. The shift survives changing the unemployment gap
+                        from a fixed 5 percent benchmark to the CBO time-varying NAIRU (Chow F
+                        drops from 27.9 to 18.1 but remains highly significant). The earlier
+                        framing of this project that the 1980 break "disappears with NAIRU" was
+                        overstated and is corrected here.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">03</div>
+                <div class="conclusion-content">
+                    <h4>The post-COVID Fed looks like the Burns Fed</h4>
+                    <p>
+                        A Taylor rule estimated on the 1985 to 2007 anchored-expectations period
+                        prescribes a fed funds rate 5.7 percentage points above what the Burns Fed
+                        set in 1972 to 1975, and 5.7 percentage points above what the Powell Fed
+                        set in 2021 to 2023. The two gaps match to one decimal place. The Volcker
+                        Fed of 1979 to 1982 ran 1.1 percentage points above the rule, the only
+                        episode of the three where actual policy exceeded the rule. Whether the
+                        post-COVID gap was justified by supply-side considerations is outside the
+                        scope of this analysis, but the numerical comparison stands.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- LIMITATIONS -->
+    <section>
+        <h2>Limitations</h2>
+
+        <div class="two-col">
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Revised data, not real-time</h4>
+                <p>
+                    The CPI, unemployment, and CBO NAIRU series used here are current revisions.
+                    The Fed in 1972, 1980, or 2022 was reacting to data that had not yet been
+                    revised. Orphanides (2001, 2002) shows that real-time output gap data gives
+                    materially different Taylor rule estimates than revised data, particularly for
+                    the Burns period when the natural rate of unemployment was substantially
+                    underestimated in real time. The 5.7 point gap for Burns is likely smaller
+                    in real-time data, though probably not zero.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">CBO NAIRU is itself revised</h4>
+                <p>
+                    The current CBO NAIRU series is partly a backward revision informed by the
+                    inflation outcomes it is being used to explain. Using it to argue that the
+                    Burns-era unemployment gap was smaller than people thought is partly
+                    circular: the CBO knew, when producing recent vintages, what the 1970s looked
+                    like.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Counterfactual interpretation</h4>
+                <p>
+                    The 1985-2007 rule reflects how the Fed responded to its environment during a
+                    period of anchored expectations and modest inflation shocks. Applying the same
+                    rule to periods with much larger inflation shocks, especially with
+                    supply-driven components, is a benchmark exercise rather than a recommendation.
+                    The rule does not know about the zero lower bound, balance-sheet policy, or
+                    the dual-mandate trade-offs that constrained actual decisions in each episode.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Specification sensitivity</h4>
+                <p>
+                    The Taylor coefficients estimated here use static OLS. A structural Taylor
+                    rule with policy smoothing (&rho;) gives different point estimates, particularly
+                    for the regime-conditional version. The choice of inflation measure (realized
+                    versus expected) also moves the coefficients substantially. The headline finding
+                    of a 1.63 post-1979 coefficient is robust across reasonable variants of the
+                    static specification; the within-regime estimates are more fragile.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- METHODOLOGICAL NOTES -->
+    <section id="methods" class="summary-section full-width-section">
+        <div class="container">
+            <h2>Methodological notes</h2>
+
+            <div class="two-col">
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Data processing</h4>
+                    <p>
+                        Eight monthly FRED series merged into a single panel (1954 to 2025). CBO
+                        NAIRU is interpolated from quarterly to monthly. Michigan Survey expected
+                        inflation is used from 1978 onwards; an adaptive backward-looking proxy
+                        (trailing 12-month mean of realized inflation) is used for earlier periods.
+                        Derived variables include year-over-year inflation, unemployment gap against
+                        CBO NAIRU, term spread (10-year minus fed funds), and capacity gap. After
+                        engineering, 833 complete monthly observations remain.
+                    </p>
+                </div>
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Statistical methods</h4>
+                    <p>
+                        Markov-switching uses Hamilton's (1989) two-state model fit by EM via
+                        statsmodels. Taylor rules estimated by static OLS with HAC-corrected
+                        standard errors (Newey-West, 12 lags). Chow break test at 1979-08 across
+                        three unemployment-gap specifications. Counterfactual rule estimated on
+                        1985-01 to 2007-12 (N = 276) and applied to three out-of-sample episodes.
+                        Autocorrelation decomposition uses the standard within-between variance
+                        identity.
+                    </p>
+                </div>
+            </div>
+
+            <p style="margin-top: 1rem; color: var(--text-secondary); line-height: 1.75; font-size: 0.95rem;">
+                <strong>Co-authors:</strong> Leonardo Luksic, Krisha Chandnani, Ignacio Orueta
+                (LSE MY474, 2025).
+            </p>
+            <p style="margin-top: 0.75rem; color: var(--text-secondary); line-height: 1.75; font-size: 0.95rem;">
+                <strong>References:</strong>
+                Hamilton (1989), <em>Econometrica</em>;
+                Taylor (1993), <em>Carnegie-Rochester Conference</em>;
+                Clarida, Gali and Gertler (2000), <em>QJE</em>;
+                Orphanides (2001, 2002), <em>AER</em> and <em>JME</em>;
+                Boivin and Giannoni (2006), <em>Review of Economics and Statistics</em>;
+                Stock and Watson (2007), <em>JMCB</em>.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin: 2.5rem 0;">
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Markov-Switching</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">OLS with HAC SE</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Chow Break Test</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Counterfactual Rule</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">FRED Data</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Python</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Statsmodels</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
+            <a href="mailto:l.luksic@lse.ac.uk" class="social-link">Email</a>
+        </div>
+    </footer>
+    <script src="../../js/nav.js"></script>
+</body>
+</html>

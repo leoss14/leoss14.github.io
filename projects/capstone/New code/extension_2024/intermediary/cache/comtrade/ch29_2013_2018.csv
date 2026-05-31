@@ -1,0 +1,952 @@
+period,reporterISO,reporterDesc,cmdCode,cmdDesc,primaryValue
+2013,ABW,Aruba,29,Organic chemicals,263524.0
+2014,ABW,Aruba,29,Organic chemicals,239078.0
+2015,ABW,Aruba,29,Organic chemicals,219086.0
+2016,ABW,Aruba,29,Organic chemicals,131599.18
+2017,ABW,Aruba,29,Organic chemicals,165673.738
+2018,ABW,Aruba,29,Organic chemicals,338679.877
+2015,AGO,Angola,29,Organic chemicals,345515.24
+2016,AGO,Angola,29,Organic chemicals,1156583.52
+2017,AGO,Angola,29,Organic chemicals,426090.78
+2018,AGO,Angola,29,Organic chemicals,662018.432
+2013,ALB,Albania,29,Organic chemicals,393590.0
+2014,ALB,Albania,29,Organic chemicals,516166.0
+2015,ALB,Albania,29,Organic chemicals,356481.0
+2016,ALB,Albania,29,Organic chemicals,73290.0
+2017,ALB,Albania,29,Organic chemicals,74236.266
+2018,ALB,Albania,29,Organic chemicals,205557.946
+2013,AND,Andorra,29,Organic chemicals,22637.674
+2014,AND,Andorra,29,Organic chemicals,124998.653
+2015,AND,Andorra,29,Organic chemicals,92054.269
+2016,AND,Andorra,29,Organic chemicals,69239.663
+2017,AND,Andorra,29,Organic chemicals,82185.32
+2018,AND,Andorra,29,Organic chemicals,215716.387
+2013,ARE,United Arab Emirates,29,Organic chemicals,161300816.543
+2014,ARE,United Arab Emirates,29,Organic chemicals,200526281.981
+2015,ARE,United Arab Emirates,29,Organic chemicals,138966141.857
+2016,ARE,United Arab Emirates,29,Organic chemicals,136960403.967
+2017,ARE,United Arab Emirates,29,Organic chemicals,537615783.88
+2018,ARE,United Arab Emirates,29,Organic chemicals,754931568.715
+2013,ARG,Argentina,29,Organic chemicals,523491424.0
+2014,ARG,Argentina,29,Organic chemicals,559156635.37
+2015,ARG,Argentina,29,Organic chemicals,439090470.84
+2016,ARG,Argentina,29,Organic chemicals,478203504.28
+2017,ARG,Argentina,29,Organic chemicals,482212058.13
+2018,ARG,Argentina,29,Organic chemicals,511989734.43
+2013,ARM,Armenia,29,Organic chemicals,256069.0
+2014,ARM,Armenia,29,Organic chemicals,292807.0
+2015,ARM,Armenia,29,Organic chemicals,493910.0
+2016,ARM,Armenia,29,Organic chemicals,298051.0
+2017,ARM,Armenia,29,Organic chemicals,317383.11
+2018,ARM,Armenia,29,Organic chemicals,293825.43
+2013,ATG,Antigua and Barbuda,29,Organic chemicals,33624.0
+2014,ATG,Antigua and Barbuda,29,Organic chemicals,21416.0
+2015,ATG,Antigua and Barbuda,29,Organic chemicals,16061.0
+2016,ATG,Antigua and Barbuda,29,Organic chemicals,16329.0
+2017,ATG,Antigua and Barbuda,29,Organic chemicals,85875.955
+2018,ATG,Antigua and Barbuda,29,Organic chemicals,22912.992
+2013,AUS,Australia,29,Organic chemicals,212828546.0
+2014,AUS,Australia,29,Organic chemicals,233926034.0
+2015,AUS,Australia,29,Organic chemicals,251497956.0
+2016,AUS,Australia,29,Organic chemicals,348990571.0
+2017,AUS,Australia,29,Organic chemicals,223072311.612
+2018,AUS,Australia,29,Organic chemicals,689181382.715
+2013,AUT,Austria,29,Organic chemicals,2560543678.733
+2014,AUT,Austria,29,Organic chemicals,3340928324.311
+2015,AUT,Austria,29,Organic chemicals,2345358714.127
+2016,AUT,Austria,29,Organic chemicals,1719690424.268
+2017,AUT,Austria,29,Organic chemicals,3366268859.199
+2018,AUT,Austria,29,Organic chemicals,2342457646.993
+2013,AZE,Azerbaijan,29,Organic chemicals,34704729.0
+2014,AZE,Azerbaijan,29,Organic chemicals,49458753.0
+2015,AZE,Azerbaijan,29,Organic chemicals,59931715.97
+2016,AZE,Azerbaijan,29,Organic chemicals,43070156.36
+2017,AZE,Azerbaijan,29,Organic chemicals,67262213.97
+2018,AZE,Azerbaijan,29,Organic chemicals,64588612.77
+2013,BDI,Burundi,29,Organic chemicals,4554.0
+2014,BDI,Burundi,29,Organic chemicals,4536.0
+2015,BDI,Burundi,29,Organic chemicals,4024.0
+2016,BDI,Burundi,29,Organic chemicals,6.0
+2018,BDI,Burundi,29,Organic chemicals,85558.679
+2013,BEL,Belgium,29,Organic chemicals,16138838004.153
+2014,BEL,Belgium,29,Organic chemicals,16212651970.46
+2015,BEL,Belgium,29,Organic chemicals,11676316384.977
+2016,BEL,Belgium,29,Organic chemicals,21550454600.213
+2017,BEL,Belgium,29,Organic chemicals,21183009744.77
+2018,BEL,Belgium,29,Organic chemicals,28951778217.815
+2013,BEN,Benin,29,Organic chemicals,2341.0
+2014,BEN,Benin,29,Organic chemicals,1084561.0
+2015,BEN,Benin,29,Organic chemicals,27143.414
+2016,BEN,Benin,29,Organic chemicals,18632.035
+2017,BEN,Benin,29,Organic chemicals,60083.461
+2013,BFA,Burkina Faso,29,Organic chemicals,248892.952
+2014,BFA,Burkina Faso,29,Organic chemicals,230947.047
+2015,BFA,Burkina Faso,29,Organic chemicals,82969.82
+2016,BFA,Burkina Faso,29,Organic chemicals,294246.0
+2017,BFA,Burkina Faso,29,Organic chemicals,64927.395
+2018,BFA,Burkina Faso,29,Organic chemicals,168952.067
+2013,BGD,Bangladesh,29,Organic chemicals,360257.0
+2015,BGD,Bangladesh,29,Organic chemicals,701634.0
+2016,BGD,Bangladesh,29,Organic chemicals,2249775.773
+2017,BGD,Bangladesh,29,Organic chemicals,11833623.11
+2018,BGD,Bangladesh,29,Organic chemicals,4374479.675
+2013,BGR,Bulgaria,29,Organic chemicals,94101716.0
+2014,BGR,Bulgaria,29,Organic chemicals,93042061.0
+2015,BGR,Bulgaria,29,Organic chemicals,92250834.0
+2016,BGR,Bulgaria,29,Organic chemicals,83887944.527
+2017,BGR,Bulgaria,29,Organic chemicals,88729354.544
+2018,BGR,Bulgaria,29,Organic chemicals,106250747.467
+2013,BHR,Bahrain,29,Organic chemicals,202680692.0
+2014,BHR,Bahrain,29,Organic chemicals,208799286.0
+2015,BHR,Bahrain,29,Organic chemicals,178545504.139
+2016,BHR,Bahrain,29,Organic chemicals,136999486.277
+2017,BHR,Bahrain,29,Organic chemicals,156693632.978
+2018,BHR,Bahrain,29,Organic chemicals,167336473.236
+2013,BHS,Bahamas,29,Organic chemicals,61628356.0
+2014,BHS,Bahamas,29,Organic chemicals,75260497.0
+2015,BHS,Bahamas,29,Organic chemicals,48987776.0
+2016,BHS,Bahamas,29,Organic chemicals,40698177.0
+2017,BHS,Bahamas,29,Organic chemicals,36839212.79
+2018,BHS,Bahamas,29,Organic chemicals,62795425.42
+2013,BIH,Bosnia Herzegovina,29,Organic chemicals,16008284.0
+2014,BIH,Bosnia Herzegovina,29,Organic chemicals,14309636.0
+2015,BIH,Bosnia Herzegovina,29,Organic chemicals,11435549.0
+2016,BIH,Bosnia Herzegovina,29,Organic chemicals,10643583.0
+2017,BIH,Bosnia Herzegovina,29,Organic chemicals,13562145.04
+2018,BIH,Bosnia Herzegovina,29,Organic chemicals,15843630.94
+2013,BLR,Belarus,29,Organic chemicals,236024400.0
+2014,BLR,Belarus,29,Organic chemicals,235329400.0
+2015,BLR,Belarus,29,Organic chemicals,183740700.0
+2016,BLR,Belarus,29,Organic chemicals,119685500.0
+2017,BLR,Belarus,29,Organic chemicals,182553500.0
+2018,BLR,Belarus,29,Organic chemicals,319537200.0
+2013,BLZ,Belize,29,Organic chemicals,787.0
+2014,BLZ,Belize,29,Organic chemicals,11250.0
+2016,BLZ,Belize,29,Organic chemicals,489.0
+2018,BLZ,Belize,29,Organic chemicals,5160.905
+2014,BMU,Bermuda,29,Organic chemicals,1250.0
+2015,BMU,Bermuda,29,Organic chemicals,14.0
+2016,BMU,Bermuda,29,Organic chemicals,9.0
+2018,BMU,Bermuda,29,Organic chemicals,1248.1
+2013,BOL,Bolivia (Plurinational State of),29,Organic chemicals,2137773.91
+2014,BOL,Bolivia (Plurinational State of),29,Organic chemicals,2713226.32
+2015,BOL,Bolivia (Plurinational State of),29,Organic chemicals,644218.63
+2016,BOL,Bolivia (Plurinational State of),29,Organic chemicals,994277.24
+2017,BOL,Bolivia (Plurinational State of),29,Organic chemicals,3474101.33
+2018,BOL,Bolivia (Plurinational State of),29,Organic chemicals,5099920.37
+2013,BRA,Brazil,29,Organic chemicals,3393021358.0
+2014,BRA,Brazil,29,Organic chemicals,3213283952.0
+2015,BRA,Brazil,29,Organic chemicals,2262734552.0
+2016,BRA,Brazil,29,Organic chemicals,1855693485.0
+2017,BRA,Brazil,29,Organic chemicals,2366033066.0
+2018,BRA,Brazil,29,Organic chemicals,2241549610.0
+2013,BRB,Barbados,29,Organic chemicals,63136.0
+2014,BRB,Barbados,29,Organic chemicals,32557.0
+2015,BRB,Barbados,29,Organic chemicals,64245.0
+2016,BRB,Barbados,29,Organic chemicals,65002.0
+2017,BRB,Barbados,29,Organic chemicals,24990.5
+2018,BRB,Barbados,29,Organic chemicals,36012.0
+2013,BRN,Brunei Darussalam,29,Organic chemicals,82166600.0
+2014,BRN,Brunei Darussalam,29,Organic chemicals,466964448.0
+2015,BRN,Brunei Darussalam,29,Organic chemicals,131692071.0
+2016,BRN,Brunei Darussalam,29,Organic chemicals,123084378.0
+2017,BRN,Brunei Darussalam,29,Organic chemicals,139432461.011
+2018,BRN,Brunei Darussalam,29,Organic chemicals,239948043.227
+2016,BTN,Bhutan,29,Organic chemicals,388747.395
+2017,BTN,Bhutan,29,Organic chemicals,1272439.431
+2018,BTN,Bhutan,29,Organic chemicals,260017.549
+2013,BWA,Botswana,29,Organic chemicals,75076.86
+2014,BWA,Botswana,29,Organic chemicals,389594.713
+2015,BWA,Botswana,29,Organic chemicals,27774.79
+2016,BWA,Botswana,29,Organic chemicals,79993.0
+2017,BWA,Botswana,29,Organic chemicals,17916.329
+2018,BWA,Botswana,29,Organic chemicals,169511.636
+2013,CAN,Canada,29,Organic chemicals,5053584470.0
+2014,CAN,Canada,29,Organic chemicals,5016940116.0
+2015,CAN,Canada,29,Organic chemicals,3430306938.381
+2016,CAN,Canada,29,Organic chemicals,2948138783.319
+2017,CAN,Canada,29,Organic chemicals,3549069584.077
+2018,CAN,Canada,29,Organic chemicals,4087848440.23
+2013,CHE,Switzerland,29,Organic chemicals,18870875479.547
+2014,CHE,Switzerland,29,Organic chemicals,19649213578.899
+2015,CHE,Switzerland,29,Organic chemicals,17989076281.447
+2016,CHE,Switzerland,29,Organic chemicals,19153043804.39
+2017,CHE,Switzerland,29,Organic chemicals,19875074550.583
+2018,CHE,Switzerland,29,Organic chemicals,20761252549.564
+2013,CHL,Chile,29,Organic chemicals,119932716.111
+2014,CHL,Chile,29,Organic chemicals,103495801.374
+2015,CHL,Chile,29,Organic chemicals,78903737.62
+2016,CHL,Chile,29,Organic chemicals,138559579.865
+2017,CHL,Chile,29,Organic chemicals,195934524.031
+2018,CHL,Chile,29,Organic chemicals,245644248.33
+2013,CHN,China,29,Organic chemicals,42201531264.0
+2014,CHN,China,29,Organic chemicals,45442904733.0
+2015,CHN,China,29,Organic chemicals,42666608948.0
+2016,CHN,China,29,Organic chemicals,42164490098.0
+2017,CHN,China,29,Organic chemicals,49736115534.0
+2018,CHN,China,29,Organic chemicals,59761678849.0
+2013,CIV,Côte d'Ivoire,29,Organic chemicals,3155646.624
+2014,CIV,Côte d'Ivoire,29,Organic chemicals,2275791.238
+2015,CIV,Côte d'Ivoire,29,Organic chemicals,1551453.386
+2016,CIV,Côte d'Ivoire,29,Organic chemicals,2980292.021
+2017,CIV,Côte d'Ivoire,29,Organic chemicals,3382632.81
+2018,CIV,Côte d'Ivoire,29,Organic chemicals,1779141.392
+2013,CMR,Cameroon,29,Organic chemicals,403384.0
+2014,CMR,Cameroon,29,Organic chemicals,353692.0
+2015,CMR,Cameroon,29,Organic chemicals,429318.0
+2016,CMR,Cameroon,29,Organic chemicals,484623.0
+2017,CMR,Cameroon,29,Organic chemicals,478445.859
+2018,CMR,Cameroon,29,Organic chemicals,220947.768
+2015,COD,Dem. Rep. of the Congo,29,Organic chemicals,147365.784
+2016,COD,Dem. Rep. of the Congo,29,Organic chemicals,354.372
+2017,COD,Dem. Rep. of the Congo,29,Organic chemicals,496693.48
+2018,COD,Dem. Rep. of the Congo,29,Organic chemicals,1076254.038
+2013,COG,Congo,29,Organic chemicals,23231.0
+2014,COG,Congo,29,Organic chemicals,176951.195
+2015,COG,Congo,29,Organic chemicals,301362.315
+2016,COG,Congo,29,Organic chemicals,472432.841
+2017,COG,Congo,29,Organic chemicals,253685.334
+2018,COG,Congo,29,Organic chemicals,148276.805
+2013,COL,Colombia,29,Organic chemicals,179476557.0
+2014,COL,Colombia,29,Organic chemicals,165840116.0
+2015,COL,Colombia,29,Organic chemicals,148917607.0
+2016,COL,Colombia,29,Organic chemicals,117021476.0
+2017,COL,Colombia,29,Organic chemicals,132359387.04
+2018,COL,Colombia,29,Organic chemicals,146595519.01
+2013,CRI,Costa Rica,29,Organic chemicals,11439624.0
+2014,CRI,Costa Rica,29,Organic chemicals,4304304.0
+2015,CRI,Costa Rica,29,Organic chemicals,4971592.0
+2016,CRI,Costa Rica,29,Organic chemicals,5855258.0
+2017,CRI,Costa Rica,29,Organic chemicals,5934721.993
+2018,CRI,Costa Rica,29,Organic chemicals,6186266.82
+2016,CUB,Cuba,29,Organic chemicals,424068.17
+2017,CUB,Cuba,29,Organic chemicals,135270.68
+2018,CUB,Cuba,29,Organic chemicals,305962.97
+2017,CUW,Curaçao,29,Organic chemicals,199610.121
+2018,CUW,Curaçao,29,Organic chemicals,201005.021
+2013,CYP,Cyprus,29,Organic chemicals,116012860.416
+2014,CYP,Cyprus,29,Organic chemicals,71335032.933
+2015,CYP,Cyprus,29,Organic chemicals,62866362.405
+2016,CYP,Cyprus,29,Organic chemicals,59737641.075
+2017,CYP,Cyprus,29,Organic chemicals,52233524.696
+2018,CYP,Cyprus,29,Organic chemicals,74597894.081
+2013,CZE,Czechia,29,Organic chemicals,1239168626.0
+2014,CZE,Czechia,29,Organic chemicals,1213856419.0
+2015,CZE,Czechia,29,Organic chemicals,809830535.0
+2016,CZE,Czechia,29,Organic chemicals,703645167.0
+2017,CZE,Czechia,29,Organic chemicals,1108937506.0
+2018,CZE,Czechia,29,Organic chemicals,1087670271.0
+2013,DEU,Germany,29,Organic chemicals,30147607994.894
+2014,DEU,Germany,29,Organic chemicals,30422382725.774
+2015,DEU,Germany,29,Organic chemicals,24618040922.489
+2016,DEU,Germany,29,Organic chemicals,23258663085.416
+2017,DEU,Germany,29,Organic chemicals,25358814844.304
+2018,DEU,Germany,29,Organic chemicals,27448484604.884
+2013,DMA,Dominica,29,Organic chemicals,3270.004
+2016,DMA,Dominica,29,Organic chemicals,7065.919
+2017,DMA,Dominica,29,Organic chemicals,54.445
+2018,DMA,Dominica,29,Organic chemicals,966.665
+2013,DNK,Denmark,29,Organic chemicals,1294629534.0
+2014,DNK,Denmark,29,Organic chemicals,1312868376.0
+2015,DNK,Denmark,29,Organic chemicals,1354898481.0
+2016,DNK,Denmark,29,Organic chemicals,1412092705.863
+2017,DNK,Denmark,29,Organic chemicals,1467847423.638
+2018,DNK,Denmark,29,Organic chemicals,1783107500.406
+2013,DOM,Dominican Rep.,29,Organic chemicals,24765115.0
+2014,DOM,Dominican Rep.,29,Organic chemicals,21731693.446
+2015,DOM,Dominican Rep.,29,Organic chemicals,19361394.517
+2016,DOM,Dominican Rep.,29,Organic chemicals,17600882.102
+2017,DOM,Dominican Rep.,29,Organic chemicals,22637580.352
+2018,DOM,Dominican Rep.,29,Organic chemicals,25492941.18
+2013,DZA,Algeria,29,Organic chemicals,53065857.0
+2014,DZA,Algeria,29,Organic chemicals,170899645.0
+2015,DZA,Algeria,29,Organic chemicals,84901005.0
+2016,DZA,Algeria,29,Organic chemicals,79844294.0
+2017,DZA,Algeria,29,Organic chemicals,56279989.31
+2013,ECU,Ecuador,29,Organic chemicals,6859531.0
+2014,ECU,Ecuador,29,Organic chemicals,3483302.0
+2015,ECU,Ecuador,29,Organic chemicals,3090226.0
+2016,ECU,Ecuador,29,Organic chemicals,4416939.0
+2017,ECU,Ecuador,29,Organic chemicals,8769819.82
+2018,ECU,Ecuador,29,Organic chemicals,5186497.259
+2013,EGY,Egypt,29,Organic chemicals,375001814.0
+2014,EGY,Egypt,29,Organic chemicals,290490938.0
+2015,EGY,Egypt,29,Organic chemicals,58491166.878
+2016,EGY,Egypt,29,Organic chemicals,129922713.009
+2017,EGY,Egypt,29,Organic chemicals,296767421.924
+2018,EGY,Egypt,29,Organic chemicals,428873970.325
+2013,ESP,Spain,29,Organic chemicals,4965445449.874
+2014,ESP,Spain,29,Organic chemicals,5254169388.168
+2015,ESP,Spain,29,Organic chemicals,4417772285.065
+2016,ESP,Spain,29,Organic chemicals,4260159542.877
+2017,ESP,Spain,29,Organic chemicals,4629929540.186
+2018,ESP,Spain,29,Organic chemicals,5288889153.288
+2013,EST,Estonia,29,Organic chemicals,92383080.0
+2014,EST,Estonia,29,Organic chemicals,109742566.0
+2015,EST,Estonia,29,Organic chemicals,58374411.0
+2016,EST,Estonia,29,Organic chemicals,60899934.692
+2017,EST,Estonia,29,Organic chemicals,59754561.079
+2018,EST,Estonia,29,Organic chemicals,92572218.563
+2013,ETH,Ethiopia,29,Organic chemicals,2828.749
+2014,ETH,Ethiopia,29,Organic chemicals,5177.817
+2015,ETH,Ethiopia,29,Organic chemicals,645.214
+2016,ETH,Ethiopia,29,Organic chemicals,641765.245
+2017,ETH,Ethiopia,29,Organic chemicals,92642.431
+2018,ETH,Ethiopia,29,Organic chemicals,0.145
+2013,FIN,Finland,29,Organic chemicals,1252386532.0
+2014,FIN,Finland,29,Organic chemicals,1381468012.0
+2015,FIN,Finland,29,Organic chemicals,930014479.0
+2016,FIN,Finland,29,Organic chemicals,841438043.0
+2017,FIN,Finland,29,Organic chemicals,1002122073.692
+2018,FIN,Finland,29,Organic chemicals,996243624.526
+2013,FJI,Fiji,29,Organic chemicals,352463.0
+2014,FJI,Fiji,29,Organic chemicals,500243.0
+2015,FJI,Fiji,29,Organic chemicals,499951.995
+2016,FJI,Fiji,29,Organic chemicals,419327.14
+2017,FJI,Fiji,29,Organic chemicals,454164.927
+2018,FJI,Fiji,29,Organic chemicals,424131.497
+2013,FRA,France,29,Organic chemicals,13814507430.0
+2014,FRA,France,29,Organic chemicals,13456413054.0
+2015,FRA,France,29,Organic chemicals,11147585916.0
+2016,FRA,France,29,Organic chemicals,10027360241.0
+2017,FRA,France,29,Organic chemicals,11104083887.141
+2018,FRA,France,29,Organic chemicals,11904104803.265
+2013,GAB,Gabon,29,Organic chemicals,453539.146
+2014,GAB,Gabon,29,Organic chemicals,358585.772
+2015,GAB,Gabon,29,Organic chemicals,792581.568
+2016,GAB,Gabon,29,Organic chemicals,284019.851
+2017,GAB,Gabon,29,Organic chemicals,410787.354
+2018,GAB,Gabon,29,Organic chemicals,209797.73
+2013,GBR,United Kingdom,29,Organic chemicals,12765620344.0
+2014,GBR,United Kingdom,29,Organic chemicals,10770073940.0
+2015,GBR,United Kingdom,29,Organic chemicals,13948039379.0
+2016,GBR,United Kingdom,29,Organic chemicals,9903234161.0
+2017,GBR,United Kingdom,29,Organic chemicals,10576287128.454
+2018,GBR,United Kingdom,29,Organic chemicals,11302425446.176
+2013,GEO,Georgia,29,Organic chemicals,764845.0
+2014,GEO,Georgia,29,Organic chemicals,606927.46
+2015,GEO,Georgia,29,Organic chemicals,961748.51
+2016,GEO,Georgia,29,Organic chemicals,1377841.86
+2017,GEO,Georgia,29,Organic chemicals,906680.9
+2018,GEO,Georgia,29,Organic chemicals,1195544.05
+2013,GHA,Ghana,29,Organic chemicals,53020991.0
+2014,GHA,Ghana,29,Organic chemicals,84855230.105
+2015,GHA,Ghana,29,Organic chemicals,3141133.749
+2016,GHA,Ghana,29,Organic chemicals,301672.0
+2017,GHA,Ghana,29,Organic chemicals,749161.144
+2018,GHA,Ghana,29,Organic chemicals,946422.233
+2013,GIN,Guinea,29,Organic chemicals,541.0
+2015,GIN,Guinea,29,Organic chemicals,130.0
+2016,GIN,Guinea,29,Organic chemicals,3170.72
+2013,GMB,Gambia,29,Organic chemicals,3100.401
+2013,GRC,Greece,29,Organic chemicals,38242835.0
+2014,GRC,Greece,29,Organic chemicals,31149777.0
+2015,GRC,Greece,29,Organic chemicals,28095413.0
+2016,GRC,Greece,29,Organic chemicals,28066519.0
+2017,GRC,Greece,29,Organic chemicals,38582721.098
+2018,GRC,Greece,29,Organic chemicals,43286464.361
+2013,GRD,Grenada,29,Organic chemicals,2008.146
+2014,GRD,Grenada,29,Organic chemicals,2596.294
+2015,GRD,Grenada,29,Organic chemicals,1402.962
+2016,GRD,Grenada,29,Organic chemicals,175.926
+2017,GRD,Grenada,29,Organic chemicals,123.333
+2018,GRD,Grenada,29,Organic chemicals,4959.995
+2013,GRL,Greenland,29,Organic chemicals,17.47
+2014,GRL,Greenland,29,Organic chemicals,70.2
+2016,GRL,Greenland,29,Organic chemicals,70.88
+2013,GTM,Guatemala,29,Organic chemicals,48841842.0
+2014,GTM,Guatemala,29,Organic chemicals,46848168.0
+2015,GTM,Guatemala,29,Organic chemicals,50150176.0
+2016,GTM,Guatemala,29,Organic chemicals,39358096.0
+2017,GTM,Guatemala,29,Organic chemicals,45877129.0
+2018,GTM,Guatemala,29,Organic chemicals,44652134.0
+2013,GUY,Guyana,29,Organic chemicals,70502.0
+2014,GUY,Guyana,29,Organic chemicals,80534.0
+2015,GUY,Guyana,29,Organic chemicals,152401.843
+2016,GUY,Guyana,29,Organic chemicals,296536.0
+2017,GUY,Guyana,29,Organic chemicals,237590.069
+2018,GUY,Guyana,29,Organic chemicals,176890.342
+2013,HKG,"China, Hong Kong SAR",29,Organic chemicals,761688380.0
+2014,HKG,"China, Hong Kong SAR",29,Organic chemicals,353971889.0
+2015,HKG,"China, Hong Kong SAR",29,Organic chemicals,347135840.193
+2016,HKG,"China, Hong Kong SAR",29,Organic chemicals,202420365.464
+2017,HKG,"China, Hong Kong SAR",29,Organic chemicals,264600579.172
+2018,HKG,"China, Hong Kong SAR",29,Organic chemicals,247520412.5
+2014,HND,Honduras,29,Organic chemicals,17210724.0
+2015,HND,Honduras,29,Organic chemicals,16552260.0
+2016,HND,Honduras,29,Organic chemicals,13298120.0
+2017,HND,Honduras,29,Organic chemicals,12007154.49
+2018,HND,Honduras,29,Organic chemicals,8180846.49
+2013,HRV,Croatia,29,Organic chemicals,62384036.0
+2014,HRV,Croatia,29,Organic chemicals,73998549.0
+2015,HRV,Croatia,29,Organic chemicals,104318171.0
+2016,HRV,Croatia,29,Organic chemicals,98611735.0
+2017,HRV,Croatia,29,Organic chemicals,87918241.0
+2018,HRV,Croatia,29,Organic chemicals,104329559.0
+2013,HTI,Haiti,29,Organic chemicals,5903.107
+2014,HTI,Haiti,29,Organic chemicals,93.622
+2015,HTI,Haiti,29,Organic chemicals,10.388
+2016,HTI,Haiti,29,Organic chemicals,42.452
+2017,HTI,Haiti,29,Organic chemicals,160948.003
+2013,HUN,Hungary,29,Organic chemicals,1638496219.0
+2014,HUN,Hungary,29,Organic chemicals,1606496712.0
+2015,HUN,Hungary,29,Organic chemicals,1332760059.0
+2016,HUN,Hungary,29,Organic chemicals,1365574205.0
+2017,HUN,Hungary,29,Organic chemicals,1866276866.0
+2018,HUN,Hungary,29,Organic chemicals,2054808148.0
+2013,IDN,Indonesia,29,Organic chemicals,2760199784.0
+2014,IDN,Indonesia,29,Organic chemicals,3158234585.0
+2015,IDN,Indonesia,29,Organic chemicals,2167810710.0
+2016,IDN,Indonesia,29,Organic chemicals,2384407251.0
+2017,IDN,Indonesia,29,Organic chemicals,3118084466.95
+2018,IDN,Indonesia,29,Organic chemicals,2928794574.77
+2013,IND,India,29,Organic chemicals,13340363831.0
+2014,IND,India,29,Organic chemicals,12035144718.0
+2015,IND,India,29,Organic chemicals,11298855545.0
+2016,IND,India,29,Organic chemicals,11252925665.0
+2017,IND,India,29,Organic chemicals,13556922317.049
+2018,IND,India,29,Organic chemicals,17778489932.736
+2013,IRL,Ireland,29,Organic chemicals,27213189030.902
+2014,IRL,Ireland,29,Organic chemicals,26426348251.023
+2015,IRL,Ireland,29,Organic chemicals,25479211502.932
+2016,IRL,Ireland,29,Organic chemicals,27709574913.054
+2017,IRL,Ireland,29,Organic chemicals,23898837199.532
+2018,IRL,Ireland,29,Organic chemicals,32716608894.954
+2013,IRN,Iran,29,Organic chemicals,3483263737.61
+2014,IRN,Iran,29,Organic chemicals,4398444707.82
+2015,IRN,Iran,29,Organic chemicals,3621542577.0
+2016,IRN,Iran,29,Organic chemicals,3687846784.49
+2017,IRN,Iran,29,Organic chemicals,3955392377.0
+2018,IRN,Iran,29,Organic chemicals,4105897509.0
+2013,IRQ,Iraq,29,Organic chemicals,137350000.0
+2014,IRQ,Iraq,29,Organic chemicals,43000000.0
+2013,ISL,Iceland,29,Organic chemicals,3107301.0
+2014,ISL,Iceland,29,Organic chemicals,4100952.0
+2015,ISL,Iceland,29,Organic chemicals,4090635.0
+2016,ISL,Iceland,29,Organic chemicals,4792553.0
+2017,ISL,Iceland,29,Organic chemicals,8241100.709
+2018,ISL,Iceland,29,Organic chemicals,8942676.71
+2013,ISR,Israel,29,Organic chemicals,1834934000.0
+2014,ISR,Israel,29,Organic chemicals,1610725000.0
+2015,ISR,Israel,29,Organic chemicals,1137030000.0
+2016,ISR,Israel,29,Organic chemicals,1252885000.0
+2017,ISR,Israel,29,Organic chemicals,1236558000.0
+2018,ISR,Israel,29,Organic chemicals,1399285000.0
+2013,ITA,Italy,29,Organic chemicals,7810424543.0
+2014,ITA,Italy,29,Organic chemicals,7701947878.0
+2015,ITA,Italy,29,Organic chemicals,6959888708.69
+2016,ITA,Italy,29,Organic chemicals,7265270782.886
+2017,ITA,Italy,29,Organic chemicals,7684503913.315
+2018,ITA,Italy,29,Organic chemicals,8598918327.871
+2013,JAM,Jamaica,29,Organic chemicals,428813.0
+2014,JAM,Jamaica,29,Organic chemicals,177355.804
+2015,JAM,Jamaica,29,Organic chemicals,247622.0
+2016,JAM,Jamaica,29,Organic chemicals,297690.0
+2017,JAM,Jamaica,29,Organic chemicals,123498.06
+2018,JAM,Jamaica,29,Organic chemicals,120521.12
+2013,JOR,Jordan,29,Organic chemicals,14415614.0
+2014,JOR,Jordan,29,Organic chemicals,24952145.0
+2015,JOR,Jordan,29,Organic chemicals,13374263.0
+2016,JOR,Jordan,29,Organic chemicals,13920317.0
+2017,JOR,Jordan,29,Organic chemicals,17470251.556
+2018,JOR,Jordan,29,Organic chemicals,16209228.756
+2013,JPN,Japan,29,Organic chemicals,26293882439.0
+2014,JPN,Japan,29,Organic chemicals,23446470665.0
+2015,JPN,Japan,29,Organic chemicals,17901478668.0
+2016,JPN,Japan,29,Organic chemicals,15938467818.0
+2017,JPN,Japan,29,Organic chemicals,17878375950.325
+2018,JPN,Japan,29,Organic chemicals,18915713096.941
+2013,KAZ,Kazakhstan,29,Organic chemicals,25791816.0
+2014,KAZ,Kazakhstan,29,Organic chemicals,38617419.0
+2015,KAZ,Kazakhstan,29,Organic chemicals,35417324.0
+2016,KAZ,Kazakhstan,29,Organic chemicals,27921446.0
+2017,KAZ,Kazakhstan,29,Organic chemicals,30350172.82
+2018,KAZ,Kazakhstan,29,Organic chemicals,32310022.1
+2013,KEN,Kenya,29,Organic chemicals,9565171.0
+2015,KEN,Kenya,29,Organic chemicals,7022215.54
+2016,KEN,Kenya,29,Organic chemicals,6970454.57
+2017,KEN,Kenya,29,Organic chemicals,7636303.026
+2018,KEN,Kenya,29,Organic chemicals,6790554.034
+2013,KGZ,Kyrgyzstan,29,Organic chemicals,668754.0
+2014,KGZ,Kyrgyzstan,29,Organic chemicals,127975.0
+2015,KGZ,Kyrgyzstan,29,Organic chemicals,249732.0
+2016,KGZ,Kyrgyzstan,29,Organic chemicals,587990.0
+2017,KGZ,Kyrgyzstan,29,Organic chemicals,1854147.0
+2018,KGZ,Kyrgyzstan,29,Organic chemicals,2561333.0
+2015,KHM,Cambodia,29,Organic chemicals,976137.0
+2016,KHM,Cambodia,29,Organic chemicals,8132285.0
+2017,KHM,Cambodia,29,Organic chemicals,23463121.67
+2018,KHM,Cambodia,29,Organic chemicals,13442308.07
+2014,KIR,Kiribati,29,Organic chemicals,223.868
+2016,KIR,Kiribati,29,Organic chemicals,248.0
+2017,KIR,Kiribati,29,Organic chemicals,200.128
+2013,KNA,Saint Kitts and Nevis,29,Organic chemicals,52.0
+2014,KNA,Saint Kitts and Nevis,29,Organic chemicals,2249.0
+2015,KNA,Saint Kitts and Nevis,29,Organic chemicals,2942.13
+2016,KNA,Saint Kitts and Nevis,29,Organic chemicals,1880.206
+2013,KOR,Rep. of Korea,29,Organic chemicals,24856006195.0
+2014,KOR,Rep. of Korea,29,Organic chemicals,24398046106.0
+2015,KOR,Rep. of Korea,29,Organic chemicals,18239907551.0
+2016,KOR,Rep. of Korea,29,Organic chemicals,17923733330.0
+2017,KOR,Rep. of Korea,29,Organic chemicals,22691690625.0
+2018,KOR,Rep. of Korea,29,Organic chemicals,25339254470.0
+2013,KWT,Kuwait,29,Organic chemicals,1423075778.0
+2014,KWT,Kuwait,29,Organic chemicals,1710879204.0
+2015,KWT,Kuwait,29,Organic chemicals,1371904792.838
+2016,KWT,Kuwait,29,Organic chemicals,1160109912.208
+2017,KWT,Kuwait,29,Organic chemicals,1228392467.504
+2018,KWT,Kuwait,29,Organic chemicals,2103505758.0
+2013,LAO,Lao People's Dem. Rep.,29,Organic chemicals,362017.0
+2014,LAO,Lao People's Dem. Rep.,29,Organic chemicals,1785637.0
+2015,LAO,Lao People's Dem. Rep.,29,Organic chemicals,1724960.0
+2016,LAO,Lao People's Dem. Rep.,29,Organic chemicals,2370620.0
+2017,LAO,Lao People's Dem. Rep.,29,Organic chemicals,3139050.0
+2018,LAO,Lao People's Dem. Rep.,29,Organic chemicals,2604000.0
+2013,LBN,Lebanon,29,Organic chemicals,3551619.0
+2014,LBN,Lebanon,29,Organic chemicals,2953636.0
+2015,LBN,Lebanon,29,Organic chemicals,4293994.659
+2016,LBN,Lebanon,29,Organic chemicals,6243852.0
+2017,LBN,Lebanon,29,Organic chemicals,6830871.0
+2018,LBN,Lebanon,29,Organic chemicals,4253959.0
+2017,LBR,Liberia,29,Organic chemicals,39.0
+2016,LBY,Libya,29,Organic chemicals,32158562.39
+2017,LBY,Libya,29,Organic chemicals,32158562.39
+2018,LBY,Libya,29,Organic chemicals,4728954.93
+2013,LCA,Saint Lucia,29,Organic chemicals,17123.0
+2014,LCA,Saint Lucia,29,Organic chemicals,11052.0
+2015,LCA,Saint Lucia,29,Organic chemicals,19124.0
+2016,LCA,Saint Lucia,29,Organic chemicals,17909.0
+2017,LCA,Saint Lucia,29,Organic chemicals,8288.903
+2018,LCA,Saint Lucia,29,Organic chemicals,14354.21
+2013,LKA,Sri Lanka,29,Organic chemicals,333576.0
+2014,LKA,Sri Lanka,29,Organic chemicals,835196.0
+2015,LKA,Sri Lanka,29,Organic chemicals,643832.0
+2016,LKA,Sri Lanka,29,Organic chemicals,864187.0
+2017,LKA,Sri Lanka,29,Organic chemicals,1564498.53
+2013,LSO,Lesotho,29,Organic chemicals,14179.724
+2014,LSO,Lesotho,29,Organic chemicals,4374.69
+2015,LSO,Lesotho,29,Organic chemicals,40171.616
+2016,LSO,Lesotho,29,Organic chemicals,1595.875
+2017,LSO,Lesotho,29,Organic chemicals,6510.717
+2018,LSO,Lesotho,29,Organic chemicals,1792.88
+2013,LTU,Lithuania,29,Organic chemicals,76845209.0
+2014,LTU,Lithuania,29,Organic chemicals,80783428.0
+2015,LTU,Lithuania,29,Organic chemicals,100282043.0
+2016,LTU,Lithuania,29,Organic chemicals,110449488.0
+2017,LTU,Lithuania,29,Organic chemicals,134919437.0
+2018,LTU,Lithuania,29,Organic chemicals,163648793.0
+2013,LUX,Luxembourg,29,Organic chemicals,9919268.0
+2014,LUX,Luxembourg,29,Organic chemicals,9160557.0
+2015,LUX,Luxembourg,29,Organic chemicals,10093453.0
+2016,LUX,Luxembourg,29,Organic chemicals,7998904.0
+2017,LUX,Luxembourg,29,Organic chemicals,9890507.064
+2018,LUX,Luxembourg,29,Organic chemicals,10104045.37
+2013,LVA,Latvia,29,Organic chemicals,64310961.0
+2014,LVA,Latvia,29,Organic chemicals,59703479.292
+2015,LVA,Latvia,29,Organic chemicals,46889190.501
+2016,LVA,Latvia,29,Organic chemicals,52374021.999
+2017,LVA,Latvia,29,Organic chemicals,51507902.348
+2018,LVA,Latvia,29,Organic chemicals,56251765.424
+2017,MAC,"China, Macao SAR",29,Organic chemicals,4766534.982
+2013,MAR,Morocco,29,Organic chemicals,13106793.0
+2014,MAR,Morocco,29,Organic chemicals,14116637.0
+2015,MAR,Morocco,29,Organic chemicals,11587929.489
+2016,MAR,Morocco,29,Organic chemicals,11768584.0
+2017,MAR,Morocco,29,Organic chemicals,17214636.205
+2018,MAR,Morocco,29,Organic chemicals,19999069.597
+2013,MDA,Rep. of Moldova,29,Organic chemicals,952795.0
+2014,MDA,Rep. of Moldova,29,Organic chemicals,436390.0
+2015,MDA,Rep. of Moldova,29,Organic chemicals,569093.0
+2016,MDA,Rep. of Moldova,29,Organic chemicals,1014120.0
+2017,MDA,Rep. of Moldova,29,Organic chemicals,670834.0
+2018,MDA,Rep. of Moldova,29,Organic chemicals,2059110.0
+2013,MDG,Madagascar,29,Organic chemicals,2959318.964
+2014,MDG,Madagascar,29,Organic chemicals,2518902.529
+2015,MDG,Madagascar,29,Organic chemicals,4787321.695
+2016,MDG,Madagascar,29,Organic chemicals,5940524.422
+2017,MDG,Madagascar,29,Organic chemicals,3054127.008
+2018,MDG,Madagascar,29,Organic chemicals,3569571.594
+2013,MEX,Mexico,29,Organic chemicals,2653831098.0
+2014,MEX,Mexico,29,Organic chemicals,2373534673.0
+2015,MEX,Mexico,29,Organic chemicals,1946785903.0
+2016,MEX,Mexico,29,Organic chemicals,1720924136.0
+2017,MEX,Mexico,29,Organic chemicals,1886093227.0
+2018,MEX,Mexico,29,Organic chemicals,2001313784.0
+2013,MKD,North Macedonia,29,Organic chemicals,1221295.0
+2014,MKD,North Macedonia,29,Organic chemicals,1423587.0
+2015,MKD,North Macedonia,29,Organic chemicals,1353609.13
+2016,MKD,North Macedonia,29,Organic chemicals,1247060.71
+2017,MKD,North Macedonia,29,Organic chemicals,1434228.26
+2018,MKD,North Macedonia,29,Organic chemicals,1471150.65
+2016,MLI,Mali,29,Organic chemicals,998353.0
+2017,MLI,Mali,29,Organic chemicals,871447.017
+2018,MLI,Mali,29,Organic chemicals,901543.15
+2013,MLT,Malta,29,Organic chemicals,82930255.0
+2014,MLT,Malta,29,Organic chemicals,126300426.0
+2015,MLT,Malta,29,Organic chemicals,91490910.0
+2016,MLT,Malta,29,Organic chemicals,51599461.0
+2017,MLT,Malta,29,Organic chemicals,46208994.318
+2018,MLT,Malta,29,Organic chemicals,44611420.195
+2013,MMR,Myanmar,29,Organic chemicals,37938.0
+2014,MMR,Myanmar,29,Organic chemicals,1220.0
+2015,MMR,Myanmar,29,Organic chemicals,39314.0
+2016,MMR,Myanmar,29,Organic chemicals,993991.42
+2017,MMR,Myanmar,29,Organic chemicals,3320478.8
+2018,MMR,Myanmar,29,Organic chemicals,61490.0
+2013,MNE,Montenegro,29,Organic chemicals,135842.0
+2014,MNE,Montenegro,29,Organic chemicals,69218.0
+2015,MNE,Montenegro,29,Organic chemicals,36730.0
+2016,MNE,Montenegro,29,Organic chemicals,41885.631
+2017,MNE,Montenegro,29,Organic chemicals,24123.303
+2018,MNE,Montenegro,29,Organic chemicals,31944.023
+2013,MNG,Mongolia,29,Organic chemicals,150485.0
+2014,MNG,Mongolia,29,Organic chemicals,1481.0
+2016,MNG,Mongolia,29,Organic chemicals,113498.0
+2017,MNG,Mongolia,29,Organic chemicals,300.0
+2018,MNG,Mongolia,29,Organic chemicals,50.0
+2013,MOZ,Mozambique,29,Organic chemicals,168610.0
+2014,MOZ,Mozambique,29,Organic chemicals,71930.0
+2015,MOZ,Mozambique,29,Organic chemicals,35705.94
+2016,MOZ,Mozambique,29,Organic chemicals,516551.54
+2017,MOZ,Mozambique,29,Organic chemicals,344423.63
+2018,MOZ,Mozambique,29,Organic chemicals,312240.56
+2013,MSR,Montserrat,29,Organic chemicals,5556.0
+2016,MSR,Montserrat,29,Organic chemicals,540.362
+2018,MSR,Montserrat,29,Organic chemicals,111.111
+2013,MUS,Mauritius,29,Organic chemicals,1771912.0
+2014,MUS,Mauritius,29,Organic chemicals,1921404.0
+2015,MUS,Mauritius,29,Organic chemicals,963012.0
+2016,MUS,Mauritius,29,Organic chemicals,837044.468
+2017,MUS,Mauritius,29,Organic chemicals,568391.099
+2018,MUS,Mauritius,29,Organic chemicals,506019.701
+2013,MWI,Malawi,29,Organic chemicals,1706410.096
+2014,MWI,Malawi,29,Organic chemicals,110694.084
+2015,MWI,Malawi,29,Organic chemicals,177988.279
+2016,MWI,Malawi,29,Organic chemicals,116069.503
+2017,MWI,Malawi,29,Organic chemicals,8622.318
+2018,MWI,Malawi,29,Organic chemicals,24319.321
+2013,MYS,Malaysia,29,Organic chemicals,4415580036.0
+2014,MYS,Malaysia,29,Organic chemicals,4331711721.0
+2015,MYS,Malaysia,29,Organic chemicals,3575510061.0
+2016,MYS,Malaysia,29,Organic chemicals,3737947648.0
+2017,MYS,Malaysia,29,Organic chemicals,3808696956.075
+2018,MYS,Malaysia,29,Organic chemicals,4877020719.387
+2013,NAM,Namibia,29,Organic chemicals,692786.0
+2014,NAM,Namibia,29,Organic chemicals,598605.0
+2015,NAM,Namibia,29,Organic chemicals,2396199.0
+2016,NAM,Namibia,29,Organic chemicals,6395122.0
+2017,NAM,Namibia,29,Organic chemicals,928052.887
+2018,NAM,Namibia,29,Organic chemicals,1525599.236
+2013,NCL,New Caledonia,29,Organic chemicals,14452.0
+2014,NCL,New Caledonia,29,Organic chemicals,6377.0
+2015,NCL,New Caledonia,29,Organic chemicals,10315.0
+2014,NER,Niger,29,Organic chemicals,1942.0
+2015,NER,Niger,29,Organic chemicals,2860.0
+2016,NER,Niger,29,Organic chemicals,114635.704
+2017,NER,Niger,29,Organic chemicals,124440.02
+2018,NER,Niger,29,Organic chemicals,98576.897
+2013,NGA,Nigeria,29,Organic chemicals,24899779.0
+2014,NGA,Nigeria,29,Organic chemicals,15092232.0
+2015,NGA,Nigeria,29,Organic chemicals,202951.87
+2016,NGA,Nigeria,29,Organic chemicals,31527.0
+2017,NGA,Nigeria,29,Organic chemicals,180425.102
+2018,NGA,Nigeria,29,Organic chemicals,412218.362
+2013,NIC,Nicaragua,29,Organic chemicals,241574.0
+2014,NIC,Nicaragua,29,Organic chemicals,2629197.0
+2015,NIC,Nicaragua,29,Organic chemicals,1550078.0
+2016,NIC,Nicaragua,29,Organic chemicals,1364130.85
+2017,NIC,Nicaragua,29,Organic chemicals,1825947.77
+2018,NIC,Nicaragua,29,Organic chemicals,1717444.91
+2013,NLD,Netherlands,29,Organic chemicals,25804881525.632
+2014,NLD,Netherlands,29,Organic chemicals,23208832505.608
+2015,NLD,Netherlands,29,Organic chemicals,15918556190.787
+2016,NLD,Netherlands,29,Organic chemicals,14934008484.397
+2017,NLD,Netherlands,29,Organic chemicals,17920003403.31
+2018,NLD,Netherlands,29,Organic chemicals,21066345016.882
+2013,NOR,Norway,29,Organic chemicals,953210821.0
+2014,NOR,Norway,29,Organic chemicals,967646474.0
+2015,NOR,Norway,29,Organic chemicals,962047026.71
+2016,NOR,Norway,29,Organic chemicals,1044397815.0
+2017,NOR,Norway,29,Organic chemicals,1062058412.124
+2018,NOR,Norway,29,Organic chemicals,1191199744.187
+2013,NPL,Nepal,29,Organic chemicals,45108.0
+2014,NPL,Nepal,29,Organic chemicals,5119.0
+2015,NPL,Nepal,29,Organic chemicals,31187.0
+2016,NPL,Nepal,29,Organic chemicals,103162.285
+2017,NPL,Nepal,29,Organic chemicals,109409.502
+2018,NPL,Nepal,29,Organic chemicals,22731.43
+2013,NZL,New Zealand,29,Organic chemicals,323501971.536
+2014,NZL,New Zealand,29,Organic chemicals,129667225.876
+2015,NZL,New Zealand,29,Organic chemicals,382770300.91
+2016,NZL,New Zealand,29,Organic chemicals,139811551.766
+2017,NZL,New Zealand,29,Organic chemicals,113754574.737
+2018,NZL,New Zealand,29,Organic chemicals,118872526.0
+2013,OMN,Oman,29,Organic chemicals,1310903120.0
+2014,OMN,Oman,29,Organic chemicals,1845297269.554
+2015,OMN,Oman,29,Organic chemicals,1122758445.116
+2016,OMN,Oman,29,Organic chemicals,1075051541.737
+2017,OMN,Oman,29,Organic chemicals,1289001160.973
+2018,OMN,Oman,29,Organic chemicals,1293967646.872
+2013,PAK,Pakistan,29,Organic chemicals,39238251.0
+2014,PAK,Pakistan,29,Organic chemicals,54857346.0
+2015,PAK,Pakistan,29,Organic chemicals,6062618.0
+2016,PAK,Pakistan,29,Organic chemicals,5076315.0
+2017,PAK,Pakistan,29,Organic chemicals,7757532.413
+2018,PAK,Pakistan,29,Organic chemicals,7167261.01
+2013,PAN,Panama,29,Organic chemicals,3520268648.0
+2014,PAN,Panama,29,Organic chemicals,2234412240.0
+2015,PAN,Panama,29,Organic chemicals,2034639862.0
+2016,PAN,Panama,29,Organic chemicals,1824118095.0
+2017,PAN,Panama,29,Organic chemicals,1720283756.0
+2018,PAN,Panama,29,Organic chemicals,1602452275.0
+2013,PER,Peru,29,Organic chemicals,23986020.18
+2014,PER,Peru,29,Organic chemicals,18876159.28
+2015,PER,Peru,29,Organic chemicals,17582050.56
+2016,PER,Peru,29,Organic chemicals,17324283.04
+2017,PER,Peru,29,Organic chemicals,17629066.26
+2018,PER,Peru,29,Organic chemicals,21490272.94
+2013,PHL,Philippines,29,Organic chemicals,394070230.0
+2014,PHL,Philippines,29,Organic chemicals,887213823.0
+2015,PHL,Philippines,29,Organic chemicals,447386714.0
+2016,PHL,Philippines,29,Organic chemicals,384080238.0
+2017,PHL,Philippines,29,Organic chemicals,556442313.0
+2018,PHL,Philippines,29,Organic chemicals,359670893.0
+2014,PLW,Palau,29,Organic chemicals,250.0
+2013,POL,Poland,29,Organic chemicals,1801635637.0
+2014,POL,Poland,29,Organic chemicals,1748372976.0
+2015,POL,Poland,29,Organic chemicals,1295393679.0
+2016,POL,Poland,29,Organic chemicals,1308240967.0
+2017,POL,Poland,29,Organic chemicals,1520985574.0
+2018,POL,Poland,29,Organic chemicals,1748380659.0
+2013,PRT,Portugal,29,Organic chemicals,1252343086.0
+2014,PRT,Portugal,29,Organic chemicals,915513201.0
+2015,PRT,Portugal,29,Organic chemicals,714833552.509
+2016,PRT,Portugal,29,Organic chemicals,561296403.86
+2017,PRT,Portugal,29,Organic chemicals,717791058.659
+2018,PRT,Portugal,29,Organic chemicals,978418134.986
+2013,PRY,Paraguay,29,Organic chemicals,16976717.0
+2014,PRY,Paraguay,29,Organic chemicals,5819885.0
+2015,PRY,Paraguay,29,Organic chemicals,2625834.0
+2016,PRY,Paraguay,29,Organic chemicals,3582757.0
+2017,PRY,Paraguay,29,Organic chemicals,3659808.0
+2018,PRY,Paraguay,29,Organic chemicals,4945841.0
+2013,PSE,State of Palestine,29,Organic chemicals,142075.0
+2014,PSE,State of Palestine,29,Organic chemicals,135676.0
+2015,PSE,State of Palestine,29,Organic chemicals,189765.0
+2016,PSE,State of Palestine,29,Organic chemicals,114973.0
+2017,PSE,State of Palestine,29,Organic chemicals,175798.25
+2018,PSE,State of Palestine,29,Organic chemicals,55744.449
+2013,PYF,French Polynesia,29,Organic chemicals,2191.0
+2014,PYF,French Polynesia,29,Organic chemicals,30.0
+2015,PYF,French Polynesia,29,Organic chemicals,41.0
+2016,PYF,French Polynesia,29,Organic chemicals,55.872
+2017,PYF,French Polynesia,29,Organic chemicals,0.009
+2018,PYF,French Polynesia,29,Organic chemicals,10.366
+2013,QAT,Qatar,29,Organic chemicals,1570493293.741
+2014,QAT,Qatar,29,Organic chemicals,2538522905.0
+2015,QAT,Qatar,29,Organic chemicals,1440985804.443
+2016,QAT,Qatar,29,Organic chemicals,1105278207.317
+2017,QAT,Qatar,29,Organic chemicals,965286211.507
+2018,QAT,Qatar,29,Organic chemicals,1158941718.733
+2013,ROU,Romania,29,Organic chemicals,166790232.0
+2014,ROU,Romania,29,Organic chemicals,157365522.0
+2015,ROU,Romania,29,Organic chemicals,164256289.0
+2016,ROU,Romania,29,Organic chemicals,147898383.0
+2017,ROU,Romania,29,Organic chemicals,180535391.93
+2018,ROU,Romania,29,Organic chemicals,226870161.08
+2013,RUS,Russian Federation,29,Organic chemicals,4600466089.0
+2014,RUS,Russian Federation,29,Organic chemicals,4489927916.0
+2015,RUS,Russian Federation,29,Organic chemicals,2960777986.0
+2016,RUS,Russian Federation,29,Organic chemicals,2411163386.46
+2017,RUS,Russian Federation,29,Organic chemicals,3239705736.77
+2018,RUS,Russian Federation,29,Organic chemicals,4199516663.73
+2013,RWA,Rwanda,29,Organic chemicals,163460.777
+2014,RWA,Rwanda,29,Organic chemicals,122796.976
+2015,RWA,Rwanda,29,Organic chemicals,255116.187
+2016,RWA,Rwanda,29,Organic chemicals,406929.759
+2017,RWA,Rwanda,29,Organic chemicals,238757.843
+2018,RWA,Rwanda,29,Organic chemicals,331784.706
+2013,S19,"Other Asia, nes",29,Organic chemicals,12027870016.0
+2014,S19,"Other Asia, nes",29,Organic chemicals,11903606970.0
+2015,S19,"Other Asia, nes",29,Organic chemicals,8587754217.0
+2016,S19,"Other Asia, nes",29,Organic chemicals,7850267788.0
+2017,S19,"Other Asia, nes",29,Organic chemicals,9566450709.69
+2018,S19,"Other Asia, nes",29,Organic chemicals,11490596779.81
+2013,SAU,Saudi Arabia,29,Organic chemicals,13210884514.0
+2014,SAU,Saudi Arabia,29,Organic chemicals,13901699540.0
+2015,SAU,Saudi Arabia,29,Organic chemicals,10446263790.138
+2016,SAU,Saudi Arabia,29,Organic chemicals,8786768372.047
+2017,SAU,Saudi Arabia,29,Organic chemicals,10268978967.682
+2018,SAU,Saudi Arabia,29,Organic chemicals,14298426609.97
+2013,SDN,Sudan,29,Organic chemicals,10672199.0
+2014,SDN,Sudan,29,Organic chemicals,42284664.14
+2015,SDN,Sudan,29,Organic chemicals,8763960.0
+2016,SDN,Sudan,29,Organic chemicals,8170319.0
+2017,SDN,Sudan,29,Organic chemicals,10724942.0
+2018,SDN,Sudan,29,Organic chemicals,9563091.0
+2013,SEN,Senegal,29,Organic chemicals,3790771.0
+2014,SEN,Senegal,29,Organic chemicals,4677099.0
+2015,SEN,Senegal,29,Organic chemicals,3943247.0
+2016,SEN,Senegal,29,Organic chemicals,4358988.0
+2017,SEN,Senegal,29,Organic chemicals,4656213.411
+2018,SEN,Senegal,29,Organic chemicals,7256260.783
+2013,SGP,Singapore,29,Organic chemicals,18038376717.099
+2014,SGP,Singapore,29,Organic chemicals,18350199346.23
+2015,SGP,Singapore,29,Organic chemicals,15604134628.071
+2016,SGP,Singapore,29,Organic chemicals,15319526108.028
+2017,SGP,Singapore,29,Organic chemicals,15533430037.363
+2018,SGP,Singapore,29,Organic chemicals,16885224533.568
+2013,SLB,Solomon Isds,29,Organic chemicals,54846.364
+2017,SLB,Solomon Isds,29,Organic chemicals,160.654
+2018,SLB,Solomon Isds,29,Organic chemicals,150.708
+2014,SLE,Sierra Leone,29,Organic chemicals,1.0
+2016,SLE,Sierra Leone,29,Organic chemicals,15207.0
+2017,SLE,Sierra Leone,29,Organic chemicals,11157.928
+2018,SLE,Sierra Leone,29,Organic chemicals,8075.48
+2013,SLV,El Salvador,29,Organic chemicals,7572526.1
+2014,SLV,El Salvador,29,Organic chemicals,7012872.91
+2015,SLV,El Salvador,29,Organic chemicals,6752286.15
+2016,SLV,El Salvador,29,Organic chemicals,5983573.04
+2017,SLV,El Salvador,29,Organic chemicals,6974107.83
+2018,SLV,El Salvador,29,Organic chemicals,3672084.46
+2013,SRB,Serbia,29,Organic chemicals,147861170.0
+2014,SRB,Serbia,29,Organic chemicals,115715756.0
+2015,SRB,Serbia,29,Organic chemicals,96292832.0
+2016,SRB,Serbia,29,Organic chemicals,143459856.0
+2017,SRB,Serbia,29,Organic chemicals,219338341.0
+2018,SRB,Serbia,29,Organic chemicals,283564576.0
+2013,SUR,Suriname,29,Organic chemicals,78081.0
+2014,SUR,Suriname,29,Organic chemicals,476970.0
+2015,SUR,Suriname,29,Organic chemicals,118103.286
+2016,SUR,Suriname,29,Organic chemicals,2343730.847
+2017,SUR,Suriname,29,Organic chemicals,430049.979
+2018,SUR,Suriname,29,Organic chemicals,21372.293
+2013,SVK,Slovakia,29,Organic chemicals,458693342.169
+2014,SVK,Slovakia,29,Organic chemicals,389887117.08
+2015,SVK,Slovakia,29,Organic chemicals,299517261.595
+2016,SVK,Slovakia,29,Organic chemicals,245253244.522
+2017,SVK,Slovakia,29,Organic chemicals,265410450.008
+2018,SVK,Slovakia,29,Organic chemicals,310750822.08
+2013,SVN,Slovenia,29,Organic chemicals,290366280.0
+2014,SVN,Slovenia,29,Organic chemicals,355189427.0
+2015,SVN,Slovenia,29,Organic chemicals,267522550.0
+2016,SVN,Slovenia,29,Organic chemicals,247415784.71
+2017,SVN,Slovenia,29,Organic chemicals,313169950.07
+2018,SVN,Slovenia,29,Organic chemicals,366042823.0
+2013,SWE,Sweden,29,Organic chemicals,2370855052.591
+2014,SWE,Sweden,29,Organic chemicals,2083157453.682
+2015,SWE,Sweden,29,Organic chemicals,1929553606.572
+2016,SWE,Sweden,29,Organic chemicals,1753920577.992
+2017,SWE,Sweden,29,Organic chemicals,1570297975.414
+2018,SWE,Sweden,29,Organic chemicals,1652983660.384
+2013,SWZ,Eswatini,29,Organic chemicals,46774362.472
+2014,SWZ,Eswatini,29,Organic chemicals,43637119.436
+2015,SWZ,Eswatini,29,Organic chemicals,30445772.6
+2016,SWZ,Eswatini,29,Organic chemicals,19138762.747
+2017,SWZ,Eswatini,29,Organic chemicals,19333782.54
+2018,SWZ,Eswatini,29,Organic chemicals,15065390.808
+2014,SYC,Seychelles,29,Organic chemicals,24915.975
+2015,SYC,Seychelles,29,Organic chemicals,166.209
+2018,SYC,Seychelles,29,Organic chemicals,20.253
+2013,TGO,Togo,29,Organic chemicals,938245.027
+2014,TGO,Togo,29,Organic chemicals,39190.895
+2015,TGO,Togo,29,Organic chemicals,771054.285
+2016,TGO,Togo,29,Organic chemicals,1024406.334
+2017,TGO,Togo,29,Organic chemicals,159643.569
+2018,TGO,Togo,29,Organic chemicals,114694.227
+2013,THA,Thailand,29,Organic chemicals,6817647469.0
+2014,THA,Thailand,29,Organic chemicals,6014241919.0
+2015,THA,Thailand,29,Organic chemicals,4161770157.55
+2016,THA,Thailand,29,Organic chemicals,3779067242.88
+2017,THA,Thailand,29,Organic chemicals,4808691240.22
+2018,THA,Thailand,29,Organic chemicals,6188272411.93
+2014,TJK,Tajikistan,29,Organic chemicals,35300.0
+2015,TJK,Tajikistan,29,Organic chemicals,241.0
+2013,TLS,Timor-Leste,29,Organic chemicals,18125.0
+2017,TLS,Timor-Leste,29,Organic chemicals,34769.4
+2018,TLS,Timor-Leste,29,Organic chemicals,144189.9
+2013,TON,Tonga,29,Organic chemicals,1965.0
+2017,TON,Tonga,29,Organic chemicals,270.642
+2018,TON,Tonga,29,Organic chemicals,29.241
+2013,TTO,Trinidad and Tobago,29,Organic chemicals,1124153397.857
+2014,TTO,Trinidad and Tobago,29,Organic chemicals,1599806415.039
+2015,TTO,Trinidad and Tobago,29,Organic chemicals,1180896171.606
+2016,TTO,Trinidad and Tobago,29,Organic chemicals,675946948.946
+2017,TTO,Trinidad and Tobago,29,Organic chemicals,1256359218.599
+2018,TTO,Trinidad and Tobago,29,Organic chemicals,1437221801.918
+2013,TUN,Tunisia,29,Organic chemicals,4673844.0
+2014,TUN,Tunisia,29,Organic chemicals,5137904.0
+2015,TUN,Tunisia,29,Organic chemicals,3220785.0
+2016,TUN,Tunisia,29,Organic chemicals,4082650.0
+2017,TUN,Tunisia,29,Organic chemicals,5972135.798
+2018,TUN,Tunisia,29,Organic chemicals,7851536.749
+2013,TUR,Türkiye,29,Organic chemicals,676735631.0
+2014,TUR,Türkiye,29,Organic chemicals,578296715.0
+2015,TUR,Türkiye,29,Organic chemicals,496082496.0
+2016,TUR,Türkiye,29,Organic chemicals,490471077.0
+2017,TUR,Türkiye,29,Organic chemicals,684930284.0
+2018,TUR,Türkiye,29,Organic chemicals,694854198.0
+2013,TZA,United Rep. of Tanzania,29,Organic chemicals,755811.0
+2014,TZA,United Rep. of Tanzania,29,Organic chemicals,1136890.0
+2015,TZA,United Rep. of Tanzania,29,Organic chemicals,612380.0
+2016,TZA,United Rep. of Tanzania,29,Organic chemicals,254000.0
+2017,TZA,United Rep. of Tanzania,29,Organic chemicals,347004.05
+2018,TZA,United Rep. of Tanzania,29,Organic chemicals,377056.203
+2013,UGA,Uganda,29,Organic chemicals,1400407.0
+2014,UGA,Uganda,29,Organic chemicals,1059822.0
+2015,UGA,Uganda,29,Organic chemicals,2771706.0
+2016,UGA,Uganda,29,Organic chemicals,2165469.0
+2017,UGA,Uganda,29,Organic chemicals,2231269.71
+2018,UGA,Uganda,29,Organic chemicals,2467988.5
+2013,UKR,Ukraine,29,Organic chemicals,232520036.0
+2014,UKR,Ukraine,29,Organic chemicals,154147921.0
+2015,UKR,Ukraine,29,Organic chemicals,66518583.0
+2016,UKR,Ukraine,29,Organic chemicals,68573807.16
+2017,UKR,Ukraine,29,Organic chemicals,139501771.76
+2018,UKR,Ukraine,29,Organic chemicals,229546153.72
+2013,URY,Uruguay,29,Organic chemicals,21957363.0
+2014,URY,Uruguay,29,Organic chemicals,19421684.0
+2015,URY,Uruguay,29,Organic chemicals,20091944.0
+2016,URY,Uruguay,29,Organic chemicals,18257596.0
+2017,URY,Uruguay,29,Organic chemicals,29187670.0
+2018,URY,Uruguay,29,Organic chemicals,23846066.0
+2013,USA,USA,29,Organic chemicals,46600464525.0
+2014,USA,USA,29,Organic chemicals,42340487402.0
+2015,USA,USA,29,Organic chemicals,38755176681.0
+2016,USA,USA,29,Organic chemicals,33956460709.0
+2017,USA,USA,29,Organic chemicals,36279584874.0
+2018,USA,USA,29,Organic chemicals,40339200853.0
+2017,UZB,Uzbekistan,29,Organic chemicals,5250814.0
+2018,UZB,Uzbekistan,29,Organic chemicals,5089976.0
+2014,VCT,Saint Vincent and the Grenadines,29,Organic chemicals,120.755
+2016,VCT,Saint Vincent and the Grenadines,29,Organic chemicals,288.611
+2013,VEN,Venezuela,29,Organic chemicals,656532312.0
+2013,VNM,Viet Nam,29,Organic chemicals,175486930.0
+2014,VNM,Viet Nam,29,Organic chemicals,183109392.0
+2015,VNM,Viet Nam,29,Organic chemicals,172329384.0
+2016,VNM,Viet Nam,29,Organic chemicals,177925000.18
+2017,VNM,Viet Nam,29,Organic chemicals,192348579.2
+2018,VNM,Viet Nam,29,Organic chemicals,512150306.37
+2013,WSM,Samoa,29,Organic chemicals,216.0
+2014,WSM,Samoa,29,Organic chemicals,400.0
+2013,YEM,Yemen,29,Organic chemicals,35082.0
+2014,YEM,Yemen,29,Organic chemicals,80611.0
+2015,YEM,Yemen,29,Organic chemicals,31266.0
+2013,ZAF,South Africa,29,Organic chemicals,1321929202.346
+2014,ZAF,South Africa,29,Organic chemicals,1386176599.912
+2015,ZAF,South Africa,29,Organic chemicals,985070096.903
+2016,ZAF,South Africa,29,Organic chemicals,901207022.354
+2017,ZAF,South Africa,29,Organic chemicals,1145529965.185
+2018,ZAF,South Africa,29,Organic chemicals,1127106496.021
+2013,ZMB,Zambia,29,Organic chemicals,340084.954
+2014,ZMB,Zambia,29,Organic chemicals,1020972.283
+2015,ZMB,Zambia,29,Organic chemicals,1009261.51
+2016,ZMB,Zambia,29,Organic chemicals,4515858.263
+2017,ZMB,Zambia,29,Organic chemicals,13388890.626
+2018,ZMB,Zambia,29,Organic chemicals,26334733.865
+2013,ZWE,Zimbabwe,29,Organic chemicals,428763.24
+2014,ZWE,Zimbabwe,29,Organic chemicals,276626.52
+2015,ZWE,Zimbabwe,29,Organic chemicals,1370762.41
+2016,ZWE,Zimbabwe,29,Organic chemicals,273746.8
+2017,ZWE,Zimbabwe,29,Organic chemicals,191395.34
+2018,ZWE,Zimbabwe,29,Organic chemicals,29159.32

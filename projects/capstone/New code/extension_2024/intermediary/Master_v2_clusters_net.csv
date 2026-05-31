@@ -1,0 +1,151 @@
+Country Code,Country Name,Cluster_aggregate,Cluster_1995,Cluster_2010,Cluster_2023,Stability_aggregate,Stability_1995,Stability_2010,Stability_2023,Resource_Rich,RR_k3_aggregate,RR_stability_k3_aggregate,RR_k3_1995,RR_stability_k3_1995,RR_k3_2010,RR_stability_k3_2010,RR_k3_2023,RR_stability_k3_2023,RR_k4_aggregate,RR_stability_k4_aggregate,RR_k4_1995,RR_stability_k4_1995,RR_k4_2010,RR_stability_k4_2010,RR_k4_2023,RR_stability_k4_2023,RR_k5_aggregate,RR_stability_k5_aggregate,RR_k5_1995,RR_stability_k5_1995,RR_k5_2010,RR_stability_k5_2010,RR_k5_2023,RR_stability_k5_2023
+AFG,Afghanistan,Mining Specialists,,Mining Specialists,,1.0,,1.0,,False,,,,,,,,,,,,,,,,,,,,,,,,
+ALB,Albania,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+DZA,Algeria,Petrostates,Petrostates,Petrostates,,1.0,1.0,1.0,,True,2.0,1.0,2.0,1.0,1.0,1.0,,,3.0,1.0,2.0,1.0,3.0,1.0,,,2.0,1.0,2.0,1.0,1.0,1.0,,
+AND,Andorra,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+AGO,Angola,Petrostates,,Petrostates,Petrostates,1.0,,1.0,1.0,True,2.0,1.0,,,1.0,1.0,2.0,1.0,2.0,1.0,,,1.0,1.0,1.0,1.0,1.0,1.0,,,2.0,1.0,4.0,1.0
+ARG,Argentina,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+ARM,Armenia,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+AZE,Azerbaijan,Petrostates,,Petrostates,Petrostates,1.0,,1.0,1.0,True,2.0,1.0,,,1.0,1.0,2.0,1.0,2.0,1.0,,,1.0,1.0,1.0,1.0,1.0,1.0,,,2.0,1.0,1.0,1.0
+BHR,Bahrain,Unlabeled_1,,Unlabeled_3,Mining Specialists,1.0,,1.0,1.0,True,1.0,1.0,,,0.0,1.0,1.0,1.0,1.0,1.0,,,0.0,1.0,3.0,1.0,4.0,1.0,,,3.0,1.0,3.0,1.0
+BGD,Bangladesh,Mining Specialists,Unlabeled_0,Mining Specialists,,1.0,1.0,1.0,,False,,,,,,,,,,,,,,,,,,,,,,,,
+BLR,Belarus,Mining Specialists,,Mining Specialists,,1.0,,1.0,,False,,,,,,,,,,,,,,,,,,,,,,,,
+BLZ,Belize,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+BEN,Benin,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+BTN,Bhutan,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+BOL,Bolivia,Unlabeled_1,Mining Specialists,Unlabeled_3,Unlabeled_0,1.0,1.0,1.0,1.0,True,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,4.0,1.0,0.0,1.0,2.0,1.0
+BIH,Bosnia and Herzegovina,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+BWA,Botswana,Diverse Resource Exporters,,Unlabeled_4,Unlabeled_3,1.0,,1.0,1.0,True,0.0,1.0,,,2.0,1.0,0.0,1.0,0.0,1.0,,,2.0,1.0,2.0,1.0,0.0,1.0,,,4.0,1.0,0.0,1.0
+BRA,Brazil,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+BGR,Bulgaria,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+BFA,Burkina Faso,Diverse Resource Exporters,Unlabeled_0,Unlabeled_4,Unlabeled_3,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+BDI,Burundi,Diverse Resource Exporters,Unlabeled_0,Unlabeled_0,Unlabeled_0,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+CPV,Cabo Verde,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+KHM,Cambodia,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+CMR,Cameroon,Unlabeled_1,Unlabeled_4,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,True,2.0,1.0,2.0,1.0,0.0,1.0,2.0,1.0,3.0,1.0,3.0,1.0,0.0,1.0,1.0,1.0,2.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+CAF,Central African Republic,Diverse Resource Exporters,Unlabeled_0,Unlabeled_4,Unlabeled_3,1.0,1.0,1.0,1.0,True,0.0,1.0,0.0,1.0,2.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,2.0,1.0,2.0,1.0,0.0,1.0,4.0,1.0,4.0,1.0,0.0,1.0
+CHL,Chile,Mining Specialists,Mining Specialists,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,True,1.0,1.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,3.0,1.0,4.0,1.0,0.0,1.0,0.0,1.0,3.0,1.0
+CHN,China,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+COL,Colombia,Unlabeled_1,Unlabeled_4,Unlabeled_3,Oil Exporters,1.0,1.0,1.0,1.0,True,2.0,1.0,0.0,1.0,1.0,1.0,2.0,1.0,3.0,1.0,3.0,1.0,3.0,1.0,0.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+COM,Comoros,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+COD,"Congo, Dem. Rep.",Mining Specialists,,,Mining Specialists,1.0,,,1.0,True,1.0,1.0,,,,,1.0,1.0,1.0,1.0,,,,,3.0,1.0,3.0,1.0,,,,,3.0,1.0
+COG,"Congo, Rep.",Unlabeled_4,Petrostates,Petrostates,Petrostates,1.0,1.0,1.0,1.0,True,2.0,1.0,2.0,1.0,1.0,1.0,2.0,1.0,2.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,2.0,1.0,4.0,1.0
+CRI,Costa Rica,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+CIV,Cote d'Ivoire,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+HRV,Croatia,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+CUB,Cuba,Mining Specialists,,,,1.0,,,,False,,,,,,,,,,,,,,,,,,,,,,,,
+CZE,Czechia,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+DJI,Djibouti,Mining Specialists,,,Mining Specialists,1.0,,,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+DMA,Dominica,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+DOM,Dominican Republic,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+ECU,Ecuador,Unlabeled_1,Unlabeled_4,Unlabeled_3,Mining Specialists,1.0,1.0,1.0,1.0,True,2.0,1.0,2.0,1.0,1.0,1.0,2.0,1.0,3.0,1.0,3.0,1.0,3.0,1.0,0.0,1.0,2.0,1.0,1.0,1.0,2.0,1.0,1.0,1.0
+EGY,"Egypt, Arab Rep.",Mining Specialists,Unlabeled_4,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+SLV,El Salvador,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+EST,Estonia,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+SWZ,Eswatini,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+ETH,Ethiopia,Mining Specialists,Unlabeled_0,Unlabeled_0,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+FJI,Fiji,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+GAB,Gabon,Unlabeled_4,,Petrostates,Oil Exporters,1.0,,1.0,1.0,True,2.0,1.0,,,1.0,1.0,2.0,1.0,2.0,1.0,,,1.0,1.0,1.0,1.0,1.0,1.0,,,2.0,1.0,1.0,1.0
+GMB,"Gambia, The",Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+GEO,Georgia,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+GHA,Ghana,Diverse Resource Exporters,,Unlabeled_4,Unlabeled_0,1.0,,1.0,1.0,True,0.0,1.0,,,2.0,1.0,0.0,1.0,0.0,1.0,,,2.0,1.0,2.0,1.0,0.0,1.0,,,4.0,1.0,0.0,1.0
+GRD,Grenada,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+GTM,Guatemala,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+GIN,Guinea,Diverse Resource Exporters,Mining Specialists,,,1.0,1.0,,,True,0.0,1.0,0.0,1.0,,,,,0.0,1.0,0.0,1.0,,,,,0.0,1.0,4.0,1.0,,,,
+GNB,Guinea-Bissau,Mining Specialists,,,,1.0,,,,False,,,,,,,,,,,,,,,,,,,,,,,,
+GUY,Guyana,Diverse Resource Exporters,,Unlabeled_4,Oil Exporters,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+HTI,Haiti,Mining Specialists,Unlabeled_0,,,1.0,1.0,,,False,,,,,,,,,,,,,,,,,,,,,,,,
+HND,Honduras,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+HUN,Hungary,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+IND,India,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+IDN,Indonesia,Mining Specialists,Unlabeled_4,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+IRN,"Iran, Islamic Rep.",Unlabeled_4,,Petrostates,,1.0,,1.0,,True,2.0,1.0,,,1.0,1.0,,,2.0,1.0,,,3.0,1.0,,,1.0,1.0,,,2.0,1.0,,
+IRQ,Iraq,Petrostates,,Petrostates,,1.0,,1.0,,True,2.0,1.0,,,1.0,1.0,,,2.0,1.0,,,1.0,1.0,,,1.0,1.0,,,2.0,1.0,,
+JAM,Jamaica,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+JOR,Jordan,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+KAZ,Kazakhstan,Unlabeled_4,Mining Specialists,Petrostates,Oil Exporters,1.0,1.0,1.0,1.0,True,2.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,3.0,1.0,1.0,1.0,3.0,1.0,1.0,1.0,2.0,1.0,0.0,1.0,2.0,1.0,1.0,1.0
+KEN,Kenya,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+KIR,Kiribati,Mining Specialists,Unlabeled_0,Mining Specialists,,1.0,1.0,1.0,,False,,,,,,,,,,,,,,,,,,,,,,,,
+KWT,Kuwait,Petrostates,,Petrostates,Petrostates,1.0,,1.0,1.0,True,2.0,1.0,,,1.0,1.0,2.0,1.0,2.0,1.0,,,3.0,1.0,1.0,1.0,1.0,1.0,,,2.0,1.0,4.0,1.0
+KGZ,Kyrgyz Republic,Diverse Resource Exporters,Unlabeled_0,Unlabeled_4,Unlabeled_0,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+LAO,Lao PDR,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,True,0.0,1.0,,,0.0,1.0,0.0,1.0,0.0,1.0,,,0.0,1.0,0.0,1.0,4.0,1.0,,,0.0,1.0,2.0,1.0
+LVA,Latvia,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+LBN,Lebanon,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+LSO,Lesotho,Mining Specialists,,Mining Specialists,Unlabeled_0,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+LBR,Liberia,Mining Specialists,,,Mining Specialists,1.0,,,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+LBY,Libya,Petrostates,,Petrostates,,1.0,,1.0,,True,2.0,1.0,,,1.0,1.0,,,2.0,1.0,,,1.0,1.0,,,1.0,1.0,,,2.0,1.0,,
+LTU,Lithuania,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+MDG,Madagascar,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+MWI,Malawi,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+MYS,Malaysia,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+MDV,Maldives,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+MLI,Mali,Diverse Resource Exporters,,Unlabeled_4,Unlabeled_3,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+MLT,Malta,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+MRT,Mauritania,Diverse Resource Exporters,,Unlabeled_0,Unlabeled_0,1.0,,1.0,1.0,True,0.0,1.0,,,2.0,1.0,0.0,1.0,0.0,1.0,,,2.0,1.0,2.0,1.0,0.0,1.0,,,0.0,1.0,0.0,1.0
+MUS,Mauritius,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+MEX,Mexico,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+FSM,"Micronesia, Fed. Sts.",Mining Specialists,,Mining Specialists,,1.0,,1.0,,False,,,,,,,,,,,,,,,,,,,,,,,,
+MDA,Moldova,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+MNG,Mongolia,Diverse Resource Exporters,,,Oil Exporters,1.0,,,1.0,True,0.0,1.0,,,,,0.0,1.0,0.0,1.0,,,,,0.0,1.0,0.0,1.0,,,,,2.0,1.0
+MNE,Montenegro,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+MAR,Morocco,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+MOZ,Mozambique,Mining Specialists,Unlabeled_0,Mining Specialists,Oil Exporters,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+MMR,Myanmar,Mining Specialists,,Unlabeled_3,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+NAM,Namibia,Diverse Resource Exporters,,Unlabeled_0,Unlabeled_0,1.0,,1.0,1.0,True,0.0,1.0,,,2.0,1.0,0.0,1.0,0.0,1.0,,,2.0,1.0,2.0,1.0,0.0,1.0,,,0.0,1.0,2.0,1.0
+NPL,Nepal,Mining Specialists,,Mining Specialists,,1.0,,1.0,,False,,,,,,,,,,,,,,,,,,,,,,,,
+NIC,Nicaragua,Mining Specialists,Unlabeled_0,Unlabeled_0,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+NER,Niger,Diverse Resource Exporters,Mining Specialists,Unlabeled_0,Unlabeled_0,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+NGA,Nigeria,Petrostates,,Petrostates,Oil Exporters,1.0,,1.0,1.0,True,2.0,1.0,,,1.0,1.0,2.0,1.0,2.0,1.0,,,1.0,1.0,1.0,1.0,1.0,1.0,,,2.0,1.0,4.0,1.0
+MKD,North Macedonia,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+OMN,Oman,Unlabeled_4,Petrostates,Petrostates,Oil Exporters,1.0,1.0,1.0,1.0,True,2.0,1.0,2.0,1.0,1.0,1.0,2.0,1.0,2.0,1.0,2.0,1.0,3.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,2.0,1.0,1.0,1.0
+PAK,Pakistan,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+PLW,Palau,Mining Specialists,,,,1.0,,,,False,,,,,,,,,,,,,,,,,,,,,,,,
+PAN,Panama,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+PNG,Papua New Guinea,Diverse Resource Exporters,,,Oil Exporters,1.0,,,1.0,True,0.0,1.0,,,,,0.0,1.0,0.0,1.0,,,,,0.0,1.0,0.0,1.0,,,,,2.0,1.0
+PRY,Paraguay,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+PER,Peru,Diverse Resource Exporters,Mining Specialists,Unlabeled_0,Unlabeled_0,1.0,1.0,1.0,1.0,True,0.0,1.0,0.0,1.0,2.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,2.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,2.0,1.0
+PHL,Philippines,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+POL,Poland,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+QAT,Qatar,Petrostates,,Petrostates,Petrostates,1.0,,1.0,1.0,True,2.0,1.0,,,0.0,1.0,2.0,1.0,3.0,1.0,,,3.0,1.0,1.0,1.0,2.0,1.0,,,1.0,1.0,1.0,1.0
+ROU,Romania,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+RUS,Russian Federation,Unlabeled_4,,Petrostates,,1.0,,1.0,,True,2.0,1.0,,,1.0,1.0,,,3.0,1.0,,,3.0,1.0,,,2.0,1.0,,,1.0,1.0,,
+RWA,Rwanda,Mining Specialists,,Mining Specialists,,1.0,,1.0,,False,,,,,,,,,,,,,,,,,,,,,,,,
+WSM,Samoa,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+STP,Sao Tome and Principe,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+SAU,Saudi Arabia,Petrostates,Petrostates,Petrostates,Petrostates,1.0,1.0,1.0,1.0,True,2.0,1.0,2.0,1.0,1.0,1.0,2.0,1.0,2.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,2.0,1.0,4.0,1.0
+SEN,Senegal,Mining Specialists,,Mining Specialists,Unlabeled_0,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+SRB,Serbia,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+SYC,Seychelles,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+SLE,Sierra Leone,Mining Specialists,,,,1.0,,,,False,,,,,,,,,,,,,,,,,,,,,,,,
+SVK,Slovak Republic,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+SVN,Slovenia,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+SLB,Solomon Islands,Mining Specialists,,Mining Specialists,,1.0,,1.0,,True,0.0,1.0,,,0.0,1.0,,,0.0,1.0,,,0.0,1.0,,,0.0,1.0,,,0.0,1.0,,
+ZAF,South Africa,Diverse Resource Exporters,,Unlabeled_0,Unlabeled_0,1.0,,1.0,1.0,True,0.0,1.0,,,2.0,1.0,0.0,1.0,0.0,1.0,,,2.0,1.0,0.0,1.0,0.0,1.0,,,0.0,1.0,2.0,1.0
+LKA,Sri Lanka,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+KNA,St. Kitts and Nevis,Mining Specialists,Unlabeled_0,Mining Specialists,,1.0,1.0,1.0,,False,,,,,,,,,,,,,,,,,,,,,,,,
+LCA,St. Lucia,Mining Specialists,Unlabeled_0,Unlabeled_0,,1.0,1.0,1.0,,False,,,,,,,,,,,,,,,,,,,,,,,,
+VCT,St. Vincent and the Grenadines,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+SDN,Sudan,Unlabeled_1,Unlabeled_0,Petrostates,,1.0,1.0,1.0,,True,2.0,1.0,0.0,1.0,1.0,1.0,,,3.0,1.0,0.0,1.0,1.0,1.0,,,2.0,1.0,0.0,1.0,2.0,1.0,,
+SUR,Suriname,Diverse Resource Exporters,Unlabeled_0,Mining Specialists,Unlabeled_3,1.0,1.0,1.0,1.0,True,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,2.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0
+SYR,Syrian Arab Republic,Unlabeled_1,,Unlabeled_3,,1.0,,1.0,,False,,,,,,,,,,,,,,,,,,,,,,,,
+TJK,Tajikistan,Mining Specialists,,,Mining Specialists,1.0,,,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+TZA,Tanzania,Diverse Resource Exporters,,Unlabeled_0,Unlabeled_0,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+THA,Thailand,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+TLS,Timor-Leste,Mining Specialists,,,Mining Specialists,1.0,,,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+TGO,Togo,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+TON,Tonga,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+TTO,Trinidad and Tobago,Unlabeled_1,Unlabeled_4,Unlabeled_3,Mining Specialists,1.0,1.0,1.0,1.0,True,1.0,1.0,0.0,1.0,0.0,1.0,2.0,1.0,1.0,1.0,3.0,1.0,0.0,1.0,0.0,1.0,4.0,1.0,1.0,1.0,3.0,1.0,1.0,1.0
+TUN,Tunisia,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+TUR,Turkiye,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+UGA,Uganda,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+UKR,Ukraine,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+ARE,United Arab Emirates,Unlabeled_1,,Unlabeled_3,Oil Exporters,1.0,,1.0,1.0,True,2.0,1.0,,,1.0,1.0,2.0,1.0,3.0,1.0,,,3.0,1.0,1.0,1.0,2.0,1.0,,,1.0,1.0,1.0,1.0
+URY,Uruguay,Mining Specialists,Unlabeled_0,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+UZB,Uzbekistan,Diverse Resource Exporters,,,Unlabeled_0,1.0,,,1.0,True,0.0,1.0,,,,,0.0,1.0,0.0,1.0,,,,,2.0,1.0,0.0,1.0,,,,,0.0,1.0
+VUT,Vanuatu,Mining Specialists,,Mining Specialists,,1.0,,1.0,,False,,,,,,,,,,,,,,,,,,,,,,,,
+VEN,"Venezuela, RB",Petrostates,Petrostates,Petrostates,,1.0,1.0,1.0,,True,2.0,1.0,2.0,1.0,1.0,1.0,,,2.0,1.0,2.0,1.0,3.0,1.0,,,1.0,1.0,2.0,1.0,2.0,1.0,,
+VNM,Viet Nam,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+PSE,West Bank and Gaza,Mining Specialists,,Mining Specialists,Mining Specialists,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+YEM,"Yemen, Rep.",Mining Specialists,,Petrostates,Unlabeled_0,1.0,,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,
+ZMB,Zambia,Mining Specialists,Unlabeled_2,Mining Specialists,Mining Specialists,1.0,1.0,1.0,1.0,True,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,3.0,1.0,3.0,1.0,3.0,1.0,0.0,1.0,3.0,1.0
+ZWE,Zimbabwe,Diverse Resource Exporters,Unlabeled_0,Unlabeled_0,Unlabeled_0,1.0,1.0,1.0,1.0,False,,,,,,,,,,,,,,,,,,,,,,,,

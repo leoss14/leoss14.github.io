@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Beyond the Resource Curse: industrial upgrading in resource-rich emerging markets. Capstone with Moody's Ratings on the structural conditions that let resource-rich economies build value-added industries, using fixed-effects panel regression and machine learning across 107 developing countries from 1995 to 2019; clustering is fit on a 56-country resource-dependent subsample.">
+    <meta name="description" content="Beyond the Resource Curse: industrial upgrading in resource-rich emerging markets. Capstone with Moody's Ratings on the structural conditions that let resource-rich economies build value-added industries. The analysis uses Comtrade HS27 sub-codes (coal, crude oil, refined oil, gas) plus HS26 ores and HS71 precious metals, with MICE multiple imputation, panel fixed effects, and a regularised ML ensemble with SHAP feature importance across 73 countries from 1995 to 2024.">
     <meta property="og:title" content="Beyond the Resource Curse | Leonardo Luksic">
-    <meta property="og:description" content="Capstone with Moody's Ratings on industrial upgrading in resource-rich emerging markets. Three pillars (financial depth, electricity access, human capital) consistently predict economic complexity gains across 107 developing economies.">
+    <meta property="og:description" content="Capstone with Moody's Ratings on industrial upgrading in resource-rich emerging markets. Trade-side resource exposure depresses economic complexity by 0.43 ECI points per unit share in two-way fixed effects, robust across imputation strategies. Three post-2019 commodity-group interactions test for COVID-period shifts; none clears 10% significance under the headline specification.">
     <meta property="og:type" content="website">
     <title>Beyond the Resource Curse | Leonardo Luksic</title>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/project-shared.css">
-    <!-- Capstone page-local overrides -->
+    <!-- Page-local style overrides -->
     <style>
         /* Tighter vertical rhythm across the document */
         section { padding-top: 2rem; padding-bottom: 2rem; }
@@ -21,23 +21,31 @@
         .project-hero .hero-inner { max-width: 820px; margin: 0 auto; text-align: center; }
         .project-hero .section-label { display: block; }
         .project-hero h1 { text-align: center; font-size: clamp(2.6rem, 4vw, 3.3rem); line-height: 1.1; margin: 0.6rem 0 1.1rem; }
-        .project-hero .hero-rule { display: block; width: 60px; height: 3px; background: var(--accent); margin: 0 auto 1.5rem; border: 0; }
         .project-hero .subtitle { text-align: center; max-width: none; margin: 0; font-size: 1.05rem; line-height: 1.6; color: var(--text-secondary); }
         /* Heading scale (more compact than default) */
         section h2 { font-size: 1.55rem; line-height: 1.25; margin-top: 0; margin-bottom: 0.9rem; }
         section h3 { font-size: 1.2rem; line-height: 1.3; margin-top: 1.5rem; margin-bottom: 0.6rem; }
         section h4 { font-size: 1.02rem; }
-        /* Card headers: ensure inline h4 inherits white on navy (h3 was the only one explicitly set globally) */
+        /* Card headers: inline h4 inherits white on navy */
         .card-header h4 { color: var(--white); }
-        /* Small explanatory line under a chart, sits inside viz-container below the iframe */
+        /* Small explanatory line under a chart */
         .viz-container .viz-note { margin: 0; padding: 0.7rem clamp(1rem, 3vw, 1.5rem) 0.85rem; background: var(--grey-100); border-top: 1px solid var(--border); font-size: 0.9rem; line-height: 1.55; color: var(--text-muted); }
-        /* Vertical box stack used in the ML section (mirrors cluster-card row pattern) */
+        /* Vertical box stack used in the ML and findings sections */
         .ml-row { border-left: 3px solid; padding: 0.7rem 1.15rem; background: var(--grey-100); }
         .ml-row h4 { margin: 0 0 0.25rem; font-size: 1rem; color: var(--navy); }
         .ml-row p { margin: 0; font-size: 0.95rem; line-height: 1.65; }
-        /* Compact paragraph for the Variable Groups note-box (one line per group) */
+        /* Compact paragraph for the Variable Groups note-box */
         .var-line { margin: 0 0 0.3rem; }
         .var-line:last-child { margin-bottom: 0; }
+        /* KPI strip used on the headline-findings panel */
+        .kpi-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; margin: 1rem 0 0.4rem; }
+        .kpi-strip .kpi { background: var(--grey-100); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1rem; }
+        .kpi-strip .kpi .v { font-family: var(--font-mono); font-size: 1.45rem; color: var(--navy); font-weight: 600; line-height: 1.1; }
+        .kpi-strip .kpi .l { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.25rem; line-height: 1.35; }
+        @media (max-width: 720px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+        /* Sub-code spec row for cluster transitions */
+        .traj-row { border-left: 3px solid var(--navy); background: var(--grey-100); padding: 0.6rem 1rem; margin-bottom: 0.5rem; font-size: 0.95rem; line-height: 1.5; }
+        .traj-row b { color: var(--navy); }
     </style>
     <!-- MathJax for equation rendering -->
     <script>
@@ -76,6 +84,13 @@
         <div class="hero-inner">
             <span class="section-label">Capstone with Moody's Ratings</span>
             <h1>Beyond the Resource Curse</h1>
+            <p class="subtitle">
+                Do natural resources constrain or enable economic diversification? The project
+                tests this on a 73-country panel from 1995 to 2024, combining panel fixed-effects
+                regressions, k-means clustering on commodity export profiles, and a machine
+                learning ensemble with SHAP-based feature attribution. Case studies on the
+                Republic of Congo, Azerbaijan, and Chile.
+            </p>
         </div>
     </section>
 
@@ -92,56 +107,73 @@
             country? The analysis tests whether the resource curse operates uniformly or
             whether its severity depends on the type of resource, the strength of
             institutions, and on whether human capital investment can overcome the
-            structural disadvantages of resource dependence.
+            structural disadvantages of resource dependence. The research was
+            developed with Moody&rsquo;s Ratings as part of their sovereign
+            credit work on resource-dependent economies.
         </p>
 
         <h3>Analytical Approach</h3>
         <p>
-            The project combines two quantitative strategies with three qualitative case
-            studies. Each strategy answers a different question, and the case studies
-            illustrate how the binding constraint varies by country context.
+            The project combines three quantitative strategies. Each strategy
+            answers a different question, and reading them together brackets the
+            headline finding.
         </p>
 
         <div class="content-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 0.75rem;">
             <div class="content-card">
                 <div class="card-header"><h4 style="margin: 0;">Unsupervised Learning</h4></div>
                 <div class="card-body">
-                    <p>PCA reduces the data to its main dimensions; K-means assigns each
-                    country to one of four clusters based on its resource and development
-                    profile, providing structural peer groups for comparison.</p>
+                    <p>To understand the resource profile of different
+                    extractive countries, we use export data to divide them
+                    into groups (or clusters). Principal Component Analysis
+                    (PCA) reduces the data to its main dimensions, and
+                    K-means then assigns each country to one of four clusters
+                    based on its resource and development profile.</p>
                 </div>
             </div>
             <div class="content-card">
                 <div class="card-header"><h4 style="margin: 0;">Panel Econometrics</h4></div>
                 <div class="card-body">
-                    <p>Fixed-effects panel regression estimates within-country
-                    relationships between resource production and economic complexity.
-                    Country and year fixed effects absorb unobserved heterogeneity;
-                    standard errors clustered at the country level.</p>
+                    <p>To estimate how resource exposure affects
+                    complexity, we run a fixed-effects panel regression on
+                    resource-exporting countries between 1995 and 2024.
+                    Country and year fixed effects absorb time-invariant
+                    heterogeneity and common shocks, so identification
+                    comes from within-country variation. Post-2019
+                    interaction terms test for COVID-period shifts.</p>
                 </div>
             </div>
             <div class="content-card">
                 <div class="card-header"><h4 style="margin: 0;">Machine Learning</h4></div>
                 <div class="card-body">
-                    <p>Seven algorithms (regularised linear models and tree-based
-                    ensembles) test how well resource and institutional variables predict
-                    complexity out of sample. SHAP decomposes predictions to identify
-                    which variables carry the most weight.</p>
+                    <p>We run a series of predictive models to test how
+                    well resource and institutional variables predict
+                    complexity out of sample. This serves two purposes:
+                    it cross-checks the panel regression using methods
+                    that do not impose a linear shape on the relationship,
+                    and it produces a tool that can forecast complexity
+                    going forward. We also report which variables carry
+                    the most weight in those predictions.</p>
                 </div>
             </div>
         </div>
 
-        <h3>Three Structural Pillars</h3>
+        <h3>Main Findings</h3>
         <p>
-            Across the econometric and machine learning analyses, three structural
-            variables consistently predict gains in economic complexity:
-            <strong>domestic credit to the private sector</strong> (financial depth),
-            <strong>access to electricity</strong> (energy infrastructure), and the
-            <strong>Human Capital Index</strong> (workforce education and health).
-            Resource intensity, on its own, is associated with lower complexity in the
-            headline regression and does not predict gains in either approach.
-            Investment, infrastructure, and education are the channels that allow
-            resource-rich economies to convert extraction rents into productive capacity.
+            On a panel of 73 developing economies from 1995 to 2024, a
+            one percentage point shift of the export basket toward natural
+            resources is associated with a 0.0043-point fall in the
+            Economic Complexity Index within country, controlling for
+            global shocks (&beta; = &minus;0.43 per full-range share unit,
+            significant at the 1% level). Identification comes from
+            country-level basket shifts over time: under pooled OLS
+            without country and year fixed effects the same coefficient
+            collapses to &minus;0.08 and is statistically indistinguishable
+            from zero. In the machine learning ensemble the largest
+            non-resource predictors of ECI are human capital and
+            manufacturing share. Three post-2019 commodity-group
+            interactions test for COVID-period shifts; none clears 10%
+            significance under the headline specification.
         </p>
     </section>
 
@@ -152,80 +184,76 @@
 
         <h3>Panel Construction</h3>
         <p>
-            The dataset spans 1995 to 2019 and draws on six primary sources: World Bank
-            World Development Indicators, IMF World Economic Outlook and Capital Stock,
-            V-Dem governance indicators, Penn World Table 10.01, CEPII GeoDist, and
-            commodity production data (Energy Institute, USGS, Our World in Data).
-            The fixed-effects panel regression and the ML pipeline use a balanced panel
-            of <strong>107 developing economies</strong>, defined by the 1995 World
-            Bank high-income filter with the six Gulf states force-included. The cluster
-            analysis is fit on a tighter <strong>56-country resource-dependent
-            subsample</strong> (forest-adjusted natural resource rents above 1% of GDP
-            in 1995). Imputation procedure, commodity aggregation, and the full
-            sample-definition criteria are detailed in the
+            Data are drawn from five primary sources: trade flows by commodity
+            (UN Comtrade), economic complexity (Atlas of Economic Complexity),
+            macroeconomic indicators (World Bank WDI and IMF WEO), human
+            capital and capital stock (Penn World Tables), and governance
+            (V-Dem). The 73-country sample used in the regression and ML
+            pipelines is the subset of a 115-country candidate panel (defined
+            by the 1995 World Bank high-income filter with the six Gulf
+            states force-included) that has continuous Comtrade reporting
+            across the panel window.
+        </p>
+        <p>
+            The cluster analysis is fit on a tighter subsample to identify
+            production types within resource-intensive countries. This
+            differentiates hydrocarbon-dependent countries (Qatar and much of
+            the Gulf) from base-metals exporters (Chile, Zambia, Democratic
+            Republic of the Congo). Sample definition, MICE imputation
+            procedure, and commodity aggregation are detailed in the
             <a href="#data-appendix" style="color: var(--accent);">data appendix</a>.
         </p>
 
         <h3>Global Resource Production Patterns</h3>
         <p>
-            Before testing the resource curse, the chart below maps where natural
-            resources are actually produced. The distribution is extremely uneven: a
-            handful of countries account for the vast majority of global output.
+            Natural resources show up in two places: in production (where
+            they come out of the ground) and in export baskets (where they
+            leave the country). Both maps below are interactive. The
+            production map carries dropdowns for resource type (total, oil,
+            gas, coal, metals) and view (absolute, per capita, % of GDP);
+            the export-share map switches between gross exports (commodity
+            exports as a share of total) and net exports (commodity exports
+            minus same-category imports, as a share of total). The gap
+            between production and net exports identifies re-export hubs
+            and downstream processors, which is the empirical reason this
+            project's headline regressor is built from trade flows rather
+            than production.
         </p>
 
         <div class="viz-container">
-            <h4>Resource Production Intensity (Per Capita)</h4>
+            <h4>Resource Production Intensity</h4>
             <iframe loading="lazy"
-                src="outputs/22_production_intensity_map.html"
-                style="height:520px; width:100%;"></iframe>
-        </div>
-
-        <div class="note-box" style="margin-top: 1.75rem;">
-            <h4>Resource Diversity &amp; Intensity (Top 5, 2019)</h4>
-            <p>
-                Three descriptive rankings on the raw production data.
-                <em>Diversity</em> measures how broadly a country&rsquo;s output is
-                spread across resource types (oil, gas, coal, metals): a country
-                producing many resources at scale ranks higher than one producing
-                only one. <em>Intensity</em> is total production value as a share
-                of GDP. <em>Absolute</em> is total production value in USD. None
-                of these enters the regression; they describe the global production
-                landscape, not the channels through which the resource curse operates.
+                    src="outputs/22_production_intensity_map.html?v=20260523d"
+                    style="height:560px; width:100%;"
+                    title="Resource production intensity, world map"></iframe>
+            <p class="viz-note">
+                Country-level production of oil, gas, coal, and metals.
+                Dropdowns at the top let the reader switch resource type
+                and view (absolute USD, per capita, or share of GDP); the
+                year slider underneath covers 1995 to 2019. Production is
+                shown here for geographic context; the regression and ML
+                pipelines below use trade flows, not production, as the
+                resource measure.
             </p>
-            <table class="results-table" style="margin: 1rem 0 0; font-size: 0.95rem;">
-                <tbody>
-                    <tr>
-                        <td><strong>Most Diversified</strong></td>
-                        <td>South Africa (0.77), Australia (0.77), Morocco (0.67), T&uuml;rkiye (0.66), DRC (0.57)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Highest Intensity (% of GDP)</strong></td>
-                        <td>Kuwait (15.4%), Qatar (12.5%), Iraq (10.5%), Mongolia (9.5%), Oman (8.3%)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Largest Absolute (USD)</strong></td>
-                        <td>China ($280B), USA ($273B), Russia ($201B), Saudi Arabia ($131B), Canada ($82B)</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
 
-        <h3>Bivariate Correlations with ECI</h3>
-        <p>
-            Before moving to the multivariate models, the chart below shows simple
-            Pearson correlations between each candidate variable and ECI, pooled across
-            countries and years. Human capital, financial depth (domestic credit), and
-            access to electricity emerge as the strongest positive associations; oil
-            rents and resource production carry the strongest negative ones. These
-            descriptive correlations motivate the structural variables tested in the
-            regression and ML stages.
-        </p>
-
         <div class="viz-container">
-            <h4>Pearson Correlations with ECI</h4>
+            <h4>Resource Export Share</h4>
             <iframe loading="lazy"
-                    src="outputs/04_correlation_bar.html"
-                    style="height:600px; width:100%;"></iframe>
+                    src="New%20code/extension_2024/Graphics/NB1/resource_export_share_map.html?v=20260523d"
+                    style="height:560px; width:100%;"
+                    title="Wide resource share of total exports, gross/net dropdown"></iframe>
+            <p class="viz-note">
+                Country-level mean of the wide resource share across the
+                1995 to 2024 window. The dropdown switches between gross
+                and net views. Gross is bounded at zero; net can go
+                slightly negative for services-heavy economies because the
+                denominator excludes services revenue while commodity
+                imports are still subtracted. The net colour scale is
+                clipped to [-1, +1] so the visual range matches the gross
+                view; a handful of services-heavy outliers reach more
+                extreme values and appear at the endpoint colour.
+            </p>
         </div>
     </section>
 
@@ -233,86 +261,136 @@
     <!-- CLUSTERING -->
     <section id="findings">
         <span class="section-label">Clustering</span>
-        <h2>Country Clustering</h2>
+        <h2>Resource-Reliant Country Clusters</h2>
 
         <p>
-            Resource-dependent economies vary widely: petrostates with minimal
-            manufacturing, mining-led exporters with growing industrial bases, and
-            diversified producers operating at moderate scale across multiple commodities.
-            The 56 countries with adjusted natural resource rents above 1% of GDP in 1995
-            are grouped by similarity across three subsoil rent shares (oil, gas, mineral,
-            all as % of GDP) and log production per capita. K-means with k=4 is fit on
-            country-level means across the 1995-2019 panel, so cluster assignments
-            reflect each country&rsquo;s structural resource profile rather than a single
-            year&rsquo;s outcome. The remaining 51 panel countries are tagged
-            &ldquo;Non-resource-dependent&rdquo;. Cluster names are derived from each
-            centroid; full diagnostics are in the
-            <a href="#appendix" style="color: var(--accent);">appendix</a>.
+            Resource-rich countries do not all look the same. Some run on
+            crude oil, others on copper or iron, others on gold and
+            diamonds, others on a mix of extractive commodities without a
+            single dominant category. To make the variation concrete, the
+            64 countries whose mean resource exports exceed 40% of total
+            exports between 1995 and 2024 are grouped by similarity across
+            seven commodity shares (coal, crude oil, refined oil, gas,
+            ores, base metals, precious metals). K-means with k = 4
+            produces the four archetypes described below.
         </p>
 
-            <div style="display: flex; flex-direction: column; gap: 0.6rem; margin: 1rem 0 0;">
-                <div style="border-left: 3px solid #2A9D8F; padding: 0.55rem 1rem; background: var(--grey-100);">
-                    <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Diversified Producers <span style="color: var(--text-muted); font-weight: 400;">(29)</span></h4>
-                    <p style="margin: 0; font-size: 0.93rem;">Argentina, China, Dominican Republic, India, Indonesia, Malaysia, Mexico, South Africa. Modest resource intensity across multiple categories (total natural-resource rents averaging about 6% of GDP); growing manufacturing sectors and middle-income status.</p>
-                </div>
-                <div style="border-left: 3px solid #457B9D; padding: 0.55rem 1rem; background: var(--grey-100);">
-                    <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Oil Exporters <span style="color: var(--text-muted); font-weight: 400;">(15)</span></h4>
-                    <p style="margin: 0; font-size: 0.93rem;">Angola, Iran, Iraq, Kazakhstan, Saudi Arabia, UAE, Venezuela. Oil-dominated rent profile (oil rents averaging about 30% of GDP, gas share negligible); wide spread of institutional strength within the group.</p>
-                </div>
-                <div style="border-left: 3px solid #E63946; padding: 0.55rem 1rem; background: var(--grey-100);">
-                    <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Petrostates <span style="color: var(--text-muted); font-weight: 400;">(6)</span></h4>
-                    <p style="margin: 0; font-size: 0.93rem;">Algeria, Bahrain, Qatar, Russia, Trinidad and Tobago, Uzbekistan. Mixed hydrocarbon profile with a substantial natural-gas component alongside oil (gas rents averaging about 5% of GDP, the highest of any cluster); total hydrocarbon rents around 20% of GDP.</p>
-                </div>
-                <div style="border-left: 3px solid #E9C46A; padding: 0.55rem 1rem; background: var(--grey-100);">
-                    <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Mining Exporters <span style="color: var(--text-muted); font-weight: 400;">(6)</span></h4>
-                    <p style="margin: 0; font-size: 0.93rem;">Chile, Guinea, Mauritania, Mongolia, Papua New Guinea, Peru. Metals and minerals dominate the rent profile (mineral rents averaging about 7% of GDP); downstream processing varies substantially within the group.</p>
-                </div>
+        <div style="display: flex; flex-direction: column; gap: 0.6rem; margin: 1rem 0 0;">
+            <div style="border-left: 3px solid #2A9D8F; padding: 0.55rem 1rem; background: var(--grey-100);">
+                <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Mixed Extractives <span style="color: var(--text-muted); font-weight: 400;">(N = 20)</span></h4>
+                <p style="margin: 0; font-size: 0.93rem;"><strong>Examples include:</strong> Mongolia, Peru, Papua New Guinea, Bolivia, Mauritania, Indonesia, Egypt, South Africa. Substantial extractive exposure with no single dominant commodity; ores, precious metals, and base metals each contribute below 10% of total exports.</p>
             </div>
+            <div style="border-left: 3px solid #457B9D; padding: 0.55rem 1rem; background: var(--grey-100);">
+                <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Hydrocarbon Petrostates <span style="color: var(--text-muted); font-weight: 400;">(N = 23)</span></h4>
+                <p style="margin: 0; font-size: 0.93rem;"><strong>Examples include:</strong> Saudi Arabia, Iraq, Nigeria, Angola, Kuwait, Russia, Qatar, Azerbaijan. Crude oil dominates the export basket (around 60% of total exports on average), with smaller shares of refined oil and gas and limited downstream processing.</p>
+            </div>
+            <div style="border-left: 3px solid #E63946; padding: 0.55rem 1rem; background: var(--grey-100);">
+                <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Base-Metals Exporters <span style="color: var(--text-muted); font-weight: 400;">(N = 9)</span></h4>
+                <p style="margin: 0; font-size: 0.93rem;"><strong>Examples include:</strong> Zambia, Democratic Republic of the Congo, Chile, Mozambique, Bahrain, Montenegro, Tajikistan, Ukraine. Copper, cobalt, iron, and aluminium make up around 30% of total exports.</p>
+            </div>
+            <div style="border-left: 3px solid #E9C46A; padding: 0.55rem 1rem; background: var(--grey-100);">
+                <h4 style="margin: 0 0 0.2rem; font-size: 1rem;">Precious Metals and Stones <span style="color: var(--text-muted); font-weight: 400;">(N = 12)</span></h4>
+                <p style="margin: 0; font-size: 0.93rem;"><strong>Examples include:</strong> Botswana, Mali, Ghana, Guinea, Burkina Faso, Central African Republic, Suriname, Tanzania. Gold and diamonds dominate the typical export basket (around 35% of total exports on average).</p>
+            </div>
+        </div>
 
         <h3>Cluster Geography</h3>
 
-        <p>
-            The map below shows where each cluster sits geographically. Petrostates
-            cluster around the Gulf and the Caspian; mining exporters are spread
-            across the Americas, Africa, and Central Asia; diversified producers
-            cover most of the larger emerging economies. The second chart compares
-            how the Economic Complexity Index has moved within each cluster over
-            time. Diversified Producers and Mining Exporters track close to the
-            global median, while Petrostates and Oil Exporters stay well below it,
-            with little catch-up over the period.
-        </p>
-
         <div class="viz-container">
-            <h4>Country Clusters</h4>
+            <h4>Aggregate Cluster Map</h4>
             <iframe loading="lazy"
-                    src="outputs/05_cluster_world_map.html"
+                    src="New%20code/extension_2024/Graphics/NB3/map_RR_k4_aggregate.html?v=20260523d"
                     style="height:560px; width:100%;"
-                    title="Cluster Map"></iframe>
+                    title="Aggregate cluster map"></iframe>
             <p class="viz-note">
-                K-means with k=4, fit on country-level means across 1995-2019. Each
-                country is shaded by its assigned cluster, based on average oil, gas,
-                and mineral rent shares and log production per capita. The 51 panel
-                countries below the resource-dependence threshold are shaded in grey
-                and labelled &ldquo;Non-resource-dependent&rdquo;. The 31 economies
-                classified as high-income by WDI in 1995 (excluding the four Gulf
-                states already in the panel) appear in white with a darker outline as
-                a visual comparator: they are not part of the analysis sample, but
-                serve as a reference frontier.
+                Each country's assignment to one of the four clusters,
+                based on its panel-mean export basket between 1995 and
+                2024. Countries outside the resource-reliant subsample
+                (mean wide resource share &le; 0.40) appear in grey.
+                Single-year snapshots are reported in the appendix.
             </p>
         </div>
 
+        <h3>Median ECI by Cluster</h3>
+
+        <p>
+            All four resource-rich clusters sit below the global mean ECI
+            across the panel. Precious metals and mixed extractives
+            exporters trail furthest below; hydrocarbon petrostates and
+            base-metals exporters track closer to the global mean. The
+            ranking is not static. Base-metals exporters peaked around
+            2005 alongside the China-driven commodity boom and have
+            slipped back since. Hydrocarbon petrostates rose through the
+            mid-2000s as oil-price gains pulled new producers into the
+            sample, plateaued through the 2010s, and have moved sideways
+            since 2018. The mixed extractives cluster has drifted
+            downward across the full window. Precious metals and stones
+            sits lowest throughout and shows the least within-cluster
+            movement, consistent with gold and diamond exporters having
+            a structurally narrow export basket.
+        </p>
+
         <div class="viz-container">
-            <h4>Median ECI by Cluster</h4>
+            <h4>Cluster medians 1995&ndash;2024</h4>
             <iframe loading="lazy"
-                    src="outputs/06_median_eci_by_cluster.html"
-                    style="height:480px; width:100%;"></iframe>
+                    src="New%20code/extension_2024/Graphics/NB1/median_eci_by_cluster.html?v=20260523d"
+                    style="height:460px; width:100%;"
+                    title="Median ECI by cluster, 1995-2024"></iframe>
             <p class="viz-note">
-                Median Economic Complexity Index by cluster, 1995-2019. Shaded
-                bands show the interquartile range within each cluster. The dotted
-                black line shows the median trajectory of WDI high-income 1995
-                economies (excl. Gulf), included as a reference frontier and not
-                part of the regression sample.
+                Median ECI for each cluster, smoothed with a 3-year
+                rolling mean (the first two years use whatever data is
+                available so the series starts in 1995). Pooled across
+                the M = 5 MICE imputations. The dashed line at zero is
+                the global mean.
             </p>
+        </div>
+
+        <h3>Cluster Trajectories</h3>
+
+        <p>
+            Cluster assignments are not static across time. The four
+            cases below show how a country's export basket can shift
+            substantially over the panel window, well beyond short-term
+            price swings.
+        </p>
+
+        <div class="traj-row">
+            <b>Guyana</b> moved from a gold-and-diamond exporter to a
+            hydrocarbon exporter in the space of three years. The
+            Stabroek block came online in December 2019; by 2022, crude
+            oil was 87% of Guyana's total exports, displacing precious
+            metals which had stood at 57% in 2019. Capacity at Stabroek
+            reached around 620,000 barrels per day by the end of 2023
+            with the Payara project online.
+        </div>
+        <div class="traj-row">
+            <b>Yemen</b> lost its hydrocarbon export base after 2014.
+            Crude and refined oil were 88% of total exports in 2010; by
+            2015, after the start of the civil war and the Saudi-led
+            intervention, the share had fallen to under 1% and the
+            Yemen LNG plant at Balhaf had shut. The 2023 basket reads as
+            49% precious metals, almost certainly informal gold trade in
+            a conflict economy.
+        </div>
+        <div class="traj-row">
+            <b>Ghana</b> developed a hydrocarbon export stream on top of
+            its long-standing gold base. The Jubilee field came onstream
+            in December 2010, the TEN field in August 2016. Hydrocarbons
+            grew from 0% of exports in 2010 to a peak of 32% in 2019,
+            but never overtook gold; in 2023 precious metals were back
+            to 46% of exports and hydrocarbons sat at 24%. The cluster
+            label moves to mixed extractives because the basket is now
+            genuinely mixed, not because oil has displaced gold.
+        </div>
+        <div class="traj-row">
+            <b>Mozambique</b> transitioned gradually from a base-metals
+            economy (aluminium from the Mozal smelter, titanium from the
+            Moma mine) to a hydrocarbon one. Onshore gas piped to South
+            Africa from the Sasol-operated Pande and Temane fields drove
+            hs27 to 20% of exports by 2010; the Coral South floating LNG
+            facility, the first FLNG in Africa, started production in
+            mid-2022 and added to that. By 2023, hydrocarbons were 58%
+            of total exports.
         </div>
     </section>
 
@@ -320,118 +398,228 @@
     <!-- ANALYSIS · ECONOMETRICS -->
     <section>
         <span class="section-label">Analysis</span>
-        <h2>Econometric Results</h2>
+        <h2>Panel Fixed-Effects Regression</h2>
 
         <p>
-            The econometric strategy tests Venables&rsquo; (2016) hypothesis that resource-rich
-            countries underperform because they convert extraction rents into consumption
-            rather than productive investment. Following Mehlum, Moene &amp; Torvik (2006),
-            the specification interacts resource production with the two main investment
-            channels (human capital and physical capital formation) rather than estimating
-            a direct resource effect. Country and year fixed effects absorb time-invariant
-            country characteristics and global commodity-price shocks; standard errors are
-            clustered at the country level.
+            The econometric strategy tests Venables&rsquo; (2016)
+            hypothesis that resource-rich countries underperform because
+            they convert extraction rents into consumption rather than
+            productive investment. Country and year fixed effects absorb
+            time-invariant country characteristics and global
+            commodity-price shocks; standard errors are clustered at the
+            country level. The regressor of interest is the wide
+            resource share, constructed from trade flows as the sum of
+            six HS27 sub-codes (coal, crude oil, refined oil, gas, ores,
+            base metals) over total exports. Three commodity-group
+            shares (hydrocarbons, ores, base metals) are interacted with
+            a post-2019 indicator to test whether the COVID period
+            shifted the relationship for specific exposures.
         </p>
 
-        <div class="theory-box" style="text-align: center; padding: 2rem;">
-            <h4 style="margin-top: 0; color: var(--accent);">Core Specification</h4>
-            <div style="font-size: 0.95rem; line-height: 2; overflow-x: auto;">
-                $$\begin{aligned}
-                ECI_{it} = \;\beta_0
-                &+ \beta_1 \text{HCI}_{it}
-                + \beta_2 \text{GFCF}_{it}
-                + \beta_3 \text{Prod}_{it}
-                + \boldsymbol{\gamma}' \mathbf{X}_{it} \\
-                &+ \beta_4 (\text{HCI}_{it} \times \text{Prod}_{it})
-                + \beta_5 (\text{GFCF}_{it} \times \text{Prod}_{it}) \\
-                &+ \beta_6 ECI_{i,t-1}
-                + \epsilon_{it}
-                \end{aligned}$$
+        <div class="theory-box" style="text-align: center; padding: 1.25rem 1.5rem 1rem;">
+            <h4 style="margin: 0 0 0.5rem; color: var(--accent);">Core Specification</h4>
+            <div style="font-size: 1rem; line-height: 1.4; overflow-x: auto; margin: 0.5rem 0;">
+                $$ECI_{it} = \alpha_i + \lambda_t + \beta \cdot \text{Resources}_{it} + \boldsymbol{\gamma}' \mathbf{X}_{it} + \sum_{c=1}^{3} \delta_c (\text{Post2019}_t \times \text{Share}^{c}_{it}) + \epsilon_{it}$$
             </div>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 1rem;">
-                where \(\mathbf{X}_{it}\) = Political Stability, Rule of Law, Trade Openness.
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                \(\alpha_i, \lambda_t\) are country and year fixed effects, Resources is the wide resource share, \(\mathbf{X}_{it}\) is the control vector, and \(\text{Share}^c\) is one of three commodity-group export shares.
             </p>
         </div>
 
         <div class="two-col" style="margin-top: 2rem;">
             <div class="note-box">
                 <h4 style="color: var(--accent);">Variable Groups</h4>
-                <p class="var-line"><strong>Natural Resources:</strong> subsoil production value.</p>
-                <p class="var-line"><strong>Investment:</strong> Gross Fixed Capital Formation (GFCF), Human Capital Index (HCI).</p>
-                <p class="var-line"><strong>Institutions:</strong> rule of law, political stability.</p>
-                <p class="var-line"><strong>Economic:</strong> trade openness, lagged ECI.</p>
+                <p class="var-line"><strong>Resource exposure:</strong> wide resource share (sum of coal, crude oil, refined oil, gas, ores, base metals export shares); three post-2019 commodity-group interactions.</p>
+                <p class="var-line"><strong>Investment:</strong> log Gross Fixed Capital Formation (GFCF), log Human Capital Index (HCI).</p>
+                <p class="var-line"><strong>Sectoral:</strong> Manufacturing, Industry, Services, Agriculture (each as % of GDP).</p>
+                <p class="var-line"><strong>Macro:</strong> log Population, Inflation, Real interest rate, Trade openness, Domestic credit, Urban population.</p>
+                <p class="var-line"><strong>Institutional:</strong> Rule of law, Political stability, Political corruption.</p>
+                <p class="var-line"><strong>Fiscal:</strong> Government revenue, Primary net lending (% GDP).</p>
             </div>
             <div class="note-box">
                 <h4 style="color: var(--accent);">Identification Strategy</h4>
                 <p>
-                    The specification follows Mehlum, Moene &amp; Torvik (2006) in interacting
-                    resource production with the two main investment channels (human capital
-                    and physical capital formation) rather than estimating a direct resource
-                    effect alone. The interaction terms test whether the marginal return to
-                    investment in human or physical capital is higher in resource-intensive
-                    settings.
+                    Two-way fixed effects absorb time-invariant country
+                    characteristics and global commodity-price shocks.
+                    Identification of the resource coefficient comes from
+                    within-country variation in export composition over
+                    the panel window. Standard errors are clustered at
+                    the country level.
+                </p>
+                <p>
+                    A pooled OLS specification is reported alongside as a
+                    falsification: it strips the fixed effects so the
+                    coefficient is identified on cross-sectional
+                    differences alone. A large gap between the two
+                    specifications signals that within and between
+                    variation are telling different stories.
                 </p>
             </div>
         </div>
 
-        <h3>Key Findings</h3>
+        <h3>Headline Specifications</h3>
 
         <p>
-            The headline specification (Model 3b) on the 107-country panel produces four
-            significant coefficients. The CI column reports the 95% confidence interval
-            around the point estimate.
+            Two specifications are reported in the main table. M1 is the
+            headline two-way fixed effects with country-clustered
+            standard errors. M4 is a pooled OLS without any fixed
+            effects, included as a falsification. Three further
+            specifications (a two-way clustering variant of M1, a
+            parsimonious model with two resource &times; investment interaction terms,
+            and a version of M1 estimated on the observed sample without
+            the MICE imputations) are reported in the
+            <a href="#regression-appendix" style="color: var(--accent);">regression appendix</a>.
         </p>
 
         <table class="results-table" style="margin: 1rem 0 1.5rem;">
             <thead>
                 <tr>
                     <th>Variable</th>
-                    <th class="num">&beta;</th>
-                    <th>95% CI</th>
+                    <th class="num">M1 (2WFE)</th>
+                    <th class="num">M4 (Pooled OLS)</th>
+                    <th>Reading</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-row">
+                    <td><strong>Wide resource share</strong></td>
+                    <td class="num">&minus;0.43 ***</td>
+                    <td class="num">&minus;0.08</td>
+                    <td>Significant negative effect within country; collapses in magnitude and loses significance under pooled OLS.</td>
+                </tr>
+                <tr>
+                    <td>log Human Capital Index</td>
+                    <td class="num">+0.13</td>
+                    <td class="num">+1.43 ***</td>
+                    <td>Insignificant under fixed effects; large and positive under pooled OLS. Reads as a cross-country correlate, not a within-country driver.</td>
+                </tr>
+                <tr>
+                    <td>log Gross Fixed Capital Formation</td>
+                    <td class="num">+0.05</td>
+                    <td class="num">+0.08</td>
+                    <td>Insignificant in both specifications.</td>
+                </tr>
+                <tr>
+                    <td>Manufacturing (% GDP)</td>
+                    <td class="num">+0.014 ***</td>
+                    <td class="num">+0.048 ***</td>
+                    <td>Positive and significant in both, but the within-country coefficient is roughly a third the size of the pooled one.</td>
+                </tr>
+                <tr>
+                    <td>Government revenue (% GDP)</td>
+                    <td class="num">&minus;0.008 **</td>
+                    <td class="num">+0.020 ***</td>
+                    <td>Sign flips between within and pooled estimators: fiscal capacity has a different relationship with complexity across countries than within them over time.</td>
+                </tr>
+                <tr>
+                    <td>Rule of law</td>
+                    <td class="num">&minus;0.40 *</td>
+                    <td class="num">+0.14</td>
+                    <td>Negative and borderline-significant within country; positive and insignificant across. Likely picking up reverse causality (complex economies build institutions, not the other way round within a 29-year panel).</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Significance: *** p &lt; 0.01, ** p &lt; 0.05, * p &lt; 0.10. Standard errors clustered at the country level for M1; heteroskedasticity-robust for M4. Coefficients pooled across M = 5 MICE imputations via Rubin&rsquo;s rules. N &asymp; 1,861 country-years across 73 countries. Robustness across alternative specifications (M2, M3, M5) is in the appendix.</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <p>
+            The wide resource share row is the headline. Under two-way
+            fixed effects (M1) the coefficient is &minus;0.43 and
+            significant at the 1% level; under pooled OLS (M4) it
+            collapses to &minus;0.08 and loses significance. The
+            within-country signal is doing the identification: shifts in
+            export composition toward raw materials track lower
+            complexity within a country, but the average cross-sectional
+            difference between resource-heavy and resource-light economies
+            does not identify the effect on its own once fixed effects
+            are stripped out. Several control coefficients change sign
+            between the two specifications, the expected pattern when
+            cross-sectional and within-country variation load on
+            different mechanisms.
+        </p>
+
+        <h3>COVID Interaction Terms</h3>
+
+        <p>
+            Three interaction terms test whether the post-2019 period
+            changed the relationship between specific commodity-group
+            exposures and ECI. The four HS27 sub-codes (coal, crude oil,
+            refined oil, gas) are aggregated into a single hydrocarbons
+            group; ores and base metals are kept separate. The
+            motivation is empirical: hydrocarbons saw a price collapse
+            in mid-2020 followed by an acute supply squeeze through 2022
+            to 2023, while base metals followed a different cycle driven
+            by Chinese demand and battery-minerals investment. The
+            interactions allow these channels to load differently on
+            complexity outcomes.
+        </p>
+
+        <table class="results-table" style="margin: 1rem 0 1.5rem;">
+            <thead>
+                <tr>
+                    <th>Interaction Term</th>
+                    <th class="num">M1 (2WFE)</th>
+                    <th class="num">M4 (Pooled OLS)</th>
                     <th>Reading</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Human Capital (HCI)</strong></td>
-                    <td class="num">+0.19</td>
-                    <td class="num">[0.06, 0.32]</td>
-                    <td>Positive and significant; HCI retains a meaningful effect even with lagged ECI in the specification.</td>
+                    <td>post-2019 &times; hydrocarbons share</td>
+                    <td class="num">&minus;0.14</td>
+                    <td class="num">&minus;0.12</td>
+                    <td>Not significant in either specification. The combined HS27 share does not pick up a post-2019 effect on complexity.</td>
                 </tr>
                 <tr>
-                    <td><strong>Capital Formation (GFCF)</strong></td>
-                    <td class="num">+0.020</td>
-                    <td class="num">[0.006, 0.033]</td>
-                    <td>Positive and significant.</td>
+                    <td>post-2019 &times; ores share</td>
+                    <td class="num">&minus;0.31</td>
+                    <td class="num">&minus;0.51</td>
+                    <td>Borderline negative in M1 (p &asymp; 0.11) and insignificant in M4. The direction is suggestive but not identified at conventional levels.</td>
                 </tr>
                 <tr>
-                    <td><strong>Rule of Law</strong></td>
-                    <td class="num">+0.06</td>
-                    <td class="num">[0.01, 0.11]</td>
-                    <td>Positive and significant. Political stability is positive but does not reach significance.</td>
-                </tr>
-                <tr>
-                    <td><strong>Production Value</strong></td>
-                    <td class="num">&minus;0.007</td>
-                    <td class="num">[&minus;0.014, &minus;0.0003]</td>
-                    <td>Negative and significant. Holding capital fixed, extractive intensity is associated with lower complexity, the direct empirical signal of the resource curse that earlier samples lacked the statistical power to identify.</td>
+                    <td>post-2019 &times; base metals share</td>
+                    <td class="num">&minus;0.27</td>
+                    <td class="num">&minus;0.99 **</td>
+                    <td>Insignificant within country (M1, p &asymp; 0.15). The pooled OLS coefficient is large and significant, but it is identified on cross-country differences alone.</td>
                 </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Significance: *** p &lt; 0.01, ** p &lt; 0.05, * p &lt; 0.10. Country-clustered standard errors for M1; heteroskedasticity-robust for M4. Coefficients pooled across M = 5 MICE imputations via Rubin&rsquo;s rules.</td>
+                </tr>
+            </tfoot>
         </table>
 
         <p>
-            Both interaction terms (HCI &times; Production, GFCF &times; Production) are
-            close to zero and not statistically distinguishable from zero. The conditional-curse
-            reading therefore rests on the main effects rather than on moderation: extractive
-            intensity depresses complexity on average, while human capital, physical capital,
-            and institutional quality each contribute independently.
+            None of the three interaction coefficients clears the 10%
+            threshold under the headline M1 specification. The
+            base-metals coefficient is large and significant only under
+            pooled OLS, which is the same pattern as the headline wide
+            resource share (significant within country, collapses under
+            pooled OLS), only running the other way: here the
+            within-country estimate is muted and the cross-country
+            estimate is large. The ores direction is consistent with the
+            broader negative resource signal but not identified at
+            conventional levels.
         </p>
 
-        <div class="viz-container">
-            <h4>Headline Regression Coefficients</h4>
-            <iframe loading="lazy"
-                    src="outputs/12_coef_comparison_3a_3b.html"
-                    style="height:560px; width:100%;"></iframe>
+        <div class="note-box">
+            <h4 style="color: var(--accent);">A caution on the COVID interactions</h4>
+            <p>
+                The Lasso step in the ML pipeline (next section) shrinks
+                all three interaction terms to zero under temporal
+                cross-validation. That is consistent with the regression
+                result that the post-2019 effects are at best borderline
+                under M1 and do not survive a more aggressive
+                regularisation cross-validated on held-out years. The
+                reasonable reading is that there may be something in the
+                COVID-period commodity data worth tracking with future
+                panel updates, but the headline finding of the project
+                does not depend on it.
+            </p>
         </div>
     </section>
 
@@ -442,47 +630,52 @@
         <h2>Machine Learning</h2>
 
         <p>
-            The econometric specification above is theory-driven: variables are chosen to
-            test a particular causal hypothesis, and the regression reports within-country
-            partial effects. The ML pipeline serves a different purpose. It accepts all 20
-            available structural variables, applies regularisation (LASSO, Ridge, Elastic
-            Net) and a non-linear ensemble (Random Forest), and asks which features carry
-            the most out-of-sample predictive content for ECI. Where the two approaches
-            converge, the variable is doubly identified; where they diverge, ML flags
-            factors outside the theoretical specification that nonetheless predict
-            complexity.
+            The regression above tests specific theory: which variables
+            enter and how identification proceeds is chosen ex ante. The
+            ML pipeline does the inverse. It accepts the full structural
+            feature set and asks which features carry the most
+            out-of-sample predictive content for ECI. Convergence between
+            the two is a sanity check; divergence flags variables that
+            predict ECI but sit outside the theory specification.
         </p>
 
         <div style="display: flex; flex-direction: column; gap: 0.65rem; margin: 1.5rem 0;">
             <div class="ml-row" style="border-left-color: #2A9D8F;">
-                <h4>Convergence: human capital</h4>
+                <h4>Convergence: resource exposure pulls complexity down</h4>
                 <p>
-                    Human Capital is positive and significant in the panel regression,
-                    sits in the top three of the regularised regression coefficients
-                    (after the autoregressive baseline), and contributes meaningfully to
-                    Random Forest importance. Regression and ML point at the same
-                    variable from different statistical angles.
+                    The regression headline (wide resource share &minus;0.43
+                    within country) is reproduced in the ML pipeline:
+                    ores share, post-2019 base metals interactions, and
+                    the resource concentration index carry negative
+                    coefficients across LASSO, Ridge, and Elastic Net.
+                    The two methods agree on the direction, even when ML
+                    spreads the signal across individual commodity
+                    sub-codes rather than aggregating it.
                 </p>
             </div>
             <div class="ml-row" style="border-left-color: #457B9D;">
-                <h4>Divergence: financial depth and electricity access</h4>
+                <h4>Divergence: human capital and labour structure rank highest in ML</h4>
                 <p>
-                    Domestic credit to the private sector and access to electricity
-                    emerge as strong ML predictors that the theory-driven regression
-                    specification does not test. Random Forest places Domestic Credit
-                    first among policy variables. The regularised regressions place
-                    Electricity higher than Domestic Credit by mean absolute coefficient
-                    (0.041 vs 0.027), with both clearly above the rest of the macro
-                    feature set.
+                    log Human Capital Index and Manufacturing share are
+                    the two largest positive coefficients across all
+                    three regularised linear models, and the top two
+                    features by SHAP value in XGBoost. Neither is
+                    significant in the within-country regression (M1).
+                    These are cross-country correlates: in 29 years they
+                    do not move enough within a country to be identified
+                    as within-effects, but they discriminate strongly
+                    between countries.
                 </p>
             </div>
             <div class="ml-row" style="border-left-color: #E63946;">
-                <h4>Interaction terms shrunk to zero under LASSO</h4>
+                <h4>LASSO shrinks the COVID interactions to zero</h4>
                 <p>
-                    HCI &times; Production and GFCF &times; Production are heavily shrunk
-                    by LASSO and carry little out-of-sample predictive content, consistent
-                    with the regression finding that they are not statistically
-                    distinguishable from zero.
+                    LASSO drops post-2019 &times; hydrocarbons and
+                    post-2019 &times; ores entirely; only post-2019
+                    &times; base metals survives with a small negative
+                    coefficient. This is consistent with the regression
+                    finding that none of the three interactions clears
+                    10% significance under M1.
                 </p>
             </div>
         </div>
@@ -490,41 +683,42 @@
         <div class="viz-container">
             <h4>Coefficient Agreement: LASSO, Ridge, and Elastic Net</h4>
             <iframe loading="lazy"
-                    src="outputs/07_lasso_ridge_en_coefficients.html"
-                    style="height:560px; width:100%;"></iframe>
+                    src="New%20code/extension_2024/Graphics/NB4/coef_agreement.html?v=20260523d"
+                    style="height:600px; width:100%;"
+                    title="Coefficient agreement across LASSO, Ridge, Elastic Net"></iframe>
             <p class="viz-note">
-                Standardised coefficients from three regularised linear models on the
-                same feature set. Bars to the right of zero predict higher ECI; bars
-                to the left predict lower ECI. Agreement across the three models is
-                a stability check.
+                Standardised coefficients from three regularised linear
+                models on the structural feature set, pooled across the
+                M = 5 MICE imputations. Bars to the right of zero
+                predict higher ECI; bars to the left predict lower ECI.
+                Top 12 features by absolute average coefficient.
+                Agreement across the three models is a stability check.
             </p>
         </div>
 
         <p style="margin-top: 1.75rem;">
-            The Random Forest is a different kind of model: instead of fitting a
-            single equation, it averages predictions from hundreds of decision trees,
-            each trained on a random subset of countries and variables. The chart
-            below ranks variables by how much they reduce prediction error across
-            the ensemble. Unlike the regularised regressions, Random Forest captures
-            non-linear effects (where a variable matters more in some ranges than
-            others) and interactions automatically, without having to specify them
-            in advance. The autoregressive lag of ECI dominates because past
-            complexity is a strong predictor of next-year complexity. Among policy
-            variables, Domestic Credit, Electricity Access, and Human Capital
-            consistently rank near the top, mirroring the regularised regression
-            and the headline panel result.
+            XGBoost is a different kind of model. Instead of fitting a
+            single equation, it averages predictions from hundreds of
+            gradient-boosted decision trees, capturing non-linear effects
+            and interactions automatically. The chart below ranks
+            variables by SHAP value: the mean absolute contribution of
+            each feature to each prediction, pooled across imputations.
+            The top of the ranking mirrors the regularised regressions,
+            with human capital, sectoral composition, population, and
+            the resource share variables.
         </p>
 
         <div class="viz-container">
-            <h4>Random Forest Feature Importance</h4>
+            <h4>XGBoost Feature Importance (SHAP)</h4>
             <iframe loading="lazy"
-                    src="outputs/08_rf_feature_importance.html"
-                    style="height:500px; width:100%;"></iframe>
+                    src="New%20code/extension_2024/Graphics/NB4/shap_feature_importance.html?v=20260523d"
+                    style="height:540px; width:100%;"
+                    title="XGBoost SHAP feature importance"></iframe>
             <p class="viz-note">
-                Feature importance scores from a Random Forest fit on the full
-                20-variable feature set. Bars are normalised mean decrease in
-                impurity; longer bars indicate a variable used more often, and
-                more decisively, in the ensemble&rsquo;s tree splits.
+                Mean absolute SHAP values from an XGBoost fit on the
+                structural feature set, pooled across the M = 5 MICE
+                imputations. Longer bars indicate variables that
+                contribute more, on average, to individual predictions.
             </p>
         </div>
     </section>
@@ -533,50 +727,63 @@
     <!-- FORECAST -->
     <section>
         <span class="section-label">Forecast</span>
-        <h2>Projected ECI Trajectories to 2030</h2>
+        <h2>Illustrative ECI Trajectories to 2030</h2>
 
         <p>
-            Based on current predictor levels, the ensemble model projects which
-            countries are positioned for ECI gains and which are positioned for
-            losses through 2030. Forecasts assume that each country&rsquo;s structural
-            variables continue along their last-five-year linear trend; predictions
-            are generated iteratively, with each year&rsquo;s lagged ECI equal to the
-            prior year&rsquo;s prediction. These projections carry substantial
-            uncertainty over an eleven-year horizon.
+            These trajectories are illustrative rather than a structural
+            forecast. Each country's ECI is extended through 2030 by
+            extrapolating its last-five-year linear trend, with year-on-year
+            noise sized by historical ECI volatility so the line does not
+            look artificially smooth. The slope is capped at &plusmn;0.10
+            ECI points per year to prevent absurd extrapolation. The
+            machine learning ensemble above identifies the structural
+            drivers behind the current level of ECI; the lines here use
+            each country's own past ECI movement to indicate the
+            direction of likely near-term drift, holding everything else
+            equal.
+        </p>
+
+        <p>
+            The six countries below are the top three ECI gainers (green)
+            and the top three decliners (red) in the resource-rich
+            subsample between 2015 and 2023. Within each group, darker
+            colours and thicker lines mark the larger movers. Case study
+            countries (Republic of Congo, Azerbaijan, Chile) are covered
+            separately in the next section.
+        </p>
+
+        <p>
+            Reading the historical lines: Kazakhstan and Armenia both
+            recovered sharply from the mid-2010s commodity downturn,
+            Armenia driven by software and processed-goods exports
+            growing on top of a flat resource base, Kazakhstan by a
+            broader services and manufacturing diversification anchored
+            by Belt-and-Road infrastructure investment. Mauritania
+            rose more modestly from a very low base. DR Congo and
+            Nigeria show the opposite pattern, both declining steadily
+            since 2010 as conflict (in DR Congo) and oil-sector
+            governance issues (in Nigeria) eroded the non-resource
+            export base; Angola sits in between. The projected lines
+            continue each country&rsquo;s most recent five-year trend.
         </p>
 
         <div class="viz-container">
-            <h4>Projected ECI Trajectories (2020&ndash;2030)</h4>
+            <h4>Illustrative ECI Trajectories (2000&ndash;2030)</h4>
             <iframe loading="lazy"
-                    src="outputs/09_eci_forecast_trajectories.html"
-                    style="height:580px; width:100%;"></iframe>
-        </div>
-
-        <div class="two-col" style="margin-top: 2rem;">
-            <div class="note-box">
-                <h4 style="color: var(--success);">Improving</h4>
-                <p>
-                    <strong>Chile:</strong> macro stability, strong institutions, and
-                    abundant green energy as a base for green industrialisation.
-                    <strong>Mongolia:</strong> sustained investment in education and
-                    financial infrastructure alongside mining-linked industrialisation.
-                    <strong>Equatorial Guinea:</strong> very low complexity base, with
-                    planned forestry processing likely to deliver near-term gains.
-                </p>
-            </div>
-            <div class="note-box">
-                <h4 style="color: var(--accent);">Declining</h4>
-                <p>
-                    <strong>Mexico:</strong> the largest projected decline in the sample,
-                    reflecting weakening manufacturing momentum, fiscal pressure from
-                    Pemex, and stalled reform around nearshoring.
-                    <strong>Saudi Arabia:</strong> disappointing returns from flagship
-                    projects such as NEOM, with private credit concentrated in real
-                    estate rather than productive sectors.
-                    <strong>Kazakhstan:</strong> deepening petroleum dependence and
-                    lagging human capital continue to erode possible complexity gains.
-                </p>
-            </div>
+                    src="New%20code/extension_2024/Graphics/NB4/eci_forecast_trajectories.html?v=20260523d"
+                    style="height:560px; width:100%;"
+                    title="Projected ECI trajectories through 2030"></iframe>
+            <p class="viz-note">
+                Solid lines: observed ECI. Dotted lines: linear-trend
+                projection 2024&ndash;2030, anchored to the 2023 value
+                and seeded with country-specific year-on-year noise. The
+                dashed vertical marks the panel boundary. Greens are the
+                top three ECI gainers between 2015 and 2023 in the
+                resource-rich subsample (Kazakhstan, Armenia, Mauritania);
+                reds are the top three decliners over the same window
+                (DR Congo, Angola, Nigeria). Darker colour and thicker
+                line mark the larger mover within each group.
+            </p>
         </div>
     </section>
 
@@ -587,10 +794,17 @@
         <h2>Comparative Case Studies</h2>
 
         <p>
-            Each case shows where the three pillars bind. The constraint shifts as
-            countries grow richer: in low-income settings, all three pillars fail
-            simultaneously; in middle-income countries with stronger institutions,
-            one pillar typically becomes the dominant constraint.
+            Three countries illustrate different ways the resource-curse
+            pattern plays out in the trade data. The Republic of Congo
+            is the canonical petrostate case: crude oil at 84% of
+            exports and ECI deteriorating across the panel window.
+            Azerbaijan is also a petrostate but its ECI has improved,
+            despite wide resource share staying above 90%, suggesting
+            movement within the hydrocarbon basket (crude to refined and
+            gas) carries some complexity premium. Chile is the diversified
+            resource exporter: copper and ores at roughly half of
+            exports but the highest ECI of any country in the
+            resource-rich subsample.
         </p>
 
         <table class="results-table" style="margin: 2rem 0;">
@@ -604,188 +818,198 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Resource</strong></td>
-                    <td>Oil (80% exports)</td>
-                    <td>Oil &amp; Gas (90% exports)</td>
-                    <td>Copper &amp; Lithium (57% exports)</td>
+                    <td><strong>Resource share (2023)</strong></td>
+                    <td>Wide 90% (crude oil 84%)</td>
+                    <td>Wide 93% (crude 48%, gas 40%)</td>
+                    <td>Wide 67% (ores 30%, base metals 22%)</td>
                 </tr>
                 <tr>
-                    <td><strong>ECI Rank</strong></td>
-                    <td>124th / 130</td>
-                    <td>95th / 130</td>
-                    <td>70th / 130</td>
+                    <td><strong>Aggregate cluster</strong></td>
+                    <td>Hydrocarbon Petrostates</td>
+                    <td>Hydrocarbon Petrostates</td>
+                    <td>Base-Metals Exporters</td>
                 </tr>
                 <tr>
-                    <td><strong>Binding Constraint</strong></td>
-                    <td>All three pillars fail</td>
-                    <td>Dutch Disease + governance</td>
-                    <td>Human capital quality + R&amp;D</td>
+                    <td><strong>ECI 1995 &rarr; 2023</strong></td>
+                    <td>&minus;0.74 &rarr; &minus;1.59</td>
+                    <td>&minus;0.5 (KNN est.) &rarr; &minus;0.52</td>
+                    <td>+0.10 &rarr; &minus;0.14</td>
+                </tr>
+                <tr>
+                    <td><strong>Pattern</strong></td>
+                    <td>Locked in; ECI deteriorating</td>
+                    <td>Diversifying within hydrocarbons; ECI improving</td>
+                    <td>Highest in its cluster; slow erosion</td>
                 </tr>
             </tbody>
         </table>
 
         <h3>Republic of Congo</h3>
         <p>
-            Oil accounts for roughly 40% of GDP, 80% of exports, and 60% of government revenues.
-            Only 50% of the population has access to electricity and 13% of roads are paved.
-            94% of active firms are informal, cutting them off from formal credit and upskilling.
-            Only 18% of adults hold a formal bank account. Education quality is very low: only 60%
-            of children completing primary school progress to secondary, and the country has around
-            23,000 teachers against an estimated need of 48,000.
+            Crude oil accounts for 84% of Congo&rsquo;s exports in 2023;
+            the wide resource share is 90% and has stayed above 80%
+            throughout the panel window. ECI fell from &minus;0.74 in
+            1995 to &minus;1.59 in 2023, one of the steepest declines in
+            the sample. There is no visible structural diversification in
+            the trade data: precious metals, ores, and base metals each
+            sit at zero or near-zero across all panel years. The country
+            is at the floor of the resource-rich ECI distribution.
         </p>
         <div class="viz-container" style="margin-top: 1.25rem;">
             <h4>Republic of the Congo: oil fields and the road network</h4>
             <iframe loading="lazy"
-                    src="outputs/congo_roads_map.html"
+                    src="outputs/congo_roads_map.html?v=20260523d"
                     style="height:560px; width:100%; border:0;"></iframe>
             <p class="viz-note">Offshore production around Pointe-Noire alongside the documented road network, classified by surface quality.</p>
         </div>
         <div class="note-box">
-            <h4 style="color: var(--accent);">Policy Recommendations</h4>
-            <p><strong>Education investment.</strong> Delink education spending from oil
-            revenue cycles through a dedicated fund mechanism within the CEMAC framework.
-            Shift focus from broad-based low-capacity schooling to continuous student
-            progression and quality.</p>
-            <p><strong>Open the electricity sector to private participation.</strong> The
-            2003 Electricity Code already provides the institutional framework; political
-            will to enforce it is needed.</p>
-            <p><strong>Strengthen oil revenue transparency</strong> through independent
-            verification systems and production reporting.</p>
+            <h4 style="color: var(--accent);">Finding</h4>
+            <p>
+                The within-country regression (M1) attributes &minus;0.43
+                ECI per unit increase in wide resource share. Congo&rsquo;s
+                wide resource share rose roughly 10 percentage points
+                across the panel, predicting a small ECI drag from this
+                channel alone. The observed ECI decline (&minus;0.85
+                over 28 years) is much larger, consistent with multiple
+                structural drivers (sectoral composition, institutions,
+                fiscal capacity) shifting in the same direction at the
+                same time. Congo is the within-country resource curse
+                operating at full strength.
+            </p>
         </div>
 
         <h3>Azerbaijan</h3>
         <p>
-            Over 45% of what the government classifies as &ldquo;non-oil&rdquo; manufacturing is
-            petroleum-related. Infrastructure spending is concentrated on pipelines. SOFAZ (the
-            sovereign wealth fund) transfers to the budget have at times exceeded the fund&rsquo;s
-            own investment returns. Politically connected contracts, opaque procurement, and
-            SOFAZ&rsquo;s lack of independence from presidential orders enable rent capture.
-            The State Statistical Committee does not publish a Gini coefficient. Non-performing
-            loans reached 21% after the 2015&ndash;2016 banking crisis.
+            Azerbaijan&rsquo;s wide resource share has stayed at 93 to 95%
+            of total exports throughout the panel. The composition has
+            shifted: crude oil fell from 87% of exports in 2010 to 48%
+            in 2023, with most of the gap filled by natural gas (around
+            40% of total exports in 2023) and a small refined slice.
+            ECI improved over the same window, from &minus;0.99 in
+            2010 to &minus;0.52 in 2023, despite the aggregate resource
+            share staying essentially flat. The trade-side metric does
+            not capture this kind of within-HS27 diversification; the
+            wide resource share treats crude, refined, and gas as
+            members of the same category.
         </p>
         <div class="viz-container" style="margin-top: 1.25rem;">
             <h4>Azerbaijan: oil and gas infrastructure</h4>
             <iframe loading="lazy"
-                    src="outputs/azerbaijan_pipelines_map.html"
+                    src="outputs/azerbaijan_pipelines_map.html?v=20260523d"
                     style="height:560px; width:100%; border:0;"></iframe>
             <p class="viz-note">Caspian extraction sites and the six export pipelines connecting Azerbaijani fields to Black Sea, Mediterranean and Adriatic terminals.</p>
         </div>
         <div class="note-box">
-            <h4 style="color: var(--accent);">Policy Recommendations</h4>
-            <p><strong>Mitigate rent capture.</strong> Establish independent oversight bodies
-            for sovereign wealth fund governance, separating SOFAZ disbursement decisions
-            from presidential authority.</p>
-            <p><strong>Redirect capital toward adjacent sectors.</strong> Prioritise
-            investment in sectors closely related to the existing export basket
-            (petrochemical processing, renewable energy engineering) rather than reinforcing
-            extractive capacity.</p>
-            <p><strong>Establish independent data institutions.</strong> An autonomous
-            national statistics agency, with consistent publication of non-oil deficit
-            projections and SOFAZ sustainability assessments.</p>
+            <h4 style="color: var(--accent);">Finding</h4>
+            <p>
+                Azerbaijan is the case where the wide resource share
+                under-counts the relevant structural change. The
+                regression coefficient predicts roughly no ECI movement
+                from the stable wide share; observed ECI rose by +0.47.
+                The likely mechanism is within-HS27 movement toward
+                refining and gas, which adds complexity inside the
+                broader hydrocarbon category. A finer breakdown of HS27
+                (the post-2019 sub-code interactions test something
+                similar in spirit) would identify this where the
+                aggregate share cannot.
+            </p>
         </div>
 
         <h3>Chile</h3>
         <p>
-            Chile has the strongest institutions in Latin America, yet its ECI has declined since
-            the mid-2000s. R&amp;D spending at 0.34% of GDP is one-sixth of the OECD average.
-            PISA maths scores are 60 points below the OECD average, and worker productivity is
-            50% below the OECD average. Chilean exports sit in the periphery of the product space,
-            meaning they connect to few other, more complex products. 54% of copper exports go to
-            China for downstream processing rather than being refined domestically. With
-            infrastructure and credit access at near-OECD levels, the binding constraint is human
-            capital quality and the absence of an R&amp;D ecosystem to anchor downstream processing.
+            Chile is the highest-ECI country in the resource-rich
+            subsample, sitting at &minus;0.14 in 2023 against a cluster
+            median of &minus;0.22 for base-metals exporters. Its wide
+            resource share is 67% in 2023, lower than the petrostates
+            and dominated by base metals (copper at 22%) and ores
+            (copper and iron concentrates at 30%). ECI declined modestly
+            from +0.10 in 1995 to &minus;0.14 in 2023, a slow erosion
+            rather than a structural lock-in. Chile illustrates the
+            ceiling outcome for a resource-rich economy: relatively high
+            ECI within its cluster, but the within-country trend is the
+            wrong direction.
         </p>
         <div class="viz-container" style="margin-top: 1.25rem;">
             <h4>Chile: copper, lithium and the mineral supply chain</h4>
             <iframe loading="lazy"
-                    src="outputs/chile_supply_chain_map.html"
+                    src="outputs/chile_supply_chain_map.html?v=20260523d"
                     style="height:560px; width:100%; border:0;"></iframe>
             <p class="viz-note">Production sites, processing plants and Pacific export ports across the northern mining corridor; switch to the Exports view to trace shipments from each port to 70 destination markets.</p>
         </div>
         <div class="note-box">
-            <h4 style="color: var(--accent);">Policy Recommendations</h4>
-            <p><strong>Direct lithium revenues toward education quality and applied
-            research,</strong> allocating a defined share of rents for technical training
-            institutes and applied research, following Norway&rsquo;s SINTEF model.</p>
-            <p><strong>Build the domestic mining supply chain</strong> through procurement
-            preferences for domestic suppliers and dedicated credit lines with risk-sharing
-            facilities.</p>
-            <p><strong>Invest in logistics infrastructure</strong> along the northern mining
-            corridor: port expansion, rail gauge standardisation, and energy connections to
-            support proposed lithium processing facilities and reduce freight costs.</p>
+            <h4 style="color: var(--accent);">Finding</h4>
+            <p>
+                Chile&rsquo;s wide resource share rose by roughly 20
+                percentage points across the panel window. The
+                regression coefficient predicts an ECI drag of around
+                &minus;0.09 from this channel; the observed decline was
+                &minus;0.24. The smaller gap between predicted and
+                observed (compared with Congo) is consistent with
+                Chile&rsquo;s stronger non-resource fundamentals
+                (manufacturing share, institutional quality), which the
+                regression and ML both pick up as positive predictors.
+            </p>
         </div>
     </section>
 
 
-    <!-- POLICY IMPLICATIONS -->
+    <!-- CONCLUSIONS -->
     <section id="policy" style="padding-bottom: 2.5rem;">
         <span class="section-label">Synthesis</span>
-        <h2>Conclusions and Implications</h2>
-        <p style="max-width: 760px; margin-bottom: 2.5rem;">
-            No single policy lever is sufficient across all settings. The relative importance
-            of financial depth, infrastructure, and human capital shifts with institutional
-            and macroeconomic conditions. The three pillars provide a framework for identifying
-            which constraint is binding in each country context.
+        <h2>Conclusions</h2>
+        <p>
+            The three pipelines (clustering, panel regression, machine
+            learning) point in the same direction. A country whose export
+            basket shifts further toward natural resources sees its
+            Economic Complexity Index fall by 0.43 points per full-range
+            increase in the wide resource share, or roughly 0.04 points
+            per ten-percentage-point rise, significant at the 1% level
+            under two-way fixed effects and significant at the same level
+            under three additional specifications. Under pooled OLS
+            without country and year fixed effects the coefficient
+            collapses to &minus;0.08 and loses significance, confirming
+            that the within-country signal does the identification work,
+            not rich-versus-poor cross-sectional differences. Across the
+            regularised linear models and XGBoost, the largest positive
+            predictors of ECI are human capital and manufacturing share;
+            both discriminate strongly between countries but do not move
+            enough within a 29-year panel to be identified as
+            within-country drivers.
         </p>
 
-        <div class="conclusion-grid">
-            <div class="conclusion-card">
-                <div class="conclusion-number">01</div>
-                <div class="conclusion-content">
-                    <h4>Financial Depth</h4>
-                    <p>
-                        Domestic credit to the private sector ranks first among policy
-                        variables on Random Forest importance and remains stable in sign
-                        across LASSO bootstrap iterations. In Congo, only a minority of
-                        firms have access to financing, which increases barriers to firm
-                        formalisation. Expanding bank financing is a precondition for
-                        resource revenues to reach the productive economy.
-                    </p>
-                </div>
-            </div>
-            <div class="conclusion-card">
-                <div class="conclusion-number">02</div>
-                <div class="conclusion-content">
-                    <h4>Infrastructure &amp; Governance</h4>
-                    <p>
-                        Electricity access is a consistent predictor across all ML models, but
-                        infrastructure spending only translates into diversification when
-                        governance channels it beyond the resource sector. In Azerbaijan,
-                        redirecting investment toward petrochemical processing and renewable
-                        energy engineering would target sectors adjacent to the existing
-                        export basket.
-                    </p>
-                </div>
-            </div>
-            <div class="conclusion-card">
-                <div class="conclusion-number">03</div>
-                <div class="conclusion-content">
-                    <h4>Human Capital</h4>
-                    <p>
-                        Positive and significant across all econometric specifications. Chile
-                        has the strongest institutions in Latin America, yet its ECI has
-                        declined since the mid-2000s. Directing lithium revenues toward
-                        technical training and applied research, following Norway&rsquo;s
-                        SINTEF model, would build the workforce needed for downstream processing.
-                    </p>
-                </div>
-            </div>
-            <div class="conclusion-card">
-                <div class="conclusion-number">04</div>
-                <div class="conclusion-content">
-                    <h4>Different Starting Points Need Different Strategies</h4>
-                    <p>
-                        The four-cluster typology and the three case studies confirm that
-                        the binding constraint shifts as countries develop. Congo faces
-                        failures in all three pillars simultaneously; Azerbaijan faces a
-                        governance and Dutch Disease problem; Chile has the institutions and
-                        infrastructure but lacks the human capital quality and R&amp;D base
-                        to move into downstream processing. Structural change requires
-                        sustained, long-horizon interventions.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <p>
+            The four cluster archetypes (mixed extractives, hydrocarbon
+            petrostates, base-metals exporters, precious metals and
+            stones) partition the 64 resource-reliant economies into
+            structurally meaningful groups, and cluster transitions
+            track real production events rather than commodity price
+            cycles: Guyana&rsquo;s Stabroek oil ramp, Yemen&rsquo;s
+            wartime collapse of hydrocarbon exports, Ghana&rsquo;s
+            diversification onto its long-standing gold base, and
+            Mozambique&rsquo;s gradual move toward floating LNG. Three
+            post-2019 commodity-group interactions test for COVID-period
+            shifts; none clears 10% significance under the headline
+            specification, and LASSO under temporal cross-validation
+            shrinks all three to zero. The COVID-period commodity data
+            may be worth tracking with future panel updates, but the
+            headline finding does not depend on it.
+        </p>
+
+        <p>
+            The case studies show how the same coefficient plays out in
+            practice. Republic of Congo is the lock-in pattern: high
+            and rising resource share, ECI deteriorating from &minus;0.74
+            in 1995 to &minus;1.59 in 2023, no visible diversification in
+            the trade data. Azerbaijan shows where the wide resource
+            share is silent on the relevant structural change: the
+            aggregate share has stayed at 93 to 95% throughout the
+            panel, but the composition shifted from crude oil toward
+            refined products and gas, and ECI improved from an
+            estimated &minus;0.5 in 1995 to &minus;0.52 in 2023. Chile
+            is the ceiling outcome: the highest ECI in the
+            resource-rich subsample, with manufacturing share and
+            institutional quality partly offsetting the resource drag.
+        </p>
     </section>
 
 
@@ -795,85 +1019,168 @@
         <h2>Sample Sensitivity</h2>
 
         <p>
-            The 107-country headline sample applies only the high-income filter (with
-            Gulf force-included), so it covers the full spectrum from non-resource
-            economies to petrostates. To confirm that the main findings do not depend
-            on this broad construction, the headline specification is re-estimated on
-            three tighter sample definitions, retaining only countries with adjusted
-            natural resource rents above 1%, 2%, and 3% of GDP in 1995. HAC-panel
-            standard errors (Bartlett kernel, 3 lags) are also reported as a more
-            conservative inference alternative.
+            The headline finding is checked against four alternatives: a
+            stricter standard-error clustering (M2: two-way), a parsimonious
+            specification with resource &times; investment interaction terms
+            (M3), a falsification under pooled OLS without fixed effects
+            (M4), and a re-estimation on the observed sample without MICE
+            imputation (M5). The full coefficient table is reported below.
         </p>
 
         <div class="theory-box">
             <h3>Findings That Survive</h3>
             <p>
-                <strong>The negative coefficient on Production Value</strong> survives
-                across all four sample definitions. Point estimates move between
-                &minus;0.007 and &minus;0.014 but remain negative throughout, identifying
-                a robust within-country signal: more extractive intensity is associated
-                with lower complexity, holding investment and institutions fixed.
+                <strong>The negative coefficient on wide resource share</strong>
+                survives across all four fixed-effects specifications (M1, M2,
+                M3, M5), with point estimates between &minus;0.43 and &minus;0.57,
+                all significant at the 1% level. Under pooled OLS without
+                country and year fixed effects (M4), the coefficient collapses
+                to &minus;0.08 and loses significance: the within-country
+                signal is doing the identification, not cross-sectional
+                rich-versus-poor differences.
             </p>
             <p>
-                <strong>Human Capital</strong> is positive across all samples. Its
-                confidence interval widens as the sample tightens (fewer countries, less
-                precise estimate); it stays significant on the headline panel and is
-                borderline at the 1% subsample.
+                <strong>The MICE imputation</strong> does not change the
+                substantive reading. M5, estimated on observations with no
+                imputed values, returns &minus;0.48 (close to the
+                MICE-pooled &minus;0.43). MICE-pooled inference is the more
+                conservative choice on standard errors, but neither the sign
+                nor the magnitude of the headline coefficient depends on the
+                imputation step.
             </p>
             <p>
-                <strong>Capital Formation</strong> is positive and significant in every
-                sample, with stable magnitude.
+                <strong>Resource &times; investment interaction terms</strong>
+                are not statistically robust. In M3 the log HCI &times; wide
+                share interaction is negative and significant at 5%
+                (&minus;1.16), but it reverses the prediction from Mehlum,
+                Moene and Torvik (2006) and loses significance once the wider
+                control set is restored in M1. The log GFCF &times; wide
+                share interaction is not significant in any specification.
             </p>
             <p>
-                <strong>Neither interaction term</strong> (HCI &times; Production,
-                GFCF &times; Production) reaches significance in any of the four samples.
-                The conditional-curse mechanism in this dataset operates through main
-                effects rather than statistically detectable moderation.
+                <strong>The post-2019 COVID interactions</strong> are
+                insignificant in all four fixed-effects specifications.
+                LASSO under temporal cross-validation shrinks them to zero.
+                There is no robust COVID-period signal in this data.
+            </p>
+            <p>
+                <strong>SHAP feature rankings</strong> are stable across the
+                M = 5 imputations. The top five features (log Human Capital
+                Index, Manufacturing share, Agriculture share, log Population,
+                wide resource share) carry cross-imputation relative standard
+                deviations below 0.02. The headline ranking does not depend
+                on a particular imputation draw.
             </p>
         </div>
 
-        <h3>Coefficient and R&sup2; Stability Across Samples</h3>
+        <h3>Coefficient Stability Across Specifications</h3>
 
         <p>
-            The coefficient comparison plot tracks each headline regressor across the
-            four sample definitions. The R&sup2; comparison shows that explanatory power
-            stays in a narrow range, indicating that the choice of sample affects neither
-            sign nor fit materially.
+            Three additional specifications. M2 re-estimates M1 with
+            two-way clustered standard errors (country and year), to
+            check whether the M1 inference relies on the country-clustered
+            standard errors alone. M3 is a parsimonious version: the
+            wider macro and sectoral controls are dropped, and two
+            resource &times; investment interaction terms (log HCI
+            &times; wide share, log GFCF &times; wide share) are added
+            in their place. M5
+            re-estimates M1 on the observed sample only, dropping the
+            MICE-imputed values.
         </p>
 
-        <div class="viz-grid">
-            <div class="viz-container">
-                <h4>Coefficient Stability Across Samples</h4>
-                <iframe loading="lazy"
-                        src="outputs/18_coef_comparison_across_samples.html"
-                        style="height:460px; width:100%;"></iframe>
-            </div>
-            <div class="viz-container">
-                <h4>R&sup2; Across Samples</h4>
-                <iframe loading="lazy"
-                        src="outputs/19_r2_comparison_across_samples.html"
-                        style="height:400px; width:100%;"></iframe>
-            </div>
-        </div>
+        <table class="results-table" style="margin: 1rem 0 1.5rem;">
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th class="num">M1 (2WFE, country SE)</th>
+                    <th class="num">M2 (2WFE, two-way SE)</th>
+                    <th class="num">M3 (Parsim. + interactions)</th>
+                    <th class="num">M5 (Observed only)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-row">
+                    <td><strong>Wide resource share</strong></td>
+                    <td class="num">&minus;0.43 ***</td>
+                    <td class="num">&minus;0.43 ***</td>
+                    <td class="num">&minus;0.57 ***</td>
+                    <td class="num">&minus;0.48 ***</td>
+                </tr>
+                <tr>
+                    <td>log HCI</td>
+                    <td class="num">+0.13</td>
+                    <td class="num">+0.13</td>
+                    <td class="num">+0.54</td>
+                    <td class="num">&minus;0.11</td>
+                </tr>
+                <tr>
+                    <td>log GFCF</td>
+                    <td class="num">+0.05</td>
+                    <td class="num">+0.05</td>
+                    <td class="num">+0.05</td>
+                    <td class="num">+0.08</td>
+                </tr>
+                <tr>
+                    <td>log HCI &times; wide share</td>
+                    <td class="num"></td>
+                    <td class="num"></td>
+                    <td class="num">&minus;1.16 **</td>
+                    <td class="num"></td>
+                </tr>
+                <tr>
+                    <td>log GFCF &times; wide share</td>
+                    <td class="num"></td>
+                    <td class="num"></td>
+                    <td class="num">&minus;0.11</td>
+                    <td class="num"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">Significance: *** p &lt; 0.01, ** p &lt; 0.05, * p &lt; 0.10. The headline resource coefficient is stable in sign and magnitude across the four fixed-effects specifications. Only the pooled OLS in M4 (main table) collapses. M3&rsquo;s log HCI &times; wide share interaction is negative and statistically significant; this is opposite to the conditional-curse prediction of Mehlum, Moene and Torvik (2006) and loses significance once the wider control set is restored in M1.</td>
+                </tr>
+            </tfoot>
+        </table>
 
-        <h3>Bootstrap Confidence Intervals</h3>
+        <h3>Known Limitations</h3>
 
-        <p>
-            A country-block bootstrap (200 iterations) resamples countries with replacement,
-            re-imputes each dataset, and re-fits all regression and ML models. Lagged ECI,
-            Electricity, and Domestic Credit have the highest sign-stability across
-            iterations; Urban Population and Human Capital follow at a clearly lower but
-            still substantial level. The two interaction terms (HCI &times; Production,
-            GFCF &times; Production) are shrunk to zero by LASSO in the majority of
-            iterations and carry sign agreement only a small share of the time,
-            consistent with the regression result that neither reaches significance.
-        </p>
-
-        <div class="viz-container">
-            <h4>LASSO Coefficient Stability (Bootstrap)</h4>
-            <iframe loading="lazy"
-                    src="outputs/21_lasso_coefficient_stability.html"
-                    style="height:600px; width:100%;"></iframe>
+        <div class="note-box">
+            <h4 style="color: var(--accent);">What the analysis does not resolve</h4>
+            <p>
+                <strong>Causal direction.</strong> The fixed-effects specification
+                identifies within-country correlation between resource share and
+                ECI, not causation. The plausible reverse channel (countries with
+                weakening industrial bases shift back toward extractive exports)
+                cannot be ruled out by panel regression alone.
+            </p>
+            <p>
+                <strong>Cluster heterogeneity.</strong> The k = 4 partition is
+                interpretable but conceals within-cluster variation. The hydrocarbon
+                petrostates cluster includes Saudi Arabia and Yemen; the precious
+                cluster includes Botswana and Central African Republic. A k = 5
+                partition (tested; not adopted) splits petrostates into a crude-only
+                and a mixed-hydrocarbon subgroup, which adds interpretive complexity
+                without changing the regression results.
+            </p>
+            <p>
+                <strong>Imputation for early years.</strong> The 1995 to 2001
+                Comtrade coverage is thinner than later years, and MICE imputation
+                carries more weight in those years. The temporal cross-validation
+                in the ML pipeline does not evaluate predictions before 2003 (the
+                minimum training window is eight years), so the early-period
+                imputations matter less for ML inference than for regression
+                inference.
+            </p>
+            <p>
+                <strong>COVID interactions.</strong> The post-2019 indicator
+                captures anything that changed after 2019, not just COVID.
+                Energy market restructuring, the Russia-Ukraine war (from 2022),
+                and the associated commodity price spikes all load on this
+                dummy. The three commodity-group interactions (hydrocarbons,
+                ores, base metals) are all insignificant under M1 in our data.
+                Isolating a clean COVID channel would require a more structured
+                event-study design.
+            </p>
         </div>
     </section>
 
@@ -883,247 +1190,256 @@
         <span class="section-label">Appendix</span>
         <h2>Methodology and Supplementary Material</h2>
 
-        <h3 id="concepts-background" style="margin-top: 1.5rem;">Concepts and Literature Background</h3>
+        <h3 id="concepts-background" style="margin-top: 1.5rem;">Concepts and Definitions</h3>
 
         <p>
-            <strong>Economic complexity</strong> measures how sophisticated and diverse a
-            country&rsquo;s exports are. Countries that produce many different, hard-to-make
-            products (pharmaceuticals, machinery, electronics) score high on the Economic
-            Complexity Index (ECI). Countries whose exports are dominated by raw materials
-            score low. Japan, Germany, and Switzerland rank highest; many oil exporters and
-            low-income countries rank lowest.
+            <strong>Economic Complexity Index (ECI).</strong> A country-level score
+            built from the structure of its export basket. Countries that export
+            many distinct products, where those products are themselves exported by
+            few other countries, score high. Japan and Switzerland sit at the top
+            of the global ranking; most oil exporters and low-income agricultural
+            economies sit near the bottom. The version used here is the HS92-based
+            ECI from the Atlas of Economic Complexity, recomputed annually as new
+            trade data become available.
         </p>
         <p>
-            <strong>The resource curse</strong> is the observation that countries rich in
-            natural resources often grow more slowly, have weaker institutions, and develop
-            less diverse economies than resource-poor countries. Nigeria and Venezuela are
-            classic examples: abundant natural wealth, low economic complexity. Norway,
-            Canada, and Australia show that resource wealth and economic sophistication can
-            coexist.
+            <strong>Harmonized System (HS) classification.</strong> An international
+            customs taxonomy used to classify every traded good. The first two digits
+            identify the chapter (HS27 = mineral fuels, mineral oils and products
+            of their distillation; HS26 = ores, slag and ash; HS71 = natural or
+            cultured pearls, precious or semi-precious stones, precious metals).
+            The next two digits identify the heading (HS2709 = crude petroleum;
+            HS2710 = refined petroleum). This analysis pulls Comtrade data at the
+            four-digit sub-code level within HS27 and at the chapter level for
+            HS26 and HS71.
         </p>
         <p>
-            The empirical literature finds weak evidence for the curse as a deterministic
-            mechanism. Mehlum, Moene &amp; Torvik (2006) show that resources impede growth
-            only where institutions are &ldquo;grabber-friendly&rdquo;; where rule of law is
-            strong, resources accelerate growth. Venables (2016) argues that resource-rich
-            governments tend to convert extraction rents into consumption rather than
-            productive investment. The central question has shifted from <em>whether</em>
-            resources harm growth to <em>under what conditions</em> they do.
+            <strong>Multiple Imputation by Chained Equations (MICE).</strong> A
+            method for handling missing data that draws plausible values for each
+            missing cell from a model fit to the observed data, then re-fits the
+            imputation model with the new values, iterating to convergence. Running
+            the procedure M times (here M = 5) produces M completed datasets;
+            estimates are computed on each and pooled using Rubin&rsquo;s rules,
+            which account for both within-imputation and across-imputation
+            variance. The country-demeaning option here forces each imputation to
+            preserve country-specific variation rather than borrow across the
+            cross-section.
         </p>
         <p>
-            <strong>Human capital</strong>, measured by the World Bank&rsquo;s Human Capital
-            Index (HCI), captures education and health outcomes in a country&rsquo;s
-            workforce. It is one of the strongest predictors of economic complexity, and
-            this project tests whether its effect is weakened in countries where natural
-            resources dominate the economy.
+            <strong>Resource-Reliance (RR) clustering.</strong> The pipeline here
+            takes seven trade shares (coal, crude oil, refined oil, gas, ores, base
+            metals, precious), applies log1p to compress the heavy right tails,
+            reduces to two principal components, and runs K-means with k = 4. The
+            log1p step is what makes the partition robust to price-level shifts:
+            a doubling in oil prices roughly doubles HS27 share for petrostates,
+            and the log transformation compresses that doubling into a small
+            additive shift in the clustering feature.
+        </p>
+        <p>
+            <strong>SHAP (SHapley Additive exPlanations).</strong> A method
+            originating in cooperative game theory and adapted to feature importance
+            for machine learning models. Each prediction is decomposed into
+            contributions from each feature, summing to the difference between the
+            model&rsquo;s prediction and the global mean. SHAP values are stable
+            under feature permutation in a way that raw feature-importance scores
+            from tree models are not, which is why they are preferred for
+            cross-model comparison.
+        </p>
+        <p>
+            <strong>Panel fixed effects.</strong> Country fixed effects absorb every
+            time-invariant country characteristic (geography, colonial history,
+            language, founding institutions). Year fixed effects absorb every
+            global shock (commodity price swings, financial crises, the COVID
+            pandemic), to the extent those shocks affect all countries in the same
+            year. What remains is within-country year-over-year variation. The
+            negative wide_resource_share coefficient under FE is identified from
+            countries whose resource share rose or fell from one year to the next,
+            not from the level difference between Saudi Arabia and South Korea.
         </p>
 
         <h3 id="methods">Methodology and Estimation</h3>
 
         <div class="two-col">
             <div class="note-box">
-                <h4 style="color: var(--accent);">Data Processing</h4>
+                <h4 style="color: var(--accent);">Data Pipeline</h4>
                 <p>
-                    20+ commodities aggregated into four categories (oil, natural gas, coal,
-                    metals). Production values computed as physical quantity &times; market
-                    price (USD). All features standardised (mean=0, SD=1) before PCA,
-                    clustering, and regularised regression. Missing values handled by linear
-                    interpolation (capped at three years) followed by KNN imputation
-                    (k=5, distance-weighted). The 107-country headline sample for regression
-                    and ML applies the 1995 high-income filter with the six Gulf states
-                    force-included. The 56-country clustering subsample additionally
-                    requires forest-adjusted natural resource rents above 1% of GDP in 1995.
-                    The <a href="#robustness" style="color: var(--accent);">Robustness section</a>
-                    reports estimates on three tighter sample definitions.
+                    UN Comtrade pulls at the four-digit HS sub-code level
+                    (customsCode = C00, motCode = 0; uniform six-year batches with
+                    defensive client-side filtering). FRED, IMF WEO 2025 release,
+                    Penn World Tables 11.0, Atlas of Economic Complexity HS92 ECI
+                    for the non-trade variables. Country codes harmonised to
+                    ISO3 throughout. Multiple Imputation by Chained Equations
+                    (MICE) with M = 5 imputations and country-demeaning fills
+                    macroeconomic gaps. Cache hashing keys on (country, period,
+                    HS_code) so re-pulls touch only the missing slices.
                 </p>
             </div>
             <div class="note-box">
                 <h4 style="color: var(--accent);">Statistical Methods</h4>
                 <p>
-                    PCA: 2 components, 50.0% variance explained (PC1 26.9%, PC2 23.1%).
-                    K-means: k=4 on country panel means across 1995-2019, using oil,
-                    gas, and mineral rent shares plus log production per capita. Panel
-                    regression: two-way fixed effects (country and year) with
-                    country-clustered standard errors. The headline specification
-                    includes lagged ECI and two interaction terms (HCI &times; Prod,
-                    GFCF &times; Prod). ML pipeline: regularised regression (LASSO, Ridge,
-                    Elastic Net) and Random Forest on 20 structural features, with
-                    cross-validation and a temporal train/test split. Bootstrap inference:
-                    200 country-block resamples.
+                    Panel regression: two-way fixed effects (country and year)
+                    with country-clustered standard errors. The main table
+                    reports M1 (2WFE) and M4 (pooled OLS); three additional
+                    specifications (M2 with two-way clustered SEs, M3 with
+                    resource &times; investment interactions and reduced controls, M5 on the
+                    observed-only sample) are reported in the regression
+                    appendix. Three post-2019 commodity-group interaction
+                    terms test for COVID-period shifts. ML pipeline: LASSO,
+                    Ridge, Elastic Net, Random Forest, and XGBoost on the
+                    structural feature set, with SHAP feature importance.
+                    Cluster analysis: log1p-PCA-KMeans on seven trade-share
+                    features with k = 4 selected by silhouette. All downstream
+                    estimates pooled across the M = 5 imputations.
                 </p>
             </div>
         </div>
+
         <p style="margin-top: 1rem; font-size: 0.93rem; color: var(--text-muted);">
             Full code and data pipeline available on
             <a href="https://github.com/leoss14" target="_blank" style="color: var(--accent);">GitHub</a>
-            or on request.
+            (notebooks: e1_data_pull, e1b_trade_data, e2_data_prep, e3_clusters,
+            e4_ml, e5_regressions).
         </p>
 
         <h3 id="data-appendix">Data Sources and Sample Construction</h3>
 
-        <p>
-            Missing values are filled by linear interpolation (capped at three years)
-            followed by K-Nearest Neighbours imputation (k=5, distance-weighted). 20+
-            commodities are aggregated into four categories (oil, natural gas, coal,
-            metals) and converted to dollar values using a consolidated price file.
-        </p>
-
         <div class="note-box">
-            <h4>Sample definition (full criteria)</h4>
+            <h4>Sample definition</h4>
             <p>
-                The headline sample for regression and ML is selected on two criteria
-                applied to the 1995 snapshot. <em>First</em>, countries classified as
-                high-income by the World Bank in 1995 (Norway, Australia, Canada, and
-                similar advanced economies) are excluded, restricting the analysis to
-                developing economies. <em>Second</em>, the six Gulf states (Bahrain,
-                Kuwait, Oman, Qatar, Saudi Arabia, United Arab Emirates) are force-included
-                regardless of income status, since several were high-income in 1995 and
-                their oil sectors come online later in the panel. No rent-share threshold
-                is applied, so the sample spans the full range from non-resource economies
-                (Korea, Bangladesh, Czechia) to petrostates (Saudi Arabia, Qatar).
+                The headline sample for regression and ML is the set of 73 developing
+                economies that have continuous Comtrade reporting from 1995 to 2024
+                under the HS92 classification, with macroeconomic series available
+                from FRED, IMF WEO, and Penn World Tables 11.0. High-income economies in 1995 are excluded, with the six Gulf
+                states (Saudi Arabia, Kuwait, UAE, Qatar, Bahrain, Oman)
+                force-included because their export baskets are clearly
+                resource-dominated despite their per-capita incomes. No
+                rent-share threshold is applied at the sample-construction
+                stage.
             </p>
             <p>
-                The clustering exercise uses a tighter 56-country subsample defined by an
-                additional criterion: forest-adjusted natural resource rents above 1% of
-                GDP in 1995. Forest rents are subtracted from the World Bank total because
-                diffuse forestry rents enter the resource share through a different
-                economic channel than point-source extractive rents (oil, gas, minerals)
-                and would otherwise inflate the apparent dependence of countries whose
-                rent base is timber rather than subsoil. Countries in the 107-panel that
-                fail this criterion appear in the typology with the label
-                "Non-resource-dependent" rather than being forced into the nearest
-                k-means centroid.
+                The clustering exercise uses a tighter 64-country resource-reliant
+                subsample defined by the mean wide_resource_share exceeding 0.40
+                across the panel. Countries below the threshold (Bangladesh, India,
+                China, Korea, Turkey, many smaller economies) are kept in the
+                regression and ML panels but are not assigned to a resource cluster.
             </p>
         </div>
 
-        <h3>ECI vs Resource Dependence: Country Trajectories</h3>
+        <h3>Cluster Diagnostics</h3>
 
         <p>
-            The aggregate regressions describe average relationships, but country trajectories
-            vary widely. The paired time-series below tracks Economic Complexity and total
-            resource production as a share of GDP for countries chosen to represent distinct
-            development pathways: Norway (successful diversification despite oil wealth),
-            Nigeria (persistent resource dependence with low complexity), Chile (copper-dependent
-            but gradually upgrading), the UAE (petrostate with aggressive diversification policy),
-            Malaysia (resource-rich transition to manufacturing), and Botswana (mining-dependent
-            but institutionally strong).
+            Single-year cluster assignments at 1995, 2010, and 2023.
+            K-means assigns cluster IDs non-deterministically per fit, so
+            the colour mapping for a given archetype shifts between
+            snapshot years; the maps are useful for spotting which
+            countries change basket composition rather than for tracking
+            a fixed cluster label.
         </p>
 
-        <div class="viz-container">
-            <h4>Economic Complexity vs Resource Dependence (Comparator Trajectories)</h4>
-            <iframe loading="lazy"
-                    src="outputs/10_eci_trajectory_comparators.html"
-                    style="height:500px; width:100%;"></iframe>
+        <div class="viz-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+            <div class="viz-container">
+                <h4>1995 Snapshot</h4>
+                <iframe loading="lazy"
+                        src="New%20code/extension_2024/Graphics/NB3/map_RR_k4_1995.html?v=20260523d"
+                        style="height:340px; width:100%;"></iframe>
+            </div>
+            <div class="viz-container">
+                <h4>2010 Snapshot</h4>
+                <iframe loading="lazy"
+                        src="New%20code/extension_2024/Graphics/NB3/map_RR_k4_2010.html?v=20260523d"
+                        style="height:340px; width:100%;"></iframe>
+            </div>
+            <div class="viz-container">
+                <h4>2023 Snapshot</h4>
+                <iframe loading="lazy"
+                        src="New%20code/extension_2024/Graphics/NB3/map_RR_k4_2023.html?v=20260523d"
+                        style="height:340px; width:100%;"></iframe>
+            </div>
         </div>
 
-        <div class="divider"><span>Supplementary Data</span></div>
-
-        <h3>Resource Diversity &amp; Intensity Indices</h3>
+        <h3>ECI and Resource Share: Country Trajectories</h3>
 
         <p>
-            <strong>Diversity</strong> uses Shannon entropy to measure how many different types of resources
-            a country produces at a globally significant level. It is highest when production is spread evenly
-            across categories (fossil fuels, base metals, precious metals, battery/strategic metals,
-            industrial minerals) and lowest when concentrated in just one. Only resources where the country
-            holds at least 0.5% of global production are counted. A power transformation (x<sup>1.5</sup>)
-            rewards market dominance: holding 20% of global cobalt production counts for more than
-            holding 2% of global coal.
-        </p>
-        <p>
-            <strong>Intensity</strong> measures total resource production value as a share of GDP. Values
-            range from near-zero for service economies to above 15% for Kuwait and Congo Republic.
-        </p>
-
-        <h3>Resource Portfolio Decomposition</h3>
-
-        <p>
-            The stacked bar chart below decomposes the rent portfolio for the 20 countries scoring
-            highest on the diversity index. Each bar shows what share of total rents comes from each
-            resource type. Countries near the top of the chart hold the most balanced portfolios:
-            none of the four categories dominates the whole. Countries near the bottom rely heavily
-            on one or two categories.
+            Paired time series for six countries that span the
+            resource-curse pattern within the developing-economy panel:
+            the three case study countries and one representative for
+            each of three cluster archetypes. ECI is plotted on the left
+            axis (solid navy line), wide resource share on the right
+            axis (dashed red line). The two series often move in opposite
+            directions but not always; Botswana sustained a relatively
+            high ECI through a sustained diamond-export concentration,
+            illustrating that resource intensity is not deterministic.
         </p>
 
         <div class="viz-container">
-            <h4>Resource Portfolio Composition (Top 20 Most Diversified Countries)</h4>
+            <h4>ECI and wide resource share, 1995&ndash;2024</h4>
             <iframe loading="lazy"
-                    src="outputs/25_resource_portfolio_decomposition.html"
-                    style="height:580px; width:100%;"></iframe>
-        </div>
-
-        <h3>Variables and Data Sources</h3>
-
-        <p>
-            The treemap below shows the variables used in the analysis grouped by thematic family
-            (resources, governance, human capital, infrastructure, macroeconomic). The bubble chart
-            shows the data sources by frequency of use across notebooks.
-        </p>
-
-        <div class="viz-container">
-            <h4>Analytical Variables (Grouped by Theme)</h4>
-            <iframe loading="lazy"
-                    src="outputs/02_variables_treemap.html"
-                    style="height:560px; width:100%;"></iframe>
-        </div>
-
-        <div class="viz-container">
-            <h4>Data Sources</h4>
-            <iframe loading="lazy"
-                    src="outputs/03_data_sources_bubble.html"
-                    style="height:520px; width:100%;"></iframe>
+                    src="New%20code/extension_2024/Graphics/NB3/country_trajectories.html?v=20260523d"
+                    style="height:600px; width:100%;"
+                    title="ECI and wide resource share trajectories"></iframe>
+            <p class="viz-note">
+                Six countries spanning the resource-curse spectrum.
+                Case studies: Republic of Congo, Azerbaijan, Chile.
+                Cluster archetypes: Saudi Arabia (Hydrocarbon
+                Petrostates), Botswana (Precious Metals and Stones),
+                Indonesia (Mixed Extractives). Left axis: ECI (solid
+                navy). Right axis: wide resource share, percent of
+                total exports (dashed red).
+            </p>
         </div>
 
         <h3>Principal Component Analysis</h3>
 
         <p>
-            PCA is computed on ten country-level variables describing each
-            economy&rsquo;s resource and structural profile: production value per
-            capita, total natural-resource rents (% of GDP), oil rents, natural-gas
-            rents, mineral rents and forestry rents (each as % of GDP), GDP per
-            capita, trade openness, manufacturing share, and services share. The
-            first two components together explain about 50% of total variation in
-            this feature set. PCA is used for visualisation only; the clustering
-            in the main analysis is fit on its own narrower feature set (oil, gas,
-            and mineral rent shares plus log production per capita), not on the PCA
-            components.
+            The clustering is fit on log-transformed shares of seven
+            commodity sub-codes (coal, crude oil, refined oil, gas,
+            ores, base metals, precious metals), reduced via PCA to two
+            components before K-means. The scatter below shows each
+            resource-rich country positioned in the PC1&ndash;PC2 plane,
+            coloured by its assigned cluster. The two loading charts
+            show which commodity shares define each axis.
         </p>
 
-        <div class="two-col">
-            <div class="note-box">
-                <h4>PC1: Resource Dependence (~27%)</h4>
-                <p>Loads positively on total natural-resource rents, oil rents, and
-                production value; loads negatively on manufacturing and services
-                shares. Separates economies whose output is dominated by extractive
-                sectors from those with more diversified production bases.</p>
-            </div>
-            <div class="note-box">
-                <h4>PC2: Development Scale (~23%)</h4>
-                <p>Loads positively on production value, GDP per capita, trade
-                openness, and services; loads negatively on forestry rents.
-                Separates larger, more open economies from low-income, forestry-reliant
-                ones, cutting across the resource-dependence axis above.</p>
-            </div>
-        </div>
-
         <div class="viz-container">
-            <h4>PCA Scatter (Coloured by Cluster)</h4>
+            <h4>PCA scatter, coloured by cluster</h4>
             <iframe loading="lazy"
-                    src="outputs/26_pca_scatter_clusters.html"
-                    style="height:520px; width:100%;"></iframe>
+                    src="New%20code/extension_2024/Graphics/NB3/pca_scatter.html?v=20260523d"
+                    style="height:560px; width:100%;"
+                    title="PCA scatter coloured by cluster"></iframe>
+            <p class="viz-note">
+                Each point is one resource-rich country plotted on the
+                first two principal components of its panel-mean export
+                basket. Cluster membership maps onto distinct PC1
+                positions for petrostates and a separate PC2 spread for
+                precious-metals and base-metals exporters.
+            </p>
         </div>
 
         <div class="viz-grid">
             <div class="viz-container">
-                <h4>PC1 Loadings</h4>
+                <h4>PC1 loadings</h4>
                 <iframe loading="lazy"
-                        src="outputs/27_pca_loadings_pc1.html"
-                        style="height:520px; width:100%;"></iframe>
+                        src="New%20code/extension_2024/Graphics/NB3/pca_pc1_loadings.html?v=20260523d"
+                        style="height:440px; width:100%;"
+                        title="PC1 loadings"></iframe>
+                <p class="viz-note">
+                    PC1 separates hydrocarbon-dominated economies (high
+                    on crude oil and gas) from those whose baskets lean
+                    on solid commodities (ores, base metals, precious).
+                </p>
             </div>
             <div class="viz-container">
-                <h4>PC2 Loadings</h4>
+                <h4>PC2 loadings</h4>
                 <iframe loading="lazy"
-                        src="outputs/28_pca_loadings_pc2.html"
-                        style="height:520px; width:100%;"></iframe>
+                        src="New%20code/extension_2024/Graphics/NB3/pca_pc2_loadings.html?v=20260523d"
+                        style="height:440px; width:100%;"
+                        title="PC2 loadings"></iframe>
+                <p class="viz-note">
+                    PC2 separates precious-metals exporters from
+                    base-metals exporters, the axis the K-means
+                    partition needs to distinguish two of the four
+                    archetypes.
+                </p>
             </div>
         </div>
 
@@ -1138,5 +1454,6 @@
         </div>
     </footer>
 
+<script src="../../js/nav.js"></script>
 </body>
 </html>

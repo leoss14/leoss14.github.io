@@ -1,0 +1,506 @@
+period,reporterISO,reporterDesc,cmdCode,cmdDesc,primaryValue
+1997,AND,Andorra,80,Tin; articles thereof,13.0
+1998,AND,Andorra,80,Tin; articles thereof,33.0
+2000,AND,Andorra,80,Tin; articles thereof,3782.0
+1999,ARE,United Arab Emirates,80,Tin; articles thereof,1950271.0
+2000,ARE,United Arab Emirates,80,Tin; articles thereof,7820151.0
+1995,ARG,Argentina,80,Tin; articles thereof,24518.0
+1996,ARG,Argentina,80,Tin; articles thereof,20856.0
+1997,ARG,Argentina,80,Tin; articles thereof,147175.0
+1998,ARG,Argentina,80,Tin; articles thereof,14140.0
+1999,ARG,Argentina,80,Tin; articles thereof,12905.0
+2000,ARG,Argentina,80,Tin; articles thereof,6771.0
+1997,ARM,Armenia,80,Tin; articles thereof,43003.0
+1995,AUS,Australia,80,Tin; articles thereof,7761848.0
+1996,AUS,Australia,80,Tin; articles thereof,12533303.0
+1997,AUS,Australia,80,Tin; articles thereof,21400676.0
+1998,AUS,Australia,80,Tin; articles thereof,15112218.0
+1999,AUS,Australia,80,Tin; articles thereof,25607482.0
+2000,AUS,Australia,80,Tin; articles thereof,13431007.0
+1995,AUT,Austria,80,Tin; articles thereof,4583843.0
+1996,AUT,Austria,80,Tin; articles thereof,2516902.0
+1997,AUT,Austria,80,Tin; articles thereof,1927983.0
+1998,AUT,Austria,80,Tin; articles thereof,1946691.0
+1999,AUT,Austria,80,Tin; articles thereof,1879856.0
+2000,AUT,Austria,80,Tin; articles thereof,2636918.0
+1995,BEL,Belgium-Luxembourg (...1998),80,Tin; articles thereof,46326916.0
+1996,BEL,Belgium-Luxembourg (...1998),80,Tin; articles thereof,53719284.0
+1997,BEL,Belgium-Luxembourg (...1998),80,Tin; articles thereof,54501680.0
+1998,BEL,Belgium-Luxembourg (...1998),80,Tin; articles thereof,52139476.0
+1999,BEL,Belgium,80,Tin; articles thereof,48491263.0
+2000,BEL,Belgium,80,Tin; articles thereof,54364296.0
+1998,BFA,Burkina Faso,80,Tin; articles thereof,24123.0
+1996,BGR,Bulgaria,80,Tin; articles thereof,798621.0
+1997,BGR,Bulgaria,80,Tin; articles thereof,7250200.0
+1998,BGR,Bulgaria,80,Tin; articles thereof,22172.0
+1999,BGR,Bulgaria,80,Tin; articles thereof,3183.0
+2000,BGR,Bulgaria,80,Tin; articles thereof,1799.0
+2000,BHR,Bahrain,80,Tin; articles thereof,28112.0
+1998,BHS,Bahamas,80,Tin; articles thereof,3000.0
+1999,BHS,Bahamas,80,Tin; articles thereof,4687.0
+2000,BHS,Bahamas,80,Tin; articles thereof,1300.0
+1998,BLR,Belarus,80,Tin; articles thereof,138997.0
+1999,BLR,Belarus,80,Tin; articles thereof,25998.0
+2000,BLR,Belarus,80,Tin; articles thereof,22800.0
+1999,BLZ,Belize,80,Tin; articles thereof,3.0
+1995,BOL,Bolivia (Plurinational State of),80,Tin; articles thereof,112950880.0
+1996,BOL,Bolivia (Plurinational State of),80,Tin; articles thereof,101249016.0
+1997,BOL,Bolivia (Plurinational State of),80,Tin; articles thereof,90415648.0
+1998,BOL,Bolivia (Plurinational State of),80,Tin; articles thereof,58260396.0
+1999,BOL,Bolivia (Plurinational State of),80,Tin; articles thereof,64103917.0
+2000,BOL,Bolivia (Plurinational State of),80,Tin; articles thereof,66219073.0
+1995,BRA,Brazil,80,Tin; articles thereof,58295928.0
+1996,BRA,Brazil,80,Tin; articles thereof,68517736.0
+1997,BRA,Brazil,80,Tin; articles thereof,65453120.0
+1998,BRA,Brazil,80,Tin; articles thereof,35935384.0
+1999,BRA,Brazil,80,Tin; articles thereof,31707445.0
+2000,BRA,Brazil,80,Tin; articles thereof,34986312.0
+1997,BRB,Barbados,80,Tin; articles thereof,1438.0
+1998,BRB,Barbados,80,Tin; articles thereof,209.0
+1999,BRB,Barbados,80,Tin; articles thereof,8.0
+2000,BRB,Barbados,80,Tin; articles thereof,17.0
+1997,BRN,Brunei Darussalam,80,Tin; articles thereof,13490.0
+1998,BRN,Brunei Darussalam,80,Tin; articles thereof,3784.0
+2000,BWA,Botswana,80,Tin; articles thereof,1141.0
+1995,CAN,Canada,80,Tin; articles thereof,18877460.0
+1996,CAN,Canada,80,Tin; articles thereof,15792756.0
+1997,CAN,Canada,80,Tin; articles thereof,13584534.0
+1998,CAN,Canada,80,Tin; articles thereof,10011568.0
+1999,CAN,Canada,80,Tin; articles thereof,8534965.0
+2000,CAN,Canada,80,Tin; articles thereof,9448311.0
+1995,CHE,Switzerland,80,Tin; articles thereof,2061643.0
+1996,CHE,Switzerland,80,Tin; articles thereof,1748580.0
+1997,CHE,Switzerland,80,Tin; articles thereof,1588732.0
+1998,CHE,Switzerland,80,Tin; articles thereof,1609655.0
+1999,CHE,Switzerland,80,Tin; articles thereof,1715898.0
+2000,CHE,Switzerland,80,Tin; articles thereof,1207651.425
+1995,CHL,Chile,80,Tin; articles thereof,22777.0
+1996,CHL,Chile,80,Tin; articles thereof,64857.0
+1997,CHL,Chile,80,Tin; articles thereof,209178.0
+1998,CHL,Chile,80,Tin; articles thereof,73985.0
+1999,CHL,Chile,80,Tin; articles thereof,111427.0
+2000,CHL,Chile,80,Tin; articles thereof,90493.0
+1995,CHN,China,80,Tin; articles thereof,243276483.0
+1996,CHN,China,80,Tin; articles thereof,214357340.0
+1997,CHN,China,80,Tin; articles thereof,227910358.0
+1998,CHN,China,80,Tin; articles thereof,303174496.0
+1999,CHN,China,80,Tin; articles thereof,360104655.0
+2000,CHN,China,80,Tin; articles thereof,470983589.0
+1995,CIV,Côte d'Ivoire,80,Tin; articles thereof,9168.0
+1996,CIV,Côte d'Ivoire,80,Tin; articles thereof,243.0
+1997,CIV,Côte d'Ivoire,80,Tin; articles thereof,2112.0
+1999,CIV,Côte d'Ivoire,80,Tin; articles thereof,180.0
+2000,CIV,Côte d'Ivoire,80,Tin; articles thereof,1287.0
+1995,CMR,Cameroon,80,Tin; articles thereof,204.0
+1995,COG,Congo,80,Tin; articles thereof,2086.0
+1995,COL,Colombia,80,Tin; articles thereof,5017.0
+1996,COL,Colombia,80,Tin; articles thereof,26160.0
+1997,COL,Colombia,80,Tin; articles thereof,13104.0
+1998,COL,Colombia,80,Tin; articles thereof,8903.0
+1999,COL,Colombia,80,Tin; articles thereof,23499.0
+2000,COL,Colombia,80,Tin; articles thereof,62863.0
+1999,CPV,Cabo Verde,80,Tin; articles thereof,5.0
+2000,CPV,Cabo Verde,80,Tin; articles thereof,31.0
+1997,CRI,Costa Rica,80,Tin; articles thereof,10.0
+1998,CRI,Costa Rica,80,Tin; articles thereof,1178.0
+1999,CRI,Costa Rica,80,Tin; articles thereof,9047.0
+2000,CRI,Costa Rica,80,Tin; articles thereof,5493.0
+1999,CUB,Cuba,80,Tin; articles thereof,4303.0
+2000,CUB,Cuba,80,Tin; articles thereof,2272.0
+1995,CYP,Cyprus,80,Tin; articles thereof,523574.0
+1996,CYP,Cyprus,80,Tin; articles thereof,65947.0
+1997,CYP,Cyprus,80,Tin; articles thereof,68899.0
+1998,CYP,Cyprus,80,Tin; articles thereof,7284.0
+1999,CYP,Cyprus,80,Tin; articles thereof,183.0
+1995,CZE,Czechia,80,Tin; articles thereof,4895102.0
+1996,CZE,Czechia,80,Tin; articles thereof,4770459.0
+1998,CZE,Czechia,80,Tin; articles thereof,588170.0
+1999,CZE,Czechia,80,Tin; articles thereof,1160101.0
+2000,CZE,Czechia,80,Tin; articles thereof,768488.0
+1995,DEU,Germany,80,Tin; articles thereof,32928000.0
+1996,DEU,Germany,80,Tin; articles thereof,28904344.0
+1997,DEU,Germany,80,Tin; articles thereof,32670684.0
+1998,DEU,Germany,80,Tin; articles thereof,34626000.0
+1999,DEU,Germany,80,Tin; articles thereof,38243784.0
+2000,DEU,Germany,80,Tin; articles thereof,35845000.0
+1995,DNK,Denmark,80,Tin; articles thereof,563524.0
+1996,DNK,Denmark,80,Tin; articles thereof,373611.0
+1998,DNK,Denmark,80,Tin; articles thereof,576007.0
+1999,DNK,Denmark,80,Tin; articles thereof,527964.0
+2000,DNK,Denmark,80,Tin; articles thereof,574979.0
+1996,DOM,Dominican Rep.,80,Tin; articles thereof,169437.0
+1997,DOM,Dominican Rep.,80,Tin; articles thereof,140853.0
+1995,DZA,Algeria,80,Tin; articles thereof,947.0
+1998,DZA,Algeria,80,Tin; articles thereof,797.0
+2000,DZA,Algeria,80,Tin; articles thereof,52.0
+1996,ECU,Ecuador,80,Tin; articles thereof,739.0
+1998,EGY,Egypt,80,Tin; articles thereof,13500.0
+1999,EGY,Egypt,80,Tin; articles thereof,3997.0
+1995,ESP,Spain,80,Tin; articles thereof,1908424.0
+1996,ESP,Spain,80,Tin; articles thereof,2556152.0
+1997,ESP,Spain,80,Tin; articles thereof,5181485.0
+1998,ESP,Spain,80,Tin; articles thereof,9844365.0
+1999,ESP,Spain,80,Tin; articles thereof,4833860.0
+2000,ESP,Spain,80,Tin; articles thereof,5870662.856
+1995,EST,Estonia,80,Tin; articles thereof,291284.0
+1996,EST,Estonia,80,Tin; articles thereof,282528.0
+1997,EST,Estonia,80,Tin; articles thereof,44109.0
+1998,EST,Estonia,80,Tin; articles thereof,88447.0
+1999,EST,Estonia,80,Tin; articles thereof,237617.0
+2000,EST,Estonia,80,Tin; articles thereof,323689.0
+1999,ETH,Ethiopia,80,Tin; articles thereof,41.0
+1995,FIN,Finland,80,Tin; articles thereof,624806.0
+1996,FIN,Finland,80,Tin; articles thereof,714804.0
+1997,FIN,Finland,80,Tin; articles thereof,1277387.0
+1998,FIN,Finland,80,Tin; articles thereof,1082792.0
+1999,FIN,Finland,80,Tin; articles thereof,855934.0
+2000,FIN,Finland,80,Tin; articles thereof,812740.0
+2000,FJI,Fiji,80,Tin; articles thereof,6305.0
+1995,FRA,France,80,Tin; articles thereof,16186808.0
+1996,FRA,France,80,Tin; articles thereof,18076682.0
+1997,FRA,France,80,Tin; articles thereof,24548020.0
+1998,FRA,France,80,Tin; articles thereof,32375754.0
+1999,FRA,France,80,Tin; articles thereof,27741484.0
+2000,FRA,France,80,Tin; articles thereof,18553821.0
+1999,GAB,Gabon,80,Tin; articles thereof,329.0
+2000,GAB,Gabon,80,Tin; articles thereof,281.0
+1995,GBR,United Kingdom,80,Tin; articles thereof,39065436.0
+1996,GBR,United Kingdom,80,Tin; articles thereof,28172940.0
+1997,GBR,United Kingdom,80,Tin; articles thereof,26479092.0
+1998,GBR,United Kingdom,80,Tin; articles thereof,38447140.0
+1999,GBR,United Kingdom,80,Tin; articles thereof,30148066.0
+2000,GBR,United Kingdom,80,Tin; articles thereof,27475692.0
+1996,GMB,Gambia,80,Tin; articles thereof,57325.0
+1995,GRC,Greece,80,Tin; articles thereof,145559.0
+1996,GRC,Greece,80,Tin; articles thereof,28514.0
+1997,GRC,Greece,80,Tin; articles thereof,4718.0
+1998,GRC,Greece,80,Tin; articles thereof,7101.0
+1999,GRC,Greece,80,Tin; articles thereof,40070.0
+2000,GRC,Greece,80,Tin; articles thereof,19847.0
+1996,GRL,Greenland,80,Tin; articles thereof,6.0
+1995,GTM,Guatemala,80,Tin; articles thereof,4181.0
+1996,GTM,Guatemala,80,Tin; articles thereof,8.0
+1997,GTM,Guatemala,80,Tin; articles thereof,4500.0
+1999,GTM,Guatemala,80,Tin; articles thereof,2051.0
+2000,GTM,Guatemala,80,Tin; articles thereof,200.0
+2000,GUY,Guyana,80,Tin; articles thereof,51.0
+1995,HKG,"China, Hong Kong SAR",80,Tin; articles thereof,107824847.0
+1996,HKG,"China, Hong Kong SAR",80,Tin; articles thereof,82576801.0
+1997,HKG,"China, Hong Kong SAR",80,Tin; articles thereof,53619012.0
+1998,HKG,"China, Hong Kong SAR",80,Tin; articles thereof,80848247.0
+1999,HKG,"China, Hong Kong SAR",80,Tin; articles thereof,55378401.0
+2000,HKG,"China, Hong Kong SAR",80,Tin; articles thereof,70265048.0
+1996,HND,Honduras,80,Tin; articles thereof,16206.0
+1995,HRV,Croatia,80,Tin; articles thereof,522678.0
+1996,HRV,Croatia,80,Tin; articles thereof,407575.0
+1997,HRV,Croatia,80,Tin; articles thereof,367787.0
+1998,HRV,Croatia,80,Tin; articles thereof,662158.0
+1999,HRV,Croatia,80,Tin; articles thereof,86759.0
+2000,HRV,Croatia,80,Tin; articles thereof,50126.0
+1995,HUN,Hungary,80,Tin; articles thereof,237000.0
+1996,HUN,Hungary,80,Tin; articles thereof,105000.0
+1997,HUN,Hungary,80,Tin; articles thereof,807000.0
+1998,HUN,Hungary,80,Tin; articles thereof,234000.0
+1999,HUN,Hungary,80,Tin; articles thereof,204000.0
+2000,HUN,Hungary,80,Tin; articles thereof,366000.0
+1995,IDN,Indonesia,80,Tin; articles thereof,239385904.0
+1996,IDN,Indonesia,80,Tin; articles thereof,276136640.0
+1997,IDN,Indonesia,80,Tin; articles thereof,274721920.0
+1998,IDN,Indonesia,80,Tin; articles thereof,280982336.0
+1999,IDN,Indonesia,80,Tin; articles thereof,250342038.0
+2000,IDN,Indonesia,80,Tin; articles thereof,233274695.0
+1995,IND,India,80,Tin; articles thereof,5412893.0
+1996,IND,India,80,Tin; articles thereof,19060308.0
+1997,IND,India,80,Tin; articles thereof,13951854.0
+1998,IND,India,80,Tin; articles thereof,7291486.0
+1999,IND,India,80,Tin; articles thereof,11345561.0
+2000,IND,India,80,Tin; articles thereof,13282221.0
+1995,IRL,Ireland,80,Tin; articles thereof,339909.0
+1996,IRL,Ireland,80,Tin; articles thereof,342600.0
+1997,IRL,Ireland,80,Tin; articles thereof,330392.0
+1998,IRL,Ireland,80,Tin; articles thereof,775673.0
+1999,IRL,Ireland,80,Tin; articles thereof,2225850.0
+2000,IRL,Ireland,80,Tin; articles thereof,1067012.556
+1997,IRN,Iran,80,Tin; articles thereof,7085.0
+2000,IRN,Iran,80,Tin; articles thereof,30.0
+1998,ISL,Iceland,80,Tin; articles thereof,711.0
+1999,ISL,Iceland,80,Tin; articles thereof,50.0
+1995,ISR,Israel,80,Tin; articles thereof,87000.0
+1996,ISR,Israel,80,Tin; articles thereof,109000.0
+1997,ISR,Israel,80,Tin; articles thereof,211000.0
+1999,ISR,Israel,80,Tin; articles thereof,124000.0
+2000,ISR,Israel,80,Tin; articles thereof,24000.0
+1995,ITA,Italy,80,Tin; articles thereof,42389448.0
+1996,ITA,Italy,80,Tin; articles thereof,48287764.0
+1997,ITA,Italy,80,Tin; articles thereof,8170856.0
+1998,ITA,Italy,80,Tin; articles thereof,10849424.0
+1999,ITA,Italy,80,Tin; articles thereof,6653817.0
+2000,ITA,Italy,80,Tin; articles thereof,6925307.88
+1996,JAM,Jamaica,80,Tin; articles thereof,221777.0
+1997,JAM,Jamaica,80,Tin; articles thereof,127385.0
+1998,JAM,Jamaica,80,Tin; articles thereof,54065.0
+1999,JAM,Jamaica,80,Tin; articles thereof,59655.0
+2000,JAM,Jamaica,80,Tin; articles thereof,112596.0
+1995,JOR,Jordan,80,Tin; articles thereof,51306.0
+1997,JOR,Jordan,80,Tin; articles thereof,210155.0
+1999,JOR,Jordan,80,Tin; articles thereof,21194.0
+2000,JOR,Jordan,80,Tin; articles thereof,14104.0
+1995,JPN,Japan,80,Tin; articles thereof,16032711.0
+1996,JPN,Japan,80,Tin; articles thereof,16736667.0
+1997,JPN,Japan,80,Tin; articles thereof,19453536.0
+1998,JPN,Japan,80,Tin; articles thereof,18339728.0
+1999,JPN,Japan,80,Tin; articles thereof,27810157.0
+2000,JPN,Japan,80,Tin; articles thereof,50205614.0
+1996,KAZ,Kazakhstan,80,Tin; articles thereof,79898.0
+2000,KAZ,Kazakhstan,80,Tin; articles thereof,1100.0
+1997,KEN,Kenya,80,Tin; articles thereof,31084.0
+1998,KEN,Kenya,80,Tin; articles thereof,37955.0
+1999,KEN,Kenya,80,Tin; articles thereof,45317.0
+2000,KEN,Kenya,80,Tin; articles thereof,27346.0
+1995,KGZ,Kyrgyzstan,80,Tin; articles thereof,454098.0
+1996,KGZ,Kyrgyzstan,80,Tin; articles thereof,12798.0
+1995,KOR,Rep. of Korea,80,Tin; articles thereof,10773813.0
+1996,KOR,Rep. of Korea,80,Tin; articles thereof,11629835.0
+1997,KOR,Rep. of Korea,80,Tin; articles thereof,10513308.0
+1998,KOR,Rep. of Korea,80,Tin; articles thereof,26639164.0
+1999,KOR,Rep. of Korea,80,Tin; articles thereof,7761578.0
+2000,KOR,Rep. of Korea,80,Tin; articles thereof,7734887.0
+2000,KWT,Kuwait,80,Tin; articles thereof,267.0
+1997,LBN,Lebanon,80,Tin; articles thereof,97.0
+1998,LBN,Lebanon,80,Tin; articles thereof,392.0
+1999,LBN,Lebanon,80,Tin; articles thereof,1995.0
+2000,LBN,Lebanon,80,Tin; articles thereof,735.0
+2000,LCA,Saint Lucia,80,Tin; articles thereof,56.0
+1999,LKA,Sri Lanka,80,Tin; articles thereof,42.0
+2000,LKA,Sri Lanka,80,Tin; articles thereof,11972.0
+1995,LTU,Lithuania,80,Tin; articles thereof,284097.0
+1996,LTU,Lithuania,80,Tin; articles thereof,127095.0
+1997,LTU,Lithuania,80,Tin; articles thereof,4496.0
+1998,LTU,Lithuania,80,Tin; articles thereof,75350.0
+1999,LTU,Lithuania,80,Tin; articles thereof,10949.0
+2000,LTU,Lithuania,80,Tin; articles thereof,7293.0
+1999,LUX,Luxembourg,80,Tin; articles thereof,80026.0
+2000,LUX,Luxembourg,80,Tin; articles thereof,13172.0
+1995,LVA,Latvia,80,Tin; articles thereof,55264.0
+1996,LVA,Latvia,80,Tin; articles thereof,8087.0
+1997,LVA,Latvia,80,Tin; articles thereof,260.0
+1998,LVA,Latvia,80,Tin; articles thereof,1597.0
+1999,LVA,Latvia,80,Tin; articles thereof,19153.0
+2000,LVA,Latvia,80,Tin; articles thereof,2302987.252
+1995,MAC,"China, Macao SAR",80,Tin; articles thereof,63902.0
+1996,MAC,"China, Macao SAR",80,Tin; articles thereof,38843.0
+1997,MAC,"China, Macao SAR",80,Tin; articles thereof,322440.0
+1998,MAC,"China, Macao SAR",80,Tin; articles thereof,280179.0
+1999,MAC,"China, Macao SAR",80,Tin; articles thereof,263554.0
+2000,MAC,"China, Macao SAR",80,Tin; articles thereof,202291.941
+1995,MAR,Morocco,80,Tin; articles thereof,2528.0
+1997,MAR,Morocco,80,Tin; articles thereof,57.0
+1998,MAR,Morocco,80,Tin; articles thereof,295.0
+2000,MAR,Morocco,80,Tin; articles thereof,89511.664
+1995,MDA,Rep. of Moldova,80,Tin; articles thereof,574.0
+1999,MDA,Rep. of Moldova,80,Tin; articles thereof,19.0
+1995,MDG,Madagascar,80,Tin; articles thereof,14.0
+1996,MDG,Madagascar,80,Tin; articles thereof,59.0
+1998,MDG,Madagascar,80,Tin; articles thereof,62.0
+1999,MDG,Madagascar,80,Tin; articles thereof,404.0
+2000,MDG,Madagascar,80,Tin; articles thereof,743.059
+1995,MEX,Mexico,80,Tin; articles thereof,649000.0
+1996,MEX,Mexico,80,Tin; articles thereof,1941485.0
+1997,MEX,Mexico,80,Tin; articles thereof,1377774.0
+1998,MEX,Mexico,80,Tin; articles thereof,1028573.0
+1999,MEX,Mexico,80,Tin; articles thereof,1032775.0
+2000,MEX,Mexico,80,Tin; articles thereof,1461904.0
+1995,MKD,North Macedonia,80,Tin; articles thereof,3681.0
+1996,MKD,North Macedonia,80,Tin; articles thereof,10649.0
+1997,MKD,North Macedonia,80,Tin; articles thereof,21308.0
+1998,MKD,North Macedonia,80,Tin; articles thereof,3879.0
+1999,MKD,North Macedonia,80,Tin; articles thereof,1778.0
+2000,MKD,North Macedonia,80,Tin; articles thereof,14226.73
+1998,MLI,Mali,80,Tin; articles thereof,5411.0
+1995,MLT,Malta,80,Tin; articles thereof,38153.0
+1996,MLT,Malta,80,Tin; articles thereof,14708.0
+1997,MLT,Malta,80,Tin; articles thereof,1510.0
+1998,MLT,Malta,80,Tin; articles thereof,13582.0
+1999,MLT,Malta,80,Tin; articles thereof,65749.0
+2000,MLT,Malta,80,Tin; articles thereof,10614.0
+2000,MOZ,Mozambique,80,Tin; articles thereof,180.0
+1995,MUS,Mauritius,80,Tin; articles thereof,7168.0
+1996,MUS,Mauritius,80,Tin; articles thereof,6244.0
+1998,MUS,Mauritius,80,Tin; articles thereof,19546.0
+2000,MUS,Mauritius,80,Tin; articles thereof,47304.0
+1995,MWI,Malawi,80,Tin; articles thereof,1496.0
+1997,MWI,Malawi,80,Tin; articles thereof,303.0
+1998,MWI,Malawi,80,Tin; articles thereof,7.0
+2000,MWI,Malawi,80,Tin; articles thereof,67.0
+1995,MYS,Malaysia,80,Tin; articles thereof,250460176.0
+1996,MYS,Malaysia,80,Tin; articles thereof,245999781.0
+1997,MYS,Malaysia,80,Tin; articles thereof,214065344.0
+1998,MYS,Malaysia,80,Tin; articles thereof,160953794.0
+1999,MYS,Malaysia,80,Tin; articles thereof,167789573.0
+2000,MYS,Malaysia,80,Tin; articles thereof,145411644.0
+2000,NAM,Namibia,80,Tin; articles thereof,2862318.0
+1995,NER,Niger,80,Tin; articles thereof,18.0
+1996,NER,Niger,80,Tin; articles thereof,46.0
+1997,NER,Niger,80,Tin; articles thereof,15.0
+1999,NER,Niger,80,Tin; articles thereof,681.0
+2000,NER,Niger,80,Tin; articles thereof,197.0
+1999,NGA,Nigeria,80,Tin; articles thereof,31488.0
+1995,NLD,Netherlands,80,Tin; articles thereof,29368346.0
+1996,NLD,Netherlands,80,Tin; articles thereof,28021298.0
+1997,NLD,Netherlands,80,Tin; articles thereof,25941280.0
+1998,NLD,Netherlands,80,Tin; articles thereof,62684963.0
+1999,NLD,Netherlands,80,Tin; articles thereof,58144513.0
+2000,NLD,Netherlands,80,Tin; articles thereof,32198646.0
+1995,NOR,Norway,80,Tin; articles thereof,993618.0
+1996,NOR,Norway,80,Tin; articles thereof,1008289.0
+1997,NOR,Norway,80,Tin; articles thereof,986090.0
+1998,NOR,Norway,80,Tin; articles thereof,875406.0
+1999,NOR,Norway,80,Tin; articles thereof,1041477.0
+2000,NOR,Norway,80,Tin; articles thereof,980477.237
+1995,NZL,New Zealand,80,Tin; articles thereof,205030.0
+1996,NZL,New Zealand,80,Tin; articles thereof,307572.0
+1997,NZL,New Zealand,80,Tin; articles thereof,377377.0
+1998,NZL,New Zealand,80,Tin; articles thereof,306415.0
+1999,NZL,New Zealand,80,Tin; articles thereof,235630.0
+2000,NZL,New Zealand,80,Tin; articles thereof,2731804.0
+1997,OMN,Oman,80,Tin; articles thereof,314741.0
+1998,OMN,Oman,80,Tin; articles thereof,137599.0
+1999,OMN,Oman,80,Tin; articles thereof,8582.0
+2000,OMN,Oman,80,Tin; articles thereof,19701.0
+1995,PER,Peru,80,Tin; articles thereof,451716.0
+1996,PER,Peru,80,Tin; articles thereof,20943356.0
+1997,PER,Peru,80,Tin; articles thereof,57265064.0
+1998,PER,Peru,80,Tin; articles thereof,36214816.0
+1999,PER,Peru,80,Tin; articles thereof,17807399.0
+2000,PER,Peru,80,Tin; articles thereof,119051613.0
+1996,PHL,Philippines,80,Tin; articles thereof,9069296.0
+1997,PHL,Philippines,80,Tin; articles thereof,7565632.0
+1998,PHL,Philippines,80,Tin; articles thereof,6709719.0
+1999,PHL,Philippines,80,Tin; articles thereof,2762334.0
+2000,PHL,Philippines,80,Tin; articles thereof,2888489.0
+1995,POL,Poland,80,Tin; articles thereof,383000.0
+1996,POL,Poland,80,Tin; articles thereof,266000.0
+1997,POL,Poland,80,Tin; articles thereof,210734.0
+1998,POL,Poland,80,Tin; articles thereof,674000.0
+1999,POL,Poland,80,Tin; articles thereof,206000.0
+2000,POL,Poland,80,Tin; articles thereof,143000.0
+1995,PRT,Portugal,80,Tin; articles thereof,2828299.0
+1996,PRT,Portugal,80,Tin; articles thereof,2249699.0
+1997,PRT,Portugal,80,Tin; articles thereof,2472298.0
+1998,PRT,Portugal,80,Tin; articles thereof,3197449.0
+1999,PRT,Portugal,80,Tin; articles thereof,3777190.0
+2000,PRT,Portugal,80,Tin; articles thereof,3541192.0
+2000,QAT,Qatar,80,Tin; articles thereof,5150.0
+1995,ROU,Romania,80,Tin; articles thereof,2000.0
+1996,ROU,Romania,80,Tin; articles thereof,18000.0
+1999,ROU,Romania,80,Tin; articles thereof,16000.0
+2000,ROU,Romania,80,Tin; articles thereof,3634.95
+1996,RUS,Russian Federation,80,Tin; articles thereof,55627680.0
+1997,RUS,Russian Federation,80,Tin; articles thereof,42457288.0
+1998,RUS,Russian Federation,80,Tin; articles thereof,12861643.0
+1999,RUS,Russian Federation,80,Tin; articles thereof,5123418.0
+2000,RUS,Russian Federation,80,Tin; articles thereof,12181600.0
+1998,RWA,Rwanda,80,Tin; articles thereof,117.0
+1997,S19,"Other Asia, nes",80,Tin; articles thereof,26635790.0
+1998,S19,"Other Asia, nes",80,Tin; articles thereof,27156500.0
+1999,S19,"Other Asia, nes",80,Tin; articles thereof,29251212.0
+2000,S19,"Other Asia, nes",80,Tin; articles thereof,30858312.0
+1995,SAU,Saudi Arabia,80,Tin; articles thereof,50269.0
+1996,SAU,Saudi Arabia,80,Tin; articles thereof,18096.0
+1998,SAU,Saudi Arabia,80,Tin; articles thereof,112336.0
+1999,SAU,Saudi Arabia,80,Tin; articles thereof,72466.0
+2000,SAU,Saudi Arabia,80,Tin; articles thereof,102400.0
+1996,SCG,Serbia and Montenegro (...2005),80,Tin; articles thereof,59000.0
+1997,SCG,Serbia and Montenegro (...2005),80,Tin; articles thereof,39000.0
+1998,SCG,Serbia and Montenegro (...2005),80,Tin; articles thereof,10000.0
+1999,SCG,Serbia and Montenegro (...2005),80,Tin; articles thereof,26000.0
+2000,SCG,Serbia and Montenegro (...2005),80,Tin; articles thereof,36000.0
+1995,SGP,Singapore,80,Tin; articles thereof,222646032.0
+1996,SGP,Singapore,80,Tin; articles thereof,244002070.0
+1997,SGP,Singapore,80,Tin; articles thereof,280942334.0
+1998,SGP,Singapore,80,Tin; articles thereof,233221408.0
+1999,SGP,Singapore,80,Tin; articles thereof,233334788.0
+2000,SGP,Singapore,80,Tin; articles thereof,198249729.0
+1999,SLV,El Salvador,80,Tin; articles thereof,1220.0
+2000,SLV,El Salvador,80,Tin; articles thereof,83746.73
+1995,SUR,Suriname,80,Tin; articles thereof,16.0
+1995,SVK,Slovakia,80,Tin; articles thereof,5519457.0
+1996,SVK,Slovakia,80,Tin; articles thereof,64821.0
+1997,SVK,Slovakia,80,Tin; articles thereof,91432.0
+1998,SVK,Slovakia,80,Tin; articles thereof,179845.0
+1999,SVK,Slovakia,80,Tin; articles thereof,144160.0
+2000,SVK,Slovakia,80,Tin; articles thereof,390412.0
+1995,SVN,Slovenia,80,Tin; articles thereof,146398.0
+1996,SVN,Slovenia,80,Tin; articles thereof,109685.0
+1997,SVN,Slovenia,80,Tin; articles thereof,73244.0
+1998,SVN,Slovenia,80,Tin; articles thereof,68903.0
+1999,SVN,Slovenia,80,Tin; articles thereof,43511.0
+2000,SVN,Slovenia,80,Tin; articles thereof,28801.0
+1995,SWE,Sweden,80,Tin; articles thereof,2910379.0
+1996,SWE,Sweden,80,Tin; articles thereof,2660662.0
+1997,SWE,Sweden,80,Tin; articles thereof,2725944.0
+1998,SWE,Sweden,80,Tin; articles thereof,3557572.0
+1999,SWE,Sweden,80,Tin; articles thereof,3459429.0
+2000,SWE,Sweden,80,Tin; articles thereof,4482890.0
+2000,SWZ,Eswatini,80,Tin; articles thereof,17721.0
+1995,SYC,Seychelles,80,Tin; articles thereof,2529.0
+2000,TGO,Togo,80,Tin; articles thereof,39657.0
+1995,THA,Thailand,80,Tin; articles thereof,24088284.0
+1996,THA,Thailand,80,Tin; articles thereof,36740365.0
+1997,THA,Thailand,80,Tin; articles thereof,52277647.0
+1998,THA,Thailand,80,Tin; articles thereof,66799150.0
+1999,THA,Thailand,80,Tin; articles thereof,71399317.0
+2000,THA,Thailand,80,Tin; articles thereof,75860591.0
+1995,TTO,Trinidad and Tobago,80,Tin; articles thereof,35.0
+1996,TTO,Trinidad and Tobago,80,Tin; articles thereof,74.0
+1997,TTO,Trinidad and Tobago,80,Tin; articles thereof,1878.0
+1998,TTO,Trinidad and Tobago,80,Tin; articles thereof,1844.0
+1999,TTO,Trinidad and Tobago,80,Tin; articles thereof,1195.0
+2000,TTO,Trinidad and Tobago,80,Tin; articles thereof,86.0
+1996,TUN,Tunisia,80,Tin; articles thereof,20482.0
+1997,TUN,Tunisia,80,Tin; articles thereof,79391.0
+1998,TUN,Tunisia,80,Tin; articles thereof,26510.0
+1999,TUN,Tunisia,80,Tin; articles thereof,49620.0
+2000,TUN,Tunisia,80,Tin; articles thereof,149841.0
+1995,TUR,Türkiye,80,Tin; articles thereof,253641.0
+1996,TUR,Türkiye,80,Tin; articles thereof,189792.0
+1997,TUR,Türkiye,80,Tin; articles thereof,266337.0
+1998,TUR,Türkiye,80,Tin; articles thereof,188253.0
+1999,TUR,Türkiye,80,Tin; articles thereof,171200.0
+2000,TUR,Türkiye,80,Tin; articles thereof,135146.0
+2000,TZA,United Rep. of Tanzania,80,Tin; articles thereof,1089.0
+1998,UGA,Uganda,80,Tin; articles thereof,919.0
+2000,UGA,Uganda,80,Tin; articles thereof,12945.0
+1996,UKR,Ukraine,80,Tin; articles thereof,189.0
+1997,UKR,Ukraine,80,Tin; articles thereof,1090.0
+1998,UKR,Ukraine,80,Tin; articles thereof,6014.0
+1999,UKR,Ukraine,80,Tin; articles thereof,567.0
+2000,UKR,Ukraine,80,Tin; articles thereof,1503350.0
+1999,URY,Uruguay,80,Tin; articles thereof,629.0
+2000,URY,Uruguay,80,Tin; articles thereof,2050.0
+1995,USA,USA,80,Tin; articles thereof,100454120.0
+1996,USA,USA,80,Tin; articles thereof,105405487.0
+1997,USA,USA,80,Tin; articles thereof,84098545.0
+1998,USA,USA,80,Tin; articles thereof,89553619.0
+1999,USA,USA,80,Tin; articles thereof,104600815.0
+2000,USA,USA,80,Tin; articles thereof,106536975.0
+1995,VEN,Venezuela,80,Tin; articles thereof,15438.0
+1996,VEN,Venezuela,80,Tin; articles thereof,11944.0
+1997,VEN,Venezuela,80,Tin; articles thereof,154.0
+1998,VEN,Venezuela,80,Tin; articles thereof,3592.0
+1999,VEN,Venezuela,80,Tin; articles thereof,433.0
+2000,VEN,Venezuela,80,Tin; articles thereof,11486.0
+2000,VNM,Viet Nam,80,Tin; articles thereof,16770000.0
+2000,VUT,Vanuatu,80,Tin; articles thereof,7758.0
+1995,ZA1,Southern African Customs Union (...1999),80,Tin; articles thereof,1265235.0
+1996,ZA1,Southern African Customs Union (...1999),80,Tin; articles thereof,1324939.0
+1997,ZA1,Southern African Customs Union (...1999),80,Tin; articles thereof,2160449.0
+1998,ZA1,Southern African Customs Union (...1999),80,Tin; articles thereof,1290080.0
+1999,ZA1,Southern African Customs Union (...1999),80,Tin; articles thereof,1850649.0
+2000,ZAF,South Africa,80,Tin; articles thereof,4850652.0
+1996,ZMB,Zambia,80,Tin; articles thereof,10777.0
+1998,ZMB,Zambia,80,Tin; articles thereof,658454.0
+1999,ZMB,Zambia,80,Tin; articles thereof,1866.0
+2000,ZMB,Zambia,80,Tin; articles thereof,1271.0
+1995,ZWE,Zimbabwe,80,Tin; articles thereof,12285.0
+2000,ZWE,Zimbabwe,80,Tin; articles thereof,1878.7

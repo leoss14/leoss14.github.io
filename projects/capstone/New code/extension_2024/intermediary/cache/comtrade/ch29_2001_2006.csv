@@ -1,0 +1,888 @@
+period,reporterISO,reporterDesc,cmdCode,cmdDesc,primaryValue
+2001,ABW,Aruba,29,Organic chemicals,3330.0
+2002,ABW,Aruba,29,Organic chemicals,19514.0
+2003,ABW,Aruba,29,Organic chemicals,121084.0
+2004,ABW,Aruba,29,Organic chemicals,188425.0
+2005,ABW,Aruba,29,Organic chemicals,107725.0
+2006,ABW,Aruba,29,Organic chemicals,10022.0
+2004,AGO,Angola,29,Organic chemicals,20357.138
+2005,AGO,Angola,29,Organic chemicals,305758.045
+2006,AGO,Angola,29,Organic chemicals,32773.754
+2004,AIA,Anguilla,29,Organic chemicals,303.0
+2001,ALB,Albania,29,Organic chemicals,56593.0
+2002,ALB,Albania,29,Organic chemicals,6093.0
+2003,ALB,Albania,29,Organic chemicals,51361.0
+2004,ALB,Albania,29,Organic chemicals,7185.0
+2005,ALB,Albania,29,Organic chemicals,8068.0
+2006,ALB,Albania,29,Organic chemicals,23465.0
+2001,AND,Andorra,29,Organic chemicals,1903.0
+2002,AND,Andorra,29,Organic chemicals,13918.0
+2003,AND,Andorra,29,Organic chemicals,288.0
+2004,AND,Andorra,29,Organic chemicals,740.0
+2006,AND,Andorra,29,Organic chemicals,604.335
+2005,ANT,Netherlands Antilles (...2010),29,Organic chemicals,12384.0
+2006,ANT,Netherlands Antilles (...2010),29,Organic chemicals,30266.0
+2001,ARE,United Arab Emirates,29,Organic chemicals,13019744.0
+2002,ARE,United Arab Emirates,29,Organic chemicals,26745128.0
+2003,ARE,United Arab Emirates,29,Organic chemicals,37458826.0
+2004,ARE,United Arab Emirates,29,Organic chemicals,54542512.0
+2005,ARE,United Arab Emirates,29,Organic chemicals,69988807.0
+2006,ARE,United Arab Emirates,29,Organic chemicals,85035647.0
+2001,ARG,Argentina,29,Organic chemicals,275528998.0
+2002,ARG,Argentina,29,Organic chemicals,289869034.0
+2003,ARG,Argentina,29,Organic chemicals,413132746.0
+2004,ARG,Argentina,29,Organic chemicals,499521061.0
+2005,ARG,Argentina,29,Organic chemicals,596455705.0
+2006,ARG,Argentina,29,Organic chemicals,649417119.0
+2001,ARM,Armenia,29,Organic chemicals,367893.0
+2002,ARM,Armenia,29,Organic chemicals,389745.0
+2003,ARM,Armenia,29,Organic chemicals,263244.0
+2004,ARM,Armenia,29,Organic chemicals,363125.0
+2005,ARM,Armenia,29,Organic chemicals,441330.0
+2006,ARM,Armenia,29,Organic chemicals,644171.0
+2005,ATG,Antigua and Barbuda,29,Organic chemicals,112426.0
+2001,AUS,Australia,29,Organic chemicals,206280834.0
+2002,AUS,Australia,29,Organic chemicals,108848588.0
+2003,AUS,Australia,29,Organic chemicals,117939301.0
+2004,AUS,Australia,29,Organic chemicals,119602836.0
+2005,AUS,Australia,29,Organic chemicals,130641622.0
+2006,AUS,Australia,29,Organic chemicals,130142613.0
+2001,AUT,Austria,29,Organic chemicals,732060322.0
+2002,AUT,Austria,29,Organic chemicals,819721777.0
+2003,AUT,Austria,29,Organic chemicals,1201583273.0
+2004,AUT,Austria,29,Organic chemicals,1203338117.0
+2005,AUT,Austria,29,Organic chemicals,1162828751.0
+2006,AUT,Austria,29,Organic chemicals,1367016770.0
+2001,AZE,Azerbaijan,29,Organic chemicals,6769474.0
+2002,AZE,Azerbaijan,29,Organic chemicals,11252562.0
+2003,AZE,Azerbaijan,29,Organic chemicals,12242836.0
+2004,AZE,Azerbaijan,29,Organic chemicals,20957423.0
+2005,AZE,Azerbaijan,29,Organic chemicals,25106786.0
+2006,AZE,Azerbaijan,29,Organic chemicals,28283357.0
+2004,BDI,Burundi,29,Organic chemicals,181.0
+2006,BDI,Burundi,29,Organic chemicals,95556.0
+2001,BEL,Belgium,29,Organic chemicals,10156370994.0
+2002,BEL,Belgium,29,Organic chemicals,14149650476.0
+2003,BEL,Belgium,29,Organic chemicals,17926432497.0
+2004,BEL,Belgium,29,Organic chemicals,22659085988.0
+2005,BEL,Belgium,29,Organic chemicals,26052975789.0
+2006,BEL,Belgium,29,Organic chemicals,26545141055.0
+2001,BEN,Benin,29,Organic chemicals,13797.0
+2002,BEN,Benin,29,Organic chemicals,17253.0
+2003,BEN,Benin,29,Organic chemicals,19956.0
+2004,BEN,Benin,29,Organic chemicals,24678.0
+2005,BEN,Benin,29,Organic chemicals,20000.0
+2006,BEN,Benin,29,Organic chemicals,7586.0
+2001,BFA,Burkina Faso,29,Organic chemicals,82630.0
+2002,BFA,Burkina Faso,29,Organic chemicals,167821.0
+2003,BFA,Burkina Faso,29,Organic chemicals,84313.0
+2004,BFA,Burkina Faso,29,Organic chemicals,45694.0
+2005,BFA,Burkina Faso,29,Organic chemicals,44607.058
+2006,BFA,Burkina Faso,29,Organic chemicals,3632.831
+2001,BGD,Bangladesh,29,Organic chemicals,82274.0
+2002,BGD,Bangladesh,29,Organic chemicals,90543.0
+2003,BGD,Bangladesh,29,Organic chemicals,238954.0
+2004,BGD,Bangladesh,29,Organic chemicals,412546.0
+2005,BGD,Bangladesh,29,Organic chemicals,1122543.0
+2006,BGD,Bangladesh,29,Organic chemicals,711407.0
+2001,BGR,Bulgaria,29,Organic chemicals,91384192.0
+2002,BGR,Bulgaria,29,Organic chemicals,103171556.0
+2003,BGR,Bulgaria,29,Organic chemicals,124987543.0
+2004,BGR,Bulgaria,29,Organic chemicals,165773047.0
+2005,BGR,Bulgaria,29,Organic chemicals,187985016.0
+2006,BGR,Bulgaria,29,Organic chemicals,215033927.0
+2001,BHR,Bahrain,29,Organic chemicals,47133844.0
+2002,BHR,Bahrain,29,Organic chemicals,41710829.0
+2003,BHR,Bahrain,29,Organic chemicals,62634429.0
+2004,BHR,Bahrain,29,Organic chemicals,72364581.0
+2005,BHR,Bahrain,29,Organic chemicals,67327735.0
+2006,BHR,Bahrain,29,Organic chemicals,86108225.0
+2001,BHS,Bahamas,29,Organic chemicals,14907278.0
+2002,BHS,Bahamas,29,Organic chemicals,192474.0
+2003,BHS,Bahamas,29,Organic chemicals,49592.0
+2004,BHS,Bahamas,29,Organic chemicals,175965.0
+2005,BHS,Bahamas,29,Organic chemicals,43458053.0
+2006,BHS,Bahamas,29,Organic chemicals,45418519.0
+2003,BIH,Bosnia Herzegovina,29,Organic chemicals,51153.0
+2004,BIH,Bosnia Herzegovina,29,Organic chemicals,3231166.0
+2005,BIH,Bosnia Herzegovina,29,Organic chemicals,8493360.0
+2006,BIH,Bosnia Herzegovina,29,Organic chemicals,9373154.0
+2001,BLR,Belarus,29,Organic chemicals,81956600.0
+2002,BLR,Belarus,29,Organic chemicals,88112300.0
+2003,BLR,Belarus,29,Organic chemicals,112449300.0
+2004,BLR,Belarus,29,Organic chemicals,150516900.0
+2005,BLR,Belarus,29,Organic chemicals,169120100.0
+2006,BLR,Belarus,29,Organic chemicals,203943800.0
+2003,BLZ,Belize,29,Organic chemicals,1244.0
+2001,BOL,Bolivia (Plurinational State of),29,Organic chemicals,78960.5
+2002,BOL,Bolivia (Plurinational State of),29,Organic chemicals,79739.07
+2003,BOL,Bolivia (Plurinational State of),29,Organic chemicals,192312.34
+2004,BOL,Bolivia (Plurinational State of),29,Organic chemicals,558855.79
+2005,BOL,Bolivia (Plurinational State of),29,Organic chemicals,1345150.35
+2006,BOL,Bolivia (Plurinational State of),29,Organic chemicals,794172.65
+2001,BRA,Brazil,29,Organic chemicals,908237491.0
+2002,BRA,Brazil,29,Organic chemicals,1095388612.0
+2003,BRA,Brazil,29,Organic chemicals,1298781302.0
+2004,BRA,Brazil,29,Organic chemicals,1533334437.0
+2005,BRA,Brazil,29,Organic chemicals,1908647770.0
+2006,BRA,Brazil,29,Organic chemicals,2109732992.0
+2001,BRB,Barbados,29,Organic chemicals,52144.0
+2002,BRB,Barbados,29,Organic chemicals,62907.0
+2003,BRB,Barbados,29,Organic chemicals,115602.0
+2004,BRB,Barbados,29,Organic chemicals,63772.0
+2005,BRB,Barbados,29,Organic chemicals,48732.0
+2006,BRB,Barbados,29,Organic chemicals,50797.0
+2001,BRN,Brunei Darussalam,29,Organic chemicals,392992.0
+2002,BRN,Brunei Darussalam,29,Organic chemicals,146327.0
+2003,BRN,Brunei Darussalam,29,Organic chemicals,284509.0
+2004,BRN,Brunei Darussalam,29,Organic chemicals,223347.0
+2006,BRN,Brunei Darussalam,29,Organic chemicals,79166.1
+2005,BTN,Bhutan,29,Organic chemicals,127.0
+2006,BTN,Bhutan,29,Organic chemicals,27721.0
+2001,BWA,Botswana,29,Organic chemicals,68215.0
+2002,BWA,Botswana,29,Organic chemicals,102938.0
+2003,BWA,Botswana,29,Organic chemicals,63259.0
+2004,BWA,Botswana,29,Organic chemicals,91254.0
+2005,BWA,Botswana,29,Organic chemicals,52644.0
+2006,BWA,Botswana,29,Organic chemicals,26896.0
+2002,CAF,Central African Rep.,29,Organic chemicals,247.0
+2005,CAF,Central African Rep.,29,Organic chemicals,30845.0
+2001,CAN,Canada,29,Organic chemicals,2391852265.0
+2002,CAN,Canada,29,Organic chemicals,2238426924.0
+2003,CAN,Canada,29,Organic chemicals,2418413123.0
+2004,CAN,Canada,29,Organic chemicals,3708875061.0
+2005,CAN,Canada,29,Organic chemicals,4233376433.0
+2006,CAN,Canada,29,Organic chemicals,4636759244.0
+2001,CHE,Switzerland,29,Organic chemicals,7877843570.242
+2002,CHE,Switzerland,29,Organic chemicals,9744646850.36
+2003,CHE,Switzerland,29,Organic chemicals,10234686164.13
+2004,CHE,Switzerland,29,Organic chemicals,11998181071.989
+2005,CHE,Switzerland,29,Organic chemicals,13184843813.015
+2006,CHE,Switzerland,29,Organic chemicals,13923354545.186
+2001,CHL,Chile,29,Organic chemicals,395680304.0
+2002,CHL,Chile,29,Organic chemicals,337760193.0
+2003,CHL,Chile,29,Organic chemicals,475104706.793
+2004,CHL,Chile,29,Organic chemicals,550416960.151
+2005,CHL,Chile,29,Organic chemicals,663776194.087
+2006,CHL,Chile,29,Organic chemicals,940174871.899
+2001,CHN,China,29,Organic chemicals,4598783715.0
+2002,CHN,China,29,Organic chemicals,5567158330.0
+2003,CHN,China,29,Organic chemicals,7131466395.0
+2004,CHN,China,29,Organic chemicals,9092484874.0
+2005,CHN,China,29,Organic chemicals,12132620114.0
+2006,CHN,China,29,Organic chemicals,15542156948.0
+2001,CIV,Côte d'Ivoire,29,Organic chemicals,575731.0
+2002,CIV,Côte d'Ivoire,29,Organic chemicals,407877.0
+2003,CIV,Côte d'Ivoire,29,Organic chemicals,609550.0
+2004,CIV,Côte d'Ivoire,29,Organic chemicals,636330.0
+2005,CIV,Côte d'Ivoire,29,Organic chemicals,752702.0
+2006,CIV,Côte d'Ivoire,29,Organic chemicals,1100875.0
+2001,CMR,Cameroon,29,Organic chemicals,43744.0
+2002,CMR,Cameroon,29,Organic chemicals,46129.0
+2003,CMR,Cameroon,29,Organic chemicals,108380.0
+2004,CMR,Cameroon,29,Organic chemicals,371982.0
+2005,CMR,Cameroon,29,Organic chemicals,233773.0
+2006,CMR,Cameroon,29,Organic chemicals,39709.0
+2001,COL,Colombia,29,Organic chemicals,85075706.0
+2002,COL,Colombia,29,Organic chemicals,64891392.0
+2003,COL,Colombia,29,Organic chemicals,74444231.0
+2004,COL,Colombia,29,Organic chemicals,73174309.0
+2005,COL,Colombia,29,Organic chemicals,110049277.0
+2006,COL,Colombia,29,Organic chemicals,116445949.0
+2005,CPV,Cabo Verde,29,Organic chemicals,10982.0
+2006,CPV,Cabo Verde,29,Organic chemicals,5820.0
+2001,CRI,Costa Rica,29,Organic chemicals,3185727.0
+2002,CRI,Costa Rica,29,Organic chemicals,3284841.0
+2003,CRI,Costa Rica,29,Organic chemicals,5038486.0
+2004,CRI,Costa Rica,29,Organic chemicals,5808830.0
+2005,CRI,Costa Rica,29,Organic chemicals,7310460.0
+2006,CRI,Costa Rica,29,Organic chemicals,5150645.0
+2001,CUB,Cuba,29,Organic chemicals,243467.0
+2002,CUB,Cuba,29,Organic chemicals,174438.0
+2003,CUB,Cuba,29,Organic chemicals,319136.0
+2004,CUB,Cuba,29,Organic chemicals,217469.0
+2005,CUB,Cuba,29,Organic chemicals,8274970.0
+2006,CUB,Cuba,29,Organic chemicals,7017050.0
+2001,CYP,Cyprus,29,Organic chemicals,787039.0
+2002,CYP,Cyprus,29,Organic chemicals,714786.0
+2003,CYP,Cyprus,29,Organic chemicals,1465912.0
+2004,CYP,Cyprus,29,Organic chemicals,1729172.0
+2005,CYP,Cyprus,29,Organic chemicals,2356121.0
+2006,CYP,Cyprus,29,Organic chemicals,2220872.0
+2001,CZE,Czechia,29,Organic chemicals,519362938.0
+2002,CZE,Czechia,29,Organic chemicals,1336779982.0
+2003,CZE,Czechia,29,Organic chemicals,577319982.0
+2004,CZE,Czechia,29,Organic chemicals,747558402.0
+2005,CZE,Czechia,29,Organic chemicals,911897821.0
+2006,CZE,Czechia,29,Organic chemicals,920153189.0
+2001,DEU,Germany,29,Organic chemicals,13977113000.0
+2002,DEU,Germany,29,Organic chemicals,14682263000.0
+2003,DEU,Germany,29,Organic chemicals,17302259000.0
+2004,DEU,Germany,29,Organic chemicals,21371385000.0
+2005,DEU,Germany,29,Organic chemicals,23183357000.0
+2006,DEU,Germany,29,Organic chemicals,27459100000.0
+2001,DMA,Dominica,29,Organic chemicals,14250.0
+2002,DMA,Dominica,29,Organic chemicals,963.0
+2003,DMA,Dominica,29,Organic chemicals,64.0
+2006,DMA,Dominica,29,Organic chemicals,4903.0
+2001,DNK,Denmark,29,Organic chemicals,699822235.0
+2002,DNK,Denmark,29,Organic chemicals,893962270.0
+2003,DNK,Denmark,29,Organic chemicals,1145826889.0
+2004,DNK,Denmark,29,Organic chemicals,1247805987.0
+2005,DNK,Denmark,29,Organic chemicals,1808542132.0
+2006,DNK,Denmark,29,Organic chemicals,1119801346.0
+2001,DOM,Dominican Rep.,29,Organic chemicals,16279000.0
+2002,DOM,Dominican Rep.,29,Organic chemicals,14994745.0
+2003,DOM,Dominican Rep.,29,Organic chemicals,15730001.0
+2004,DOM,Dominican Rep.,29,Organic chemicals,11479455.139
+2005,DOM,Dominican Rep.,29,Organic chemicals,17298859.8
+2006,DOM,Dominican Rep.,29,Organic chemicals,17472171.719
+2001,DZA,Algeria,29,Organic chemicals,66158051.0
+2002,DZA,Algeria,29,Organic chemicals,39575096.0
+2003,DZA,Algeria,29,Organic chemicals,39120690.0
+2004,DZA,Algeria,29,Organic chemicals,18970314.0
+2005,DZA,Algeria,29,Organic chemicals,37926762.0
+2006,DZA,Algeria,29,Organic chemicals,97487030.0
+2001,ECU,Ecuador,29,Organic chemicals,4203324.0
+2002,ECU,Ecuador,29,Organic chemicals,3762715.0
+2003,ECU,Ecuador,29,Organic chemicals,5122384.0
+2004,ECU,Ecuador,29,Organic chemicals,2639066.0
+2005,ECU,Ecuador,29,Organic chemicals,1624223.0
+2006,ECU,Ecuador,29,Organic chemicals,2514657.0
+2001,EGY,Egypt,29,Organic chemicals,2634355.365
+2002,EGY,Egypt,29,Organic chemicals,2988057.359
+2003,EGY,Egypt,29,Organic chemicals,8747999.678
+2004,EGY,Egypt,29,Organic chemicals,12941386.708
+2005,EGY,Egypt,29,Organic chemicals,5229519.367
+2006,EGY,Egypt,29,Organic chemicals,6135087.503
+2003,ERI,Eritrea,29,Organic chemicals,572.0
+2001,ESP,Spain,29,Organic chemicals,2286057793.921
+2002,ESP,Spain,29,Organic chemicals,2491718220.045
+2003,ESP,Spain,29,Organic chemicals,3226817027.083
+2004,ESP,Spain,29,Organic chemicals,3733475659.566
+2005,ESP,Spain,29,Organic chemicals,4023296206.333
+2006,ESP,Spain,29,Organic chemicals,4247216023.312
+2001,EST,Estonia,29,Organic chemicals,18924595.0
+2002,EST,Estonia,29,Organic chemicals,17675978.0
+2003,EST,Estonia,29,Organic chemicals,34086148.0
+2004,EST,Estonia,29,Organic chemicals,43383055.43
+2005,EST,Estonia,29,Organic chemicals,54973745.13
+2006,EST,Estonia,29,Organic chemicals,68105313.42
+2001,ETH,Ethiopia,29,Organic chemicals,103.492
+2002,ETH,Ethiopia,29,Organic chemicals,12.022
+2003,ETH,Ethiopia,29,Organic chemicals,11011.423
+2004,ETH,Ethiopia,29,Organic chemicals,339.587
+2005,ETH,Ethiopia,29,Organic chemicals,33658.522
+2001,FIN,Finland,29,Organic chemicals,272033465.0
+2002,FIN,Finland,29,Organic chemicals,343891108.0
+2003,FIN,Finland,29,Organic chemicals,425349128.0
+2004,FIN,Finland,29,Organic chemicals,572437173.0
+2005,FIN,Finland,29,Organic chemicals,611893913.0
+2006,FIN,Finland,29,Organic chemicals,742274456.0
+2001,FJI,Fiji,29,Organic chemicals,132435.0
+2002,FJI,Fiji,29,Organic chemicals,16517.0
+2003,FJI,Fiji,29,Organic chemicals,40841.0
+2004,FJI,Fiji,29,Organic chemicals,65075.0
+2005,FJI,Fiji,29,Organic chemicals,227095.0
+2006,FJI,Fiji,29,Organic chemicals,20442.0
+2001,FRA,France,29,Organic chemicals,8921590022.0
+2002,FRA,France,29,Organic chemicals,9019678756.0
+2003,FRA,France,29,Organic chemicals,10508704885.0
+2004,FRA,France,29,Organic chemicals,11734847471.0
+2005,FRA,France,29,Organic chemicals,11579100131.0
+2006,FRA,France,29,Organic chemicals,12714278546.0
+2006,FRO,Faroe Isds,29,Organic chemicals,3235.0
+2001,GAB,Gabon,29,Organic chemicals,33357.0
+2002,GAB,Gabon,29,Organic chemicals,32311.0
+2003,GAB,Gabon,29,Organic chemicals,77519.0
+2004,GAB,Gabon,29,Organic chemicals,114763.879
+2005,GAB,Gabon,29,Organic chemicals,51622.0
+2006,GAB,Gabon,29,Organic chemicals,29726.0
+2001,GBR,United Kingdom,29,Organic chemicals,9457001270.0
+2002,GBR,United Kingdom,29,Organic chemicals,9336896183.0
+2003,GBR,United Kingdom,29,Organic chemicals,10745748052.0
+2004,GBR,United Kingdom,29,Organic chemicals,11948185946.0
+2005,GBR,United Kingdom,29,Organic chemicals,12965707019.0
+2006,GBR,United Kingdom,29,Organic chemicals,15652458440.0
+2001,GEO,Georgia,29,Organic chemicals,124587.0
+2002,GEO,Georgia,29,Organic chemicals,79360.0
+2003,GEO,Georgia,29,Organic chemicals,816871.0
+2004,GEO,Georgia,29,Organic chemicals,1752306.0
+2005,GEO,Georgia,29,Organic chemicals,367555.0
+2006,GEO,Georgia,29,Organic chemicals,495562.0
+2001,GHA,Ghana,29,Organic chemicals,842735.0
+2003,GHA,Ghana,29,Organic chemicals,264158.0
+2004,GHA,Ghana,29,Organic chemicals,51083.0
+2005,GHA,Ghana,29,Organic chemicals,129621.0
+2006,GHA,Ghana,29,Organic chemicals,401042.0
+2002,GIN,Guinea,29,Organic chemicals,210.0
+2004,GIN,Guinea,29,Organic chemicals,224.0
+2006,GIN,Guinea,29,Organic chemicals,99710.0
+2006,GMB,Gambia,29,Organic chemicals,42.754
+2001,GRC,Greece,29,Organic chemicals,29205146.0
+2002,GRC,Greece,29,Organic chemicals,40334157.0
+2003,GRC,Greece,29,Organic chemicals,52323331.0
+2004,GRC,Greece,29,Organic chemicals,40909224.0
+2005,GRC,Greece,29,Organic chemicals,47188274.0
+2006,GRC,Greece,29,Organic chemicals,53652634.0
+2001,GRD,Grenada,29,Organic chemicals,130.0
+2005,GRD,Grenada,29,Organic chemicals,39.0
+2006,GRD,Grenada,29,Organic chemicals,1444.0
+2003,GRL,Greenland,29,Organic chemicals,3933.0
+2006,GRL,Greenland,29,Organic chemicals,790.0
+2001,GTM,Guatemala,29,Organic chemicals,7743169.0
+2002,GTM,Guatemala,29,Organic chemicals,14252907.0
+2003,GTM,Guatemala,29,Organic chemicals,16919701.0
+2004,GTM,Guatemala,29,Organic chemicals,19966444.0
+2005,GTM,Guatemala,29,Organic chemicals,37226282.0
+2006,GTM,Guatemala,29,Organic chemicals,27795882.0
+2001,GUY,Guyana,29,Organic chemicals,29698.0
+2002,GUY,Guyana,29,Organic chemicals,5031.0
+2003,GUY,Guyana,29,Organic chemicals,274428.0
+2004,GUY,Guyana,29,Organic chemicals,11580.0
+2005,GUY,Guyana,29,Organic chemicals,75364.0
+2006,GUY,Guyana,29,Organic chemicals,59287.0
+2001,HKG,"China, Hong Kong SAR",29,Organic chemicals,997047064.0
+2002,HKG,"China, Hong Kong SAR",29,Organic chemicals,857543904.0
+2003,HKG,"China, Hong Kong SAR",29,Organic chemicals,992633667.0
+2004,HKG,"China, Hong Kong SAR",29,Organic chemicals,1170488477.0
+2005,HKG,"China, Hong Kong SAR",29,Organic chemicals,1101371647.0
+2006,HKG,"China, Hong Kong SAR",29,Organic chemicals,1144662567.0
+2001,HND,Honduras,29,Organic chemicals,380040.0
+2002,HND,Honduras,29,Organic chemicals,1713574.0
+2003,HND,Honduras,29,Organic chemicals,5532945.0
+2004,HND,Honduras,29,Organic chemicals,8330360.0
+2005,HND,Honduras,29,Organic chemicals,9995101.0
+2006,HND,Honduras,29,Organic chemicals,3865056.0
+2001,HRV,Croatia,29,Organic chemicals,138010056.0
+2002,HRV,Croatia,29,Organic chemicals,138675126.0
+2003,HRV,Croatia,29,Organic chemicals,125230334.0
+2004,HRV,Croatia,29,Organic chemicals,138779153.0
+2005,HRV,Croatia,29,Organic chemicals,138442328.0
+2006,HRV,Croatia,29,Organic chemicals,89050140.0
+2001,HUN,Hungary,29,Organic chemicals,413919000.0
+2002,HUN,Hungary,29,Organic chemicals,546534000.0
+2003,HUN,Hungary,29,Organic chemicals,679844000.0
+2004,HUN,Hungary,29,Organic chemicals,937011000.0
+2005,HUN,Hungary,29,Organic chemicals,1121829000.0
+2006,HUN,Hungary,29,Organic chemicals,1369232000.0
+2001,IDN,Indonesia,29,Organic chemicals,1026432658.0
+2002,IDN,Indonesia,29,Organic chemicals,1077709117.0
+2003,IDN,Indonesia,29,Organic chemicals,1225943376.0
+2004,IDN,Indonesia,29,Organic chemicals,1535372735.0
+2005,IDN,Indonesia,29,Organic chemicals,1530640047.0
+2006,IDN,Indonesia,29,Organic chemicals,1883666021.0
+2001,IND,India,29,Organic chemicals,1624657119.0
+2002,IND,India,29,Organic chemicals,1988194418.0
+2003,IND,India,29,Organic chemicals,2556220815.0
+2004,IND,India,29,Organic chemicals,3285628802.0
+2005,IND,India,29,Organic chemicals,4442587264.0
+2006,IND,India,29,Organic chemicals,5777480702.0
+2001,IRL,Ireland,29,Organic chemicals,16009698059.159
+2002,IRL,Ireland,29,Organic chemicals,17634306876.838
+2003,IRL,Ireland,29,Organic chemicals,18100053706.756
+2004,IRL,Ireland,29,Organic chemicals,19166135829.229
+2005,IRL,Ireland,29,Organic chemicals,23464697838.288
+2006,IRL,Ireland,29,Organic chemicals,22381785904.365
+2001,IRN,Iran,29,Organic chemicals,213538125.0
+2002,IRN,Iran,29,Organic chemicals,180594707.0
+2003,IRN,Iran,29,Organic chemicals,271365107.0
+2004,IRN,Iran,29,Organic chemicals,327286179.0
+2005,IRN,Iran,29,Organic chemicals,730463957.0
+2006,IRN,Iran,29,Organic chemicals,660588707.0
+2001,ISL,Iceland,29,Organic chemicals,869718.0
+2002,ISL,Iceland,29,Organic chemicals,832608.0
+2003,ISL,Iceland,29,Organic chemicals,1449393.0
+2004,ISL,Iceland,29,Organic chemicals,2888206.0
+2005,ISL,Iceland,29,Organic chemicals,1745918.0
+2006,ISL,Iceland,29,Organic chemicals,1373378.0
+2001,ISR,Israel,29,Organic chemicals,1029651000.0
+2002,ISR,Israel,29,Organic chemicals,1195463000.0
+2003,ISR,Israel,29,Organic chemicals,1375691000.0
+2004,ISR,Israel,29,Organic chemicals,1613105000.0
+2005,ISR,Israel,29,Organic chemicals,1213089000.0
+2006,ISR,Israel,29,Organic chemicals,1290145000.0
+2001,ITA,Italy,29,Organic chemicals,4088827544.288
+2002,ITA,Italy,29,Organic chemicals,4237991580.611
+2003,ITA,Italy,29,Organic chemicals,5022278173.356
+2004,ITA,Italy,29,Organic chemicals,5612394913.738
+2005,ITA,Italy,29,Organic chemicals,6339664527.65
+2006,ITA,Italy,29,Organic chemicals,6828243477.446
+2001,JAM,Jamaica,29,Organic chemicals,4521199.0
+2002,JAM,Jamaica,29,Organic chemicals,3788614.0
+2003,JAM,Jamaica,29,Organic chemicals,5770578.0
+2004,JAM,Jamaica,29,Organic chemicals,4383386.0
+2005,JAM,Jamaica,29,Organic chemicals,5381551.0
+2006,JAM,Jamaica,29,Organic chemicals,11743852.0
+2001,JOR,Jordan,29,Organic chemicals,7823685.0
+2002,JOR,Jordan,29,Organic chemicals,6205912.0
+2003,JOR,Jordan,29,Organic chemicals,9036594.0
+2004,JOR,Jordan,29,Organic chemicals,8962000.0
+2005,JOR,Jordan,29,Organic chemicals,9314304.0
+2006,JOR,Jordan,29,Organic chemicals,12117004.0
+2001,JPN,Japan,29,Organic chemicals,10818433110.0
+2002,JPN,Japan,29,Organic chemicals,11502027889.0
+2003,JPN,Japan,29,Organic chemicals,13495346709.0
+2004,JPN,Japan,29,Organic chemicals,16487836611.0
+2005,JPN,Japan,29,Organic chemicals,17853005789.0
+2006,JPN,Japan,29,Organic chemicals,18585800791.0
+2001,KAZ,Kazakhstan,29,Organic chemicals,98800.0
+2002,KAZ,Kazakhstan,29,Organic chemicals,98900.0
+2003,KAZ,Kazakhstan,29,Organic chemicals,1279100.0
+2004,KAZ,Kazakhstan,29,Organic chemicals,530669.0
+2005,KAZ,Kazakhstan,29,Organic chemicals,721022.0
+2006,KAZ,Kazakhstan,29,Organic chemicals,1259378.0
+2001,KEN,Kenya,29,Organic chemicals,660094.0
+2002,KEN,Kenya,29,Organic chemicals,1346001.0
+2003,KEN,Kenya,29,Organic chemicals,3659129.0
+2004,KEN,Kenya,29,Organic chemicals,3259207.0
+2005,KEN,Kenya,29,Organic chemicals,2809581.0
+2006,KEN,Kenya,29,Organic chemicals,3243002.0
+2001,KGZ,Kyrgyzstan,29,Organic chemicals,4809.0
+2002,KGZ,Kyrgyzstan,29,Organic chemicals,11085.0
+2003,KGZ,Kyrgyzstan,29,Organic chemicals,19672.0
+2004,KGZ,Kyrgyzstan,29,Organic chemicals,74522.0
+2005,KGZ,Kyrgyzstan,29,Organic chemicals,65306.0
+2006,KGZ,Kyrgyzstan,29,Organic chemicals,1467171.0
+2001,KHM,Cambodia,29,Organic chemicals,9.0
+2003,KHM,Cambodia,29,Organic chemicals,397.0
+2004,KHM,Cambodia,29,Organic chemicals,109693.0
+2005,KHM,Cambodia,29,Organic chemicals,17296.0
+2006,KHM,Cambodia,29,Organic chemicals,518.0
+2001,KNA,Saint Kitts and Nevis,29,Organic chemicals,617.0
+2002,KNA,Saint Kitts and Nevis,29,Organic chemicals,296.0
+2003,KNA,Saint Kitts and Nevis,29,Organic chemicals,2393.0
+2001,KOR,Rep. of Korea,29,Organic chemicals,4163027112.0
+2002,KOR,Rep. of Korea,29,Organic chemicals,4577398636.0
+2003,KOR,Rep. of Korea,29,Organic chemicals,5847893275.0
+2004,KOR,Rep. of Korea,29,Organic chemicals,8748815801.0
+2005,KOR,Rep. of Korea,29,Organic chemicals,10539295152.0
+2006,KOR,Rep. of Korea,29,Organic chemicals,12730400856.0
+2001,KWT,Kuwait,29,Organic chemicals,2038304.0
+2002,KWT,Kuwait,29,Organic chemicals,3779424.0
+2003,KWT,Kuwait,29,Organic chemicals,4125828.0
+2004,KWT,Kuwait,29,Organic chemicals,2592694.0
+2006,KWT,Kuwait,29,Organic chemicals,1742099.0
+2001,LBN,Lebanon,29,Organic chemicals,474501.0
+2002,LBN,Lebanon,29,Organic chemicals,486007.0
+2003,LBN,Lebanon,29,Organic chemicals,292983.0
+2004,LBN,Lebanon,29,Organic chemicals,414000.0
+2005,LBN,Lebanon,29,Organic chemicals,491000.0
+2006,LBN,Lebanon,29,Organic chemicals,553827.0
+2001,LCA,Saint Lucia,29,Organic chemicals,349.0
+2002,LCA,Saint Lucia,29,Organic chemicals,291.0
+2003,LCA,Saint Lucia,29,Organic chemicals,7606.0
+2004,LCA,Saint Lucia,29,Organic chemicals,685.0
+2005,LCA,Saint Lucia,29,Organic chemicals,456.0
+2006,LCA,Saint Lucia,29,Organic chemicals,216291.0
+2001,LKA,Sri Lanka,29,Organic chemicals,277793.0
+2002,LKA,Sri Lanka,29,Organic chemicals,590441.0
+2003,LKA,Sri Lanka,29,Organic chemicals,1253330.0
+2004,LKA,Sri Lanka,29,Organic chemicals,13103207.0
+2005,LKA,Sri Lanka,29,Organic chemicals,25373254.0
+2006,LKA,Sri Lanka,29,Organic chemicals,9255065.0
+2001,LSO,Lesotho,29,Organic chemicals,79512.115
+2002,LSO,Lesotho,29,Organic chemicals,54039.308
+2003,LSO,Lesotho,29,Organic chemicals,155820.385
+2004,LSO,Lesotho,29,Organic chemicals,234840.314
+2005,LSO,Lesotho,29,Organic chemicals,139470.537
+2006,LSO,Lesotho,29,Organic chemicals,40145.173
+2001,LTU,Lithuania,29,Organic chemicals,4010874.0
+2002,LTU,Lithuania,29,Organic chemicals,6793147.0
+2003,LTU,Lithuania,29,Organic chemicals,11043832.0
+2004,LTU,Lithuania,29,Organic chemicals,15133762.0
+2005,LTU,Lithuania,29,Organic chemicals,14669232.0
+2006,LTU,Lithuania,29,Organic chemicals,16691549.0
+2001,LUX,Luxembourg,29,Organic chemicals,5115281.0
+2002,LUX,Luxembourg,29,Organic chemicals,6330893.0
+2003,LUX,Luxembourg,29,Organic chemicals,6480666.0
+2004,LUX,Luxembourg,29,Organic chemicals,10340174.0
+2005,LUX,Luxembourg,29,Organic chemicals,13880333.0
+2006,LUX,Luxembourg,29,Organic chemicals,21401012.0
+2001,LVA,Latvia,29,Organic chemicals,7022241.53
+2002,LVA,Latvia,29,Organic chemicals,9691270.209
+2003,LVA,Latvia,29,Organic chemicals,14149269.077
+2004,LVA,Latvia,29,Organic chemicals,19339017.737
+2005,LVA,Latvia,29,Organic chemicals,17421421.558
+2006,LVA,Latvia,29,Organic chemicals,20246836.083
+2003,MAC,"China, Macao SAR",29,Organic chemicals,3010.008
+2004,MAC,"China, Macao SAR",29,Organic chemicals,4033501.6
+2006,MAC,"China, Macao SAR",29,Organic chemicals,801.857
+2001,MAR,Morocco,29,Organic chemicals,2304446.616
+2002,MAR,Morocco,29,Organic chemicals,3111288.74
+2003,MAR,Morocco,29,Organic chemicals,6413656.37
+2004,MAR,Morocco,29,Organic chemicals,5893268.031
+2005,MAR,Morocco,29,Organic chemicals,6310094.8
+2006,MAR,Morocco,29,Organic chemicals,7917064.012
+2001,MDA,Rep. of Moldova,29,Organic chemicals,652501.0
+2002,MDA,Rep. of Moldova,29,Organic chemicals,385769.0
+2003,MDA,Rep. of Moldova,29,Organic chemicals,284358.0
+2004,MDA,Rep. of Moldova,29,Organic chemicals,236414.0
+2005,MDA,Rep. of Moldova,29,Organic chemicals,521081.0
+2006,MDA,Rep. of Moldova,29,Organic chemicals,174566.0
+2001,MDG,Madagascar,29,Organic chemicals,98309.42
+2002,MDG,Madagascar,29,Organic chemicals,105999.158
+2003,MDG,Madagascar,29,Organic chemicals,73268.326
+2004,MDG,Madagascar,29,Organic chemicals,44899.732
+2005,MDG,Madagascar,29,Organic chemicals,523937.179
+2006,MDG,Madagascar,29,Organic chemicals,68297.114
+2001,MEX,Mexico,29,Organic chemicals,1052924177.0
+2002,MEX,Mexico,29,Organic chemicals,1065612330.0
+2003,MEX,Mexico,29,Organic chemicals,1266786260.0
+2004,MEX,Mexico,29,Organic chemicals,1420384812.0
+2005,MEX,Mexico,29,Organic chemicals,1566927631.0
+2006,MEX,Mexico,29,Organic chemicals,1616367864.0
+2001,MKD,North Macedonia,29,Organic chemicals,1225120.55
+2002,MKD,North Macedonia,29,Organic chemicals,1152780.9
+2003,MKD,North Macedonia,29,Organic chemicals,1294879.86
+2004,MKD,North Macedonia,29,Organic chemicals,1042161.23
+2005,MKD,North Macedonia,29,Organic chemicals,1086000.65
+2006,MKD,North Macedonia,29,Organic chemicals,1171298.36
+2001,MLI,Mali,29,Organic chemicals,34983.0
+2002,MLI,Mali,29,Organic chemicals,20047.0
+2003,MLI,Mali,29,Organic chemicals,1733.0
+2004,MLI,Mali,29,Organic chemicals,25349.0
+2005,MLI,Mali,29,Organic chemicals,3773.0
+2006,MLI,Mali,29,Organic chemicals,1387.0
+2001,MLT,Malta,29,Organic chemicals,4961173.0
+2002,MLT,Malta,29,Organic chemicals,4260938.0
+2003,MLT,Malta,29,Organic chemicals,17490499.0
+2004,MLT,Malta,29,Organic chemicals,15083406.0
+2005,MLT,Malta,29,Organic chemicals,19687607.0
+2006,MLT,Malta,29,Organic chemicals,20716248.0
+2006,MNE,Montenegro,29,Organic chemicals,61974.0
+2001,MNG,Mongolia,29,Organic chemicals,1643.0
+2002,MNG,Mongolia,29,Organic chemicals,24578.0
+2003,MNG,Mongolia,29,Organic chemicals,7830.0
+2006,MNG,Mongolia,29,Organic chemicals,2800.0
+2001,MOZ,Mozambique,29,Organic chemicals,327.0
+2002,MOZ,Mozambique,29,Organic chemicals,5733.0
+2003,MOZ,Mozambique,29,Organic chemicals,55997.0
+2004,MOZ,Mozambique,29,Organic chemicals,5537.0
+2005,MOZ,Mozambique,29,Organic chemicals,7692.0
+2006,MOZ,Mozambique,29,Organic chemicals,178368.0
+2004,MSR,Montserrat,29,Organic chemicals,34.0
+2001,MUS,Mauritius,29,Organic chemicals,109231.0
+2002,MUS,Mauritius,29,Organic chemicals,391397.0
+2003,MUS,Mauritius,29,Organic chemicals,419310.0
+2004,MUS,Mauritius,29,Organic chemicals,656207.0
+2005,MUS,Mauritius,29,Organic chemicals,819297.0
+2006,MUS,Mauritius,29,Organic chemicals,1008886.0
+2001,MWI,Malawi,29,Organic chemicals,2545.433
+2002,MWI,Malawi,29,Organic chemicals,57456.673
+2003,MWI,Malawi,29,Organic chemicals,1781.189
+2004,MWI,Malawi,29,Organic chemicals,139376.813
+2005,MWI,Malawi,29,Organic chemicals,64925.009
+2006,MWI,Malawi,29,Organic chemicals,43845.911
+2001,MYS,Malaysia,29,Organic chemicals,1077781458.0
+2002,MYS,Malaysia,29,Organic chemicals,1412673385.0
+2003,MYS,Malaysia,29,Organic chemicals,1671395229.0
+2004,MYS,Malaysia,29,Organic chemicals,2306794097.0
+2005,MYS,Malaysia,29,Organic chemicals,2714355154.0
+2006,MYS,Malaysia,29,Organic chemicals,2551733320.0
+2001,MYT,Mayotte (Overseas France),29,Organic chemicals,96.0
+2002,MYT,Mayotte (Overseas France),29,Organic chemicals,675.0
+2006,MYT,Mayotte (Overseas France),29,Organic chemicals,2839.0
+2001,NAM,Namibia,29,Organic chemicals,166921.0
+2002,NAM,Namibia,29,Organic chemicals,106927.0
+2003,NAM,Namibia,29,Organic chemicals,274976.0
+2004,NAM,Namibia,29,Organic chemicals,1096258.0
+2005,NAM,Namibia,29,Organic chemicals,810996.0
+2006,NAM,Namibia,29,Organic chemicals,188173.0
+2001,NCL,New Caledonia,29,Organic chemicals,5381.0
+2002,NCL,New Caledonia,29,Organic chemicals,2192.0
+2003,NCL,New Caledonia,29,Organic chemicals,2591.0
+2004,NCL,New Caledonia,29,Organic chemicals,1422.0
+2005,NCL,New Caledonia,29,Organic chemicals,1946.0
+2006,NCL,New Caledonia,29,Organic chemicals,4232.0
+2001,NER,Niger,29,Organic chemicals,301790.0
+2002,NER,Niger,29,Organic chemicals,132617.0
+2003,NER,Niger,29,Organic chemicals,834.0
+2004,NER,Niger,29,Organic chemicals,26762.0
+2005,NER,Niger,29,Organic chemicals,5171.0
+2006,NER,Niger,29,Organic chemicals,1481.0
+2001,NGA,Nigeria,29,Organic chemicals,1330.0
+2003,NGA,Nigeria,29,Organic chemicals,52150.0
+2006,NGA,Nigeria,29,Organic chemicals,775246.0
+2001,NIC,Nicaragua,29,Organic chemicals,1431409.0
+2002,NIC,Nicaragua,29,Organic chemicals,1356828.0
+2003,NIC,Nicaragua,29,Organic chemicals,1679254.0
+2004,NIC,Nicaragua,29,Organic chemicals,2170160.0
+2005,NIC,Nicaragua,29,Organic chemicals,2317020.0
+2006,NIC,Nicaragua,29,Organic chemicals,2219401.0
+2001,NLD,Netherlands,29,Organic chemicals,7865010120.0
+2002,NLD,Netherlands,29,Organic chemicals,8457516586.0
+2003,NLD,Netherlands,29,Organic chemicals,10473848476.0
+2004,NLD,Netherlands,29,Organic chemicals,13651579411.0
+2005,NLD,Netherlands,29,Organic chemicals,15191826068.0
+2006,NLD,Netherlands,29,Organic chemicals,17705520123.0
+2001,NOR,Norway,29,Organic chemicals,410911737.994
+2002,NOR,Norway,29,Organic chemicals,481401961.963
+2003,NOR,Norway,29,Organic chemicals,494324620.904
+2004,NOR,Norway,29,Organic chemicals,633116768.948
+2005,NOR,Norway,29,Organic chemicals,671877236.494
+2006,NOR,Norway,29,Organic chemicals,696468655.444
+2001,NZL,New Zealand,29,Organic chemicals,282358135.0
+2002,NZL,New Zealand,29,Organic chemicals,282583089.0
+2003,NZL,New Zealand,29,Organic chemicals,210114221.0
+2004,NZL,New Zealand,29,Organic chemicals,257573731.0
+2005,NZL,New Zealand,29,Organic chemicals,117975827.0
+2006,NZL,New Zealand,29,Organic chemicals,152045520.0
+2001,OMN,Oman,29,Organic chemicals,535108.0
+2002,OMN,Oman,29,Organic chemicals,468534.0
+2003,OMN,Oman,29,Organic chemicals,161329.0
+2004,OMN,Oman,29,Organic chemicals,1944099.0
+2005,OMN,Oman,29,Organic chemicals,10810405.0
+2006,OMN,Oman,29,Organic chemicals,488426.0
+2003,PAK,Pakistan,29,Organic chemicals,52035614.0
+2004,PAK,Pakistan,29,Organic chemicals,23528795.0
+2005,PAK,Pakistan,29,Organic chemicals,94677767.0
+2006,PAK,Pakistan,29,Organic chemicals,62320228.0
+2003,PAN,Panama,29,Organic chemicals,11047.0
+2004,PAN,Panama,29,Organic chemicals,7263.0
+2005,PAN,Panama,29,Organic chemicals,5521.0
+2006,PAN,Panama,29,Organic chemicals,76818771.0
+2001,PER,Peru,29,Organic chemicals,7907451.0
+2002,PER,Peru,29,Organic chemicals,9595323.0
+2003,PER,Peru,29,Organic chemicals,9495161.0
+2004,PER,Peru,29,Organic chemicals,10645428.0
+2005,PER,Peru,29,Organic chemicals,11519233.0
+2006,PER,Peru,29,Organic chemicals,13112311.0
+2001,PHL,Philippines,29,Organic chemicals,26934841.0
+2002,PHL,Philippines,29,Organic chemicals,29719268.0
+2003,PHL,Philippines,29,Organic chemicals,37528242.0
+2004,PHL,Philippines,29,Organic chemicals,50153617.0
+2005,PHL,Philippines,29,Organic chemicals,49845393.0
+2006,PHL,Philippines,29,Organic chemicals,49828837.0
+2001,PNG,Papua New Guinea,29,Organic chemicals,3.0
+2002,PNG,Papua New Guinea,29,Organic chemicals,166830.0
+2004,PNG,Papua New Guinea,29,Organic chemicals,107727.0
+2001,POL,Poland,29,Organic chemicals,378579000.0
+2002,POL,Poland,29,Organic chemicals,419766000.0
+2003,POL,Poland,29,Organic chemicals,549457000.0
+2004,POL,Poland,29,Organic chemicals,759765689.0
+2005,POL,Poland,29,Organic chemicals,872573008.0
+2006,POL,Poland,29,Organic chemicals,1086706035.0
+2001,PRT,Portugal,29,Organic chemicals,266107274.0
+2002,PRT,Portugal,29,Organic chemicals,315812008.0
+2003,PRT,Portugal,29,Organic chemicals,413087234.0
+2004,PRT,Portugal,29,Organic chemicals,547247564.0
+2005,PRT,Portugal,29,Organic chemicals,671669120.0
+2006,PRT,Portugal,29,Organic chemicals,746368675.0
+2001,PRY,Paraguay,29,Organic chemicals,2280109.0
+2002,PRY,Paraguay,29,Organic chemicals,3484648.0
+2003,PRY,Paraguay,29,Organic chemicals,3982963.0
+2004,PRY,Paraguay,29,Organic chemicals,3266727.0
+2005,PRY,Paraguay,29,Organic chemicals,3905951.0
+2006,PRY,Paraguay,29,Organic chemicals,5256331.0
+2001,PYF,French Polynesia,29,Organic chemicals,1351.0
+2004,PYF,French Polynesia,29,Organic chemicals,313.0
+2005,PYF,French Polynesia,29,Organic chemicals,1767.0
+2006,PYF,French Polynesia,29,Organic chemicals,274.0
+2001,QAT,Qatar,29,Organic chemicals,131160.0
+2002,QAT,Qatar,29,Organic chemicals,298805.0
+2003,QAT,Qatar,29,Organic chemicals,267736.748
+2004,QAT,Qatar,29,Organic chemicals,708644500.564
+2005,QAT,Qatar,29,Organic chemicals,526589014.0
+2006,QAT,Qatar,29,Organic chemicals,618429907.0
+2001,ROU,Romania,29,Organic chemicals,129088739.15
+2002,ROU,Romania,29,Organic chemicals,151669202.53
+2003,ROU,Romania,29,Organic chemicals,164730471.22
+2004,ROU,Romania,29,Organic chemicals,293818306.52
+2005,ROU,Romania,29,Organic chemicals,344892850.71
+2006,ROU,Romania,29,Organic chemicals,405852340.7
+2001,RUS,Russian Federation,29,Organic chemicals,1126388054.0
+2002,RUS,Russian Federation,29,Organic chemicals,1159940579.0
+2003,RUS,Russian Federation,29,Organic chemicals,1507929964.0
+2004,RUS,Russian Federation,29,Organic chemicals,2204763101.0
+2005,RUS,Russian Federation,29,Organic chemicals,2673454494.0
+2006,RUS,Russian Federation,29,Organic chemicals,3065938565.0
+2001,RWA,Rwanda,29,Organic chemicals,942.0
+2002,RWA,Rwanda,29,Organic chemicals,1735.0
+2004,RWA,Rwanda,29,Organic chemicals,871.0
+2005,RWA,Rwanda,29,Organic chemicals,86190.0
+2006,RWA,Rwanda,29,Organic chemicals,33808.0
+2001,S19,"Other Asia, nes",29,Organic chemicals,1504267749.0
+2002,S19,"Other Asia, nes",29,Organic chemicals,1834836788.0
+2003,S19,"Other Asia, nes",29,Organic chemicals,2605421100.0
+2004,S19,"Other Asia, nes",29,Organic chemicals,4110745181.0
+2005,S19,"Other Asia, nes",29,Organic chemicals,5606520978.0
+2006,S19,"Other Asia, nes",29,Organic chemicals,5909018211.0
+2001,SAU,Saudi Arabia,29,Organic chemicals,2650107579.0
+2002,SAU,Saudi Arabia,29,Organic chemicals,2833985409.0
+2003,SAU,Saudi Arabia,29,Organic chemicals,3223325096.0
+2004,SAU,Saudi Arabia,29,Organic chemicals,3648340560.0
+2005,SAU,Saudi Arabia,29,Organic chemicals,4763221373.0
+2006,SAU,Saudi Arabia,29,Organic chemicals,4999708745.0
+2001,SCG,Serbia and Montenegro (...2005),29,Organic chemicals,8853907.0
+2002,SCG,Serbia and Montenegro (...2005),29,Organic chemicals,5522326.0
+2004,SCG,Serbia and Montenegro (...2005),29,Organic chemicals,96422313.0
+2001,SDN,Sudan (...2011),29,Organic chemicals,34808.955
+2005,SDN,Sudan (...2011),29,Organic chemicals,17730.692
+2006,SDN,Sudan (...2011),29,Organic chemicals,17098.646
+2001,SEN,Senegal,29,Organic chemicals,1468226.0
+2002,SEN,Senegal,29,Organic chemicals,1472537.0
+2003,SEN,Senegal,29,Organic chemicals,2544953.0
+2004,SEN,Senegal,29,Organic chemicals,2073143.0
+2005,SEN,Senegal,29,Organic chemicals,3247824.0
+2006,SEN,Senegal,29,Organic chemicals,2545471.0
+2001,SGP,Singapore,29,Organic chemicals,4283891360.0
+2002,SGP,Singapore,29,Organic chemicals,5376797155.0
+2003,SGP,Singapore,29,Organic chemicals,10154744842.0
+2004,SGP,Singapore,29,Organic chemicals,12495314965.0
+2005,SGP,Singapore,29,Organic chemicals,10792215922.0
+2006,SGP,Singapore,29,Organic chemicals,11157741826.0
+2002,SLB,Solomon Isds,29,Organic chemicals,72.0
+2001,SLV,El Salvador,29,Organic chemicals,761570.23
+2002,SLV,El Salvador,29,Organic chemicals,822333.51
+2003,SLV,El Salvador,29,Organic chemicals,753517.99
+2004,SLV,El Salvador,29,Organic chemicals,743760.89
+2005,SLV,El Salvador,29,Organic chemicals,1079799.87
+2006,SLV,El Salvador,29,Organic chemicals,2546359.86
+2006,SRB,Serbia,29,Organic chemicals,161399657.0
+2001,SUR,Suriname,29,Organic chemicals,141103.0
+2002,SUR,Suriname,29,Organic chemicals,277846.0
+2003,SUR,Suriname,29,Organic chemicals,383728.0
+2004,SUR,Suriname,29,Organic chemicals,356031.0
+2005,SUR,Suriname,29,Organic chemicals,353309.0
+2006,SUR,Suriname,29,Organic chemicals,483015.0
+2001,SVK,Slovakia,29,Organic chemicals,286037068.0
+2002,SVK,Slovakia,29,Organic chemicals,305014343.0
+2003,SVK,Slovakia,29,Organic chemicals,304540399.0
+2004,SVK,Slovakia,29,Organic chemicals,375037888.0
+2005,SVK,Slovakia,29,Organic chemicals,425609605.0
+2006,SVK,Slovakia,29,Organic chemicals,460306828.0
+2001,SVN,Slovenia,29,Organic chemicals,67704235.0
+2002,SVN,Slovenia,29,Organic chemicals,66985045.0
+2003,SVN,Slovenia,29,Organic chemicals,88967299.0
+2004,SVN,Slovenia,29,Organic chemicals,83210280.0
+2005,SVN,Slovenia,29,Organic chemicals,97121017.0
+2006,SVN,Slovenia,29,Organic chemicals,132971688.0
+2001,SWE,Sweden,29,Organic chemicals,437871229.0
+2002,SWE,Sweden,29,Organic chemicals,501761617.0
+2003,SWE,Sweden,29,Organic chemicals,662674533.0
+2004,SWE,Sweden,29,Organic chemicals,1207036497.0
+2005,SWE,Sweden,29,Organic chemicals,1477868171.0
+2006,SWE,Sweden,29,Organic chemicals,1031443714.0
+2001,SWZ,Eswatini,29,Organic chemicals,908632.0
+2002,SWZ,Eswatini,29,Organic chemicals,146118.0
+2003,SWZ,Eswatini,29,Organic chemicals,116166.0
+2004,SWZ,Eswatini,29,Organic chemicals,70150.0
+2005,SWZ,Eswatini,29,Organic chemicals,24606463.0
+2006,SWZ,Eswatini,29,Organic chemicals,48915819.0
+2001,SYC,Seychelles,29,Organic chemicals,15232.0
+2002,SYC,Seychelles,29,Organic chemicals,3731.0
+2003,SYC,Seychelles,29,Organic chemicals,12110.368
+2002,SYR,Syria,29,Organic chemicals,1583343.0
+2003,SYR,Syria,29,Organic chemicals,261245.0
+2004,SYR,Syria,29,Organic chemicals,13731870.0
+2005,SYR,Syria,29,Organic chemicals,63435207.0
+2006,SYR,Syria,29,Organic chemicals,2885293.0
+2005,TCA,Turks and Caicos Isds,29,Organic chemicals,900.0
+2001,TGO,Togo,29,Organic chemicals,46925.0
+2002,TGO,Togo,29,Organic chemicals,3044.0
+2003,TGO,Togo,29,Organic chemicals,230558.0
+2004,TGO,Togo,29,Organic chemicals,51482.0
+2005,TGO,Togo,29,Organic chemicals,27502.0
+2001,THA,Thailand,29,Organic chemicals,631053905.0
+2002,THA,Thailand,29,Organic chemicals,762397077.0
+2003,THA,Thailand,29,Organic chemicals,1117510285.0
+2004,THA,Thailand,29,Organic chemicals,1501333268.0
+2005,THA,Thailand,29,Organic chemicals,1930356147.0
+2006,THA,Thailand,29,Organic chemicals,2548560550.0
+2004,TLS,Timor-Leste,29,Organic chemicals,1306.0
+2005,TLS,Timor-Leste,29,Organic chemicals,1633.0
+2005,TON,Tonga,29,Organic chemicals,1708.0
+2001,TTO,Trinidad and Tobago,29,Organic chemicals,257563628.0
+2002,TTO,Trinidad and Tobago,29,Organic chemicals,190806663.0
+2003,TTO,Trinidad and Tobago,29,Organic chemicals,314730508.0
+2004,TTO,Trinidad and Tobago,29,Organic chemicals,502069940.0
+2005,TTO,Trinidad and Tobago,29,Organic chemicals,709650800.0
+2006,TTO,Trinidad and Tobago,29,Organic chemicals,890893572.0
+2001,TUN,Tunisia,29,Organic chemicals,3253768.0
+2002,TUN,Tunisia,29,Organic chemicals,3664432.0
+2003,TUN,Tunisia,29,Organic chemicals,3194216.0
+2004,TUN,Tunisia,29,Organic chemicals,3460718.0
+2005,TUN,Tunisia,29,Organic chemicals,5971551.0
+2006,TUN,Tunisia,29,Organic chemicals,4578176.0
+2001,TUR,Türkiye,29,Organic chemicals,155598713.0
+2002,TUR,Türkiye,29,Organic chemicals,164913821.0
+2003,TUR,Türkiye,29,Organic chemicals,206991079.0
+2004,TUR,Türkiye,29,Organic chemicals,298290395.0
+2005,TUR,Türkiye,29,Organic chemicals,255320588.0
+2006,TUR,Türkiye,29,Organic chemicals,345973129.0
+2002,TUV,Tuvalu,29,Organic chemicals,136.0
+2004,TUV,Tuvalu,29,Organic chemicals,66.0
+2005,TUV,Tuvalu,29,Organic chemicals,30.0
+2001,TZA,United Rep. of Tanzania,29,Organic chemicals,194745.0
+2002,TZA,United Rep. of Tanzania,29,Organic chemicals,47882.0
+2003,TZA,United Rep. of Tanzania,29,Organic chemicals,57336.0
+2004,TZA,United Rep. of Tanzania,29,Organic chemicals,119528.0
+2005,TZA,United Rep. of Tanzania,29,Organic chemicals,298003.0
+2006,TZA,United Rep. of Tanzania,29,Organic chemicals,443571.0
+2001,UGA,Uganda,29,Organic chemicals,194040.0
+2002,UGA,Uganda,29,Organic chemicals,90361.0
+2003,UGA,Uganda,29,Organic chemicals,155725.0
+2004,UGA,Uganda,29,Organic chemicals,438560.0
+2005,UGA,Uganda,29,Organic chemicals,583360.0
+2006,UGA,Uganda,29,Organic chemicals,330955.0
+2001,UKR,Ukraine,29,Organic chemicals,202552570.0
+2002,UKR,Ukraine,29,Organic chemicals,242448420.0
+2003,UKR,Ukraine,29,Organic chemicals,355957300.0
+2004,UKR,Ukraine,29,Organic chemicals,500088160.0
+2005,UKR,Ukraine,29,Organic chemicals,516779407.0
+2006,UKR,Ukraine,29,Organic chemicals,629509834.0
+2001,URY,Uruguay,29,Organic chemicals,16787344.0
+2002,URY,Uruguay,29,Organic chemicals,14715028.0
+2003,URY,Uruguay,29,Organic chemicals,8972551.0
+2004,URY,Uruguay,29,Organic chemicals,10232038.0
+2005,URY,Uruguay,29,Organic chemicals,8666964.0
+2006,URY,Uruguay,29,Organic chemicals,10149509.0
+2001,USA,USA,29,Organic chemicals,19129824760.0
+2002,USA,USA,29,Organic chemicals,19420303603.0
+2003,USA,USA,29,Organic chemicals,23239552727.0
+2004,USA,USA,29,Organic chemicals,30377562216.0
+2005,USA,USA,29,Organic chemicals,30833935869.0
+2006,USA,USA,29,Organic chemicals,33654323751.0
+2001,VCT,Saint Vincent and the Grenadines,29,Organic chemicals,2513.0
+2002,VCT,Saint Vincent and the Grenadines,29,Organic chemicals,73.0
+2003,VCT,Saint Vincent and the Grenadines,29,Organic chemicals,142.0
+2004,VCT,Saint Vincent and the Grenadines,29,Organic chemicals,58.0
+2005,VCT,Saint Vincent and the Grenadines,29,Organic chemicals,11741.0
+2001,VEN,Venezuela,29,Organic chemicals,371805214.0
+2002,VEN,Venezuela,29,Organic chemicals,408725952.0
+2003,VEN,Venezuela,29,Organic chemicals,367804548.0
+2004,VEN,Venezuela,29,Organic chemicals,653060176.0
+2005,VEN,Venezuela,29,Organic chemicals,561288933.0
+2006,VEN,Venezuela,29,Organic chemicals,358760342.0
+2001,VNM,Viet Nam,29,Organic chemicals,32347258.0
+2002,VNM,Viet Nam,29,Organic chemicals,38208301.0
+2003,VNM,Viet Nam,29,Organic chemicals,42821729.0
+2004,VNM,Viet Nam,29,Organic chemicals,67931327.0
+2005,VNM,Viet Nam,29,Organic chemicals,80847392.0
+2006,VNM,Viet Nam,29,Organic chemicals,88289270.0
+2006,VUT,Vanuatu,29,Organic chemicals,46068.0
+2002,WSM,Samoa,29,Organic chemicals,1356.0
+2003,WSM,Samoa,29,Organic chemicals,134.0
+2005,WSM,Samoa,29,Organic chemicals,76.0
+2004,YEM,Yemen,29,Organic chemicals,11903.0
+2005,YEM,Yemen,29,Organic chemicals,7399.0
+2006,YEM,Yemen,29,Organic chemicals,27321.0
+2001,ZAF,South Africa,29,Organic chemicals,363296504.0
+2002,ZAF,South Africa,29,Organic chemicals,383022219.0
+2003,ZAF,South Africa,29,Organic chemicals,509427197.0
+2004,ZAF,South Africa,29,Organic chemicals,709091036.0
+2005,ZAF,South Africa,29,Organic chemicals,858696620.0
+2006,ZAF,South Africa,29,Organic chemicals,918153925.0
+2001,ZMB,Zambia,29,Organic chemicals,112372.0
+2002,ZMB,Zambia,29,Organic chemicals,413777.0
+2003,ZMB,Zambia,29,Organic chemicals,155282.0
+2004,ZMB,Zambia,29,Organic chemicals,527510.0
+2005,ZMB,Zambia,29,Organic chemicals,417951.0
+2006,ZMB,Zambia,29,Organic chemicals,1268295.0
+2001,ZWE,Zimbabwe,29,Organic chemicals,545192.82
+2002,ZWE,Zimbabwe,29,Organic chemicals,997441.147
+2003,ZWE,Zimbabwe,29,Organic chemicals,1088381.46
+2004,ZWE,Zimbabwe,29,Organic chemicals,2089922.98
+2005,ZWE,Zimbabwe,29,Organic chemicals,530390.19
+2006,ZWE,Zimbabwe,29,Organic chemicals,2063596.95

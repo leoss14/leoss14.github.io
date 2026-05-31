@@ -1,0 +1,830 @@
+period,reporterISO,reporterDesc,cmdCode,cmdDesc,primaryValue
+2019,ABW,Aruba,78,Lead and articles thereof,50950.836
+2020,ABW,Aruba,78,Lead and articles thereof,38189.943
+2021,ABW,Aruba,78,Lead and articles thereof,39384.357
+2022,ABW,Aruba,78,Lead and articles thereof,38745.251
+2023,ABW,Aruba,78,Lead and articles thereof,43264.245
+2019,AFG,Afghanistan,78,Lead and articles thereof,186.82
+2019,AGO,Angola,78,Lead and articles thereof,15342749.944
+2020,AGO,Angola,78,Lead and articles thereof,4145348.646
+2021,AGO,Angola,78,Lead and articles thereof,2156549.008
+2022,AGO,Angola,78,Lead and articles thereof,1948356.558
+2023,AGO,Angola,78,Lead and articles thereof,440795.378
+2019,ALB,Albania,78,Lead and articles thereof,845452.935
+2020,ALB,Albania,78,Lead and articles thereof,680427.592
+2021,ALB,Albania,78,Lead and articles thereof,1817062.963
+2022,ALB,Albania,78,Lead and articles thereof,3762588.357
+2023,ALB,Albania,78,Lead and articles thereof,3034442.227
+2019,AND,Andorra,78,Lead and articles thereof,625.315
+2020,AND,Andorra,78,Lead and articles thereof,13684.749
+2021,AND,Andorra,78,Lead and articles thereof,2737.604
+2022,AND,Andorra,78,Lead and articles thereof,1121.877
+2023,AND,Andorra,78,Lead and articles thereof,6408.855
+2019,ARE,United Arab Emirates,78,Lead and articles thereof,115830158.624
+2020,ARE,United Arab Emirates,78,Lead and articles thereof,73426206.478
+2021,ARE,United Arab Emirates,78,Lead and articles thereof,86882325.223
+2022,ARE,United Arab Emirates,78,Lead and articles thereof,89974830.598
+2023,ARE,United Arab Emirates,78,Lead and articles thereof,98980088.482
+2019,ARG,Argentina,78,Lead and articles thereof,865024.12
+2020,ARG,Argentina,78,Lead and articles thereof,2190074.09
+2021,ARG,Argentina,78,Lead and articles thereof,3707687.66
+2022,ARG,Argentina,78,Lead and articles thereof,5695116.19
+2023,ARG,Argentina,78,Lead and articles thereof,4320594.18
+2019,ARM,Armenia,78,Lead and articles thereof,477967.17
+2020,ARM,Armenia,78,Lead and articles thereof,314046.72
+2021,ARM,Armenia,78,Lead and articles thereof,146833.53
+2022,ARM,Armenia,78,Lead and articles thereof,80204.73
+2023,ARM,Armenia,78,Lead and articles thereof,78565.93
+2019,ATG,Antigua and Barbuda,78,Lead and articles thereof,8582.486
+2020,ATG,Antigua and Barbuda,78,Lead and articles thereof,3165.997
+2021,ATG,Antigua and Barbuda,78,Lead and articles thereof,6506.574
+2022,ATG,Antigua and Barbuda,78,Lead and articles thereof,8999.593
+2023,ATG,Antigua and Barbuda,78,Lead and articles thereof,7964.207
+2019,AUS,Australia,78,Lead and articles thereof,10780357.459
+2020,AUS,Australia,78,Lead and articles thereof,10250354.573
+2021,AUS,Australia,78,Lead and articles thereof,17534583.943
+2022,AUS,Australia,78,Lead and articles thereof,16321427.534
+2023,AUS,Australia,78,Lead and articles thereof,8069724.758
+2019,AUT,Austria,78,Lead and articles thereof,98733333.227
+2020,AUT,Austria,78,Lead and articles thereof,71759972.126
+2021,AUT,Austria,78,Lead and articles thereof,106673906.826
+2022,AUT,Austria,78,Lead and articles thereof,101076756.915
+2023,AUT,Austria,78,Lead and articles thereof,109262198.376
+2019,AZE,Azerbaijan,78,Lead and articles thereof,314372.3
+2020,AZE,Azerbaijan,78,Lead and articles thereof,242058.67
+2021,AZE,Azerbaijan,78,Lead and articles thereof,403559.36
+2022,AZE,Azerbaijan,78,Lead and articles thereof,163467.96
+2023,AZE,Azerbaijan,78,Lead and articles thereof,295686.26
+2019,BDI,Burundi,78,Lead and articles thereof,57.967
+2020,BDI,Burundi,78,Lead and articles thereof,192.962
+2021,BDI,Burundi,78,Lead and articles thereof,11629.021
+2022,BDI,Burundi,78,Lead and articles thereof,4366.269
+2023,BDI,Burundi,78,Lead and articles thereof,1089.581
+2019,BEL,Belgium,78,Lead and articles thereof,109736214.768
+2020,BEL,Belgium,78,Lead and articles thereof,106910929.862
+2021,BEL,Belgium,78,Lead and articles thereof,136486916.555
+2022,BEL,Belgium,78,Lead and articles thereof,145469326.222
+2023,BEL,Belgium,78,Lead and articles thereof,141305728.503
+2019,BEN,Benin,78,Lead and articles thereof,4770.122
+2020,BEN,Benin,78,Lead and articles thereof,31.0
+2021,BEN,Benin,78,Lead and articles thereof,2527.673
+2022,BEN,Benin,78,Lead and articles thereof,28954.381
+2023,BEN,Benin,78,Lead and articles thereof,18513.401
+2019,BFA,Burkina Faso,78,Lead and articles thereof,114139.041
+2020,BFA,Burkina Faso,78,Lead and articles thereof,33069.226
+2021,BFA,Burkina Faso,78,Lead and articles thereof,20226.059
+2022,BFA,Burkina Faso,78,Lead and articles thereof,65540.289
+2023,BFA,Burkina Faso,78,Lead and articles thereof,163825.971
+2019,BGR,Bulgaria,78,Lead and articles thereof,73490299.305
+2020,BGR,Bulgaria,78,Lead and articles thereof,72614032.159
+2021,BGR,Bulgaria,78,Lead and articles thereof,90776333.553
+2022,BGR,Bulgaria,78,Lead and articles thereof,104388591.711
+2023,BGR,Bulgaria,78,Lead and articles thereof,114235980.365
+2019,BHR,Bahrain,78,Lead and articles thereof,121731.23
+2020,BHR,Bahrain,78,Lead and articles thereof,245960.35
+2021,BHR,Bahrain,78,Lead and articles thereof,149741.728
+2022,BHR,Bahrain,78,Lead and articles thereof,168276.409
+2023,BHR,Bahrain,78,Lead and articles thereof,155969.454
+2019,BHS,Bahamas,78,Lead and articles thereof,54393.616
+2020,BHS,Bahamas,78,Lead and articles thereof,15817.0
+2021,BHS,Bahamas,78,Lead and articles thereof,113311.0
+2022,BHS,Bahamas,78,Lead and articles thereof,33817.0
+2023,BHS,Bahamas,78,Lead and articles thereof,64848.0
+2019,BIH,Bosnia Herzegovina,78,Lead and articles thereof,2808637.52
+2020,BIH,Bosnia Herzegovina,78,Lead and articles thereof,3005483.45
+2021,BIH,Bosnia Herzegovina,78,Lead and articles thereof,4577587.07
+2022,BIH,Bosnia Herzegovina,78,Lead and articles thereof,5647397.82
+2023,BIH,Bosnia Herzegovina,78,Lead and articles thereof,5262180.788
+2019,BLR,Belarus,78,Lead and articles thereof,3276700.0
+2020,BLR,Belarus,78,Lead and articles thereof,3509400.0
+2021,BLR,Belarus,78,Lead and articles thereof,8529800.0
+2019,BLZ,Belize,78,Lead and articles thereof,23489.34
+2020,BLZ,Belize,78,Lead and articles thereof,22278.045
+2021,BLZ,Belize,78,Lead and articles thereof,13931.7
+2022,BLZ,Belize,78,Lead and articles thereof,50838.58
+2023,BLZ,Belize,78,Lead and articles thereof,70482.42
+2019,BMU,Bermuda,78,Lead and articles thereof,543.5
+2020,BMU,Bermuda,78,Lead and articles thereof,3160.6
+2021,BMU,Bermuda,78,Lead and articles thereof,544.99
+2022,BMU,Bermuda,78,Lead and articles thereof,201.23
+2023,BMU,Bermuda,78,Lead and articles thereof,3496.25
+2019,BOL,Bolivia (Plurinational State of),78,Lead and articles thereof,434329.17
+2020,BOL,Bolivia (Plurinational State of),78,Lead and articles thereof,332019.22
+2021,BOL,Bolivia (Plurinational State of),78,Lead and articles thereof,109569.34
+2022,BOL,Bolivia (Plurinational State of),78,Lead and articles thereof,140042.0
+2023,BOL,Bolivia (Plurinational State of),78,Lead and articles thereof,86107.0
+2019,BRA,Brazil,78,Lead and articles thereof,120683191.0
+2020,BRA,Brazil,78,Lead and articles thereof,104828165.0
+2021,BRA,Brazil,78,Lead and articles thereof,199582989.0
+2022,BRA,Brazil,78,Lead and articles thereof,166923823.0
+2023,BRA,Brazil,78,Lead and articles thereof,147941049.0
+2019,BRB,Barbados,78,Lead and articles thereof,28913.0
+2020,BRB,Barbados,78,Lead and articles thereof,19974.0
+2021,BRB,Barbados,78,Lead and articles thereof,18985.0
+2022,BRB,Barbados,78,Lead and articles thereof,29539.0
+2023,BRB,Barbados,78,Lead and articles thereof,55770.5
+2019,BRN,Brunei Darussalam,78,Lead and articles thereof,1092479.07
+2020,BRN,Brunei Darussalam,78,Lead and articles thereof,170452.44
+2021,BRN,Brunei Darussalam,78,Lead and articles thereof,57374.5
+2022,BRN,Brunei Darussalam,78,Lead and articles thereof,50524.44
+2023,BRN,Brunei Darussalam,78,Lead and articles thereof,62938.935
+2019,BTN,Bhutan,78,Lead and articles thereof,20139.149
+2020,BTN,Bhutan,78,Lead and articles thereof,24951.385
+2022,BTN,Bhutan,78,Lead and articles thereof,5896.425
+2023,BTN,Bhutan,78,Lead and articles thereof,2864.623
+2019,BWA,Botswana,78,Lead and articles thereof,5174840.646
+2020,BWA,Botswana,78,Lead and articles thereof,5291355.712
+2021,BWA,Botswana,78,Lead and articles thereof,4725592.858
+2022,BWA,Botswana,78,Lead and articles thereof,5357766.727
+2023,BWA,Botswana,78,Lead and articles thereof,6042658.435
+2020,CAF,Central African Rep.,78,Lead and articles thereof,13622.504
+2022,CAF,Central African Rep.,78,Lead and articles thereof,13397.999
+2019,CAN,Canada,78,Lead and articles thereof,17260616.043
+2020,CAN,Canada,78,Lead and articles thereof,19189258.116
+2021,CAN,Canada,78,Lead and articles thereof,27056104.754
+2022,CAN,Canada,78,Lead and articles thereof,24781479.423
+2023,CAN,Canada,78,Lead and articles thereof,28962192.462
+2019,CHE,Switzerland,78,Lead and articles thereof,13415036.573
+2020,CHE,Switzerland,78,Lead and articles thereof,10511579.3
+2021,CHE,Switzerland,78,Lead and articles thereof,17946596.534
+2022,CHE,Switzerland,78,Lead and articles thereof,16043679.583
+2023,CHE,Switzerland,78,Lead and articles thereof,12493280.107
+2019,CHL,Chile,78,Lead and articles thereof,13378946.151
+2020,CHL,Chile,78,Lead and articles thereof,5552833.163
+2021,CHL,Chile,78,Lead and articles thereof,3802613.66
+2022,CHL,Chile,78,Lead and articles thereof,4168487.5
+2023,CHL,Chile,78,Lead and articles thereof,4180395.783
+2019,CHN,China,78,Lead and articles thereof,369685547.0
+2020,CHN,China,78,Lead and articles thereof,120720420.0
+2021,CHN,China,78,Lead and articles thereof,114569111.0
+2022,CHN,China,78,Lead and articles thereof,93442476.0
+2023,CHN,China,78,Lead and articles thereof,107142223.0
+2019,CIV,Côte d'Ivoire,78,Lead and articles thereof,163568.367
+2020,CIV,Côte d'Ivoire,78,Lead and articles thereof,277954.32
+2021,CIV,Côte d'Ivoire,78,Lead and articles thereof,165136.13
+2022,CIV,Côte d'Ivoire,78,Lead and articles thereof,144907.474
+2023,CIV,Côte d'Ivoire,78,Lead and articles thereof,157693.001
+2019,CMR,Cameroon,78,Lead and articles thereof,147580.63
+2020,CMR,Cameroon,78,Lead and articles thereof,70334.32
+2021,CMR,Cameroon,78,Lead and articles thereof,83987.71
+2022,CMR,Cameroon,78,Lead and articles thereof,43627.994
+2023,CMR,Cameroon,78,Lead and articles thereof,77741.022
+2019,COD,Dem. Rep. of the Congo,78,Lead and articles thereof,48785932.794
+2020,COD,Dem. Rep. of the Congo,78,Lead and articles thereof,26929011.172
+2021,COD,Dem. Rep. of the Congo,78,Lead and articles thereof,18731736.414
+2022,COD,Dem. Rep. of the Congo,78,Lead and articles thereof,15261270.521
+2023,COD,Dem. Rep. of the Congo,78,Lead and articles thereof,64348627.36
+2019,COG,Congo,78,Lead and articles thereof,3178.178
+2020,COG,Congo,78,Lead and articles thereof,16263.92
+2021,COG,Congo,78,Lead and articles thereof,11281.59
+2022,COG,Congo,78,Lead and articles thereof,52936.028
+2023,COG,Congo,78,Lead and articles thereof,58972.102
+2019,COL,Colombia,78,Lead and articles thereof,22794739.69
+2020,COL,Colombia,78,Lead and articles thereof,27042636.29
+2021,COL,Colombia,78,Lead and articles thereof,40469698.03
+2022,COL,Colombia,78,Lead and articles thereof,50086255.45
+2023,COL,Colombia,78,Lead and articles thereof,29781865.54
+2019,COM,Comoros,78,Lead and articles thereof,14320.637
+2020,COM,Comoros,78,Lead and articles thereof,9019.518
+2021,COM,Comoros,78,Lead and articles thereof,74.553
+2019,CPV,Cabo Verde,78,Lead and articles thereof,5732.097
+2020,CPV,Cabo Verde,78,Lead and articles thereof,6368.295
+2021,CPV,Cabo Verde,78,Lead and articles thereof,6527.766
+2022,CPV,Cabo Verde,78,Lead and articles thereof,4600.824
+2023,CPV,Cabo Verde,78,Lead and articles thereof,6168.169
+2019,CRI,Costa Rica,78,Lead and articles thereof,684193.34
+2020,CRI,Costa Rica,78,Lead and articles thereof,732103.87
+2021,CRI,Costa Rica,78,Lead and articles thereof,784099.58
+2022,CRI,Costa Rica,78,Lead and articles thereof,426418.71
+2023,CRI,Costa Rica,78,Lead and articles thereof,460176.74
+2019,CUB,Cuba,78,Lead and articles thereof,6575197.09
+2020,CUB,Cuba,78,Lead and articles thereof,1134521.97
+2021,CUB,Cuba,78,Lead and articles thereof,881999.47
+2022,CUB,Cuba,78,Lead and articles thereof,1177098.35
+2019,CUW,Curaçao,78,Lead and articles thereof,44412.96
+2020,CUW,Curaçao,78,Lead and articles thereof,30782.111
+2020,CYM,Cayman Isds,78,Lead and articles thereof,3315.458
+2021,CYM,Cayman Isds,78,Lead and articles thereof,4530.991
+2022,CYM,Cayman Isds,78,Lead and articles thereof,8183.134
+2023,CYM,Cayman Isds,78,Lead and articles thereof,3804.51
+2019,CYP,Cyprus,78,Lead and articles thereof,134600.09
+2020,CYP,Cyprus,78,Lead and articles thereof,114898.064
+2021,CYP,Cyprus,78,Lead and articles thereof,437966.371
+2022,CYP,Cyprus,78,Lead and articles thereof,215351.604
+2023,CYP,Cyprus,78,Lead and articles thereof,245516.097
+2019,CZE,Czechia,78,Lead and articles thereof,352981249.0
+2020,CZE,Czechia,78,Lead and articles thereof,289523520.0
+2021,CZE,Czechia,78,Lead and articles thereof,430578825.0
+2022,CZE,Czechia,78,Lead and articles thereof,393047250.0
+2023,CZE,Czechia,78,Lead and articles thereof,374386566.0
+2019,DEU,Germany,78,Lead and articles thereof,512257265.501
+2020,DEU,Germany,78,Lead and articles thereof,413983645.747
+2021,DEU,Germany,78,Lead and articles thereof,592202180.677
+2022,DEU,Germany,78,Lead and articles thereof,659977413.589
+2023,DEU,Germany,78,Lead and articles thereof,680000081.026
+2021,DJI,Djibouti,78,Lead and articles thereof,474392.338
+2022,DJI,Djibouti,78,Lead and articles thereof,5683.81
+2023,DJI,Djibouti,78,Lead and articles thereof,251121.047
+2019,DMA,Dominica,78,Lead and articles thereof,590.365
+2020,DMA,Dominica,78,Lead and articles thereof,865.925
+2021,DMA,Dominica,78,Lead and articles thereof,828.888
+2022,DMA,Dominica,78,Lead and articles thereof,1645.924
+2023,DMA,Dominica,78,Lead and articles thereof,1395.184
+2019,DNK,Denmark,78,Lead and articles thereof,4663475.175
+2020,DNK,Denmark,78,Lead and articles thereof,3117969.865
+2021,DNK,Denmark,78,Lead and articles thereof,4033197.129
+2022,DNK,Denmark,78,Lead and articles thereof,4163547.197
+2023,DNK,Denmark,78,Lead and articles thereof,3431759.743
+2019,DOM,Dominican Rep.,78,Lead and articles thereof,991393.098
+2020,DOM,Dominican Rep.,78,Lead and articles thereof,714309.92
+2021,DOM,Dominican Rep.,78,Lead and articles thereof,1225137.061
+2022,DOM,Dominican Rep.,78,Lead and articles thereof,1368458.64
+2023,DOM,Dominican Rep.,78,Lead and articles thereof,1010414.357
+2019,ECU,Ecuador,78,Lead and articles thereof,1188292.232
+2020,ECU,Ecuador,78,Lead and articles thereof,738472.386
+2021,ECU,Ecuador,78,Lead and articles thereof,869824.516
+2022,ECU,Ecuador,78,Lead and articles thereof,1087205.5
+2023,ECU,Ecuador,78,Lead and articles thereof,1183212.5
+2019,EGY,Egypt,78,Lead and articles thereof,15911592.695
+2020,EGY,Egypt,78,Lead and articles thereof,3747406.181
+2021,EGY,Egypt,78,Lead and articles thereof,15403946.731
+2022,EGY,Egypt,78,Lead and articles thereof,21103763.527
+2023,EGY,Egypt,78,Lead and articles thereof,9458660.538
+2019,ESP,Spain,78,Lead and articles thereof,306461482.163
+2020,ESP,Spain,78,Lead and articles thereof,254514628.453
+2021,ESP,Spain,78,Lead and articles thereof,333967459.067
+2022,ESP,Spain,78,Lead and articles thereof,281776682.643
+2023,ESP,Spain,78,Lead and articles thereof,320266337.027
+2019,EST,Estonia,78,Lead and articles thereof,3950139.296
+2020,EST,Estonia,78,Lead and articles thereof,9495542.88
+2021,EST,Estonia,78,Lead and articles thereof,1696756.05
+2022,EST,Estonia,78,Lead and articles thereof,3733136.91
+2023,EST,Estonia,78,Lead and articles thereof,1591740.79
+2019,ETH,Ethiopia,78,Lead and articles thereof,1111599.36
+2020,ETH,Ethiopia,78,Lead and articles thereof,1230682.39
+2021,ETH,Ethiopia,78,Lead and articles thereof,1136544.76
+2022,ETH,Ethiopia,78,Lead and articles thereof,764252.556
+2023,ETH,Ethiopia,78,Lead and articles thereof,1137367.162
+2019,FIN,Finland,78,Lead and articles thereof,20505703.895
+2020,FIN,Finland,78,Lead and articles thereof,13603954.129
+2021,FIN,Finland,78,Lead and articles thereof,19571061.747
+2022,FIN,Finland,78,Lead and articles thereof,49473493.561
+2023,FIN,Finland,78,Lead and articles thereof,57294653.056
+2019,FJI,Fiji,78,Lead and articles thereof,824210.964
+2020,FJI,Fiji,78,Lead and articles thereof,483782.075
+2021,FJI,Fiji,78,Lead and articles thereof,271101.592
+2022,FJI,Fiji,78,Lead and articles thereof,314989.006
+2023,FJI,Fiji,78,Lead and articles thereof,270800.064
+2019,FRA,France,78,Lead and articles thereof,132173265.952
+2020,FRA,France,78,Lead and articles thereof,124296980.077
+2021,FRA,France,78,Lead and articles thereof,160545952.438
+2022,FRA,France,78,Lead and articles thereof,179328879.872
+2023,FRA,France,78,Lead and articles thereof,177346165.373
+2019,GAB,Gabon,78,Lead and articles thereof,1132240.934
+2020,GAB,Gabon,78,Lead and articles thereof,29709.665
+2021,GAB,Gabon,78,Lead and articles thereof,21841.9
+2022,GAB,Gabon,78,Lead and articles thereof,51381.005
+2023,GAB,Gabon,78,Lead and articles thereof,62247.291
+2019,GBR,United Kingdom,78,Lead and articles thereof,457218341.215
+2020,GBR,United Kingdom,78,Lead and articles thereof,386740827.938
+2021,GBR,United Kingdom,78,Lead and articles thereof,562404482.056
+2022,GBR,United Kingdom,78,Lead and articles thereof,445435962.07
+2023,GBR,United Kingdom,78,Lead and articles thereof,452268522.204
+2019,GEO,Georgia,78,Lead and articles thereof,1023209.44
+2020,GEO,Georgia,78,Lead and articles thereof,258279.68
+2021,GEO,Georgia,78,Lead and articles thereof,192040.42
+2022,GEO,Georgia,78,Lead and articles thereof,879307.4
+2023,GEO,Georgia,78,Lead and articles thereof,1781458.855
+2019,GHA,Ghana,78,Lead and articles thereof,38668.09
+2021,GHA,Ghana,78,Lead and articles thereof,3975261.18
+2022,GHA,Ghana,78,Lead and articles thereof,988236.726
+2023,GHA,Ghana,78,Lead and articles thereof,5320773.437
+2019,GMB,Gambia,78,Lead and articles thereof,33186.251
+2020,GMB,Gambia,78,Lead and articles thereof,45677.809
+2021,GMB,Gambia,78,Lead and articles thereof,38189.35
+2022,GMB,Gambia,78,Lead and articles thereof,44185.626
+2023,GMB,Gambia,78,Lead and articles thereof,24296.112
+2019,GRC,Greece,78,Lead and articles thereof,86596250.891
+2020,GRC,Greece,78,Lead and articles thereof,75288423.865
+2021,GRC,Greece,78,Lead and articles thereof,154792601.121
+2022,GRC,Greece,78,Lead and articles thereof,166973302.056
+2023,GRC,Greece,78,Lead and articles thereof,183268921.922
+2019,GRD,Grenada,78,Lead and articles thereof,6651.112
+2020,GRD,Grenada,78,Lead and articles thereof,3749.26
+2021,GRD,Grenada,78,Lead and articles thereof,4516.296
+2022,GRD,Grenada,78,Lead and articles thereof,5527.778
+2023,GRD,Grenada,78,Lead and articles thereof,13611.112
+2019,GTM,Guatemala,78,Lead and articles thereof,468629.0
+2020,GTM,Guatemala,78,Lead and articles thereof,590858.0
+2021,GTM,Guatemala,78,Lead and articles thereof,560916.0
+2022,GTM,Guatemala,78,Lead and articles thereof,443646.0
+2023,GTM,Guatemala,78,Lead and articles thereof,374036.0
+2019,GUY,Guyana,78,Lead and articles thereof,271307.275
+2020,GUY,Guyana,78,Lead and articles thereof,300910.402
+2021,GUY,Guyana,78,Lead and articles thereof,107293.001
+2022,GUY,Guyana,78,Lead and articles thereof,212147.394
+2023,GUY,Guyana,78,Lead and articles thereof,255489.477
+2019,HKG,"China, Hong Kong SAR",78,Lead and articles thereof,2780194.201
+2020,HKG,"China, Hong Kong SAR",78,Lead and articles thereof,5721411.96
+2021,HKG,"China, Hong Kong SAR",78,Lead and articles thereof,5295036.707
+2022,HKG,"China, Hong Kong SAR",78,Lead and articles thereof,1560352.585
+2023,HKG,"China, Hong Kong SAR",78,Lead and articles thereof,4772406.558
+2019,HND,Honduras,78,Lead and articles thereof,259738.31
+2020,HND,Honduras,78,Lead and articles thereof,145761.41
+2021,HND,Honduras,78,Lead and articles thereof,289452.2
+2023,HND,Honduras,78,Lead and articles thereof,324123.74
+2019,HRV,Croatia,78,Lead and articles thereof,1393063.0
+2020,HRV,Croatia,78,Lead and articles thereof,916855.0
+2021,HRV,Croatia,78,Lead and articles thereof,1023786.0
+2022,HRV,Croatia,78,Lead and articles thereof,893736.0
+2023,HRV,Croatia,78,Lead and articles thereof,1356878.0
+2019,HUN,Hungary,78,Lead and articles thereof,24336039.0
+2020,HUN,Hungary,78,Lead and articles thereof,21685363.0
+2021,HUN,Hungary,78,Lead and articles thereof,14597036.0
+2022,HUN,Hungary,78,Lead and articles thereof,26696501.0
+2023,HUN,Hungary,78,Lead and articles thereof,44208866.544
+2019,IDN,Indonesia,78,Lead and articles thereof,164701742.0
+2020,IDN,Indonesia,78,Lead and articles thereof,81214821.0
+2021,IDN,Indonesia,78,Lead and articles thereof,136969799.0
+2022,IDN,Indonesia,78,Lead and articles thereof,104416588.0
+2023,IDN,Indonesia,78,Lead and articles thereof,67051853.0
+2019,IND,India,78,Lead and articles thereof,664188618.637
+2020,IND,India,78,Lead and articles thereof,620457869.218
+2021,IND,India,78,Lead and articles thereof,699092776.718
+2022,IND,India,78,Lead and articles thereof,763280740.057
+2023,IND,India,78,Lead and articles thereof,991347623.128
+2019,IRL,Ireland,78,Lead and articles thereof,40771383.611
+2020,IRL,Ireland,78,Lead and articles thereof,30266316.23
+2021,IRL,Ireland,78,Lead and articles thereof,39513631.687
+2022,IRL,Ireland,78,Lead and articles thereof,38851446.789
+2023,IRL,Ireland,78,Lead and articles thereof,43536214.853
+2019,IRN,Iran,78,Lead and articles thereof,11119320.0
+2020,IRN,Iran,78,Lead and articles thereof,493865.0
+2021,IRN,Iran,78,Lead and articles thereof,2072566.0
+2022,IRN,Iran,78,Lead and articles thereof,11646476.0
+2019,ISL,Iceland,78,Lead and articles thereof,166687.296
+2020,ISL,Iceland,78,Lead and articles thereof,198982.553
+2021,ISL,Iceland,78,Lead and articles thereof,225252.1
+2022,ISL,Iceland,78,Lead and articles thereof,173779.862
+2023,ISL,Iceland,78,Lead and articles thereof,263309.036
+2019,ISR,Israel,78,Lead and articles thereof,5937000.0
+2020,ISR,Israel,78,Lead and articles thereof,2489000.0
+2021,ISR,Israel,78,Lead and articles thereof,6097000.0
+2022,ISR,Israel,78,Lead and articles thereof,1437000.0
+2023,ISR,Israel,78,Lead and articles thereof,1582000.0
+2019,ITA,Italy,78,Lead and articles thereof,214884614.156
+2020,ITA,Italy,78,Lead and articles thereof,183489498.454
+2021,ITA,Italy,78,Lead and articles thereof,219518024.373
+2022,ITA,Italy,78,Lead and articles thereof,252987072.349
+2023,ITA,Italy,78,Lead and articles thereof,387311167.922
+2019,JAM,Jamaica,78,Lead and articles thereof,130106.254
+2020,JAM,Jamaica,78,Lead and articles thereof,66347.29
+2021,JAM,Jamaica,78,Lead and articles thereof,77443.02
+2022,JAM,Jamaica,78,Lead and articles thereof,72758.66
+2023,JAM,Jamaica,78,Lead and articles thereof,109342.68
+2019,JOR,Jordan,78,Lead and articles thereof,79366.214
+2020,JOR,Jordan,78,Lead and articles thereof,90983.118
+2021,JOR,Jordan,78,Lead and articles thereof,489508.506
+2022,JOR,Jordan,78,Lead and articles thereof,713954.787
+2023,JOR,Jordan,78,Lead and articles thereof,383017.534
+2019,JPN,Japan,78,Lead and articles thereof,101721978.071
+2020,JPN,Japan,78,Lead and articles thereof,78453209.051
+2021,JPN,Japan,78,Lead and articles thereof,85806864.234
+2022,JPN,Japan,78,Lead and articles thereof,82110321.648
+2023,JPN,Japan,78,Lead and articles thereof,80981651.104
+2019,KAZ,Kazakhstan,78,Lead and articles thereof,2814184.96
+2020,KAZ,Kazakhstan,78,Lead and articles thereof,1407534.25
+2021,KAZ,Kazakhstan,78,Lead and articles thereof,1575466.79
+2022,KAZ,Kazakhstan,78,Lead and articles thereof,1603173.438
+2023,KAZ,Kazakhstan,78,Lead and articles thereof,18870858.31
+2019,KEN,Kenya,78,Lead and articles thereof,794928.99
+2020,KEN,Kenya,78,Lead and articles thereof,2040761.834
+2021,KEN,Kenya,78,Lead and articles thereof,2774812.834
+2022,KEN,Kenya,78,Lead and articles thereof,2987985.805
+2023,KEN,Kenya,78,Lead and articles thereof,1562055.746
+2019,KGZ,Kyrgyzstan,78,Lead and articles thereof,581737.0
+2020,KGZ,Kyrgyzstan,78,Lead and articles thereof,550853.0
+2021,KGZ,Kyrgyzstan,78,Lead and articles thereof,1358221.0
+2022,KGZ,Kyrgyzstan,78,Lead and articles thereof,643617.0
+2023,KGZ,Kyrgyzstan,78,Lead and articles thereof,585061.0
+2019,KHM,Cambodia,78,Lead and articles thereof,763101.98
+2020,KHM,Cambodia,78,Lead and articles thereof,1120507.84
+2021,KHM,Cambodia,78,Lead and articles thereof,611964.72
+2022,KHM,Cambodia,78,Lead and articles thereof,880387.92
+2023,KHM,Cambodia,78,Lead and articles thereof,6007013.44
+2020,KIR,Kiribati,78,Lead and articles thereof,3136.086
+2021,KIR,Kiribati,78,Lead and articles thereof,6400.015
+2019,KOR,Rep. of Korea,78,Lead and articles thereof,306235231.0
+2020,KOR,Rep. of Korea,78,Lead and articles thereof,295873187.0
+2021,KOR,Rep. of Korea,78,Lead and articles thereof,405325838.0
+2022,KOR,Rep. of Korea,78,Lead and articles thereof,399734992.0
+2023,KOR,Rep. of Korea,78,Lead and articles thereof,335187154.0
+2019,KWT,Kuwait,78,Lead and articles thereof,2961616.0
+2020,KWT,Kuwait,78,Lead and articles thereof,630965.0
+2021,KWT,Kuwait,78,Lead and articles thereof,579837.0
+2022,KWT,Kuwait,78,Lead and articles thereof,1425757.33
+2023,KWT,Kuwait,78,Lead and articles thereof,1354779.982
+2019,LAO,Lao People's Dem. Rep.,78,Lead and articles thereof,2185369.63
+2020,LAO,Lao People's Dem. Rep.,78,Lead and articles thereof,2704150.02
+2021,LAO,Lao People's Dem. Rep.,78,Lead and articles thereof,3116642.31
+2022,LAO,Lao People's Dem. Rep.,78,Lead and articles thereof,5382360.95
+2023,LAO,Lao People's Dem. Rep.,78,Lead and articles thereof,3651647.98
+2019,LBN,Lebanon,78,Lead and articles thereof,173167.48
+2020,LBN,Lebanon,78,Lead and articles thereof,129033.0
+2021,LBN,Lebanon,78,Lead and articles thereof,7233245.0
+2022,LBN,Lebanon,78,Lead and articles thereof,4956441.0
+2023,LBN,Lebanon,78,Lead and articles thereof,13018216.0
+2019,LBR,Liberia,78,Lead and articles thereof,556.46
+2020,LBR,Liberia,78,Lead and articles thereof,1507.17
+2021,LBR,Liberia,78,Lead and articles thereof,13281.85
+2022,LBR,Liberia,78,Lead and articles thereof,4477.77
+2023,LBR,Liberia,78,Lead and articles thereof,10.44
+2019,LBY,Libya,78,Lead and articles thereof,397159.0
+2019,LCA,Saint Lucia,78,Lead and articles thereof,26235.84
+2020,LCA,Saint Lucia,78,Lead and articles thereof,21029.56
+2019,LKA,Sri Lanka,78,Lead and articles thereof,20871133.046
+2020,LKA,Sri Lanka,78,Lead and articles thereof,17424718.86
+2021,LKA,Sri Lanka,78,Lead and articles thereof,21354049.396
+2022,LKA,Sri Lanka,78,Lead and articles thereof,7875124.605
+2023,LKA,Sri Lanka,78,Lead and articles thereof,7597603.55
+2019,LSO,Lesotho,78,Lead and articles thereof,13328.392
+2020,LSO,Lesotho,78,Lead and articles thereof,9904.487
+2021,LSO,Lesotho,78,Lead and articles thereof,839.453
+2022,LSO,Lesotho,78,Lead and articles thereof,71118.382
+2023,LSO,Lesotho,78,Lead and articles thereof,1913.422
+2019,LTU,Lithuania,78,Lead and articles thereof,2486205.0
+2020,LTU,Lithuania,78,Lead and articles thereof,1600851.0
+2021,LTU,Lithuania,78,Lead and articles thereof,1537004.0
+2022,LTU,Lithuania,78,Lead and articles thereof,2921483.0
+2023,LTU,Lithuania,78,Lead and articles thereof,1264514.0
+2019,LUX,Luxembourg,78,Lead and articles thereof,3662139.733
+2020,LUX,Luxembourg,78,Lead and articles thereof,3023305.354
+2021,LUX,Luxembourg,78,Lead and articles thereof,4152060.846
+2022,LUX,Luxembourg,78,Lead and articles thereof,3965564.381
+2023,LUX,Luxembourg,78,Lead and articles thereof,3451696.404
+2019,LVA,Latvia,78,Lead and articles thereof,2864623.324
+2020,LVA,Latvia,78,Lead and articles thereof,3046824.087
+2021,LVA,Latvia,78,Lead and articles thereof,2147006.013
+2022,LVA,Latvia,78,Lead and articles thereof,2143028.729
+2023,LVA,Latvia,78,Lead and articles thereof,1989684.557
+2023,MAC,"China, Macao SAR",78,Lead and articles thereof,275604.288
+2019,MAR,Morocco,78,Lead and articles thereof,633264.358
+2020,MAR,Morocco,78,Lead and articles thereof,444731.685
+2021,MAR,Morocco,78,Lead and articles thereof,839412.362
+2022,MAR,Morocco,78,Lead and articles thereof,1087141.643
+2023,MAR,Morocco,78,Lead and articles thereof,1401177.197
+2019,MDA,Rep. of Moldova,78,Lead and articles thereof,396772.0
+2020,MDA,Rep. of Moldova,78,Lead and articles thereof,360595.0
+2021,MDA,Rep. of Moldova,78,Lead and articles thereof,271240.0
+2022,MDA,Rep. of Moldova,78,Lead and articles thereof,207906.0
+2023,MDA,Rep. of Moldova,78,Lead and articles thereof,644735.0
+2019,MDG,Madagascar,78,Lead and articles thereof,45818.204
+2020,MDG,Madagascar,78,Lead and articles thereof,52567.625
+2021,MDG,Madagascar,78,Lead and articles thereof,85898.999
+2022,MDG,Madagascar,78,Lead and articles thereof,80174.412
+2023,MDG,Madagascar,78,Lead and articles thereof,55984.214
+2019,MDV,Maldives,78,Lead and articles thereof,311797.12
+2020,MDV,Maldives,78,Lead and articles thereof,129891.419
+2021,MDV,Maldives,78,Lead and articles thereof,172813.615
+2022,MDV,Maldives,78,Lead and articles thereof,195953.02
+2023,MDV,Maldives,78,Lead and articles thereof,116793.217
+2019,MEX,Mexico,78,Lead and articles thereof,47867274.0
+2020,MEX,Mexico,78,Lead and articles thereof,44880973.0
+2021,MEX,Mexico,78,Lead and articles thereof,88400017.0
+2022,MEX,Mexico,78,Lead and articles thereof,74959304.0
+2023,MEX,Mexico,78,Lead and articles thereof,85239542.0
+2019,MKD,North Macedonia,78,Lead and articles thereof,28642068.68
+2020,MKD,North Macedonia,78,Lead and articles thereof,22042619.86
+2021,MKD,North Macedonia,78,Lead and articles thereof,45596997.24
+2022,MKD,North Macedonia,78,Lead and articles thereof,47361691.97
+2023,MKD,North Macedonia,78,Lead and articles thereof,32430893.923
+2019,MLI,Mali,78,Lead and articles thereof,55865.77
+2020,MLI,Mali,78,Lead and articles thereof,18328.83
+2021,MLI,Mali,78,Lead and articles thereof,46649.727
+2022,MLI,Mali,78,Lead and articles thereof,15306.209
+2023,MLI,Mali,78,Lead and articles thereof,16602.029
+2019,MLT,Malta,78,Lead and articles thereof,37703.651
+2020,MLT,Malta,78,Lead and articles thereof,82681.284
+2021,MLT,Malta,78,Lead and articles thereof,39952.968
+2022,MLT,Malta,78,Lead and articles thereof,55973.747
+2023,MLT,Malta,78,Lead and articles thereof,51033.716
+2019,MMR,Myanmar,78,Lead and articles thereof,399326.75
+2020,MMR,Myanmar,78,Lead and articles thereof,1015119.71
+2021,MMR,Myanmar,78,Lead and articles thereof,108657.86
+2022,MMR,Myanmar,78,Lead and articles thereof,2904251.31
+2023,MMR,Myanmar,78,Lead and articles thereof,25930.729
+2019,MNE,Montenegro,78,Lead and articles thereof,57144.095
+2020,MNE,Montenegro,78,Lead and articles thereof,53757.978
+2021,MNE,Montenegro,78,Lead and articles thereof,63319.9
+2022,MNE,Montenegro,78,Lead and articles thereof,44374.961
+2023,MNE,Montenegro,78,Lead and articles thereof,88227.729
+2019,MNG,Mongolia,78,Lead and articles thereof,196908.45
+2020,MNG,Mongolia,78,Lead and articles thereof,155555.34
+2021,MNG,Mongolia,78,Lead and articles thereof,116236.35
+2022,MNG,Mongolia,78,Lead and articles thereof,425919.736
+2023,MNG,Mongolia,78,Lead and articles thereof,1522693.822
+2019,MOZ,Mozambique,78,Lead and articles thereof,114411.513
+2020,MOZ,Mozambique,78,Lead and articles thereof,139884.823
+2021,MOZ,Mozambique,78,Lead and articles thereof,233705.343
+2022,MOZ,Mozambique,78,Lead and articles thereof,317256.378
+2023,MOZ,Mozambique,78,Lead and articles thereof,341000.0
+2019,MRT,Mauritania,78,Lead and articles thereof,138870.15
+2020,MRT,Mauritania,78,Lead and articles thereof,15394.551
+2021,MRT,Mauritania,78,Lead and articles thereof,20431.05
+2022,MRT,Mauritania,78,Lead and articles thereof,77442.964
+2023,MRT,Mauritania,78,Lead and articles thereof,94835.464
+2019,MSR,Montserrat,78,Lead and articles thereof,382.633
+2020,MSR,Montserrat,78,Lead and articles thereof,428.982
+2021,MSR,Montserrat,78,Lead and articles thereof,838.6
+2022,MSR,Montserrat,78,Lead and articles thereof,226.67
+2023,MSR,Montserrat,78,Lead and articles thereof,852.748
+2019,MUS,Mauritius,78,Lead and articles thereof,95763.353
+2020,MUS,Mauritius,78,Lead and articles thereof,144599.117
+2021,MUS,Mauritius,78,Lead and articles thereof,98899.688
+2022,MUS,Mauritius,78,Lead and articles thereof,136402.631
+2023,MUS,Mauritius,78,Lead and articles thereof,200888.117
+2019,MWI,Malawi,78,Lead and articles thereof,8854.077
+2020,MWI,Malawi,78,Lead and articles thereof,3930.099
+2021,MWI,Malawi,78,Lead and articles thereof,16194.525
+2022,MWI,Malawi,78,Lead and articles thereof,872.508
+2023,MWI,Malawi,78,Lead and articles thereof,4005.08
+2019,MYS,Malaysia,78,Lead and articles thereof,84303082.205
+2020,MYS,Malaysia,78,Lead and articles thereof,86932291.774
+2021,MYS,Malaysia,78,Lead and articles thereof,103583371.005
+2022,MYS,Malaysia,78,Lead and articles thereof,155715095.035
+2023,MYS,Malaysia,78,Lead and articles thereof,127789828.073
+2019,NAM,Namibia,78,Lead and articles thereof,549514.022
+2020,NAM,Namibia,78,Lead and articles thereof,164661.918
+2021,NAM,Namibia,78,Lead and articles thereof,144945.448
+2022,NAM,Namibia,78,Lead and articles thereof,67551.231
+2023,NAM,Namibia,78,Lead and articles thereof,106096.962
+2019,NER,Niger,78,Lead and articles thereof,3219.405
+2020,NER,Niger,78,Lead and articles thereof,55216.934
+2021,NER,Niger,78,Lead and articles thereof,21686.867
+2022,NER,Niger,78,Lead and articles thereof,11776.005
+2023,NER,Niger,78,Lead and articles thereof,20054.254
+2019,NGA,Nigeria,78,Lead and articles thereof,266499.7
+2020,NGA,Nigeria,78,Lead and articles thereof,130392.441
+2021,NGA,Nigeria,78,Lead and articles thereof,167534.969
+2022,NGA,Nigeria,78,Lead and articles thereof,204055.694
+2023,NGA,Nigeria,78,Lead and articles thereof,129644.592
+2019,NIC,Nicaragua,78,Lead and articles thereof,229834.23
+2020,NIC,Nicaragua,78,Lead and articles thereof,246477.45
+2021,NIC,Nicaragua,78,Lead and articles thereof,160685.8
+2022,NIC,Nicaragua,78,Lead and articles thereof,145222.43
+2023,NIC,Nicaragua,78,Lead and articles thereof,310878.2
+2019,NLD,Netherlands,78,Lead and articles thereof,89897242.039
+2020,NLD,Netherlands,78,Lead and articles thereof,114832701.116
+2021,NLD,Netherlands,78,Lead and articles thereof,98594985.063
+2022,NLD,Netherlands,78,Lead and articles thereof,99916524.783
+2023,NLD,Netherlands,78,Lead and articles thereof,84826360.141
+2019,NOR,Norway,78,Lead and articles thereof,27320620.346
+2020,NOR,Norway,78,Lead and articles thereof,24770141.876
+2021,NOR,Norway,78,Lead and articles thereof,25283623.16
+2022,NOR,Norway,78,Lead and articles thereof,31770112.864
+2023,NOR,Norway,78,Lead and articles thereof,27661032.982
+2019,NPL,Nepal,78,Lead and articles thereof,2175228.92
+2020,NPL,Nepal,78,Lead and articles thereof,2064024.07
+2021,NPL,Nepal,78,Lead and articles thereof,2211356.08
+2022,NPL,Nepal,78,Lead and articles thereof,1794224.47
+2019,NZL,New Zealand,78,Lead and articles thereof,1391423.186
+2020,NZL,New Zealand,78,Lead and articles thereof,1556760.826
+2021,NZL,New Zealand,78,Lead and articles thereof,1520288.578
+2022,NZL,New Zealand,78,Lead and articles thereof,2382281.672
+2023,NZL,New Zealand,78,Lead and articles thereof,1784188.456
+2019,OMN,Oman,78,Lead and articles thereof,25058218.811
+2020,OMN,Oman,78,Lead and articles thereof,20770390.848
+2021,OMN,Oman,78,Lead and articles thereof,25161035.071
+2022,OMN,Oman,78,Lead and articles thereof,23875875.125
+2023,OMN,Oman,78,Lead and articles thereof,12505997.38
+2019,PAK,Pakistan,78,Lead and articles thereof,12102924.348
+2020,PAK,Pakistan,78,Lead and articles thereof,5745765.296
+2021,PAK,Pakistan,78,Lead and articles thereof,52706263.53
+2022,PAK,Pakistan,78,Lead and articles thereof,28653806.639
+2023,PAK,Pakistan,78,Lead and articles thereof,40513802.735
+2019,PAN,Panama,78,Lead and articles thereof,409988.0
+2020,PAN,Panama,78,Lead and articles thereof,293902.0
+2021,PAN,Panama,78,Lead and articles thereof,383409.0
+2022,PAN,Panama,78,Lead and articles thereof,791027.0
+2023,PAN,Panama,78,Lead and articles thereof,298248.0
+2019,PER,Peru,78,Lead and articles thereof,13675290.99
+2020,PER,Peru,78,Lead and articles thereof,17432909.15
+2021,PER,Peru,78,Lead and articles thereof,10235593.18
+2022,PER,Peru,78,Lead and articles thereof,11299958.235
+2023,PER,Peru,78,Lead and articles thereof,6886975.68
+2019,PHL,Philippines,78,Lead and articles thereof,142367682.0
+2020,PHL,Philippines,78,Lead and articles thereof,86649590.0
+2021,PHL,Philippines,78,Lead and articles thereof,133264100.0
+2022,PHL,Philippines,78,Lead and articles thereof,115666689.0
+2023,PHL,Philippines,78,Lead and articles thereof,123020367.0
+2019,PNG,Papua New Guinea,78,Lead and articles thereof,137792.841
+2020,PNG,Papua New Guinea,78,Lead and articles thereof,62587.916
+2021,PNG,Papua New Guinea,78,Lead and articles thereof,87132.794
+2022,PNG,Papua New Guinea,78,Lead and articles thereof,48069.134
+2023,PNG,Papua New Guinea,78,Lead and articles thereof,81002.455
+2019,POL,Poland,78,Lead and articles thereof,213926417.0
+2020,POL,Poland,78,Lead and articles thereof,169839908.0
+2021,POL,Poland,78,Lead and articles thereof,244768472.0
+2022,POL,Poland,78,Lead and articles thereof,234141659.0
+2023,POL,Poland,78,Lead and articles thereof,277404009.0
+2019,PRT,Portugal,78,Lead and articles thereof,58706370.905
+2020,PRT,Portugal,78,Lead and articles thereof,56265958.159
+2021,PRT,Portugal,78,Lead and articles thereof,67757632.325
+2022,PRT,Portugal,78,Lead and articles thereof,66508343.177
+2023,PRT,Portugal,78,Lead and articles thereof,82331219.267
+2019,PRY,Paraguay,78,Lead and articles thereof,234669.0
+2020,PRY,Paraguay,78,Lead and articles thereof,207481.0
+2021,PRY,Paraguay,78,Lead and articles thereof,242822.0
+2022,PRY,Paraguay,78,Lead and articles thereof,183594.99
+2023,PRY,Paraguay,78,Lead and articles thereof,186251.0
+2019,PSE,State of Palestine,78,Lead and articles thereof,178408.93
+2020,PSE,State of Palestine,78,Lead and articles thereof,167525.17
+2021,PSE,State of Palestine,78,Lead and articles thereof,60645.69
+2022,PSE,State of Palestine,78,Lead and articles thereof,42818.471
+2023,PSE,State of Palestine,78,Lead and articles thereof,134796.187
+2019,PYF,French Polynesia,78,Lead and articles thereof,101407.056
+2020,PYF,French Polynesia,78,Lead and articles thereof,106871.962
+2021,PYF,French Polynesia,78,Lead and articles thereof,122077.286
+2022,PYF,French Polynesia,78,Lead and articles thereof,68597.522
+2023,PYF,French Polynesia,78,Lead and articles thereof,64747.678
+2019,QAT,Qatar,78,Lead and articles thereof,5587559.324
+2020,QAT,Qatar,78,Lead and articles thereof,2820704.271
+2021,QAT,Qatar,78,Lead and articles thereof,6094725.096
+2022,QAT,Qatar,78,Lead and articles thereof,3723269.577
+2023,QAT,Qatar,78,Lead and articles thereof,5526729.852
+2019,ROU,Romania,78,Lead and articles thereof,47997163.73
+2020,ROU,Romania,78,Lead and articles thereof,43732815.36
+2021,ROU,Romania,78,Lead and articles thereof,51991940.66
+2022,ROU,Romania,78,Lead and articles thereof,51212114.18
+2023,ROU,Romania,78,Lead and articles thereof,54695796.07
+2019,RUS,Russian Federation,78,Lead and articles thereof,17032485.57
+2020,RUS,Russian Federation,78,Lead and articles thereof,15471969.151
+2021,RUS,Russian Federation,78,Lead and articles thereof,21268177.643
+2019,RWA,Rwanda,78,Lead and articles thereof,1965286.58
+2020,RWA,Rwanda,78,Lead and articles thereof,1457134.99
+2021,RWA,Rwanda,78,Lead and articles thereof,1279543.14
+2022,RWA,Rwanda,78,Lead and articles thereof,917131.21
+2019,S19,"Other Asia, nes",78,Lead and articles thereof,225800761.15
+2020,S19,"Other Asia, nes",78,Lead and articles thereof,171990804.931
+2021,S19,"Other Asia, nes",78,Lead and articles thereof,168591979.989
+2022,S19,"Other Asia, nes",78,Lead and articles thereof,146432943.88
+2023,S19,"Other Asia, nes",78,Lead and articles thereof,238546399.515
+2019,SAU,Saudi Arabia,78,Lead and articles thereof,7372523.016
+2020,SAU,Saudi Arabia,78,Lead and articles thereof,7856597.67
+2021,SAU,Saudi Arabia,78,Lead and articles thereof,13493111.663
+2022,SAU,Saudi Arabia,78,Lead and articles thereof,17622781.959
+2023,SAU,Saudi Arabia,78,Lead and articles thereof,7496030.479
+2019,SEN,Senegal,78,Lead and articles thereof,112227.651
+2020,SEN,Senegal,78,Lead and articles thereof,472056.333
+2021,SEN,Senegal,78,Lead and articles thereof,60079.339
+2022,SEN,Senegal,78,Lead and articles thereof,53625.276
+2023,SEN,Senegal,78,Lead and articles thereof,98560.581
+2019,SGP,Singapore,78,Lead and articles thereof,16006562.316
+2020,SGP,Singapore,78,Lead and articles thereof,35949756.35
+2021,SGP,Singapore,78,Lead and articles thereof,14772679.542
+2022,SGP,Singapore,78,Lead and articles thereof,37566759.362
+2023,SGP,Singapore,78,Lead and articles thereof,308079532.902
+2019,SLV,El Salvador,78,Lead and articles thereof,2381024.79
+2020,SLV,El Salvador,78,Lead and articles thereof,3740373.09
+2021,SLV,El Salvador,78,Lead and articles thereof,5222468.3
+2022,SLV,El Salvador,78,Lead and articles thereof,2728069.55
+2023,SLV,El Salvador,78,Lead and articles thereof,2388402.74
+2019,SRB,Serbia,78,Lead and articles thereof,4903302.0
+2020,SRB,Serbia,78,Lead and articles thereof,8187156.0
+2021,SRB,Serbia,78,Lead and articles thereof,14358467.0
+2022,SRB,Serbia,78,Lead and articles thereof,13326241.0
+2023,SRB,Serbia,78,Lead and articles thereof,7501208.0
+2019,STP,Sao Tome and Principe,78,Lead and articles thereof,5084.821
+2020,STP,Sao Tome and Principe,78,Lead and articles thereof,14851.449
+2021,STP,Sao Tome and Principe,78,Lead and articles thereof,297.11
+2022,STP,Sao Tome and Principe,78,Lead and articles thereof,5948.4
+2023,STP,Sao Tome and Principe,78,Lead and articles thereof,792.702
+2020,SUR,Suriname,78,Lead and articles thereof,40614.063
+2021,SUR,Suriname,78,Lead and articles thereof,8713.29
+2022,SUR,Suriname,78,Lead and articles thereof,77517.27
+2023,SUR,Suriname,78,Lead and articles thereof,12946.931
+2019,SVK,Slovakia,78,Lead and articles thereof,4341847.964
+2020,SVK,Slovakia,78,Lead and articles thereof,4022102.97
+2021,SVK,Slovakia,78,Lead and articles thereof,4887916.793
+2022,SVK,Slovakia,78,Lead and articles thereof,6709476.179
+2023,SVK,Slovakia,78,Lead and articles thereof,8638590.198
+2019,SVN,Slovenia,78,Lead and articles thereof,103443826.3
+2020,SVN,Slovenia,78,Lead and articles thereof,67463018.54
+2021,SVN,Slovenia,78,Lead and articles thereof,106704375.765
+2022,SVN,Slovenia,78,Lead and articles thereof,126362501.04
+2023,SVN,Slovenia,78,Lead and articles thereof,94994680.884
+2019,SWE,Sweden,78,Lead and articles thereof,17439513.438
+2020,SWE,Sweden,78,Lead and articles thereof,18030232.736
+2021,SWE,Sweden,78,Lead and articles thereof,49750209.404
+2022,SWE,Sweden,78,Lead and articles thereof,31100571.008
+2023,SWE,Sweden,78,Lead and articles thereof,36287759.686
+2019,SWZ,Eswatini,78,Lead and articles thereof,8733.8
+2020,SWZ,Eswatini,78,Lead and articles thereof,25240.47
+2021,SWZ,Eswatini,78,Lead and articles thereof,21063.42
+2022,SWZ,Eswatini,78,Lead and articles thereof,13339.38
+2023,SWZ,Eswatini,78,Lead and articles thereof,21043.17
+2019,SYC,Seychelles,78,Lead and articles thereof,14887.027
+2020,SYC,Seychelles,78,Lead and articles thereof,12878.499
+2021,SYC,Seychelles,78,Lead and articles thereof,4890.471
+2022,SYC,Seychelles,78,Lead and articles thereof,9878.539
+2023,SYC,Seychelles,78,Lead and articles thereof,42971.385
+2019,TGO,Togo,78,Lead and articles thereof,414367.61
+2020,TGO,Togo,78,Lead and articles thereof,272083.589
+2021,TGO,Togo,78,Lead and articles thereof,95885.765
+2022,TGO,Togo,78,Lead and articles thereof,4329.881
+2023,TGO,Togo,78,Lead and articles thereof,653761.736
+2019,THA,Thailand,78,Lead and articles thereof,242869937.325
+2020,THA,Thailand,78,Lead and articles thereof,189142103.552
+2021,THA,Thailand,78,Lead and articles thereof,205502699.954
+2022,THA,Thailand,78,Lead and articles thereof,177464065.82
+2023,THA,Thailand,78,Lead and articles thereof,159688405.827
+2019,TJK,Tajikistan,78,Lead and articles thereof,81649.0
+2020,TJK,Tajikistan,78,Lead and articles thereof,1761.0
+2021,TJK,Tajikistan,78,Lead and articles thereof,24201.0
+2022,TJK,Tajikistan,78,Lead and articles thereof,8016.0
+2023,TJK,Tajikistan,78,Lead and articles thereof,5964.0
+2019,TLS,Timor-Leste,78,Lead and articles thereof,5845.5
+2020,TLS,Timor-Leste,78,Lead and articles thereof,3595.43
+2021,TLS,Timor-Leste,78,Lead and articles thereof,2886.14
+2022,TLS,Timor-Leste,78,Lead and articles thereof,2931.3
+2023,TLS,Timor-Leste,78,Lead and articles thereof,18500.1
+2019,TON,Tonga,78,Lead and articles thereof,34.337
+2020,TON,Tonga,78,Lead and articles thereof,84.72
+2021,TON,Tonga,78,Lead and articles thereof,621.49
+2022,TON,Tonga,78,Lead and articles thereof,5820.259
+2023,TON,Tonga,78,Lead and articles thereof,5205.601
+2019,TTO,Trinidad and Tobago,78,Lead and articles thereof,206340.099
+2020,TTO,Trinidad and Tobago,78,Lead and articles thereof,116058.386
+2021,TTO,Trinidad and Tobago,78,Lead and articles thereof,55255.651
+2022,TTO,Trinidad and Tobago,78,Lead and articles thereof,102344.393
+2023,TTO,Trinidad and Tobago,78,Lead and articles thereof,82241.248
+2019,TUN,Tunisia,78,Lead and articles thereof,4066545.997
+2020,TUN,Tunisia,78,Lead and articles thereof,6244961.2
+2021,TUN,Tunisia,78,Lead and articles thereof,4703274.757
+2022,TUN,Tunisia,78,Lead and articles thereof,4405281.943
+2023,TUN,Tunisia,78,Lead and articles thereof,6852485.09
+2019,TUR,Türkiye,78,Lead and articles thereof,271625801.0
+2020,TUR,Türkiye,78,Lead and articles thereof,261746517.0
+2021,TUR,Türkiye,78,Lead and articles thereof,356869249.0
+2022,TUR,Türkiye,78,Lead and articles thereof,456379533.0
+2023,TUR,Türkiye,78,Lead and articles thereof,385736327.0
+2019,TZA,United Rep. of Tanzania,78,Lead and articles thereof,59220.28
+2020,TZA,United Rep. of Tanzania,78,Lead and articles thereof,488017.33
+2021,TZA,United Rep. of Tanzania,78,Lead and articles thereof,79748.0
+2022,TZA,United Rep. of Tanzania,78,Lead and articles thereof,111405.42
+2023,TZA,United Rep. of Tanzania,78,Lead and articles thereof,39580.22
+2019,UGA,Uganda,78,Lead and articles thereof,9500.05
+2020,UGA,Uganda,78,Lead and articles thereof,71166.0
+2021,UGA,Uganda,78,Lead and articles thereof,35985.25
+2022,UGA,Uganda,78,Lead and articles thereof,3761.74
+2023,UGA,Uganda,78,Lead and articles thereof,37754.21
+2019,UKR,Ukraine,78,Lead and articles thereof,15482028.49
+2020,UKR,Ukraine,78,Lead and articles thereof,9223217.64
+2021,UKR,Ukraine,78,Lead and articles thereof,9527178.17
+2022,UKR,Ukraine,78,Lead and articles thereof,2836163.39
+2023,UKR,Ukraine,78,Lead and articles thereof,988928.2
+2019,URY,Uruguay,78,Lead and articles thereof,170412.49
+2020,URY,Uruguay,78,Lead and articles thereof,147009.41
+2021,URY,Uruguay,78,Lead and articles thereof,359308.25
+2022,URY,Uruguay,78,Lead and articles thereof,255292.76
+2023,URY,Uruguay,78,Lead and articles thereof,172037.99
+2019,USA,USA,78,Lead and articles thereof,1081267369.0
+2020,USA,USA,78,Lead and articles thereof,777653930.0
+2021,USA,USA,78,Lead and articles thereof,1462239963.0
+2022,USA,USA,78,Lead and articles thereof,1558431859.0
+2023,USA,USA,78,Lead and articles thereof,1302020086.0
+2019,UZB,Uzbekistan,78,Lead and articles thereof,2803362.98
+2020,UZB,Uzbekistan,78,Lead and articles thereof,1531253.97
+2021,UZB,Uzbekistan,78,Lead and articles thereof,775927.96
+2022,UZB,Uzbekistan,78,Lead and articles thereof,1040671.0
+2023,UZB,Uzbekistan,78,Lead and articles thereof,1596152.98
+2019,VCT,Saint Vincent and the Grenadines,78,Lead and articles thereof,1256.75
+2020,VCT,Saint Vincent and the Grenadines,78,Lead and articles thereof,4603.91
+2021,VCT,Saint Vincent and the Grenadines,78,Lead and articles thereof,332.507
+2022,VCT,Saint Vincent and the Grenadines,78,Lead and articles thereof,1847.917
+2023,VCT,Saint Vincent and the Grenadines,78,Lead and articles thereof,157.185
+2019,VNM,Viet Nam,78,Lead and articles thereof,468289705.28
+2020,VNM,Viet Nam,78,Lead and articles thereof,481550845.081
+2021,VNM,Viet Nam,78,Lead and articles thereof,470948792.124
+2022,VNM,Viet Nam,78,Lead and articles thereof,543011983.11
+2023,VNM,Viet Nam,78,Lead and articles thereof,416327873.651
+2019,WSM,Samoa,78,Lead and articles thereof,563.29
+2022,WSM,Samoa,78,Lead and articles thereof,56.644
+2023,WSM,Samoa,78,Lead and articles thereof,2228.278
+2019,YEM,Yemen,78,Lead and articles thereof,5091.476
+2023,YEM,Yemen,78,Lead and articles thereof,1743.818
+2019,ZAF,South Africa,78,Lead and articles thereof,21310180.281
+2020,ZAF,South Africa,78,Lead and articles thereof,14747670.918
+2021,ZAF,South Africa,78,Lead and articles thereof,20788968.312
+2022,ZAF,South Africa,78,Lead and articles thereof,25800876.917
+2023,ZAF,South Africa,78,Lead and articles thereof,17765484.287
+2019,ZMB,Zambia,78,Lead and articles thereof,2853832.322
+2020,ZMB,Zambia,78,Lead and articles thereof,1962960.593
+2021,ZMB,Zambia,78,Lead and articles thereof,3833697.92
+2022,ZMB,Zambia,78,Lead and articles thereof,1784575.469
+2023,ZMB,Zambia,78,Lead and articles thereof,1734408.963
+2019,ZWE,Zimbabwe,78,Lead and articles thereof,53179.23
+2020,ZWE,Zimbabwe,78,Lead and articles thereof,145179.3
+2021,ZWE,Zimbabwe,78,Lead and articles thereof,123357.88
+2022,ZWE,Zimbabwe,78,Lead and articles thereof,121561.88
+2023,ZWE,Zimbabwe,78,Lead and articles thereof,89724.71

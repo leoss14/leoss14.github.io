@@ -1,0 +1,954 @@
+period,reporterISO,reporterDesc,cmdCode,cmdDesc,primaryValue
+2004,AGO,Angola,72,Iron and steel,667202.349
+2005,AGO,Angola,72,Iron and steel,1867826.921
+2006,AGO,Angola,72,Iron and steel,1538827.976
+2001,AIA,Anguilla,72,Iron and steel,5610.0
+2002,AIA,Anguilla,72,Iron and steel,3494.0
+2004,AIA,Anguilla,72,Iron and steel,93.0
+2006,AIA,Anguilla,72,Iron and steel,222.0
+2001,ALB,Albania,72,Iron and steel,7527734.0
+2002,ALB,Albania,72,Iron and steel,8485702.0
+2003,ALB,Albania,72,Iron and steel,19658312.0
+2004,ALB,Albania,72,Iron and steel,40012627.0
+2005,ALB,Albania,72,Iron and steel,45805683.0
+2006,ALB,Albania,72,Iron and steel,38905790.0
+2001,AND,Andorra,72,Iron and steel,330221.0
+2002,AND,Andorra,72,Iron and steel,415536.0
+2003,AND,Andorra,72,Iron and steel,513858.0
+2004,AND,Andorra,72,Iron and steel,1094110.0
+2005,AND,Andorra,72,Iron and steel,1046784.0
+2006,AND,Andorra,72,Iron and steel,1992582.716
+2005,ANT,Netherlands Antilles (...2010),72,Iron and steel,249011.0
+2006,ANT,Netherlands Antilles (...2010),72,Iron and steel,112335.0
+2001,ARE,United Arab Emirates,72,Iron and steel,101900613.0
+2002,ARE,United Arab Emirates,72,Iron and steel,136308833.0
+2003,ARE,United Arab Emirates,72,Iron and steel,208039165.0
+2004,ARE,United Arab Emirates,72,Iron and steel,278223175.0
+2005,ARE,United Arab Emirates,72,Iron and steel,329504383.0
+2006,ARE,United Arab Emirates,72,Iron and steel,362847941.0
+2001,ARG,Argentina,72,Iron and steel,409279152.0
+2002,ARG,Argentina,72,Iron and steel,531865525.0
+2003,ARG,Argentina,72,Iron and steel,580250376.0
+2004,ARG,Argentina,72,Iron and steel,571391162.0
+2005,ARG,Argentina,72,Iron and steel,699411058.0
+2006,ARG,Argentina,72,Iron and steel,525225990.0
+2001,ARM,Armenia,72,Iron and steel,9570499.0
+2002,ARM,Armenia,72,Iron and steel,11549890.0
+2003,ARM,Armenia,72,Iron and steel,17551061.0
+2004,ARM,Armenia,72,Iron and steel,70454654.0
+2005,ARM,Armenia,72,Iron and steel,240699954.0
+2006,ARM,Armenia,72,Iron and steel,167476350.0
+2005,ATG,Antigua and Barbuda,72,Iron and steel,1840186.0
+2001,AUS,Australia,72,Iron and steel,394869898.0
+2002,AUS,Australia,72,Iron and steel,432632410.0
+2003,AUS,Australia,72,Iron and steel,643338738.0
+2004,AUS,Australia,72,Iron and steel,756704956.0
+2005,AUS,Australia,72,Iron and steel,675188223.0
+2006,AUS,Australia,72,Iron and steel,1058810343.0
+2001,AUT,Austria,72,Iron and steel,2022142341.0
+2002,AUT,Austria,72,Iron and steel,2182088150.0
+2003,AUT,Austria,72,Iron and steel,2958748862.0
+2004,AUT,Austria,72,Iron and steel,4065201139.0
+2005,AUT,Austria,72,Iron and steel,5266703040.0
+2006,AUT,Austria,72,Iron and steel,5739744312.0
+2001,AZE,Azerbaijan,72,Iron and steel,5412289.0
+2002,AZE,Azerbaijan,72,Iron and steel,13796678.0
+2003,AZE,Azerbaijan,72,Iron and steel,25615853.0
+2004,AZE,Azerbaijan,72,Iron and steel,42272327.0
+2005,AZE,Azerbaijan,72,Iron and steel,37618739.0
+2006,AZE,Azerbaijan,72,Iron and steel,29829831.0
+2003,BDI,Burundi,72,Iron and steel,3161.0
+2004,BDI,Burundi,72,Iron and steel,57822.0
+2005,BDI,Burundi,72,Iron and steel,437320.0
+2006,BDI,Burundi,72,Iron and steel,498292.0
+2001,BEL,Belgium,72,Iron and steel,7080076618.0
+2002,BEL,Belgium,72,Iron and steel,7655585574.0
+2003,BEL,Belgium,72,Iron and steel,9947196434.0
+2004,BEL,Belgium,72,Iron and steel,14226908494.0
+2005,BEL,Belgium,72,Iron and steel,16243445889.0
+2006,BEL,Belgium,72,Iron and steel,19492657247.0
+2001,BEN,Benin,72,Iron and steel,107649.0
+2002,BEN,Benin,72,Iron and steel,956441.0
+2003,BEN,Benin,72,Iron and steel,1948201.0
+2004,BEN,Benin,72,Iron and steel,7850775.0
+2005,BEN,Benin,72,Iron and steel,7580156.0
+2006,BEN,Benin,72,Iron and steel,9654687.0
+2001,BFA,Burkina Faso,72,Iron and steel,1888763.0
+2002,BFA,Burkina Faso,72,Iron and steel,385444.0
+2003,BFA,Burkina Faso,72,Iron and steel,415595.0
+2004,BFA,Burkina Faso,72,Iron and steel,394540.0
+2005,BFA,Burkina Faso,72,Iron and steel,5068042.097
+2006,BFA,Burkina Faso,72,Iron and steel,4620857.121
+2001,BGD,Bangladesh,72,Iron and steel,1208259.0
+2002,BGD,Bangladesh,72,Iron and steel,1985697.0
+2003,BGD,Bangladesh,72,Iron and steel,15462594.0
+2004,BGD,Bangladesh,72,Iron and steel,30365291.0
+2005,BGD,Bangladesh,72,Iron and steel,43756755.0
+2006,BGD,Bangladesh,72,Iron and steel,40153576.0
+2001,BGR,Bulgaria,72,Iron and steel,354089123.0
+2002,BGR,Bulgaria,72,Iron and steel,372821128.0
+2003,BGR,Bulgaria,72,Iron and steel,612206594.0
+2004,BGR,Bulgaria,72,Iron and steel,1001640595.0
+2005,BGR,Bulgaria,72,Iron and steel,946469685.0
+2006,BGR,Bulgaria,72,Iron and steel,1113255723.0
+2001,BHR,Bahrain,72,Iron and steel,6236644.0
+2002,BHR,Bahrain,72,Iron and steel,20880263.0
+2003,BHR,Bahrain,72,Iron and steel,8874466.0
+2004,BHR,Bahrain,72,Iron and steel,11920687.0
+2005,BHR,Bahrain,72,Iron and steel,18862083.0
+2006,BHR,Bahrain,72,Iron and steel,18243645.0
+2001,BHS,Bahamas,72,Iron and steel,209235.0
+2002,BHS,Bahamas,72,Iron and steel,137600.0
+2003,BHS,Bahamas,72,Iron and steel,129437.0
+2004,BHS,Bahamas,72,Iron and steel,287592.0
+2006,BHS,Bahamas,72,Iron and steel,560797.0
+2003,BIH,Bosnia Herzegovina,72,Iron and steel,42288798.0
+2004,BIH,Bosnia Herzegovina,72,Iron and steel,69102041.0
+2005,BIH,Bosnia Herzegovina,72,Iron and steel,136937000.0
+2006,BIH,Bosnia Herzegovina,72,Iron and steel,225844707.0
+2001,BLR,Belarus,72,Iron and steel,263194700.0
+2002,BLR,Belarus,72,Iron and steel,297583100.0
+2003,BLR,Belarus,72,Iron and steel,406162200.0
+2004,BLR,Belarus,72,Iron and steel,629253500.0
+2005,BLR,Belarus,72,Iron and steel,638008800.0
+2006,BLR,Belarus,72,Iron and steel,791853600.0
+2001,BLZ,Belize,72,Iron and steel,3387.0
+2002,BLZ,Belize,72,Iron and steel,393.0
+2003,BLZ,Belize,72,Iron and steel,12468.0
+2004,BLZ,Belize,72,Iron and steel,115698.5
+2005,BLZ,Belize,72,Iron and steel,112300.5
+2006,BLZ,Belize,72,Iron and steel,19369.0
+2001,BOL,Bolivia (Plurinational State of),72,Iron and steel,1171636.0
+2002,BOL,Bolivia (Plurinational State of),72,Iron and steel,772275.91
+2003,BOL,Bolivia (Plurinational State of),72,Iron and steel,835629.79
+2004,BOL,Bolivia (Plurinational State of),72,Iron and steel,1717676.84
+2005,BOL,Bolivia (Plurinational State of),72,Iron and steel,2876633.03
+2006,BOL,Bolivia (Plurinational State of),72,Iron and steel,1676875.27
+2001,BRA,Brazil,72,Iron and steel,2845420380.0
+2002,BRA,Brazil,72,Iron and steel,3450811035.0
+2003,BRA,Brazil,72,Iron and steel,4701312235.0
+2004,BRA,Brazil,72,Iron and steel,6709002437.0
+2005,BRA,Brazil,72,Iron and steel,8543114944.0
+2006,BRA,Brazil,72,Iron and steel,8792804392.0
+2001,BRB,Barbados,72,Iron and steel,379151.0
+2002,BRB,Barbados,72,Iron and steel,275320.0
+2003,BRB,Barbados,72,Iron and steel,323375.0
+2004,BRB,Barbados,72,Iron and steel,790032.0
+2005,BRB,Barbados,72,Iron and steel,924745.0
+2006,BRB,Barbados,72,Iron and steel,1457137.0
+2001,BRN,Brunei Darussalam,72,Iron and steel,1209445.0
+2002,BRN,Brunei Darussalam,72,Iron and steel,1094165.0
+2003,BRN,Brunei Darussalam,72,Iron and steel,2274273.0
+2004,BRN,Brunei Darussalam,72,Iron and steel,2840170.0
+2006,BRN,Brunei Darussalam,72,Iron and steel,5465782.51
+2005,BTN,Bhutan,72,Iron and steel,29863644.0
+2006,BTN,Bhutan,72,Iron and steel,30672903.0
+2001,BWA,Botswana,72,Iron and steel,2382899.0
+2002,BWA,Botswana,72,Iron and steel,1356774.0
+2003,BWA,Botswana,72,Iron and steel,1281390.0
+2004,BWA,Botswana,72,Iron and steel,4500690.0
+2005,BWA,Botswana,72,Iron and steel,7697201.0
+2006,BWA,Botswana,72,Iron and steel,14257301.0
+2003,CAF,Central African Rep.,72,Iron and steel,3630.0
+2006,CAF,Central African Rep.,72,Iron and steel,208.0
+2001,CAN,Canada,72,Iron and steel,2199960039.0
+2002,CAN,Canada,72,Iron and steel,2813057767.0
+2003,CAN,Canada,72,Iron and steel,2971729378.0
+2004,CAN,Canada,72,Iron and steel,4098858345.0
+2005,CAN,Canada,72,Iron and steel,4814332653.0
+2006,CAN,Canada,72,Iron and steel,5494408964.0
+2001,CHE,Switzerland,72,Iron and steel,492027491.478
+2002,CHE,Switzerland,72,Iron and steel,506814176.792
+2003,CHE,Switzerland,72,Iron and steel,664654750.769
+2004,CHE,Switzerland,72,Iron and steel,965080744.584
+2005,CHE,Switzerland,72,Iron and steel,1033099794.575
+2006,CHE,Switzerland,72,Iron and steel,1225465058.455
+2001,CHL,Chile,72,Iron and steel,50474431.0
+2002,CHL,Chile,72,Iron and steel,64630056.0
+2003,CHL,Chile,72,Iron and steel,101268463.738
+2004,CHL,Chile,72,Iron and steel,224024596.786
+2005,CHL,Chile,72,Iron and steel,537859362.843
+2006,CHL,Chile,72,Iron and steel,646267271.896
+2001,CHN,China,72,Iron and steel,2237554915.0
+2002,CHN,China,72,Iron and steel,2307111985.0
+2003,CHN,China,72,Iron and steel,3417264693.0
+2004,CHN,China,72,Iron and steel,11466727190.0
+2005,CHN,China,72,Iron and steel,15089709871.0
+2006,CHN,China,72,Iron and steel,25131810490.0
+2001,CIV,Côte d'Ivoire,72,Iron and steel,15543442.0
+2002,CIV,Côte d'Ivoire,72,Iron and steel,17010567.0
+2003,CIV,Côte d'Ivoire,72,Iron and steel,19254528.0
+2004,CIV,Côte d'Ivoire,72,Iron and steel,26858561.0
+2005,CIV,Côte d'Ivoire,72,Iron and steel,21937321.0
+2006,CIV,Côte d'Ivoire,72,Iron and steel,17538214.0
+2001,CMR,Cameroon,72,Iron and steel,1186903.0
+2002,CMR,Cameroon,72,Iron and steel,1507753.0
+2003,CMR,Cameroon,72,Iron and steel,2359805.0
+2004,CMR,Cameroon,72,Iron and steel,13820128.0
+2005,CMR,Cameroon,72,Iron and steel,12223609.0
+2006,CMR,Cameroon,72,Iron and steel,12775828.0
+2001,COL,Colombia,72,Iron and steel,291883447.0
+2002,COL,Colombia,72,Iron and steel,330316584.0
+2003,COL,Colombia,72,Iron and steel,473217553.0
+2004,COL,Colombia,72,Iron and steel,730933396.0
+2005,COL,Colombia,72,Iron and steel,888062259.0
+2006,COL,Colombia,72,Iron and steel,1267818209.0
+2005,COM,Comoros,72,Iron and steel,5596.0
+2004,CPV,Cabo Verde,72,Iron and steel,10913.0
+2005,CPV,Cabo Verde,72,Iron and steel,18832.0
+2006,CPV,Cabo Verde,72,Iron and steel,247993.0
+2001,CRI,Costa Rica,72,Iron and steel,38521632.0
+2002,CRI,Costa Rica,72,Iron and steel,36823568.0
+2003,CRI,Costa Rica,72,Iron and steel,38179496.0
+2004,CRI,Costa Rica,72,Iron and steel,55007772.0
+2005,CRI,Costa Rica,72,Iron and steel,70713578.0
+2006,CRI,Costa Rica,72,Iron and steel,53227114.0
+2001,CUB,Cuba,72,Iron and steel,41139868.0
+2002,CUB,Cuba,72,Iron and steel,44242351.0
+2003,CUB,Cuba,72,Iron and steel,40114688.0
+2004,CUB,Cuba,72,Iron and steel,42543481.0
+2005,CUB,Cuba,72,Iron and steel,54353792.0
+2006,CUB,Cuba,72,Iron and steel,47353282.0
+2001,CYP,Cyprus,72,Iron and steel,3147583.0
+2002,CYP,Cyprus,72,Iron and steel,4632938.0
+2003,CYP,Cyprus,72,Iron and steel,5191848.0
+2004,CYP,Cyprus,72,Iron and steel,11045736.0
+2005,CYP,Cyprus,72,Iron and steel,12625975.0
+2006,CYP,Cyprus,72,Iron and steel,15806044.0
+2001,CZE,Czechia,72,Iron and steel,1109422746.0
+2002,CZE,Czechia,72,Iron and steel,1218601041.0
+2003,CZE,Czechia,72,Iron and steel,1646585555.0
+2004,CZE,Czechia,72,Iron and steel,2797552488.0
+2005,CZE,Czechia,72,Iron and steel,3018844744.0
+2006,CZE,Czechia,72,Iron and steel,3549730206.0
+2001,DEU,Germany,72,Iron and steel,11023435000.0
+2002,DEU,Germany,72,Iron and steel,11745452000.0
+2003,DEU,Germany,72,Iron and steel,14413579000.0
+2004,DEU,Germany,72,Iron and steel,20452864000.0
+2005,DEU,Germany,72,Iron and steel,23567126000.0
+2006,DEU,Germany,72,Iron and steel,28464567000.0
+2002,DMA,Dominica,72,Iron and steel,7481.0
+2003,DMA,Dominica,72,Iron and steel,1720.0
+2005,DMA,Dominica,72,Iron and steel,8189.0
+2001,DNK,Denmark,72,Iron and steel,454933681.0
+2002,DNK,Denmark,72,Iron and steel,477870441.0
+2003,DNK,Denmark,72,Iron and steel,707720367.0
+2004,DNK,Denmark,72,Iron and steel,1092415032.0
+2005,DNK,Denmark,72,Iron and steel,1120271107.0
+2006,DNK,Denmark,72,Iron and steel,1542237073.0
+2001,DOM,Dominican Rep.,72,Iron and steel,144668992.0
+2002,DOM,Dominican Rep.,72,Iron and steel,182353956.0
+2003,DOM,Dominican Rep.,72,Iron and steel,283471479.0
+2004,DOM,Dominican Rep.,72,Iron and steel,454634971.901
+2005,DOM,Dominican Rep.,72,Iron and steel,447674144.751
+2006,DOM,Dominican Rep.,72,Iron and steel,823154231.13
+2001,DZA,Algeria,72,Iron and steel,53163252.0
+2002,DZA,Algeria,72,Iron and steel,141555972.0
+2003,DZA,Algeria,72,Iron and steel,59200694.0
+2004,DZA,Algeria,72,Iron and steel,159938217.0
+2005,DZA,Algeria,72,Iron and steel,162265455.0
+2006,DZA,Algeria,72,Iron and steel,262942009.0
+2001,ECU,Ecuador,72,Iron and steel,5271383.0
+2002,ECU,Ecuador,72,Iron and steel,5948733.0
+2003,ECU,Ecuador,72,Iron and steel,6638871.0
+2004,ECU,Ecuador,72,Iron and steel,6913375.0
+2005,ECU,Ecuador,72,Iron and steel,13435778.0
+2006,ECU,Ecuador,72,Iron and steel,23190686.0
+2001,EGY,Egypt,72,Iron and steel,136981500.785
+2002,EGY,Egypt,72,Iron and steel,234766319.811
+2003,EGY,Egypt,72,Iron and steel,387302555.692
+2004,EGY,Egypt,72,Iron and steel,519077158.978
+2005,EGY,Egypt,72,Iron and steel,554968738.16
+2006,EGY,Egypt,72,Iron and steel,816012959.262
+2003,ERI,Eritrea,72,Iron and steel,122072.0
+2001,ESP,Spain,72,Iron and steel,2695200913.418
+2002,ESP,Spain,72,Iron and steel,2834578704.497
+2003,ESP,Spain,72,Iron and steel,3601126568.67
+2004,ESP,Spain,72,Iron and steel,5304169167.221
+2005,ESP,Spain,72,Iron and steel,5741655288.005
+2006,ESP,Spain,72,Iron and steel,6953825427.472
+2001,EST,Estonia,72,Iron and steel,86354908.0
+2002,EST,Estonia,72,Iron and steel,88982773.0
+2003,EST,Estonia,72,Iron and steel,187071985.0
+2004,EST,Estonia,72,Iron and steel,237814789.38
+2005,EST,Estonia,72,Iron and steel,346041632.24
+2006,EST,Estonia,72,Iron and steel,444254395.69
+2001,ETH,Ethiopia,72,Iron and steel,49209.47
+2003,ETH,Ethiopia,72,Iron and steel,129186.786
+2004,ETH,Ethiopia,72,Iron and steel,1719050.537
+2005,ETH,Ethiopia,72,Iron and steel,2477903.059
+2006,ETH,Ethiopia,72,Iron and steel,360285.639
+2001,FIN,Finland,72,Iron and steel,1580428136.0
+2002,FIN,Finland,72,Iron and steel,1676014202.0
+2003,FIN,Finland,72,Iron and steel,2644259175.0
+2004,FIN,Finland,72,Iron and steel,4133378888.0
+2005,FIN,Finland,72,Iron and steel,4388098698.0
+2006,FIN,Finland,72,Iron and steel,5361893776.0
+2001,FJI,Fiji,72,Iron and steel,2039261.0
+2002,FJI,Fiji,72,Iron and steel,2350180.0
+2003,FJI,Fiji,72,Iron and steel,2588550.0
+2004,FJI,Fiji,72,Iron and steel,4832919.0
+2005,FJI,Fiji,72,Iron and steel,4479681.0
+2006,FJI,Fiji,72,Iron and steel,3778470.0
+2001,FRA,France,72,Iron and steel,7594220825.0
+2002,FRA,France,72,Iron and steel,8174920066.0
+2003,FRA,France,72,Iron and steel,10293026269.0
+2004,FRA,France,72,Iron and steel,13598342865.0
+2005,FRA,France,72,Iron and steel,14309109493.0
+2006,FRA,France,72,Iron and steel,16840677051.0
+2004,FRO,Faroe Isds,72,Iron and steel,3418.0
+2006,FRO,Faroe Isds,72,Iron and steel,1323016.0
+2001,GAB,Gabon,72,Iron and steel,377312.0
+2002,GAB,Gabon,72,Iron and steel,324491.0
+2003,GAB,Gabon,72,Iron and steel,177411.0
+2004,GAB,Gabon,72,Iron and steel,1940758.429
+2005,GAB,Gabon,72,Iron and steel,3073361.0
+2006,GAB,Gabon,72,Iron and steel,2176388.0
+2001,GBR,United Kingdom,72,Iron and steel,3626953269.0
+2002,GBR,United Kingdom,72,Iron and steel,3855248809.0
+2003,GBR,United Kingdom,72,Iron and steel,5269719956.0
+2004,GBR,United Kingdom,72,Iron and steel,8160592707.0
+2005,GBR,United Kingdom,72,Iron and steel,9293393616.0
+2006,GBR,United Kingdom,72,Iron and steel,9600655493.0
+2001,GEO,Georgia,72,Iron and steel,51034773.0
+2002,GEO,Georgia,72,Iron and steel,52480364.0
+2003,GEO,Georgia,72,Iron and steel,87144769.0
+2004,GEO,Georgia,72,Iron and steel,140692682.0
+2005,GEO,Georgia,72,Iron and steel,167709847.0
+2006,GEO,Georgia,72,Iron and steel,164828500.0
+2001,GHA,Ghana,72,Iron and steel,3022558.0
+2003,GHA,Ghana,72,Iron and steel,756872.0
+2004,GHA,Ghana,72,Iron and steel,1137925.0
+2005,GHA,Ghana,72,Iron and steel,1712891.0
+2006,GHA,Ghana,72,Iron and steel,460819.0
+2001,GIN,Guinea,72,Iron and steel,354098.0
+2002,GIN,Guinea,72,Iron and steel,206777.0
+2004,GIN,Guinea,72,Iron and steel,888824.0
+2005,GIN,Guinea,72,Iron and steel,1495814.0
+2006,GIN,Guinea,72,Iron and steel,716941.0
+2003,GMB,Gambia,72,Iron and steel,111603.162
+2004,GMB,Gambia,72,Iron and steel,195975.59
+2005,GMB,Gambia,72,Iron and steel,26326.973
+2006,GMB,Gambia,72,Iron and steel,37635.649
+2003,GNB,Guinea-Bissau,72,Iron and steel,3101.0
+2004,GNB,Guinea-Bissau,72,Iron and steel,47558.0
+2005,GNB,Guinea-Bissau,72,Iron and steel,146172.0
+2001,GRC,Greece,72,Iron and steel,152485853.0
+2002,GRC,Greece,72,Iron and steel,159543883.0
+2003,GRC,Greece,72,Iron and steel,213175865.0
+2004,GRC,Greece,72,Iron and steel,439863284.0
+2005,GRC,Greece,72,Iron and steel,400738721.0
+2006,GRC,Greece,72,Iron and steel,484734955.0
+2001,GRD,Grenada,72,Iron and steel,505754.0
+2002,GRD,Grenada,72,Iron and steel,426347.0
+2003,GRD,Grenada,72,Iron and steel,716696.0
+2004,GRD,Grenada,72,Iron and steel,612264.0
+2005,GRD,Grenada,72,Iron and steel,232371.0
+2006,GRD,Grenada,72,Iron and steel,1024639.0
+2001,GRL,Greenland,72,Iron and steel,1589.0
+2002,GRL,Greenland,72,Iron and steel,21953.0
+2003,GRL,Greenland,72,Iron and steel,7061.0
+2004,GRL,Greenland,72,Iron and steel,133604.0
+2005,GRL,Greenland,72,Iron and steel,31276.0
+2006,GRL,Greenland,72,Iron and steel,76953.0
+2001,GTM,Guatemala,72,Iron and steel,92027958.0
+2002,GTM,Guatemala,72,Iron and steel,48474999.0
+2003,GTM,Guatemala,72,Iron and steel,64584755.0
+2004,GTM,Guatemala,72,Iron and steel,85545123.0
+2005,GTM,Guatemala,72,Iron and steel,108052820.0
+2006,GTM,Guatemala,72,Iron and steel,72201833.0
+2001,GUY,Guyana,72,Iron and steel,183691.0
+2002,GUY,Guyana,72,Iron and steel,189714.0
+2003,GUY,Guyana,72,Iron and steel,382073.0
+2004,GUY,Guyana,72,Iron and steel,277304.0
+2005,GUY,Guyana,72,Iron and steel,1994108.0
+2006,GUY,Guyana,72,Iron and steel,2622808.0
+2001,HKG,"China, Hong Kong SAR",72,Iron and steel,1559953510.0
+2002,HKG,"China, Hong Kong SAR",72,Iron and steel,1799857310.0
+2003,HKG,"China, Hong Kong SAR",72,Iron and steel,2357691862.0
+2004,HKG,"China, Hong Kong SAR",72,Iron and steel,2863641602.0
+2005,HKG,"China, Hong Kong SAR",72,Iron and steel,2951797005.0
+2006,HKG,"China, Hong Kong SAR",72,Iron and steel,2579609775.0
+2001,HND,Honduras,72,Iron and steel,14287210.0
+2002,HND,Honduras,72,Iron and steel,15805359.0
+2003,HND,Honduras,72,Iron and steel,14201740.0
+2004,HND,Honduras,72,Iron and steel,22061392.0
+2005,HND,Honduras,72,Iron and steel,23843146.0
+2006,HND,Honduras,72,Iron and steel,22326059.0
+2001,HRV,Croatia,72,Iron and steel,19356093.0
+2002,HRV,Croatia,72,Iron and steel,29932459.0
+2003,HRV,Croatia,72,Iron and steel,44939834.0
+2004,HRV,Croatia,72,Iron and steel,86806816.0
+2005,HRV,Croatia,72,Iron and steel,93566622.0
+2006,HRV,Croatia,72,Iron and steel,123944720.0
+2001,HUN,Hungary,72,Iron and steel,332314000.0
+2002,HUN,Hungary,72,Iron and steel,379695000.0
+2003,HUN,Hungary,72,Iron and steel,470262000.0
+2004,HUN,Hungary,72,Iron and steel,785000000.0
+2005,HUN,Hungary,72,Iron and steel,953513000.0
+2006,HUN,Hungary,72,Iron and steel,1241027000.0
+2001,IDN,Indonesia,72,Iron and steel,271420750.0
+2002,IDN,Indonesia,72,Iron and steel,308128730.0
+2003,IDN,Indonesia,72,Iron and steel,403886707.0
+2004,IDN,Indonesia,72,Iron and steel,684444763.0
+2005,IDN,Indonesia,72,Iron and steel,711217691.0
+2006,IDN,Indonesia,72,Iron and steel,1262131999.0
+2001,IND,India,72,Iron and steel,919366367.0
+2002,IND,India,72,Iron and steel,1480495083.0
+2003,IND,India,72,Iron and steel,2402866108.0
+2004,IND,India,72,Iron and steel,3499059059.0
+2005,IND,India,72,Iron and steel,4333672128.0
+2006,IND,India,72,Iron and steel,5188770335.0
+2001,IRL,Ireland,72,Iron and steel,84650247.596
+2002,IRL,Ireland,72,Iron and steel,61981044.113
+2003,IRL,Ireland,72,Iron and steel,93497320.677
+2004,IRL,Ireland,72,Iron and steel,151466453.538
+2005,IRL,Ireland,72,Iron and steel,152893802.198
+2006,IRL,Ireland,72,Iron and steel,207353497.405
+2001,IRN,Iran,72,Iron and steel,206923889.0
+2002,IRN,Iran,72,Iron and steel,260191157.0
+2003,IRN,Iran,72,Iron and steel,177932219.0
+2004,IRN,Iran,72,Iron and steel,687245155.0
+2005,IRN,Iran,72,Iron and steel,981879049.0
+2006,IRN,Iran,72,Iron and steel,1115161949.0
+2001,ISL,Iceland,72,Iron and steel,55866969.0
+2002,ISL,Iceland,72,Iron and steel,57466923.0
+2003,ISL,Iceland,72,Iron and steel,83951812.0
+2004,ISL,Iceland,72,Iron and steel,98459644.0
+2005,ISL,Iceland,72,Iron and steel,104587414.0
+2006,ISL,Iceland,72,Iron and steel,93029223.0
+2001,ISR,Israel,72,Iron and steel,30337000.0
+2002,ISR,Israel,72,Iron and steel,32105000.0
+2003,ISR,Israel,72,Iron and steel,54087000.0
+2004,ISR,Israel,72,Iron and steel,126817000.0
+2005,ISR,Israel,72,Iron and steel,121228000.0
+2006,ISR,Israel,72,Iron and steel,172548000.0
+2001,ITA,Italy,72,Iron and steel,4253828643.363
+2002,ITA,Italy,72,Iron and steel,4257539051.743
+2003,ITA,Italy,72,Iron and steel,5507382132.237
+2004,ITA,Italy,72,Iron and steel,9103110902.48
+2005,ITA,Italy,72,Iron and steel,10167426898.81
+2006,ITA,Italy,72,Iron and steel,12908232952.263
+2001,JAM,Jamaica,72,Iron and steel,488340.0
+2002,JAM,Jamaica,72,Iron and steel,328926.0
+2003,JAM,Jamaica,72,Iron and steel,1198265.0
+2004,JAM,Jamaica,72,Iron and steel,22907947.0
+2005,JAM,Jamaica,72,Iron and steel,12621922.0
+2006,JAM,Jamaica,72,Iron and steel,97256043.0
+2001,JOR,Jordan,72,Iron and steel,31310929.0
+2002,JOR,Jordan,72,Iron and steel,18368170.0
+2003,JOR,Jordan,72,Iron and steel,14152063.0
+2004,JOR,Jordan,72,Iron and steel,27369319.0
+2005,JOR,Jordan,72,Iron and steel,23569945.0
+2006,JOR,Jordan,72,Iron and steel,50575596.0
+2001,JPN,Japan,72,Iron and steel,11165201878.0
+2002,JPN,Japan,72,Iron and steel,13166203115.0
+2003,JPN,Japan,72,Iron and steel,15762494387.0
+2004,JPN,Japan,72,Iron and steel,21202597981.0
+2005,JPN,Japan,72,Iron and steel,24366283178.0
+2006,JPN,Japan,72,Iron and steel,25960476474.0
+2001,KAZ,Kazakhstan,72,Iron and steel,1008207300.0
+2002,KAZ,Kazakhstan,72,Iron and steel,1136194800.0
+2003,KAZ,Kazakhstan,72,Iron and steel,1528979300.0
+2004,KAZ,Kazakhstan,72,Iron and steel,2176930073.0
+2005,KAZ,Kazakhstan,72,Iron and steel,2244053232.0
+2006,KAZ,Kazakhstan,72,Iron and steel,2333633101.0
+2001,KEN,Kenya,72,Iron and steel,42604128.0
+2002,KEN,Kenya,72,Iron and steel,29961600.0
+2003,KEN,Kenya,72,Iron and steel,53957330.0
+2004,KEN,Kenya,72,Iron and steel,90936264.0
+2005,KEN,Kenya,72,Iron and steel,112443472.0
+2006,KEN,Kenya,72,Iron and steel,107749567.0
+2001,KGZ,Kyrgyzstan,72,Iron and steel,5540420.0
+2002,KGZ,Kyrgyzstan,72,Iron and steel,4809889.0
+2003,KGZ,Kyrgyzstan,72,Iron and steel,6099421.0
+2004,KGZ,Kyrgyzstan,72,Iron and steel,16364162.0
+2005,KGZ,Kyrgyzstan,72,Iron and steel,12059996.0
+2006,KGZ,Kyrgyzstan,72,Iron and steel,9629063.0
+2001,KHM,Cambodia,72,Iron and steel,2354.0
+2002,KHM,Cambodia,72,Iron and steel,42168.0
+2003,KHM,Cambodia,72,Iron and steel,44871.0
+2004,KHM,Cambodia,72,Iron and steel,101011.0
+2005,KHM,Cambodia,72,Iron and steel,283105.0
+2006,KHM,Cambodia,72,Iron and steel,426047.0
+2001,KNA,Saint Kitts and Nevis,72,Iron and steel,4217.0
+2002,KNA,Saint Kitts and Nevis,72,Iron and steel,2963.0
+2003,KNA,Saint Kitts and Nevis,72,Iron and steel,37.0
+2004,KNA,Saint Kitts and Nevis,72,Iron and steel,652.0
+2006,KNA,Saint Kitts and Nevis,72,Iron and steel,93.0
+2001,KOR,Rep. of Korea,72,Iron and steel,5101585167.0
+2002,KOR,Rep. of Korea,72,Iron and steel,5068144151.0
+2003,KOR,Rep. of Korea,72,Iron and steel,7136021855.0
+2004,KOR,Rep. of Korea,72,Iron and steel,10578488384.0
+2005,KOR,Rep. of Korea,72,Iron and steel,12804736889.0
+2006,KOR,Rep. of Korea,72,Iron and steel,13985417294.0
+2001,KWT,Kuwait,72,Iron and steel,24676772.0
+2002,KWT,Kuwait,72,Iron and steel,19305004.0
+2003,KWT,Kuwait,72,Iron and steel,93077594.0
+2004,KWT,Kuwait,72,Iron and steel,58636278.0
+2006,KWT,Kuwait,72,Iron and steel,91625108.0
+2001,LBN,Lebanon,72,Iron and steel,17029024.0
+2002,LBN,Lebanon,72,Iron and steel,19643546.0
+2003,LBN,Lebanon,72,Iron and steel,37832325.0
+2004,LBN,Lebanon,72,Iron and steel,103473000.0
+2005,LBN,Lebanon,72,Iron and steel,109213000.0
+2006,LBN,Lebanon,72,Iron and steel,108007272.0
+2001,LCA,Saint Lucia,72,Iron and steel,5101.0
+2002,LCA,Saint Lucia,72,Iron and steel,47310.0
+2003,LCA,Saint Lucia,72,Iron and steel,42602.0
+2004,LCA,Saint Lucia,72,Iron and steel,222931.0
+2005,LCA,Saint Lucia,72,Iron and steel,437876.0
+2006,LCA,Saint Lucia,72,Iron and steel,193044.0
+2001,LKA,Sri Lanka,72,Iron and steel,5008660.0
+2002,LKA,Sri Lanka,72,Iron and steel,4355715.0
+2003,LKA,Sri Lanka,72,Iron and steel,7954675.0
+2004,LKA,Sri Lanka,72,Iron and steel,19926315.0
+2005,LKA,Sri Lanka,72,Iron and steel,13156816.0
+2006,LKA,Sri Lanka,72,Iron and steel,5254277.0
+2001,LSO,Lesotho,72,Iron and steel,6010.494
+2002,LSO,Lesotho,72,Iron and steel,21751.784
+2003,LSO,Lesotho,72,Iron and steel,196278.545
+2004,LSO,Lesotho,72,Iron and steel,213165.488
+2005,LSO,Lesotho,72,Iron and steel,317748.786
+2006,LSO,Lesotho,72,Iron and steel,749672.645
+2001,LTU,Lithuania,72,Iron and steel,71307935.0
+2002,LTU,Lithuania,72,Iron and steel,149811317.0
+2003,LTU,Lithuania,72,Iron and steel,90187888.0
+2004,LTU,Lithuania,72,Iron and steel,178517831.0
+2005,LTU,Lithuania,72,Iron and steel,193873989.0
+2006,LTU,Lithuania,72,Iron and steel,244415987.0
+2001,LUX,Luxembourg,72,Iron and steel,1371262981.0
+2002,LUX,Luxembourg,72,Iron and steel,1432261125.0
+2003,LUX,Luxembourg,72,Iron and steel,1709243734.0
+2004,LUX,Luxembourg,72,Iron and steel,2529672033.0
+2005,LUX,Luxembourg,72,Iron and steel,2128983133.0
+2006,LUX,Luxembourg,72,Iron and steel,2723973933.0
+2001,LVA,Latvia,72,Iron and steel,93514995.116
+2002,LVA,Latvia,72,Iron and steel,103375718.359
+2003,LVA,Latvia,72,Iron and steel,163230935.272
+2004,LVA,Latvia,72,Iron and steel,327343173.083
+2005,LVA,Latvia,72,Iron and steel,416592683.312
+2006,LVA,Latvia,72,Iron and steel,548893124.031
+2001,MAC,"China, Macao SAR",72,Iron and steel,363108.468
+2002,MAC,"China, Macao SAR",72,Iron and steel,162963.687
+2003,MAC,"China, Macao SAR",72,Iron and steel,446523.021
+2004,MAC,"China, Macao SAR",72,Iron and steel,600016.478
+2005,MAC,"China, Macao SAR",72,Iron and steel,678480.836
+2006,MAC,"China, Macao SAR",72,Iron and steel,3936081.683
+2001,MAR,Morocco,72,Iron and steel,27036882.95
+2002,MAR,Morocco,72,Iron and steel,56130403.334
+2003,MAR,Morocco,72,Iron and steel,68996690.262
+2004,MAR,Morocco,72,Iron and steel,189003560.03
+2005,MAR,Morocco,72,Iron and steel,192010006.48
+2006,MAR,Morocco,72,Iron and steel,209384314.066
+2001,MDA,Rep. of Moldova,72,Iron and steel,424007.0
+2002,MDA,Rep. of Moldova,72,Iron and steel,810641.0
+2003,MDA,Rep. of Moldova,72,Iron and steel,9416174.0
+2004,MDA,Rep. of Moldova,72,Iron and steel,15862488.0
+2005,MDA,Rep. of Moldova,72,Iron and steel,18458572.0
+2006,MDA,Rep. of Moldova,72,Iron and steel,31749070.0
+2001,MDG,Madagascar,72,Iron and steel,373024.164
+2002,MDG,Madagascar,72,Iron and steel,206148.591
+2003,MDG,Madagascar,72,Iron and steel,392303.362
+2004,MDG,Madagascar,72,Iron and steel,3904641.462
+2005,MDG,Madagascar,72,Iron and steel,9023149.474
+2006,MDG,Madagascar,72,Iron and steel,6551876.825
+2001,MDV,Maldives,72,Iron and steel,111291.0
+2002,MDV,Maldives,72,Iron and steel,38148.0
+2003,MDV,Maldives,72,Iron and steel,124870.0
+2004,MDV,Maldives,72,Iron and steel,240062.0
+2005,MDV,Maldives,72,Iron and steel,716995.0
+2006,MDV,Maldives,72,Iron and steel,505515.0
+2001,MEX,Mexico,72,Iron and steel,1005600868.0
+2002,MEX,Mexico,72,Iron and steel,1342572603.0
+2003,MEX,Mexico,72,Iron and steel,1613583697.0
+2004,MEX,Mexico,72,Iron and steel,2571655777.0
+2005,MEX,Mexico,72,Iron and steel,2837201977.0
+2006,MEX,Mexico,72,Iron and steel,3044325680.0
+2001,MKD,North Macedonia,72,Iron and steel,176344327.85
+2002,MKD,North Macedonia,72,Iron and steel,135259396.09
+2003,MKD,North Macedonia,72,Iron and steel,223879787.42
+2004,MKD,North Macedonia,72,Iron and steel,351888558.79
+2005,MKD,North Macedonia,72,Iron and steel,474581360.72
+2006,MKD,North Macedonia,72,Iron and steel,605828393.04
+2001,MLI,Mali,72,Iron and steel,143627.0
+2002,MLI,Mali,72,Iron and steel,91809.0
+2003,MLI,Mali,72,Iron and steel,247410.0
+2004,MLI,Mali,72,Iron and steel,2665396.0
+2005,MLI,Mali,72,Iron and steel,3541472.0
+2006,MLI,Mali,72,Iron and steel,2540382.0
+2001,MLT,Malta,72,Iron and steel,2207025.0
+2002,MLT,Malta,72,Iron and steel,2685663.0
+2003,MLT,Malta,72,Iron and steel,3823958.0
+2004,MLT,Malta,72,Iron and steel,5538605.0
+2005,MLT,Malta,72,Iron and steel,3417194.0
+2006,MLT,Malta,72,Iron and steel,5894200.0
+2006,MNE,Montenegro,72,Iron and steel,67439351.0
+2001,MNG,Mongolia,72,Iron and steel,1995769.0
+2002,MNG,Mongolia,72,Iron and steel,1467497.0
+2003,MNG,Mongolia,72,Iron and steel,3962367.0
+2004,MNG,Mongolia,72,Iron and steel,7827405.0
+2005,MNG,Mongolia,72,Iron and steel,6982461.0
+2006,MNG,Mongolia,72,Iron and steel,5604380.0
+2001,MOZ,Mozambique,72,Iron and steel,1974646.0
+2002,MOZ,Mozambique,72,Iron and steel,2255647.0
+2003,MOZ,Mozambique,72,Iron and steel,2219777.0
+2004,MOZ,Mozambique,72,Iron and steel,6161206.0
+2005,MOZ,Mozambique,72,Iron and steel,11206511.0
+2006,MOZ,Mozambique,72,Iron and steel,16783808.0
+2001,MSR,Montserrat,72,Iron and steel,931.0
+2002,MSR,Montserrat,72,Iron and steel,9.0
+2003,MSR,Montserrat,72,Iron and steel,125.0
+2004,MSR,Montserrat,72,Iron and steel,1563.0
+2001,MUS,Mauritius,72,Iron and steel,1742734.0
+2002,MUS,Mauritius,72,Iron and steel,2113237.0
+2003,MUS,Mauritius,72,Iron and steel,2263948.0
+2004,MUS,Mauritius,72,Iron and steel,4783091.0
+2005,MUS,Mauritius,72,Iron and steel,7980174.0
+2006,MUS,Mauritius,72,Iron and steel,11561622.0
+2001,MWI,Malawi,72,Iron and steel,291814.197
+2002,MWI,Malawi,72,Iron and steel,418669.687
+2003,MWI,Malawi,72,Iron and steel,434095.296
+2004,MWI,Malawi,72,Iron and steel,1077992.378
+2005,MWI,Malawi,72,Iron and steel,731564.944
+2006,MWI,Malawi,72,Iron and steel,826044.395
+2001,MYS,Malaysia,72,Iron and steel,309405577.0
+2002,MYS,Malaysia,72,Iron and steel,334966618.0
+2003,MYS,Malaysia,72,Iron and steel,726534239.0
+2004,MYS,Malaysia,72,Iron and steel,1198325979.0
+2005,MYS,Malaysia,72,Iron and steel,1111889995.0
+2006,MYS,Malaysia,72,Iron and steel,1402978195.0
+2001,MYT,Mayotte (Overseas France),72,Iron and steel,6889.0
+2002,MYT,Mayotte (Overseas France),72,Iron and steel,43726.0
+2003,MYT,Mayotte (Overseas France),72,Iron and steel,10626.0
+2004,MYT,Mayotte (Overseas France),72,Iron and steel,10568.0
+2005,MYT,Mayotte (Overseas France),72,Iron and steel,8928.0
+2006,MYT,Mayotte (Overseas France),72,Iron and steel,26049.0
+2001,NAM,Namibia,72,Iron and steel,1818636.0
+2002,NAM,Namibia,72,Iron and steel,2040475.0
+2003,NAM,Namibia,72,Iron and steel,8808943.0
+2004,NAM,Namibia,72,Iron and steel,7193527.0
+2005,NAM,Namibia,72,Iron and steel,4259019.0
+2006,NAM,Namibia,72,Iron and steel,5848314.0
+2001,NCL,New Caledonia,72,Iron and steel,240227050.0
+2002,NCL,New Caledonia,72,Iron and steel,267167732.0
+2003,NCL,New Caledonia,72,Iron and steel,479118706.0
+2004,NCL,New Caledonia,72,Iron and steel,613128071.0
+2005,NCL,New Caledonia,72,Iron and steel,705738907.0
+2006,NCL,New Caledonia,72,Iron and steel,661299188.0
+2001,NER,Niger,72,Iron and steel,175387.0
+2002,NER,Niger,72,Iron and steel,32027.0
+2003,NER,Niger,72,Iron and steel,25721.0
+2004,NER,Niger,72,Iron and steel,53371.0
+2005,NER,Niger,72,Iron and steel,1351446.0
+2006,NER,Niger,72,Iron and steel,2808741.0
+2002,NGA,Nigeria,72,Iron and steel,58854.0
+2003,NGA,Nigeria,72,Iron and steel,252680.0
+2006,NGA,Nigeria,72,Iron and steel,9731894.0
+2001,NIC,Nicaragua,72,Iron and steel,6765214.0
+2002,NIC,Nicaragua,72,Iron and steel,4918216.0
+2003,NIC,Nicaragua,72,Iron and steel,4265754.0
+2004,NIC,Nicaragua,72,Iron and steel,5605190.0
+2005,NIC,Nicaragua,72,Iron and steel,4670350.0
+2006,NIC,Nicaragua,72,Iron and steel,2993309.0
+2001,NLD,Netherlands,72,Iron and steel,3017090757.0
+2002,NLD,Netherlands,72,Iron and steel,3461514027.0
+2003,NLD,Netherlands,72,Iron and steel,4678740340.0
+2004,NLD,Netherlands,72,Iron and steel,7522997916.0
+2005,NLD,Netherlands,72,Iron and steel,8427533024.0
+2006,NLD,Netherlands,72,Iron and steel,11612155415.0
+2001,NOR,Norway,72,Iron and steel,660237213.709
+2002,NOR,Norway,72,Iron and steel,632043645.781
+2003,NOR,Norway,72,Iron and steel,772918671.324
+2004,NOR,Norway,72,Iron and steel,1171235073.939
+2005,NOR,Norway,72,Iron and steel,1131200959.336
+2006,NOR,Norway,72,Iron and steel,1141819651.704
+2003,NPL,Nepal,72,Iron and steel,29125716.0
+2001,NZL,New Zealand,72,Iron and steel,131425385.0
+2002,NZL,New Zealand,72,Iron and steel,148756418.0
+2003,NZL,New Zealand,72,Iron and steel,190526869.0
+2004,NZL,New Zealand,72,Iron and steel,302165646.0
+2005,NZL,New Zealand,72,Iron and steel,328799188.0
+2006,NZL,New Zealand,72,Iron and steel,349031612.0
+2001,OMN,Oman,72,Iron and steel,40269825.0
+2002,OMN,Oman,72,Iron and steel,50630714.0
+2003,OMN,Oman,72,Iron and steel,7167729.0
+2004,OMN,Oman,72,Iron and steel,50740216.0
+2005,OMN,Oman,72,Iron and steel,75312011.0
+2006,OMN,Oman,72,Iron and steel,93466707.0
+2003,PAK,Pakistan,72,Iron and steel,4570332.0
+2004,PAK,Pakistan,72,Iron and steel,6507750.0
+2005,PAK,Pakistan,72,Iron and steel,15253624.0
+2006,PAK,Pakistan,72,Iron and steel,24861727.0
+2001,PAN,Panama,72,Iron and steel,832725.0
+2002,PAN,Panama,72,Iron and steel,1167353.0
+2003,PAN,Panama,72,Iron and steel,4963067.0
+2004,PAN,Panama,72,Iron and steel,21335196.0
+2005,PAN,Panama,72,Iron and steel,21385912.0
+2006,PAN,Panama,72,Iron and steel,17834105.0
+2001,PER,Peru,72,Iron and steel,38935861.0
+2002,PER,Peru,72,Iron and steel,29815588.0
+2003,PER,Peru,72,Iron and steel,34065807.0
+2004,PER,Peru,72,Iron and steel,49353444.0
+2005,PER,Peru,72,Iron and steel,66659997.0
+2006,PER,Peru,72,Iron and steel,78547974.0
+2001,PHL,Philippines,72,Iron and steel,26688146.0
+2002,PHL,Philippines,72,Iron and steel,44682456.0
+2003,PHL,Philippines,72,Iron and steel,74494098.0
+2004,PHL,Philippines,72,Iron and steel,166547058.0
+2005,PHL,Philippines,72,Iron and steel,207538699.0
+2006,PHL,Philippines,72,Iron and steel,363410878.0
+2001,PNG,Papua New Guinea,72,Iron and steel,40429.0
+2002,PNG,Papua New Guinea,72,Iron and steel,182353.0
+2003,PNG,Papua New Guinea,72,Iron and steel,608997.0
+2004,PNG,Papua New Guinea,72,Iron and steel,762344.0
+2001,POL,Poland,72,Iron and steel,920554000.0
+2002,POL,Poland,72,Iron and steel,1001673000.0
+2003,POL,Poland,72,Iron and steel,1344635000.0
+2004,POL,Poland,72,Iron and steel,2758997729.0
+2005,POL,Poland,72,Iron and steel,2466289163.0
+2006,POL,Poland,72,Iron and steel,2861050566.0
+2001,PRT,Portugal,72,Iron and steel,285610258.0
+2002,PRT,Portugal,72,Iron and steel,331959874.0
+2003,PRT,Portugal,72,Iron and steel,488221357.0
+2004,PRT,Portugal,72,Iron and steel,804411389.0
+2005,PRT,Portugal,72,Iron and steel,893281417.0
+2006,PRT,Portugal,72,Iron and steel,1116331687.0
+2001,PRY,Paraguay,72,Iron and steel,6308540.0
+2002,PRY,Paraguay,72,Iron and steel,6645731.0
+2003,PRY,Paraguay,72,Iron and steel,10332962.0
+2004,PRY,Paraguay,72,Iron and steel,20471821.0
+2005,PRY,Paraguay,72,Iron and steel,25116846.0
+2006,PRY,Paraguay,72,Iron and steel,30943838.0
+2001,PYF,French Polynesia,72,Iron and steel,20113.0
+2002,PYF,French Polynesia,72,Iron and steel,5540.0
+2003,PYF,French Polynesia,72,Iron and steel,3885.0
+2004,PYF,French Polynesia,72,Iron and steel,11180.0
+2005,PYF,French Polynesia,72,Iron and steel,33360.0
+2006,PYF,French Polynesia,72,Iron and steel,103029.0
+2001,QAT,Qatar,72,Iron and steel,177187088.0
+2002,QAT,Qatar,72,Iron and steel,177509360.0
+2003,QAT,Qatar,72,Iron and steel,197131901.599
+2004,QAT,Qatar,72,Iron and steel,274854281.808
+2005,QAT,Qatar,72,Iron and steel,375733918.0
+2006,QAT,Qatar,72,Iron and steel,276663573.0
+2001,ROU,Romania,72,Iron and steel,728287059.73
+2002,ROU,Romania,72,Iron and steel,970755769.64
+2003,ROU,Romania,72,Iron and steel,1399319328.77
+2004,ROU,Romania,72,Iron and steel,2258932471.19
+2005,ROU,Romania,72,Iron and steel,2356057646.72
+2006,ROU,Romania,72,Iron and steel,2399764602.73
+2001,RUS,Russian Federation,72,Iron and steel,5547425525.0
+2002,RUS,Russian Federation,72,Iron and steel,6410896613.0
+2003,RUS,Russian Federation,72,Iron and steel,8375672046.0
+2004,RUS,Russian Federation,72,Iron and steel,15973590762.0
+2005,RUS,Russian Federation,72,Iron and steel,17870943685.0
+2006,RUS,Russian Federation,72,Iron and steel,17852126929.0
+2001,RWA,Rwanda,72,Iron and steel,143644.0
+2002,RWA,Rwanda,72,Iron and steel,48907.0
+2003,RWA,Rwanda,72,Iron and steel,9036.0
+2004,RWA,Rwanda,72,Iron and steel,62158.0
+2005,RWA,Rwanda,72,Iron and steel,143583.0
+2006,RWA,Rwanda,72,Iron and steel,122842.0
+2001,S19,"Other Asia, nes",72,Iron and steel,3490706686.0
+2002,S19,"Other Asia, nes",72,Iron and steel,4285840812.0
+2003,S19,"Other Asia, nes",72,Iron and steel,5462121300.0
+2004,S19,"Other Asia, nes",72,Iron and steel,7138053747.0
+2005,S19,"Other Asia, nes",72,Iron and steel,8096296241.0
+2006,S19,"Other Asia, nes",72,Iron and steel,9200682729.0
+2001,SAU,Saudi Arabia,72,Iron and steel,163569538.0
+2002,SAU,Saudi Arabia,72,Iron and steel,173697550.0
+2003,SAU,Saudi Arabia,72,Iron and steel,383192746.0
+2004,SAU,Saudi Arabia,72,Iron and steel,444531756.0
+2005,SAU,Saudi Arabia,72,Iron and steel,485764674.0
+2006,SAU,Saudi Arabia,72,Iron and steel,637280296.0
+2001,SCG,Serbia and Montenegro (...2005),72,Iron and steel,88217504.0
+2002,SCG,Serbia and Montenegro (...2005),72,Iron and steel,116525923.0
+2004,SCG,Serbia and Montenegro (...2005),72,Iron and steel,489980889.0
+2001,SDN,Sudan (...2011),72,Iron and steel,813203.566
+2002,SDN,Sudan (...2011),72,Iron and steel,1569738.779
+2003,SDN,Sudan (...2011),72,Iron and steel,5160109.55
+2004,SDN,Sudan (...2011),72,Iron and steel,14385563.461
+2005,SDN,Sudan (...2011),72,Iron and steel,10272548.724
+2006,SDN,Sudan (...2011),72,Iron and steel,6878294.728
+2001,SEN,Senegal,72,Iron and steel,6217818.0
+2002,SEN,Senegal,72,Iron and steel,8082785.0
+2003,SEN,Senegal,72,Iron and steel,16843032.0
+2004,SEN,Senegal,72,Iron and steel,29781520.0
+2005,SEN,Senegal,72,Iron and steel,29792325.0
+2006,SEN,Senegal,72,Iron and steel,40241417.0
+2001,SGP,Singapore,72,Iron and steel,370731406.0
+2002,SGP,Singapore,72,Iron and steel,396873052.0
+2003,SGP,Singapore,72,Iron and steel,716238494.0
+2004,SGP,Singapore,72,Iron and steel,1107486117.0
+2005,SGP,Singapore,72,Iron and steel,1183291342.0
+2006,SGP,Singapore,72,Iron and steel,1385778145.0
+2002,SLB,Solomon Isds,72,Iron and steel,12028.0
+2003,SLB,Solomon Isds,72,Iron and steel,18653.0
+2004,SLB,Solomon Isds,72,Iron and steel,16569.0
+2005,SLB,Solomon Isds,72,Iron and steel,16064.0
+2006,SLB,Solomon Isds,72,Iron and steel,27895.0
+2002,SLE,Sierra Leone,72,Iron and steel,59852.0
+2001,SLV,El Salvador,72,Iron and steel,47984950.15
+2002,SLV,El Salvador,72,Iron and steel,59958941.02
+2003,SLV,El Salvador,72,Iron and steel,64738519.82
+2004,SLV,El Salvador,72,Iron and steel,85962391.73
+2005,SLV,El Salvador,72,Iron and steel,101228454.31
+2006,SLV,El Salvador,72,Iron and steel,106191609.96
+2006,SRB,Serbia,72,Iron and steel,906895088.0
+2002,STP,Sao Tome and Principe,72,Iron and steel,306.0
+2003,STP,Sao Tome and Principe,72,Iron and steel,1726.0
+2004,STP,Sao Tome and Principe,72,Iron and steel,3183.0
+2006,STP,Sao Tome and Principe,72,Iron and steel,356.0
+2001,SUR,Suriname,72,Iron and steel,198185.0
+2002,SUR,Suriname,72,Iron and steel,46486.0
+2003,SUR,Suriname,72,Iron and steel,582253.0
+2004,SUR,Suriname,72,Iron and steel,792671.0
+2005,SUR,Suriname,72,Iron and steel,848064.0
+2006,SUR,Suriname,72,Iron and steel,1094390.0
+2001,SVK,Slovakia,72,Iron and steel,1043576235.0
+2002,SVK,Slovakia,72,Iron and steel,1107630154.0
+2003,SVK,Slovakia,72,Iron and steel,1678154484.0
+2004,SVK,Slovakia,72,Iron and steel,2392623392.0
+2005,SVK,Slovakia,72,Iron and steel,2692133583.0
+2006,SVK,Slovakia,72,Iron and steel,3253716367.0
+2001,SVN,Slovenia,72,Iron and steel,231913693.0
+2002,SVN,Slovenia,72,Iron and steel,258750273.0
+2003,SVN,Slovenia,72,Iron and steel,350912895.0
+2004,SVN,Slovenia,72,Iron and steel,561527003.0
+2005,SVN,Slovenia,72,Iron and steel,672158142.0
+2006,SVN,Slovenia,72,Iron and steel,828821195.0
+2001,SWE,Sweden,72,Iron and steel,2989120075.0
+2002,SWE,Sweden,72,Iron and steel,3364321318.0
+2003,SWE,Sweden,72,Iron and steel,4200969318.0
+2004,SWE,Sweden,72,Iron and steel,5953154241.0
+2005,SWE,Sweden,72,Iron and steel,7011810049.0
+2006,SWE,Sweden,72,Iron and steel,6922521516.0
+2001,SWZ,Eswatini,72,Iron and steel,1388166.0
+2002,SWZ,Eswatini,72,Iron and steel,1489868.0
+2003,SWZ,Eswatini,72,Iron and steel,5979410.0
+2004,SWZ,Eswatini,72,Iron and steel,7474568.0
+2005,SWZ,Eswatini,72,Iron and steel,5602768.0
+2006,SWZ,Eswatini,72,Iron and steel,2702327.0
+2001,SYC,Seychelles,72,Iron and steel,24011.0
+2002,SYC,Seychelles,72,Iron and steel,13550.0
+2003,SYC,Seychelles,72,Iron and steel,12559.292
+2005,SYC,Seychelles,72,Iron and steel,2125971.317
+2006,SYC,Seychelles,72,Iron and steel,57582.535
+2002,SYR,Syria,72,Iron and steel,6987093.0
+2003,SYR,Syria,72,Iron and steel,29672632.0
+2004,SYR,Syria,72,Iron and steel,183548530.0
+2005,SYR,Syria,72,Iron and steel,34112165.0
+2006,SYR,Syria,72,Iron and steel,32878957.0
+2002,TCA,Turks and Caicos Isds,72,Iron and steel,250.0
+2004,TCA,Turks and Caicos Isds,72,Iron and steel,4974.0
+2005,TCA,Turks and Caicos Isds,72,Iron and steel,25842.0
+2001,TGO,Togo,72,Iron and steel,17435863.0
+2002,TGO,Togo,72,Iron and steel,16218255.0
+2003,TGO,Togo,72,Iron and steel,24656094.0
+2004,TGO,Togo,72,Iron and steel,39731307.0
+2005,TGO,Togo,72,Iron and steel,27225622.0
+2001,THA,Thailand,72,Iron and steel,458829209.0
+2002,THA,Thailand,72,Iron and steel,580549248.0
+2003,THA,Thailand,72,Iron and steel,852691309.0
+2004,THA,Thailand,72,Iron and steel,1285494395.0
+2005,THA,Thailand,72,Iron and steel,1344927720.0
+2006,THA,Thailand,72,Iron and steel,1500937088.0
+2004,TLS,Timor-Leste,72,Iron and steel,72820.0
+2005,TLS,Timor-Leste,72,Iron and steel,186256.0
+2001,TON,Tonga,72,Iron and steel,1152.0
+2001,TTO,Trinidad and Tobago,72,Iron and steel,288449173.0
+2002,TTO,Trinidad and Tobago,72,Iron and steel,330285412.0
+2003,TTO,Trinidad and Tobago,72,Iron and steel,340465247.0
+2004,TTO,Trinidad and Tobago,72,Iron and steel,462751667.0
+2005,TTO,Trinidad and Tobago,72,Iron and steel,332281180.0
+2006,TTO,Trinidad and Tobago,72,Iron and steel,509177116.0
+2001,TUN,Tunisia,72,Iron and steel,11873630.0
+2002,TUN,Tunisia,72,Iron and steel,19599744.0
+2003,TUN,Tunisia,72,Iron and steel,28793535.0
+2004,TUN,Tunisia,72,Iron and steel,36023170.0
+2005,TUN,Tunisia,72,Iron and steel,42658962.0
+2006,TUN,Tunisia,72,Iron and steel,180002823.0
+2001,TUR,Türkiye,72,Iron and steel,2069932129.0
+2002,TUR,Türkiye,72,Iron and steel,2269812581.0
+2003,TUR,Türkiye,72,Iron and steel,2969011551.0
+2004,TUR,Türkiye,72,Iron and steel,5359511550.0
+2005,TUR,Türkiye,72,Iron and steel,4973475456.0
+2006,TUR,Türkiye,72,Iron and steel,6273352820.0
+2002,TUV,Tuvalu,72,Iron and steel,55.0
+2001,TZA,United Rep. of Tanzania,72,Iron and steel,435948.0
+2002,TZA,United Rep. of Tanzania,72,Iron and steel,1608474.0
+2003,TZA,United Rep. of Tanzania,72,Iron and steel,5973958.0
+2004,TZA,United Rep. of Tanzania,72,Iron and steel,12859528.0
+2005,TZA,United Rep. of Tanzania,72,Iron and steel,14169058.0
+2006,TZA,United Rep. of Tanzania,72,Iron and steel,14443910.0
+2001,UGA,Uganda,72,Iron and steel,2188719.0
+2002,UGA,Uganda,72,Iron and steel,2996177.0
+2003,UGA,Uganda,72,Iron and steel,7287497.0
+2004,UGA,Uganda,72,Iron and steel,13485651.0
+2005,UGA,Uganda,72,Iron and steel,24695585.0
+2006,UGA,Uganda,72,Iron and steel,22504138.0
+2001,UKR,Ukraine,72,Iron and steel,4976843600.0
+2002,UKR,Ukraine,72,Iron and steel,5338261380.0
+2003,UKR,Ukraine,72,Iron and steel,6728128960.0
+2004,UKR,Ukraine,72,Iron and steel,10765600170.0
+2005,UKR,Ukraine,72,Iron and steel,11451281052.0
+2006,UKR,Ukraine,72,Iron and steel,13051225801.0
+2001,URY,Uruguay,72,Iron and steel,3210858.0
+2002,URY,Uruguay,72,Iron and steel,2993681.0
+2003,URY,Uruguay,72,Iron and steel,6231515.0
+2004,URY,Uruguay,72,Iron and steel,8501556.0
+2005,URY,Uruguay,72,Iron and steel,9577836.0
+2006,URY,Uruguay,72,Iron and steel,7108872.0
+2001,USA,USA,72,Iron and steel,4985890547.0
+2002,USA,USA,72,Iron and steel,4988256483.0
+2003,USA,USA,72,Iron and steel,6634305720.0
+2004,USA,USA,72,Iron and steel,8971269670.0
+2005,USA,USA,72,Iron and steel,11400074649.0
+2006,USA,USA,72,Iron and steel,12621402214.0
+2001,VCT,Saint Vincent and the Grenadines,72,Iron and steel,1098870.0
+2002,VCT,Saint Vincent and the Grenadines,72,Iron and steel,965293.0
+2003,VCT,Saint Vincent and the Grenadines,72,Iron and steel,1089796.0
+2004,VCT,Saint Vincent and the Grenadines,72,Iron and steel,1469587.0
+2005,VCT,Saint Vincent and the Grenadines,72,Iron and steel,1352680.0
+2006,VCT,Saint Vincent and the Grenadines,72,Iron and steel,1334289.0
+2001,VEN,Venezuela,72,Iron and steel,750077840.0
+2002,VEN,Venezuela,72,Iron and steel,1034298356.0
+2003,VEN,Venezuela,72,Iron and steel,1012997495.0
+2004,VEN,Venezuela,72,Iron and steel,1924582173.0
+2005,VEN,Venezuela,72,Iron and steel,2284767836.0
+2006,VEN,Venezuela,72,Iron and steel,1658629950.0
+2001,VNM,Viet Nam,72,Iron and steel,15503369.0
+2002,VNM,Viet Nam,72,Iron and steel,29490159.0
+2003,VNM,Viet Nam,72,Iron and steel,52365093.0
+2004,VNM,Viet Nam,72,Iron and steel,113823139.0
+2005,VNM,Viet Nam,72,Iron and steel,182184567.0
+2006,VNM,Viet Nam,72,Iron and steel,238227424.0
+2006,VUT,Vanuatu,72,Iron and steel,4624.0
+2001,WSM,Samoa,72,Iron and steel,33661.0
+2002,WSM,Samoa,72,Iron and steel,2394296.0
+2003,WSM,Samoa,72,Iron and steel,161693.0
+2004,WSM,Samoa,72,Iron and steel,130407.0
+2005,WSM,Samoa,72,Iron and steel,97495.0
+2006,WSM,Samoa,72,Iron and steel,101684.0
+2004,YEM,Yemen,72,Iron and steel,4802661.0
+2005,YEM,Yemen,72,Iron and steel,4146476.0
+2006,YEM,Yemen,72,Iron and steel,4601337.0
+2001,ZAF,South Africa,72,Iron and steel,2117160828.0
+2002,ZAF,South Africa,72,Iron and steel,2356161026.0
+2003,ZAF,South Africa,72,Iron and steel,3817539146.0
+2004,ZAF,South Africa,72,Iron and steel,5555082354.0
+2005,ZAF,South Africa,72,Iron and steel,5769596585.0
+2006,ZAF,South Africa,72,Iron and steel,5525088649.0
+2001,ZMB,Zambia,72,Iron and steel,1601539.0
+2002,ZMB,Zambia,72,Iron and steel,2381176.0
+2003,ZMB,Zambia,72,Iron and steel,3163612.0
+2004,ZMB,Zambia,72,Iron and steel,5037514.0
+2005,ZMB,Zambia,72,Iron and steel,3241841.0
+2006,ZMB,Zambia,72,Iron and steel,2126982.0
+2001,ZWE,Zimbabwe,72,Iron and steel,132268387.62
+2002,ZWE,Zimbabwe,72,Iron and steel,297131981.666
+2003,ZWE,Zimbabwe,72,Iron and steel,81618288.33
+2004,ZWE,Zimbabwe,72,Iron and steel,137773695.09
+2005,ZWE,Zimbabwe,72,Iron and steel,249908577.07
+2006,ZWE,Zimbabwe,72,Iron and steel,79751698.43

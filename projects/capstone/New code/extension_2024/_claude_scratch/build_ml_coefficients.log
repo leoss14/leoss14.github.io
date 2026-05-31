@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/leoss/Desktop/GitHub/leoss14.github.io/projects/capstone/New code/extension_2024/_claude_scratch/build_ml_coefficients.py", line 82, in <module>
+    sub = eng[STRUCT_FEATURES + [TARGET, 'Country Code', 'Year']].dropna()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pandas/core/frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['log_HCI', 'log_Pop', 'Resource_HHI_trade', 'log_GFCF'] not in index"

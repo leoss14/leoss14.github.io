@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Replication and expansion of a Bocconi BSc thesis on Italian zombie firms. ~75,000 firms across 20 regions, 2016-2024. The standard province-level spillover measure produces a null effect; a distance-weighted measure at 100km shows a significant -2.9pp suppression of healthy-firm investment.">
+    <meta property="og:title" content="Zombie Firms in Italian Manufacturing | Leonardo Luksic">
+    <meta property="og:description" content="Replication and expansion of a Bocconi BSc thesis. 74,726 firms, 20 Italian regions, 2016-2024. The standard administrative-unit spillover measure gives null; distance-weighted spillovers at 100km are significant at -2.9pp.">
+    <meta property="og:type" content="website">
+    <title>Zombie Firms in Italian Manufacturing | Leonardo Luksic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/project-shared.css">
+    <style>
+        section { padding-top: 2.4rem; padding-bottom: 2.4rem; }
+        .project-hero { padding-top: 8rem; padding-bottom: 2.5rem; }
+        .project-hero .hero-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+        .project-hero .section-label { display: block; margin-bottom: 0.4rem; }
+        .project-hero h1 { text-align: center; font-size: clamp(2.2rem, 4vw, 2.85rem); line-height: 1.15; margin: 0.5rem 0 1.1rem; }
+        .project-hero .subtitle { text-align: center; max-width: none; margin: 0 auto; font-size: 1.04rem; line-height: 1.65; color: var(--text-secondary); }
+        section h2 { font-size: 1.55rem; line-height: 1.25; margin-top: 0; margin-bottom: 0.9rem; }
+        section h3 { font-size: 1.18rem; line-height: 1.3; margin-top: 1.6rem; margin-bottom: 0.6rem; }
+        .figcaption { text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <div class="nav-container">
+        <nav>
+            <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true">
+            <a href="../../index.html" class="nav-home" aria-label="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 8.5V16C5 16.3 5.2 16.5 5.5 16.5H8.5V12.5C8.5 12.2 8.7 12 9 12H11C11.3 12 11.5 12.2 11.5 12.5V16.5H14.5C14.8 16.5 15 16.3 15 16V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-home-label">Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+            <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </nav>
+    </div>
+
+    <section class="project-hero">
+        <div class="hero-inner">
+            <span class="section-label">Spatial econometrics and panel data</span>
+            <h1>Zombie Firms in Italian Manufacturing</h1>
+            <p class="subtitle">
+                Replication and expansion of a Bocconi undergraduate thesis to all 20 Italian
+                regions, 2016 to 2024. The panel covers 74,726 manufacturing firms over 351,220
+                firm-years. The standard McGowan-style spillover measure at province by sector
+                produces a null effect on healthy-firm investment. The same firms measured by
+                inverse-distance-weighted zombie density at a 100 km bandwidth produce a
+                significant 2.9 percentage point drop in healthy-firm investment (p = 0.036).
+            </p>
+        </div>
+    </section>
+
+
+    <!-- BACKGROUND -->
+    <section id="overview">
+        <span class="section-label">Background</span>
+        <h2>Concepts and research design</h2>
+
+        <p>
+            <strong>A zombie firm</strong> is a business that fails to generate enough operating
+            profit to cover its interest expenses but continues to operate because lenders roll
+            over its debt rather than force restructuring. The standard quantitative marker is an
+            interest coverage ratio (ICR) below 1, where ICR is operating profit divided by
+            interest paid. A firm with ICR less than 1 cannot service its debt from its own
+            earnings.
+        </p>
+
+        <p>
+            Zombie firms tie up resources (labour, capital, market share, bank credit) that
+            would otherwise flow elsewhere. When banks roll over loans to zombies to avoid
+            booking losses, healthy firms in the same market face higher borrowing costs and
+            invest less. This is the "evergreening" channel from the post-1990s Japanese
+            banking literature (Caballero, Hoshi and Kashyap, 2008), brought to post-2008
+            Europe by McGowan, Andrews and Millot (2018).
+        </p>
+
+        <h3>Three definitions used in the literature</h3>
+
+        <p>
+            Definition choice changes measured prevalence by an order of magnitude:
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Label</th>
+                    <th style="text-align: left;">Definition</th>
+                    <th style="text-align: right;">2022 share</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Weak ICR</strong></td>
+                    <td>ICR &lt; 1 in the current year</td>
+                    <td class="num">15.4%</td>
+                </tr>
+                <tr style="background: var(--success-bg);">
+                    <td><strong>McGowan et al. (2018)</strong></td>
+                    <td>ICR &lt; 1 for at least 3 consecutive years AND firm age &ge; 10</td>
+                    <td class="num">3.4%</td>
+                </tr>
+                <tr>
+                    <td><strong>Storz et al. (2017)</strong></td>
+                    <td>ICR &lt; 1 AND ROA &lt; 0 AND negative equity, same year</td>
+                    <td class="num">3.2%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            McGowan is the primary measure used here. The three-year requirement filters out
+            transitory shocks: weak-ICR jumps to 25.5 percent in COVID 2020, McGowan barely
+            moves (+0.6 points), because firms that recover after one bad year never enter the
+            classification. The age filter excludes young firms running growth-phase deficits.
+        </p>
+
+        <div class="divider"><span>Research Question</span></div>
+
+        <div class="pull-quote">
+            Do zombie firms suppress investment in healthy neighbours, and at what geographic
+            scale is the effect detectable?
+        </div>
+
+        <p>
+            Part I documents prevalence across time, sector, and geography. Part II runs the
+            standard McGowan spillover regression at province by sector and gets a null. Part
+            III replaces the administrative unit with inverse-distance weighting at 25, 50,
+            and 100 km radii, where a significant spillover only emerges at the widest
+            bandwidth. Part IV trains an early-warning ML model for zombie status one year
+            ahead.
+        </p>
+    </section>
+
+
+
+    <!-- DATA -->
+    <section>
+        <span class="section-label">Data</span>
+        <h2>Sources and sample</h2>
+
+        <p>
+            Firm-level data comes from Orbis (Bureau van Dijk) under the LSE institutional
+            licence. The search universe is Italian firms with NACE Rev. 2 primary codes 10 to 33
+            (manufacturing), with at least 10 employees in at least one year between 2016 and
+            2025, totaling 88,690 firms before regional batch filtering. The export covers ~300
+            variables per firm including profit and loss, balance sheet, employment, ownership,
+            and NUTS3 location codes, from 2008 to 2024.
+        </p>
+
+        <p>
+            Regional batches are merged through a custom pipeline: direct-XML parsing (the
+            openpyxl stylesheet path fails on these files), a year-by-variable column map
+            for the 2011 to 2014 loans block, and BvD-ID deduplication across batches. After
+            consolidation-code, employment, and minimum-coverage filters, the working panel:
+        </p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">74,726</div>
+                <div class="stat-label">Manufacturing firms</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">20</div>
+                <div class="stat-label">Italian regions (full coverage)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">351K</div>
+                <div class="stat-label">Firm-year observations</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">9 yrs</div>
+                <div class="stat-label">2016 to 2024</div>
+            </div>
+        </div>
+
+        <h3>Geocoding</h3>
+
+        <div class="note-box">
+            <h4>Postcode-centroid geocoding</h4>
+            <p>
+                Firms are mapped to coordinates via GeoNames IT.txt, which contains 4,735 unique
+                Italian CAP postcodes and their centroids under a CC-BY 4.0 licence. When a CAP
+                contains multiple localities, the mean centroid is used. The full panel achieves
+                99.9 percent geocoding coverage from the CAP lookup alone, with no fallback to
+                OSM Nominatim needed in practice. The full variable list used in classification
+                and regression is in the appendix at the foot of the page.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- =============================================================== -->
+    <!-- PART I: PREVALENCE                                              -->
+    <!-- =============================================================== -->
+
+    <section id="prevalence" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part I</span>
+            <h2>Prevalence: time, sector, geography</h2>
+
+            <p>
+                Under the McGowan definition, the zombie share in Italian manufacturing rose from
+                2.7 percent in 2018 to a peak of 4.4 percent in 2022 before declining to 3.9
+                percent in 2024. The 2020 COVID year produces a 25.5 percent spike under the
+                weak-ICR measure but only a 0.6 percentage point rise under McGowan, validating
+                the role of the three-year consecutive requirement in distinguishing persistent
+                distress from transitory shocks.
+            </p>
+
+            <div class="viz-container">
+                <iframe src="outputs/zombie_share_time.html" loading="lazy" title="Zombie firm share over time under three definitions" style="width: 100%; height: 520px; border: 0; display: block;"></iframe>
+            </div>
+            <p class="figcaption">
+                Zombie share by year under the three definitions. Weak-ICR spikes in COVID;
+                McGowan and Storz barely move, which is what a persistence-based definition
+                is supposed to do.
+            </p>
+
+            <h3>Sector heterogeneity</h3>
+
+            <p>
+                Sector shares vary widely. Beverages (10.9 percent), Coke and refined petroleum
+                (7.8 percent), and Pharmaceuticals (7.2 percent) lead in 2022; Fabricated
+                metals, Repair and installation, and Wood products sit at 2.1 to 2.8 percent.
+                The mix at the top (food, energy-intensive, regulated) tracks the post-2021
+                input-cost squeeze.
+            </p>
+
+            <div class="viz-container">
+                <iframe src="outputs/zombie_by_sector.html" loading="lazy" title="McGowan zombie share by NACE 2-digit sector, 2022" style="width: 100%; height: 680px; border: 0; display: block;"></iframe>
+            </div>
+            <p class="figcaption">
+                McGowan zombie share by NACE 2-digit sector, 2022 cross-section.
+            </p>
+
+            <h3>Geographic pattern</h3>
+
+            <p>
+                Northern Italy contains the majority of the manufacturing panel: 47,734 firms
+                across the ITC (Northwest) and ITH (Northeast) NUTS2 macro-regions, against
+                26,992 in the rest of the country. The maps below show the McGowan zombie share
+                by NUTS3 province (top) and a firm-level dot map of zombies versus non-zombies
+                (bottom) for the 2022 cross-section.
+            </p>
+
+            <div class="viz-container">
+                <iframe src="outputs/choropleth_italy_2022.html" loading="lazy" title="National choropleth of McGowan zombie share by NUTS3 province, 2022" style="width: 100%; height: 560px; border: 0; display: block;"></iframe>
+            </div>
+            <p class="figcaption">
+                National choropleth, McGowan zombie share by NUTS3 province, 2022. Grey provinces
+                have fewer than 5 firms in the panel and are excluded from the colour scale.
+            </p>
+
+            <div class="viz-container">
+                <iframe src="outputs/dotmap_italy_2022.html" loading="lazy" title="Firm-level dot map of zombie status, 2022" style="width: 100%; height: 620px; border: 0; display: block;"></iframe>
+            </div>
+            <p class="figcaption">
+                Firm-level dot map, 2022. Red dots are McGowan zombies, blue dots are healthy
+                firms. The dense Northern industrial belt (Po Valley) is visible.
+            </p>
+
+            <div class="viz-container">
+                <iframe src="outputs/north_south.html" loading="lazy" title="North versus rest-of-Italy comparison" style="width: 100%; height: 520px; border: 0; display: block;"></iframe>
+            </div>
+            <p class="figcaption">
+                Northern macro-regions (ITC, ITH) compared with the rest of Italy. The Northern
+                subsample is more zombie-dense in 2022 but the time pattern is parallel across
+                regions.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- =============================================================== -->
+    <!-- PART II: BASELINE SPILLOVER REGRESSIONS                          -->
+    <!-- =============================================================== -->
+
+    <section id="baseline">
+        <span class="section-label">Part II</span>
+        <h2>Baseline spillover regressions: a null result</h2>
+
+        <p>
+            The standard test of the zombie-congestion hypothesis in the recent literature
+            (McGowan, Andrews and Millot 2018; Andrews and Petroulakis 2019) regresses investment
+            or employment outcomes of healthy firms on the share of zombie firms in their
+            immediate market, conventionally defined as the province by 2-digit NACE sector by
+            year cell. The key regressor is constructed as a leave-one-out (LOO) measure to avoid
+            a firm mechanically contributing to its own congestion term:
+        </p>
+
+        <div class="equation-box">
+            ZombieShare<sup>&minus;i</sup><sub>pst</sub> = (N<sub>pst</sub> &middot; ZombieShare<sub>pst</sub> &minus; Z<sub>it</sub>) &divide; (N<sub>pst</sub> &minus; 1)
+        </div>
+
+        <p>
+            where the subscripts denote province p, sector s, and year t. All models include firm
+            fixed effects and year fixed effects. Standard errors are clustered at the province
+            by sector level. Four model variants are estimated:
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Model</th>
+                    <th style="text-align: left;">Sample</th>
+                    <th style="text-align: left;">Dependent</th>
+                    <th style="text-align: right;">Coef. (SE)</th>
+                    <th style="text-align: right;">p</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>M1 Baseline</td>
+                    <td>Non-zombie firms</td>
+                    <td>Investment rate</td>
+                    <td class="num">&minus;0.0032 (0.0092)</td>
+                    <td class="num">0.725</td>
+                </tr>
+                <tr>
+                    <td>M2 Baseline</td>
+                    <td>Non-zombie firms</td>
+                    <td>Employment growth</td>
+                    <td class="num">&minus;0.0041 (0.0152)</td>
+                    <td class="num">0.788</td>
+                </tr>
+                <tr>
+                    <td>M3 Credit interaction</td>
+                    <td>Non-zombie firms</td>
+                    <td>Investment rate</td>
+                    <td class="num">&minus;0.0088 (0.0119)</td>
+                    <td class="num">0.460</td>
+                </tr>
+                <tr style="background: var(--success-bg);">
+                    <td><strong>M4 Own zombie effect</strong></td>
+                    <td>All firms</td>
+                    <td>Investment rate</td>
+                    <td class="num"><strong>&minus;0.0029 (0.0011)</strong></td>
+                    <td class="num"><strong>0.007</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="viz-container">
+            <iframe src="outputs/nb3_coefficients.html" loading="lazy" title="Coefficient plot of zombie-congestion effect across specifications" style="width: 100%; height: 480px; border: 0; display: block;"></iframe>
+        </div>
+        <p class="figcaption">
+            Coefficients with 95 percent CIs. Only M4 (own-zombie) clearly separates from zero.
+        </p>
+
+        <p>
+            The spillover effect on investment (M1) and employment growth (M2) is negative
+            across all specifications but never significant. M4 is the one robust baseline
+            finding: a McGowan zombie invests about 0.3 percentage points less in its zombie
+            years than in its non-zombie years (p = 0.007), controlling for size and lagged
+            financial health. The estimate survives every robustness check run on it.
+        </p>
+
+        <div class="viz-container">
+            <iframe src="outputs/congestion_investment.html" loading="lazy" title="Province-sector zombie congestion vs healthy firm investment" style="width: 100%; height: 540px; border: 0; display: block;"></iframe>
+        </div>
+        <p class="figcaption">
+            Province-sector zombie congestion against mean healthy-firm investment. The flat
+            binned line tracks the M1 null.
+        </p>
+
+        <h3>Robustness</h3>
+
+        <p>
+            The null holds across eight robustness specifications varying the ICR lag structure
+            and the geographic subsample. The direction is always negative, never significant.
+            The unconsolidated-only subsample (U1, U2 firms, 96.9 percent) gives near-identical
+            coefficients, ruling out a consolidation-mix artefact.
+        </p>
+
+        <div class="note-box">
+            <h4>The capital-weighted version is borderline</h4>
+            <p>
+                Weighting zombies by their share of province-sector tangible fixed assets instead
+                of headcount gives &minus;0.0054 (SE 0.0030, p = 0.077). Count-share and
+                capital-share correlate at only 0.46, so they measure different things. The
+                SE drops by 3x, pointing to a few large zombies tying up disproportionate
+                capital as the relevant margin. Borderline, not headline.
+            </p>
+        </div>
+
+        <h3>Credit channel: no evidence</h3>
+
+        <p>
+            Three tests for the evergreening channel (zombies crowding out credit to healthy
+            neighbours) all come back null at province-sector level. Zombie congestion has no
+            effect on healthy-firm financial intensity (+0.0004, p = 0.59) or on log loan
+            growth (&minus;0.042 nationally, +0.011 in the North). Adding financial intensity
+            as a control attenuates the investment effect by only 6.4 percent. Credit cost is
+            not the mediator at this scale.
+        </p>
+    </section>
+
+
+
+    <!-- =============================================================== -->
+    <!-- PART III: SPATIAL DECAY                                          -->
+    <!-- =============================================================== -->
+
+    <section id="spatial" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part III</span>
+            <h2>Distance instead of administrative boundaries</h2>
+
+            <p>
+                Two ways to read the null. Either zombie spillovers do not exist in Italian
+                manufacturing in this period, or the geographic unit is wrong. NUTS3 provinces
+                in Italy have an average radius of about 30 km, so the standard measure
+                averages zombie density over only the nearest 25 to 30 km. If the real
+                spillover operates over larger neighbourhoods, the province aggregate will
+                dilute the signal.
+            </p>
+
+            <p>
+                To test this, the congestion term is recomputed using firm-level coordinates
+                rather than administrative cells. For each healthy firm in each year, an
+                inverse-distance-weighted zombie share is calculated over neighbours within
+                radii of 25, 50, and 100 km:
+            </p>
+
+            <div class="equation-box">
+                ZombieShare<sup>IDW</sup><sub>it</sub>(b) = &Sigma;<sub>j&isin;N<sub>it</sub>(b)</sub> w<sub>ij</sub> &middot; Z<sub>jt</sub>
+            </div>
+
+            <p>
+                where N<sub>it</sub>(b) is the set of firms within bandwidth b of firm i in year t,
+                and the weights w<sub>ij</sub> are inverse-distance with row-normalisation. The
+                resulting measure is then used in the same M1 baseline specification (investment
+                rate of healthy firms on zombie share, with firm and year fixed effects and
+                clustered standard errors).
+            </p>
+
+            <h3>The bandwidth sweep</h3>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Geographic unit</th>
+                        <th style="text-align: right;">Coefficient</th>
+                        <th style="text-align: right;">SE</th>
+                        <th style="text-align: right;">p</th>
+                        <th style="text-align: left;">Verdict</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Province by sector (baseline)</td>
+                        <td class="num">&minus;0.0032</td>
+                        <td class="num">0.0092</td>
+                        <td class="num">0.725</td>
+                        <td>Null</td>
+                    </tr>
+                    <tr>
+                        <td>NUTS2 by sector (broader admin)</td>
+                        <td class="num">+0.0045</td>
+                        <td class="num">0.0224</td>
+                        <td class="num">0.840</td>
+                        <td>Sign reversal, null</td>
+                    </tr>
+                    <tr>
+                        <td>25 km radius (firm-distance)</td>
+                        <td class="num">&minus;0.0161</td>
+                        <td class="num">0.0094</td>
+                        <td class="num">0.087</td>
+                        <td>Marginal</td>
+                    </tr>
+                    <tr>
+                        <td>50 km radius</td>
+                        <td class="num">&minus;0.0200</td>
+                        <td class="num">0.0114</td>
+                        <td class="num">0.079</td>
+                        <td>Marginal</td>
+                    </tr>
+                    <tr style="background: var(--success-bg);">
+                        <td><strong>100 km radius</strong></td>
+                        <td class="num"><strong>&minus;0.0289</strong></td>
+                        <td class="num"><strong>0.0138</strong></td>
+                        <td class="num"><strong>0.036</strong></td>
+                        <td><strong>Significant at 5%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="viz-container">
+                <iframe src="outputs/spatial_decay.html" loading="lazy" title="Coefficient on zombie share by geographic bandwidth" style="width: 100%; height: 520px; border: 0; display: block;"></iframe>
+            </div>
+            <p class="figcaption">
+                Coefficient on healthy-firm investment, by geographic unit. The effect grows
+                monotonically with bandwidth and hits significance at 100 km.
+            </p>
+
+            <div class="pull-quote">
+                The effect strengthens monotonically with bandwidth. A 100 km radius captures
+                roughly the size of a labour catchment area or a regional banking relationship,
+                whereas a NUTS3 province captures only the nearest 25 to 30 km. The standard
+                measure has been averaging over the wrong unit.
+            </div>
+
+            <h3>What the pattern rules out</h3>
+
+            <p>
+                The monotonic strengthening from 25 to 100 km is informative about the mechanism.
+                A pure bank-branch story would imply distance decay: the coefficient should
+                be strongest at 25 km and fade with bandwidth. The opposite is observed.
+            </p>
+
+            <p>
+                Three mechanisms fit the pattern. Regional labour markets in Italian manufacturing
+                span 50 to 100 km, so zombies hoarding skilled workers depress labour mobility
+                over that range. Supply chain networks among Northern manufacturers operate at
+                provincial and inter-provincial scale. Bank relationships, while locally
+                sourced on average, run across regional networks for the medium-sized firms
+                that dominate the panel. Credit rationing at regional scale, which
+                province-level averaging cannot detect, would produce the same shape.
+            </p>
+
+            <div class="note-box">
+                <h4>Why the NUTS2 administrative measure also fails</h4>
+                <p>
+                    Going one administrative level up from province (NUTS2 by sector) gives a
+                    sign-flipped, insignificant +0.0045. The zombie-heavy NUTS2 regions are
+                    also the most economically active, so the aggregate confounds zombie
+                    density with industrial dynamism. Distance weighting cuts through this by
+                    weighting nearby zombies wherever they sit administratively. That the
+                    NUTS2 null and the 100 km significant result diverge is itself evidence
+                    that administrative boundaries are not the right unit here.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- =============================================================== -->
+    <!-- PART IV: ML EARLY WARNING                                        -->
+    <!-- =============================================================== -->
+
+    <section id="ml">
+        <span class="section-label">Part IV</span>
+        <h2>Machine learning early-warning model</h2>
+
+        <p>
+            Can financial ratios at year t predict McGowan zombie status at year t+1? The
+            classifier uses a time-based split (train 2016 to 2021, validation 2022, test 2023)
+            and AUPRC as the primary metric, which is the appropriate measure when class
+            imbalance is heavy (the test-set zombie rate is 3.8 percent).
+        </p>
+
+        <h3>Feature selection: dropping ICR</h3>
+
+        <p>
+            The McGowan target is defined as three consecutive years of ICR below 1. Including
+            current ICR or ICR lags as features lets the model rediscover the classification
+            rule rather than forecast deterioration. The model is therefore fit twice: once with
+            ICR features included (the leaky baseline) and once with them dropped (the legitimate
+            spec). The gap between the two AUPRC numbers is the size of the leakage.
+        </p>
+
+        <h3>Test-set performance</h3>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Model</th>
+                    <th style="text-align: right;">With ICR (leaky)</th>
+                    <th style="text-align: right;">Without ICR (clean)</th>
+                    <th style="text-align: right;">Δ AUPRC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Logistic regression</td>
+                    <td class="num">0.298</td>
+                    <td class="num">0.174</td>
+                    <td class="num">&minus;0.12</td>
+                </tr>
+                <tr>
+                    <td>Random Forest</td>
+                    <td class="num">0.846</td>
+                    <td class="num">0.232</td>
+                    <td class="num">&minus;0.61</td>
+                </tr>
+                <tr style="background: var(--success-bg);">
+                    <td><strong>XGBoost</strong></td>
+                    <td class="num">0.836</td>
+                    <td class="num"><strong>0.304</strong></td>
+                    <td class="num"><strong>&minus;0.53</strong></td>
+                </tr>
+                <tr>
+                    <td>Naive (prevalence)</td>
+                    <td class="num">0.042</td>
+                    <td class="num">0.038</td>
+                    <td class="num">n/a</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            With ICR features, XGBoost reaches test AUPRC 0.836. Without them, 0.304. The tree
+            models lose more than half a unit of AUPRC; the linear model loses only 0.12.
+            Trees can carve hard splits at the ICR threshold; linear models cannot, so they
+            were never exploiting the leakage to begin with.
+        </p>
+
+        <p>
+            The 0.304 figure is what the page reports as the model's actual performance. It is
+            8x the prevalence baseline of 0.038 and 1.7x the linear-model floor.
+        </p>
+
+        <div class="viz-container">
+            <iframe src="outputs/ml_model_comparison.html" loading="lazy" title="With-ICR vs without-ICR test performance" style="width: 100%; height: 500px; border: 0; display: block;"></iframe>
+        </div>
+        <p class="figcaption">
+            Both specs across three model families. The gap between rose (with ICR) and navy
+            (without ICR) is the magnitude of the leakage that the published spec removes.
+        </p>
+
+        <h3>What the legitimate model picks up</h3>
+
+        <div class="viz-container">
+            <iframe src="outputs/ml_shap.html" loading="lazy" title="Top 15 features by mean absolute SHAP value, XGBoost without ICR" style="width: 100%; height: 560px; border: 0; display: block;"></iframe>
+        </div>
+        <p class="figcaption">
+            Mean absolute SHAP values for the XGBoost no-ICR spec. The year-on-year change in
+            leverage is the top contributor, followed by log total assets, financial intensity,
+            and leverage lags. The model is reading rising debt and shrinking scale, not the
+            ICR threshold.
+        </p>
+
+        <h3>Forecast horizon</h3>
+
+        <div class="viz-container">
+            <iframe src="outputs/ml_horizon.html" loading="lazy" title="Test AUPRC at three forecast horizons" style="width: 100%; height: 500px; border: 0; display: block;"></iframe>
+        </div>
+        <p class="figcaption">
+            Test AUPRC and ratio over naive at t+1, t+2, t+3. AUPRC falls from 0.29 (one year)
+            to 0.24 (three years); the ratio over prevalence falls from 7.7x to 5.6x. The
+            signal weakens with horizon but does not collapse.
+        </p>
+    </section>
+
+
+
+    <!-- CONCLUSIONS -->
+    <section id="conclusions" style="padding-bottom: 2.5rem;">
+        <span class="section-label">Synthesis</span>
+        <h2>Conclusions</h2>
+        <p style="max-width: 760px; margin-bottom: 2.5rem;">
+            Four findings, ordered by how confident the evidence is.
+        </p>
+
+        <div class="conclusion-grid">
+            <div class="conclusion-card">
+                <div class="conclusion-number">01</div>
+                <div class="conclusion-content">
+                    <h4>Distance-weighted spillovers exist where province-based ones do not</h4>
+                    <p>
+                        The standard province by sector spillover specification produces a null
+                        coefficient. The same data measured by inverse-distance-weighted zombie
+                        share at a 100 km radius produces a coefficient of &minus;0.0289 on
+                        healthy-firm investment, significant at 5 percent. The effect strengthens
+                        monotonically with bandwidth from 25 to 100 km, ruling out a hyper-local
+                        bank-branch story and pointing instead to regional labour markets, supply
+                        chains, or banking networks. The standard literature's null findings on
+                        zombie spillovers in Europe may partly reflect mismeasured geography.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">02</div>
+                <div class="conclusion-content">
+                    <h4>The own-zombie investment penalty is robust</h4>
+                    <p>
+                        McGowan zombies invest 0.3 percentage points less in their zombie years than in
+                        their non-zombie years (p = 0.007). The estimate is stable across
+                        sample restrictions, ICR lag specifications, and consolidation code
+                        subsamples. It is the most defensible finding on the page.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">03</div>
+                <div class="conclusion-content">
+                    <h4>Capital is more relevant than headcount for congestion</h4>
+                    <p>
+                        Replacing the firm-count share of zombies with their share of
+                        province-sector tangible fixed assets produces a borderline-significant
+                        coefficient (p = 0.077). The correlation between count-share and
+                        capital-share measures is only 0.46, so they are not interchangeable.
+                        Large zombie firms tying up disproportionate industry capital matter more
+                        than the number of zombie firms.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">04</div>
+                <div class="conclusion-content">
+                    <h4>The credit-cost channel is not detectable here</h4>
+                    <p>
+                        Three province-sector tests (zombie congestion on healthy-firm financial
+                        intensity, on log loan growth, and as a mediator of the investment
+                        effect) all come back null. Unobservable credit rationing or sub-province
+                        geography remain possible, but the observable financial ratios do not
+                        show the channel. If credit drives Finding 1, it does so through a
+                        mechanism this data cannot reach.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- LIMITATIONS -->
+    <section>
+        <h2>Limitations</h2>
+
+        <div class="two-col">
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Survivorship in Orbis</h4>
+                <p>
+                    The Orbis panel covers firms that exist at the time of extraction. Firms that
+                    failed and deregistered are present only insofar as their historical filings
+                    remain in the database. This biases the panel toward survivors, particularly
+                    in the late 2010s, and probably understates the true historical zombie share.
+                    The bias is largest where the zombie process ended in liquidation rather
+                    than acquisition.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Geocoding is at postcode centroid</h4>
+                <p>
+                    CAP coordinates locate firms at the centroid of their postcode area. Within
+                    a postcode, multiple firms collapse to the same point, which affects
+                    near-distance neighbour counts. The 25 km bandwidth result is therefore the
+                    most affected; the 100 km headline is robust to this issue because the
+                    bandwidth far exceeds any postcode radius.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Identification at finer scales</h4>
+                <p>
+                    The significant 100 km result rules out the very local bank-branch story but
+                    does not separate the labour-market, supply-chain, and regional-banking
+                    channels from each other. Establishing the dominant mechanism would require
+                    additional data: matched employer-employee records for the labour channel,
+                    input-output tables for supply chains, or branch-level bank balance sheets
+                    for the credit channel. Each is a follow-up project.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- APPENDIX -->
+    <section id="appendix">
+        <span class="section-label">Appendix</span>
+        <h2>Variables retained for classification and regression</h2>
+
+        <p>
+            Full list of variables constructed from the Orbis export and used in the zombie
+            classification, regression, and machine-learning sections of the page.
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Variable</th>
+                    <th style="text-align: left;">Construction</th>
+                    <th style="text-align: left;">Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>ICR</strong></td><td>EBIT &divide; financial expenses</td><td>Zombie classification (all three definitions)</td></tr>
+                <tr><td><strong>ROA</strong></td><td>Net income &divide; total assets</td><td>Storz classification</td></tr>
+                <tr><td><strong>Investment rate</strong></td><td>&Delta;(tangible FA) &divide; lagged total assets</td><td>M1, M3 dependent variable</td></tr>
+                <tr><td><strong>Employment growth</strong></td><td>Log difference of headcount</td><td>M2 dependent variable</td></tr>
+                <tr><td><strong>Total liabilities</strong></td><td>Total assets &minus; shareholders funds</td><td>Direct variable has only 3 to 4 percent coverage; derived version has 91 percent</td></tr>
+                <tr><td><strong>Negative equity flag</strong></td><td>Shareholders funds &lt; 0</td><td>Storz classification</td></tr>
+                <tr><td><strong>NACE 2-digit</strong></td><td>First two digits of NACE primary code</td><td>Sector fixed effects and congestion cells</td></tr>
+                <tr><td><strong>NUTS3 / province</strong></td><td>Parsed from Orbis NUTS3 string</td><td>Geographic cells, baseline congestion measure</td></tr>
+                <tr><td><strong>CAP coordinates</strong></td><td>GeoNames IT.txt postcode centroids</td><td>Distance-weighted spillover measure</td></tr>
+                <tr><td><strong>log total assets</strong></td><td>log(total assets)</td><td>Size control in regressions and ML feature</td></tr>
+                <tr><td><strong>Firm age</strong></td><td>Year minus year of incorporation</td><td>McGowan definition age filter; ML feature</td></tr>
+                <tr><td><strong>Leverage</strong></td><td>Total liabilities &divide; total assets</td><td>ML feature plus one and two-year lags</td></tr>
+                <tr><td><strong>Financial intensity</strong></td><td>Financial expenses &divide; total assets</td><td>Credit-cost channel test; ML feature</td></tr>
+                <tr><td><strong>Sales growth</strong></td><td>Log difference of operating revenue</td><td>ML feature</td></tr>
+                <tr><td><strong>High credit intensity</strong></td><td>Indicator: financial intensity above panel median</td><td>M3 interaction term</td></tr>
+                <tr><td><strong>Δ leverage</strong></td><td>First difference of leverage</td><td>ML feature</td></tr>
+                <tr><td><strong>Δ ICR</strong></td><td>First difference of ICR</td><td>ML feature</td></tr>
+                <tr><td><strong>Δ ROA</strong></td><td>First difference of ROA</td><td>ML feature</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <!-- METHODOLOGICAL NOTES -->
+    <section id="methods" class="summary-section full-width-section">
+        <div class="container">
+            <h2>Methodological notes</h2>
+
+            <div class="two-col">
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Data pipeline</h4>
+                    <p>
+                        40 Orbis Excel exports (3,058 firms each) parsed via direct XML. Year-by-variable
+                        column map for the 2011 to 2014 loans block. Cross-batch dedup by BvD
+                        ID, firm age from Excel serial dates, wide-to-long reshape with ICR,
+                        ROA, investment rate, negative-equity flag, and NACE 2-digit derived
+                        once. 351,220 firm-years after the filters.
+                    </p>
+                </div>
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Regression and spatial methods</h4>
+                    <p>
+                        <code>linearmodels</code> PanelOLS, firm and year fixed effects, SEs clustered at
+                        province-by-2-digit-NACE. Continuous controls winsorised at the 1
+                        percent tails. Leave-one-out congestion is computed per cell; the IDW
+                        measure uses GeoNames CAP centroids with a row-normalised
+                        inverse-distance kernel within each bandwidth.
+                    </p>
+                </div>
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">ML protocol</h4>
+                    <p>
+                        Time-based split: train 2016 to 2021, validation 2022, test 2023. Class weighting
+                        for the 1-to-21 imbalance. Logistic, Random Forest, XGBoost compared
+                        on AUPRC (primary, appropriate under heavy imbalance), ROC-AUC and F1
+                        (secondary). Two specs run side by side: with ICR features (leaky
+                        baseline) and without (the reported result).
+                    </p>
+                </div>
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Code, data, and reproducibility</h4>
+                    <p>
+                        Six Jupyter notebooks under <code>code/</code> cover the full pipeline (merge,
+                        classification, geographic analysis, regression, charts, ML). Orbis
+                        raw exports cannot be redistributed under the LSE licence;
+                        <code>docs/</code> records the search criteria, saved view, and
+                        column-level handling so any Orbis user can rebuild the panel.
+                    </p>
+                </div>
+            </div>
+
+            <p style="margin-top: 1rem; color: var(--text-secondary); line-height: 1.75; font-size: 0.95rem;">
+                <strong>Replication base:</strong> Luksic, L. (2024). <em>Geographical Analysis of
+                the Italian Industrial North: Zombie Firms and Spillover Effects</em>. Bocconi
+                University undergraduate thesis, advisor Prof. Roberto Perotti.
+            </p>
+            <p style="margin-top: 0.75rem; color: var(--text-secondary); line-height: 1.75; font-size: 0.95rem;">
+                <strong>References:</strong>
+                Caballero, Hoshi and Kashyap (2008), <em>American Economic Review</em>;
+                McGowan, Andrews and Millot (2018), <em>OECD Economics Department Working Papers</em> no. 1372;
+                Storz, Koetter, Setzer and Westphal (2017), <em>ECB Working Paper</em> no. 2104;
+                Andrews and Petroulakis (2019), <em>ECB Working Paper</em> no. 2240.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin: 2.5rem 0;">
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Panel Data</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Fixed Effects</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Clustered SE</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Spatial Econometrics</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Inverse-Distance Weighting</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">XGBoost</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">SHAP</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">Orbis</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">GeoPandas</span>
+                <span style="padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary);">linearmodels</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
+            <a href="mailto:l.luksic@lse.ac.uk" class="social-link">Email</a>
+        </div>
+    </footer>
+    <script src="../../js/nav.js"></script>
+</body>
+</html>

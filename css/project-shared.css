@@ -129,6 +129,17 @@ section { padding: 3.75rem clamp(1.5rem, 5vw, 6rem); }
     background: rgba(194, 58, 58, 0.06);
     font-weight: 600;
 }
+.results-table tfoot td {
+    border-top: 2px solid #d1d5db;
+    padding-top: 0.85rem;
+    padding-bottom: 0.4rem;
+    font-size: 0.82rem;
+    color: #6B7280;
+    font-style: italic;
+    line-height: 1.55;
+    text-align: left;
+    font-family: var(--font-body, inherit);
+}
 
 /* ---- Divider with label ---- */
 .divider {

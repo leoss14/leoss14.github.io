@@ -1,0 +1,77 @@
+{
+  "sample": {
+    "n": 833,
+    "start": "1956-07-01",
+    "end": "2025-12-01"
+  },
+  "T1": {
+    "mse_uncond": 11.703348548703568,
+    "mse_lowonly": 14.73781670517643,
+    "mae_uncond": 3.0505924910845703,
+    "mae_lowonly": 3.5895514172613794,
+    "bias_uncond": -2.585656939868221,
+    "bias_lowonly": -3.3916277791944007,
+    "n_forecasts": 24
+  },
+  "T2": [
+    {
+      "label": "Pre-Volcker",
+      "start": "1956-07",
+      "end": "1979-07",
+      "n": 277,
+      "one_plus_api": 0.7607773884611445,
+      "se": 0.07125450961108816
+    },
+    {
+      "label": "Anchored",
+      "start": "1985-01",
+      "end": "2019-12",
+      "n": 420,
+      "one_plus_api": 1.565746422833892,
+      "se": 0.6198287752253598
+    },
+    {
+      "label": "Post-FAIT",
+      "start": "2020-08",
+      "end": "2025-12",
+      "n": 64,
+      "one_plus_api": -1.0455933095089929,
+      "se": 0.573362852110924
+    },
+    {
+      "label": "Post-liftoff",
+      "start": "2022-03",
+      "end": "2025-12",
+      "n": 45,
+      "one_plus_api": -0.8252886603582572,
+      "se": 0.3775980396563077
+    }
+  ],
+  "T3": {
+    "rule_intercept": -0.38491645329138324,
+    "rule_one_plus_api": 1.565746422833892,
+    "rule_a_u": -1.0322764816145016,
+    "last_month": "2025-12-01",
+    "last_actual_ffr": 3.72,
+    "last_prescribed": 6.098217801340735,
+    "last_gap": -2.378217801340735,
+    "mean_gap_12m": -2.4945369098781303
+  },
+  "verdicts": [
+    [
+      "T1 Regime-aware-forecast",
+      "REJECTED",
+      "Low-regime model is WORSE: MSE 14.74 vs 11.70. Conditioning on regime hurts more than it helps when you actually need to forecast."
+    ],
+    [
+      "T2 FAIT-changed-response",
+      "SUPPORTED",
+      "Anchored 1+a_pi=1.57, Post-FAIT=-1.05, diff +2.61 significant at 5% (z=3.09). Evidence that the post-2020 Fed has a lower implied inflation response."
+    ],
+    [
+      "T3 Current-policy",
+      "BELOW-RULE",
+      "Last 12 months: mean gap -2.49pp. Fed is running easier than the anchored-era rule prescribes."
+    ]
+  ]
+}

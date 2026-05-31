@@ -1,0 +1,836 @@
+period,reporterISO,reporterDesc,cmdCode,cmdDesc,primaryValue
+2019,ABW,Aruba,76,Aluminium and articles thereof,601251.936
+2020,ABW,Aruba,76,Aluminium and articles thereof,693671.486
+2021,ABW,Aruba,76,Aluminium and articles thereof,1028816.745
+2022,ABW,Aruba,76,Aluminium and articles thereof,1856116.175
+2023,ABW,Aruba,76,Aluminium and articles thereof,1123716.185
+2019,AFG,Afghanistan,76,Aluminium and articles thereof,140995.19
+2019,AGO,Angola,76,Aluminium and articles thereof,409632.059
+2020,AGO,Angola,76,Aluminium and articles thereof,1955920.743
+2021,AGO,Angola,76,Aluminium and articles thereof,5494230.049
+2022,AGO,Angola,76,Aluminium and articles thereof,5568085.824
+2023,AGO,Angola,76,Aluminium and articles thereof,6552292.669
+2019,ALB,Albania,76,Aluminium and articles thereof,59273973.033
+2020,ALB,Albania,76,Aluminium and articles thereof,58154142.459
+2021,ALB,Albania,76,Aluminium and articles thereof,117338899.685
+2022,ALB,Albania,76,Aluminium and articles thereof,154510435.327
+2023,ALB,Albania,76,Aluminium and articles thereof,139527962.673
+2019,AND,Andorra,76,Aluminium and articles thereof,483642.149
+2020,AND,Andorra,76,Aluminium and articles thereof,263543.851
+2021,AND,Andorra,76,Aluminium and articles thereof,431234.819
+2022,AND,Andorra,76,Aluminium and articles thereof,506486.55
+2023,AND,Andorra,76,Aluminium and articles thereof,573794.081
+2019,ARE,United Arab Emirates,76,Aluminium and articles thereof,5539327660.644
+2020,ARE,United Arab Emirates,76,Aluminium and articles thereof,4446737390.033
+2021,ARE,United Arab Emirates,76,Aluminium and articles thereof,8149499495.227
+2022,ARE,United Arab Emirates,76,Aluminium and articles thereof,8279399556.25
+2023,ARE,United Arab Emirates,76,Aluminium and articles thereof,7862971761.282
+2019,ARG,Argentina,76,Aluminium and articles thereof,724035912.61
+2020,ARG,Argentina,76,Aluminium and articles thereof,498282553.45
+2021,ARG,Argentina,76,Aluminium and articles thereof,606938969.03
+2022,ARG,Argentina,76,Aluminium and articles thereof,746265802.97
+2023,ARG,Argentina,76,Aluminium and articles thereof,852167838.26
+2019,ARM,Armenia,76,Aluminium and articles thereof,99577689.33
+2020,ARM,Armenia,76,Aluminium and articles thereof,96063369.22
+2021,ARM,Armenia,76,Aluminium and articles thereof,133792344.6
+2022,ARM,Armenia,76,Aluminium and articles thereof,146061111.18
+2023,ARM,Armenia,76,Aluminium and articles thereof,104466459.66
+2019,ATG,Antigua and Barbuda,76,Aluminium and articles thereof,26388.198
+2020,ATG,Antigua and Barbuda,76,Aluminium and articles thereof,43517.715
+2021,ATG,Antigua and Barbuda,76,Aluminium and articles thereof,95571.278
+2022,ATG,Antigua and Barbuda,76,Aluminium and articles thereof,131573.237
+2023,ATG,Antigua and Barbuda,76,Aluminium and articles thereof,183861.9
+2019,AUS,Australia,76,Aluminium and articles thereof,3229693389.169
+2020,AUS,Australia,76,Aluminium and articles thereof,2932619646.997
+2021,AUS,Australia,76,Aluminium and articles thereof,4305304801.759
+2022,AUS,Australia,76,Aluminium and articles thereof,4838170746.662
+2023,AUS,Australia,76,Aluminium and articles thereof,4305133528.936
+2019,AUT,Austria,76,Aluminium and articles thereof,3918730174.716
+2020,AUT,Austria,76,Aluminium and articles thereof,3594669177.805
+2021,AUT,Austria,76,Aluminium and articles thereof,4627702485.174
+2022,AUT,Austria,76,Aluminium and articles thereof,5529483180.041
+2023,AUT,Austria,76,Aluminium and articles thereof,5274991946.116
+2019,AZE,Azerbaijan,76,Aluminium and articles thereof,128049067.16
+2020,AZE,Azerbaijan,76,Aluminium and articles thereof,113432781.11
+2021,AZE,Azerbaijan,76,Aluminium and articles thereof,188529235.22
+2022,AZE,Azerbaijan,76,Aluminium and articles thereof,217560828.04
+2023,AZE,Azerbaijan,76,Aluminium and articles thereof,195181684.37
+2019,BDI,Burundi,76,Aluminium and articles thereof,127268.285
+2020,BDI,Burundi,76,Aluminium and articles thereof,440176.829
+2021,BDI,Burundi,76,Aluminium and articles thereof,393490.173
+2022,BDI,Burundi,76,Aluminium and articles thereof,11409.711
+2023,BDI,Burundi,76,Aluminium and articles thereof,15597.302
+2019,BEL,Belgium,76,Aluminium and articles thereof,2550532092.43
+2020,BEL,Belgium,76,Aluminium and articles thereof,2344714998.957
+2021,BEL,Belgium,76,Aluminium and articles thereof,3219108179.299
+2022,BEL,Belgium,76,Aluminium and articles thereof,3483460623.229
+2023,BEL,Belgium,76,Aluminium and articles thereof,3189043735.211
+2019,BEN,Benin,76,Aluminium and articles thereof,1245250.999
+2020,BEN,Benin,76,Aluminium and articles thereof,209345.172
+2021,BEN,Benin,76,Aluminium and articles thereof,624302.284
+2022,BEN,Benin,76,Aluminium and articles thereof,1272373.797
+2023,BEN,Benin,76,Aluminium and articles thereof,1911567.047
+2019,BFA,Burkina Faso,76,Aluminium and articles thereof,29261.218
+2020,BFA,Burkina Faso,76,Aluminium and articles thereof,65314.873
+2021,BFA,Burkina Faso,76,Aluminium and articles thereof,573832.704
+2022,BFA,Burkina Faso,76,Aluminium and articles thereof,824448.028
+2023,BFA,Burkina Faso,76,Aluminium and articles thereof,2530827.001
+2019,BGR,Bulgaria,76,Aluminium and articles thereof,443681169.372
+2020,BGR,Bulgaria,76,Aluminium and articles thereof,417531018.327
+2021,BGR,Bulgaria,76,Aluminium and articles thereof,648573288.301
+2022,BGR,Bulgaria,76,Aluminium and articles thereof,798527348.054
+2023,BGR,Bulgaria,76,Aluminium and articles thereof,648144501.909
+2019,BHR,Bahrain,76,Aluminium and articles thereof,2048543853.44
+2020,BHR,Bahrain,76,Aluminium and articles thereof,2792707932.18
+2021,BHR,Bahrain,76,Aluminium and articles thereof,4488704183.695
+2022,BHR,Bahrain,76,Aluminium and articles thereof,6869300134.117
+2023,BHR,Bahrain,76,Aluminium and articles thereof,4755274242.988
+2019,BHS,Bahamas,76,Aluminium and articles thereof,1569915.459
+2020,BHS,Bahamas,76,Aluminium and articles thereof,250601.0
+2021,BHS,Bahamas,76,Aluminium and articles thereof,1012060.0
+2022,BHS,Bahamas,76,Aluminium and articles thereof,1408653.0
+2023,BHS,Bahamas,76,Aluminium and articles thereof,1587572.0
+2019,BIH,Bosnia Herzegovina,76,Aluminium and articles thereof,311803320.66
+2020,BIH,Bosnia Herzegovina,76,Aluminium and articles thereof,212362413.45
+2021,BIH,Bosnia Herzegovina,76,Aluminium and articles thereof,564490945.52
+2022,BIH,Bosnia Herzegovina,76,Aluminium and articles thereof,853879794.14
+2023,BIH,Bosnia Herzegovina,76,Aluminium and articles thereof,474090046.546
+2019,BLR,Belarus,76,Aluminium and articles thereof,209672300.0
+2020,BLR,Belarus,76,Aluminium and articles thereof,216503400.0
+2021,BLR,Belarus,76,Aluminium and articles thereof,330828600.0
+2019,BLZ,Belize,76,Aluminium and articles thereof,6810.58
+2020,BLZ,Belize,76,Aluminium and articles thereof,44312.555
+2021,BLZ,Belize,76,Aluminium and articles thereof,235221.65
+2022,BLZ,Belize,76,Aluminium and articles thereof,92856.26
+2023,BLZ,Belize,76,Aluminium and articles thereof,85298.25
+2019,BMU,Bermuda,76,Aluminium and articles thereof,84840.52
+2020,BMU,Bermuda,76,Aluminium and articles thereof,6481.06
+2021,BMU,Bermuda,76,Aluminium and articles thereof,3196.35
+2022,BMU,Bermuda,76,Aluminium and articles thereof,107996.71
+2023,BMU,Bermuda,76,Aluminium and articles thereof,10200.26
+2019,BOL,Bolivia (Plurinational State of),76,Aluminium and articles thereof,4652517.22
+2020,BOL,Bolivia (Plurinational State of),76,Aluminium and articles thereof,4461882.48
+2021,BOL,Bolivia (Plurinational State of),76,Aluminium and articles thereof,11577617.91
+2022,BOL,Bolivia (Plurinational State of),76,Aluminium and articles thereof,14062348.67
+2023,BOL,Bolivia (Plurinational State of),76,Aluminium and articles thereof,12279853.27
+2019,BRA,Brazil,76,Aluminium and articles thereof,782188350.0
+2020,BRA,Brazil,76,Aluminium and articles thereof,786088864.0
+2021,BRA,Brazil,76,Aluminium and articles thereof,1168847522.0
+2022,BRA,Brazil,76,Aluminium and articles thereof,1584674389.0
+2023,BRA,Brazil,76,Aluminium and articles thereof,1497096574.0
+2019,BRB,Barbados,76,Aluminium and articles thereof,5336425.0
+2020,BRB,Barbados,76,Aluminium and articles thereof,5193951.0
+2021,BRB,Barbados,76,Aluminium and articles thereof,6670279.5
+2022,BRB,Barbados,76,Aluminium and articles thereof,8093789.0
+2023,BRB,Barbados,76,Aluminium and articles thereof,7430156.5
+2019,BRN,Brunei Darussalam,76,Aluminium and articles thereof,8614011.26
+2020,BRN,Brunei Darussalam,76,Aluminium and articles thereof,1851327.76
+2021,BRN,Brunei Darussalam,76,Aluminium and articles thereof,6664896.5
+2022,BRN,Brunei Darussalam,76,Aluminium and articles thereof,1156355.023
+2023,BRN,Brunei Darussalam,76,Aluminium and articles thereof,3020233.675
+2019,BTN,Bhutan,76,Aluminium and articles thereof,48547.034
+2020,BTN,Bhutan,76,Aluminium and articles thereof,7735.417
+2022,BTN,Bhutan,76,Aluminium and articles thereof,9580.102
+2023,BTN,Bhutan,76,Aluminium and articles thereof,8576.029
+2019,BWA,Botswana,76,Aluminium and articles thereof,2665327.249
+2020,BWA,Botswana,76,Aluminium and articles thereof,2248100.561
+2021,BWA,Botswana,76,Aluminium and articles thereof,5682759.036
+2022,BWA,Botswana,76,Aluminium and articles thereof,4316137.715
+2023,BWA,Botswana,76,Aluminium and articles thereof,4539417.931
+2019,CAF,Central African Rep.,76,Aluminium and articles thereof,8552.524
+2020,CAF,Central African Rep.,76,Aluminium and articles thereof,81519.098
+2023,CAF,Central African Rep.,76,Aluminium and articles thereof,64621.147
+2019,CAN,Canada,76,Aluminium and articles thereof,8322217603.547
+2020,CAN,Canada,76,Aluminium and articles thereof,8340955747.83
+2021,CAN,Canada,76,Aluminium and articles thereof,12177471077.88
+2022,CAN,Canada,76,Aluminium and articles thereof,14133217965.658
+2023,CAN,Canada,76,Aluminium and articles thereof,12602922032.806
+2019,CHE,Switzerland,76,Aluminium and articles thereof,2228180394.066
+2020,CHE,Switzerland,76,Aluminium and articles thereof,2012787862.137
+2021,CHE,Switzerland,76,Aluminium and articles thereof,2564344473.105
+2022,CHE,Switzerland,76,Aluminium and articles thereof,2988179811.798
+2023,CHE,Switzerland,76,Aluminium and articles thereof,2746316765.248
+2019,CHL,Chile,76,Aluminium and articles thereof,118092623.356
+2020,CHL,Chile,76,Aluminium and articles thereof,109747508.039
+2021,CHL,Chile,76,Aluminium and articles thereof,130172451.543
+2022,CHL,Chile,76,Aluminium and articles thereof,161076193.449
+2023,CHL,Chile,76,Aluminium and articles thereof,165455573.398
+2019,CHN,China,76,Aluminium and articles thereof,26077777095.0
+2020,CHN,China,76,Aluminium and articles thereof,24589847917.0
+2021,CHN,China,76,Aluminium and articles thereof,34498295304.0
+2022,CHN,China,76,Aluminium and articles thereof,42109007243.0
+2023,CHN,China,76,Aluminium and articles thereof,34897014451.0
+2019,CIV,Côte d'Ivoire,76,Aluminium and articles thereof,2265478.974
+2020,CIV,Côte d'Ivoire,76,Aluminium and articles thereof,1485075.34
+2021,CIV,Côte d'Ivoire,76,Aluminium and articles thereof,3703609.299
+2022,CIV,Côte d'Ivoire,76,Aluminium and articles thereof,3550879.71
+2023,CIV,Côte d'Ivoire,76,Aluminium and articles thereof,2385615.575
+2019,CMR,Cameroon,76,Aluminium and articles thereof,107268892.77
+2020,CMR,Cameroon,76,Aluminium and articles thereof,95228986.5
+2021,CMR,Cameroon,76,Aluminium and articles thereof,76657247.06
+2022,CMR,Cameroon,76,Aluminium and articles thereof,86706936.007
+2023,CMR,Cameroon,76,Aluminium and articles thereof,102734692.854
+2019,COD,Dem. Rep. of the Congo,76,Aluminium and articles thereof,2321077.307
+2020,COD,Dem. Rep. of the Congo,76,Aluminium and articles thereof,3036666.84
+2021,COD,Dem. Rep. of the Congo,76,Aluminium and articles thereof,4104389.216
+2022,COD,Dem. Rep. of the Congo,76,Aluminium and articles thereof,4081473.344
+2023,COD,Dem. Rep. of the Congo,76,Aluminium and articles thereof,4933723.04
+2019,COG,Congo,76,Aluminium and articles thereof,642066.483
+2020,COG,Congo,76,Aluminium and articles thereof,192244.38
+2021,COG,Congo,76,Aluminium and articles thereof,306343.07
+2022,COG,Congo,76,Aluminium and articles thereof,294183.474
+2023,COG,Congo,76,Aluminium and articles thereof,185512.07
+2019,COL,Colombia,76,Aluminium and articles thereof,352186059.6
+2020,COL,Colombia,76,Aluminium and articles thereof,320484314.15
+2021,COL,Colombia,76,Aluminium and articles thereof,480829730.53
+2022,COL,Colombia,76,Aluminium and articles thereof,728086956.82
+2023,COL,Colombia,76,Aluminium and articles thereof,842580827.23
+2019,COM,Comoros,76,Aluminium and articles thereof,123810.71
+2020,COM,Comoros,76,Aluminium and articles thereof,58493.483
+2021,COM,Comoros,76,Aluminium and articles thereof,2193887.618
+2022,COM,Comoros,76,Aluminium and articles thereof,25693.824
+2023,COM,Comoros,76,Aluminium and articles thereof,24854.337
+2019,CPV,Cabo Verde,76,Aluminium and articles thereof,137158.672
+2021,CPV,Cabo Verde,76,Aluminium and articles thereof,125740.64
+2022,CPV,Cabo Verde,76,Aluminium and articles thereof,71462.633
+2023,CPV,Cabo Verde,76,Aluminium and articles thereof,2400239.341
+2019,CRI,Costa Rica,76,Aluminium and articles thereof,65838484.65
+2020,CRI,Costa Rica,76,Aluminium and articles thereof,52379411.35
+2021,CRI,Costa Rica,76,Aluminium and articles thereof,72376961.06
+2022,CRI,Costa Rica,76,Aluminium and articles thereof,74141406.747
+2023,CRI,Costa Rica,76,Aluminium and articles thereof,80902458.295
+2019,CUB,Cuba,76,Aluminium and articles thereof,8475303.76
+2020,CUB,Cuba,76,Aluminium and articles thereof,7166769.69
+2021,CUB,Cuba,76,Aluminium and articles thereof,5066198.55
+2022,CUB,Cuba,76,Aluminium and articles thereof,4719000.71
+2019,CUW,Curaçao,76,Aluminium and articles thereof,2308140.17
+2020,CUW,Curaçao,76,Aluminium and articles thereof,2204356.682
+2020,CYM,Cayman Isds,76,Aluminium and articles thereof,194775.164
+2021,CYM,Cayman Isds,76,Aluminium and articles thereof,303186.519
+2022,CYM,Cayman Isds,76,Aluminium and articles thereof,622107.636
+2023,CYM,Cayman Isds,76,Aluminium and articles thereof,761488.193
+2019,CYP,Cyprus,76,Aluminium and articles thereof,12882086.925
+2020,CYP,Cyprus,76,Aluminium and articles thereof,18685771.453
+2021,CYP,Cyprus,76,Aluminium and articles thereof,33669660.958
+2022,CYP,Cyprus,76,Aluminium and articles thereof,27227588.521
+2023,CYP,Cyprus,76,Aluminium and articles thereof,21599949.612
+2019,CZE,Czechia,76,Aluminium and articles thereof,1852386237.0
+2020,CZE,Czechia,76,Aluminium and articles thereof,1797674814.0
+2021,CZE,Czechia,76,Aluminium and articles thereof,2458870474.0
+2022,CZE,Czechia,76,Aluminium and articles thereof,2800540291.0
+2023,CZE,Czechia,76,Aluminium and articles thereof,2729484484.0
+2019,DEU,Germany,76,Aluminium and articles thereof,16490074916.341
+2020,DEU,Germany,76,Aluminium and articles thereof,14791603617.898
+2021,DEU,Germany,76,Aluminium and articles thereof,18891678841.414
+2022,DEU,Germany,76,Aluminium and articles thereof,21548684535.058
+2023,DEU,Germany,76,Aluminium and articles thereof,19641906123.771
+2021,DJI,Djibouti,76,Aluminium and articles thereof,1541101.417
+2022,DJI,Djibouti,76,Aluminium and articles thereof,6857070.421
+2023,DJI,Djibouti,76,Aluminium and articles thereof,9185597.832
+2019,DMA,Dominica,76,Aluminium and articles thereof,38468.378
+2020,DMA,Dominica,76,Aluminium and articles thereof,67791.414
+2021,DMA,Dominica,76,Aluminium and articles thereof,9005.917
+2022,DMA,Dominica,76,Aluminium and articles thereof,87233.987
+2023,DMA,Dominica,76,Aluminium and articles thereof,51440.689
+2019,DNK,Denmark,76,Aluminium and articles thereof,1041593231.912
+2020,DNK,Denmark,76,Aluminium and articles thereof,1062080818.474
+2021,DNK,Denmark,76,Aluminium and articles thereof,1362073285.022
+2022,DNK,Denmark,76,Aluminium and articles thereof,1519254576.6
+2023,DNK,Denmark,76,Aluminium and articles thereof,1787234053.449
+2019,DOM,Dominican Rep.,76,Aluminium and articles thereof,53834047.366
+2020,DOM,Dominican Rep.,76,Aluminium and articles thereof,57469033.18
+2021,DOM,Dominican Rep.,76,Aluminium and articles thereof,112129002.903
+2022,DOM,Dominican Rep.,76,Aluminium and articles thereof,100749269.948
+2023,DOM,Dominican Rep.,76,Aluminium and articles thereof,135828477.842
+2019,ECU,Ecuador,76,Aluminium and articles thereof,54271142.607
+2020,ECU,Ecuador,76,Aluminium and articles thereof,58540053.476
+2021,ECU,Ecuador,76,Aluminium and articles thereof,92081670.22
+2022,ECU,Ecuador,76,Aluminium and articles thereof,148490208.7
+2023,ECU,Ecuador,76,Aluminium and articles thereof,108783901.8
+2019,EGY,Egypt,76,Aluminium and articles thereof,539575672.485
+2020,EGY,Egypt,76,Aluminium and articles thereof,575725515.533
+2021,EGY,Egypt,76,Aluminium and articles thereof,784713747.077
+2022,EGY,Egypt,76,Aluminium and articles thereof,678383438.0
+2023,EGY,Egypt,76,Aluminium and articles thereof,698996303.012
+2019,ESP,Spain,76,Aluminium and articles thereof,3951536824.033
+2020,ESP,Spain,76,Aluminium and articles thereof,3582252483.268
+2021,ESP,Spain,76,Aluminium and articles thereof,5634458269.953
+2022,ESP,Spain,76,Aluminium and articles thereof,6290944087.587
+2023,ESP,Spain,76,Aluminium and articles thereof,5220951711.68
+2019,EST,Estonia,76,Aluminium and articles thereof,104748968.902
+2020,EST,Estonia,76,Aluminium and articles thereof,103346982.96
+2021,EST,Estonia,76,Aluminium and articles thereof,142279843.1
+2022,EST,Estonia,76,Aluminium and articles thereof,138854103.15
+2023,EST,Estonia,76,Aluminium and articles thereof,128103424.54
+2019,ETH,Ethiopia,76,Aluminium and articles thereof,1594615.3
+2020,ETH,Ethiopia,76,Aluminium and articles thereof,971606.97
+2021,ETH,Ethiopia,76,Aluminium and articles thereof,518812.69
+2022,ETH,Ethiopia,76,Aluminium and articles thereof,1003810.153
+2023,ETH,Ethiopia,76,Aluminium and articles thereof,494137.933
+2019,FIN,Finland,76,Aluminium and articles thereof,492330693.947
+2020,FIN,Finland,76,Aluminium and articles thereof,460959257.286
+2021,FIN,Finland,76,Aluminium and articles thereof,581359572.3
+2022,FIN,Finland,76,Aluminium and articles thereof,646192479.096
+2023,FIN,Finland,76,Aluminium and articles thereof,526049015.953
+2019,FJI,Fiji,76,Aluminium and articles thereof,961730.047
+2020,FJI,Fiji,76,Aluminium and articles thereof,748282.106
+2021,FJI,Fiji,76,Aluminium and articles thereof,621037.033
+2022,FJI,Fiji,76,Aluminium and articles thereof,509940.69
+2023,FJI,Fiji,76,Aluminium and articles thereof,351909.779
+2019,FRA,France,76,Aluminium and articles thereof,5247425143.052
+2020,FRA,France,76,Aluminium and articles thereof,4849286505.684
+2021,FRA,France,76,Aluminium and articles thereof,5950670044.434
+2022,FRA,France,76,Aluminium and articles thereof,7060592846.168
+2023,FRA,France,76,Aluminium and articles thereof,6655056604.817
+2019,GAB,Gabon,76,Aluminium and articles thereof,1441257.302
+2020,GAB,Gabon,76,Aluminium and articles thereof,1046454.389
+2021,GAB,Gabon,76,Aluminium and articles thereof,1765036.392
+2022,GAB,Gabon,76,Aluminium and articles thereof,1919886.186
+2023,GAB,Gabon,76,Aluminium and articles thereof,1733128.217
+2019,GBR,United Kingdom,76,Aluminium and articles thereof,2890941493.392
+2020,GBR,United Kingdom,76,Aluminium and articles thereof,2384078673.521
+2021,GBR,United Kingdom,76,Aluminium and articles thereof,3245314772.983
+2022,GBR,United Kingdom,76,Aluminium and articles thereof,3770251074.41
+2023,GBR,United Kingdom,76,Aluminium and articles thereof,3324255369.795
+2019,GEO,Georgia,76,Aluminium and articles thereof,18437289.94
+2020,GEO,Georgia,76,Aluminium and articles thereof,16986426.15
+2021,GEO,Georgia,76,Aluminium and articles thereof,33630438.96
+2022,GEO,Georgia,76,Aluminium and articles thereof,36430250.579
+2023,GEO,Georgia,76,Aluminium and articles thereof,32059873.944
+2019,GHA,Ghana,76,Aluminium and articles thereof,89604289.591
+2021,GHA,Ghana,76,Aluminium and articles thereof,104407752.66
+2022,GHA,Ghana,76,Aluminium and articles thereof,183226478.841
+2023,GHA,Ghana,76,Aluminium and articles thereof,129283024.543
+2019,GMB,Gambia,76,Aluminium and articles thereof,253.604
+2020,GMB,Gambia,76,Aluminium and articles thereof,327.568
+2021,GMB,Gambia,76,Aluminium and articles thereof,1848.32
+2022,GMB,Gambia,76,Aluminium and articles thereof,90044.13
+2023,GMB,Gambia,76,Aluminium and articles thereof,95189.011
+2019,GRC,Greece,76,Aluminium and articles thereof,1906395934.304
+2020,GRC,Greece,76,Aluminium and articles thereof,1838820699.628
+2021,GRC,Greece,76,Aluminium and articles thereof,2532457336.333
+2022,GRC,Greece,76,Aluminium and articles thereof,3041294779.217
+2023,GRC,Greece,76,Aluminium and articles thereof,2719878815.333
+2019,GRD,Grenada,76,Aluminium and articles thereof,22510.743
+2020,GRD,Grenada,76,Aluminium and articles thereof,18977.779
+2021,GRD,Grenada,76,Aluminium and articles thereof,44850.37
+2022,GRD,Grenada,76,Aluminium and articles thereof,96847.778
+2023,GRD,Grenada,76,Aluminium and articles thereof,9205.927
+2019,GTM,Guatemala,76,Aluminium and articles thereof,102006055.0
+2020,GTM,Guatemala,76,Aluminium and articles thereof,94888000.0
+2021,GTM,Guatemala,76,Aluminium and articles thereof,111628837.0
+2022,GTM,Guatemala,76,Aluminium and articles thereof,139372424.0
+2023,GTM,Guatemala,76,Aluminium and articles thereof,128414585.0
+2019,GUY,Guyana,76,Aluminium and articles thereof,684149.341
+2020,GUY,Guyana,76,Aluminium and articles thereof,489081.414
+2021,GUY,Guyana,76,Aluminium and articles thereof,778688.039
+2022,GUY,Guyana,76,Aluminium and articles thereof,1074803.024
+2023,GUY,Guyana,76,Aluminium and articles thereof,504047.289
+2019,HKG,"China, Hong Kong SAR",76,Aluminium and articles thereof,645285806.818
+2020,HKG,"China, Hong Kong SAR",76,Aluminium and articles thereof,603818248.154
+2021,HKG,"China, Hong Kong SAR",76,Aluminium and articles thereof,1711459175.403
+2022,HKG,"China, Hong Kong SAR",76,Aluminium and articles thereof,1910820034.532
+2023,HKG,"China, Hong Kong SAR",76,Aluminium and articles thereof,1413374041.731
+2019,HND,Honduras,76,Aluminium and articles thereof,424751.58
+2020,HND,Honduras,76,Aluminium and articles thereof,34757365.79
+2021,HND,Honduras,76,Aluminium and articles thereof,1000919.73
+2023,HND,Honduras,76,Aluminium and articles thereof,64644913.99
+2019,HRV,Croatia,76,Aluminium and articles thereof,542978375.0
+2020,HRV,Croatia,76,Aluminium and articles thereof,552983526.0
+2021,HRV,Croatia,76,Aluminium and articles thereof,727327140.0
+2022,HRV,Croatia,76,Aluminium and articles thereof,756263469.0
+2023,HRV,Croatia,76,Aluminium and articles thereof,728314495.0
+2019,HUN,Hungary,76,Aluminium and articles thereof,1517130675.0
+2020,HUN,Hungary,76,Aluminium and articles thereof,1269262443.0
+2021,HUN,Hungary,76,Aluminium and articles thereof,1745783717.0
+2022,HUN,Hungary,76,Aluminium and articles thereof,2000904501.0
+2023,HUN,Hungary,76,Aluminium and articles thereof,1740199560.768
+2019,IDN,Indonesia,76,Aluminium and articles thereof,527026923.263
+2020,IDN,Indonesia,76,Aluminium and articles thereof,610110600.568
+2021,IDN,Indonesia,76,Aluminium and articles thereof,784542004.172
+2022,IDN,Indonesia,76,Aluminium and articles thereof,888148432.465
+2023,IDN,Indonesia,76,Aluminium and articles thereof,822426083.893
+2019,IND,India,76,Aluminium and articles thereof,5244320956.489
+2020,IND,India,76,Aluminium and articles thereof,5285080101.955
+2021,IND,India,76,Aluminium and articles thereof,9063865904.947
+2022,IND,India,76,Aluminium and articles thereof,9597945033.11
+2023,IND,India,76,Aluminium and articles thereof,7333063033.411
+2019,IRL,Ireland,76,Aluminium and articles thereof,201225147.637
+2020,IRL,Ireland,76,Aluminium and articles thereof,167189636.24
+2021,IRL,Ireland,76,Aluminium and articles thereof,215957754.867
+2022,IRL,Ireland,76,Aluminium and articles thereof,235373501.906
+2023,IRL,Ireland,76,Aluminium and articles thereof,240870508.214
+2019,IRN,Iran,76,Aluminium and articles thereof,156501225.324
+2020,IRN,Iran,76,Aluminium and articles thereof,362622767.0
+2021,IRN,Iran,76,Aluminium and articles thereof,814425029.0
+2022,IRN,Iran,76,Aluminium and articles thereof,1210264460.0
+2019,ISL,Iceland,76,Aluminium and articles thereof,1801652956.105
+2020,ISL,Iceland,76,Aluminium and articles thereof,1609283193.604
+2021,ISL,Iceland,76,Aluminium and articles thereof,2330091724.487
+2022,ISL,Iceland,76,Aluminium and articles thereof,3065413618.213
+2023,ISL,Iceland,76,Aluminium and articles thereof,2427370436.12
+2019,ISR,Israel,76,Aluminium and articles thereof,179980000.0
+2020,ISR,Israel,76,Aluminium and articles thereof,176410000.0
+2021,ISR,Israel,76,Aluminium and articles thereof,247538000.0
+2022,ISR,Israel,76,Aluminium and articles thereof,203872000.0
+2023,ISR,Israel,76,Aluminium and articles thereof,206649000.0
+2019,ITA,Italy,76,Aluminium and articles thereof,6551127581.143
+2020,ITA,Italy,76,Aluminium and articles thereof,6216724830.978
+2021,ITA,Italy,76,Aluminium and articles thereof,8108526094.04
+2022,ITA,Italy,76,Aluminium and articles thereof,9546412430.031
+2023,ITA,Italy,76,Aluminium and articles thereof,8706099519.391
+2019,JAM,Jamaica,76,Aluminium and articles thereof,1130546.566
+2020,JAM,Jamaica,76,Aluminium and articles thereof,1038815.06
+2021,JAM,Jamaica,76,Aluminium and articles thereof,1465315.4
+2022,JAM,Jamaica,76,Aluminium and articles thereof,1139362.38
+2023,JAM,Jamaica,76,Aluminium and articles thereof,1016155.84
+2019,JOR,Jordan,76,Aluminium and articles thereof,98002633.257
+2020,JOR,Jordan,76,Aluminium and articles thereof,108524952.368
+2021,JOR,Jordan,76,Aluminium and articles thereof,193386837.138
+2022,JOR,Jordan,76,Aluminium and articles thereof,283182538.319
+2023,JOR,Jordan,76,Aluminium and articles thereof,195572970.16
+2019,JPN,Japan,76,Aluminium and articles thereof,2200087523.481
+2020,JPN,Japan,76,Aluminium and articles thereof,2240660924.786
+2021,JPN,Japan,76,Aluminium and articles thereof,3075345395.995
+2022,JPN,Japan,76,Aluminium and articles thereof,2957733307.593
+2023,JPN,Japan,76,Aluminium and articles thereof,2333698850.452
+2019,KAZ,Kazakhstan,76,Aluminium and articles thereof,565127127.95
+2020,KAZ,Kazakhstan,76,Aluminium and articles thereof,31502777.12
+2021,KAZ,Kazakhstan,76,Aluminium and articles thereof,77802523.3
+2022,KAZ,Kazakhstan,76,Aluminium and articles thereof,48864042.4
+2023,KAZ,Kazakhstan,76,Aluminium and articles thereof,578045573.56
+2019,KEN,Kenya,76,Aluminium and articles thereof,19481564.97
+2020,KEN,Kenya,76,Aluminium and articles thereof,21092026.053
+2021,KEN,Kenya,76,Aluminium and articles thereof,26780019.733
+2022,KEN,Kenya,76,Aluminium and articles thereof,20117877.068
+2023,KEN,Kenya,76,Aluminium and articles thereof,30332815.565
+2019,KGZ,Kyrgyzstan,76,Aluminium and articles thereof,10816107.0
+2020,KGZ,Kyrgyzstan,76,Aluminium and articles thereof,9902413.0
+2021,KGZ,Kyrgyzstan,76,Aluminium and articles thereof,16991381.0
+2022,KGZ,Kyrgyzstan,76,Aluminium and articles thereof,16644558.0
+2023,KGZ,Kyrgyzstan,76,Aluminium and articles thereof,13506769.0
+2019,KHM,Cambodia,76,Aluminium and articles thereof,38265733.84
+2020,KHM,Cambodia,76,Aluminium and articles thereof,43548049.04
+2021,KHM,Cambodia,76,Aluminium and articles thereof,68798119.65
+2022,KHM,Cambodia,76,Aluminium and articles thereof,71979901.86
+2023,KHM,Cambodia,76,Aluminium and articles thereof,87481746.81
+2020,KIR,Kiribati,76,Aluminium and articles thereof,41301.777
+2021,KIR,Kiribati,76,Aluminium and articles thereof,25532.467
+2019,KOR,Rep. of Korea,76,Aluminium and articles thereof,3522409938.0
+2020,KOR,Rep. of Korea,76,Aluminium and articles thereof,3618514879.0
+2021,KOR,Rep. of Korea,76,Aluminium and articles thereof,4817584428.0
+2022,KOR,Rep. of Korea,76,Aluminium and articles thereof,5620359360.0
+2023,KOR,Rep. of Korea,76,Aluminium and articles thereof,4518034990.0
+2019,KWT,Kuwait,76,Aluminium and articles thereof,43497940.0
+2020,KWT,Kuwait,76,Aluminium and articles thereof,33499531.0
+2021,KWT,Kuwait,76,Aluminium and articles thereof,59604617.0
+2022,KWT,Kuwait,76,Aluminium and articles thereof,61268246.56
+2023,KWT,Kuwait,76,Aluminium and articles thereof,70889132.695
+2019,LAO,Lao People's Dem. Rep.,76,Aluminium and articles thereof,907231.54
+2020,LAO,Lao People's Dem. Rep.,76,Aluminium and articles thereof,1582868.81
+2021,LAO,Lao People's Dem. Rep.,76,Aluminium and articles thereof,2117162.69
+2022,LAO,Lao People's Dem. Rep.,76,Aluminium and articles thereof,2925794.02
+2023,LAO,Lao People's Dem. Rep.,76,Aluminium and articles thereof,2464300.0
+2019,LBN,Lebanon,76,Aluminium and articles thereof,58955884.21
+2020,LBN,Lebanon,76,Aluminium and articles thereof,60198800.0
+2021,LBN,Lebanon,76,Aluminium and articles thereof,75303373.0
+2022,LBN,Lebanon,76,Aluminium and articles thereof,79654587.0
+2023,LBN,Lebanon,76,Aluminium and articles thereof,82913797.0
+2019,LBR,Liberia,76,Aluminium and articles thereof,27000.0
+2020,LBR,Liberia,76,Aluminium and articles thereof,41571.0
+2021,LBR,Liberia,76,Aluminium and articles thereof,27000.0
+2022,LBR,Liberia,76,Aluminium and articles thereof,13500.0
+2023,LBR,Liberia,76,Aluminium and articles thereof,3750.0
+2019,LBY,Libya,76,Aluminium and articles thereof,29504410.0
+2019,LCA,Saint Lucia,76,Aluminium and articles thereof,260206.86
+2020,LCA,Saint Lucia,76,Aluminium and articles thereof,319709.62
+2019,LKA,Sri Lanka,76,Aluminium and articles thereof,49049822.938
+2020,LKA,Sri Lanka,76,Aluminium and articles thereof,28823590.399
+2021,LKA,Sri Lanka,76,Aluminium and articles thereof,49433591.65
+2022,LKA,Sri Lanka,76,Aluminium and articles thereof,54461352.634
+2023,LKA,Sri Lanka,76,Aluminium and articles thereof,56451519.144
+2019,LSO,Lesotho,76,Aluminium and articles thereof,661132.369
+2020,LSO,Lesotho,76,Aluminium and articles thereof,913408.946
+2021,LSO,Lesotho,76,Aluminium and articles thereof,695876.961
+2022,LSO,Lesotho,76,Aluminium and articles thereof,516335.167
+2023,LSO,Lesotho,76,Aluminium and articles thereof,665419.559
+2019,LTU,Lithuania,76,Aluminium and articles thereof,245568207.0
+2020,LTU,Lithuania,76,Aluminium and articles thereof,315679870.0
+2021,LTU,Lithuania,76,Aluminium and articles thereof,333173370.0
+2022,LTU,Lithuania,76,Aluminium and articles thereof,364116146.0
+2023,LTU,Lithuania,76,Aluminium and articles thereof,326100581.0
+2019,LUX,Luxembourg,76,Aluminium and articles thereof,491984233.96
+2020,LUX,Luxembourg,76,Aluminium and articles thereof,424269089.04
+2021,LUX,Luxembourg,76,Aluminium and articles thereof,624139059.589
+2022,LUX,Luxembourg,76,Aluminium and articles thereof,730678282.988
+2023,LUX,Luxembourg,76,Aluminium and articles thereof,571978789.38
+2019,LVA,Latvia,76,Aluminium and articles thereof,125699607.631
+2020,LVA,Latvia,76,Aluminium and articles thereof,121271499.024
+2021,LVA,Latvia,76,Aluminium and articles thereof,111148125.896
+2022,LVA,Latvia,76,Aluminium and articles thereof,121734471.914
+2023,LVA,Latvia,76,Aluminium and articles thereof,115432076.068
+2019,MAC,"China, Macao SAR",76,Aluminium and articles thereof,1925032.667
+2020,MAC,"China, Macao SAR",76,Aluminium and articles thereof,1881314.999
+2021,MAC,"China, Macao SAR",76,Aluminium and articles thereof,2230873.186
+2022,MAC,"China, Macao SAR",76,Aluminium and articles thereof,2163361.421
+2023,MAC,"China, Macao SAR",76,Aluminium and articles thereof,2492077.369
+2019,MAR,Morocco,76,Aluminium and articles thereof,122929462.027
+2020,MAR,Morocco,76,Aluminium and articles thereof,122999426.808
+2021,MAR,Morocco,76,Aluminium and articles thereof,218078713.362
+2022,MAR,Morocco,76,Aluminium and articles thereof,246105909.773
+2023,MAR,Morocco,76,Aluminium and articles thereof,220062685.165
+2019,MDA,Rep. of Moldova,76,Aluminium and articles thereof,5269514.0
+2020,MDA,Rep. of Moldova,76,Aluminium and articles thereof,6698827.0
+2021,MDA,Rep. of Moldova,76,Aluminium and articles thereof,16304761.0
+2022,MDA,Rep. of Moldova,76,Aluminium and articles thereof,17360205.0
+2023,MDA,Rep. of Moldova,76,Aluminium and articles thereof,12272911.0
+2019,MDG,Madagascar,76,Aluminium and articles thereof,254279.659
+2020,MDG,Madagascar,76,Aluminium and articles thereof,248303.141
+2021,MDG,Madagascar,76,Aluminium and articles thereof,131735.982
+2022,MDG,Madagascar,76,Aluminium and articles thereof,336173.172
+2023,MDG,Madagascar,76,Aluminium and articles thereof,403179.434
+2019,MDV,Maldives,76,Aluminium and articles thereof,50425.13
+2020,MDV,Maldives,76,Aluminium and articles thereof,176575.312
+2021,MDV,Maldives,76,Aluminium and articles thereof,243965.985
+2022,MDV,Maldives,76,Aluminium and articles thereof,326075.502
+2023,MDV,Maldives,76,Aluminium and articles thereof,128691.953
+2019,MEX,Mexico,76,Aluminium and articles thereof,1558703281.0
+2020,MEX,Mexico,76,Aluminium and articles thereof,1701586603.0
+2021,MEX,Mexico,76,Aluminium and articles thereof,2477621721.0
+2022,MEX,Mexico,76,Aluminium and articles thereof,3149257676.0
+2023,MEX,Mexico,76,Aluminium and articles thereof,2624886251.0
+2019,MKD,North Macedonia,76,Aluminium and articles thereof,15288168.92
+2020,MKD,North Macedonia,76,Aluminium and articles thereof,14539148.39
+2021,MKD,North Macedonia,76,Aluminium and articles thereof,27012951.31
+2022,MKD,North Macedonia,76,Aluminium and articles thereof,29732899.07
+2023,MKD,North Macedonia,76,Aluminium and articles thereof,29820689.246
+2019,MLI,Mali,76,Aluminium and articles thereof,407974.66
+2020,MLI,Mali,76,Aluminium and articles thereof,982076.622
+2021,MLI,Mali,76,Aluminium and articles thereof,3419272.305
+2022,MLI,Mali,76,Aluminium and articles thereof,1705596.927
+2023,MLI,Mali,76,Aluminium and articles thereof,3134645.435
+2019,MLT,Malta,76,Aluminium and articles thereof,1505057.381
+2020,MLT,Malta,76,Aluminium and articles thereof,2059049.293
+2021,MLT,Malta,76,Aluminium and articles thereof,4778228.274
+2022,MLT,Malta,76,Aluminium and articles thereof,14551204.988
+2023,MLT,Malta,76,Aluminium and articles thereof,3528866.113
+2019,MMR,Myanmar,76,Aluminium and articles thereof,27022315.58
+2020,MMR,Myanmar,76,Aluminium and articles thereof,55356161.22
+2021,MMR,Myanmar,76,Aluminium and articles thereof,77326335.025
+2022,MMR,Myanmar,76,Aluminium and articles thereof,84718338.925
+2023,MMR,Myanmar,76,Aluminium and articles thereof,58813259.798
+2019,MNE,Montenegro,76,Aluminium and articles thereof,75367569.995
+2020,MNE,Montenegro,76,Aluminium and articles thereof,67393153.04
+2021,MNE,Montenegro,76,Aluminium and articles thereof,104296638.688
+2022,MNE,Montenegro,76,Aluminium and articles thereof,189593304.733
+2023,MNE,Montenegro,76,Aluminium and articles thereof,84464646.207
+2019,MNG,Mongolia,76,Aluminium and articles thereof,6125522.86
+2020,MNG,Mongolia,76,Aluminium and articles thereof,5020806.27
+2021,MNG,Mongolia,76,Aluminium and articles thereof,5564312.88
+2022,MNG,Mongolia,76,Aluminium and articles thereof,8921753.796
+2023,MNG,Mongolia,76,Aluminium and articles thereof,10109021.552
+2019,MOZ,Mozambique,76,Aluminium and articles thereof,1111597171.61
+2020,MOZ,Mozambique,76,Aluminium and articles thereof,999922954.27
+2021,MOZ,Mozambique,76,Aluminium and articles thereof,1399822706.08
+2022,MOZ,Mozambique,76,Aluminium and articles thereof,1820105921.629
+2023,MOZ,Mozambique,76,Aluminium and articles thereof,1275503000.0
+2020,MRT,Mauritania,76,Aluminium and articles thereof,52891.046
+2021,MRT,Mauritania,76,Aluminium and articles thereof,1236.07
+2023,MRT,Mauritania,76,Aluminium and articles thereof,632555.036
+2019,MSR,Montserrat,76,Aluminium and articles thereof,2662.334
+2020,MSR,Montserrat,76,Aluminium and articles thereof,5542.352
+2021,MSR,Montserrat,76,Aluminium and articles thereof,965.185
+2022,MSR,Montserrat,76,Aluminium and articles thereof,3016.015
+2023,MSR,Montserrat,76,Aluminium and articles thereof,2185.485
+2019,MUS,Mauritius,76,Aluminium and articles thereof,10088254.815
+2020,MUS,Mauritius,76,Aluminium and articles thereof,13747756.142
+2021,MUS,Mauritius,76,Aluminium and articles thereof,23678173.998
+2022,MUS,Mauritius,76,Aluminium and articles thereof,28774678.207
+2023,MUS,Mauritius,76,Aluminium and articles thereof,16039408.779
+2019,MWI,Malawi,76,Aluminium and articles thereof,213431.523
+2020,MWI,Malawi,76,Aluminium and articles thereof,1440409.798
+2021,MWI,Malawi,76,Aluminium and articles thereof,1179850.569
+2022,MWI,Malawi,76,Aluminium and articles thereof,1397655.035
+2023,MWI,Malawi,76,Aluminium and articles thereof,796292.08
+2019,MYS,Malaysia,76,Aluminium and articles thereof,3756628918.178
+2020,MYS,Malaysia,76,Aluminium and articles thereof,3763923018.67
+2021,MYS,Malaysia,76,Aluminium and articles thereof,7270189711.147
+2022,MYS,Malaysia,76,Aluminium and articles thereof,7434047448.843
+2023,MYS,Malaysia,76,Aluminium and articles thereof,5953683229.623
+2019,NAM,Namibia,76,Aluminium and articles thereof,4352110.091
+2020,NAM,Namibia,76,Aluminium and articles thereof,2382936.413
+2021,NAM,Namibia,76,Aluminium and articles thereof,4154795.702
+2022,NAM,Namibia,76,Aluminium and articles thereof,6476800.754
+2023,NAM,Namibia,76,Aluminium and articles thereof,5242477.512
+2019,NER,Niger,76,Aluminium and articles thereof,23251.008
+2020,NER,Niger,76,Aluminium and articles thereof,19654.092
+2021,NER,Niger,76,Aluminium and articles thereof,1442.656
+2022,NER,Niger,76,Aluminium and articles thereof,398354.266
+2023,NER,Niger,76,Aluminium and articles thereof,5681.165
+2019,NGA,Nigeria,76,Aluminium and articles thereof,56229228.88
+2020,NGA,Nigeria,76,Aluminium and articles thereof,45125184.901
+2021,NGA,Nigeria,76,Aluminium and articles thereof,188960858.94
+2022,NGA,Nigeria,76,Aluminium and articles thereof,281935619.881
+2023,NGA,Nigeria,76,Aluminium and articles thereof,301161166.331
+2019,NIC,Nicaragua,76,Aluminium and articles thereof,3839367.34
+2020,NIC,Nicaragua,76,Aluminium and articles thereof,2995010.38
+2021,NIC,Nicaragua,76,Aluminium and articles thereof,5616978.31
+2022,NIC,Nicaragua,76,Aluminium and articles thereof,6906517.41
+2023,NIC,Nicaragua,76,Aluminium and articles thereof,6179190.79
+2019,NLD,Netherlands,76,Aluminium and articles thereof,4683363296.318
+2020,NLD,Netherlands,76,Aluminium and articles thereof,4276464167.194
+2021,NLD,Netherlands,76,Aluminium and articles thereof,6648745869.497
+2022,NLD,Netherlands,76,Aluminium and articles thereof,7857009813.177
+2023,NLD,Netherlands,76,Aluminium and articles thereof,6418948951.436
+2019,NOR,Norway,76,Aluminium and articles thereof,3682933097.714
+2020,NOR,Norway,76,Aluminium and articles thereof,3308762486.877
+2021,NOR,Norway,76,Aluminium and articles thereof,5303496131.282
+2022,NOR,Norway,76,Aluminium and articles thereof,6244520596.371
+2023,NOR,Norway,76,Aluminium and articles thereof,4832143663.606
+2019,NPL,Nepal,76,Aluminium and articles thereof,1159675.18
+2020,NPL,Nepal,76,Aluminium and articles thereof,334246.12
+2021,NPL,Nepal,76,Aluminium and articles thereof,380574.22
+2022,NPL,Nepal,76,Aluminium and articles thereof,160661.198
+2019,NZL,New Zealand,76,Aluminium and articles thereof,788712042.303
+2020,NZL,New Zealand,76,Aluminium and articles thereof,667728346.477
+2021,NZL,New Zealand,76,Aluminium and articles thereof,1014871918.374
+2022,NZL,New Zealand,76,Aluminium and articles thereof,1047167452.983
+2023,NZL,New Zealand,76,Aluminium and articles thereof,948230164.945
+2019,OMN,Oman,76,Aluminium and articles thereof,952788556.642
+2020,OMN,Oman,76,Aluminium and articles thereof,897562023.251
+2021,OMN,Oman,76,Aluminium and articles thereof,1124550292.128
+2022,OMN,Oman,76,Aluminium and articles thereof,1376552473.788
+2023,OMN,Oman,76,Aluminium and articles thereof,1112771618.545
+2019,PAK,Pakistan,76,Aluminium and articles thereof,42252956.566
+2020,PAK,Pakistan,76,Aluminium and articles thereof,65288945.056
+2021,PAK,Pakistan,76,Aluminium and articles thereof,136653421.258
+2022,PAK,Pakistan,76,Aluminium and articles thereof,154440166.239
+2023,PAK,Pakistan,76,Aluminium and articles thereof,150377124.175
+2019,PAN,Panama,76,Aluminium and articles thereof,59602967.0
+2020,PAN,Panama,76,Aluminium and articles thereof,52570713.0
+2021,PAN,Panama,76,Aluminium and articles thereof,32237409.0
+2022,PAN,Panama,76,Aluminium and articles thereof,18932951.0
+2023,PAN,Panama,76,Aluminium and articles thereof,15835389.0
+2019,PER,Peru,76,Aluminium and articles thereof,26979825.12
+2020,PER,Peru,76,Aluminium and articles thereof,23082869.75
+2021,PER,Peru,76,Aluminium and articles thereof,37727496.524
+2022,PER,Peru,76,Aluminium and articles thereof,49508611.763
+2023,PER,Peru,76,Aluminium and articles thereof,53383647.51
+2019,PHL,Philippines,76,Aluminium and articles thereof,167415714.0
+2020,PHL,Philippines,76,Aluminium and articles thereof,204194385.0
+2021,PHL,Philippines,76,Aluminium and articles thereof,320094266.0
+2022,PHL,Philippines,76,Aluminium and articles thereof,343621970.0
+2023,PHL,Philippines,76,Aluminium and articles thereof,417325838.0
+2019,PNG,Papua New Guinea,76,Aluminium and articles thereof,5341458.1
+2020,PNG,Papua New Guinea,76,Aluminium and articles thereof,4455979.794
+2021,PNG,Papua New Guinea,76,Aluminium and articles thereof,5842781.958
+2022,PNG,Papua New Guinea,76,Aluminium and articles thereof,9506024.882
+2023,PNG,Papua New Guinea,76,Aluminium and articles thereof,8027158.056
+2019,POL,Poland,76,Aluminium and articles thereof,3679005587.0
+2020,POL,Poland,76,Aluminium and articles thereof,3683498207.0
+2021,POL,Poland,76,Aluminium and articles thereof,5068498055.0
+2022,POL,Poland,76,Aluminium and articles thereof,5926043429.0
+2023,POL,Poland,76,Aluminium and articles thereof,5513517611.0
+2019,PRT,Portugal,76,Aluminium and articles thereof,770833366.037
+2020,PRT,Portugal,76,Aluminium and articles thereof,783747656.11
+2021,PRT,Portugal,76,Aluminium and articles thereof,995013012.212
+2022,PRT,Portugal,76,Aluminium and articles thereof,1109022397.992
+2023,PRT,Portugal,76,Aluminium and articles thereof,1039473946.124
+2019,PRY,Paraguay,76,Aluminium and articles thereof,29059519.0
+2020,PRY,Paraguay,76,Aluminium and articles thereof,76470269.0
+2021,PRY,Paraguay,76,Aluminium and articles thereof,140706446.0
+2022,PRY,Paraguay,76,Aluminium and articles thereof,153905644.44
+2023,PRY,Paraguay,76,Aluminium and articles thereof,98368603.64
+2019,PSE,State of Palestine,76,Aluminium and articles thereof,34612325.36
+2020,PSE,State of Palestine,76,Aluminium and articles thereof,34717040.48
+2021,PSE,State of Palestine,76,Aluminium and articles thereof,57329726.46
+2022,PSE,State of Palestine,76,Aluminium and articles thereof,63093107.95
+2023,PSE,State of Palestine,76,Aluminium and articles thereof,56921744.599
+2019,PYF,French Polynesia,76,Aluminium and articles thereof,401405.828
+2020,PYF,French Polynesia,76,Aluminium and articles thereof,316379.228
+2021,PYF,French Polynesia,76,Aluminium and articles thereof,298338.105
+2022,PYF,French Polynesia,76,Aluminium and articles thereof,289442.03
+2023,PYF,French Polynesia,76,Aluminium and articles thereof,227160.134
+2019,QAT,Qatar,76,Aluminium and articles thereof,1357994962.661
+2020,QAT,Qatar,76,Aluminium and articles thereof,1210119170.585
+2021,QAT,Qatar,76,Aluminium and articles thereof,1678149924.114
+2022,QAT,Qatar,76,Aluminium and articles thereof,2139690087.434
+2023,QAT,Qatar,76,Aluminium and articles thereof,1790943402.226
+2019,ROU,Romania,76,Aluminium and articles thereof,1194471261.97
+2020,ROU,Romania,76,Aluminium and articles thereof,1105109514.09
+2021,ROU,Romania,76,Aluminium and articles thereof,1502103817.49
+2022,ROU,Romania,76,Aluminium and articles thereof,1769033108.18
+2023,ROU,Romania,76,Aluminium and articles thereof,1736380755.9
+2019,RUS,Russian Federation,76,Aluminium and articles thereof,5844053319.77
+2020,RUS,Russian Federation,76,Aluminium and articles thereof,5463660546.492
+2021,RUS,Russian Federation,76,Aluminium and articles thereof,8667437525.614
+2019,RWA,Rwanda,76,Aluminium and articles thereof,1488755.46
+2020,RWA,Rwanda,76,Aluminium and articles thereof,895210.12
+2021,RWA,Rwanda,76,Aluminium and articles thereof,1651583.61
+2022,RWA,Rwanda,76,Aluminium and articles thereof,1952078.62
+2019,S19,"Other Asia, nes",76,Aluminium and articles thereof,1579322456.08
+2020,S19,"Other Asia, nes",76,Aluminium and articles thereof,1568152863.298
+2021,S19,"Other Asia, nes",76,Aluminium and articles thereof,2025056549.123
+2022,S19,"Other Asia, nes",76,Aluminium and articles thereof,2214121619.08
+2023,S19,"Other Asia, nes",76,Aluminium and articles thereof,1809630135.786
+2019,SAU,Saudi Arabia,76,Aluminium and articles thereof,2152613358.185
+2020,SAU,Saudi Arabia,76,Aluminium and articles thereof,2115714848.44
+2021,SAU,Saudi Arabia,76,Aluminium and articles thereof,2454195175.978
+2022,SAU,Saudi Arabia,76,Aluminium and articles thereof,2951812151.805
+2023,SAU,Saudi Arabia,76,Aluminium and articles thereof,2120492229.121
+2019,SEN,Senegal,76,Aluminium and articles thereof,2318738.945
+2020,SEN,Senegal,76,Aluminium and articles thereof,1685280.496
+2021,SEN,Senegal,76,Aluminium and articles thereof,5754357.009
+2022,SEN,Senegal,76,Aluminium and articles thereof,10712680.73
+2023,SEN,Senegal,76,Aluminium and articles thereof,12942241.559
+2019,SGP,Singapore,76,Aluminium and articles thereof,748071393.144
+2020,SGP,Singapore,76,Aluminium and articles thereof,671701258.907
+2021,SGP,Singapore,76,Aluminium and articles thereof,1234654812.021
+2022,SGP,Singapore,76,Aluminium and articles thereof,1198546307.82
+2023,SGP,Singapore,76,Aluminium and articles thereof,944431945.145
+2019,SLV,El Salvador,76,Aluminium and articles thereof,63749268.01
+2020,SLV,El Salvador,76,Aluminium and articles thereof,42507764.21
+2021,SLV,El Salvador,76,Aluminium and articles thereof,63533537.09
+2022,SLV,El Salvador,76,Aluminium and articles thereof,80689745.71
+2023,SLV,El Salvador,76,Aluminium and articles thereof,71085425.0
+2019,SRB,Serbia,76,Aluminium and articles thereof,386384828.0
+2020,SRB,Serbia,76,Aluminium and articles thereof,344577112.0
+2021,SRB,Serbia,76,Aluminium and articles thereof,521917041.0
+2022,SRB,Serbia,76,Aluminium and articles thereof,612192440.0
+2023,SRB,Serbia,76,Aluminium and articles thereof,602531670.0
+2019,STP,Sao Tome and Principe,76,Aluminium and articles thereof,18521.352
+2020,STP,Sao Tome and Principe,76,Aluminium and articles thereof,6594.765
+2021,STP,Sao Tome and Principe,76,Aluminium and articles thereof,24287.855
+2022,STP,Sao Tome and Principe,76,Aluminium and articles thereof,1135.925
+2023,STP,Sao Tome and Principe,76,Aluminium and articles thereof,3299.826
+2019,SUR,Suriname,76,Aluminium and articles thereof,1221940.9
+2020,SUR,Suriname,76,Aluminium and articles thereof,1299531.524
+2021,SUR,Suriname,76,Aluminium and articles thereof,1902984.78
+2022,SUR,Suriname,76,Aluminium and articles thereof,1686290.06
+2023,SUR,Suriname,76,Aluminium and articles thereof,1280577.134
+2019,SVK,Slovakia,76,Aluminium and articles thereof,1382587647.467
+2020,SVK,Slovakia,76,Aluminium and articles thereof,1214807611.105
+2021,SVK,Slovakia,76,Aluminium and articles thereof,1615871721.717
+2022,SVK,Slovakia,76,Aluminium and articles thereof,1740491424.884
+2023,SVK,Slovakia,76,Aluminium and articles thereof,1456532212.944
+2019,SVN,Slovenia,76,Aluminium and articles thereof,1242982045.08
+2020,SVN,Slovenia,76,Aluminium and articles thereof,1155501132.96
+2021,SVN,Slovenia,76,Aluminium and articles thereof,1626982745.444
+2022,SVN,Slovenia,76,Aluminium and articles thereof,1799775266.935
+2023,SVN,Slovenia,76,Aluminium and articles thereof,1580947845.916
+2019,SWE,Sweden,76,Aluminium and articles thereof,1575927617.569
+2020,SWE,Sweden,76,Aluminium and articles thereof,1465111344.898
+2021,SWE,Sweden,76,Aluminium and articles thereof,2468029248.686
+2022,SWE,Sweden,76,Aluminium and articles thereof,2788266015.357
+2023,SWE,Sweden,76,Aluminium and articles thereof,2124880140.415
+2019,SWZ,Eswatini,76,Aluminium and articles thereof,276906.6
+2020,SWZ,Eswatini,76,Aluminium and articles thereof,191145.51
+2021,SWZ,Eswatini,76,Aluminium and articles thereof,240671.33
+2022,SWZ,Eswatini,76,Aluminium and articles thereof,520372.95
+2023,SWZ,Eswatini,76,Aluminium and articles thereof,275910.47
+2019,SYC,Seychelles,76,Aluminium and articles thereof,125680.954
+2020,SYC,Seychelles,76,Aluminium and articles thereof,577829.129
+2021,SYC,Seychelles,76,Aluminium and articles thereof,1242051.487
+2022,SYC,Seychelles,76,Aluminium and articles thereof,562765.799
+2023,SYC,Seychelles,76,Aluminium and articles thereof,592500.332
+2019,TGO,Togo,76,Aluminium and articles thereof,233398.207
+2020,TGO,Togo,76,Aluminium and articles thereof,225798.018
+2021,TGO,Togo,76,Aluminium and articles thereof,792519.184
+2022,TGO,Togo,76,Aluminium and articles thereof,926410.658
+2023,TGO,Togo,76,Aluminium and articles thereof,6910219.173
+2019,THA,Thailand,76,Aluminium and articles thereof,1892620633.135
+2020,THA,Thailand,76,Aluminium and articles thereof,1889816146.26
+2021,THA,Thailand,76,Aluminium and articles thereof,2936203557.52
+2022,THA,Thailand,76,Aluminium and articles thereof,3268276198.65
+2023,THA,Thailand,76,Aluminium and articles thereof,2730525219.469
+2019,TJK,Tajikistan,76,Aluminium and articles thereof,180300885.0
+2020,TJK,Tajikistan,76,Aluminium and articles thereof,140219010.0
+2021,TJK,Tajikistan,76,Aluminium and articles thereof,144727950.0
+2022,TJK,Tajikistan,76,Aluminium and articles thereof,173609120.0
+2023,TJK,Tajikistan,76,Aluminium and articles thereof,134780276.0
+2019,TLS,Timor-Leste,76,Aluminium and articles thereof,21035.62
+2020,TLS,Timor-Leste,76,Aluminium and articles thereof,18608.9
+2021,TLS,Timor-Leste,76,Aluminium and articles thereof,43104.27
+2022,TLS,Timor-Leste,76,Aluminium and articles thereof,25040.98
+2023,TLS,Timor-Leste,76,Aluminium and articles thereof,87148.81
+2019,TON,Tonga,76,Aluminium and articles thereof,81.961
+2020,TON,Tonga,76,Aluminium and articles thereof,267.426
+2021,TON,Tonga,76,Aluminium and articles thereof,6.644
+2022,TON,Tonga,76,Aluminium and articles thereof,2999.926
+2023,TON,Tonga,76,Aluminium and articles thereof,4268.719
+2019,TTO,Trinidad and Tobago,76,Aluminium and articles thereof,4378876.009
+2020,TTO,Trinidad and Tobago,76,Aluminium and articles thereof,3686686.799
+2021,TTO,Trinidad and Tobago,76,Aluminium and articles thereof,5493756.59
+2022,TTO,Trinidad and Tobago,76,Aluminium and articles thereof,2278878.943
+2023,TTO,Trinidad and Tobago,76,Aluminium and articles thereof,6747051.675
+2019,TUN,Tunisia,76,Aluminium and articles thereof,109674497.951
+2020,TUN,Tunisia,76,Aluminium and articles thereof,98087305.07
+2021,TUN,Tunisia,76,Aluminium and articles thereof,128830285.816
+2022,TUN,Tunisia,76,Aluminium and articles thereof,145839230.435
+2023,TUN,Tunisia,76,Aluminium and articles thereof,143644817.95
+2019,TUR,Türkiye,76,Aluminium and articles thereof,3116275025.0
+2020,TUR,Türkiye,76,Aluminium and articles thereof,3060896980.0
+2021,TUR,Türkiye,76,Aluminium and articles thereof,5173338590.0
+2022,TUR,Türkiye,76,Aluminium and articles thereof,6707740116.0
+2023,TUR,Türkiye,76,Aluminium and articles thereof,5317293401.0
+2019,TZA,United Rep. of Tanzania,76,Aluminium and articles thereof,4393960.51
+2020,TZA,United Rep. of Tanzania,76,Aluminium and articles thereof,8366515.06
+2021,TZA,United Rep. of Tanzania,76,Aluminium and articles thereof,12320625.53
+2022,TZA,United Rep. of Tanzania,76,Aluminium and articles thereof,12457957.753
+2023,TZA,United Rep. of Tanzania,76,Aluminium and articles thereof,12040290.56
+2019,UGA,Uganda,76,Aluminium and articles thereof,4632577.17
+2020,UGA,Uganda,76,Aluminium and articles thereof,5792015.0
+2021,UGA,Uganda,76,Aluminium and articles thereof,6902102.34
+2022,UGA,Uganda,76,Aluminium and articles thereof,10933694.73
+2023,UGA,Uganda,76,Aluminium and articles thereof,11650867.41
+2019,UKR,Ukraine,76,Aluminium and articles thereof,100516002.08
+2020,UKR,Ukraine,76,Aluminium and articles thereof,108440666.91
+2021,UKR,Ukraine,76,Aluminium and articles thereof,164265663.48
+2022,UKR,Ukraine,76,Aluminium and articles thereof,97500626.81
+2023,UKR,Ukraine,76,Aluminium and articles thereof,97739126.08
+2019,URY,Uruguay,76,Aluminium and articles thereof,11978170.0
+2020,URY,Uruguay,76,Aluminium and articles thereof,13057409.0
+2021,URY,Uruguay,76,Aluminium and articles thereof,14743436.0
+2022,URY,Uruguay,76,Aluminium and articles thereof,15191849.0
+2023,URY,Uruguay,76,Aluminium and articles thereof,13070011.0
+2019,USA,USA,76,Aluminium and articles thereof,10937898321.0
+2020,USA,USA,76,Aluminium and articles thereof,9389712361.0
+2021,USA,USA,76,Aluminium and articles thereof,12022206026.0
+2022,USA,USA,76,Aluminium and articles thereof,14511112356.0
+2023,USA,USA,76,Aluminium and articles thereof,14277975455.0
+2019,UZB,Uzbekistan,76,Aluminium and articles thereof,20166134.86
+2020,UZB,Uzbekistan,76,Aluminium and articles thereof,21905722.82
+2021,UZB,Uzbekistan,76,Aluminium and articles thereof,53385329.79
+2022,UZB,Uzbekistan,76,Aluminium and articles thereof,54712978.85
+2023,UZB,Uzbekistan,76,Aluminium and articles thereof,50001560.62
+2019,VCT,Saint Vincent and the Grenadines,76,Aluminium and articles thereof,2076247.82
+2020,VCT,Saint Vincent and the Grenadines,76,Aluminium and articles thereof,1398233.62
+2021,VCT,Saint Vincent and the Grenadines,76,Aluminium and articles thereof,1633455.88
+2022,VCT,Saint Vincent and the Grenadines,76,Aluminium and articles thereof,1613638.546
+2023,VCT,Saint Vincent and the Grenadines,76,Aluminium and articles thereof,1483986.59
+2019,VNM,Viet Nam,76,Aluminium and articles thereof,1270782688.29
+2020,VNM,Viet Nam,76,Aluminium and articles thereof,1419204615.099
+2021,VNM,Viet Nam,76,Aluminium and articles thereof,2039212367.146
+2022,VNM,Viet Nam,76,Aluminium and articles thereof,2510002340.645
+2023,VNM,Viet Nam,76,Aluminium and articles thereof,2146228558.147
+2019,WSM,Samoa,76,Aluminium and articles thereof,52825.44
+2021,WSM,Samoa,76,Aluminium and articles thereof,11289.087
+2022,WSM,Samoa,76,Aluminium and articles thereof,21446.557
+2023,WSM,Samoa,76,Aluminium and articles thereof,21638.968
+2019,YEM,Yemen,76,Aluminium and articles thereof,15836.148
+2023,YEM,Yemen,76,Aluminium and articles thereof,354924.588
+2019,ZAF,South Africa,76,Aluminium and articles thereof,1741537721.109
+2020,ZAF,South Africa,76,Aluminium and articles thereof,1615696343.058
+2021,ZAF,South Africa,76,Aluminium and articles thereof,2048368087.812
+2022,ZAF,South Africa,76,Aluminium and articles thereof,2179300790.999
+2023,ZAF,South Africa,76,Aluminium and articles thereof,2253372348.077
+2019,ZMB,Zambia,76,Aluminium and articles thereof,1747319.063
+2020,ZMB,Zambia,76,Aluminium and articles thereof,2948458.141
+2021,ZMB,Zambia,76,Aluminium and articles thereof,2967970.646
+2022,ZMB,Zambia,76,Aluminium and articles thereof,6058633.29
+2023,ZMB,Zambia,76,Aluminium and articles thereof,9224662.995
+2019,ZWE,Zimbabwe,76,Aluminium and articles thereof,864396.28
+2020,ZWE,Zimbabwe,76,Aluminium and articles thereof,1987202.99
+2021,ZWE,Zimbabwe,76,Aluminium and articles thereof,3091480.2
+2022,ZWE,Zimbabwe,76,Aluminium and articles thereof,2956041.75
+2023,ZWE,Zimbabwe,76,Aluminium and articles thereof,2367496.24

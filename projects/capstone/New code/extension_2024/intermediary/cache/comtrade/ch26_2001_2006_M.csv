@@ -1,0 +1,964 @@
+period,reporterISO,reporterDesc,cmdCode,cmdDesc,primaryValue
+2001,ABW,Aruba,26,"Ores, slag and ash",397.0
+2002,ABW,Aruba,26,"Ores, slag and ash",6.0
+2005,ABW,Aruba,26,"Ores, slag and ash",182.0
+2004,AGO,Angola,26,"Ores, slag and ash",601182.894
+2005,AGO,Angola,26,"Ores, slag and ash",3172776.884
+2006,AGO,Angola,26,"Ores, slag and ash",1732146.427
+2001,AIA,Anguilla,26,"Ores, slag and ash",154.0
+2002,AIA,Anguilla,26,"Ores, slag and ash",407.0
+2001,ALB,Albania,26,"Ores, slag and ash",33134.0
+2002,ALB,Albania,26,"Ores, slag and ash",120405.0
+2003,ALB,Albania,26,"Ores, slag and ash",25739.0
+2004,ALB,Albania,26,"Ores, slag and ash",277183.0
+2005,ALB,Albania,26,"Ores, slag and ash",22539.0
+2006,ALB,Albania,26,"Ores, slag and ash",10346.0
+2001,AND,Andorra,26,"Ores, slag and ash",4528.0
+2002,AND,Andorra,26,"Ores, slag and ash",1763.0
+2004,AND,Andorra,26,"Ores, slag and ash",28.0
+2006,AND,Andorra,26,"Ores, slag and ash",1053.766
+2005,ANT,Netherlands Antilles (...2010),26,"Ores, slag and ash",14354.0
+2006,ANT,Netherlands Antilles (...2010),26,"Ores, slag and ash",1756.0
+2001,ARE,United Arab Emirates,26,"Ores, slag and ash",14212331.0
+2002,ARE,United Arab Emirates,26,"Ores, slag and ash",12881431.0
+2003,ARE,United Arab Emirates,26,"Ores, slag and ash",37791127.0
+2004,ARE,United Arab Emirates,26,"Ores, slag and ash",80661150.0
+2005,ARE,United Arab Emirates,26,"Ores, slag and ash",76025560.0
+2006,ARE,United Arab Emirates,26,"Ores, slag and ash",98278696.0
+2001,ARG,Argentina,26,"Ores, slag and ash",160183749.0
+2002,ARG,Argentina,26,"Ores, slag and ash",175667902.0
+2003,ARG,Argentina,26,"Ores, slag and ash",219952701.0
+2004,ARG,Argentina,26,"Ores, slag and ash",281593544.0
+2005,ARG,Argentina,26,"Ores, slag and ash",467504217.0
+2006,ARG,Argentina,26,"Ores, slag and ash",550474187.0
+2001,ARM,Armenia,26,"Ores, slag and ash",1700.0
+2002,ARM,Armenia,26,"Ores, slag and ash",8188.0
+2003,ARM,Armenia,26,"Ores, slag and ash",108689.0
+2004,ARM,Armenia,26,"Ores, slag and ash",912103.0
+2005,ARM,Armenia,26,"Ores, slag and ash",30647041.0
+2006,ARM,Armenia,26,"Ores, slag and ash",10749201.0
+2005,ATG,Antigua and Barbuda,26,"Ores, slag and ash",1299.0
+2006,ATG,Antigua and Barbuda,26,"Ores, slag and ash",771.0
+2001,AUS,Australia,26,"Ores, slag and ash",122798454.0
+2002,AUS,Australia,26,"Ores, slag and ash",138439929.0
+2003,AUS,Australia,26,"Ores, slag and ash",191388801.0
+2004,AUS,Australia,26,"Ores, slag and ash",191531618.0
+2005,AUS,Australia,26,"Ores, slag and ash",264030147.0
+2006,AUS,Australia,26,"Ores, slag and ash",442048756.0
+2001,AUT,Austria,26,"Ores, slag and ash",69768796.0
+2002,AUT,Austria,26,"Ores, slag and ash",77208170.0
+2003,AUT,Austria,26,"Ores, slag and ash",375061449.0
+2004,AUT,Austria,26,"Ores, slag and ash",572572504.0
+2005,AUT,Austria,26,"Ores, slag and ash",1066310191.0
+2006,AUT,Austria,26,"Ores, slag and ash",1088684417.0
+2001,AZE,Azerbaijan,26,"Ores, slag and ash",8397362.0
+2002,AZE,Azerbaijan,26,"Ores, slag and ash",11647762.0
+2003,AZE,Azerbaijan,26,"Ores, slag and ash",28599812.0
+2004,AZE,Azerbaijan,26,"Ores, slag and ash",54933514.0
+2005,AZE,Azerbaijan,26,"Ores, slag and ash",69609781.0
+2006,AZE,Azerbaijan,26,"Ores, slag and ash",76309381.0
+2001,BDI,Burundi,26,"Ores, slag and ash",1075.0
+2006,BDI,Burundi,26,"Ores, slag and ash",10.0
+2001,BEL,Belgium,26,"Ores, slag and ash",787000201.0
+2002,BEL,Belgium,26,"Ores, slag and ash",890467935.0
+2003,BEL,Belgium,26,"Ores, slag and ash",1099725432.0
+2004,BEL,Belgium,26,"Ores, slag and ash",1906628423.0
+2005,BEL,Belgium,26,"Ores, slag and ash",2761070359.0
+2006,BEL,Belgium,26,"Ores, slag and ash",3457858215.0
+2001,BEN,Benin,26,"Ores, slag and ash",144.0
+2002,BEN,Benin,26,"Ores, slag and ash",88.0
+2003,BEN,Benin,26,"Ores, slag and ash",451.0
+2004,BEN,Benin,26,"Ores, slag and ash",16566.0
+2006,BEN,Benin,26,"Ores, slag and ash",1828.0
+2001,BFA,Burkina Faso,26,"Ores, slag and ash",1755.0
+2003,BFA,Burkina Faso,26,"Ores, slag and ash",590.0
+2004,BFA,Burkina Faso,26,"Ores, slag and ash",7185.0
+2005,BFA,Burkina Faso,26,"Ores, slag and ash",8683.876
+2006,BFA,Burkina Faso,26,"Ores, slag and ash",144772.769
+2001,BGD,Bangladesh,26,"Ores, slag and ash",1445428.0
+2002,BGD,Bangladesh,26,"Ores, slag and ash",2183764.0
+2003,BGD,Bangladesh,26,"Ores, slag and ash",7059811.0
+2004,BGD,Bangladesh,26,"Ores, slag and ash",13940350.0
+2005,BGD,Bangladesh,26,"Ores, slag and ash",22529859.0
+2006,BGD,Bangladesh,26,"Ores, slag and ash",22382291.0
+2001,BGR,Bulgaria,26,"Ores, slag and ash",249202175.0
+2002,BGR,Bulgaria,26,"Ores, slag and ash",198207042.0
+2003,BGR,Bulgaria,26,"Ores, slag and ash",354270913.0
+2004,BGR,Bulgaria,26,"Ores, slag and ash",559847902.0
+2005,BGR,Bulgaria,26,"Ores, slag and ash",730993427.0
+2006,BGR,Bulgaria,26,"Ores, slag and ash",1256473275.0
+2001,BHR,Bahrain,26,"Ores, slag and ash",57790807.0
+2002,BHR,Bahrain,26,"Ores, slag and ash",73479166.0
+2003,BHR,Bahrain,26,"Ores, slag and ash",77795547.0
+2004,BHR,Bahrain,26,"Ores, slag and ash",93849002.0
+2005,BHR,Bahrain,26,"Ores, slag and ash",184244127.0
+2006,BHR,Bahrain,26,"Ores, slag and ash",118386955.0
+2001,BHS,Bahamas,26,"Ores, slag and ash",118605.0
+2002,BHS,Bahamas,26,"Ores, slag and ash",82033.0
+2003,BHS,Bahamas,26,"Ores, slag and ash",10460.0
+2004,BHS,Bahamas,26,"Ores, slag and ash",14769.0
+2005,BHS,Bahamas,26,"Ores, slag and ash",30009.0
+2006,BHS,Bahamas,26,"Ores, slag and ash",34898.0
+2003,BIH,Bosnia Herzegovina,26,"Ores, slag and ash",139451.0
+2004,BIH,Bosnia Herzegovina,26,"Ores, slag and ash",4373513.0
+2005,BIH,Bosnia Herzegovina,26,"Ores, slag and ash",16346630.0
+2006,BIH,Bosnia Herzegovina,26,"Ores, slag and ash",14899348.0
+2001,BLR,Belarus,26,"Ores, slag and ash",4133900.0
+2002,BLR,Belarus,26,"Ores, slag and ash",4127400.0
+2003,BLR,Belarus,26,"Ores, slag and ash",5394600.0
+2004,BLR,Belarus,26,"Ores, slag and ash",5921900.0
+2005,BLR,Belarus,26,"Ores, slag and ash",6008400.0
+2006,BLR,Belarus,26,"Ores, slag and ash",8593000.0
+2001,BLZ,Belize,26,"Ores, slag and ash",53.0
+2002,BLZ,Belize,26,"Ores, slag and ash",99.0
+2003,BLZ,Belize,26,"Ores, slag and ash",16.0
+2004,BLZ,Belize,26,"Ores, slag and ash",63.0
+2005,BLZ,Belize,26,"Ores, slag and ash",1109.5
+2006,BLZ,Belize,26,"Ores, slag and ash",198.0
+2005,BMU,Bermuda,26,"Ores, slag and ash",98516.0
+2006,BMU,Bermuda,26,"Ores, slag and ash",107969.0
+2001,BOL,Bolivia (Plurinational State of),26,"Ores, slag and ash",59336.0
+2002,BOL,Bolivia (Plurinational State of),26,"Ores, slag and ash",1580675.0
+2003,BOL,Bolivia (Plurinational State of),26,"Ores, slag and ash",133968.0
+2004,BOL,Bolivia (Plurinational State of),26,"Ores, slag and ash",189748.0
+2005,BOL,Bolivia (Plurinational State of),26,"Ores, slag and ash",43150.0
+2006,BOL,Bolivia (Plurinational State of),26,"Ores, slag and ash",73953.0
+2001,BRA,Brazil,26,"Ores, slag and ash",319829841.0
+2002,BRA,Brazil,26,"Ores, slag and ash",293482648.0
+2003,BRA,Brazil,26,"Ores, slag and ash",352979160.0
+2004,BRA,Brazil,26,"Ores, slag and ash",709993121.0
+2005,BRA,Brazil,26,"Ores, slag and ash",815775014.0
+2006,BRA,Brazil,26,"Ores, slag and ash",1491746044.0
+2001,BRB,Barbados,26,"Ores, slag and ash",64729.0
+2002,BRB,Barbados,26,"Ores, slag and ash",84500.0
+2003,BRB,Barbados,26,"Ores, slag and ash",113341.0
+2004,BRB,Barbados,26,"Ores, slag and ash",27898.0
+2005,BRB,Barbados,26,"Ores, slag and ash",27851.0
+2006,BRB,Barbados,26,"Ores, slag and ash",46449.0
+2001,BRN,Brunei Darussalam,26,"Ores, slag and ash",81172.0
+2002,BRN,Brunei Darussalam,26,"Ores, slag and ash",242127.0
+2003,BRN,Brunei Darussalam,26,"Ores, slag and ash",86441.0
+2004,BRN,Brunei Darussalam,26,"Ores, slag and ash",33827.0
+2006,BRN,Brunei Darussalam,26,"Ores, slag and ash",9842.127
+2005,BTN,Bhutan,26,"Ores, slag and ash",802153.0
+2006,BTN,Bhutan,26,"Ores, slag and ash",1797122.0
+2001,BWA,Botswana,26,"Ores, slag and ash",11760135.0
+2002,BWA,Botswana,26,"Ores, slag and ash",18158986.0
+2003,BWA,Botswana,26,"Ores, slag and ash",25358450.0
+2004,BWA,Botswana,26,"Ores, slag and ash",8711375.0
+2005,BWA,Botswana,26,"Ores, slag and ash",62644545.0
+2006,BWA,Botswana,26,"Ores, slag and ash",62325464.0
+2001,CAN,Canada,26,"Ores, slag and ash",1153762113.0
+2002,CAN,Canada,26,"Ores, slag and ash",1062283949.0
+2003,CAN,Canada,26,"Ores, slag and ash",1209861316.0
+2004,CAN,Canada,26,"Ores, slag and ash",1583825358.0
+2005,CAN,Canada,26,"Ores, slag and ash",1814711990.0
+2006,CAN,Canada,26,"Ores, slag and ash",2551757212.0
+2001,CHE,Switzerland,26,"Ores, slag and ash",5932068.643
+2002,CHE,Switzerland,26,"Ores, slag and ash",6840230.947
+2003,CHE,Switzerland,26,"Ores, slag and ash",10143510.136
+2004,CHE,Switzerland,26,"Ores, slag and ash",14288832.72
+2005,CHE,Switzerland,26,"Ores, slag and ash",14288667.365
+2006,CHE,Switzerland,26,"Ores, slag and ash",15007360.449
+2001,CHL,Chile,26,"Ores, slag and ash",28106230.0
+2002,CHL,Chile,26,"Ores, slag and ash",41127077.0
+2003,CHL,Chile,26,"Ores, slag and ash",93076914.339
+2004,CHL,Chile,26,"Ores, slag and ash",317485942.394
+2005,CHL,Chile,26,"Ores, slag and ash",812291681.748
+2006,CHL,Chile,26,"Ores, slag and ash",797998557.568
+2001,CHN,China,26,"Ores, slag and ash",4175734429.0
+2002,CHN,China,26,"Ores, slag and ash",4280721374.0
+2003,CHN,China,26,"Ores, slag and ash",7174904087.0
+2004,CHN,China,26,"Ores, slag and ash",17272579688.0
+2005,CHN,China,26,"Ores, slag and ash",26032519692.0
+2006,CHN,China,26,"Ores, slag and ash",32164433175.0
+2001,CIV,Côte d'Ivoire,26,"Ores, slag and ash",9842110.0
+2002,CIV,Côte d'Ivoire,26,"Ores, slag and ash",10599062.0
+2003,CIV,Côte d'Ivoire,26,"Ores, slag and ash",6304724.0
+2004,CIV,Côte d'Ivoire,26,"Ores, slag and ash",14108440.0
+2005,CIV,Côte d'Ivoire,26,"Ores, slag and ash",16433046.0
+2006,CIV,Côte d'Ivoire,26,"Ores, slag and ash",18794855.0
+2001,CMR,Cameroon,26,"Ores, slag and ash",355769.0
+2002,CMR,Cameroon,26,"Ores, slag and ash",277545.0
+2003,CMR,Cameroon,26,"Ores, slag and ash",795549.0
+2004,CMR,Cameroon,26,"Ores, slag and ash",87257.0
+2005,CMR,Cameroon,26,"Ores, slag and ash",819039.0
+2006,CMR,Cameroon,26,"Ores, slag and ash",819782.0
+2002,COK,Cook Isds,26,"Ores, slag and ash",19.0
+2003,COK,Cook Isds,26,"Ores, slag and ash",167.0
+2005,COK,Cook Isds,26,"Ores, slag and ash",45.0
+2001,COL,Colombia,26,"Ores, slag and ash",13175892.0
+2002,COL,Colombia,26,"Ores, slag and ash",10063188.0
+2003,COL,Colombia,26,"Ores, slag and ash",13188658.0
+2004,COL,Colombia,26,"Ores, slag and ash",16125487.0
+2005,COL,Colombia,26,"Ores, slag and ash",17512950.0
+2006,COL,Colombia,26,"Ores, slag and ash",23728137.0
+2001,CPV,Cabo Verde,26,"Ores, slag and ash",129.0
+2005,CPV,Cabo Verde,26,"Ores, slag and ash",359.0
+2006,CPV,Cabo Verde,26,"Ores, slag and ash",1906.0
+2001,CRI,Costa Rica,26,"Ores, slag and ash",32337.0
+2002,CRI,Costa Rica,26,"Ores, slag and ash",376780.0
+2003,CRI,Costa Rica,26,"Ores, slag and ash",464166.0
+2004,CRI,Costa Rica,26,"Ores, slag and ash",623245.0
+2005,CRI,Costa Rica,26,"Ores, slag and ash",37531.0
+2006,CRI,Costa Rica,26,"Ores, slag and ash",1106199.0
+2001,CUB,Cuba,26,"Ores, slag and ash",723665.0
+2002,CUB,Cuba,26,"Ores, slag and ash",355853.0
+2003,CUB,Cuba,26,"Ores, slag and ash",707529.0
+2004,CUB,Cuba,26,"Ores, slag and ash",528630.0
+2005,CUB,Cuba,26,"Ores, slag and ash",1325834.0
+2006,CUB,Cuba,26,"Ores, slag and ash",717273.0
+2001,CYP,Cyprus,26,"Ores, slag and ash",56436.0
+2002,CYP,Cyprus,26,"Ores, slag and ash",89512.0
+2003,CYP,Cyprus,26,"Ores, slag and ash",273832.0
+2004,CYP,Cyprus,26,"Ores, slag and ash",127671.0
+2005,CYP,Cyprus,26,"Ores, slag and ash",143324.0
+2006,CYP,Cyprus,26,"Ores, slag and ash",56099.0
+2001,CZE,Czechia,26,"Ores, slag and ash",196027979.0
+2002,CZE,Czechia,26,"Ores, slag and ash",231791630.0
+2003,CZE,Czechia,26,"Ores, slag and ash",303702796.0
+2004,CZE,Czechia,26,"Ores, slag and ash",542091230.0
+2005,CZE,Czechia,26,"Ores, slag and ash",570131954.0
+2006,CZE,Czechia,26,"Ores, slag and ash",649568105.0
+2001,DEU,Germany,26,"Ores, slag and ash",2516820000.0
+2002,DEU,Germany,26,"Ores, slag and ash",2387500000.0
+2003,DEU,Germany,26,"Ores, slag and ash",2302151000.0
+2004,DEU,Germany,26,"Ores, slag and ash",3916070000.0
+2005,DEU,Germany,26,"Ores, slag and ash",4895523000.0
+2006,DEU,Germany,26,"Ores, slag and ash",6848987000.0
+2001,DMA,Dominica,26,"Ores, slag and ash",34056.0
+2002,DMA,Dominica,26,"Ores, slag and ash",37415.0
+2003,DMA,Dominica,26,"Ores, slag and ash",46378.0
+2004,DMA,Dominica,26,"Ores, slag and ash",36522.0
+2005,DMA,Dominica,26,"Ores, slag and ash",11552.0
+2006,DMA,Dominica,26,"Ores, slag and ash",11183.0
+2001,DNK,Denmark,26,"Ores, slag and ash",10722687.0
+2002,DNK,Denmark,26,"Ores, slag and ash",7464182.0
+2003,DNK,Denmark,26,"Ores, slag and ash",7681542.0
+2004,DNK,Denmark,26,"Ores, slag and ash",8147328.0
+2005,DNK,Denmark,26,"Ores, slag and ash",9832556.0
+2006,DNK,Denmark,26,"Ores, slag and ash",9932778.0
+2001,DOM,Dominican Rep.,26,"Ores, slag and ash",802000.0
+2002,DOM,Dominican Rep.,26,"Ores, slag and ash",733783.02
+2003,DOM,Dominican Rep.,26,"Ores, slag and ash",225307.7
+2004,DOM,Dominican Rep.,26,"Ores, slag and ash",168498.151
+2005,DOM,Dominican Rep.,26,"Ores, slag and ash",24332.68
+2006,DOM,Dominican Rep.,26,"Ores, slag and ash",291924.671
+2001,DZA,Algeria,26,"Ores, slag and ash",13720979.0
+2002,DZA,Algeria,26,"Ores, slag and ash",10453106.0
+2003,DZA,Algeria,26,"Ores, slag and ash",15739883.0
+2004,DZA,Algeria,26,"Ores, slag and ash",38716579.0
+2005,DZA,Algeria,26,"Ores, slag and ash",69759879.0
+2006,DZA,Algeria,26,"Ores, slag and ash",69458143.0
+2001,ECU,Ecuador,26,"Ores, slag and ash",3139741.0
+2002,ECU,Ecuador,26,"Ores, slag and ash",6728704.0
+2003,ECU,Ecuador,26,"Ores, slag and ash",3024270.0
+2004,ECU,Ecuador,26,"Ores, slag and ash",3656805.0
+2005,ECU,Ecuador,26,"Ores, slag and ash",2348792.0
+2006,ECU,Ecuador,26,"Ores, slag and ash",2763217.0
+2001,EGY,Egypt,26,"Ores, slag and ash",91070160.385
+2002,EGY,Egypt,26,"Ores, slag and ash",101236453.999
+2003,EGY,Egypt,26,"Ores, slag and ash",90286659.377
+2004,EGY,Egypt,26,"Ores, slag and ash",149929557.466
+2005,EGY,Egypt,26,"Ores, slag and ash",197347627.245
+2006,EGY,Egypt,26,"Ores, slag and ash",143607886.999
+2003,ERI,Eritrea,26,"Ores, slag and ash",6012.0
+2001,ESP,Spain,26,"Ores, slag and ash",1148238493.465
+2002,ESP,Spain,26,"Ores, slag and ash",1158910779.386
+2003,ESP,Spain,26,"Ores, slag and ash",1389156091.295
+2004,ESP,Spain,26,"Ores, slag and ash",1520827234.103
+2005,ESP,Spain,26,"Ores, slag and ash",2471728446.464
+2006,ESP,Spain,26,"Ores, slag and ash",4152278421.304
+2001,EST,Estonia,26,"Ores, slag and ash",3733302.0
+2002,EST,Estonia,26,"Ores, slag and ash",11780632.0
+2003,EST,Estonia,26,"Ores, slag and ash",7939614.0
+2004,EST,Estonia,26,"Ores, slag and ash",3764202.28
+2005,EST,Estonia,26,"Ores, slag and ash",6613767.82
+2006,EST,Estonia,26,"Ores, slag and ash",2221035.96
+2001,ETH,Ethiopia,26,"Ores, slag and ash",3054.437
+2002,ETH,Ethiopia,26,"Ores, slag and ash",6108.24
+2003,ETH,Ethiopia,26,"Ores, slag and ash",1627.251
+2004,ETH,Ethiopia,26,"Ores, slag and ash",354.824
+2005,ETH,Ethiopia,26,"Ores, slag and ash",33896.412
+2006,ETH,Ethiopia,26,"Ores, slag and ash",12742.901
+2001,FIN,Finland,26,"Ores, slag and ash",744412701.0
+2002,FIN,Finland,26,"Ores, slag and ash",638514766.0
+2003,FIN,Finland,26,"Ores, slag and ash",773117842.0
+2004,FIN,Finland,26,"Ores, slag and ash",1289561475.0
+2005,FIN,Finland,26,"Ores, slag and ash",1390406569.0
+2006,FIN,Finland,26,"Ores, slag and ash",2464358526.0
+2001,FJI,Fiji,26,"Ores, slag and ash",491417.0
+2002,FJI,Fiji,26,"Ores, slag and ash",456146.0
+2003,FJI,Fiji,26,"Ores, slag and ash",644991.0
+2004,FJI,Fiji,26,"Ores, slag and ash",36158.0
+2005,FJI,Fiji,26,"Ores, slag and ash",607548.0
+2006,FJI,Fiji,26,"Ores, slag and ash",477394.0
+2001,FRA,France,26,"Ores, slag and ash",797283514.0
+2002,FRA,France,26,"Ores, slag and ash",864820607.0
+2003,FRA,France,26,"Ores, slag and ash",951245275.0
+2004,FRA,France,26,"Ores, slag and ash",1128050228.0
+2005,FRA,France,26,"Ores, slag and ash",1463134364.0
+2006,FRA,France,26,"Ores, slag and ash",1760768907.0
+2001,FRO,Faroe Isds,26,"Ores, slag and ash",1972.0
+2002,FRO,Faroe Isds,26,"Ores, slag and ash",5265.0
+2003,FRO,Faroe Isds,26,"Ores, slag and ash",4569.0
+2004,FRO,Faroe Isds,26,"Ores, slag and ash",6010.0
+2005,FRO,Faroe Isds,26,"Ores, slag and ash",4607.0
+2003,FSM,FS Micronesia,26,"Ores, slag and ash",1318.0
+2004,FSM,FS Micronesia,26,"Ores, slag and ash",8452.0
+2005,FSM,FS Micronesia,26,"Ores, slag and ash",6807.0
+2006,FSM,FS Micronesia,26,"Ores, slag and ash",4384.0
+2001,GAB,Gabon,26,"Ores, slag and ash",231523.0
+2002,GAB,Gabon,26,"Ores, slag and ash",199087.0
+2003,GAB,Gabon,26,"Ores, slag and ash",236946.0
+2004,GAB,Gabon,26,"Ores, slag and ash",80890.06
+2005,GAB,Gabon,26,"Ores, slag and ash",374101.0
+2006,GAB,Gabon,26,"Ores, slag and ash",1116486.0
+2001,GBR,United Kingdom,26,"Ores, slag and ash",1791007679.0
+2002,GBR,United Kingdom,26,"Ores, slag and ash",1406220752.0
+2003,GBR,United Kingdom,26,"Ores, slag and ash",1557044996.0
+2004,GBR,United Kingdom,26,"Ores, slag and ash",2055400513.0
+2005,GBR,United Kingdom,26,"Ores, slag and ash",2416457554.0
+2006,GBR,United Kingdom,26,"Ores, slag and ash",3063136864.0
+2001,GEO,Georgia,26,"Ores, slag and ash",37862.0
+2002,GEO,Georgia,26,"Ores, slag and ash",33895.0
+2003,GEO,Georgia,26,"Ores, slag and ash",354886.0
+2004,GEO,Georgia,26,"Ores, slag and ash",1275301.0
+2005,GEO,Georgia,26,"Ores, slag and ash",188374.0
+2006,GEO,Georgia,26,"Ores, slag and ash",2536921.0
+2001,GHA,Ghana,26,"Ores, slag and ash",97347.0
+2002,GHA,Ghana,26,"Ores, slag and ash",129895.0
+2003,GHA,Ghana,26,"Ores, slag and ash",60447.0
+2004,GHA,Ghana,26,"Ores, slag and ash",113861.0
+2005,GHA,Ghana,26,"Ores, slag and ash",75633.0
+2006,GHA,Ghana,26,"Ores, slag and ash",127077.0
+2001,GIN,Guinea,26,"Ores, slag and ash",327776.0
+2002,GIN,Guinea,26,"Ores, slag and ash",635114.0
+2004,GIN,Guinea,26,"Ores, slag and ash",6152.0
+2005,GIN,Guinea,26,"Ores, slag and ash",9187.0
+2006,GIN,Guinea,26,"Ores, slag and ash",1898129.0
+2001,GMB,Gambia,26,"Ores, slag and ash",40470.733
+2003,GMB,Gambia,26,"Ores, slag and ash",4778.449
+2004,GMB,Gambia,26,"Ores, slag and ash",570.873
+2006,GMB,Gambia,26,"Ores, slag and ash",19741.664
+2005,GNB,Guinea-Bissau,26,"Ores, slag and ash",1218.0
+2001,GRC,Greece,26,"Ores, slag and ash",19056029.0
+2002,GRC,Greece,26,"Ores, slag and ash",13180001.0
+2003,GRC,Greece,26,"Ores, slag and ash",19848175.0
+2004,GRC,Greece,26,"Ores, slag and ash",19585610.0
+2005,GRC,Greece,26,"Ores, slag and ash",23627430.0
+2006,GRC,Greece,26,"Ores, slag and ash",26735885.0
+2001,GRD,Grenada,26,"Ores, slag and ash",5004.0
+2002,GRD,Grenada,26,"Ores, slag and ash",1885.0
+2003,GRD,Grenada,26,"Ores, slag and ash",34131.0
+2005,GRD,Grenada,26,"Ores, slag and ash",7.0
+2006,GRD,Grenada,26,"Ores, slag and ash",11.0
+2001,GRL,Greenland,26,"Ores, slag and ash",8118.0
+2002,GRL,Greenland,26,"Ores, slag and ash",2725.0
+2003,GRL,Greenland,26,"Ores, slag and ash",22433.0
+2004,GRL,Greenland,26,"Ores, slag and ash",20797.0
+2005,GRL,Greenland,26,"Ores, slag and ash",23397.0
+2006,GRL,Greenland,26,"Ores, slag and ash",23517.0
+2001,GTM,Guatemala,26,"Ores, slag and ash",1933144.0
+2002,GTM,Guatemala,26,"Ores, slag and ash",1865860.0
+2003,GTM,Guatemala,26,"Ores, slag and ash",3170985.0
+2004,GTM,Guatemala,26,"Ores, slag and ash",4165960.0
+2005,GTM,Guatemala,26,"Ores, slag and ash",4667526.0
+2006,GTM,Guatemala,26,"Ores, slag and ash",3665666.0
+2001,GUY,Guyana,26,"Ores, slag and ash",54623.0
+2002,GUY,Guyana,26,"Ores, slag and ash",17457.0
+2003,GUY,Guyana,26,"Ores, slag and ash",1825.0
+2004,GUY,Guyana,26,"Ores, slag and ash",5632.0
+2005,GUY,Guyana,26,"Ores, slag and ash",1146.0
+2006,GUY,Guyana,26,"Ores, slag and ash",4229.0
+2001,HKG,"China, Hong Kong SAR",26,"Ores, slag and ash",35373104.0
+2002,HKG,"China, Hong Kong SAR",26,"Ores, slag and ash",23028027.0
+2003,HKG,"China, Hong Kong SAR",26,"Ores, slag and ash",14497170.0
+2004,HKG,"China, Hong Kong SAR",26,"Ores, slag and ash",20542848.0
+2005,HKG,"China, Hong Kong SAR",26,"Ores, slag and ash",29709323.0
+2006,HKG,"China, Hong Kong SAR",26,"Ores, slag and ash",23806996.0
+2001,HND,Honduras,26,"Ores, slag and ash",159168.0
+2002,HND,Honduras,26,"Ores, slag and ash",589264.0
+2003,HND,Honduras,26,"Ores, slag and ash",25607.0
+2004,HND,Honduras,26,"Ores, slag and ash",33095.0
+2005,HND,Honduras,26,"Ores, slag and ash",678289.0
+2006,HND,Honduras,26,"Ores, slag and ash",599362.0
+2001,HRV,Croatia,26,"Ores, slag and ash",12699352.0
+2002,HRV,Croatia,26,"Ores, slag and ash",9793493.0
+2003,HRV,Croatia,26,"Ores, slag and ash",16162782.0
+2004,HRV,Croatia,26,"Ores, slag and ash",17122827.0
+2005,HRV,Croatia,26,"Ores, slag and ash",18614381.0
+2006,HRV,Croatia,26,"Ores, slag and ash",14724046.0
+2001,HUN,Hungary,26,"Ores, slag and ash",65438000.0
+2002,HUN,Hungary,26,"Ores, slag and ash",68923000.0
+2003,HUN,Hungary,26,"Ores, slag and ash",81214000.0
+2004,HUN,Hungary,26,"Ores, slag and ash",123076000.0
+2005,HUN,Hungary,26,"Ores, slag and ash",161045000.0
+2006,HUN,Hungary,26,"Ores, slag and ash",158404000.0
+2001,IDN,Indonesia,26,"Ores, slag and ash",87820713.0
+2002,IDN,Indonesia,26,"Ores, slag and ash",75570229.0
+2003,IDN,Indonesia,26,"Ores, slag and ash",68590960.0
+2004,IDN,Indonesia,26,"Ores, slag and ash",168411512.0
+2005,IDN,Indonesia,26,"Ores, slag and ash",255801156.0
+2006,IDN,Indonesia,26,"Ores, slag and ash",246427051.0
+2001,IND,India,26,"Ores, slag and ash",412742472.0
+2002,IND,India,26,"Ores, slag and ash",431554455.0
+2003,IND,India,26,"Ores, slag and ash",478541439.0
+2004,IND,India,26,"Ores, slag and ash",972126772.0
+2005,IND,India,26,"Ores, slag and ash",1161486027.0
+2006,IND,India,26,"Ores, slag and ash",4878905756.0
+2001,IRL,Ireland,26,"Ores, slag and ash",117211522.758
+2002,IRL,Ireland,26,"Ores, slag and ash",112220827.557
+2003,IRL,Ireland,26,"Ores, slag and ash",107284414.738
+2004,IRL,Ireland,26,"Ores, slag and ash",126510955.831
+2005,IRL,Ireland,26,"Ores, slag and ash",138956687.533
+2006,IRL,Ireland,26,"Ores, slag and ash",132722328.891
+2001,IRN,Iran,26,"Ores, slag and ash",65097848.0
+2002,IRN,Iran,26,"Ores, slag and ash",87048615.0
+2003,IRN,Iran,26,"Ores, slag and ash",97545167.0
+2004,IRN,Iran,26,"Ores, slag and ash",166565480.0
+2005,IRN,Iran,26,"Ores, slag and ash",60146922.0
+2006,IRN,Iran,26,"Ores, slag and ash",6075525.0
+2001,ISL,Iceland,26,"Ores, slag and ash",1890644.0
+2002,ISL,Iceland,26,"Ores, slag and ash",1502293.0
+2003,ISL,Iceland,26,"Ores, slag and ash",1632366.0
+2004,ISL,Iceland,26,"Ores, slag and ash",3041270.0
+2005,ISL,Iceland,26,"Ores, slag and ash",4425800.0
+2006,ISL,Iceland,26,"Ores, slag and ash",3936433.0
+2001,ISR,Israel,26,"Ores, slag and ash",2256000.0
+2002,ISR,Israel,26,"Ores, slag and ash",680000.0
+2003,ISR,Israel,26,"Ores, slag and ash",928000.0
+2004,ISR,Israel,26,"Ores, slag and ash",2720000.0
+2005,ISR,Israel,26,"Ores, slag and ash",2086000.0
+2006,ISR,Israel,26,"Ores, slag and ash",5160000.0
+2001,ITA,Italy,26,"Ores, slag and ash",879590293.256
+2002,ITA,Italy,26,"Ores, slag and ash",801194429.465
+2003,ITA,Italy,26,"Ores, slag and ash",866552241.504
+2004,ITA,Italy,26,"Ores, slag and ash",1324896757.007
+2005,ITA,Italy,26,"Ores, slag and ash",1795455232.993
+2006,ITA,Italy,26,"Ores, slag and ash",2082263863.144
+2001,JAM,Jamaica,26,"Ores, slag and ash",15736.0
+2002,JAM,Jamaica,26,"Ores, slag and ash",6980.0
+2003,JAM,Jamaica,26,"Ores, slag and ash",9562.0
+2004,JAM,Jamaica,26,"Ores, slag and ash",10122.0
+2005,JAM,Jamaica,26,"Ores, slag and ash",197923.0
+2006,JAM,Jamaica,26,"Ores, slag and ash",229577.0
+2001,JOR,Jordan,26,"Ores, slag and ash",1231076.0
+2002,JOR,Jordan,26,"Ores, slag and ash",419325.0
+2003,JOR,Jordan,26,"Ores, slag and ash",105882.0
+2004,JOR,Jordan,26,"Ores, slag and ash",414992.0
+2005,JOR,Jordan,26,"Ores, slag and ash",99806.0
+2006,JOR,Jordan,26,"Ores, slag and ash",89422.0
+2001,JPN,Japan,26,"Ores, slag and ash",6489191751.0
+2002,JPN,Japan,26,"Ores, slag and ash",6512030809.0
+2003,JPN,Japan,26,"Ores, slag and ash",7495481548.0
+2004,JPN,Japan,26,"Ores, slag and ash",10230149564.0
+2005,JPN,Japan,26,"Ores, slag and ash",14399058893.0
+2006,JPN,Japan,26,"Ores, slag and ash",20794943293.0
+2001,KAZ,Kazakhstan,26,"Ores, slag and ash",60321800.0
+2002,KAZ,Kazakhstan,26,"Ores, slag and ash",38629700.0
+2003,KAZ,Kazakhstan,26,"Ores, slag and ash",42424100.0
+2004,KAZ,Kazakhstan,26,"Ores, slag and ash",96444479.0
+2005,KAZ,Kazakhstan,26,"Ores, slag and ash",124873389.0
+2006,KAZ,Kazakhstan,26,"Ores, slag and ash",111510972.0
+2001,KEN,Kenya,26,"Ores, slag and ash",1512281.0
+2002,KEN,Kenya,26,"Ores, slag and ash",828600.0
+2003,KEN,Kenya,26,"Ores, slag and ash",1977792.0
+2004,KEN,Kenya,26,"Ores, slag and ash",8588858.0
+2005,KEN,Kenya,26,"Ores, slag and ash",4375827.0
+2006,KEN,Kenya,26,"Ores, slag and ash",5354550.0
+2001,KGZ,Kyrgyzstan,26,"Ores, slag and ash",3450950.0
+2002,KGZ,Kyrgyzstan,26,"Ores, slag and ash",4551347.0
+2003,KGZ,Kyrgyzstan,26,"Ores, slag and ash",3704054.0
+2004,KGZ,Kyrgyzstan,26,"Ores, slag and ash",1210787.0
+2005,KGZ,Kyrgyzstan,26,"Ores, slag and ash",1836126.0
+2006,KGZ,Kyrgyzstan,26,"Ores, slag and ash",3630924.0
+2002,KHM,Cambodia,26,"Ores, slag and ash",72200.0
+2004,KHM,Cambodia,26,"Ores, slag and ash",5961.0
+2006,KHM,Cambodia,26,"Ores, slag and ash",1990.0
+2005,KIR,Kiribati,26,"Ores, slag and ash",1420.0
+2001,KNA,Saint Kitts and Nevis,26,"Ores, slag and ash",63.0
+2002,KNA,Saint Kitts and Nevis,26,"Ores, slag and ash",39.0
+2003,KNA,Saint Kitts and Nevis,26,"Ores, slag and ash",441.0
+2004,KNA,Saint Kitts and Nevis,26,"Ores, slag and ash",394.0
+2005,KNA,Saint Kitts and Nevis,26,"Ores, slag and ash",56.0
+2006,KNA,Saint Kitts and Nevis,26,"Ores, slag and ash",155.0
+2001,KOR,Rep. of Korea,26,"Ores, slag and ash",2194682806.0
+2002,KOR,Rep. of Korea,26,"Ores, slag and ash",2139226751.0
+2003,KOR,Rep. of Korea,26,"Ores, slag and ash",2554051491.0
+2004,KOR,Rep. of Korea,26,"Ores, slag and ash",3498238596.0
+2005,KOR,Rep. of Korea,26,"Ores, slag and ash",5193683340.0
+2006,KOR,Rep. of Korea,26,"Ores, slag and ash",8168078759.0
+2001,KWT,Kuwait,26,"Ores, slag and ash",306512.0
+2002,KWT,Kuwait,26,"Ores, slag and ash",1599622.0
+2003,KWT,Kuwait,26,"Ores, slag and ash",3788883.0
+2004,KWT,Kuwait,26,"Ores, slag and ash",14375011.0
+2006,KWT,Kuwait,26,"Ores, slag and ash",10764919.0
+2001,LBN,Lebanon,26,"Ores, slag and ash",407670.0
+2002,LBN,Lebanon,26,"Ores, slag and ash",479670.0
+2003,LBN,Lebanon,26,"Ores, slag and ash",1879165.0
+2004,LBN,Lebanon,26,"Ores, slag and ash",4776000.0
+2005,LBN,Lebanon,26,"Ores, slag and ash",2677000.0
+2006,LBN,Lebanon,26,"Ores, slag and ash",5864398.0
+2001,LCA,Saint Lucia,26,"Ores, slag and ash",139.0
+2003,LCA,Saint Lucia,26,"Ores, slag and ash",314.0
+2005,LCA,Saint Lucia,26,"Ores, slag and ash",1640.0
+2006,LCA,Saint Lucia,26,"Ores, slag and ash",123.0
+2001,LKA,Sri Lanka,26,"Ores, slag and ash",934458.0
+2002,LKA,Sri Lanka,26,"Ores, slag and ash",1031296.0
+2003,LKA,Sri Lanka,26,"Ores, slag and ash",545680.0
+2004,LKA,Sri Lanka,26,"Ores, slag and ash",1405261.0
+2005,LKA,Sri Lanka,26,"Ores, slag and ash",2121253.0
+2006,LKA,Sri Lanka,26,"Ores, slag and ash",1735846.0
+2001,LSO,Lesotho,26,"Ores, slag and ash",39877.685
+2002,LSO,Lesotho,26,"Ores, slag and ash",405768.982
+2003,LSO,Lesotho,26,"Ores, slag and ash",343790.77
+2004,LSO,Lesotho,26,"Ores, slag and ash",983438.854
+2005,LSO,Lesotho,26,"Ores, slag and ash",149371.267
+2006,LSO,Lesotho,26,"Ores, slag and ash",58676.974
+2001,LTU,Lithuania,26,"Ores, slag and ash",881661.0
+2002,LTU,Lithuania,26,"Ores, slag and ash",989095.0
+2003,LTU,Lithuania,26,"Ores, slag and ash",1257879.0
+2004,LTU,Lithuania,26,"Ores, slag and ash",2185843.0
+2005,LTU,Lithuania,26,"Ores, slag and ash",1552253.0
+2006,LTU,Lithuania,26,"Ores, slag and ash",1490419.0
+2001,LUX,Luxembourg,26,"Ores, slag and ash",8184739.0
+2002,LUX,Luxembourg,26,"Ores, slag and ash",9348096.0
+2003,LUX,Luxembourg,26,"Ores, slag and ash",9395762.0
+2004,LUX,Luxembourg,26,"Ores, slag and ash",11044657.0
+2005,LUX,Luxembourg,26,"Ores, slag and ash",23043992.0
+2006,LUX,Luxembourg,26,"Ores, slag and ash",16914327.0
+2001,LVA,Latvia,26,"Ores, slag and ash",750856.389
+2002,LVA,Latvia,26,"Ores, slag and ash",607172.746
+2003,LVA,Latvia,26,"Ores, slag and ash",743955.141
+2004,LVA,Latvia,26,"Ores, slag and ash",977605.221
+2005,LVA,Latvia,26,"Ores, slag and ash",1636513.666
+2006,LVA,Latvia,26,"Ores, slag and ash",1564075.594
+2001,MAC,"China, Macao SAR",26,"Ores, slag and ash",72237.004
+2002,MAC,"China, Macao SAR",26,"Ores, slag and ash",60983.013
+2003,MAC,"China, Macao SAR",26,"Ores, slag and ash",102312.715
+2004,MAC,"China, Macao SAR",26,"Ores, slag and ash",167083.442
+2005,MAC,"China, Macao SAR",26,"Ores, slag and ash",512747.189
+2006,MAC,"China, Macao SAR",26,"Ores, slag and ash",3511793.321
+2001,MAR,Morocco,26,"Ores, slag and ash",6053920.706
+2002,MAR,Morocco,26,"Ores, slag and ash",10724692.873
+2003,MAR,Morocco,26,"Ores, slag and ash",17125481.287
+2004,MAR,Morocco,26,"Ores, slag and ash",16387637.654
+2005,MAR,Morocco,26,"Ores, slag and ash",22744665.618
+2006,MAR,Morocco,26,"Ores, slag and ash",28027297.563
+2001,MDA,Rep. of Moldova,26,"Ores, slag and ash",122490.0
+2002,MDA,Rep. of Moldova,26,"Ores, slag and ash",355367.0
+2003,MDA,Rep. of Moldova,26,"Ores, slag and ash",877193.0
+2004,MDA,Rep. of Moldova,26,"Ores, slag and ash",1793550.0
+2005,MDA,Rep. of Moldova,26,"Ores, slag and ash",1239606.0
+2006,MDA,Rep. of Moldova,26,"Ores, slag and ash",1436139.0
+2001,MDG,Madagascar,26,"Ores, slag and ash",18588.398
+2002,MDG,Madagascar,26,"Ores, slag and ash",39058.521
+2003,MDG,Madagascar,26,"Ores, slag and ash",82865.436
+2004,MDG,Madagascar,26,"Ores, slag and ash",9227.401
+2005,MDG,Madagascar,26,"Ores, slag and ash",1244.795
+2006,MDG,Madagascar,26,"Ores, slag and ash",4306.809
+2001,MDV,Maldives,26,"Ores, slag and ash",122776.0
+2002,MDV,Maldives,26,"Ores, slag and ash",1269.0
+2003,MDV,Maldives,26,"Ores, slag and ash",38584.0
+2004,MDV,Maldives,26,"Ores, slag and ash",106012.0
+2005,MDV,Maldives,26,"Ores, slag and ash",35769.0
+2006,MDV,Maldives,26,"Ores, slag and ash",38161.0
+2001,MEX,Mexico,26,"Ores, slag and ash",321826572.0
+2002,MEX,Mexico,26,"Ores, slag and ash",404445284.0
+2003,MEX,Mexico,26,"Ores, slag and ash",467611005.0
+2004,MEX,Mexico,26,"Ores, slag and ash",696391814.0
+2005,MEX,Mexico,26,"Ores, slag and ash",903333199.0
+2006,MEX,Mexico,26,"Ores, slag and ash",1403174908.0
+2001,MKD,North Macedonia,26,"Ores, slag and ash",2338238.54
+2002,MKD,North Macedonia,26,"Ores, slag and ash",448810.95
+2003,MKD,North Macedonia,26,"Ores, slag and ash",2032929.57
+2004,MKD,North Macedonia,26,"Ores, slag and ash",1808373.81
+2005,MKD,North Macedonia,26,"Ores, slag and ash",20163597.42
+2006,MKD,North Macedonia,26,"Ores, slag and ash",43689386.45
+2001,MLI,Mali,26,"Ores, slag and ash",2401.0
+2002,MLI,Mali,26,"Ores, slag and ash",1468.0
+2003,MLI,Mali,26,"Ores, slag and ash",29499.0
+2004,MLI,Mali,26,"Ores, slag and ash",8012.0
+2005,MLI,Mali,26,"Ores, slag and ash",11309.0
+2006,MLI,Mali,26,"Ores, slag and ash",7951.0
+2001,MLT,Malta,26,"Ores, slag and ash",207190.0
+2002,MLT,Malta,26,"Ores, slag and ash",370912.0
+2003,MLT,Malta,26,"Ores, slag and ash",205089.0
+2004,MLT,Malta,26,"Ores, slag and ash",251193.0
+2005,MLT,Malta,26,"Ores, slag and ash",103704.0
+2006,MLT,Malta,26,"Ores, slag and ash",218994.0
+2001,MMR,Myanmar,26,"Ores, slag and ash",39559.0
+2006,MNE,Montenegro,26,"Ores, slag and ash",513128.0
+2001,MNG,Mongolia,26,"Ores, slag and ash",57837.0
+2003,MNG,Mongolia,26,"Ores, slag and ash",170373.0
+2004,MNG,Mongolia,26,"Ores, slag and ash",70312.0
+2005,MNG,Mongolia,26,"Ores, slag and ash",54431.0
+2006,MNG,Mongolia,26,"Ores, slag and ash",30326.0
+2001,MOZ,Mozambique,26,"Ores, slag and ash",37706.0
+2002,MOZ,Mozambique,26,"Ores, slag and ash",3042.0
+2003,MOZ,Mozambique,26,"Ores, slag and ash",159329.0
+2004,MOZ,Mozambique,26,"Ores, slag and ash",11397.0
+2005,MOZ,Mozambique,26,"Ores, slag and ash",34717.0
+2006,MOZ,Mozambique,26,"Ores, slag and ash",264240.0
+2002,MRT,Mauritania,26,"Ores, slag and ash",64816.0
+2003,MRT,Mauritania,26,"Ores, slag and ash",123195.0
+2004,MRT,Mauritania,26,"Ores, slag and ash",18195.0
+2005,MRT,Mauritania,26,"Ores, slag and ash",53681.0
+2006,MRT,Mauritania,26,"Ores, slag and ash",41139.0
+2001,MSR,Montserrat,26,"Ores, slag and ash",123.0
+2003,MSR,Montserrat,26,"Ores, slag and ash",11.0
+2001,MUS,Mauritius,26,"Ores, slag and ash",103010.0
+2002,MUS,Mauritius,26,"Ores, slag and ash",153324.0
+2003,MUS,Mauritius,26,"Ores, slag and ash",164104.0
+2004,MUS,Mauritius,26,"Ores, slag and ash",186239.0
+2005,MUS,Mauritius,26,"Ores, slag and ash",14653.0
+2006,MUS,Mauritius,26,"Ores, slag and ash",71327.0
+2001,MWI,Malawi,26,"Ores, slag and ash",13349.565
+2002,MWI,Malawi,26,"Ores, slag and ash",26970.278
+2003,MWI,Malawi,26,"Ores, slag and ash",29678.746
+2004,MWI,Malawi,26,"Ores, slag and ash",177382.637
+2005,MWI,Malawi,26,"Ores, slag and ash",13447.99
+2006,MWI,Malawi,26,"Ores, slag and ash",1808.163
+2001,MYS,Malaysia,26,"Ores, slag and ash",198139367.0
+2002,MYS,Malaysia,26,"Ores, slag and ash",146161524.0
+2003,MYS,Malaysia,26,"Ores, slag and ash",173496653.0
+2004,MYS,Malaysia,26,"Ores, slag and ash",267741480.0
+2005,MYS,Malaysia,26,"Ores, slag and ash",299347190.0
+2006,MYS,Malaysia,26,"Ores, slag and ash",375886557.0
+2001,MYT,Mayotte (Overseas France),26,"Ores, slag and ash",1265.0
+2002,MYT,Mayotte (Overseas France),26,"Ores, slag and ash",3443.0
+2003,MYT,Mayotte (Overseas France),26,"Ores, slag and ash",59.0
+2004,MYT,Mayotte (Overseas France),26,"Ores, slag and ash",15765.0
+2006,MYT,Mayotte (Overseas France),26,"Ores, slag and ash",6221.0
+2001,NAM,Namibia,26,"Ores, slag and ash",18819847.0
+2002,NAM,Namibia,26,"Ores, slag and ash",18850703.0
+2003,NAM,Namibia,26,"Ores, slag and ash",28662943.0
+2004,NAM,Namibia,26,"Ores, slag and ash",2136263.0
+2005,NAM,Namibia,26,"Ores, slag and ash",1408439.0
+2006,NAM,Namibia,26,"Ores, slag and ash",2274015.0
+2001,NCL,New Caledonia,26,"Ores, slag and ash",43949.0
+2002,NCL,New Caledonia,26,"Ores, slag and ash",134677.0
+2003,NCL,New Caledonia,26,"Ores, slag and ash",54855.0
+2004,NCL,New Caledonia,26,"Ores, slag and ash",94808.0
+2005,NCL,New Caledonia,26,"Ores, slag and ash",282570.0
+2006,NCL,New Caledonia,26,"Ores, slag and ash",406345.0
+2002,NER,Niger,26,"Ores, slag and ash",2074.0
+2003,NER,Niger,26,"Ores, slag and ash",32.0
+2004,NER,Niger,26,"Ores, slag and ash",872.0
+2005,NER,Niger,26,"Ores, slag and ash",19752.0
+2006,NER,Niger,26,"Ores, slag and ash",74.0
+2001,NGA,Nigeria,26,"Ores, slag and ash",1249610.0
+2002,NGA,Nigeria,26,"Ores, slag and ash",549591.0
+2003,NGA,Nigeria,26,"Ores, slag and ash",1142591.0
+2006,NGA,Nigeria,26,"Ores, slag and ash",2193716.0
+2001,NIC,Nicaragua,26,"Ores, slag and ash",904.0
+2002,NIC,Nicaragua,26,"Ores, slag and ash",81400.0
+2003,NIC,Nicaragua,26,"Ores, slag and ash",54260.0
+2004,NIC,Nicaragua,26,"Ores, slag and ash",110.0
+2005,NIC,Nicaragua,26,"Ores, slag and ash",4840.0
+2006,NIC,Nicaragua,26,"Ores, slag and ash",1433.0
+2001,NLD,Netherlands,26,"Ores, slag and ash",369171901.0
+2002,NLD,Netherlands,26,"Ores, slag and ash",376634803.0
+2003,NLD,Netherlands,26,"Ores, slag and ash",561054471.0
+2004,NLD,Netherlands,26,"Ores, slag and ash",1316817451.0
+2005,NLD,Netherlands,26,"Ores, slag and ash",2131005911.0
+2006,NLD,Netherlands,26,"Ores, slag and ash",2237262585.0
+2001,NOR,Norway,26,"Ores, slag and ash",172406350.128
+2002,NOR,Norway,26,"Ores, slag and ash",151065831.795
+2003,NOR,Norway,26,"Ores, slag and ash",168759764.073
+2004,NOR,Norway,26,"Ores, slag and ash",241757802.347
+2005,NOR,Norway,26,"Ores, slag and ash",333742156.051
+2006,NOR,Norway,26,"Ores, slag and ash",466113200.985
+2003,NPL,Nepal,26,"Ores, slag and ash",1867929.0
+2001,NZL,New Zealand,26,"Ores, slag and ash",1470972.0
+2002,NZL,New Zealand,26,"Ores, slag and ash",1128934.0
+2003,NZL,New Zealand,26,"Ores, slag and ash",1135037.0
+2004,NZL,New Zealand,26,"Ores, slag and ash",1435377.0
+2005,NZL,New Zealand,26,"Ores, slag and ash",1710877.0
+2006,NZL,New Zealand,26,"Ores, slag and ash",2189554.0
+2001,OMN,Oman,26,"Ores, slag and ash",70853944.0
+2002,OMN,Oman,26,"Ores, slag and ash",73793654.0
+2003,OMN,Oman,26,"Ores, slag and ash",16861538.0
+2004,OMN,Oman,26,"Ores, slag and ash",168850830.0
+2005,OMN,Oman,26,"Ores, slag and ash",125742896.0
+2006,OMN,Oman,26,"Ores, slag and ash",186426600.0
+2003,PAK,Pakistan,26,"Ores, slag and ash",52650024.0
+2004,PAK,Pakistan,26,"Ores, slag and ash",43855949.0
+2005,PAK,Pakistan,26,"Ores, slag and ash",97530282.0
+2006,PAK,Pakistan,26,"Ores, slag and ash",85865609.0
+2001,PAN,Panama,26,"Ores, slag and ash",196545.0
+2002,PAN,Panama,26,"Ores, slag and ash",106516.0
+2003,PAN,Panama,26,"Ores, slag and ash",914046.0
+2004,PAN,Panama,26,"Ores, slag and ash",1597449.0
+2005,PAN,Panama,26,"Ores, slag and ash",766420.0
+2006,PAN,Panama,26,"Ores, slag and ash",2989233.0
+2001,PER,Peru,26,"Ores, slag and ash",2455372.0
+2002,PER,Peru,26,"Ores, slag and ash",5303733.0
+2003,PER,Peru,26,"Ores, slag and ash",5873539.0
+2004,PER,Peru,26,"Ores, slag and ash",4511258.0
+2005,PER,Peru,26,"Ores, slag and ash",7647943.0
+2006,PER,Peru,26,"Ores, slag and ash",11824953.0
+2001,PHL,Philippines,26,"Ores, slag and ash",401585443.0
+2002,PHL,Philippines,26,"Ores, slag and ash",333296480.0
+2003,PHL,Philippines,26,"Ores, slag and ash",383539278.0
+2004,PHL,Philippines,26,"Ores, slag and ash",490631711.0
+2005,PHL,Philippines,26,"Ores, slag and ash",567925376.0
+2006,PHL,Philippines,26,"Ores, slag and ash",489085201.0
+2001,PNG,Papua New Guinea,26,"Ores, slag and ash",38353.0
+2002,PNG,Papua New Guinea,26,"Ores, slag and ash",88496.0
+2003,PNG,Papua New Guinea,26,"Ores, slag and ash",31254.0
+2004,PNG,Papua New Guinea,26,"Ores, slag and ash",107483.0
+2001,POL,Poland,26,"Ores, slag and ash",258119000.0
+2002,POL,Poland,26,"Ores, slag and ash",232126000.0
+2003,POL,Poland,26,"Ores, slag and ash",312003000.0
+2004,POL,Poland,26,"Ores, slag and ash",698822586.0
+2005,POL,Poland,26,"Ores, slag and ash",516409904.0
+2006,POL,Poland,26,"Ores, slag and ash",803726007.0
+2001,PRT,Portugal,26,"Ores, slag and ash",10526942.0
+2002,PRT,Portugal,26,"Ores, slag and ash",7054032.0
+2003,PRT,Portugal,26,"Ores, slag and ash",7278761.0
+2004,PRT,Portugal,26,"Ores, slag and ash",9694985.0
+2005,PRT,Portugal,26,"Ores, slag and ash",17115137.0
+2006,PRT,Portugal,26,"Ores, slag and ash",21124174.0
+2001,PRY,Paraguay,26,"Ores, slag and ash",4763697.0
+2002,PRY,Paraguay,26,"Ores, slag and ash",5226085.0
+2003,PRY,Paraguay,26,"Ores, slag and ash",4800432.0
+2004,PRY,Paraguay,26,"Ores, slag and ash",5320385.0
+2005,PRY,Paraguay,26,"Ores, slag and ash",8901442.0
+2006,PRY,Paraguay,26,"Ores, slag and ash",11699981.0
+2001,PYF,French Polynesia,26,"Ores, slag and ash",16436.0
+2002,PYF,French Polynesia,26,"Ores, slag and ash",239485.0
+2003,PYF,French Polynesia,26,"Ores, slag and ash",33831.0
+2004,PYF,French Polynesia,26,"Ores, slag and ash",21886.0
+2005,PYF,French Polynesia,26,"Ores, slag and ash",377585.0
+2006,PYF,French Polynesia,26,"Ores, slag and ash",24966.0
+2001,QAT,Qatar,26,"Ores, slag and ash",32785724.0
+2002,QAT,Qatar,26,"Ores, slag and ash",19332746.0
+2003,QAT,Qatar,26,"Ores, slag and ash",51164350.616
+2004,QAT,Qatar,26,"Ores, slag and ash",65668779.563
+2005,QAT,Qatar,26,"Ores, slag and ash",9964736.0
+2006,QAT,Qatar,26,"Ores, slag and ash",61459478.0
+2001,ROU,Romania,26,"Ores, slag and ash",212568826.81
+2002,ROU,Romania,26,"Ores, slag and ash",222540427.8
+2003,ROU,Romania,26,"Ores, slag and ash",278478332.81
+2004,ROU,Romania,26,"Ores, slag and ash",423664175.09
+2005,ROU,Romania,26,"Ores, slag and ash",552827511.59
+2006,ROU,Romania,26,"Ores, slag and ash",548755194.43
+2001,RUS,Russian Federation,26,"Ores, slag and ash",496743210.0
+2002,RUS,Russian Federation,26,"Ores, slag and ash",480692143.0
+2003,RUS,Russian Federation,26,"Ores, slag and ash",574960734.0
+2004,RUS,Russian Federation,26,"Ores, slag and ash",1080241070.0
+2005,RUS,Russian Federation,26,"Ores, slag and ash",1039592263.0
+2006,RUS,Russian Federation,26,"Ores, slag and ash",914366327.0
+2002,RWA,Rwanda,26,"Ores, slag and ash",257.0
+2003,RWA,Rwanda,26,"Ores, slag and ash",2030.0
+2004,RWA,Rwanda,26,"Ores, slag and ash",289.0
+2005,RWA,Rwanda,26,"Ores, slag and ash",2855226.0
+2006,RWA,Rwanda,26,"Ores, slag and ash",6418045.0
+2001,S19,"Other Asia, nes",26,"Ores, slag and ash",497121400.0
+2002,S19,"Other Asia, nes",26,"Ores, slag and ash",486173613.0
+2003,S19,"Other Asia, nes",26,"Ores, slag and ash",611692400.0
+2004,S19,"Other Asia, nes",26,"Ores, slag and ash",814135439.0
+2005,S19,"Other Asia, nes",26,"Ores, slag and ash",1004236050.0
+2006,S19,"Other Asia, nes",26,"Ores, slag and ash",1267063062.0
+2001,SAU,Saudi Arabia,26,"Ores, slag and ash",245072040.0
+2002,SAU,Saudi Arabia,26,"Ores, slag and ash",70873422.0
+2003,SAU,Saudi Arabia,26,"Ores, slag and ash",153104458.0
+2004,SAU,Saudi Arabia,26,"Ores, slag and ash",274361410.0
+2005,SAU,Saudi Arabia,26,"Ores, slag and ash",646189265.0
+2006,SAU,Saudi Arabia,26,"Ores, slag and ash",620987087.0
+2001,SCG,Serbia and Montenegro (...2005),26,"Ores, slag and ash",24769961.0
+2002,SCG,Serbia and Montenegro (...2005),26,"Ores, slag and ash",18120501.0
+2004,SCG,Serbia and Montenegro (...2005),26,"Ores, slag and ash",93933257.0
+2001,SDN,Sudan (...2011),26,"Ores, slag and ash",54967.286
+2002,SDN,Sudan (...2011),26,"Ores, slag and ash",134433.809
+2003,SDN,Sudan (...2011),26,"Ores, slag and ash",59728.682
+2004,SDN,Sudan (...2011),26,"Ores, slag and ash",395640.383
+2005,SDN,Sudan (...2011),26,"Ores, slag and ash",4319403.942
+2006,SDN,Sudan (...2011),26,"Ores, slag and ash",154868.929
+2001,SEN,Senegal,26,"Ores, slag and ash",586209.0
+2002,SEN,Senegal,26,"Ores, slag and ash",757386.0
+2003,SEN,Senegal,26,"Ores, slag and ash",3327.0
+2004,SEN,Senegal,26,"Ores, slag and ash",495334.0
+2005,SEN,Senegal,26,"Ores, slag and ash",92.0
+2006,SEN,Senegal,26,"Ores, slag and ash",1622222.0
+2001,SGP,Singapore,26,"Ores, slag and ash",48360638.0
+2002,SGP,Singapore,26,"Ores, slag and ash",40206323.0
+2003,SGP,Singapore,26,"Ores, slag and ash",50929876.0
+2004,SGP,Singapore,26,"Ores, slag and ash",45178442.0
+2005,SGP,Singapore,26,"Ores, slag and ash",53168155.0
+2006,SGP,Singapore,26,"Ores, slag and ash",53053823.0
+2004,SLB,Solomon Isds,26,"Ores, slag and ash",1033.0
+2005,SLB,Solomon Isds,26,"Ores, slag and ash",1209.0
+2006,SLB,Solomon Isds,26,"Ores, slag and ash",3185.0
+2002,SLE,Sierra Leone,26,"Ores, slag and ash",2496.0
+2001,SLV,El Salvador,26,"Ores, slag and ash",166205.21
+2002,SLV,El Salvador,26,"Ores, slag and ash",73149.69
+2003,SLV,El Salvador,26,"Ores, slag and ash",159465.31
+2004,SLV,El Salvador,26,"Ores, slag and ash",215369.73
+2005,SLV,El Salvador,26,"Ores, slag and ash",266980.52
+2006,SLV,El Salvador,26,"Ores, slag and ash",260821.62
+2006,SRB,Serbia,26,"Ores, slag and ash",346594546.0
+2003,STP,Sao Tome and Principe,26,"Ores, slag and ash",1024.0
+2001,SUR,Suriname,26,"Ores, slag and ash",2350.0
+2002,SUR,Suriname,26,"Ores, slag and ash",31.0
+2003,SUR,Suriname,26,"Ores, slag and ash",97936.0
+2004,SUR,Suriname,26,"Ores, slag and ash",81385.0
+2005,SUR,Suriname,26,"Ores, slag and ash",96269.0
+2006,SUR,Suriname,26,"Ores, slag and ash",43873.0
+2001,SVK,Slovakia,26,"Ores, slag and ash",142900026.0
+2002,SVK,Slovakia,26,"Ores, slag and ash",143357248.0
+2003,SVK,Slovakia,26,"Ores, slag and ash",182280904.0
+2004,SVK,Slovakia,26,"Ores, slag and ash",380243124.0
+2005,SVK,Slovakia,26,"Ores, slag and ash",414613299.0
+2006,SVK,Slovakia,26,"Ores, slag and ash",437197917.0
+2001,SVN,Slovenia,26,"Ores, slag and ash",35097799.0
+2002,SVN,Slovenia,26,"Ores, slag and ash",22978448.0
+2003,SVN,Slovenia,26,"Ores, slag and ash",31774048.0
+2004,SVN,Slovenia,26,"Ores, slag and ash",43631061.0
+2005,SVN,Slovenia,26,"Ores, slag and ash",76074056.0
+2006,SVN,Slovenia,26,"Ores, slag and ash",67461112.0
+2001,SWE,Sweden,26,"Ores, slag and ash",236646366.0
+2002,SWE,Sweden,26,"Ores, slag and ash",256180815.0
+2003,SWE,Sweden,26,"Ores, slag and ash",291447076.0
+2004,SWE,Sweden,26,"Ores, slag and ash",579776423.0
+2005,SWE,Sweden,26,"Ores, slag and ash",786615302.0
+2006,SWE,Sweden,26,"Ores, slag and ash",1014655790.0
+2001,SWZ,Eswatini,26,"Ores, slag and ash",518099.0
+2002,SWZ,Eswatini,26,"Ores, slag and ash",803247.0
+2003,SWZ,Eswatini,26,"Ores, slag and ash",498095.0
+2004,SWZ,Eswatini,26,"Ores, slag and ash",770280.0
+2005,SWZ,Eswatini,26,"Ores, slag and ash",846845.0
+2006,SWZ,Eswatini,26,"Ores, slag and ash",1355200.0
+2001,SYC,Seychelles,26,"Ores, slag and ash",3014.0
+2002,SYC,Seychelles,26,"Ores, slag and ash",1919.0
+2003,SYC,Seychelles,26,"Ores, slag and ash",253.111
+2004,SYC,Seychelles,26,"Ores, slag and ash",4000.074
+2005,SYC,Seychelles,26,"Ores, slag and ash",1091.357
+2006,SYC,Seychelles,26,"Ores, slag and ash",340614.278
+2003,SYR,Syria,26,"Ores, slag and ash",1698699.0
+2004,SYR,Syria,26,"Ores, slag and ash",1242051.0
+2005,SYR,Syria,26,"Ores, slag and ash",364482.0
+2006,SYR,Syria,26,"Ores, slag and ash",328021.0
+2001,TCA,Turks and Caicos Isds,26,"Ores, slag and ash",1753.0
+2002,TCA,Turks and Caicos Isds,26,"Ores, slag and ash",1930.0
+2003,TCA,Turks and Caicos Isds,26,"Ores, slag and ash",960.0
+2004,TCA,Turks and Caicos Isds,26,"Ores, slag and ash",3472.0
+2005,TCA,Turks and Caicos Isds,26,"Ores, slag and ash",904.0
+2006,TCA,Turks and Caicos Isds,26,"Ores, slag and ash",6399.0
+2002,TGO,Togo,26,"Ores, slag and ash",2312.0
+2003,TGO,Togo,26,"Ores, slag and ash",12004.0
+2004,TGO,Togo,26,"Ores, slag and ash",21332.0
+2005,TGO,Togo,26,"Ores, slag and ash",9430.0
+2001,THA,Thailand,26,"Ores, slag and ash",217647992.0
+2002,THA,Thailand,26,"Ores, slag and ash",123290652.0
+2003,THA,Thailand,26,"Ores, slag and ash",135811225.0
+2004,THA,Thailand,26,"Ores, slag and ash",265830730.0
+2005,THA,Thailand,26,"Ores, slag and ash",302648567.0
+2006,THA,Thailand,26,"Ores, slag and ash",290942468.0
+2004,TLS,Timor-Leste,26,"Ores, slag and ash",88819.0
+2005,TLS,Timor-Leste,26,"Ores, slag and ash",249902.0
+2001,TON,Tonga,26,"Ores, slag and ash",256.0
+2002,TON,Tonga,26,"Ores, slag and ash",5305.0
+2003,TON,Tonga,26,"Ores, slag and ash",913.0
+2004,TON,Tonga,26,"Ores, slag and ash",1405.0
+2005,TON,Tonga,26,"Ores, slag and ash",598.0
+2006,TON,Tonga,26,"Ores, slag and ash",105.0
+2001,TTO,Trinidad and Tobago,26,"Ores, slag and ash",2999446.0
+2002,TTO,Trinidad and Tobago,26,"Ores, slag and ash",60482162.0
+2003,TTO,Trinidad and Tobago,26,"Ores, slag and ash",101463407.0
+2004,TTO,Trinidad and Tobago,26,"Ores, slag and ash",50650777.0
+2005,TTO,Trinidad and Tobago,26,"Ores, slag and ash",195893215.0
+2006,TTO,Trinidad and Tobago,26,"Ores, slag and ash",228446112.0
+2001,TUN,Tunisia,26,"Ores, slag and ash",10831320.0
+2002,TUN,Tunisia,26,"Ores, slag and ash",5545800.0
+2003,TUN,Tunisia,26,"Ores, slag and ash",4386224.0
+2004,TUN,Tunisia,26,"Ores, slag and ash",2387577.0
+2005,TUN,Tunisia,26,"Ores, slag and ash",3257731.0
+2006,TUN,Tunisia,26,"Ores, slag and ash",2792074.0
+2001,TUR,Türkiye,26,"Ores, slag and ash",110382954.0
+2002,TUR,Türkiye,26,"Ores, slag and ash",191712245.0
+2003,TUR,Türkiye,26,"Ores, slag and ash",188707151.0
+2004,TUR,Türkiye,26,"Ores, slag and ash",236898603.0
+2005,TUR,Türkiye,26,"Ores, slag and ash",395184185.0
+2006,TUR,Türkiye,26,"Ores, slag and ash",617821670.0
+2004,TUV,Tuvalu,26,"Ores, slag and ash",41.0
+2001,TZA,United Rep. of Tanzania,26,"Ores, slag and ash",488569.0
+2002,TZA,United Rep. of Tanzania,26,"Ores, slag and ash",317566.0
+2003,TZA,United Rep. of Tanzania,26,"Ores, slag and ash",153957.0
+2004,TZA,United Rep. of Tanzania,26,"Ores, slag and ash",128807.0
+2005,TZA,United Rep. of Tanzania,26,"Ores, slag and ash",336421.0
+2006,TZA,United Rep. of Tanzania,26,"Ores, slag and ash",1038857.0
+2001,UGA,Uganda,26,"Ores, slag and ash",7824.0
+2002,UGA,Uganda,26,"Ores, slag and ash",7760.0
+2003,UGA,Uganda,26,"Ores, slag and ash",3218.0
+2004,UGA,Uganda,26,"Ores, slag and ash",2171.0
+2005,UGA,Uganda,26,"Ores, slag and ash",12016.0
+2006,UGA,Uganda,26,"Ores, slag and ash",14919.0
+2001,UKR,Ukraine,26,"Ores, slag and ash",336345940.0
+2002,UKR,Ukraine,26,"Ores, slag and ash",286983050.0
+2003,UKR,Ukraine,26,"Ores, slag and ash",484743620.0
+2004,UKR,Ukraine,26,"Ores, slag and ash",504296640.0
+2005,UKR,Ukraine,26,"Ores, slag and ash",680048376.0
+2006,UKR,Ukraine,26,"Ores, slag and ash",538676147.0
+2001,URY,Uruguay,26,"Ores, slag and ash",561388.0
+2002,URY,Uruguay,26,"Ores, slag and ash",558961.0
+2003,URY,Uruguay,26,"Ores, slag and ash",388580.0
+2004,URY,Uruguay,26,"Ores, slag and ash",828744.0
+2005,URY,Uruguay,26,"Ores, slag and ash",870939.0
+2006,URY,Uruguay,26,"Ores, slag and ash",822950.0
+2001,USA,USA,26,"Ores, slag and ash",1509677699.0
+2002,USA,USA,26,"Ores, slag and ash",1640876014.0
+2003,USA,USA,26,"Ores, slag and ash",1575361622.0
+2004,USA,USA,26,"Ores, slag and ash",2076159239.0
+2005,USA,USA,26,"Ores, slag and ash",2948640178.0
+2006,USA,USA,26,"Ores, slag and ash",2931101624.0
+2001,VCT,Saint Vincent and the Grenadines,26,"Ores, slag and ash",141.0
+2002,VCT,Saint Vincent and the Grenadines,26,"Ores, slag and ash",118.0
+2003,VCT,Saint Vincent and the Grenadines,26,"Ores, slag and ash",36.0
+2004,VCT,Saint Vincent and the Grenadines,26,"Ores, slag and ash",75.0
+2005,VCT,Saint Vincent and the Grenadines,26,"Ores, slag and ash",50.0
+2006,VCT,Saint Vincent and the Grenadines,26,"Ores, slag and ash",28.0
+2001,VEN,Venezuela,26,"Ores, slag and ash",8583073.0
+2002,VEN,Venezuela,26,"Ores, slag and ash",7655452.0
+2003,VEN,Venezuela,26,"Ores, slag and ash",11926886.0
+2004,VEN,Venezuela,26,"Ores, slag and ash",11861270.0
+2005,VEN,Venezuela,26,"Ores, slag and ash",12043691.0
+2006,VEN,Venezuela,26,"Ores, slag and ash",60463559.0
+2001,VNM,Viet Nam,26,"Ores, slag and ash",961717.0
+2002,VNM,Viet Nam,26,"Ores, slag and ash",9305770.0
+2003,VNM,Viet Nam,26,"Ores, slag and ash",8279670.0
+2004,VNM,Viet Nam,26,"Ores, slag and ash",40300276.0
+2005,VNM,Viet Nam,26,"Ores, slag and ash",19359362.0
+2006,VNM,Viet Nam,26,"Ores, slag and ash",12526661.0
+2006,VUT,Vanuatu,26,"Ores, slag and ash",184.0
+2001,WLF,Wallis and Futuna Isds,26,"Ores, slag and ash",1047.0
+2002,WLF,Wallis and Futuna Isds,26,"Ores, slag and ash",412.0
+2003,WLF,Wallis and Futuna Isds,26,"Ores, slag and ash",2384.0
+2004,WLF,Wallis and Futuna Isds,26,"Ores, slag and ash",1967.0
+2005,WLF,Wallis and Futuna Isds,26,"Ores, slag and ash",20.0
+2002,WSM,Samoa,26,"Ores, slag and ash",434.0
+2003,WSM,Samoa,26,"Ores, slag and ash",5969.0
+2005,WSM,Samoa,26,"Ores, slag and ash",190.0
+2004,YEM,Yemen,26,"Ores, slag and ash",18288.0
+2005,YEM,Yemen,26,"Ores, slag and ash",1066731.0
+2006,YEM,Yemen,26,"Ores, slag and ash",2258245.0
+2001,ZAF,South Africa,26,"Ores, slag and ash",30169242.0
+2002,ZAF,South Africa,26,"Ores, slag and ash",88733744.0
+2003,ZAF,South Africa,26,"Ores, slag and ash",186425996.0
+2004,ZAF,South Africa,26,"Ores, slag and ash",281789754.0
+2005,ZAF,South Africa,26,"Ores, slag and ash",354480713.0
+2006,ZAF,South Africa,26,"Ores, slag and ash",371687560.0
+2001,ZMB,Zambia,26,"Ores, slag and ash",846609.0
+2002,ZMB,Zambia,26,"Ores, slag and ash",2567818.0
+2003,ZMB,Zambia,26,"Ores, slag and ash",6454243.0
+2004,ZMB,Zambia,26,"Ores, slag and ash",15247044.0
+2005,ZMB,Zambia,26,"Ores, slag and ash",21358152.0
+2006,ZMB,Zambia,26,"Ores, slag and ash",31740862.0
+2001,ZWE,Zimbabwe,26,"Ores, slag and ash",839172.29
+2002,ZWE,Zimbabwe,26,"Ores, slag and ash",3238749.616
+2003,ZWE,Zimbabwe,26,"Ores, slag and ash",279022.12
+2004,ZWE,Zimbabwe,26,"Ores, slag and ash",1134359.52
+2005,ZWE,Zimbabwe,26,"Ores, slag and ash",1921563.82
+2006,ZWE,Zimbabwe,26,"Ores, slag and ash",10932467.1

@@ -1,0 +1,479 @@
+==============================================================================
+RESOURCE-RICH CLUSTERING BREAKDOWN
+Threshold: mean wide_resource_share > 0.40
+Features (7): coal, crude_oil, refined_oil, gas, ores, base_metals, precious
+Pipeline: log1p(features) -> PCA(2) -> KMeans(k), ensembled across M=5 imputations
+Generated: 2026-05-21
+==============================================================================
+
+Resource-rich countries (N = 64):
+  AGO, ARE, ARM, AZE, BFA, BHR, BOL, BTN, BWA, CAF, CHL, CMR, COD, COG, COL, DZA, ECU, EGY, GAB, GHA, GIN, GUY, IDN, IRN, IRQ, JAM, KAZ, KGZ, KWT, LAO, LBY, MLI, MMR, MNE, MNG, MOZ, MRT, NAM, NER, NGA, OMN, PER, PNG, QAT, RUS, RWA, SAU, SDN, SEN, SLB, SUR, SYR, TGO, TJK, TLS, TTO, TZA, UKR, UZB, VEN, YEM, ZAF, ZMB, ZWE
+
+==============================================================================
+k=3  |  snapshot=aggregate  |  N=64 countries
+==============================================================================
+
+Cluster 0 (N=27)
+  Median shares (top 4): base_metals=12.7%, ores= 6.7%, precious= 4.9%, refined_oil= 1.4%
+  Members: ARM, BHR, BOL, BTN, CHL, COD, EGY, IDN, JAM, LAO, MMR, MNE, MNG, MOZ, MRT, NER, PER, RWA, SEN, SLB, TGO, TJK, TTO, UKR, ZAF, ZMB, ZWE
+    ZMB: base_metals=72.2%, ores= 2.9%, precious= 2.3%
+    BHR: refined_oil=48.7%, base_metals=18.3%, ores= 5.9%
+    MRT: ores=51.9%, precious=10.9%, crude_oil= 9.9%
+    MNG: ores=40.1%, coal=16.2%, precious=11.4%
+    COD: base_metals=59.4%, ores= 8.8%, refined_oil= 1.2%
+
+Cluster 1 (N=24)
+  Median shares (top 4): crude_oil=56.4%, refined_oil= 5.8%, gas= 3.2%, base_metals= 0.9%
+  Members: AGO, ARE, AZE, CMR, COG, COL, DZA, ECU, GAB, IRN, IRQ, KAZ, KWT, LBY, NGA, OMN, QAT, RUS, SAU, SDN, SYR, TLS, VEN, YEM
+    IRQ: crude_oil=99.5%, refined_oil= 0.3%, coal= 0.0%
+    LBY: crude_oil=80.1%, refined_oil= 7.3%, gas= 7.1%
+    AGO: crude_oil=91.3%, precious= 3.1%, gas= 2.5%
+    DZA: crude_oil=44.8%, gas=38.2%, refined_oil=13.3%
+    NGA: crude_oil=84.7%, gas= 6.0%, refined_oil= 2.0%
+
+Cluster 2 (N=13)
+  Median shares (top 4): precious=34.6%, ores= 1.9%, base_metals= 1.5%, refined_oil= 0.6%
+  Members: BFA, BWA, CAF, GHA, GIN, GUY, KGZ, MLI, NAM, PNG, SUR, TZA, UZB
+    BWA: precious=80.7%, base_metals= 6.3%, ores= 1.5%
+    GIN: ores=52.6%, precious=24.3%, refined_oil= 0.4%
+    PNG: ores=23.5%, precious=19.7%, gas=13.4%
+    MLI: precious=63.3%, refined_oil= 0.9%, base_metals= 0.3%
+    UZB: precious=34.6%, gas=10.0%, base_metals= 9.2%
+
+==============================================================================
+k=3  |  snapshot=1995  |  N=26 countries
+==============================================================================
+
+Cluster 0 (N=16)
+  Median shares (top 4): base_metals=10.3%, refined_oil= 1.7%, precious= 1.6%, crude_oil= 1.2%
+  Members: BFA, CHL, CMR, COL, EGY, IDN, KAZ, KGZ, MOZ, PER, SDN, SUR, TGO, TTO, ZMB, ZWE
+    ZMB: base_metals=86.5%, precious= 0.7%, gas= 0.3%
+    KAZ: base_metals=39.9%, crude_oil=15.2%, coal= 6.8%
+    TTO: refined_oil=29.3%, crude_oil=15.9%, base_metals=10.2%
+    PER: base_metals=24.1%, ores=15.9%, precious=12.6%
+    CHL: base_metals=31.0%, ores=15.6%, precious= 3.2%
+
+Cluster 1 (N=6)
+  Median shares (top 4): crude_oil=60.1%, refined_oil= 7.8%, base_metals= 1.0%, precious= 0.2%
+  Members: COG, DZA, ECU, OMN, SAU, VEN
+    DZA: crude_oil=46.1%, gas=30.4%, refined_oil=18.0%
+    COG: crude_oil=85.9%, refined_oil= 1.7%, precious= 0.3%
+    SAU: crude_oil=74.1%, refined_oil=12.6%, base_metals= 1.0%
+    VEN: crude_oil=44.9%, refined_oil=30.7%, base_metals= 8.6%
+    OMN: crude_oil=77.9%, base_metals= 2.0%, refined_oil= 0.7%
+
+Cluster 2 (N=4)
+  Median shares (top 4): ores=37.9%, precious=13.3%, refined_oil= 0.7%, base_metals= 0.0%
+  Members: BOL, CAF, GIN, NER
+    GIN: ores=63.6%, precious= 6.7%, refined_oil= 0.5%
+    CAF: precious=64.1%, refined_oil= 0.8%, base_metals= 0.0%
+    BOL: ores=20.3%, precious=19.9%, base_metals= 9.7%
+    NER: ores=55.4%, refined_oil= 0.6%, precious= 0.1%
+
+==============================================================================
+k=3  |  snapshot=2010  |  N=57 countries
+==============================================================================
+
+Cluster 0 (N=27)
+  Median shares (top 4): base_metals= 8.3%, ores= 7.4%, precious= 2.9%, refined_oil= 1.4%
+  Members: ARM, BHR, BOL, BTN, CHL, EGY, IDN, JAM, LAO, MMR, MNE, MOZ, MRT, NAM, NER, PER, RWA, SEN, SLB, SUR, TGO, TTO, TZA, UKR, ZAF, ZMB, ZWE
+    BHR: refined_oil=71.7%, base_metals=11.8%, ores= 7.4%
+    ZMB: base_metals=78.8%, ores= 5.5%, precious= 1.0%
+    MRT: ores=53.8%, crude_oil=14.4%, precious=13.3%
+    BOL: gas=39.7%, ores=26.1%, base_metals= 4.5%
+    TTO: refined_oil=31.2%, gas=17.2%, crude_oil=12.5%
+
+Cluster 1 (N=23)
+  Median shares (top 4): crude_oil=64.6%, refined_oil= 6.0%, gas= 2.1%, base_metals= 0.5%
+  Members: AGO, ARE, AZE, CMR, COG, COL, DZA, ECU, GAB, IRN, IRQ, KAZ, KWT, LBY, NGA, OMN, QAT, RUS, SAU, SDN, SYR, VEN, YEM
+    IRQ: crude_oil=99.5%, refined_oil= 0.2%, coal= 0.0%
+    AGO: crude_oil=96.5%, precious= 2.0%, coal= 0.0%
+    LBY: crude_oil=83.8%, gas=12.6%, refined_oil= 1.3%
+    DZA: crude_oil=43.4%, gas=39.4%, refined_oil=14.5%
+    VEN: crude_oil=65.9%, refined_oil=27.1%, base_metals= 2.7%
+
+Cluster 2 (N=7)
+  Median shares (top 4): precious=64.4%, base_metals= 0.8%, ores= 0.4%, refined_oil= 0.3%
+  Members: BFA, BWA, CAF, GHA, GUY, KGZ, MLI
+    BWA: precious=70.2%, base_metals=11.4%, ores= 2.3%
+    MLI: precious=79.1%, refined_oil= 1.4%, base_metals= 0.3%
+    GHA: precious=64.4%, base_metals= 2.5%, ores= 1.8%
+    BFA: precious=65.0%, refined_oil= 2.8%, base_metals= 0.5%
+    CAF: precious=59.3%, refined_oil= 0.3%, base_metals= 0.0%
+
+==============================================================================
+k=3  |  snapshot=2023  |  N=53 countries
+==============================================================================
+
+Cluster 0 (N=24)
+  Median shares (top 4): base_metals= 9.2%, ores= 7.6%, precious= 3.2%, refined_oil= 0.8%
+  Members: BHR, BOL, BTN, CHL, COD, EGY, IDN, JAM, LAO, MMR, MNE, MNG, MOZ, NER, PER, PNG, SEN, TGO, TJK, TTO, UKR, ZAF, ZMB, ZWE
+    MNG: coal=58.6%, ores=23.7%, precious= 5.0%
+    NER: ores=43.7%, precious=23.7%, refined_oil=18.4%
+    COD: base_metals=66.9%, ores= 9.0%, precious= 5.1%
+    PNG: gas=36.7%, precious=19.9%, ores= 9.6%
+    BOL: precious=23.9%, ores=23.1%, gas=19.0%
+
+Cluster 1 (N=13)
+  Median shares (top 4): precious=45.5%, ores= 3.2%, base_metals= 0.9%, refined_oil= 0.5%
+  Members: ARM, BFA, BWA, CAF, GHA, KGZ, MLI, MRT, NAM, SUR, TZA, UZB, YEM
+    BWA: precious=79.2%, ores= 9.2%, base_metals= 0.7%
+    SUR: precious=74.0%, ores= 5.8%, base_metals= 0.5%
+    BFA: precious=78.9%, refined_oil= 0.6%, base_metals= 0.5%
+    MLI: precious=76.7%, refined_oil= 1.6%, base_metals= 0.9%
+    CAF: precious=76.4%, base_metals= 0.2%, refined_oil= 0.0%
+
+Cluster 2 (N=16)
+  Median shares (top 4): crude_oil=52.8%, gas= 3.4%, refined_oil= 2.2%, base_metals= 1.1%
+  Members: AGO, ARE, AZE, CMR, COG, COL, ECU, GAB, GUY, KAZ, KWT, NGA, OMN, QAT, SAU, TLS
+    KWT: crude_oil=59.3%, refined_oil=30.0%, gas= 3.7%
+    AGO: crude_oil=81.1%, gas= 6.9%, precious= 4.0%
+    NGA: crude_oil=80.6%, gas=10.5%, base_metals= 0.9%
+    AZE: crude_oil=47.9%, gas=40.4%, refined_oil= 1.7%
+    QAT: gas=60.6%, crude_oil=17.2%, refined_oil= 8.7%
+
+==============================================================================
+k=4  |  snapshot=aggregate  |  N=64 countries
+==============================================================================
+
+Cluster 0 (N=20)
+  Median shares (top 4): ores=10.0%, precious= 7.7%, base_metals= 3.8%, refined_oil= 2.2%
+  Members: ARM, BOL, EGY, IDN, JAM, LAO, MMR, MNG, MRT, NER, PER, PNG, RWA, SDN, SEN, SLB, TGO, TTO, ZAF, ZWE
+    MRT: ores=51.9%, precious=10.9%, crude_oil= 9.9%
+    MNG: ores=40.1%, coal=16.2%, precious=11.4%
+    PNG: ores=23.5%, precious=19.7%, gas=13.4%
+    BOL: gas=27.7%, ores=19.9%, precious=11.8%
+    PER: ores=25.0%, precious=18.7%, base_metals=13.6%
+
+Cluster 1 (N=23)
+  Median shares (top 4): crude_oil=59.3%, refined_oil= 5.7%, gas= 3.4%, base_metals= 1.0%
+  Members: AGO, ARE, AZE, CMR, COG, COL, DZA, ECU, GAB, IRN, IRQ, KAZ, KWT, LBY, NGA, OMN, QAT, RUS, SAU, SYR, TLS, VEN, YEM
+    IRQ: crude_oil=99.5%, refined_oil= 0.3%, coal= 0.0%
+    LBY: crude_oil=80.1%, refined_oil= 7.3%, gas= 7.1%
+    AGO: crude_oil=91.3%, precious= 3.1%, gas= 2.5%
+    DZA: crude_oil=44.8%, gas=38.2%, refined_oil=13.3%
+    NGA: crude_oil=84.7%, gas= 6.0%, refined_oil= 2.0%
+
+Cluster 2 (N=9)
+  Median shares (top 4): base_metals=31.8%, ores= 4.7%, refined_oil= 1.2%, precious= 1.1%
+  Members: BHR, BTN, CHL, COD, MNE, MOZ, TJK, UKR, ZMB
+    ZMB: base_metals=72.2%, ores= 2.9%, precious= 2.3%
+    BHR: refined_oil=48.7%, base_metals=18.3%, ores= 5.9%
+    COD: base_metals=59.4%, ores= 8.8%, refined_oil= 1.2%
+    TJK: ores=26.8%, base_metals=26.2%, precious= 6.5%
+    CHL: base_metals=29.9%, ores=22.3%, precious= 2.0%
+
+Cluster 3 (N=12)
+  Median shares (top 4): precious=34.9%, ores= 1.7%, base_metals= 1.5%, refined_oil= 0.8%
+  Members: BFA, BWA, CAF, GHA, GIN, GUY, KGZ, MLI, NAM, SUR, TZA, UZB
+    BWA: precious=80.7%, base_metals= 6.3%, ores= 1.5%
+    GIN: ores=52.6%, precious=24.3%, refined_oil= 0.4%
+    MLI: precious=63.3%, refined_oil= 0.9%, base_metals= 0.3%
+    UZB: precious=34.6%, gas=10.0%, base_metals= 9.2%
+    GHA: precious=35.3%, crude_oil=11.0%, base_metals= 2.8%
+
+==============================================================================
+k=4  |  snapshot=1995  |  N=26 countries
+==============================================================================
+
+Cluster 0 (N=16)
+  Median shares (top 4): base_metals= 9.7%, crude_oil= 2.4%, precious= 2.1%, refined_oil= 2.0%
+  Members: BFA, CHL, CMR, COL, ECU, EGY, IDN, KAZ, KGZ, MOZ, PER, SDN, SUR, TGO, TTO, ZWE
+    KAZ: base_metals=39.9%, crude_oil=15.2%, coal= 6.8%
+    TTO: refined_oil=29.3%, crude_oil=15.9%, base_metals=10.2%
+    PER: base_metals=24.1%, ores=15.9%, precious=12.6%
+    CHL: base_metals=31.0%, ores=15.6%, precious= 3.2%
+    EGY: crude_oil=20.9%, refined_oil=14.4%, base_metals=10.9%
+
+Cluster 1 (N=5)
+  Median shares (top 4): crude_oil=74.1%, refined_oil=12.6%, base_metals= 1.0%, precious= 0.1%
+  Members: COG, DZA, OMN, SAU, VEN
+    DZA: crude_oil=46.1%, gas=30.4%, refined_oil=18.0%
+    COG: crude_oil=85.9%, refined_oil= 1.7%, precious= 0.3%
+    SAU: crude_oil=74.1%, refined_oil=12.6%, base_metals= 1.0%
+    VEN: crude_oil=44.9%, refined_oil=30.7%, base_metals= 8.6%
+    OMN: crude_oil=77.9%, base_metals= 2.0%, refined_oil= 0.7%
+
+Cluster 2 (N=1)
+  Median shares (top 4): base_metals=86.5%, precious= 0.7%, gas= 0.3%, refined_oil= 0.3%
+  Members: ZMB
+    ZMB: base_metals=86.5%, precious= 0.7%, gas= 0.3%
+
+Cluster 3 (N=4)
+  Median shares (top 4): ores=37.9%, precious=13.3%, refined_oil= 0.7%, base_metals= 0.0%
+  Members: BOL, CAF, GIN, NER
+    GIN: ores=63.6%, precious= 6.7%, refined_oil= 0.5%
+    CAF: precious=64.1%, refined_oil= 0.8%, base_metals= 0.0%
+    BOL: ores=20.3%, precious=19.9%, base_metals= 9.7%
+    NER: ores=55.4%, refined_oil= 0.6%, precious= 0.1%
+
+==============================================================================
+k=4  |  snapshot=2010  |  N=57 countries
+==============================================================================
+
+Cluster 0 (N=18)
+  Median shares (top 4): ores=10.7%, precious= 6.9%, base_metals= 4.9%, refined_oil= 1.5%
+  Members: BOL, EGY, IDN, JAM, MMR, MRT, NAM, NER, PER, RWA, SEN, SLB, SUR, TGO, TTO, TZA, ZAF, ZWE
+    MRT: ores=53.8%, crude_oil=14.4%, precious=13.3%
+    BOL: gas=39.7%, ores=26.1%, base_metals= 4.5%
+    TTO: refined_oil=31.2%, gas=17.2%, crude_oil=12.5%
+    PER: ores=26.7%, precious=20.8%, base_metals=12.8%
+    NER: ores=50.2%, precious=15.6%, refined_oil= 1.6%
+
+Cluster 1 (N=23)
+  Median shares (top 4): crude_oil=64.6%, refined_oil= 6.0%, gas= 2.1%, base_metals= 0.5%
+  Members: AGO, ARE, AZE, CMR, COG, COL, DZA, ECU, GAB, IRN, IRQ, KAZ, KWT, LBY, NGA, OMN, QAT, RUS, SAU, SDN, SYR, VEN, YEM
+    IRQ: crude_oil=99.5%, refined_oil= 0.2%, coal= 0.0%
+    AGO: crude_oil=96.5%, precious= 2.0%, coal= 0.0%
+    LBY: crude_oil=83.8%, gas=12.6%, refined_oil= 1.3%
+    DZA: crude_oil=43.4%, gas=39.4%, refined_oil=14.5%
+    VEN: crude_oil=65.9%, refined_oil=27.1%, base_metals= 2.7%
+
+Cluster 2 (N=9)
+  Median shares (top 4): base_metals=40.0%, ores= 5.5%, refined_oil= 1.1%, precious= 0.1%
+  Members: ARM, BHR, BTN, CHL, LAO, MNE, MOZ, UKR, ZMB
+    BHR: refined_oil=71.7%, base_metals=11.8%, ores= 7.4%
+    ZMB: base_metals=78.8%, ores= 5.5%, precious= 1.0%
+    ARM: base_metals=32.5%, ores=22.8%, precious=13.2%
+    CHL: base_metals=40.0%, ores=23.1%, precious= 2.0%
+    MOZ: base_metals=52.4%, gas= 6.0%, refined_oil= 1.6%
+
+Cluster 3 (N=7)
+  Median shares (top 4): precious=64.4%, base_metals= 0.8%, ores= 0.4%, refined_oil= 0.3%
+  Members: BFA, BWA, CAF, GHA, GUY, KGZ, MLI
+    BWA: precious=70.2%, base_metals=11.4%, ores= 2.3%
+    MLI: precious=79.1%, refined_oil= 1.4%, base_metals= 0.3%
+    GHA: precious=64.4%, base_metals= 2.5%, ores= 1.8%
+    BFA: precious=65.0%, refined_oil= 2.8%, base_metals= 0.5%
+    CAF: precious=59.3%, refined_oil= 0.3%, base_metals= 0.0%
+
+==============================================================================
+k=4  |  snapshot=2023  |  N=53 countries
+==============================================================================
+
+Cluster 0 (N=14)
+  Median shares (top 4): precious=33.1%, ores= 9.9%, base_metals= 4.3%, refined_oil= 0.8%
+  Members: ARM, BOL, GHA, KGZ, LAO, MRT, NAM, NER, PNG, SEN, TZA, UZB, ZAF, ZWE
+    NER: ores=43.7%, precious=23.7%, refined_oil=18.4%
+    PNG: gas=36.7%, precious=19.9%, ores= 9.6%
+    MRT: ores=37.8%, precious=37.3%, refined_oil= 0.5%
+    GHA: precious=45.5%, crude_oil=23.6%, base_metals= 3.1%
+    BOL: precious=23.9%, ores=23.1%, gas=19.0%
+
+Cluster 1 (N=6)
+  Median shares (top 4): precious=76.5%, base_metals= 0.5%, ores= 0.2%, refined_oil= 0.0%
+  Members: BFA, BWA, CAF, MLI, SUR, YEM
+    BWA: precious=79.2%, ores= 9.2%, base_metals= 0.7%
+    SUR: precious=74.0%, ores= 5.8%, base_metals= 0.5%
+    BFA: precious=78.9%, refined_oil= 0.6%, base_metals= 0.5%
+    MLI: precious=76.7%, refined_oil= 1.6%, base_metals= 0.9%
+    CAF: precious=76.4%, base_metals= 0.2%, refined_oil= 0.0%
+
+Cluster 2 (N=17)
+  Median shares (top 4): base_metals=13.1%, ores= 3.4%, precious= 1.6%, refined_oil= 0.6%
+  Members: BHR, BTN, CHL, COD, EGY, IDN, JAM, MMR, MNE, MNG, MOZ, PER, TGO, TJK, TTO, UKR, ZMB
+    MNG: coal=58.6%, ores=23.7%, precious= 5.0%
+    COD: base_metals=66.9%, ores= 9.0%, precious= 5.1%
+    ZMB: base_metals=66.6%, ores= 2.4%, precious= 1.6%
+    PER: ores=41.9%, precious=13.5%, base_metals= 8.5%
+    MOZ: coal=21.3%, gas=20.9%, base_metals=16.4%
+
+Cluster 3 (N=16)
+  Median shares (top 4): crude_oil=52.8%, gas= 3.4%, refined_oil= 2.2%, base_metals= 1.1%
+  Members: AGO, ARE, AZE, CMR, COG, COL, ECU, GAB, GUY, KAZ, KWT, NGA, OMN, QAT, SAU, TLS
+    KWT: crude_oil=59.3%, refined_oil=30.0%, gas= 3.7%
+    AGO: crude_oil=81.1%, gas= 6.9%, precious= 4.0%
+    NGA: crude_oil=80.6%, gas=10.5%, base_metals= 0.9%
+    AZE: crude_oil=47.9%, gas=40.4%, refined_oil= 1.7%
+    QAT: gas=60.6%, crude_oil=17.2%, refined_oil= 8.7%
+
+==============================================================================
+k=5  |  snapshot=aggregate  |  N=64 countries
+==============================================================================
+
+Cluster 0 (N=18)
+  Median shares (top 4): ores=12.9%, precious= 7.7%, base_metals= 3.8%, refined_oil= 1.1%
+  Members: ARM, BOL, EGY, IDN, JAM, LAO, MMR, MNG, MRT, NER, PER, PNG, RWA, SEN, SLB, TGO, ZAF, ZWE
+    MRT: ores=51.9%, precious=10.9%, crude_oil= 9.9%
+    MNG: ores=40.1%, coal=16.2%, precious=11.4%
+    PNG: ores=23.5%, precious=19.7%, gas=13.4%
+    BOL: gas=27.7%, ores=19.9%, precious=11.8%
+    PER: ores=25.0%, precious=18.7%, base_metals=13.6%
+
+Cluster 1 (N=15)
+  Median shares (top 4): crude_oil=64.3%, refined_oil= 6.1%, gas= 3.4%, base_metals= 0.7%
+  Members: AGO, AZE, COG, DZA, GAB, IRN, IRQ, KWT, LBY, NGA, OMN, SAU, SYR, VEN, YEM
+    IRQ: crude_oil=99.5%, refined_oil= 0.3%, coal= 0.0%
+    LBY: crude_oil=80.1%, refined_oil= 7.3%, gas= 7.1%
+    AGO: crude_oil=91.3%, precious= 3.1%, gas= 2.5%
+    DZA: crude_oil=44.8%, gas=38.2%, refined_oil=13.3%
+    NGA: crude_oil=84.7%, gas= 6.0%, refined_oil= 2.0%
+
+Cluster 2 (N=9)
+  Median shares (top 4): base_metals=31.8%, ores= 4.7%, refined_oil= 1.2%, precious= 1.1%
+  Members: BHR, BTN, CHL, COD, MNE, MOZ, TJK, UKR, ZMB
+    ZMB: base_metals=72.2%, ores= 2.9%, precious= 2.3%
+    BHR: refined_oil=48.7%, base_metals=18.3%, ores= 5.9%
+    COD: base_metals=59.4%, ores= 8.8%, refined_oil= 1.2%
+    TJK: ores=26.8%, base_metals=26.2%, precious= 6.5%
+    CHL: base_metals=29.9%, ores=22.3%, precious= 2.0%
+
+Cluster 3 (N=12)
+  Median shares (top 4): precious=34.9%, ores= 1.7%, base_metals= 1.5%, refined_oil= 0.8%
+  Members: BFA, BWA, CAF, GHA, GIN, GUY, KGZ, MLI, NAM, SUR, TZA, UZB
+    BWA: precious=80.7%, base_metals= 6.3%, ores= 1.5%
+    GIN: ores=52.6%, precious=24.3%, refined_oil= 0.4%
+    MLI: precious=63.3%, refined_oil= 0.9%, base_metals= 0.3%
+    UZB: precious=34.6%, gas=10.0%, base_metals= 9.2%
+    GHA: precious=35.3%, crude_oil=11.0%, base_metals= 2.8%
+
+Cluster 4 (N=10)
+  Median shares (top 4): crude_oil=29.4%, refined_oil= 5.5%, gas= 3.2%, base_metals= 2.9%
+  Members: ARE, CMR, COL, ECU, KAZ, QAT, RUS, SDN, TLS, TTO
+    QAT: gas=52.9%, crude_oil=28.5%, refined_oil= 5.3%
+    KAZ: crude_oil=53.1%, base_metals=17.7%, ores= 3.8%
+    RUS: crude_oil=26.8%, refined_oil=14.4%, gas=11.6%
+    SDN: crude_oil=24.6%, refined_oil=22.2%, precious=15.8%
+    TTO: refined_oil=22.3%, gas=18.0%, crude_oil=11.8%
+
+==============================================================================
+k=5  |  snapshot=1995  |  N=26 countries
+==============================================================================
+
+Cluster 0 (N=10)
+  Median shares (top 4): base_metals=10.1%, precious= 3.2%, refined_oil= 0.7%, ores= 0.0%
+  Members: BFA, BOL, CHL, KGZ, MOZ, PER, SDN, SUR, TGO, ZWE
+    BOL: ores=20.3%, precious=19.9%, base_metals= 9.7%
+    PER: base_metals=24.1%, ores=15.9%, precious=12.6%
+    CHL: base_metals=31.0%, ores=15.6%, precious= 3.2%
+    TGO: refined_oil=18.5%, precious= 9.8%, base_metals= 0.6%
+    ZWE: base_metals=19.7%, precious= 2.0%, refined_oil= 0.4%
+
+Cluster 1 (N=5)
+  Median shares (top 4): crude_oil=74.1%, refined_oil=12.6%, base_metals= 1.0%, precious= 0.1%
+  Members: COG, DZA, OMN, SAU, VEN
+    DZA: crude_oil=46.1%, gas=30.4%, refined_oil=18.0%
+    COG: crude_oil=85.9%, refined_oil= 1.7%, precious= 0.3%
+    SAU: crude_oil=74.1%, refined_oil=12.6%, base_metals= 1.0%
+    VEN: crude_oil=44.9%, refined_oil=30.7%, base_metals= 8.6%
+    OMN: crude_oil=77.9%, base_metals= 2.0%, refined_oil= 0.7%
+
+Cluster 2 (N=2)
+  Median shares (top 4): base_metals=63.2%, crude_oil= 7.7%, coal= 3.4%, ores= 1.4%
+  Members: KAZ, ZMB
+    ZMB: base_metals=86.5%, precious= 0.7%, gas= 0.3%
+    KAZ: base_metals=39.9%, crude_oil=15.2%, coal= 6.8%
+
+Cluster 3 (N=6)
+  Median shares (top 4): crude_oil=19.7%, base_metals= 6.2%, refined_oil= 2.9%, precious= 0.5%
+  Members: CMR, COL, ECU, EGY, IDN, TTO
+    TTO: refined_oil=29.3%, crude_oil=15.9%, base_metals=10.2%
+    EGY: crude_oil=20.9%, refined_oil=14.4%, base_metals=10.9%
+    CMR: crude_oil=28.9%, base_metals= 9.2%, refined_oil= 0.2%
+    ECU: crude_oil=32.0%, refined_oil= 3.1%, precious= 2.2%
+    COL: crude_oil=18.6%, precious= 6.6%, coal= 5.7%
+
+Cluster 4 (N=3)
+  Median shares (top 4): ores=55.4%, precious= 6.7%, refined_oil= 0.6%, base_metals= 0.0%
+  Members: CAF, GIN, NER
+    GIN: ores=63.6%, precious= 6.7%, refined_oil= 0.5%
+    CAF: precious=64.1%, refined_oil= 0.8%, base_metals= 0.0%
+    NER: ores=55.4%, refined_oil= 0.6%, precious= 0.1%
+
+==============================================================================
+k=5  |  snapshot=2010  |  N=57 countries
+==============================================================================
+
+Cluster 0 (N=18)
+  Median shares (top 4): ores=10.7%, precious= 6.9%, base_metals= 4.9%, refined_oil= 1.5%
+  Members: BOL, EGY, IDN, JAM, MMR, MRT, NAM, NER, PER, RWA, SEN, SLB, SUR, TGO, TTO, TZA, ZAF, ZWE
+    MRT: ores=53.8%, crude_oil=14.4%, precious=13.3%
+    BOL: gas=39.7%, ores=26.1%, base_metals= 4.5%
+    TTO: refined_oil=31.2%, gas=17.2%, crude_oil=12.5%
+    PER: ores=26.7%, precious=20.8%, base_metals=12.8%
+    NER: ores=50.2%, precious=15.6%, refined_oil= 1.6%
+
+Cluster 1 (N=12)
+  Median shares (top 4): crude_oil=79.7%, refined_oil= 4.5%, gas= 1.7%, base_metals= 0.3%
+  Members: AGO, AZE, COG, GAB, IRQ, KWT, LBY, NGA, SAU, SDN, VEN, YEM
+    IRQ: crude_oil=99.5%, refined_oil= 0.2%, coal= 0.0%
+    AGO: crude_oil=96.5%, precious= 2.0%, coal= 0.0%
+    LBY: crude_oil=83.8%, gas=12.6%, refined_oil= 1.3%
+    VEN: crude_oil=65.9%, refined_oil=27.1%, base_metals= 2.7%
+    SDN: crude_oil=84.0%, precious=10.1%, refined_oil= 0.9%
+
+Cluster 2 (N=9)
+  Median shares (top 4): base_metals=40.0%, ores= 5.5%, refined_oil= 1.1%, precious= 0.1%
+  Members: ARM, BHR, BTN, CHL, LAO, MNE, MOZ, UKR, ZMB
+    BHR: refined_oil=71.7%, base_metals=11.8%, ores= 7.4%
+    ZMB: base_metals=78.8%, ores= 5.5%, precious= 1.0%
+    ARM: base_metals=32.5%, ores=22.8%, precious=13.2%
+    CHL: base_metals=40.0%, ores=23.1%, precious= 2.0%
+    MOZ: base_metals=52.4%, gas= 6.0%, refined_oil= 1.6%
+
+Cluster 3 (N=11)
+  Median shares (top 4): crude_oil=38.1%, refined_oil= 7.5%, gas= 2.9%, base_metals= 2.0%
+  Members: ARE, CMR, COL, DZA, ECU, IRN, KAZ, OMN, QAT, RUS, SYR
+    DZA: crude_oil=43.4%, gas=39.4%, refined_oil=14.5%
+    QAT: gas=55.7%, crude_oil=26.9%, refined_oil= 7.5%
+    KAZ: crude_oil=64.6%, base_metals=12.4%, ores= 3.8%
+    RUS: crude_oil=32.3%, refined_oil=17.4%, gas=13.2%
+    IRN: crude_oil=55.7%, refined_oil=10.1%, gas= 3.8%
+
+Cluster 4 (N=7)
+  Median shares (top 4): precious=64.4%, base_metals= 0.8%, ores= 0.4%, refined_oil= 0.3%
+  Members: BFA, BWA, CAF, GHA, GUY, KGZ, MLI
+    BWA: precious=70.2%, base_metals=11.4%, ores= 2.3%
+    MLI: precious=79.1%, refined_oil= 1.4%, base_metals= 0.3%
+    GHA: precious=64.4%, base_metals= 2.5%, ores= 1.8%
+    BFA: precious=65.0%, refined_oil= 2.8%, base_metals= 0.5%
+    CAF: precious=59.3%, refined_oil= 0.3%, base_metals= 0.0%
+
+==============================================================================
+k=5  |  snapshot=2023  |  N=53 countries
+==============================================================================
+
+Cluster 0 (N=14)
+  Median shares (top 4): precious=33.1%, ores= 9.9%, base_metals= 4.3%, refined_oil= 0.8%
+  Members: ARM, BOL, GHA, KGZ, LAO, MRT, NAM, NER, PNG, SEN, TZA, UZB, ZAF, ZWE
+    NER: ores=43.7%, precious=23.7%, refined_oil=18.4%
+    PNG: gas=36.7%, precious=19.9%, ores= 9.6%
+    MRT: ores=37.8%, precious=37.3%, refined_oil= 0.5%
+    GHA: precious=45.5%, crude_oil=23.6%, base_metals= 3.1%
+    BOL: precious=23.9%, ores=23.1%, gas=19.0%
+
+Cluster 1 (N=6)
+  Median shares (top 4): precious=76.5%, base_metals= 0.5%, ores= 0.2%, refined_oil= 0.0%
+  Members: BFA, BWA, CAF, MLI, SUR, YEM
+    BWA: precious=79.2%, ores= 9.2%, base_metals= 0.7%
+    SUR: precious=74.0%, ores= 5.8%, base_metals= 0.5%
+    BFA: precious=78.9%, refined_oil= 0.6%, base_metals= 0.5%
+    MLI: precious=76.7%, refined_oil= 1.6%, base_metals= 0.9%
+    CAF: precious=76.4%, base_metals= 0.2%, refined_oil= 0.0%
+
+Cluster 2 (N=16)
+  Median shares (top 4): base_metals=14.0%, ores= 4.3%, precious= 1.6%, refined_oil= 0.6%
+  Members: BHR, BTN, CHL, COD, EGY, IDN, JAM, MMR, MNE, MNG, MOZ, PER, TGO, TJK, UKR, ZMB
+    MNG: coal=58.6%, ores=23.7%, precious= 5.0%
+    COD: base_metals=66.9%, ores= 9.0%, precious= 5.1%
+    ZMB: base_metals=66.6%, ores= 2.4%, precious= 1.6%
+    PER: ores=41.9%, precious=13.5%, base_metals= 8.5%
+    MOZ: coal=21.3%, gas=20.9%, base_metals=16.4%
+
+Cluster 3 (N=8)
+  Median shares (top 4): crude_oil=65.7%, gas= 3.4%, refined_oil= 1.2%, base_metals= 0.5%
+  Members: AGO, AZE, COG, GUY, KWT, NGA, SAU, TLS
+    KWT: crude_oil=59.3%, refined_oil=30.0%, gas= 3.7%
+    AGO: crude_oil=81.1%, gas= 6.9%, precious= 4.0%
+    NGA: crude_oil=80.6%, gas=10.5%, base_metals= 0.9%
+    AZE: crude_oil=47.9%, gas=40.4%, refined_oil= 1.7%
+    COG: crude_oil=84.2%, refined_oil= 1.7%, base_metals= 1.2%
+
+Cluster 4 (N=9)
+  Median shares (top 4): crude_oil=28.5%, gas= 6.2%, refined_oil= 5.7%, base_metals= 2.9%
+  Members: ARE, CMR, COL, ECU, GAB, KAZ, OMN, QAT, TTO
+    QAT: gas=60.6%, crude_oil=17.2%, refined_oil= 8.7%
+    KAZ: crude_oil=53.7%, base_metals=11.7%, ores= 6.3%
+    GAB: crude_oil=51.8%, ores=23.3%, refined_oil= 2.1%
+    OMN: crude_oil=43.3%, refined_oil=14.2%, gas=11.6%
+    ARE: crude_oil=28.5%, precious=15.8%, refined_oil=14.7%

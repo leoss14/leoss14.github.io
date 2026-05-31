@@ -1,0 +1,272 @@
+reporterISO,period,cmdCode,primaryValue,reporterDesc,cmdDesc
+ARG,1995,2716,7852188.0,Argentina,Electrical energy
+ARG,1996,2716,12985102.0,Argentina,Electrical energy
+ARG,1997,2716,11299862.0,Argentina,Electrical energy
+ARG,1998,2716,2537629.0,Argentina,Electrical energy
+ARG,1999,2716,27898328.0,Argentina,Electrical energy
+ARG,2000,2716,148187660.0,Argentina,Electrical energy
+ARM,1997,2716,1573089.0,Armenia,Electrical energy
+ARM,1999,2716,19146744.0,Armenia,Electrical energy
+ARM,2000,2716,20551593.0,Armenia,Electrical energy
+AUT,1995,2716,337700448.0,Austria,Electrical energy
+AUT,1996,2716,392247872.0,Austria,Electrical energy
+AUT,1997,2716,357735232.0,Austria,Electrical energy
+AUT,1998,2716,331827776.0,Austria,Electrical energy
+AUT,1999,2716,367033920.0,Austria,Electrical energy
+AUT,2000,2716,405214120.0,Austria,Electrical energy
+AZE,1996,2716,15791809.0,Azerbaijan,Electrical energy
+AZE,1997,2716,22951170.0,Azerbaijan,Electrical energy
+AZE,1998,2716,24907450.0,Azerbaijan,Electrical energy
+AZE,1999,2716,25986099.0,Azerbaijan,Electrical energy
+AZE,2000,2716,19342243.0,Azerbaijan,Electrical energy
+BEL,1995,2716,127898224.0,Belgium-Luxembourg (...1998),Electrical energy
+BEL,1996,2716,88574568.0,Belgium-Luxembourg (...1998),Electrical energy
+BEL,1997,2716,117895072.0,Belgium-Luxembourg (...1998),Electrical energy
+BEL,1998,2716,167931776.0,Belgium-Luxembourg (...1998),Electrical energy
+BEL,1999,2716,248904128.0,Belgium,Electrical energy
+BEL,2000,2716,316045641.0,Belgium,Electrical energy
+BLR,1998,2716,120000.0,Belarus,Electrical energy
+BLR,1999,2716,114000.0,Belarus,Electrical energy
+BLR,2000,2716,161000.0,Belarus,Electrical energy
+BOL,1995,2716,290788.0,Bolivia (Plurinational State of),Electrical energy
+BOL,1996,2716,220190.0,Bolivia (Plurinational State of),Electrical energy
+BOL,1997,2716,68229.0,Bolivia (Plurinational State of),Electrical energy
+BOL,1998,2716,120036.0,Bolivia (Plurinational State of),Electrical energy
+BOL,1999,2716,68132.0,Bolivia (Plurinational State of),Electrical energy
+BOL,2000,2716,45636.0,Bolivia (Plurinational State of),Electrical energy
+BTN,1998,2716,32588876.0,Bhutan,Electrical energy
+BTN,1999,2716,46918881.0,Bhutan,Electrical energy
+BWA,2000,2716,97.0,Botswana,Electrical energy
+CAN,1995,2716,864612104.0,Canada,Electrical energy
+CAN,1996,2716,893451855.0,Canada,Electrical energy
+CAN,1997,2716,994682722.0,Canada,Electrical energy
+CAN,1998,2716,1078998272.0,Canada,Electrical energy
+CAN,1999,2716,1295003715.0,Canada,Electrical energy
+CAN,2000,2716,2732155973.0,Canada,Electrical energy
+CHN,1995,2716,385910012.0,China,Electrical energy
+CHN,1996,2716,237690774.0,China,Electrical energy
+CHN,1997,2716,460750029.0,China,Electrical energy
+CHN,1998,2716,446303584.0,China,Electrical energy
+CHN,1999,2716,550876004.0,China,Electrical energy
+CHN,2000,2716,589072038.0,China,Electrical energy
+COL,1997,2716,393985.0,Colombia,Electrical energy
+COL,1999,2716,123968.0,Colombia,Electrical energy
+CZE,1995,2716,71759616.0,Czechia,Electrical energy
+CZE,1996,2716,98358336.0,Czechia,Electrical energy
+CZE,1998,2716,118842976.0,Czechia,Electrical energy
+CZE,1999,2716,108982684.0,Czechia,Electrical energy
+CZE,2000,2716,182878998.0,Czechia,Electrical energy
+DEU,1995,2716,484745984.0,Germany,Electrical energy
+DEU,1996,2716,769947776.0,Germany,Electrical energy
+DEU,1997,2716,614983872.0,Germany,Electrical energy
+DEU,1998,2716,681856000.0,Germany,Electrical energy
+DEU,1999,2716,610028032.0,Germany,Electrical energy
+DEU,2000,2716,453826000.0,Germany,Electrical energy
+DNK,1995,2716,108004096.0,Denmark,Electrical energy
+DNK,1996,2716,547754816.0,Denmark,Electrical energy
+DNK,1998,2716,167545792.0,Denmark,Electrical energy
+DNK,1999,2716,128676872.0,Denmark,Electrical energy
+DNK,2000,2716,100112466.0,Denmark,Electrical energy
+DZA,1995,2716,12419097.0,Algeria,Electrical energy
+DZA,1996,2716,12085978.0,Algeria,Electrical energy
+DZA,1997,2716,2997549.0,Algeria,Electrical energy
+DZA,2000,2716,1946776.0,Algeria,Electrical energy
+ESP,1995,2716,56484876.0,Spain,Electrical energy
+ESP,1996,2716,71656400.0,Spain,Electrical energy
+ESP,1997,2716,127257528.0,Spain,Electrical energy
+ESP,1998,2716,36977400.0,Spain,Electrical energy
+ESP,1999,2716,69471375.0,Spain,Electrical energy
+ESP,2000,2716,114484584.735,Spain,Electrical energy
+EST,1995,2716,21463098.0,Estonia,Electrical energy
+EST,1996,2716,27268372.0,Estonia,Electrical energy
+EST,1997,2716,27840132.0,Estonia,Electrical energy
+EST,1998,2716,15044627.0,Estonia,Electrical energy
+EST,1999,2716,15940068.0,Estonia,Electrical energy
+EST,2000,2716,18776976.0,Estonia,Electrical energy
+FIN,1995,2716,6524752.0,Finland,Electrical energy
+FIN,1996,2716,184032640.0,Finland,Electrical energy
+FIN,1997,2716,43954760.0,Finland,Electrical energy
+FIN,1998,2716,11809192.0,Finland,Electrical energy
+FIN,1999,2716,2622407.0,Finland,Electrical energy
+FIN,2000,2716,7437179.0,Finland,Electrical energy
+FRA,1995,2716,3839000064.0,France,Electrical energy
+FRA,1996,2716,3671130112.0,France,Electrical energy
+FRA,1997,2716,3169266432.0,France,Electrical energy
+FRA,1998,2716,3054923264.0,France,Electrical energy
+FRA,1999,2716,3000227328.0,France,Electrical energy
+FRA,2000,2716,2814814081.0,France,Electrical energy
+GBR,1995,2716,2614767.0,United Kingdom,Electrical energy
+GBR,1996,2716,2852453.0,United Kingdom,Electrical energy
+GBR,1997,2716,1478717.0,United Kingdom,Electrical energy
+GBR,1998,2716,6786841.0,United Kingdom,Electrical energy
+GBR,1999,2716,13542782.0,United Kingdom,Electrical energy
+GBR,2000,2716,7593481.0,United Kingdom,Electrical energy
+GEO,1996,2716,13112782.0,Georgia,Electrical energy
+GEO,1997,2716,11936310.0,Georgia,Electrical energy
+GEO,1998,2716,5461899.0,Georgia,Electrical energy
+GEO,1999,2716,9746598.0,Georgia,Electrical energy
+GEO,2000,2716,5870770.0,Georgia,Electrical energy
+GHA,1996,2716,16414316.0,Ghana,Electrical energy
+GHA,1997,2716,19725094.0,Ghana,Electrical energy
+GHA,1998,2716,12118173.0,Ghana,Electrical energy
+GHA,1999,2716,17710382.0,Ghana,Electrical energy
+GHA,2000,2716,18601302.0,Ghana,Electrical energy
+HKG,1995,2716,93283925.0,"China, Hong Kong SAR",Electrical energy
+HKG,1996,2716,40648611.0,"China, Hong Kong SAR",Electrical energy
+HKG,1997,2716,43397993.0,"China, Hong Kong SAR",Electrical energy
+HKG,1998,2716,47209072.0,"China, Hong Kong SAR",Electrical energy
+HKG,1999,2716,49934437.0,"China, Hong Kong SAR",Electrical energy
+HKG,2000,2716,80518848.0,"China, Hong Kong SAR",Electrical energy
+HRV,1995,2716,1524982.0,Croatia,Electrical energy
+HRV,1996,2716,16800244.0,Croatia,Electrical energy
+HRV,1997,2716,1235030.0,Croatia,Electrical energy
+HRV,1998,2716,1268553.0,Croatia,Electrical energy
+HRV,1999,2716,8934078.0,Croatia,Electrical energy
+HRV,2000,2716,4038469.0,Croatia,Electrical energy
+HUN,1997,2716,95058000.0,Hungary,Electrical energy
+HUN,1998,2716,104118000.0,Hungary,Electrical energy
+HUN,1999,2716,103432000.0,Hungary,Electrical energy
+HUN,2000,2716,72543000.0,Hungary,Electrical energy
+IDN,1995,2716,3600.0,Indonesia,Electrical energy
+IDN,1998,2716,43009.0,Indonesia,Electrical energy
+IND,2000,2716,76878.0,India,Electrical energy
+IRL,1995,2716,453097.0,Ireland,Electrical energy
+IRL,1996,2716,4733955.0,Ireland,Electrical energy
+IRL,1997,2716,1232689.0,Ireland,Electrical energy
+IRL,1998,2716,693126.0,Ireland,Electrical energy
+IRL,1999,2716,31421.0,Ireland,Electrical energy
+IRL,2000,2716,159757.86,Ireland,Electrical energy
+KAZ,1996,2716,964600.0,Kazakhstan,Electrical energy
+KAZ,1997,2716,33100.0,Kazakhstan,Electrical energy
+KAZ,1998,2716,2665100.0,Kazakhstan,Electrical energy
+KAZ,1999,2716,1109600.0,Kazakhstan,Electrical energy
+KAZ,2000,2716,613500.0,Kazakhstan,Electrical energy
+KGZ,1995,2716,40967796.0,Kyrgyzstan,Electrical energy
+KGZ,1996,2716,73550496.0,Kyrgyzstan,Electrical energy
+KGZ,2000,2716,79782700.0,Kyrgyzstan,Electrical energy
+LTU,1995,2716,50113300.0,Lithuania,Electrical energy
+LTU,1996,2716,83341000.0,Lithuania,Electrical energy
+LTU,1997,2716,77178600.0,Lithuania,Electrical energy
+LTU,1998,2716,119099008.0,Lithuania,Electrical energy
+LTU,1999,2716,74804277.0,Lithuania,Electrical energy
+LTU,2000,2716,25079524.0,Lithuania,Electrical energy
+LUX,1999,2716,120862.0,Luxembourg,Electrical energy
+LUX,2000,2716,4068.0,Luxembourg,Electrical energy
+LVA,1995,2716,6017240.0,Latvia,Electrical energy
+LVA,1996,2716,3756049.0,Latvia,Electrical energy
+LVA,1997,2716,25543.0,Latvia,Electrical energy
+LVA,1998,2716,1692294.0,Latvia,Electrical energy
+LVA,1999,2716,3123208.0,Latvia,Electrical energy
+LVA,2000,2716,1218123.959,Latvia,Electrical energy
+MDA,1995,2716,6469800.0,Rep. of Moldova,Electrical energy
+MEX,1995,2716,77381000.0,Mexico,Electrical energy
+MEX,1996,2716,46841156.0,Mexico,Electrical energy
+MEX,1997,2716,1600831.0,Mexico,Electrical energy
+MEX,1998,2716,3222979.0,Mexico,Electrical energy
+MEX,1999,2716,4683465.0,Mexico,Electrical energy
+MEX,2000,2716,20429831.0,Mexico,Electrical energy
+MKD,1998,2716,3617600.0,North Macedonia,Electrical energy
+MKD,2000,2716,1572629.98,North Macedonia,Electrical energy
+MLT,1996,2716,8.0,Malta,Electrical energy
+MOZ,1999,2716,62946151.0,Mozambique,Electrical energy
+MOZ,2000,2716,66986989.0,Mozambique,Electrical energy
+MYS,2000,2716,777176.0,Malaysia,Electrical energy
+NAM,2000,2716,222321.0,Namibia,Electrical energy
+NLD,1995,2716,15799204.0,Netherlands,Electrical energy
+NLD,1996,2716,14363170.0,Netherlands,Electrical energy
+NLD,1997,2716,9977879.0,Netherlands,Electrical energy
+NLD,1998,2716,11926781.0,Netherlands,Electrical energy
+NLD,1999,2716,16680201.0,Netherlands,Electrical energy
+NLD,2000,2716,77845074.0,Netherlands,Electrical energy
+NOR,1995,2716,188751056.0,Norway,Electrical energy
+NOR,1996,2716,153198848.0,Norway,Electrical energy
+NOR,1997,2716,86921992.0,Norway,Electrical energy
+NOR,1998,2716,56450984.0,Norway,Electrical energy
+NOR,1999,2716,117587592.0,Norway,Electrical energy
+NOR,2000,2716,229990350.256,Norway,Electrical energy
+OMN,1998,2716,82574.0,Oman,Electrical energy
+POL,1995,2716,101742000.0,Poland,Electrical energy
+POL,1996,2716,122070000.0,Poland,Electrical energy
+POL,1997,2716,109438600.0,Poland,Electrical energy
+POL,1998,2716,111390000.0,Poland,Electrical energy
+POL,1999,2716,154199000.0,Poland,Electrical energy
+POL,2000,2716,145949000.0,Poland,Electrical energy
+PRT,1995,2716,186251.0,Portugal,Electrical energy
+PRT,1996,2716,965475.0,Portugal,Electrical energy
+PRT,1999,2716,35684497.0,Portugal,Electrical energy
+PRT,2000,2716,25733247.0,Portugal,Electrical energy
+PRY,2000,2716,1330732612.0,Paraguay,Electrical energy
+ROU,1995,2716,8010000.0,Romania,Electrical energy
+ROU,1997,2716,13058000.0,Romania,Electrical energy
+ROU,1998,2716,11055000.0,Romania,Electrical energy
+ROU,1999,2716,72578000.0,Romania,Electrical energy
+ROU,2000,2716,46717417.0,Romania,Electrical energy
+RUS,1996,2716,433538688.0,Russian Federation,Electrical energy
+RUS,1997,2716,533711488.0,Russian Federation,Electrical energy
+RUS,1998,2716,397024805.0,Russian Federation,Electrical energy
+RUS,1999,2716,195159860.0,Russian Federation,Electrical energy
+RUS,2000,2716,138222524.0,Russian Federation,Electrical energy
+SAU,1995,2716,3335.0,Saudi Arabia,Electrical energy
+SAU,1996,2716,34285.0,Saudi Arabia,Electrical energy
+SCG,1996,2716,3596000.0,Serbia and Montenegro (...2005),Electrical energy
+SCG,1997,2716,1605000.0,Serbia and Montenegro (...2005),Electrical energy
+SCG,1998,2716,7237000.0,Serbia and Montenegro (...2005),Electrical energy
+SCG,1999,2716,21109000.0,Serbia and Montenegro (...2005),Electrical energy
+SCG,2000,2716,623000.0,Serbia and Montenegro (...2005),Electrical energy
+SLV,1999,2716,1075000.0,El Salvador,Electrical energy
+SLV,2000,2716,7520792.47,El Salvador,Electrical energy
+SVK,1997,2716,2764560.0,Slovakia,Electrical energy
+SVK,1998,2716,1338561.0,Slovakia,Electrical energy
+SVK,1999,2716,14494309.0,Slovakia,Electrical energy
+SVK,2000,2716,46478253.0,Slovakia,Electrical energy
+SVN,1995,2716,84932312.0,Slovenia,Electrical energy
+SVN,1996,2716,51198748.0,Slovenia,Electrical energy
+SVN,1997,2716,67902824.0,Slovenia,Electrical energy
+SVN,1998,2716,70771328.0,Slovenia,Electrical energy
+SVN,1999,2716,27542959.0,Slovenia,Electrical energy
+SVN,2000,2716,34557239.0,Slovenia,Electrical energy
+SWE,1998,2716,313219936.0,Sweden,Electrical energy
+SWE,1999,2716,162906144.0,Sweden,Electrical energy
+SWE,2000,2716,35944415.0,Sweden,Electrical energy
+SWZ,2000,2716,13850.0,Eswatini,Electrical energy
+THA,1995,2716,1004.0,Thailand,Electrical energy
+TJK,2000,2716,91932000.0,Tajikistan,Electrical energy
+TKM,1997,2716,39326967.0,Turkmenistan,Electrical energy
+TKM,1998,2716,31708650.0,Turkmenistan,Electrical energy
+TKM,1999,2716,9517803.0,Turkmenistan,Electrical energy
+TKM,2000,2716,16439916.0,Turkmenistan,Electrical energy
+TUR,1996,2716,15486830.0,Türkiye,Electrical energy
+TUR,1997,2716,11092264.0,Türkiye,Electrical energy
+TUR,1998,2716,14910895.0,Türkiye,Electrical energy
+TUR,1999,2716,14265328.0,Türkiye,Electrical energy
+TUR,2000,2716,20384768.0,Türkiye,Electrical energy
+UGA,1998,2716,11741000.0,Uganda,Electrical energy
+UGA,2000,2716,18634547.0,Uganda,Electrical energy
+UKR,1996,2716,104217392.0,Ukraine,Electrical energy
+UKR,1997,2716,165163392.0,Ukraine,Electrical energy
+UKR,1998,2716,140964000.0,Ukraine,Electrical energy
+UKR,1999,2716,78390640.0,Ukraine,Electrical energy
+UKR,2000,2716,89630160.0,Ukraine,Electrical energy
+URY,1995,2716,3748645.0,Uruguay,Electrical energy
+URY,1996,2716,3052135.0,Uruguay,Electrical energy
+URY,1997,2716,1169739.0,Uruguay,Electrical energy
+URY,1998,2716,12910298.0,Uruguay,Electrical energy
+URY,1999,2716,3540133.0,Uruguay,Electrical energy
+URY,2000,2716,9295357.0,Uruguay,Electrical energy
+USA,1995,2716,46648972.0,USA,Electrical energy
+USA,1996,2716,69448190.0,USA,Electrical energy
+USA,1997,2716,124010725.0,USA,Electrical energy
+USA,1998,2716,184676406.0,USA,Electrical energy
+USA,1999,2716,206283218.0,USA,Electrical energy
+USA,2000,2716,413690033.0,USA,Electrical energy
+VEN,1996,2716,4346589.0,Venezuela,Electrical energy
+VNM,2000,2716,1650000.0,Viet Nam,Electrical energy
+ZA1,1999,2716,18530.0,Southern African Customs Union (...1999),Electrical energy
+ZAF,2000,2716,2611.0,South Africa,Electrical energy
+ZMB,1995,2716,25665776.0,Zambia,Electrical energy
+ZMB,1996,2716,16431463.0,Zambia,Electrical energy
+ZMB,1997,2716,7558582.0,Zambia,Electrical energy
+ZMB,1998,2716,6719656.0,Zambia,Electrical energy
+ZMB,1999,2716,4949240.0,Zambia,Electrical energy
+ZMB,2000,2716,8431616.0,Zambia,Electrical energy
+ZWE,2000,2716,454.34,Zimbabwe,Electrical energy

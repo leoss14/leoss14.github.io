@@ -1,0 +1,882 @@
+period,reporterISO,reporterDesc,cmdCode,cmdDesc,primaryValue
+2014,ABW,Aruba,26,"Ores, slag and ash",2763.0
+2015,ABW,Aruba,26,"Ores, slag and ash",338.0
+2016,ABW,Aruba,26,"Ores, slag and ash",214423.91
+2015,AFG,Afghanistan,26,"Ores, slag and ash",3279440.0
+2016,AFG,Afghanistan,26,"Ores, slag and ash",186827.0
+2017,AFG,Afghanistan,26,"Ores, slag and ash",121743.78
+2018,AFG,Afghanistan,26,"Ores, slag and ash",95879.34
+2015,AGO,Angola,26,"Ores, slag and ash",725449.24
+2016,AGO,Angola,26,"Ores, slag and ash",66474.09
+2017,AGO,Angola,26,"Ores, slag and ash",151449.53
+2018,AGO,Angola,26,"Ores, slag and ash",1552225.083
+2013,ALB,Albania,26,"Ores, slag and ash",142657352.0
+2014,ALB,Albania,26,"Ores, slag and ash",117073710.0
+2015,ALB,Albania,26,"Ores, slag and ash",93832342.0
+2016,ALB,Albania,26,"Ores, slag and ash",98961465.0
+2017,ALB,Albania,26,"Ores, slag and ash",97364499.092
+2018,ALB,Albania,26,"Ores, slag and ash",70762485.662
+2013,AND,Andorra,26,"Ores, slag and ash",4111.474
+2014,AND,Andorra,26,"Ores, slag and ash",6505.66
+2015,AND,Andorra,26,"Ores, slag and ash",8962.149
+2016,AND,Andorra,26,"Ores, slag and ash",6862.534
+2017,AND,Andorra,26,"Ores, slag and ash",7687.114
+2018,AND,Andorra,26,"Ores, slag and ash",9466.224
+2013,ARE,United Arab Emirates,26,"Ores, slag and ash",51158622.999
+2014,ARE,United Arab Emirates,26,"Ores, slag and ash",33451113.682
+2015,ARE,United Arab Emirates,26,"Ores, slag and ash",46550199.956
+2016,ARE,United Arab Emirates,26,"Ores, slag and ash",53296489.516
+2017,ARE,United Arab Emirates,26,"Ores, slag and ash",40714930.261
+2018,ARE,United Arab Emirates,26,"Ores, slag and ash",31925428.205
+2013,ARG,Argentina,26,"Ores, slag and ash",1361145137.0
+2014,ARG,Argentina,26,"Ores, slag and ash",1250168473.45
+2015,ARG,Argentina,26,"Ores, slag and ash",712988459.76
+2016,ARG,Argentina,26,"Ores, slag and ash",987156858.71
+2017,ARG,Argentina,26,"Ores, slag and ash",734816291.59
+2018,ARG,Argentina,26,"Ores, slag and ash",206092050.42
+2013,ARM,Armenia,26,"Ores, slag and ash",303604933.0
+2014,ARM,Armenia,26,"Ores, slag and ash",291178484.0
+2015,ARM,Armenia,26,"Ores, slag and ash",366394024.0
+2016,ARM,Armenia,26,"Ores, slag and ash",412976555.0
+2017,ARM,Armenia,26,"Ores, slag and ash",598717042.65
+2018,ARM,Armenia,26,"Ores, slag and ash",557086289.51
+2013,AUS,Australia,26,"Ores, slag and ash",81015413674.0
+2014,AUS,Australia,26,"Ores, slag and ash",73362619313.0
+2015,AUS,Australia,26,"Ores, slag and ash",47842539334.0
+2016,AUS,Australia,26,"Ores, slag and ash",49227428049.0
+2017,AUS,Australia,26,"Ores, slag and ash",59363894633.855
+2018,AUS,Australia,26,"Ores, slag and ash",60279964997.275
+2013,AUT,Austria,26,"Ores, slag and ash",41259718.441
+2014,AUT,Austria,26,"Ores, slag and ash",28186989.932
+2015,AUT,Austria,26,"Ores, slag and ash",32581888.914
+2016,AUT,Austria,26,"Ores, slag and ash",31248186.383
+2017,AUT,Austria,26,"Ores, slag and ash",39184070.338
+2018,AUT,Austria,26,"Ores, slag and ash",57052880.538
+2013,AZE,Azerbaijan,26,"Ores, slag and ash",16982693.0
+2014,AZE,Azerbaijan,26,"Ores, slag and ash",7151302.0
+2015,AZE,Azerbaijan,26,"Ores, slag and ash",6429833.61
+2016,AZE,Azerbaijan,26,"Ores, slag and ash",15906702.93
+2017,AZE,Azerbaijan,26,"Ores, slag and ash",19579081.67
+2018,AZE,Azerbaijan,26,"Ores, slag and ash",19484972.26
+2013,BDI,Burundi,26,"Ores, slag and ash",6528202.0
+2014,BDI,Burundi,26,"Ores, slag and ash",2202511.0
+2015,BDI,Burundi,26,"Ores, slag and ash",1361074.0
+2016,BDI,Burundi,26,"Ores, slag and ash",3597895.0
+2017,BDI,Burundi,26,"Ores, slag and ash",8094111.998
+2018,BDI,Burundi,26,"Ores, slag and ash",14130605.871
+2013,BEL,Belgium,26,"Ores, slag and ash",306734634.331
+2014,BEL,Belgium,26,"Ores, slag and ash",298357516.715
+2015,BEL,Belgium,26,"Ores, slag and ash",215232708.171
+2016,BEL,Belgium,26,"Ores, slag and ash",162469818.89
+2017,BEL,Belgium,26,"Ores, slag and ash",206765577.362
+2018,BEL,Belgium,26,"Ores, slag and ash",319161422.161
+2013,BFA,Burkina Faso,26,"Ores, slag and ash",33519.423
+2014,BFA,Burkina Faso,26,"Ores, slag and ash",13430062.536
+2015,BFA,Burkina Faso,26,"Ores, slag and ash",25566.435
+2016,BFA,Burkina Faso,26,"Ores, slag and ash",85444.0
+2017,BFA,Burkina Faso,26,"Ores, slag and ash",51275.812
+2018,BFA,Burkina Faso,26,"Ores, slag and ash",494859.794
+2013,BGD,Bangladesh,26,"Ores, slag and ash",18157558.0
+2015,BGD,Bangladesh,26,"Ores, slag and ash",7739060.0
+2016,BGD,Bangladesh,26,"Ores, slag and ash",4890578.313
+2017,BGD,Bangladesh,26,"Ores, slag and ash",4202451.104
+2018,BGD,Bangladesh,26,"Ores, slag and ash",7504875.549
+2013,BGR,Bulgaria,26,"Ores, slag and ash",741612810.0
+2014,BGR,Bulgaria,26,"Ores, slag and ash",632144585.0
+2015,BGR,Bulgaria,26,"Ores, slag and ash",534048118.0
+2016,BGR,Bulgaria,26,"Ores, slag and ash",548541385.244
+2017,BGR,Bulgaria,26,"Ores, slag and ash",580791826.184
+2018,BGR,Bulgaria,26,"Ores, slag and ash",691727581.736
+2013,BHR,Bahrain,26,"Ores, slag and ash",612969078.0
+2014,BHR,Bahrain,26,"Ores, slag and ash",598309333.0
+2015,BHR,Bahrain,26,"Ores, slag and ash",395252830.017
+2016,BHR,Bahrain,26,"Ores, slag and ash",781466250.379
+2017,BHR,Bahrain,26,"Ores, slag and ash",865081958.708
+2018,BHR,Bahrain,26,"Ores, slag and ash",991037152.475
+2013,BHS,Bahamas,26,"Ores, slag and ash",432.0
+2013,BIH,Bosnia Herzegovina,26,"Ores, slag and ash",40304689.0
+2014,BIH,Bosnia Herzegovina,26,"Ores, slag and ash",35854264.0
+2015,BIH,Bosnia Herzegovina,26,"Ores, slag and ash",24308006.0
+2016,BIH,Bosnia Herzegovina,26,"Ores, slag and ash",28977074.0
+2017,BIH,Bosnia Herzegovina,26,"Ores, slag and ash",40387357.48
+2018,BIH,Bosnia Herzegovina,26,"Ores, slag and ash",39582312.05
+2013,BLR,Belarus,26,"Ores, slag and ash",3097500.0
+2014,BLR,Belarus,26,"Ores, slag and ash",5289900.0
+2015,BLR,Belarus,26,"Ores, slag and ash",2639200.0
+2016,BLR,Belarus,26,"Ores, slag and ash",2434600.0
+2017,BLR,Belarus,26,"Ores, slag and ash",3188500.0
+2018,BLR,Belarus,26,"Ores, slag and ash",5074500.0
+2016,BLZ,Belize,26,"Ores, slag and ash",19.0
+2013,BOL,Bolivia (Plurinational State of),26,"Ores, slag and ash",1924609309.0
+2014,BOL,Bolivia (Plurinational State of),26,"Ores, slag and ash",1992694100.17
+2015,BOL,Bolivia (Plurinational State of),26,"Ores, slag and ash",1685677373.75
+2016,BOL,Bolivia (Plurinational State of),26,"Ores, slag and ash",1855800471.69
+2017,BOL,Bolivia (Plurinational State of),26,"Ores, slag and ash",2342258832.36
+2018,BOL,Bolivia (Plurinational State of),26,"Ores, slag and ash",2352951775.38
+2013,BRA,Brazil,26,"Ores, slag and ash",35082512117.0
+2014,BRA,Brazil,26,"Ores, slag and ash",28402213499.0
+2015,BRA,Brazil,26,"Ores, slag and ash",16654435225.0
+2016,BRA,Brazil,26,"Ores, slag and ash",15816098824.0
+2017,BRA,Brazil,26,"Ores, slag and ash",22397926893.0
+2018,BRA,Brazil,26,"Ores, slag and ash",23670264508.0
+2013,BRB,Barbados,26,"Ores, slag and ash",4197.0
+2014,BRB,Barbados,26,"Ores, slag and ash",15251.0
+2015,BRB,Barbados,26,"Ores, slag and ash",88.0
+2016,BRB,Barbados,26,"Ores, slag and ash",651.0
+2017,BRB,Barbados,26,"Ores, slag and ash",1.0
+2018,BRB,Barbados,26,"Ores, slag and ash",8.5
+2013,BRN,Brunei Darussalam,26,"Ores, slag and ash",75180.0
+2014,BRN,Brunei Darussalam,26,"Ores, slag and ash",80.0
+2015,BRN,Brunei Darussalam,26,"Ores, slag and ash",47130.0
+2016,BRN,Brunei Darussalam,26,"Ores, slag and ash",114868.0
+2017,BRN,Brunei Darussalam,26,"Ores, slag and ash",56273.624
+2016,BTN,Bhutan,26,"Ores, slag and ash",157232.525
+2017,BTN,Bhutan,26,"Ores, slag and ash",68884.772
+2018,BTN,Bhutan,26,"Ores, slag and ash",206156.866
+2013,BWA,Botswana,26,"Ores, slag and ash",128392567.293
+2014,BWA,Botswana,26,"Ores, slag and ash",134165773.585
+2015,BWA,Botswana,26,"Ores, slag and ash",53383097.124
+2016,BWA,Botswana,26,"Ores, slag and ash",103279.0
+2017,BWA,Botswana,26,"Ores, slag and ash",3754476.911
+2018,BWA,Botswana,26,"Ores, slag and ash",7031180.004
+2013,CAN,Canada,26,"Ores, slag and ash",8432113295.0
+2014,CAN,Canada,26,"Ores, slag and ash",8604564959.0
+2015,CAN,Canada,26,"Ores, slag and ash",6602104922.039
+2016,CAN,Canada,26,"Ores, slag and ash",6132698429.411
+2017,CAN,Canada,26,"Ores, slag and ash",7000440440.829
+2018,CAN,Canada,26,"Ores, slag and ash",7870631752.915
+2013,CHE,Switzerland,26,"Ores, slag and ash",15943331.591
+2014,CHE,Switzerland,26,"Ores, slag and ash",16699219.91
+2015,CHE,Switzerland,26,"Ores, slag and ash",22967661.341
+2016,CHE,Switzerland,26,"Ores, slag and ash",19268351.893
+2017,CHE,Switzerland,26,"Ores, slag and ash",16735354.092
+2018,CHE,Switzerland,26,"Ores, slag and ash",18826390.063
+2013,CHL,Chile,26,"Ores, slag and ash",19441467829.921
+2014,CHL,Chile,26,"Ores, slag and ash",18646795111.75
+2015,CHL,Chile,26,"Ores, slag and ash",14912940071.72
+2016,CHL,Chile,26,"Ores, slag and ash",14589214966.169
+2017,CHL,Chile,26,"Ores, slag and ash",18677580086.866
+2018,CHL,Chile,26,"Ores, slag and ash",20540053893.371
+2013,CHN,China,26,"Ores, slag and ash",378872619.0
+2014,CHN,China,26,"Ores, slag and ash",350079192.0
+2015,CHN,China,26,"Ores, slag and ash",243859786.0
+2016,CHN,China,26,"Ores, slag and ash",270468805.0
+2017,CHN,China,26,"Ores, slag and ash",717174679.0
+2018,CHN,China,26,"Ores, slag and ash",1164442867.0
+2013,CIV,Côte d'Ivoire,26,"Ores, slag and ash",20155497.428
+2014,CIV,Côte d'Ivoire,26,"Ores, slag and ash",30460793.783
+2015,CIV,Côte d'Ivoire,26,"Ores, slag and ash",20168482.494
+2016,CIV,Côte d'Ivoire,26,"Ores, slag and ash",12850651.907
+2017,CIV,Côte d'Ivoire,26,"Ores, slag and ash",53751025.816
+2018,CIV,Côte d'Ivoire,26,"Ores, slag and ash",119129123.55
+2014,CMR,Cameroon,26,"Ores, slag and ash",747.0
+2015,CMR,Cameroon,26,"Ores, slag and ash",7092.0
+2016,CMR,Cameroon,26,"Ores, slag and ash",24187.0
+2017,CMR,Cameroon,26,"Ores, slag and ash",0.138
+2018,CMR,Cameroon,26,"Ores, slag and ash",36391.63
+2015,COD,Dem. Rep. of the Congo,26,"Ores, slag and ash",918216221.428
+2016,COD,Dem. Rep. of the Congo,26,"Ores, slag and ash",848207007.489
+2017,COD,Dem. Rep. of the Congo,26,"Ores, slag and ash",1503642449.524
+2018,COD,Dem. Rep. of the Congo,26,"Ores, slag and ash",1929296204.824
+2013,COG,Congo,26,"Ores, slag and ash",493096.0
+2014,COG,Congo,26,"Ores, slag and ash",521163.63
+2015,COG,Congo,26,"Ores, slag and ash",574313.061
+2016,COG,Congo,26,"Ores, slag and ash",891135.489
+2017,COG,Congo,26,"Ores, slag and ash",930874.387
+2018,COG,Congo,26,"Ores, slag and ash",224263.527
+2013,COL,Colombia,26,"Ores, slag and ash",12607492.0
+2014,COL,Colombia,26,"Ores, slag and ash",20900082.0
+2015,COL,Colombia,26,"Ores, slag and ash",27074307.0
+2016,COL,Colombia,26,"Ores, slag and ash",38826681.0
+2017,COL,Colombia,26,"Ores, slag and ash",59529787.66
+2018,COL,Colombia,26,"Ores, slag and ash",61263252.78
+2013,CRI,Costa Rica,26,"Ores, slag and ash",123407.0
+2014,CRI,Costa Rica,26,"Ores, slag and ash",38085.0
+2015,CRI,Costa Rica,26,"Ores, slag and ash",29821.0
+2016,CRI,Costa Rica,26,"Ores, slag and ash",378.0
+2017,CRI,Costa Rica,26,"Ores, slag and ash",39674.677
+2018,CRI,Costa Rica,26,"Ores, slag and ash",40130.92
+2016,CUB,Cuba,26,"Ores, slag and ash",5084352.69
+2017,CUB,Cuba,26,"Ores, slag and ash",2875800.86
+2018,CUB,Cuba,26,"Ores, slag and ash",11965557.71
+2018,CUW,Curaçao,26,"Ores, slag and ash",335.195
+2013,CYP,Cyprus,26,"Ores, slag and ash",199217.7
+2016,CYP,Cyprus,26,"Ores, slag and ash",13293.905
+2018,CYP,Cyprus,26,"Ores, slag and ash",45056.938
+2013,CZE,Czechia,26,"Ores, slag and ash",25395663.0
+2014,CZE,Czechia,26,"Ores, slag and ash",38281907.0
+2015,CZE,Czechia,26,"Ores, slag and ash",19941935.0
+2016,CZE,Czechia,26,"Ores, slag and ash",23206699.0
+2017,CZE,Czechia,26,"Ores, slag and ash",54282223.0
+2018,CZE,Czechia,26,"Ores, slag and ash",24991183.0
+2013,DEU,Germany,26,"Ores, slag and ash",448015136.552
+2014,DEU,Germany,26,"Ores, slag and ash",418218088.334
+2015,DEU,Germany,26,"Ores, slag and ash",368706496.191
+2016,DEU,Germany,26,"Ores, slag and ash",407811614.296
+2017,DEU,Germany,26,"Ores, slag and ash",540603185.693
+2018,DEU,Germany,26,"Ores, slag and ash",599392602.46
+2013,DMA,Dominica,26,"Ores, slag and ash",333.333
+2018,DMA,Dominica,26,"Ores, slag and ash",740.739
+2013,DNK,Denmark,26,"Ores, slag and ash",15190350.0
+2014,DNK,Denmark,26,"Ores, slag and ash",7899285.0
+2015,DNK,Denmark,26,"Ores, slag and ash",5430794.0
+2016,DNK,Denmark,26,"Ores, slag and ash",5823373.754
+2017,DNK,Denmark,26,"Ores, slag and ash",12392811.926
+2018,DNK,Denmark,26,"Ores, slag and ash",8989071.152
+2013,DOM,Dominican Rep.,26,"Ores, slag and ash",100622492.0
+2014,DOM,Dominican Rep.,26,"Ores, slag and ash",90792725.97
+2015,DOM,Dominican Rep.,26,"Ores, slag and ash",67803544.218
+2016,DOM,Dominican Rep.,26,"Ores, slag and ash",62920794.94
+2017,DOM,Dominican Rep.,26,"Ores, slag and ash",59997263.882
+2018,DOM,Dominican Rep.,26,"Ores, slag and ash",65526799.87
+2013,DZA,Algeria,26,"Ores, slag and ash",3142770.0
+2014,DZA,Algeria,26,"Ores, slag and ash",2753385.0
+2015,DZA,Algeria,26,"Ores, slag and ash",1735883.0
+2016,DZA,Algeria,26,"Ores, slag and ash",1709436.0
+2017,DZA,Algeria,26,"Ores, slag and ash",2314078.43
+2013,ECU,Ecuador,26,"Ores, slag and ash",75162518.0
+2014,ECU,Ecuador,26,"Ores, slag and ash",55753744.0
+2015,ECU,Ecuador,26,"Ores, slag and ash",2432001.0
+2016,ECU,Ecuador,26,"Ores, slag and ash",34171169.0
+2017,ECU,Ecuador,26,"Ores, slag and ash",100224284.4
+2018,ECU,Ecuador,26,"Ores, slag and ash",111408516.21
+2013,EGY,Egypt,26,"Ores, slag and ash",25588374.0
+2014,EGY,Egypt,26,"Ores, slag and ash",17057712.0
+2015,EGY,Egypt,26,"Ores, slag and ash",11505230.011
+2016,EGY,Egypt,26,"Ores, slag and ash",16992913.581
+2017,EGY,Egypt,26,"Ores, slag and ash",14269938.105
+2018,EGY,Egypt,26,"Ores, slag and ash",17781448.105
+2013,ESP,Spain,26,"Ores, slag and ash",2010111687.474
+2014,ESP,Spain,26,"Ores, slag and ash",1857947578.797
+2015,ESP,Spain,26,"Ores, slag and ash",1661597367.864
+2016,ESP,Spain,26,"Ores, slag and ash",1383762589.154
+2017,ESP,Spain,26,"Ores, slag and ash",2358941178.955
+2018,ESP,Spain,26,"Ores, slag and ash",3091572237.049
+2013,EST,Estonia,26,"Ores, slag and ash",7678526.0
+2014,EST,Estonia,26,"Ores, slag and ash",3964607.0
+2015,EST,Estonia,26,"Ores, slag and ash",1844768.0
+2016,EST,Estonia,26,"Ores, slag and ash",1540130.875
+2017,EST,Estonia,26,"Ores, slag and ash",3113179.432
+2018,EST,Estonia,26,"Ores, slag and ash",3547453.61
+2013,ETH,Ethiopia,26,"Ores, slag and ash",2015196.115
+2014,ETH,Ethiopia,26,"Ores, slag and ash",11397019.921
+2015,ETH,Ethiopia,26,"Ores, slag and ash",6487013.361
+2016,ETH,Ethiopia,26,"Ores, slag and ash",6803936.902
+2017,ETH,Ethiopia,26,"Ores, slag and ash",9379047.937
+2018,ETH,Ethiopia,26,"Ores, slag and ash",9165037.554
+2013,FIN,Finland,26,"Ores, slag and ash",239836163.0
+2014,FIN,Finland,26,"Ores, slag and ash",221464297.0
+2015,FIN,Finland,26,"Ores, slag and ash",144057252.0
+2016,FIN,Finland,26,"Ores, slag and ash",218070265.0
+2017,FIN,Finland,26,"Ores, slag and ash",482438962.039
+2018,FIN,Finland,26,"Ores, slag and ash",578792750.588
+2013,FJI,Fiji,26,"Ores, slag and ash",9417931.0
+2014,FJI,Fiji,26,"Ores, slag and ash",8590017.0
+2015,FJI,Fiji,26,"Ores, slag and ash",2418326.387
+2016,FJI,Fiji,26,"Ores, slag and ash",1327112.077
+2017,FJI,Fiji,26,"Ores, slag and ash",2787424.496
+2018,FJI,Fiji,26,"Ores, slag and ash",1305966.667
+2013,FRA,France,26,"Ores, slag and ash",382887874.0
+2014,FRA,France,26,"Ores, slag and ash",309498036.0
+2015,FRA,France,26,"Ores, slag and ash",200028677.0
+2016,FRA,France,26,"Ores, slag and ash",216795824.0
+2017,FRA,France,26,"Ores, slag and ash",294567368.012
+2018,FRA,France,26,"Ores, slag and ash",364491383.13
+2013,GAB,Gabon,26,"Ores, slag and ash",180645806.477
+2014,GAB,Gabon,26,"Ores, slag and ash",147827019.716
+2015,GAB,Gabon,26,"Ores, slag and ash",155689161.871
+2016,GAB,Gabon,26,"Ores, slag and ash",160633681.925
+2017,GAB,Gabon,26,"Ores, slag and ash",180639656.684
+2018,GAB,Gabon,26,"Ores, slag and ash",249982506.806
+2013,GBR,United Kingdom,26,"Ores, slag and ash",180385566.0
+2014,GBR,United Kingdom,26,"Ores, slag and ash",248394148.0
+2015,GBR,United Kingdom,26,"Ores, slag and ash",269032425.0
+2016,GBR,United Kingdom,26,"Ores, slag and ash",235635871.0
+2017,GBR,United Kingdom,26,"Ores, slag and ash",239879005.333
+2018,GBR,United Kingdom,26,"Ores, slag and ash",271718661.416
+2013,GEO,Georgia,26,"Ores, slag and ash",164258445.0
+2014,GEO,Georgia,26,"Ores, slag and ash",250580898.49
+2015,GEO,Georgia,26,"Ores, slag and ash",273763961.33
+2016,GEO,Georgia,26,"Ores, slag and ash",335563575.2
+2017,GEO,Georgia,26,"Ores, slag and ash",426960607.76
+2018,GEO,Georgia,26,"Ores, slag and ash",514200474.08
+2013,GHA,Ghana,26,"Ores, slag and ash",176534323.0
+2014,GHA,Ghana,26,"Ores, slag and ash",145755007.819
+2015,GHA,Ghana,26,"Ores, slag and ash",117445592.284
+2016,GHA,Ghana,26,"Ores, slag and ash",143264684.0
+2017,GHA,Ghana,26,"Ores, slag and ash",186085864.018
+2018,GHA,Ghana,26,"Ores, slag and ash",346482644.906
+2013,GIN,Guinea,26,"Ores, slag and ash",459219683.0
+2014,GIN,Guinea,26,"Ores, slag and ash",599290423.0
+2015,GIN,Guinea,26,"Ores, slag and ash",576330547.0
+2016,GIN,Guinea,26,"Ores, slag and ash",615060496.34
+2013,GRC,Greece,26,"Ores, slag and ash",63819290.0
+2014,GRC,Greece,26,"Ores, slag and ash",89466379.0
+2015,GRC,Greece,26,"Ores, slag and ash",68121767.0
+2016,GRC,Greece,26,"Ores, slag and ash",64800550.0
+2017,GRC,Greece,26,"Ores, slag and ash",93740754.836
+2018,GRC,Greece,26,"Ores, slag and ash",133204531.219
+2013,GTM,Guatemala,26,"Ores, slag and ash",511645168.0
+2014,GTM,Guatemala,26,"Ores, slag and ash",846345956.0
+2015,GTM,Guatemala,26,"Ores, slag and ash",733928910.0
+2016,GTM,Guatemala,26,"Ores, slag and ash",648648170.0
+2017,GTM,Guatemala,26,"Ores, slag and ash",321174851.0
+2018,GTM,Guatemala,26,"Ores, slag and ash",40417614.0
+2013,GUY,Guyana,26,"Ores, slag and ash",133361485.0
+2014,GUY,Guyana,26,"Ores, slag and ash",123435912.0
+2015,GUY,Guyana,26,"Ores, slag and ash",103567713.186
+2016,GUY,Guyana,26,"Ores, slag and ash",108204977.0
+2017,GUY,Guyana,26,"Ores, slag and ash",144435128.989
+2018,GUY,Guyana,26,"Ores, slag and ash",129264817.93
+2013,HKG,"China, Hong Kong SAR",26,"Ores, slag and ash",36647857.0
+2014,HKG,"China, Hong Kong SAR",26,"Ores, slag and ash",45994587.0
+2015,HKG,"China, Hong Kong SAR",26,"Ores, slag and ash",33075673.616
+2016,HKG,"China, Hong Kong SAR",26,"Ores, slag and ash",26398523.665
+2017,HKG,"China, Hong Kong SAR",26,"Ores, slag and ash",20153674.97
+2018,HKG,"China, Hong Kong SAR",26,"Ores, slag and ash",31560903.721
+2014,HND,Honduras,26,"Ores, slag and ash",78360113.0
+2015,HND,Honduras,26,"Ores, slag and ash",47093182.0
+2016,HND,Honduras,26,"Ores, slag and ash",33745553.0
+2017,HND,Honduras,26,"Ores, slag and ash",55982380.57
+2018,HND,Honduras,26,"Ores, slag and ash",82051551.88
+2013,HRV,Croatia,26,"Ores, slag and ash",10099748.0
+2014,HRV,Croatia,26,"Ores, slag and ash",14468562.0
+2015,HRV,Croatia,26,"Ores, slag and ash",15928208.0
+2016,HRV,Croatia,26,"Ores, slag and ash",17972396.0
+2017,HRV,Croatia,26,"Ores, slag and ash",19033575.0
+2018,HRV,Croatia,26,"Ores, slag and ash",18370523.0
+2013,HTI,Haiti,26,"Ores, slag and ash",1.013
+2014,HTI,Haiti,26,"Ores, slag and ash",313.823
+2013,HUN,Hungary,26,"Ores, slag and ash",9911325.0
+2014,HUN,Hungary,26,"Ores, slag and ash",7974620.0
+2015,HUN,Hungary,26,"Ores, slag and ash",4576173.0
+2016,HUN,Hungary,26,"Ores, slag and ash",13302358.0
+2017,HUN,Hungary,26,"Ores, slag and ash",8956550.0
+2018,HUN,Hungary,26,"Ores, slag and ash",6755493.0
+2013,IDN,Indonesia,26,"Ores, slag and ash",6544111736.0
+2014,IDN,Indonesia,26,"Ores, slag and ash",1918637694.0
+2015,IDN,Indonesia,26,"Ores, slag and ash",3378428967.0
+2016,IDN,Indonesia,26,"Ores, slag and ash",3567655091.0
+2017,IDN,Indonesia,26,"Ores, slag and ash",3769623578.9
+2018,IDN,Indonesia,26,"Ores, slag and ash",5254702183.76
+2013,IND,India,26,"Ores, slag and ash",2388949160.0
+2014,IND,India,26,"Ores, slag and ash",1356792878.0
+2015,IND,India,26,"Ores, slag and ash",673066200.0
+2016,IND,India,26,"Ores, slag and ash",1316315753.0
+2017,IND,India,26,"Ores, slag and ash",1989786338.155
+2018,IND,India,26,"Ores, slag and ash",1655617853.861
+2013,IRL,Ireland,26,"Ores, slag and ash",489645671.375
+2014,IRL,Ireland,26,"Ores, slag and ash",476850008.725
+2015,IRL,Ireland,26,"Ores, slag and ash",319143160.783
+2016,IRL,Ireland,26,"Ores, slag and ash",238870929.269
+2017,IRL,Ireland,26,"Ores, slag and ash",316706531.519
+2018,IRL,Ireland,26,"Ores, slag and ash",312943674.14
+2013,IRN,Iran,26,"Ores, slag and ash",1748613857.42
+2014,IRN,Iran,26,"Ores, slag and ash",1287404222.48
+2015,IRN,Iran,26,"Ores, slag and ash",726852348.0
+2016,IRN,Iran,26,"Ores, slag and ash",1103045136.57
+2017,IRN,Iran,26,"Ores, slag and ash",1842901853.0
+2018,IRN,Iran,26,"Ores, slag and ash",1138482964.0
+2013,ISL,Iceland,26,"Ores, slag and ash",88098.0
+2014,ISL,Iceland,26,"Ores, slag and ash",6420.0
+2015,ISL,Iceland,26,"Ores, slag and ash",117438.0
+2016,ISL,Iceland,26,"Ores, slag and ash",977802.0
+2017,ISL,Iceland,26,"Ores, slag and ash",1301645.628
+2018,ISL,Iceland,26,"Ores, slag and ash",1026836.218
+2013,ISR,Israel,26,"Ores, slag and ash",3123000.0
+2014,ISR,Israel,26,"Ores, slag and ash",2946000.0
+2015,ISR,Israel,26,"Ores, slag and ash",222000.0
+2016,ISR,Israel,26,"Ores, slag and ash",1759000.0
+2017,ISR,Israel,26,"Ores, slag and ash",2355000.0
+2018,ISR,Israel,26,"Ores, slag and ash",2016000.0
+2013,ITA,Italy,26,"Ores, slag and ash",290079641.0
+2014,ITA,Italy,26,"Ores, slag and ash",374835597.0
+2015,ITA,Italy,26,"Ores, slag and ash",201809091.517
+2016,ITA,Italy,26,"Ores, slag and ash",197949703.101
+2017,ITA,Italy,26,"Ores, slag and ash",209375865.057
+2018,ITA,Italy,26,"Ores, slag and ash",220105164.919
+2013,JAM,Jamaica,26,"Ores, slag and ash",129395572.0
+2014,JAM,Jamaica,26,"Ores, slag and ash",131848861.282
+2015,JAM,Jamaica,26,"Ores, slag and ash",129858787.0
+2016,JAM,Jamaica,26,"Ores, slag and ash",92154247.0
+2017,JAM,Jamaica,26,"Ores, slag and ash",92450183.71
+2018,JAM,Jamaica,26,"Ores, slag and ash",100289323.32
+2013,JOR,Jordan,26,"Ores, slag and ash",345956.0
+2014,JOR,Jordan,26,"Ores, slag and ash",554562.0
+2015,JOR,Jordan,26,"Ores, slag and ash",373717.0
+2016,JOR,Jordan,26,"Ores, slag and ash",519527.0
+2017,JOR,Jordan,26,"Ores, slag and ash",465097.281
+2018,JOR,Jordan,26,"Ores, slag and ash",651304.362
+2013,JPN,Japan,26,"Ores, slag and ash",136201078.0
+2014,JPN,Japan,26,"Ores, slag and ash",146153730.0
+2015,JPN,Japan,26,"Ores, slag and ash",141271088.0
+2016,JPN,Japan,26,"Ores, slag and ash",143066164.0
+2017,JPN,Japan,26,"Ores, slag and ash",139129233.699
+2018,JPN,Japan,26,"Ores, slag and ash",170631796.632
+2013,KAZ,Kazakhstan,26,"Ores, slag and ash",2729550161.0
+2014,KAZ,Kazakhstan,26,"Ores, slag and ash",2603412023.0
+2015,KAZ,Kazakhstan,26,"Ores, slag and ash",1084150478.0
+2016,KAZ,Kazakhstan,26,"Ores, slag and ash",1193597789.0
+2017,KAZ,Kazakhstan,26,"Ores, slag and ash",2119269692.82
+2018,KAZ,Kazakhstan,26,"Ores, slag and ash",2097832725.0
+2013,KEN,Kenya,26,"Ores, slag and ash",4043268.0
+2015,KEN,Kenya,26,"Ores, slag and ash",123380789.62
+2016,KEN,Kenya,26,"Ores, slag and ash",142137892.75
+2017,KEN,Kenya,26,"Ores, slag and ash",177308494.97
+2018,KEN,Kenya,26,"Ores, slag and ash",212550954.886
+2013,KGZ,Kyrgyzstan,26,"Ores, slag and ash",18488007.0
+2014,KGZ,Kyrgyzstan,26,"Ores, slag and ash",41389302.0
+2015,KGZ,Kyrgyzstan,26,"Ores, slag and ash",19816107.0
+2016,KGZ,Kyrgyzstan,26,"Ores, slag and ash",68285082.0
+2017,KGZ,Kyrgyzstan,26,"Ores, slag and ash",144753958.0
+2018,KGZ,Kyrgyzstan,26,"Ores, slag and ash",124566398.0
+2014,KHM,Cambodia,26,"Ores, slag and ash",4716.0
+2015,KHM,Cambodia,26,"Ores, slag and ash",29831.0
+2018,KHM,Cambodia,26,"Ores, slag and ash",1323454.64
+2014,KIR,Kiribati,26,"Ores, slag and ash",296.084
+2016,KIR,Kiribati,26,"Ores, slag and ash",328.0
+2013,KOR,Rep. of Korea,26,"Ores, slag and ash",161401065.0
+2014,KOR,Rep. of Korea,26,"Ores, slag and ash",154936119.0
+2015,KOR,Rep. of Korea,26,"Ores, slag and ash",160157123.0
+2016,KOR,Rep. of Korea,26,"Ores, slag and ash",93225608.0
+2017,KOR,Rep. of Korea,26,"Ores, slag and ash",192806246.0
+2018,KOR,Rep. of Korea,26,"Ores, slag and ash",359702675.0
+2013,KWT,Kuwait,26,"Ores, slag and ash",151990.0
+2014,KWT,Kuwait,26,"Ores, slag and ash",69022.0
+2015,KWT,Kuwait,26,"Ores, slag and ash",158946.472
+2016,KWT,Kuwait,26,"Ores, slag and ash",303371.74
+2017,KWT,Kuwait,26,"Ores, slag and ash",444427.374
+2018,KWT,Kuwait,26,"Ores, slag and ash",206888.0
+2013,LAO,Lao People's Dem. Rep.,26,"Ores, slag and ash",695550490.0
+2014,LAO,Lao People's Dem. Rep.,26,"Ores, slag and ash",548154561.0
+2015,LAO,Lao People's Dem. Rep.,26,"Ores, slag and ash",645344484.0
+2016,LAO,Lao People's Dem. Rep.,26,"Ores, slag and ash",751017566.0
+2017,LAO,Lao People's Dem. Rep.,26,"Ores, slag and ash",798790968.0
+2018,LAO,Lao People's Dem. Rep.,26,"Ores, slag and ash",760664534.0
+2013,LBN,Lebanon,26,"Ores, slag and ash",191537.0
+2014,LBN,Lebanon,26,"Ores, slag and ash",163519.0
+2015,LBN,Lebanon,26,"Ores, slag and ash",290828.899
+2016,LBN,Lebanon,26,"Ores, slag and ash",102354.0
+2017,LBN,Lebanon,26,"Ores, slag and ash",212108.0
+2018,LBN,Lebanon,26,"Ores, slag and ash",189936.0
+2017,LBR,Liberia,26,"Ores, slag and ash",43177730.0
+2018,LBR,Liberia,26,"Ores, slag and ash",14880450.0
+2016,LBY,Libya,26,"Ores, slag and ash",85438.0
+2017,LBY,Libya,26,"Ores, slag and ash",85438.0
+2013,LCA,Saint Lucia,26,"Ores, slag and ash",201.0
+2017,LCA,Saint Lucia,26,"Ores, slag and ash",222.207
+2018,LCA,Saint Lucia,26,"Ores, slag and ash",37.03
+2013,LKA,Sri Lanka,26,"Ores, slag and ash",7142539.0
+2014,LKA,Sri Lanka,26,"Ores, slag and ash",10295723.0
+2015,LKA,Sri Lanka,26,"Ores, slag and ash",13159856.0
+2016,LKA,Sri Lanka,26,"Ores, slag and ash",10743659.0
+2017,LKA,Sri Lanka,26,"Ores, slag and ash",12092750.425
+2014,LSO,Lesotho,26,"Ores, slag and ash",3317.161
+2015,LSO,Lesotho,26,"Ores, slag and ash",202.211
+2016,LSO,Lesotho,26,"Ores, slag and ash",1795.962
+2017,LSO,Lesotho,26,"Ores, slag and ash",183.881
+2018,LSO,Lesotho,26,"Ores, slag and ash",2387.897
+2013,LTU,Lithuania,26,"Ores, slag and ash",1489410.0
+2014,LTU,Lithuania,26,"Ores, slag and ash",1834224.0
+2015,LTU,Lithuania,26,"Ores, slag and ash",1324915.0
+2016,LTU,Lithuania,26,"Ores, slag and ash",1543885.0
+2017,LTU,Lithuania,26,"Ores, slag and ash",2344331.0
+2018,LTU,Lithuania,26,"Ores, slag and ash",5202962.0
+2013,LUX,Luxembourg,26,"Ores, slag and ash",10509345.0
+2014,LUX,Luxembourg,26,"Ores, slag and ash",9468888.0
+2015,LUX,Luxembourg,26,"Ores, slag and ash",10262111.0
+2016,LUX,Luxembourg,26,"Ores, slag and ash",10278074.0
+2017,LUX,Luxembourg,26,"Ores, slag and ash",9174188.282
+2018,LUX,Luxembourg,26,"Ores, slag and ash",11888191.962
+2013,LVA,Latvia,26,"Ores, slag and ash",1505266.0
+2014,LVA,Latvia,26,"Ores, slag and ash",3955842.247
+2015,LVA,Latvia,26,"Ores, slag and ash",593675.362
+2016,LVA,Latvia,26,"Ores, slag and ash",439677.368
+2017,LVA,Latvia,26,"Ores, slag and ash",287864.183
+2018,LVA,Latvia,26,"Ores, slag and ash",1924057.495
+2013,MAR,Morocco,26,"Ores, slag and ash",240260539.0
+2014,MAR,Morocco,26,"Ores, slag and ash",234766884.0
+2015,MAR,Morocco,26,"Ores, slag and ash",231496987.617
+2016,MAR,Morocco,26,"Ores, slag and ash",242653987.0
+2017,MAR,Morocco,26,"Ores, slag and ash",363616509.821
+2018,MAR,Morocco,26,"Ores, slag and ash",329783494.093
+2015,MDA,Rep. of Moldova,26,"Ores, slag and ash",11661.0
+2013,MDG,Madagascar,26,"Ores, slag and ash",105484540.585
+2014,MDG,Madagascar,26,"Ores, slag and ash",96861621.588
+2015,MDG,Madagascar,26,"Ores, slag and ash",70603522.366
+2016,MDG,Madagascar,26,"Ores, slag and ash",64523661.694
+2017,MDG,Madagascar,26,"Ores, slag and ash",123744869.618
+2018,MDG,Madagascar,26,"Ores, slag and ash",104949777.778
+2013,MEX,Mexico,26,"Ores, slag and ash",4011203340.0
+2014,MEX,Mexico,26,"Ores, slag and ash",4382330658.0
+2015,MEX,Mexico,26,"Ores, slag and ash",3898526243.0
+2016,MEX,Mexico,26,"Ores, slag and ash",3816192772.0
+2017,MEX,Mexico,26,"Ores, slag and ash",4812925352.0
+2018,MEX,Mexico,26,"Ores, slag and ash",5527393679.0
+2013,MKD,North Macedonia,26,"Ores, slag and ash",178356363.0
+2014,MKD,North Macedonia,26,"Ores, slag and ash",172678774.0
+2015,MKD,North Macedonia,26,"Ores, slag and ash",139367120.49
+2016,MKD,North Macedonia,26,"Ores, slag and ash",125490403.44
+2017,MKD,North Macedonia,26,"Ores, slag and ash",201618048.71
+2018,MKD,North Macedonia,26,"Ores, slag and ash",216883389.64
+2016,MLI,Mali,26,"Ores, slag and ash",16184.0
+2017,MLI,Mali,26,"Ores, slag and ash",9641.213
+2018,MLI,Mali,26,"Ores, slag and ash",12280.18
+2013,MLT,Malta,26,"Ores, slag and ash",33561.0
+2014,MLT,Malta,26,"Ores, slag and ash",33401.0
+2015,MLT,Malta,26,"Ores, slag and ash",28097.0
+2016,MLT,Malta,26,"Ores, slag and ash",349266.0
+2017,MLT,Malta,26,"Ores, slag and ash",264017.858
+2018,MLT,Malta,26,"Ores, slag and ash",114393.178
+2013,MMR,Myanmar,26,"Ores, slag and ash",23759525.0
+2014,MMR,Myanmar,26,"Ores, slag and ash",51388708.31
+2015,MMR,Myanmar,26,"Ores, slag and ash",22794163.546
+2016,MMR,Myanmar,26,"Ores, slag and ash",24884705.53
+2017,MMR,Myanmar,26,"Ores, slag and ash",27395361.59
+2018,MMR,Myanmar,26,"Ores, slag and ash",27013283.05
+2013,MNE,Montenegro,26,"Ores, slag and ash",12617272.0
+2014,MNE,Montenegro,26,"Ores, slag and ash",14918446.0
+2015,MNE,Montenegro,26,"Ores, slag and ash",19620780.0
+2016,MNE,Montenegro,26,"Ores, slag and ash",31466924.157
+2017,MNE,Montenegro,26,"Ores, slag and ash",58842826.094
+2018,MNE,Montenegro,26,"Ores, slag and ash",35537536.006
+2013,MNG,Mongolia,26,"Ores, slag and ash",1761242556.0
+2014,MNG,Mongolia,26,"Ores, slag and ash",3222986985.0
+2015,MNG,Mongolia,26,"Ores, slag and ash",2662329896.0
+2016,MNG,Mongolia,26,"Ores, slag and ash",2108362276.0
+2017,MNG,Mongolia,26,"Ores, slag and ash",2200529120.6
+2018,MNG,Mongolia,26,"Ores, slag and ash",2670047536.85
+2013,MOZ,Mozambique,26,"Ores, slag and ash",157885065.0
+2014,MOZ,Mozambique,26,"Ores, slag and ash",187161052.0
+2015,MOZ,Mozambique,26,"Ores, slag and ash",151264534.6
+2016,MOZ,Mozambique,26,"Ores, slag and ash",191269131.97
+2017,MOZ,Mozambique,26,"Ores, slag and ash",210705531.03
+2018,MOZ,Mozambique,26,"Ores, slag and ash",287137316.66
+2013,MRT,Mauritania,26,"Ores, slag and ash",1572740056.0
+2014,MRT,Mauritania,26,"Ores, slag and ash",1070778732.0
+2015,MRT,Mauritania,26,"Ores, slag and ash",744238534.06
+2016,MRT,Mauritania,26,"Ores, slag and ash",686385062.0
+2017,MRT,Mauritania,26,"Ores, slag and ash",813418857.049
+2018,MRT,Mauritania,26,"Ores, slag and ash",734278770.34
+2013,MUS,Mauritius,26,"Ores, slag and ash",47750.0
+2014,MUS,Mauritius,26,"Ores, slag and ash",504.0
+2017,MUS,Mauritius,26,"Ores, slag and ash",130982.954
+2018,MUS,Mauritius,26,"Ores, slag and ash",44.467
+2013,MWI,Malawi,26,"Ores, slag and ash",135072905.411
+2014,MWI,Malawi,26,"Ores, slag and ash",40058648.861
+2015,MWI,Malawi,26,"Ores, slag and ash",145252.85
+2016,MWI,Malawi,26,"Ores, slag and ash",7973.589
+2017,MWI,Malawi,26,"Ores, slag and ash",35706.425
+2018,MWI,Malawi,26,"Ores, slag and ash",16601.822
+2013,MYS,Malaysia,26,"Ores, slag and ash",686230888.0
+2014,MYS,Malaysia,26,"Ores, slag and ash",739162404.0
+2015,MYS,Malaysia,26,"Ores, slag and ash",1449312940.0
+2016,MYS,Malaysia,26,"Ores, slag and ash",1355412472.0
+2017,MYS,Malaysia,26,"Ores, slag and ash",1427501203.453
+2018,MYS,Malaysia,26,"Ores, slag and ash",1329611070.082
+2013,NAM,Namibia,26,"Ores, slag and ash",968373269.0
+2014,NAM,Namibia,26,"Ores, slag and ash",744523172.0
+2015,NAM,Namibia,26,"Ores, slag and ash",445706528.0
+2016,NAM,Namibia,26,"Ores, slag and ash",842461593.0
+2017,NAM,Namibia,26,"Ores, slag and ash",628088132.501
+2018,NAM,Namibia,26,"Ores, slag and ash",825420378.21
+2013,NCL,New Caledonia,26,"Ores, slag and ash",195341618.0
+2014,NCL,New Caledonia,26,"Ores, slag and ash",266781754.0
+2015,NCL,New Caledonia,26,"Ores, slag and ash",237107695.0
+2013,NER,Niger,26,"Ores, slag and ash",659383108.0
+2014,NER,Niger,26,"Ores, slag and ash",478187031.0
+2015,NER,Niger,26,"Ores, slag and ash",401792836.0
+2016,NER,Niger,26,"Ores, slag and ash",299748511.517
+2017,NER,Niger,26,"Ores, slag and ash",292015095.134
+2018,NER,Niger,26,"Ores, slag and ash",206142692.057
+2013,NGA,Nigeria,26,"Ores, slag and ash",64228211.0
+2014,NGA,Nigeria,26,"Ores, slag and ash",26683156.0
+2015,NGA,Nigeria,26,"Ores, slag and ash",22951566.93
+2016,NGA,Nigeria,26,"Ores, slag and ash",10527682.0
+2017,NGA,Nigeria,26,"Ores, slag and ash",9513785.219
+2018,NGA,Nigeria,26,"Ores, slag and ash",44448027.324
+2013,NIC,Nicaragua,26,"Ores, slag and ash",79252.0
+2014,NIC,Nicaragua,26,"Ores, slag and ash",193293.0
+2015,NIC,Nicaragua,26,"Ores, slag and ash",370935.0
+2016,NIC,Nicaragua,26,"Ores, slag and ash",169452.61
+2017,NIC,Nicaragua,26,"Ores, slag and ash",3876.66
+2018,NIC,Nicaragua,26,"Ores, slag and ash",515734.77
+2013,NLD,Netherlands,26,"Ores, slag and ash",1158444581.203
+2014,NLD,Netherlands,26,"Ores, slag and ash",1252454849.658
+2015,NLD,Netherlands,26,"Ores, slag and ash",959943956.163
+2016,NLD,Netherlands,26,"Ores, slag and ash",679704708.671
+2017,NLD,Netherlands,26,"Ores, slag and ash",966326587.462
+2018,NLD,Netherlands,26,"Ores, slag and ash",1426436358.253
+2013,NOR,Norway,26,"Ores, slag and ash",478217586.0
+2014,NOR,Norway,26,"Ores, slag and ash",432411606.0
+2015,NOR,Norway,26,"Ores, slag and ash",236213657.641
+2016,NOR,Norway,26,"Ores, slag and ash",131588246.0
+2017,NOR,Norway,26,"Ores, slag and ash",195467792.735
+2018,NOR,Norway,26,"Ores, slag and ash",215744356.416
+2013,NPL,Nepal,26,"Ores, slag and ash",110802.0
+2014,NPL,Nepal,26,"Ores, slag and ash",81488.0
+2015,NPL,Nepal,26,"Ores, slag and ash",17421.0
+2016,NPL,Nepal,26,"Ores, slag and ash",26628.989
+2017,NPL,Nepal,26,"Ores, slag and ash",40046.246
+2018,NPL,Nepal,26,"Ores, slag and ash",20421.1
+2013,NZL,New Zealand,26,"Ores, slag and ash",79108980.382
+2014,NZL,New Zealand,26,"Ores, slag and ash",7412974.173
+2015,NZL,New Zealand,26,"Ores, slag and ash",4871205.832
+2016,NZL,New Zealand,26,"Ores, slag and ash",5435273.98
+2017,NZL,New Zealand,26,"Ores, slag and ash",17842366.227
+2018,NZL,New Zealand,26,"Ores, slag and ash",3369579.249
+2013,OMN,Oman,26,"Ores, slag and ash",1369713388.0
+2014,OMN,Oman,26,"Ores, slag and ash",709126526.556
+2015,OMN,Oman,26,"Ores, slag and ash",380854688.74
+2016,OMN,Oman,26,"Ores, slag and ash",134091142.678
+2017,OMN,Oman,26,"Ores, slag and ash",977661904.208
+2018,OMN,Oman,26,"Ores, slag and ash",594356123.361
+2013,PAK,Pakistan,26,"Ores, slag and ash",135510312.0
+2014,PAK,Pakistan,26,"Ores, slag and ash",102389465.0
+2015,PAK,Pakistan,26,"Ores, slag and ash",84469467.0
+2016,PAK,Pakistan,26,"Ores, slag and ash",90578930.0
+2017,PAK,Pakistan,26,"Ores, slag and ash",112823132.483
+2018,PAK,Pakistan,26,"Ores, slag and ash",83252113.569
+2013,PAN,Panama,26,"Ores, slag and ash",48557.0
+2015,PAN,Panama,26,"Ores, slag and ash",6912.0
+2013,PER,Peru,26,"Ores, slag and ash",11516606289.77
+2014,PER,Peru,26,"Ores, slag and ash",10565429478.37
+2015,PER,Peru,26,"Ores, slag and ash",9961866517.63
+2016,PER,Peru,26,"Ores, slag and ash",12248690229.07
+2017,PER,Peru,26,"Ores, slag and ash",16614769906.04
+2018,PER,Peru,26,"Ores, slag and ash",17843023435.86
+2013,PHL,Philippines,26,"Ores, slag and ash",2324774440.0
+2014,PHL,Philippines,26,"Ores, slag and ash",2864172511.0
+2015,PHL,Philippines,26,"Ores, slag and ash",1640589723.0
+2016,PHL,Philippines,26,"Ores, slag and ash",1255040307.0
+2017,PHL,Philippines,26,"Ores, slag and ash",1178604289.0
+2018,PHL,Philippines,26,"Ores, slag and ash",1223576695.0
+2014,PLW,Palau,26,"Ores, slag and ash",30.0
+2013,POL,Poland,26,"Ores, slag and ash",59483109.0
+2014,POL,Poland,26,"Ores, slag and ash",108380347.0
+2015,POL,Poland,26,"Ores, slag and ash",35128629.0
+2016,POL,Poland,26,"Ores, slag and ash",128810376.0
+2017,POL,Poland,26,"Ores, slag and ash",98727350.0
+2018,POL,Poland,26,"Ores, slag and ash",254866635.0
+2013,PRT,Portugal,26,"Ores, slag and ash",590922684.0
+2014,PRT,Portugal,26,"Ores, slag and ash",573474077.0
+2015,PRT,Portugal,26,"Ores, slag and ash",483408425.91
+2016,PRT,Portugal,26,"Ores, slag and ash",409744052.007
+2017,PRT,Portugal,26,"Ores, slag and ash",517315285.546
+2018,PRT,Portugal,26,"Ores, slag and ash",688229812.468
+2013,PRY,Paraguay,26,"Ores, slag and ash",45328.0
+2014,PRY,Paraguay,26,"Ores, slag and ash",26004.0
+2015,PRY,Paraguay,26,"Ores, slag and ash",8754.0
+2016,PRY,Paraguay,26,"Ores, slag and ash",13558.0
+2017,PRY,Paraguay,26,"Ores, slag and ash",20092.0
+2018,PRY,Paraguay,26,"Ores, slag and ash",34230.0
+2013,PSE,State of Palestine,26,"Ores, slag and ash",73314.0
+2014,PSE,State of Palestine,26,"Ores, slag and ash",712292.0
+2015,PSE,State of Palestine,26,"Ores, slag and ash",112131.0
+2016,PSE,State of Palestine,26,"Ores, slag and ash",516898.0
+2017,PSE,State of Palestine,26,"Ores, slag and ash",58741.216
+2018,PSE,State of Palestine,26,"Ores, slag and ash",594395.176
+2014,PYF,French Polynesia,26,"Ores, slag and ash",10.0
+2013,QAT,Qatar,26,"Ores, slag and ash",5280962.502
+2014,QAT,Qatar,26,"Ores, slag and ash",5151039.0
+2015,QAT,Qatar,26,"Ores, slag and ash",4933994.382
+2016,QAT,Qatar,26,"Ores, slag and ash",13158997.566
+2017,QAT,Qatar,26,"Ores, slag and ash",3004054.51
+2018,QAT,Qatar,26,"Ores, slag and ash",20962476.736
+2013,ROU,Romania,26,"Ores, slag and ash",82314113.0
+2014,ROU,Romania,26,"Ores, slag and ash",77984116.0
+2015,ROU,Romania,26,"Ores, slag and ash",63480713.0
+2016,ROU,Romania,26,"Ores, slag and ash",44390968.0
+2017,ROU,Romania,26,"Ores, slag and ash",51439502.25
+2018,ROU,Romania,26,"Ores, slag and ash",74181705.28
+2013,RUS,Russian Federation,26,"Ores, slag and ash",3615686763.0
+2014,RUS,Russian Federation,26,"Ores, slag and ash",3300515070.0
+2015,RUS,Russian Federation,26,"Ores, slag and ash",1959462676.0
+2016,RUS,Russian Federation,26,"Ores, slag and ash",2043592122.15
+2017,RUS,Russian Federation,26,"Ores, slag and ash",3072054397.54
+2018,RUS,Russian Federation,26,"Ores, slag and ash",3672270691.06
+2013,RWA,Rwanda,26,"Ores, slag and ash",222864093.529
+2014,RWA,Rwanda,26,"Ores, slag and ash",202499812.482
+2015,RWA,Rwanda,26,"Ores, slag and ash",117962674.515
+2016,RWA,Rwanda,26,"Ores, slag and ash",86740304.621
+2017,RWA,Rwanda,26,"Ores, slag and ash",123982193.133
+2018,RWA,Rwanda,26,"Ores, slag and ash",149572233.226
+2013,S19,"Other Asia, nes",26,"Ores, slag and ash",152164842.0
+2014,S19,"Other Asia, nes",26,"Ores, slag and ash",126523402.0
+2015,S19,"Other Asia, nes",26,"Ores, slag and ash",72517046.0
+2016,S19,"Other Asia, nes",26,"Ores, slag and ash",920660279.0
+2017,S19,"Other Asia, nes",26,"Ores, slag and ash",708310011.06
+2018,S19,"Other Asia, nes",26,"Ores, slag and ash",517828847.99
+2013,SAU,Saudi Arabia,26,"Ores, slag and ash",155889795.0
+2014,SAU,Saudi Arabia,26,"Ores, slag and ash",131823923.0
+2015,SAU,Saudi Arabia,26,"Ores, slag and ash",166249948.031
+2016,SAU,Saudi Arabia,26,"Ores, slag and ash",223331382.912
+2017,SAU,Saudi Arabia,26,"Ores, slag and ash",335659398.119
+2018,SAU,Saudi Arabia,26,"Ores, slag and ash",601465620.783
+2013,SDN,Sudan,26,"Ores, slag and ash",8405796.0
+2014,SDN,Sudan,26,"Ores, slag and ash",14676248.08
+2015,SDN,Sudan,26,"Ores, slag and ash",3784547.0
+2016,SDN,Sudan,26,"Ores, slag and ash",851785.0
+2017,SDN,Sudan,26,"Ores, slag and ash",2931867.0
+2018,SDN,Sudan,26,"Ores, slag and ash",1566301.0
+2013,SEN,Senegal,26,"Ores, slag and ash",202052.0
+2014,SEN,Senegal,26,"Ores, slag and ash",20269059.0
+2015,SEN,Senegal,26,"Ores, slag and ash",93213292.0
+2016,SEN,Senegal,26,"Ores, slag and ash",99614814.0
+2017,SEN,Senegal,26,"Ores, slag and ash",144328174.269
+2018,SEN,Senegal,26,"Ores, slag and ash",179334034.008
+2013,SGP,Singapore,26,"Ores, slag and ash",21566022.421
+2014,SGP,Singapore,26,"Ores, slag and ash",59118563.193
+2015,SGP,Singapore,26,"Ores, slag and ash",45449668.926
+2016,SGP,Singapore,26,"Ores, slag and ash",45369472.338
+2017,SGP,Singapore,26,"Ores, slag and ash",26030280.631
+2018,SGP,Singapore,26,"Ores, slag and ash",37673576.55
+2013,SLB,Solomon Isds,26,"Ores, slag and ash",519186.413
+2014,SLB,Solomon Isds,26,"Ores, slag and ash",870503.521
+2015,SLB,Solomon Isds,26,"Ores, slag and ash",2699182.0
+2016,SLB,Solomon Isds,26,"Ores, slag and ash",624078.0
+2017,SLB,Solomon Isds,26,"Ores, slag and ash",20249856.624
+2018,SLB,Solomon Isds,26,"Ores, slag and ash",21288992.475
+2014,SLE,Sierra Leone,26,"Ores, slag and ash",237271509.0
+2015,SLE,Sierra Leone,26,"Ores, slag and ash",639154.0
+2016,SLE,Sierra Leone,26,"Ores, slag and ash",368350.0
+2017,SLE,Sierra Leone,26,"Ores, slag and ash",3787105.796
+2018,SLE,Sierra Leone,26,"Ores, slag and ash",32191757.8
+2013,SLV,El Salvador,26,"Ores, slag and ash",1277366.34
+2014,SLV,El Salvador,26,"Ores, slag and ash",1673439.62
+2015,SLV,El Salvador,26,"Ores, slag and ash",592523.15
+2016,SLV,El Salvador,26,"Ores, slag and ash",791106.35
+2017,SLV,El Salvador,26,"Ores, slag and ash",1192015.43
+2018,SLV,El Salvador,26,"Ores, slag and ash",1780379.17
+2013,SRB,Serbia,26,"Ores, slag and ash",115689323.0
+2014,SRB,Serbia,26,"Ores, slag and ash",72520545.0
+2015,SRB,Serbia,26,"Ores, slag and ash",38544727.0
+2016,SRB,Serbia,26,"Ores, slag and ash",50786671.0
+2017,SRB,Serbia,26,"Ores, slag and ash",71803400.0
+2018,SRB,Serbia,26,"Ores, slag and ash",76814772.0
+2013,SUR,Suriname,26,"Ores, slag and ash",62802.0
+2014,SUR,Suriname,26,"Ores, slag and ash",38020.0
+2015,SUR,Suriname,26,"Ores, slag and ash",444326046.581
+2016,SUR,Suriname,26,"Ores, slag and ash",113945929.996
+2017,SUR,Suriname,26,"Ores, slag and ash",54564.678
+2018,SUR,Suriname,26,"Ores, slag and ash",140904832.524
+2013,SVK,Slovakia,26,"Ores, slag and ash",46699376.756
+2014,SVK,Slovakia,26,"Ores, slag and ash",40204144.121
+2015,SVK,Slovakia,26,"Ores, slag and ash",33273366.208
+2016,SVK,Slovakia,26,"Ores, slag and ash",26659259.542
+2017,SVK,Slovakia,26,"Ores, slag and ash",39079459.259
+2018,SVK,Slovakia,26,"Ores, slag and ash",33959113.229
+2013,SVN,Slovenia,26,"Ores, slag and ash",11998524.0
+2014,SVN,Slovenia,26,"Ores, slag and ash",13622950.0
+2015,SVN,Slovenia,26,"Ores, slag and ash",15482368.0
+2016,SVN,Slovenia,26,"Ores, slag and ash",13045766.44
+2017,SVN,Slovenia,26,"Ores, slag and ash",16251896.26
+2018,SVN,Slovenia,26,"Ores, slag and ash",16220095.24
+2013,SWE,Sweden,26,"Ores, slag and ash",3353490234.836
+2014,SWE,Sweden,26,"Ores, slag and ash",3344650349.232
+2015,SWE,Sweden,26,"Ores, slag and ash",2049093025.72
+2016,SWE,Sweden,26,"Ores, slag and ash",2163608775.427
+2017,SWE,Sweden,26,"Ores, slag and ash",3050823061.492
+2018,SWE,Sweden,26,"Ores, slag and ash",3118604289.679
+2013,SWZ,Eswatini,26,"Ores, slag and ash",69948016.343
+2014,SWZ,Eswatini,26,"Ores, slag and ash",34461374.795
+2015,SWZ,Eswatini,26,"Ores, slag and ash",166.472
+2016,SWZ,Eswatini,26,"Ores, slag and ash",241.609
+2017,SWZ,Eswatini,26,"Ores, slag and ash",347.285
+2018,SWZ,Eswatini,26,"Ores, slag and ash",86.918
+2018,SYC,Seychelles,26,"Ores, slag and ash",187.295
+2013,TGO,Togo,26,"Ores, slag and ash",8409061.562
+2014,TGO,Togo,26,"Ores, slag and ash",2265522.63
+2015,TGO,Togo,26,"Ores, slag and ash",2189534.2
+2013,THA,Thailand,26,"Ores, slag and ash",82721379.0
+2014,THA,Thailand,26,"Ores, slag and ash",99498894.0
+2015,THA,Thailand,26,"Ores, slag and ash",101163870.42
+2016,THA,Thailand,26,"Ores, slag and ash",107671726.16
+2017,THA,Thailand,26,"Ores, slag and ash",77192674.97
+2018,THA,Thailand,26,"Ores, slag and ash",112925277.76
+2014,TJK,Tajikistan,26,"Ores, slag and ash",175880582.0
+2015,TJK,Tajikistan,26,"Ores, slag and ash",152404874.0
+2016,TJK,Tajikistan,26,"Ores, slag and ash",239119635.0
+2017,TJK,Tajikistan,26,"Ores, slag and ash",387327415.0
+2018,TJK,Tajikistan,26,"Ores, slag and ash",400127163.0
+2017,TON,Tonga,26,"Ores, slag and ash",0.979
+2013,TTO,Trinidad and Tobago,26,"Ores, slag and ash",297656465.174
+2014,TTO,Trinidad and Tobago,26,"Ores, slag and ash",60201272.814
+2015,TTO,Trinidad and Tobago,26,"Ores, slag and ash",280234027.368
+2016,TTO,Trinidad and Tobago,26,"Ores, slag and ash",217772586.315
+2017,TTO,Trinidad and Tobago,26,"Ores, slag and ash",6696139.705
+2018,TTO,Trinidad and Tobago,26,"Ores, slag and ash",14839151.341
+2013,TUN,Tunisia,26,"Ores, slag and ash",3077955.0
+2014,TUN,Tunisia,26,"Ores, slag and ash",3197600.0
+2015,TUN,Tunisia,26,"Ores, slag and ash",2372834.0
+2016,TUN,Tunisia,26,"Ores, slag and ash",1923803.0
+2017,TUN,Tunisia,26,"Ores, slag and ash",3236814.052
+2018,TUN,Tunisia,26,"Ores, slag and ash",2504627.688
+2013,TUR,Türkiye,26,"Ores, slag and ash",1779830298.0
+2014,TUR,Türkiye,26,"Ores, slag and ash",1399033464.0
+2015,TUR,Türkiye,26,"Ores, slag and ash",1000102357.0
+2016,TUR,Türkiye,26,"Ores, slag and ash",923611733.0
+2017,TUR,Türkiye,26,"Ores, slag and ash",1396672456.0
+2018,TUR,Türkiye,26,"Ores, slag and ash",1328338718.0
+2013,TZA,United Rep. of Tanzania,26,"Ores, slag and ash",400135860.0
+2014,TZA,United Rep. of Tanzania,26,"Ores, slag and ash",713717575.0
+2015,TZA,United Rep. of Tanzania,26,"Ores, slag and ash",471292568.0
+2016,TZA,United Rep. of Tanzania,26,"Ores, slag and ash",323426135.0
+2017,TZA,United Rep. of Tanzania,26,"Ores, slag and ash",62720692.45
+2018,TZA,United Rep. of Tanzania,26,"Ores, slag and ash",12503.762
+2013,UGA,Uganda,26,"Ores, slag and ash",2652214.0
+2014,UGA,Uganda,26,"Ores, slag and ash",4856005.0
+2015,UGA,Uganda,26,"Ores, slag and ash",2368362.0
+2016,UGA,Uganda,26,"Ores, slag and ash",2284374.0
+2017,UGA,Uganda,26,"Ores, slag and ash",2254525.87
+2018,UGA,Uganda,26,"Ores, slag and ash",2561776.2
+2013,UKR,Ukraine,26,"Ores, slag and ash",3917528853.0
+2014,UKR,Ukraine,26,"Ores, slag and ash",3472393210.0
+2015,UKR,Ukraine,26,"Ores, slag and ash",2216459224.0
+2016,UKR,Ukraine,26,"Ores, slag and ash",1954649424.02
+2017,UKR,Ukraine,26,"Ores, slag and ash",2736136849.32
+2018,UKR,Ukraine,26,"Ores, slag and ash",3035252890.75
+2013,URY,Uruguay,26,"Ores, slag and ash",842147.0
+2014,URY,Uruguay,26,"Ores, slag and ash",1045842.0
+2015,URY,Uruguay,26,"Ores, slag and ash",408224.0
+2016,URY,Uruguay,26,"Ores, slag and ash",405364.0
+2017,URY,Uruguay,26,"Ores, slag and ash",383103.0
+2018,URY,Uruguay,26,"Ores, slag and ash",114460.0
+2013,USA,USA,26,"Ores, slag and ash",7321029003.0
+2014,USA,USA,26,"Ores, slag and ash",8362919960.0
+2015,USA,USA,26,"Ores, slag and ash",6811997450.0
+2016,USA,USA,26,"Ores, slag and ash",5705530520.0
+2017,USA,USA,26,"Ores, slag and ash",6011333679.0
+2018,USA,USA,26,"Ores, slag and ash",6755041427.0
+2017,UZB,Uzbekistan,26,"Ores, slag and ash",368882.0
+2018,UZB,Uzbekistan,26,"Ores, slag and ash",19643820.0
+2016,VCT,Saint Vincent and the Grenadines,26,"Ores, slag and ash",1316.665
+2013,VEN,Venezuela,26,"Ores, slag and ash",266293021.0
+2013,VNM,Viet Nam,26,"Ores, slag and ash",202098127.0
+2014,VNM,Viet Nam,26,"Ores, slag and ash",169648026.0
+2015,VNM,Viet Nam,26,"Ores, slag and ash",130874155.0
+2016,VNM,Viet Nam,26,"Ores, slag and ash",77671267.94
+2017,VNM,Viet Nam,26,"Ores, slag and ash",110735408.3
+2018,VNM,Viet Nam,26,"Ores, slag and ash",111887265.67
+2013,WSM,Samoa,26,"Ores, slag and ash",86.0
+2017,WSM,Samoa,26,"Ores, slag and ash",3.957
+2013,YEM,Yemen,26,"Ores, slag and ash",50005.0
+2014,YEM,Yemen,26,"Ores, slag and ash",33292.0
+2013,ZAF,South Africa,26,"Ores, slag and ash",13705623585.426
+2014,ZAF,South Africa,26,"Ores, slag and ash",11838276112.676
+2015,ZAF,South Africa,26,"Ores, slag and ash",8402041205.11
+2016,ZAF,South Africa,26,"Ores, slag and ash",7684748041.49
+2017,ZAF,South Africa,26,"Ores, slag and ash",11272454481.274
+2018,ZAF,South Africa,26,"Ores, slag and ash",11656011308.788
+2013,ZMB,Zambia,26,"Ores, slag and ash",94113870.944
+2014,ZMB,Zambia,26,"Ores, slag and ash",57892302.879
+2015,ZMB,Zambia,26,"Ores, slag and ash",34743563.813
+2016,ZMB,Zambia,26,"Ores, slag and ash",22234936.437
+2017,ZMB,Zambia,26,"Ores, slag and ash",37714282.888
+2018,ZMB,Zambia,26,"Ores, slag and ash",33372079.455
+2013,ZWE,Zimbabwe,26,"Ores, slag and ash",344776635.85
+2014,ZWE,Zimbabwe,26,"Ores, slag and ash",368005514.55
+2015,ZWE,Zimbabwe,26,"Ores, slag and ash",339408116.76
+2016,ZWE,Zimbabwe,26,"Ores, slag and ash",380973349.45
+2017,ZWE,Zimbabwe,26,"Ores, slag and ash",469622636.79
+2018,ZWE,Zimbabwe,26,"Ores, slag and ash",497182282.47

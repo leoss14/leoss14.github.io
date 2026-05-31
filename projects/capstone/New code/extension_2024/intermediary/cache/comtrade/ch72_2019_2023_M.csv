@@ -1,0 +1,841 @@
+period,reporterISO,reporterDesc,cmdCode,cmdDesc,primaryValue
+2019,ABW,Aruba,72,Iron and steel,3228841.796
+2020,ABW,Aruba,72,Iron and steel,1884304.409
+2021,ABW,Aruba,72,Iron and steel,3344742.411
+2022,ABW,Aruba,72,Iron and steel,4669526.75
+2023,ABW,Aruba,72,Iron and steel,6204431.197
+2019,AFG,Afghanistan,72,Iron and steel,245010332.65
+2019,AGO,Angola,72,Iron and steel,205725736.809
+2020,AGO,Angola,72,Iron and steel,173188254.337
+2021,AGO,Angola,72,Iron and steel,145279478.705
+2022,AGO,Angola,72,Iron and steel,261042473.389
+2023,AGO,Angola,72,Iron and steel,184131600.009
+2019,ALB,Albania,72,Iron and steel,237638140.653
+2020,ALB,Albania,72,Iron and steel,264401542.462
+2021,ALB,Albania,72,Iron and steel,455667283.55
+2022,ALB,Albania,72,Iron and steel,528870504.827
+2023,ALB,Albania,72,Iron and steel,505371558.414
+2019,AND,Andorra,72,Iron and steel,5262990.404
+2020,AND,Andorra,72,Iron and steel,4805456.793
+2021,AND,Andorra,72,Iron and steel,9561074.391
+2022,AND,Andorra,72,Iron and steel,13412847.872
+2023,AND,Andorra,72,Iron and steel,13585059.76
+2019,ARE,United Arab Emirates,72,Iron and steel,4311240396.909
+2020,ARE,United Arab Emirates,72,Iron and steel,3648104344.277
+2021,ARE,United Arab Emirates,72,Iron and steel,5521756093.029
+2022,ARE,United Arab Emirates,72,Iron and steel,6047211601.819
+2023,ARE,United Arab Emirates,72,Iron and steel,6244301896.482
+2019,ARG,Argentina,72,Iron and steel,699376839.39
+2020,ARG,Argentina,72,Iron and steel,649349294.37
+2021,ARG,Argentina,72,Iron and steel,1837083198.5
+2022,ARG,Argentina,72,Iron and steel,1910095953.52
+2023,ARG,Argentina,72,Iron and steel,1696549088.26
+2019,ARM,Armenia,72,Iron and steel,100846471.56
+2020,ARM,Armenia,72,Iron and steel,108838000.67
+2021,ARM,Armenia,72,Iron and steel,123256176.1
+2022,ARM,Armenia,72,Iron and steel,206255223.06
+2023,ARM,Armenia,72,Iron and steel,217852715.49
+2019,ATG,Antigua and Barbuda,72,Iron and steel,7690356.56
+2020,ATG,Antigua and Barbuda,72,Iron and steel,6103440.451
+2021,ATG,Antigua and Barbuda,72,Iron and steel,9523509.446
+2022,ATG,Antigua and Barbuda,72,Iron and steel,13048720.291
+2023,ATG,Antigua and Barbuda,72,Iron and steel,10015761.209
+2019,AUS,Australia,72,Iron and steel,1326556727.931
+2020,AUS,Australia,72,Iron and steel,1052865084.719
+2021,AUS,Australia,72,Iron and steel,2083040730.274
+2022,AUS,Australia,72,Iron and steel,2492722659.071
+2023,AUS,Australia,72,Iron and steel,1923972590.736
+2019,AUT,Austria,72,Iron and steel,4126611092.706
+2020,AUT,Austria,72,Iron and steel,3540411463.191
+2021,AUT,Austria,72,Iron and steel,6315802346.847
+2022,AUT,Austria,72,Iron and steel,7004136736.811
+2023,AUT,Austria,72,Iron and steel,5134911942.054
+2019,AZE,Azerbaijan,72,Iron and steel,405591653.72
+2020,AZE,Azerbaijan,72,Iron and steel,374186824.8
+2021,AZE,Azerbaijan,72,Iron and steel,344050110.78
+2022,AZE,Azerbaijan,72,Iron and steel,448306744.92
+2023,AZE,Azerbaijan,72,Iron and steel,463796285.85
+2019,BDI,Burundi,72,Iron and steel,55670671.534
+2020,BDI,Burundi,72,Iron and steel,63773599.857
+2021,BDI,Burundi,72,Iron and steel,92102776.766
+2022,BDI,Burundi,72,Iron and steel,79762030.549
+2023,BDI,Burundi,72,Iron and steel,54221870.182
+2019,BEL,Belgium,72,Iron and steel,8395434705.697
+2020,BEL,Belgium,72,Iron and steel,7071783844.868
+2021,BEL,Belgium,72,Iron and steel,11888704825.018
+2022,BEL,Belgium,72,Iron and steel,11370410733.832
+2023,BEL,Belgium,72,Iron and steel,9173966106.64
+2019,BEN,Benin,72,Iron and steel,92113264.172
+2020,BEN,Benin,72,Iron and steel,88450833.285
+2021,BEN,Benin,72,Iron and steel,145949739.089
+2022,BEN,Benin,72,Iron and steel,199473829.888
+2023,BEN,Benin,72,Iron and steel,102736834.032
+2019,BFA,Burkina Faso,72,Iron and steel,158826919.024
+2020,BFA,Burkina Faso,72,Iron and steel,155284987.852
+2021,BFA,Burkina Faso,72,Iron and steel,176749426.357
+2022,BFA,Burkina Faso,72,Iron and steel,226590190.205
+2023,BFA,Burkina Faso,72,Iron and steel,142807524.848
+2019,BGR,Bulgaria,72,Iron and steel,1355581660.739
+2020,BGR,Bulgaria,72,Iron and steel,1172974146.987
+2021,BGR,Bulgaria,72,Iron and steel,1988731654.936
+2022,BGR,Bulgaria,72,Iron and steel,2317013142.75
+2023,BGR,Bulgaria,72,Iron and steel,1804238425.867
+2019,BHR,Bahrain,72,Iron and steel,258752832.88
+2020,BHR,Bahrain,72,Iron and steel,187409340.04
+2021,BHR,Bahrain,72,Iron and steel,225055994.209
+2022,BHR,Bahrain,72,Iron and steel,267119836.156
+2023,BHR,Bahrain,72,Iron and steel,217097737.957
+2019,BHS,Bahamas,72,Iron and steel,21598308.361
+2020,BHS,Bahamas,72,Iron and steel,12030881.0
+2021,BHS,Bahamas,72,Iron and steel,19327546.0
+2022,BHS,Bahamas,72,Iron and steel,19374510.0
+2023,BHS,Bahamas,72,Iron and steel,20325658.0
+2019,BIH,Bosnia Herzegovina,72,Iron and steel,356015464.31
+2020,BIH,Bosnia Herzegovina,72,Iron and steel,324147320.72
+2021,BIH,Bosnia Herzegovina,72,Iron and steel,583359466.57
+2022,BIH,Bosnia Herzegovina,72,Iron and steel,707156791.23
+2023,BIH,Bosnia Herzegovina,72,Iron and steel,583802339.775
+2019,BLR,Belarus,72,Iron and steel,1681710000.0
+2020,BLR,Belarus,72,Iron and steel,1400630500.0
+2021,BLR,Belarus,72,Iron and steel,2329197900.0
+2019,BLZ,Belize,72,Iron and steel,22908736.955
+2020,BLZ,Belize,72,Iron and steel,17147587.275
+2021,BLZ,Belize,72,Iron and steel,38254716.715
+2022,BLZ,Belize,72,Iron and steel,37841420.41
+2023,BLZ,Belize,72,Iron and steel,37524898.845
+2019,BMU,Bermuda,72,Iron and steel,3631458.8
+2020,BMU,Bermuda,72,Iron and steel,1135733.53
+2021,BMU,Bermuda,72,Iron and steel,2854582.07
+2022,BMU,Bermuda,72,Iron and steel,2904019.44
+2023,BMU,Bermuda,72,Iron and steel,1838775.57
+2019,BOL,Bolivia (Plurinational State of),72,Iron and steel,491586479.95
+2020,BOL,Bolivia (Plurinational State of),72,Iron and steel,328800027.77
+2021,BOL,Bolivia (Plurinational State of),72,Iron and steel,571831679.05
+2022,BOL,Bolivia (Plurinational State of),72,Iron and steel,603715281.0
+2023,BOL,Bolivia (Plurinational State of),72,Iron and steel,428131967.0
+2019,BRA,Brazil,72,Iron and steel,2319369690.0
+2020,BRA,Brazil,72,Iron and steel,1851564398.0
+2021,BRA,Brazil,72,Iron and steel,4936573093.0
+2022,BRA,Brazil,72,Iron and steel,4732721115.0
+2023,BRA,Brazil,72,Iron and steel,4932503600.0
+2019,BRB,Barbados,72,Iron and steel,11878446.0
+2020,BRB,Barbados,72,Iron and steel,10149412.0
+2021,BRB,Barbados,72,Iron and steel,17549408.0
+2022,BRB,Barbados,72,Iron and steel,27867596.5
+2023,BRB,Barbados,72,Iron and steel,17840077.0
+2019,BRN,Brunei Darussalam,72,Iron and steel,45933046.18
+2020,BRN,Brunei Darussalam,72,Iron and steel,26577785.68
+2021,BRN,Brunei Darussalam,72,Iron and steel,50054246.38
+2022,BRN,Brunei Darussalam,72,Iron and steel,69053128.873
+2023,BRN,Brunei Darussalam,72,Iron and steel,92925981.201
+2019,BTN,Bhutan,72,Iron and steel,86123532.131
+2020,BTN,Bhutan,72,Iron and steel,52318419.978
+2022,BTN,Bhutan,72,Iron and steel,77319124.895
+2023,BTN,Bhutan,72,Iron and steel,85506685.201
+2019,BWA,Botswana,72,Iron and steel,70832552.915
+2020,BWA,Botswana,72,Iron and steel,60846391.759
+2021,BWA,Botswana,72,Iron and steel,116940692.44
+2022,BWA,Botswana,72,Iron and steel,93928123.777
+2023,BWA,Botswana,72,Iron and steel,114871758.116
+2019,CAF,Central African Rep.,72,Iron and steel,3168128.426
+2020,CAF,Central African Rep.,72,Iron and steel,3569547.151
+2021,CAF,Central African Rep.,72,Iron and steel,4160182.502
+2022,CAF,Central African Rep.,72,Iron and steel,3175716.205
+2023,CAF,Central African Rep.,72,Iron and steel,3375247.434
+2019,CAN,Canada,72,Iron and steel,6263887581.621
+2020,CAN,Canada,72,Iron and steel,5275983864.91
+2021,CAN,Canada,72,Iron and steel,10475265763.61
+2022,CAN,Canada,72,Iron and steel,11090043796.853
+2023,CAN,Canada,72,Iron and steel,9444713657.096
+2019,CHE,Switzerland,72,Iron and steel,2439699537.064
+2020,CHE,Switzerland,72,Iron and steel,2140904327.605
+2021,CHE,Switzerland,72,Iron and steel,3380622094.024
+2022,CHE,Switzerland,72,Iron and steel,3952288379.579
+2023,CHE,Switzerland,72,Iron and steel,2885726248.057
+2019,CHL,Chile,72,Iron and steel,1468356728.795
+2020,CHL,Chile,72,Iron and steel,1038532914.55
+2021,CHL,Chile,72,Iron and steel,2316029953.967
+2022,CHL,Chile,72,Iron and steel,2091358760.202
+2023,CHL,Chile,72,Iron and steel,1385645409.231
+2019,CHN,China,72,Iron and steel,23409734687.0
+2020,CHN,China,72,Iron and steel,36901161339.0
+2021,CHN,China,72,Iron and steel,43547900367.0
+2022,CHN,China,72,Iron and steel,43662135081.0
+2023,CHN,China,72,Iron and steel,36783906579.0
+2019,CIV,Côte d'Ivoire,72,Iron and steel,247297001.551
+2020,CIV,Côte d'Ivoire,72,Iron and steel,304746283.62
+2021,CIV,Côte d'Ivoire,72,Iron and steel,475003391.63
+2022,CIV,Côte d'Ivoire,72,Iron and steel,483316875.914
+2023,CIV,Côte d'Ivoire,72,Iron and steel,379408393.316
+2019,CMR,Cameroon,72,Iron and steel,158668098.81
+2020,CMR,Cameroon,72,Iron and steel,300399410.63
+2021,CMR,Cameroon,72,Iron and steel,392754867.04
+2022,CMR,Cameroon,72,Iron and steel,358464117.071
+2023,CMR,Cameroon,72,Iron and steel,310364759.985
+2019,COD,Dem. Rep. of the Congo,72,Iron and steel,207058775.344
+2020,COD,Dem. Rep. of the Congo,72,Iron and steel,131687133.933
+2021,COD,Dem. Rep. of the Congo,72,Iron and steel,155186779.15
+2022,COD,Dem. Rep. of the Congo,72,Iron and steel,257541233.237
+2023,COD,Dem. Rep. of the Congo,72,Iron and steel,429842642.15
+2019,COG,Congo,72,Iron and steel,14738461.654
+2020,COG,Congo,72,Iron and steel,12556635.25
+2021,COG,Congo,72,Iron and steel,14789644.48
+2022,COG,Congo,72,Iron and steel,27935051.899
+2023,COG,Congo,72,Iron and steel,33944228.323
+2019,COL,Colombia,72,Iron and steel,1623097068.24
+2020,COL,Colombia,72,Iron and steel,1172038075.0
+2021,COL,Colombia,72,Iron and steel,2679323134.72
+2022,COL,Colombia,72,Iron and steel,2495925348.61
+2023,COL,Colombia,72,Iron and steel,1712330990.14
+2019,COM,Comoros,72,Iron and steel,11794385.734
+2020,COM,Comoros,72,Iron and steel,14698301.846
+2021,COM,Comoros,72,Iron and steel,11844977.155
+2022,COM,Comoros,72,Iron and steel,14331446.448
+2023,COM,Comoros,72,Iron and steel,12676171.124
+2019,CPV,Cabo Verde,72,Iron and steel,22789833.758
+2020,CPV,Cabo Verde,72,Iron and steel,21952636.267
+2021,CPV,Cabo Verde,72,Iron and steel,26887621.143
+2022,CPV,Cabo Verde,72,Iron and steel,26875971.987
+2023,CPV,Cabo Verde,72,Iron and steel,21040961.841
+2019,CRI,Costa Rica,72,Iron and steel,489333294.96
+2020,CRI,Costa Rica,72,Iron and steel,458577686.3
+2021,CRI,Costa Rica,72,Iron and steel,912564084.85
+2022,CRI,Costa Rica,72,Iron and steel,883476110.791
+2023,CRI,Costa Rica,72,Iron and steel,766518380.816
+2019,CUB,Cuba,72,Iron and steel,183883572.06
+2020,CUB,Cuba,72,Iron and steel,161920159.87
+2021,CUB,Cuba,72,Iron and steel,161058461.29
+2022,CUB,Cuba,72,Iron and steel,187252399.38
+2019,CUW,Curaçao,72,Iron and steel,3250078.935
+2020,CUW,Curaçao,72,Iron and steel,2706926.319
+2020,CYM,Cayman Isds,72,Iron and steel,10225944.356
+2021,CYM,Cayman Isds,72,Iron and steel,15748854.9
+2022,CYM,Cayman Isds,72,Iron and steel,16773418.993
+2023,CYM,Cayman Isds,72,Iron and steel,13354105.33
+2019,CYP,Cyprus,72,Iron and steel,187498325.815
+2020,CYP,Cyprus,72,Iron and steel,161256039.955
+2021,CYP,Cyprus,72,Iron and steel,232724747.501
+2022,CYP,Cyprus,72,Iron and steel,246223290.453
+2023,CYP,Cyprus,72,Iron and steel,262243187.056
+2019,CZE,Czechia,72,Iron and steel,5975434356.0
+2020,CZE,Czechia,72,Iron and steel,5037687915.0
+2021,CZE,Czechia,72,Iron and steel,8385517361.0
+2022,CZE,Czechia,72,Iron and steel,9175679077.0
+2023,CZE,Czechia,72,Iron and steel,7726267514.0
+2019,DEU,Germany,72,Iron and steel,27330772601.613
+2020,DEU,Germany,72,Iron and steel,21655147384.991
+2021,DEU,Germany,72,Iron and steel,35348274805.371
+2022,DEU,Germany,72,Iron and steel,39757166033.343
+2023,DEU,Germany,72,Iron and steel,31770846051.952
+2021,DJI,Djibouti,72,Iron and steel,320117822.281
+2022,DJI,Djibouti,72,Iron and steel,459641807.776
+2023,DJI,Djibouti,72,Iron and steel,566503915.315
+2019,DMA,Dominica,72,Iron and steel,6738360.139
+2020,DMA,Dominica,72,Iron and steel,4058622.608
+2021,DMA,Dominica,72,Iron and steel,5215534.414
+2022,DMA,Dominica,72,Iron and steel,7412654.069
+2023,DMA,Dominica,72,Iron and steel,6426552.092
+2019,DNK,Denmark,72,Iron and steel,2040147223.217
+2020,DNK,Denmark,72,Iron and steel,1894305870.593
+2021,DNK,Denmark,72,Iron and steel,3150759346.714
+2022,DNK,Denmark,72,Iron and steel,3730659364.366
+2023,DNK,Denmark,72,Iron and steel,2934635420.494
+2019,DOM,Dominican Rep.,72,Iron and steel,618920296.626
+2020,DOM,Dominican Rep.,72,Iron and steel,495785354.3
+2021,DOM,Dominican Rep.,72,Iron and steel,1039062728.134
+2022,DOM,Dominican Rep.,72,Iron and steel,1357787335.533
+2023,DOM,Dominican Rep.,72,Iron and steel,956492121.458
+2019,ECU,Ecuador,72,Iron and steel,678868660.429
+2020,ECU,Ecuador,72,Iron and steel,495626334.007
+2021,ECU,Ecuador,72,Iron and steel,1090442581.19
+2022,ECU,Ecuador,72,Iron and steel,1059425171.9
+2023,ECU,Ecuador,72,Iron and steel,912633117.3
+2019,EGY,Egypt,72,Iron and steel,3475774662.943
+2020,EGY,Egypt,72,Iron and steel,2898734656.102
+2021,EGY,Egypt,72,Iron and steel,4106610705.494
+2022,EGY,Egypt,72,Iron and steel,5133112651.289
+2023,EGY,Egypt,72,Iron and steel,4284729917.472
+2019,ESP,Spain,72,Iron and steel,9838555543.562
+2020,ESP,Spain,72,Iron and steel,7893951603.188
+2021,ESP,Spain,72,Iron and steel,13269538088.837
+2022,ESP,Spain,72,Iron and steel,14362173622.483
+2023,ESP,Spain,72,Iron and steel,12379474473.515
+2019,EST,Estonia,72,Iron and steel,617623965.058
+2020,EST,Estonia,72,Iron and steel,523037069.81
+2021,EST,Estonia,72,Iron and steel,898236870.4
+2022,EST,Estonia,72,Iron and steel,1010072886.53
+2023,EST,Estonia,72,Iron and steel,758198273.43
+2019,ETH,Ethiopia,72,Iron and steel,1014186631.35
+2020,ETH,Ethiopia,72,Iron and steel,705017551.77
+2021,ETH,Ethiopia,72,Iron and steel,564010973.35
+2022,ETH,Ethiopia,72,Iron and steel,568636926.498
+2023,ETH,Ethiopia,72,Iron and steel,672737999.461
+2019,FIN,Finland,72,Iron and steel,2440454554.699
+2020,FIN,Finland,72,Iron and steel,2244626543.347
+2021,FIN,Finland,72,Iron and steel,3433976516.525
+2022,FIN,Finland,72,Iron and steel,4253009657.123
+2023,FIN,Finland,72,Iron and steel,2976012839.011
+2019,FJI,Fiji,72,Iron and steel,44671135.912
+2020,FJI,Fiji,72,Iron and steel,35807752.521
+2021,FJI,Fiji,72,Iron and steel,42617776.571
+2022,FJI,Fiji,72,Iron and steel,61181521.469
+2023,FJI,Fiji,72,Iron and steel,37662466.818
+2019,FRA,France,72,Iron and steel,11980740083.43
+2020,FRA,France,72,Iron and steel,10297952304.488
+2021,FRA,France,72,Iron and steel,14611965312.918
+2022,FRA,France,72,Iron and steel,17284867944.337
+2023,FRA,France,72,Iron and steel,14438561092.828
+2019,GAB,Gabon,72,Iron and steel,31913380.801
+2020,GAB,Gabon,72,Iron and steel,34599470.8
+2021,GAB,Gabon,72,Iron and steel,52313458.658
+2022,GAB,Gabon,72,Iron and steel,63539075.765
+2023,GAB,Gabon,72,Iron and steel,68527430.27
+2019,GBR,United Kingdom,72,Iron and steel,5958305643.93
+2020,GBR,United Kingdom,72,Iron and steel,4137222932.412
+2021,GBR,United Kingdom,72,Iron and steel,7333258964.335
+2022,GBR,United Kingdom,72,Iron and steel,7688264601.712
+2023,GBR,United Kingdom,72,Iron and steel,6670309803.287
+2019,GEO,Georgia,72,Iron and steel,194974986.51
+2020,GEO,Georgia,72,Iron and steel,192838332.0
+2021,GEO,Georgia,72,Iron and steel,295459370.5
+2022,GEO,Georgia,72,Iron and steel,429117529.236
+2023,GEO,Georgia,72,Iron and steel,368740252.151
+2019,GHA,Ghana,72,Iron and steel,359244506.367
+2021,GHA,Ghana,72,Iron and steel,848035896.897
+2022,GHA,Ghana,72,Iron and steel,705439136.796
+2023,GHA,Ghana,72,Iron and steel,527507102.516
+2019,GMB,Gambia,72,Iron and steel,13950052.176
+2020,GMB,Gambia,72,Iron and steel,11880435.219
+2021,GMB,Gambia,72,Iron and steel,10066132.28
+2022,GMB,Gambia,72,Iron and steel,12086982.789
+2023,GMB,Gambia,72,Iron and steel,16394730.226
+2019,GRC,Greece,72,Iron and steel,1252497434.092
+2020,GRC,Greece,72,Iron and steel,1098131699.096
+2021,GRC,Greece,72,Iron and steel,1775270489.6
+2022,GRC,Greece,72,Iron and steel,2330699419.164
+2023,GRC,Greece,72,Iron and steel,1816798607.966
+2019,GRD,Grenada,72,Iron and steel,6691689.424
+2020,GRD,Grenada,72,Iron and steel,6026996.778
+2021,GRD,Grenada,72,Iron and steel,8581138.14
+2022,GRD,Grenada,72,Iron and steel,12184637.766
+2023,GRD,Grenada,72,Iron and steel,12277052.834
+2019,GTM,Guatemala,72,Iron and steel,707450724.0
+2020,GTM,Guatemala,72,Iron and steel,674215452.0
+2021,GTM,Guatemala,72,Iron and steel,1315865128.0
+2022,GTM,Guatemala,72,Iron and steel,1345033893.0
+2023,GTM,Guatemala,72,Iron and steel,1172081635.0
+2019,GUY,Guyana,72,Iron and steel,51641567.184
+2020,GUY,Guyana,72,Iron and steel,36997994.914
+2021,GUY,Guyana,72,Iron and steel,77154174.943
+2022,GUY,Guyana,72,Iron and steel,120148326.064
+2023,GUY,Guyana,72,Iron and steel,105882664.177
+2019,HKG,"China, Hong Kong SAR",72,Iron and steel,1715045752.167
+2020,HKG,"China, Hong Kong SAR",72,Iron and steel,1495472077.615
+2021,HKG,"China, Hong Kong SAR",72,Iron and steel,2427831314.7
+2022,HKG,"China, Hong Kong SAR",72,Iron and steel,2235373523.079
+2023,HKG,"China, Hong Kong SAR",72,Iron and steel,1788414013.293
+2019,HND,Honduras,72,Iron and steel,359157004.56
+2020,HND,Honduras,72,Iron and steel,356967664.17
+2021,HND,Honduras,72,Iron and steel,724238831.81
+2023,HND,Honduras,72,Iron and steel,674551625.01
+2019,HRV,Croatia,72,Iron and steel,650317330.0
+2020,HRV,Croatia,72,Iron and steel,635317227.0
+2021,HRV,Croatia,72,Iron and steel,1118530984.0
+2022,HRV,Croatia,72,Iron and steel,1361858518.0
+2023,HRV,Croatia,72,Iron and steel,1094235109.0
+2019,HUN,Hungary,72,Iron and steel,2489149694.0
+2020,HUN,Hungary,72,Iron and steel,2110780452.0
+2021,HUN,Hungary,72,Iron and steel,3723112952.0
+2022,HUN,Hungary,72,Iron and steel,4146898735.0
+2023,HUN,Hungary,72,Iron and steel,3106730998.426
+2019,IDN,Indonesia,72,Iron and steel,10396965769.0
+2020,IDN,Indonesia,72,Iron and steel,6855165884.0
+2021,IDN,Indonesia,72,Iron and steel,11957687272.0
+2022,IDN,Indonesia,72,Iron and steel,13937841325.0
+2023,IDN,Indonesia,72,Iron and steel,11406151031.0
+2019,IND,India,72,Iron and steel,11800163136.313
+2020,IND,India,72,Iron and steel,7550873600.395
+2021,IND,India,72,Iron and steel,11679975651.632
+2022,IND,India,72,Iron and steel,16740818597.846
+2023,IND,India,72,Iron and steel,18915292622.99
+2019,IRL,Ireland,72,Iron and steel,755189689.7
+2020,IRL,Ireland,72,Iron and steel,620380620.93
+2021,IRL,Ireland,72,Iron and steel,975058733.143
+2022,IRL,Ireland,72,Iron and steel,1120609453.212
+2023,IRL,Ireland,72,Iron and steel,901710320.039
+2019,IRN,Iran,72,Iron and steel,1117637023.0
+2020,IRN,Iran,72,Iron and steel,1399722292.0
+2021,IRN,Iran,72,Iron and steel,1354982106.0
+2022,IRN,Iran,72,Iron and steel,1748662173.0
+2019,ISL,Iceland,72,Iron and steel,52740887.868
+2020,ISL,Iceland,72,Iron and steel,42688548.336
+2021,ISL,Iceland,72,Iron and steel,65611026.008
+2022,ISL,Iceland,72,Iron and steel,105927754.019
+2023,ISL,Iceland,72,Iron and steel,64777438.45
+2019,ISR,Israel,72,Iron and steel,1591912000.0
+2020,ISR,Israel,72,Iron and steel,1515721000.0
+2021,ISR,Israel,72,Iron and steel,2568201000.0
+2022,ISR,Israel,72,Iron and steel,3009362000.0
+2023,ISR,Israel,72,Iron and steel,2341130000.0
+2019,ITA,Italy,72,Iron and steel,19374526794.326
+2020,ITA,Italy,72,Iron and steel,14855335127.374
+2021,ITA,Italy,72,Iron and steel,28486680193.939
+2022,ITA,Italy,72,Iron and steel,31965675477.96
+2023,ITA,Italy,72,Iron and steel,24883655337.44
+2019,JAM,Jamaica,72,Iron and steel,117347270.252
+2020,JAM,Jamaica,72,Iron and steel,82998600.01
+2021,JAM,Jamaica,72,Iron and steel,194327532.16
+2022,JAM,Jamaica,72,Iron and steel,181959819.03
+2023,JAM,Jamaica,72,Iron and steel,158663041.47
+2019,JOR,Jordan,72,Iron and steel,425150251.253
+2020,JOR,Jordan,72,Iron and steel,432824297.935
+2021,JOR,Jordan,72,Iron and steel,478437885.691
+2022,JOR,Jordan,72,Iron and steel,734021303.46
+2023,JOR,Jordan,72,Iron and steel,641402724.526
+2019,JPN,Japan,72,Iron and steel,7709184767.657
+2020,JPN,Japan,72,Iron and steel,5697538270.497
+2021,JPN,Japan,72,Iron and steel,8698254549.323
+2022,JPN,Japan,72,Iron and steel,10218391193.014
+2023,JPN,Japan,72,Iron and steel,8321485456.435
+2019,KAZ,Kazakhstan,72,Iron and steel,1229872005.7
+2020,KAZ,Kazakhstan,72,Iron and steel,905243999.297
+2021,KAZ,Kazakhstan,72,Iron and steel,1587409785.349
+2022,KAZ,Kazakhstan,72,Iron and steel,1602280974.773
+2023,KAZ,Kazakhstan,72,Iron and steel,1743150478.37
+2019,KEN,Kenya,72,Iron and steel,916675975.56
+2020,KEN,Kenya,72,Iron and steel,931760709.883
+2021,KEN,Kenya,72,Iron and steel,1284617517.691
+2022,KEN,Kenya,72,Iron and steel,1237441454.612
+2023,KEN,Kenya,72,Iron and steel,843326318.838
+2019,KGZ,Kyrgyzstan,72,Iron and steel,191110140.0
+2020,KGZ,Kyrgyzstan,72,Iron and steel,124704305.0
+2021,KGZ,Kyrgyzstan,72,Iron and steel,206816641.0
+2022,KGZ,Kyrgyzstan,72,Iron and steel,270482954.0
+2023,KGZ,Kyrgyzstan,72,Iron and steel,310872892.0
+2019,KHM,Cambodia,72,Iron and steel,478441663.25
+2020,KHM,Cambodia,72,Iron and steel,313562385.92
+2021,KHM,Cambodia,72,Iron and steel,285155685.4
+2022,KHM,Cambodia,72,Iron and steel,359818642.46
+2023,KHM,Cambodia,72,Iron and steel,372440480.32
+2020,KIR,Kiribati,72,Iron and steel,709014.18
+2021,KIR,Kiribati,72,Iron and steel,1373407.277
+2019,KOR,Rep. of Korea,72,Iron and steel,15677923591.0
+2020,KOR,Rep. of Korea,72,Iron and steel,11118858135.0
+2021,KOR,Rep. of Korea,72,Iron and steel,18494426644.0
+2022,KOR,Rep. of Korea,72,Iron and steel,18943803230.0
+2023,KOR,Rep. of Korea,72,Iron and steel,16471724419.0
+2019,KWT,Kuwait,72,Iron and steel,927004176.0
+2020,KWT,Kuwait,72,Iron and steel,548321384.0
+2021,KWT,Kuwait,72,Iron and steel,900184505.0
+2022,KWT,Kuwait,72,Iron and steel,943965447.711
+2023,KWT,Kuwait,72,Iron and steel,781134850.652
+2019,LAO,Lao People's Dem. Rep.,72,Iron and steel,275462522.486
+2020,LAO,Lao People's Dem. Rep.,72,Iron and steel,191059122.01
+2021,LAO,Lao People's Dem. Rep.,72,Iron and steel,122992985.46
+2022,LAO,Lao People's Dem. Rep.,72,Iron and steel,145268611.8
+2023,LAO,Lao People's Dem. Rep.,72,Iron and steel,225125083.74
+2019,LBN,Lebanon,72,Iron and steel,404011527.8
+2020,LBN,Lebanon,72,Iron and steel,192759447.0
+2021,LBN,Lebanon,72,Iron and steel,308189764.0
+2022,LBN,Lebanon,72,Iron and steel,476350107.0
+2023,LBN,Lebanon,72,Iron and steel,447197435.0
+2019,LBR,Liberia,72,Iron and steel,34709773.64
+2020,LBR,Liberia,72,Iron and steel,24288416.91
+2021,LBR,Liberia,72,Iron and steel,44797497.74
+2022,LBR,Liberia,72,Iron and steel,31116773.98
+2023,LBR,Liberia,72,Iron and steel,30888031.27
+2019,LBY,Libya,72,Iron and steel,198641538.0
+2019,LCA,Saint Lucia,72,Iron and steel,6106624.66
+2020,LCA,Saint Lucia,72,Iron and steel,6378497.0
+2019,LKA,Sri Lanka,72,Iron and steel,659558871.27
+2020,LKA,Sri Lanka,72,Iron and steel,544124251.063
+2021,LKA,Sri Lanka,72,Iron and steel,1091958745.673
+2022,LKA,Sri Lanka,72,Iron and steel,370335506.079
+2023,LKA,Sri Lanka,72,Iron and steel,462720939.848
+2019,LSO,Lesotho,72,Iron and steel,13184442.773
+2020,LSO,Lesotho,72,Iron and steel,12266463.169
+2021,LSO,Lesotho,72,Iron and steel,24204501.317
+2022,LSO,Lesotho,72,Iron and steel,21870802.193
+2023,LSO,Lesotho,72,Iron and steel,21901970.941
+2019,LTU,Lithuania,72,Iron and steel,781125878.0
+2020,LTU,Lithuania,72,Iron and steel,768125975.0
+2021,LTU,Lithuania,72,Iron and steel,1428748184.0
+2022,LTU,Lithuania,72,Iron and steel,1441792840.0
+2023,LTU,Lithuania,72,Iron and steel,973216248.0
+2019,LUX,Luxembourg,72,Iron and steel,1298689887.222
+2020,LUX,Luxembourg,72,Iron and steel,1061784676.317
+2021,LUX,Luxembourg,72,Iron and steel,1630635137.151
+2022,LUX,Luxembourg,72,Iron and steel,1404026973.231
+2023,LUX,Luxembourg,72,Iron and steel,1189628149.36
+2019,LVA,Latvia,72,Iron and steel,608561606.551
+2020,LVA,Latvia,72,Iron and steel,578625361.018
+2021,LVA,Latvia,72,Iron and steel,1110149035.652
+2022,LVA,Latvia,72,Iron and steel,777030371.08
+2023,LVA,Latvia,72,Iron and steel,566932427.992
+2019,MAC,"China, Macao SAR",72,Iron and steel,106575192.956
+2020,MAC,"China, Macao SAR",72,Iron and steel,126981669.67
+2021,MAC,"China, Macao SAR",72,Iron and steel,181985445.813
+2022,MAC,"China, Macao SAR",72,Iron and steel,182150722.264
+2023,MAC,"China, Macao SAR",72,Iron and steel,97235507.005
+2019,MAR,Morocco,72,Iron and steel,1517045952.169
+2020,MAR,Morocco,72,Iron and steel,1269178323.632
+2021,MAR,Morocco,72,Iron and steel,1652966659.183
+2022,MAR,Morocco,72,Iron and steel,1945964887.58
+2023,MAR,Morocco,72,Iron and steel,1805802732.634
+2019,MDA,Rep. of Moldova,72,Iron and steel,99244938.0
+2020,MDA,Rep. of Moldova,72,Iron and steel,101427213.0
+2021,MDA,Rep. of Moldova,72,Iron and steel,142750282.0
+2022,MDA,Rep. of Moldova,72,Iron and steel,148512116.0
+2023,MDA,Rep. of Moldova,72,Iron and steel,126428675.0
+2019,MDG,Madagascar,72,Iron and steel,95424120.445
+2020,MDG,Madagascar,72,Iron and steel,73433377.468
+2021,MDG,Madagascar,72,Iron and steel,78955632.437
+2022,MDG,Madagascar,72,Iron and steel,153340833.971
+2023,MDG,Madagascar,72,Iron and steel,91941000.24
+2019,MDV,Maldives,72,Iron and steel,62700885.84
+2020,MDV,Maldives,72,Iron and steel,30694335.164
+2021,MDV,Maldives,72,Iron and steel,38888702.204
+2022,MDV,Maldives,72,Iron and steel,88808687.28
+2023,MDV,Maldives,72,Iron and steel,80336567.53
+2019,MEX,Mexico,72,Iron and steel,10748071266.0
+2020,MEX,Mexico,72,Iron and steel,8802785033.0
+2021,MEX,Mexico,72,Iron and steel,17523920486.0
+2022,MEX,Mexico,72,Iron and steel,20822191604.0
+2023,MEX,Mexico,72,Iron and steel,21547093211.0
+2019,MKD,North Macedonia,72,Iron and steel,508568554.28
+2020,MKD,North Macedonia,72,Iron and steel,429235294.02
+2021,MKD,North Macedonia,72,Iron and steel,666417750.74
+2022,MKD,North Macedonia,72,Iron and steel,716274055.94
+2023,MKD,North Macedonia,72,Iron and steel,576165756.134
+2019,MLI,Mali,72,Iron and steel,126341205.69
+2020,MLI,Mali,72,Iron and steel,124234452.779
+2021,MLI,Mali,72,Iron and steel,205812997.278
+2022,MLI,Mali,72,Iron and steel,164526371.668
+2023,MLI,Mali,72,Iron and steel,138968718.502
+2019,MLT,Malta,72,Iron and steel,36116053.619
+2020,MLT,Malta,72,Iron and steel,49623663.522
+2021,MLT,Malta,72,Iron and steel,68925979.869
+2022,MLT,Malta,72,Iron and steel,87702935.062
+2023,MLT,Malta,72,Iron and steel,63031769.202
+2019,MMR,Myanmar,72,Iron and steel,932174303.617
+2020,MMR,Myanmar,72,Iron and steel,1130523649.517
+2021,MMR,Myanmar,72,Iron and steel,528592125.772
+2022,MMR,Myanmar,72,Iron and steel,665688702.109
+2023,MMR,Myanmar,72,Iron and steel,649528627.787
+2019,MNE,Montenegro,72,Iron and steel,72693555.58
+2020,MNE,Montenegro,72,Iron and steel,51744689.451
+2021,MNE,Montenegro,72,Iron and steel,67680678.53
+2022,MNE,Montenegro,72,Iron and steel,72399413.898
+2023,MNE,Montenegro,72,Iron and steel,63025925.495
+2019,MNG,Mongolia,72,Iron and steel,194304225.73
+2020,MNG,Mongolia,72,Iron and steel,164618869.27
+2021,MNG,Mongolia,72,Iron and steel,236307617.4
+2022,MNG,Mongolia,72,Iron and steel,336183149.276
+2023,MNG,Mongolia,72,Iron and steel,270024862.586
+2019,MOZ,Mozambique,72,Iron and steel,186988100.67
+2020,MOZ,Mozambique,72,Iron and steel,154668433.384
+2021,MOZ,Mozambique,72,Iron and steel,264415685.033
+2022,MOZ,Mozambique,72,Iron and steel,209015812.265
+2023,MOZ,Mozambique,72,Iron and steel,210591000.0
+2019,MRT,Mauritania,72,Iron and steel,55118325.7
+2020,MRT,Mauritania,72,Iron and steel,38062743.906
+2021,MRT,Mauritania,72,Iron and steel,50561851.44
+2022,MRT,Mauritania,72,Iron and steel,49572413.051
+2023,MRT,Mauritania,72,Iron and steel,44293192.924
+2019,MSR,Montserrat,72,Iron and steel,325724.371
+2020,MSR,Montserrat,72,Iron and steel,238701.164
+2021,MSR,Montserrat,72,Iron and steel,419518.363
+2022,MSR,Montserrat,72,Iron and steel,338179.548
+2023,MSR,Montserrat,72,Iron and steel,441872.322
+2019,MUS,Mauritius,72,Iron and steel,85768817.839
+2020,MUS,Mauritius,72,Iron and steel,68663287.061
+2021,MUS,Mauritius,72,Iron and steel,105356740.241
+2022,MUS,Mauritius,72,Iron and steel,127222864.732
+2023,MUS,Mauritius,72,Iron and steel,87723526.83
+2019,MWI,Malawi,72,Iron and steel,73275575.374
+2020,MWI,Malawi,72,Iron and steel,81114603.497
+2021,MWI,Malawi,72,Iron and steel,102169031.646
+2022,MWI,Malawi,72,Iron and steel,37890110.124
+2023,MWI,Malawi,72,Iron and steel,77160438.12
+2019,MYS,Malaysia,72,Iron and steel,6614021225.737
+2020,MYS,Malaysia,72,Iron and steel,5087717443.404
+2021,MYS,Malaysia,72,Iron and steel,7340953591.503
+2022,MYS,Malaysia,72,Iron and steel,6614457550.096
+2023,MYS,Malaysia,72,Iron and steel,5949307858.232
+2019,NAM,Namibia,72,Iron and steel,98991077.587
+2020,NAM,Namibia,72,Iron and steel,92556660.355
+2021,NAM,Namibia,72,Iron and steel,129142421.258
+2022,NAM,Namibia,72,Iron and steel,123896287.045
+2023,NAM,Namibia,72,Iron and steel,120656642.644
+2019,NER,Niger,72,Iron and steel,53316254.025
+2020,NER,Niger,72,Iron and steel,44619843.185
+2021,NER,Niger,72,Iron and steel,45829134.694
+2022,NER,Niger,72,Iron and steel,79794578.079
+2023,NER,Niger,72,Iron and steel,49882163.376
+2019,NGA,Nigeria,72,Iron and steel,683174989.91
+2020,NGA,Nigeria,72,Iron and steel,1183255019.505
+2021,NGA,Nigeria,72,Iron and steel,930411658.984
+2022,NGA,Nigeria,72,Iron and steel,560023987.755
+2023,NGA,Nigeria,72,Iron and steel,271956002.824
+2019,NIC,Nicaragua,72,Iron and steel,144362327.6
+2020,NIC,Nicaragua,72,Iron and steel,166396617.14
+2021,NIC,Nicaragua,72,Iron and steel,268897356.68
+2022,NIC,Nicaragua,72,Iron and steel,264015453.74
+2023,NIC,Nicaragua,72,Iron and steel,327214486.24
+2019,NLD,Netherlands,72,Iron and steel,9755837903.153
+2020,NLD,Netherlands,72,Iron and steel,8585197648.927
+2021,NLD,Netherlands,72,Iron and steel,13428976411.541
+2022,NLD,Netherlands,72,Iron and steel,13268713690.874
+2023,NLD,Netherlands,72,Iron and steel,10230438347.0
+2019,NOR,Norway,72,Iron and steel,844295774.491
+2020,NOR,Norway,72,Iron and steel,734850142.426
+2021,NOR,Norway,72,Iron and steel,1033897916.624
+2022,NOR,Norway,72,Iron and steel,1147928856.125
+2023,NOR,Norway,72,Iron and steel,924126328.717
+2019,NPL,Nepal,72,Iron and steel,1078489439.23
+2020,NPL,Nepal,72,Iron and steel,907416244.37
+2021,NPL,Nepal,72,Iron and steel,1495823683.66
+2022,NPL,Nepal,72,Iron and steel,1116457410.767
+2019,NZL,New Zealand,72,Iron and steel,335476722.492
+2020,NZL,New Zealand,72,Iron and steel,252622172.825
+2021,NZL,New Zealand,72,Iron and steel,414021362.734
+2022,NZL,New Zealand,72,Iron and steel,497992846.163
+2023,NZL,New Zealand,72,Iron and steel,265226719.155
+2019,OMN,Oman,72,Iron and steel,1182093053.56
+2020,OMN,Oman,72,Iron and steel,935718898.88
+2021,OMN,Oman,72,Iron and steel,1441781948.329
+2022,OMN,Oman,72,Iron and steel,1569548816.789
+2023,OMN,Oman,72,Iron and steel,1633308996.143
+2019,PAK,Pakistan,72,Iron and steel,3096012578.625
+2020,PAK,Pakistan,72,Iron and steel,3153762474.664
+2021,PAK,Pakistan,72,Iron and steel,4586591116.951
+2022,PAK,Pakistan,72,Iron and steel,3940574180.354
+2023,PAK,Pakistan,72,Iron and steel,2759745822.509
+2019,PAN,Panama,72,Iron and steel,240779855.0
+2020,PAN,Panama,72,Iron and steel,104764241.0
+2021,PAN,Panama,72,Iron and steel,269449553.0
+2022,PAN,Panama,72,Iron and steel,334445978.0
+2023,PAN,Panama,72,Iron and steel,325433807.0
+2019,PER,Peru,72,Iron and steel,1506682912.5
+2020,PER,Peru,72,Iron and steel,1373246337.14
+2021,PER,Peru,72,Iron and steel,2689655689.17
+2022,PER,Peru,72,Iron and steel,2936827736.827
+2023,PER,Peru,72,Iron and steel,1913415115.47
+2019,PHL,Philippines,72,Iron and steel,4048077242.0
+2020,PHL,Philippines,72,Iron and steel,3481625311.0
+2021,PHL,Philippines,72,Iron and steel,4885383410.0
+2022,PHL,Philippines,72,Iron and steel,5230252977.0
+2023,PHL,Philippines,72,Iron and steel,4151867111.0
+2019,PNG,Papua New Guinea,72,Iron and steel,93714018.149
+2020,PNG,Papua New Guinea,72,Iron and steel,75831681.919
+2021,PNG,Papua New Guinea,72,Iron and steel,107587631.287
+2022,PNG,Papua New Guinea,72,Iron and steel,121588766.42
+2023,PNG,Papua New Guinea,72,Iron and steel,75472811.017
+2019,POL,Poland,72,Iron and steel,9120445723.0
+2020,POL,Poland,72,Iron and steel,8588599819.0
+2021,POL,Poland,72,Iron and steel,15227762828.0
+2022,POL,Poland,72,Iron and steel,16119157215.0
+2023,POL,Poland,72,Iron and steel,13275366854.0
+2019,PRT,Portugal,72,Iron and steel,2732356140.201
+2020,PRT,Portugal,72,Iron and steel,2392213033.999
+2021,PRT,Portugal,72,Iron and steel,4126069784.883
+2022,PRT,Portugal,72,Iron and steel,4331964893.77
+2023,PRT,Portugal,72,Iron and steel,3781166078.887
+2019,PRY,Paraguay,72,Iron and steel,263360902.0
+2020,PRY,Paraguay,72,Iron and steel,239766805.0
+2021,PRY,Paraguay,72,Iron and steel,438553129.0
+2022,PRY,Paraguay,72,Iron and steel,397413571.92
+2023,PRY,Paraguay,72,Iron and steel,346493849.503
+2019,PSE,State of Palestine,72,Iron and steel,258872967.14
+2020,PSE,State of Palestine,72,Iron and steel,207341997.63
+2021,PSE,State of Palestine,72,Iron and steel,298454728.5
+2022,PSE,State of Palestine,72,Iron and steel,346266817.395
+2023,PSE,State of Palestine,72,Iron and steel,290843218.768
+2019,PYF,French Polynesia,72,Iron and steel,17913675.068
+2020,PYF,French Polynesia,72,Iron and steel,16764535.122
+2021,PYF,French Polynesia,72,Iron and steel,25320839.179
+2022,PYF,French Polynesia,72,Iron and steel,32271925.922
+2023,PYF,French Polynesia,72,Iron and steel,19262030.796
+2019,QAT,Qatar,72,Iron and steel,364794883.366
+2020,QAT,Qatar,72,Iron and steel,461402625.566
+2021,QAT,Qatar,72,Iron and steel,510510875.321
+2022,QAT,Qatar,72,Iron and steel,448149215.929
+2023,QAT,Qatar,72,Iron and steel,303429026.367
+2019,ROU,Romania,72,Iron and steel,3129490676.26
+2020,ROU,Romania,72,Iron and steel,2866714548.53
+2021,ROU,Romania,72,Iron and steel,4585220403.58
+2022,ROU,Romania,72,Iron and steel,5200759499.26
+2023,ROU,Romania,72,Iron and steel,4354511426.9
+2019,RUS,Russian Federation,72,Iron and steel,5050884282.02
+2020,RUS,Russian Federation,72,Iron and steel,3726934324.048
+2021,RUS,Russian Federation,72,Iron and steel,5925008075.897
+2019,RWA,Rwanda,72,Iron and steel,106139850.89
+2020,RWA,Rwanda,72,Iron and steel,138200299.97
+2021,RWA,Rwanda,72,Iron and steel,161998224.6
+2022,RWA,Rwanda,72,Iron and steel,199866250.03
+2019,S19,"Other Asia, nes",72,Iron and steel,7983320141.33
+2020,S19,"Other Asia, nes",72,Iron and steel,7188736663.603
+2021,S19,"Other Asia, nes",72,Iron and steel,12795492967.663
+2022,S19,"Other Asia, nes",72,Iron and steel,10844858606.98
+2023,S19,"Other Asia, nes",72,Iron and steel,9300756568.257
+2019,SAU,Saudi Arabia,72,Iron and steel,4401156276.104
+2020,SAU,Saudi Arabia,72,Iron and steel,4715237734.386
+2021,SAU,Saudi Arabia,72,Iron and steel,5465217659.636
+2022,SAU,Saudi Arabia,72,Iron and steel,6923986318.1
+2023,SAU,Saudi Arabia,72,Iron and steel,5454007813.783
+2019,SEN,Senegal,72,Iron and steel,301106788.74
+2020,SEN,Senegal,72,Iron and steel,276951182.329
+2021,SEN,Senegal,72,Iron and steel,419865585.939
+2022,SEN,Senegal,72,Iron and steel,391072817.326
+2023,SEN,Senegal,72,Iron and steel,331881674.745
+2019,SGP,Singapore,72,Iron and steel,2630962270.823
+2020,SGP,Singapore,72,Iron and steel,1796963560.445
+2021,SGP,Singapore,72,Iron and steel,3006358872.904
+2022,SGP,Singapore,72,Iron and steel,3489474972.972
+2023,SGP,Singapore,72,Iron and steel,2899929364.382
+2019,SLV,El Salvador,72,Iron and steel,345646201.4
+2020,SLV,El Salvador,72,Iron and steel,268706883.93
+2021,SLV,El Salvador,72,Iron and steel,560082883.07
+2022,SLV,El Salvador,72,Iron and steel,590011283.97
+2023,SLV,El Salvador,72,Iron and steel,483555031.49
+2019,SRB,Serbia,72,Iron and steel,651472411.0
+2020,SRB,Serbia,72,Iron and steel,609661137.0
+2021,SRB,Serbia,72,Iron and steel,1034966779.0
+2022,SRB,Serbia,72,Iron and steel,1093868345.0
+2023,SRB,Serbia,72,Iron and steel,943994880.0
+2019,STP,Sao Tome and Principe,72,Iron and steel,832615.41
+2020,STP,Sao Tome and Principe,72,Iron and steel,898284.102
+2021,STP,Sao Tome and Principe,72,Iron and steel,1011511.969
+2022,STP,Sao Tome and Principe,72,Iron and steel,1292130.848
+2023,STP,Sao Tome and Principe,72,Iron and steel,1615965.231
+2019,SUR,Suriname,72,Iron and steel,19789581.481
+2020,SUR,Suriname,72,Iron and steel,19762194.951
+2021,SUR,Suriname,72,Iron and steel,27342682.38
+2022,SUR,Suriname,72,Iron and steel,28516474.98
+2023,SUR,Suriname,72,Iron and steel,26609038.139
+2019,SVK,Slovakia,72,Iron and steel,2571065253.886
+2020,SVK,Slovakia,72,Iron and steel,2188122854.402
+2021,SVK,Slovakia,72,Iron and steel,3907757351.363
+2022,SVK,Slovakia,72,Iron and steel,4179633388.648
+2023,SVK,Slovakia,72,Iron and steel,3490876513.858
+2019,SVN,Slovenia,72,Iron and steel,1512460412.52
+2020,SVN,Slovenia,72,Iron and steel,1350007415.414
+2021,SVN,Slovenia,72,Iron and steel,2309640255.235
+2022,SVN,Slovenia,72,Iron and steel,2583070522.087
+2023,SVN,Slovenia,72,Iron and steel,2092983630.925
+2019,SWE,Sweden,72,Iron and steel,4412815718.265
+2020,SWE,Sweden,72,Iron and steel,3458353226.426
+2021,SWE,Sweden,72,Iron and steel,5778007504.638
+2022,SWE,Sweden,72,Iron and steel,6382251160.941
+2023,SWE,Sweden,72,Iron and steel,5026574074.082
+2019,SWZ,Eswatini,72,Iron and steel,28161599.03
+2020,SWZ,Eswatini,72,Iron and steel,25385339.89
+2021,SWZ,Eswatini,72,Iron and steel,39822944.62
+2022,SWZ,Eswatini,72,Iron and steel,36305743.2
+2023,SWZ,Eswatini,72,Iron and steel,30639626.92
+2019,SYC,Seychelles,72,Iron and steel,23818778.988
+2020,SYC,Seychelles,72,Iron and steel,18614423.056
+2021,SYC,Seychelles,72,Iron and steel,52410703.228
+2022,SYC,Seychelles,72,Iron and steel,28020574.578
+2023,SYC,Seychelles,72,Iron and steel,17836882.29
+2019,TGO,Togo,72,Iron and steel,86152839.086
+2020,TGO,Togo,72,Iron and steel,58923295.993
+2021,TGO,Togo,72,Iron and steel,97675245.63
+2022,TGO,Togo,72,Iron and steel,99132107.297
+2023,TGO,Togo,72,Iron and steel,74941433.388
+2019,THA,Thailand,72,Iron and steel,11866645010.168
+2020,THA,Thailand,72,Iron and steel,9296652030.568
+2021,THA,Thailand,72,Iron and steel,15344574412.378
+2022,THA,Thailand,72,Iron and steel,14532643223.63
+2023,THA,Thailand,72,Iron and steel,12121631464.927
+2019,TJK,Tajikistan,72,Iron and steel,225243847.0
+2020,TJK,Tajikistan,72,Iron and steel,242476888.0
+2021,TJK,Tajikistan,72,Iron and steel,261133383.0
+2022,TJK,Tajikistan,72,Iron and steel,335503965.0
+2023,TJK,Tajikistan,72,Iron and steel,226254764.0
+2019,TLS,Timor-Leste,72,Iron and steel,9847741.07
+2020,TLS,Timor-Leste,72,Iron and steel,12961875.6
+2021,TLS,Timor-Leste,72,Iron and steel,12093009.02
+2022,TLS,Timor-Leste,72,Iron and steel,20971902.06
+2023,TLS,Timor-Leste,72,Iron and steel,30742801.19
+2019,TON,Tonga,72,Iron and steel,2364352.076
+2020,TON,Tonga,72,Iron and steel,2597757.477
+2021,TON,Tonga,72,Iron and steel,2196505.029
+2022,TON,Tonga,72,Iron and steel,2822005.624
+2023,TON,Tonga,72,Iron and steel,4849396.3
+2019,TTO,Trinidad and Tobago,72,Iron and steel,143254030.956
+2020,TTO,Trinidad and Tobago,72,Iron and steel,93296406.56
+2021,TTO,Trinidad and Tobago,72,Iron and steel,122402562.582
+2022,TTO,Trinidad and Tobago,72,Iron and steel,209774611.604
+2023,TTO,Trinidad and Tobago,72,Iron and steel,133049849.373
+2019,TUN,Tunisia,72,Iron and steel,615473405.977
+2020,TUN,Tunisia,72,Iron and steel,562215943.85
+2021,TUN,Tunisia,72,Iron and steel,906889622.092
+2022,TUN,Tunisia,72,Iron and steel,1082983261.501
+2023,TUN,Tunisia,72,Iron and steel,901686207.23
+2019,TUR,Türkiye,72,Iron and steel,15049676559.0
+2020,TUR,Türkiye,72,Iron and steel,15102954267.0
+2021,TUR,Türkiye,72,Iron and steel,27618091981.0
+2022,TUR,Türkiye,72,Iron and steel,28367021597.0
+2023,TUR,Türkiye,72,Iron and steel,24160165124.0
+2019,TZA,United Rep. of Tanzania,72,Iron and steel,490072115.93
+2020,TZA,United Rep. of Tanzania,72,Iron and steel,413742761.13
+2021,TZA,United Rep. of Tanzania,72,Iron and steel,706876181.18
+2022,TZA,United Rep. of Tanzania,72,Iron and steel,851086384.21
+2023,TZA,United Rep. of Tanzania,72,Iron and steel,775114403.66
+2019,UGA,Uganda,72,Iron and steel,362641655.25
+2020,UGA,Uganda,72,Iron and steel,360356559.0
+2021,UGA,Uganda,72,Iron and steel,604382623.04
+2022,UGA,Uganda,72,Iron and steel,640210370.57
+2023,UGA,Uganda,72,Iron and steel,527135498.73
+2019,UKR,Ukraine,72,Iron and steel,1252555780.56
+2020,UKR,Ukraine,72,Iron and steel,1037658814.33
+2021,UKR,Ukraine,72,Iron and steel,1469847261.31
+2022,UKR,Ukraine,72,Iron and steel,952495939.92
+2023,UKR,Ukraine,72,Iron and steel,1307240742.22
+2019,URY,Uruguay,72,Iron and steel,114302300.42
+2020,URY,Uruguay,72,Iron and steel,108787186.15
+2021,URY,Uruguay,72,Iron and steel,217838028.03
+2022,URY,Uruguay,72,Iron and steel,204875085.75
+2023,URY,Uruguay,72,Iron and steel,140318065.89
+2019,USA,USA,72,Iron and steel,24617009608.0
+2020,USA,USA,72,Iron and steel,18805282391.0
+2021,USA,USA,72,Iron and steel,38901861997.0
+2022,USA,USA,72,Iron and steel,44933025763.0
+2023,USA,USA,72,Iron and steel,33156046816.0
+2019,UZB,Uzbekistan,72,Iron and steel,1428415773.99
+2020,UZB,Uzbekistan,72,Iron and steel,1240111244.51
+2021,UZB,Uzbekistan,72,Iron and steel,1642213694.98
+2022,UZB,Uzbekistan,72,Iron and steel,2010431573.82
+2023,UZB,Uzbekistan,72,Iron and steel,2038554446.64
+2019,VCT,Saint Vincent and the Grenadines,72,Iron and steel,5713883.75
+2020,VCT,Saint Vincent and the Grenadines,72,Iron and steel,4659995.64
+2021,VCT,Saint Vincent and the Grenadines,72,Iron and steel,6159189.568
+2022,VCT,Saint Vincent and the Grenadines,72,Iron and steel,13602204.698
+2023,VCT,Saint Vincent and the Grenadines,72,Iron and steel,6220165.091
+2019,VNM,Viet Nam,72,Iron and steel,11333930769.01
+2020,VNM,Viet Nam,72,Iron and steel,9900340614.585
+2021,VNM,Viet Nam,72,Iron and steel,14744151209.06
+2022,VNM,Viet Nam,72,Iron and steel,14329113964.717
+2023,VNM,Viet Nam,72,Iron and steel,12426086000.229
+2019,WSM,Samoa,72,Iron and steel,7165792.07
+2021,WSM,Samoa,72,Iron and steel,6936803.331
+2022,WSM,Samoa,72,Iron and steel,9001454.885
+2023,WSM,Samoa,72,Iron and steel,6625005.002
+2019,YEM,Yemen,72,Iron and steel,198743120.12
+2023,YEM,Yemen,72,Iron and steel,45000628.257
+2019,ZAF,South Africa,72,Iron and steel,1140979066.296
+2020,ZAF,South Africa,72,Iron and steel,934770709.137
+2021,ZAF,South Africa,72,Iron and steel,1821466378.512
+2022,ZAF,South Africa,72,Iron and steel,1813795710.031
+2023,ZAF,South Africa,72,Iron and steel,1591020947.979
+2019,ZMB,Zambia,72,Iron and steel,196595476.739
+2020,ZMB,Zambia,72,Iron and steel,159955358.541
+2021,ZMB,Zambia,72,Iron and steel,221824071.083
+2022,ZMB,Zambia,72,Iron and steel,293833355.298
+2023,ZMB,Zambia,72,Iron and steel,277717673.141
+2019,ZWE,Zimbabwe,72,Iron and steel,114468601.5
+2020,ZWE,Zimbabwe,72,Iron and steel,127925562.98
+2021,ZWE,Zimbabwe,72,Iron and steel,218093391.37
+2022,ZWE,Zimbabwe,72,Iron and steel,265727120.69
+2023,ZWE,Zimbabwe,72,Iron and steel,287172007.93

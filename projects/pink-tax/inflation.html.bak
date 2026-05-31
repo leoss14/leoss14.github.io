@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Did the 2022-2024 UK inflation wave fall harder on women than men? Item-level CPI quotes from ONS, item fixed effects and basket-weighted indices.">
+    <meta property="og:title" content="Gendered Inflation Incidence 2022-2024 | Leonardo Luksic">
+    <meta property="og:description" content="Did the 2022-2024 UK inflation wave fall harder on women than men? Item-level CPI quotes from ONS, item fixed effects and basket-weighted indices.">
+    <meta property="og:type" content="website">
+    <title>Gendered Inflation Incidence | Leonardo Luksic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/project-shared.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav>
+            <input type="checkbox" id="nav-check" class="nav-check" aria-hidden="true">
+            <a href="../../index.html" class="nav-home" aria-label="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 8.5V16C5 16.3 5.2 16.5 5.5 16.5H8.5V12.5C8.5 12.2 8.7 12 9 12H11C11.3 12 11.5 12.2 11.5 12.5V16.5H14.5C14.8 16.5 15 16.3 15 16V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-home-label">Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+            <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="project-hero">
+        <h1>Did the 2022-2024 Inflation Wave Hit Women Harder?</h1>
+        <p class="subtitle">
+            Headline UK consumer price inflation peaked at 11.1% in October 2022 and stayed above
+            the 2% target until mid-2024. Aggregate figures hide who actually paid more. This
+            project uses monthly item-level price quotes from the ONS Consumer Prices Index
+            collection to estimate whether the prices women face rose faster than the prices men
+            face, separating two distinct mechanisms: prices on the same item moving differently
+            for gendered variants, and women's consumption baskets weighting more heavily toward
+            categories that inflated faster. A companion analysis to
+            <a href="page.html">the cross-sectional pink tax study</a>, this piece focuses on
+            change rather than level.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">
+            Status: methodology and item mapping fixed; empirical results pending data download
+            and pipeline run.
+        </p>
+    </section>
+
+
+    <!-- BACKGROUND -->
+    <section id="overview">
+        <span class="section-label">Background</span>
+        <h2>Concepts &amp; Research Design</h2>
+
+        <p>
+            <strong>Headline inflation</strong> is the percentage change in a single aggregate
+            price index, typically the Consumer Prices Index (CPI), constructed by weighting
+            thousands of individual goods and services by their share in average household
+            spending. The ONS publishes the headline number every month. By construction, the
+            headline figure is a single rate for the average household; it does not say how
+            inflation was distributed across different types of consumers.
+        </p>
+        <p>
+            <strong>Inflation incidence</strong> is the study of who actually faced the highest
+            price increases. Households consume different baskets: families with young children
+            spend more on nappies and baby formula, retirees more on healthcare and energy,
+            single-adult women more on personal care and clothing relative to men. If the
+            categories that inflated fastest happen to be concentrated in one group's basket,
+            that group experienced higher effective inflation than the headline rate suggests.
+            Cardoso, Ferreira, Leiva-Leon and Shahid (2024) document substantial cross-household
+            dispersion in effective inflation rates during the 2022 wave across the euro area.
+            The UK question, and specifically the gender cut, has had less attention.
+        </p>
+        <p>
+            <strong>The 2022-2024 episode</strong> was driven primarily by energy and food, with
+            second-round effects spreading into services. Personal care items inflated in
+            different ways depending on the input mix: products with high agricultural or
+            chemical content tracked food inflation; imported cosmetics tracked exchange rate and
+            shipping costs; services such as haircuts tracked wage growth. Whether these factors
+            washed out across genders, or whether they concentrated in one direction, is the
+            empirical question.
+        </p>
+
+        <div class="divider"><span>Research Question</span></div>
+
+        <p style="font-size: 1.2rem; color: var(--navy); font-weight: 600; text-align: center; max-width: 720px; margin: 0 auto 2.5rem;">
+            Did cumulative price growth between January 2022 and December 2024 differ
+            systematically between female-coded, male-coded, and gender-neutral consumer goods
+            and services in the UK? If so, was the difference driven by basket composition or by
+            within-item price movements?
+        </p>
+
+        <p>
+            The two channels matter for different reasons. A <strong>within-item gap</strong>,
+            where the same razor blades or shampoo bottle rose faster in one gendered variant
+            than the other, points to firm-level pricing decisions and is a more direct test of
+            differential pricing power. A <strong>basket-composition gap</strong>, where prices
+            rose similarly within each item but the typical female basket contained more items
+            from fast-inflating categories, is closer to a welfare statement about consumer
+            exposure: it answers "how much did the cost of being a typical female consumer rise
+            versus a typical male consumer", regardless of why.
+        </p>
+
+        <div class="divider"><span>Analytical Approach</span></div>
+
+        <p>
+            Three specifications, in order of increasing welfare relevance and decreasing
+            within-item identification:
+        </p>
+
+        <ol style="max-width: 760px; margin: 0 0 1.5rem 1rem; line-height: 1.7;">
+            <li style="margin-bottom: 0.8rem;">
+                <strong>Within-item difference-in-differences.</strong> A panel of monthly price
+                observations with item fixed effects and month fixed effects, identifying the
+                female premium in cumulative price growth from the cross-item variation. This is
+                the cleanest specification: it absorbs all baseline price differences between
+                items.
+            </li>
+            <li style="margin-bottom: 0.8rem;">
+                <strong>Basket-weighted price indices.</strong> Two Laspeyres indices constructed
+                from the same monthly quotes, one weighted by single-female-adult expenditure
+                shares from the Living Costs and Food Survey (LCFS), the other by
+                single-male-adult shares. Cumulative inflation is read directly from the index
+                levels.
+            </li>
+            <li style="margin-bottom: 0.8rem;">
+                <strong>Unit-price specification for shrinkflation.</strong> Where pack size is
+                available in the quote, repeat the within-item DiD on log unit price (price per
+                100g, per item, per ml) rather than headline price. If shrinkflation was
+                gender-asymmetric, this specification will detect it.
+            </li>
+        </ol>
+
+        <p>
+            A within-between decomposition then partitions the basket-weighted gap into the
+            share explained by differential within-item inflation and the share explained by
+            differential basket composition. This is the analogue to the composition versus
+            within-category decomposition that drove the cross-sectional pink tax finding.
+        </p>
+    </section>
+
+
+    <!-- DATA -->
+    <section>
+        <span class="section-label">Data</span>
+        <h2>Sources &amp; Preparation</h2>
+
+        <p>
+            Three datasets, all freely downloadable from ONS, with no scraping and no access
+            request required.
+        </p>
+
+        <div class="two-col">
+            <div class="note-box">
+                <h4 style="color: var(--accent);">CPI price quotes microdata</h4>
+                <p>
+                    Monthly CSVs of individual price quotes used to construct the headline CPI.
+                    Each row is one observation: item code, base price, current price,
+                    NUTS-1 region, validity marker, stratum weight, shop type. Coverage runs from
+                    February 1996 to the latest month. Personal care quotes (Division 12) will
+                    continue to be published after the March 2026 introduction of grocery scanner
+                    data, which only removes Division 1 and 2 quotes.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">CPI item indices</h4>
+                <p>
+                    Pre-computed item-level price indices (one number per item per month). Used
+                    as a sanity check on the constructed basket indices and to fill any items
+                    where price quotes are unavailable. Replaced in March 2025 by "consumption
+                    segment indices" with the same structure but slightly broader item
+                    definitions.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Living Costs and Food Survey (LCFS)</h4>
+                <p>
+                    Annual ONS household expenditure survey. Provides expenditure shares by
+                    household type, including single male adult and single female adult
+                    households. Used to construct gender-specific basket weights at the COICOP
+                    division level, then disaggregated to item level using within-division CPI
+                    weights.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Sample window</h4>
+                <p>
+                    Pre-period: January 2019 to December 2021 (baseline, pre-inflation wave).
+                    Treatment period: January 2022 to December 2024 (the wave). This gives 72
+                    monthly observations per item, three years on each side of the structural
+                    break.
+                </p>
+            </div>
+        </div>
+
+        <h3>Item Coding</h3>
+
+        <p>
+            Items are coded female, male, or neutral based on the ONS item description. The
+            coding rules are mechanical: an item is female-coded if its description references
+            a product or service primarily marketed to women (mascara, foundation, women's
+            hair colourant, women's haircut, manicure); male-coded if explicitly male (men's
+            haircut, electric razor, razor cartridge blades, which are sold predominantly to men
+            in the ONS basket); neutral otherwise. Ambiguous cases (deodorant, shampoo,
+            shower gel) are coded neutral. The female and male codings together cover roughly
+            two dozen items; the neutral category is large but only serves as a reference group
+            and a placebo check.
+        </p>
+
+        <h3>Item Mapping</h3>
+
+        <p>
+            The table below lists the items used in the analysis with their ONS item reference
+            numbers. The coding is fixed in advance, not selected to produce any particular
+            result.
+        </p>
+
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Item ID</th>
+                    <th style="text-align: left;">ONS Description</th>
+                    <th style="text-align: left;">Coding</th>
+                    <th style="text-align: left;">Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="num">520206</td><td>Tampons, pack of 10-20</td><td>Female</td><td>Replaced by 520256 in Feb 2023</td></tr>
+                <tr><td class="num">520256</td><td>Sanitary towels</td><td>Female</td><td>Continuation of 520206</td></tr>
+                <tr><td class="num">520223</td><td>Mascara</td><td>Female</td><td></td></tr>
+                <tr><td class="num">520236</td><td>Women's hair colourant 60-140ml</td><td>Female</td><td></td></tr>
+                <tr><td class="num">520243</td><td>Liquid foundation 30-35ml</td><td>Female</td><td></td></tr>
+                <tr><td class="num">520246</td><td>Lip gloss</td><td>Female</td><td></td></tr>
+                <tr><td class="num">520250</td><td>Nail varnish 6-14ml</td><td>Female</td><td></td></tr>
+                <tr><td class="num">520303</td><td>Women's hairdressing (cut and blow dry)</td><td>Female</td><td>Service</td></tr>
+                <tr><td class="num">520311</td><td>Women's highlighting</td><td>Female</td><td>Service</td></tr>
+                <tr><td class="num">520331</td><td>Basic manicure</td><td>Female</td><td>Service</td></tr>
+                <tr><td class="num">520241</td><td>Razor cartridge blades</td><td>Male</td><td></td></tr>
+                <tr><td class="num">520301</td><td>Man's haircut</td><td>Male</td><td>Service</td></tr>
+                <tr><td class="num">430321</td><td>Electric razor</td><td>Male</td><td></td></tr>
+                <tr><td class="num">520209</td><td>Toothpaste</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">520215</td><td>Moisturiser facial 50-150ml</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">520216</td><td>Deodorant / antiperspirant</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">520226</td><td>Shampoo 250-400ml</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">520234</td><td>Perfume / eau de toilette</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">520235</td><td>Sunscreen</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">520237</td><td>Hair gel 150-200ml</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">520238</td><td>Shower gel 150-250ml</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">520244</td><td>Toothbrush</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">520247</td><td>Liquid soap 200-300ml</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">520248</td><td>Conditioner for hair</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">520252</td><td>Body moisturising lotion</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">430536</td><td>Toilet rolls</td><td>Neutral</td><td></td></tr>
+                <tr><td class="num">430351</td><td>Electric hair styling appliance</td><td>Neutral</td><td>Skews female in practice</td></tr>
+                <tr><td class="num">430363</td><td>Electric toothbrush</td><td>Neutral</td><td></td></tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+            Sources: ONS CPI basket item descriptions, Dec 2019 to Jun 2024 release; ONS FOI
+            response on tampon and sanitary towel item reference numbers.
+        </p>
+
+        <div class="note-box" style="margin-top: 2rem;">
+            <h4>The tampon-sanitary-towel break</h4>
+            <p>
+                In February 2023 ONS replaced item 520206 (tampons) with item 520256 (sanitary
+                towels) in the CPI basket, with no overlap month. The within-item DiD treats
+                these as a single bridged "period products" item, with a level shift dummy at the
+                bridge date to absorb any compositional change between the two products. A
+                robustness check drops the bridged item entirely and confirms results are not
+                driven by this single category. The bridge falls inside the inflation wave, so
+                this is an unavoidable design choice.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- PART I: WITHIN-ITEM DiD -->
+    <section id="within-item" class="summary-section full-width-section">
+        <div class="container">
+            <span class="section-label">Part I</span>
+            <h2>Within-Item Inflation Differential</h2>
+
+            <p>
+                The first specification estimates whether cumulative price growth on
+                female-coded items differed from male-coded and neutral items, holding item
+                identity fixed. The estimating equation is:
+            </p>
+
+            <div class="note-box" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem; text-align: center; padding: 1.5rem;">
+                log(p<sub>iqt</sub>) = &alpha;<sub>i</sub> + &gamma;<sub>t</sub>
+                + &beta;<sub>F</sub> &middot; (female<sub>i</sub> &times; post<sub>t</sub>)
+                + &beta;<sub>M</sub> &middot; (male<sub>i</sub> &times; post<sub>t</sub>)
+                + &epsilon;<sub>iqt</sub>
+            </div>
+
+            <p>
+                Here p<sub>iqt</sub> is the price quote for item <em>i</em>, observation
+                <em>q</em>, in month <em>t</em>. The item fixed effects &alpha;<sub>i</sub>
+                absorb every time-invariant feature of an item: its baseline price, its category,
+                whether it is a service or a good. The month fixed effects &gamma;<sub>t</sub>
+                absorb common shocks: overall inflation, VAT changes, seasonal patterns. The
+                coefficient &beta;<sub>F</sub> measures the cumulative log price growth on
+                female-coded items relative to neutral items during the post-2022 period;
+                &beta;<sub>M</sub> does the same for male items. Standard errors are clustered at
+                the item level, since shocks within an item are correlated across months.
+            </p>
+
+            <p>
+                A more flexible version replaces the single post-2022 dummy with month-by-month
+                interactions, tracing out the trajectory of the female-neutral gap over time.
+                This produces an event-study chart showing whether any gendered divergence built
+                gradually or emerged sharply at a particular point in the wave.
+            </p>
+
+            <div class="viz-container">
+                <p style="text-align: center; color: var(--text-muted); padding: 4rem 1rem; background: var(--grey-100); border-radius: 4px;">
+                    Event study: cumulative log price growth on female-coded items relative to
+                    neutral items, monthly from Jan 2019 to Dec 2024.<br>
+                    <em>Chart will be inserted here once the pipeline has been run on downloaded
+                    ONS data.</em>
+                </p>
+            </div>
+
+            <h3>Coefficient table</h3>
+
+            <div class="viz-container">
+                <p style="text-align: center; color: var(--text-muted); padding: 3rem 1rem; background: var(--grey-100); border-radius: 4px;">
+                    Specifications (1) base DiD, (2) + region FE, (3) + shop type FE,
+                    (4) restricted to goods only, (5) restricted to services only.<br>
+                    <em>Table will be inserted here once the pipeline has been run.</em>
+                </p>
+            </div>
+
+            <div class="note-box">
+                <h4>What to expect ex ante</h4>
+                <p>
+                    Two priors. First, services items (haircuts, manicures) likely tracked wage
+                    growth, which ran roughly 5-6% annually during 2022-2024 in the UK; women's
+                    services use longer appointment times, which may amplify the wage pass-through.
+                    Second, goods items with high agricultural or chemical input shares (cosmetics
+                    with palm oil derivatives, hair products) likely tracked commodity prices
+                    closely. Whether these effects net out across the female and male coding is
+                    the empirical question. The cross-sectional pink tax results suggested no
+                    systematic level gap within categories, so any divergence here is genuinely
+                    about the inflation wave, not about long-running discrimination.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PART II: BASKET INDICES -->
+    <section id="baskets">
+        <span class="section-label">Part II</span>
+        <h2>Basket-Weighted Inflation</h2>
+
+        <p>
+            The second specification asks the welfare question directly: how much did the cost
+            of the typical female basket rise versus the typical male basket? This requires
+            attaching expenditure weights to each item and aggregating into two parallel price
+            indices.
+        </p>
+
+        <h3>Index construction</h3>
+
+        <p>
+            A <strong>Laspeyres index</strong> measures the cost of a fixed reference basket at
+            current prices, expressed as a ratio of the same basket valued at base-period
+            prices. The reference basket is set in the base period (January 2022 in this design)
+            and held constant; the index value at month <em>t</em> shows how expensive that
+            same basket would be if purchased in month <em>t</em>. Formally:
+        </p>
+
+        <div class="note-box" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem; text-align: center; padding: 1.5rem;">
+            L<sub>t</sub><sup>g</sup> = &Sigma;<sub>i</sub> w<sub>i</sub><sup>g</sup> &middot;
+            (p<sub>it</sub> / p<sub>i0</sub>) &times; 100
+        </div>
+
+        <p>
+            where <em>g</em> indexes the gender basket (female or male), w<sub>i</sub><sup>g</sup>
+            is the expenditure share of item <em>i</em> in basket <em>g</em>, derived from LCFS
+            single-adult household data, p<sub>it</sub> is the price of item <em>i</em> at
+            month <em>t</em> (the unweighted mean across quote observations), and p<sub>i0</sub>
+            is its base-period price.
+        </p>
+
+        <p>
+            A <strong>Tornqvist index</strong> uses a geometric average of base-period and
+            current-period expenditure shares as weights, which is more robust to the fact that
+            consumers substitute away from items that have become relatively more expensive.
+            Both indices are reported; the Laspeyres figure is the main one, and the Tornqvist
+            serves as a robustness check.
+        </p>
+
+        <h3>Headline result</h3>
+
+        <div class="project-meta-bar" style="margin: 2rem 0;">
+            <div class="meta-item">
+                <span class="meta-label">Female basket Jan 2022</span>
+                <span class="meta-value">100.0</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Female basket Dec 2024</span>
+                <span class="meta-value">pending</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Male basket Dec 2024</span>
+                <span class="meta-value">pending</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Basket gap (F - M)</span>
+                <span class="meta-value">pending</span>
+            </div>
+        </div>
+
+        <div class="viz-container">
+            <p style="text-align: center; color: var(--text-muted); padding: 4rem 1rem; background: var(--grey-100); border-radius: 4px;">
+                Laspeyres price index for female and male single-adult baskets, monthly,
+                Jan 2022 = 100.<br>
+                <em>Chart will be inserted here once the pipeline has been run.</em>
+            </p>
+        </div>
+
+        <h3>Within-between decomposition</h3>
+
+        <p>
+            The gap between the two basket indices can be decomposed into two parts. The
+            <strong>within-item component</strong> captures the contribution of differential
+            inflation on the same items: items appearing in both baskets but with different
+            rates of price growth. The <strong>between-item component</strong> captures the
+            contribution of basket composition: female-coded items inflated similarly to
+            male-coded ones, but the female basket weighted them more heavily, or vice versa.
+            The decomposition is the same logic as the within-category versus composition split
+            in the cross-sectional pink tax analysis.
+        </p>
+
+        <div class="viz-container">
+            <p style="text-align: center; color: var(--text-muted); padding: 3rem 1rem; background: var(--grey-100); border-radius: 4px;">
+                Decomposition table: total gap, within-item share, between-item share.<br>
+                <em>Table will be inserted here once the pipeline has been run.</em>
+            </p>
+        </div>
+    </section>
+
+
+    <!-- PART III: SHRINKFLATION -->
+    <section id="shrinkflation">
+        <span class="section-label">Part III</span>
+        <h2>Shrinkflation</h2>
+
+        <p>
+            <strong>Shrinkflation</strong> describes pack-size reductions that hold headline
+            price approximately constant while reducing the quantity delivered, so the per-unit
+            price rises without the shelf price moving. UK supermarket personal care saw notable
+            shrinkflation activity through 2022-2024, with media coverage suggesting smaller-pack
+            categories were disproportionately affected. Smaller packs are more common in female
+            personal care (cosmetics in small bottles, applicators) than in male personal care
+            (shaving foam, deodorant in larger formats). If shrinkflation was concentrated in
+            smaller-pack items, it may have widened any female-male inflation gap beyond what
+            shelf price comparisons reveal.
+        </p>
+
+        <p>
+            The ONS price quote file includes pack size in the item description (and explicitly
+            in some quote fields when present). Constructing unit prices (price per gram, price
+            per item, price per ml depending on the product) and re-running the within-item DiD
+            on log unit price will reveal whether shrinkflation contributed asymmetrically.
+            Where pack size is not parseable from the quote, the item is dropped from this
+            specification.
+        </p>
+
+        <div class="viz-container">
+            <p style="text-align: center; color: var(--text-muted); padding: 4rem 1rem; background: var(--grey-100); border-radius: 4px;">
+                Within-item DiD on log headline price versus log unit price, female and male
+                coefficients side by side.<br>
+                <em>Chart will be inserted here once the pipeline has been run.</em>
+            </p>
+        </div>
+    </section>
+
+
+    <!-- CONCLUSIONS placeholder -->
+    <section id="conclusions" style="padding-bottom: 2.5rem;">
+        <span class="section-label">Synthesis</span>
+        <h2>Conclusions</h2>
+        <p style="max-width: 760px; margin-bottom: 2.5rem; color: var(--text-muted); font-style: italic;">
+            Conclusions will be written once empirical results are in. The structure below
+            lists the questions the analysis is designed to answer; specific findings will be
+            inserted in place of the question text.
+        </p>
+
+        <div class="conclusion-grid">
+            <div class="conclusion-card">
+                <div class="conclusion-number">01</div>
+                <div class="conclusion-content">
+                    <h4>Was there a within-item gender inflation gap?</h4>
+                    <p>
+                        From the DiD specification, does &beta;<sub>F</sub> &minus;
+                        &beta;<sub>M</sub> differ significantly from zero? If yes, in which
+                        direction and by how much?
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">02</div>
+                <div class="conclusion-content">
+                    <h4>Was there a basket-weighted gender inflation gap?</h4>
+                    <p>
+                        From the Laspeyres indices, how much did the female basket rise relative
+                        to the male basket over Jan 2022 to Dec 2024? Is the answer robust to
+                        Tornqvist weighting?
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">03</div>
+                <div class="conclusion-content">
+                    <h4>Which channel dominated?</h4>
+                    <p>
+                        Of the total basket gap, what share is explained by within-item inflation
+                        differences and what share by basket composition? The cross-sectional
+                        pink tax piece found composition dominated; the inflation question may
+                        follow the same pattern or break it.
+                    </p>
+                </div>
+            </div>
+            <div class="conclusion-card">
+                <div class="conclusion-number">04</div>
+                <div class="conclusion-content">
+                    <h4>Did shrinkflation matter?</h4>
+                    <p>
+                        How does the DiD coefficient on log unit price compare with the
+                        coefficient on log headline price? A larger unit-price coefficient
+                        indicates shrinkflation contributed to gendered exposure.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- LIMITATIONS -->
+    <section>
+        <h2>Limitations</h2>
+
+        <div class="two-col">
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Item-level coverage</h4>
+                <p>
+                    The ONS basket is a representative sample, not an exhaustive product list.
+                    Only a small number of items are explicitly gendered (around a dozen on each
+                    side). The neutral category is large but contributes mainly as a reference
+                    group. Stronger statements require more items per side, which the public
+                    quote data does not provide.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Basket weight precision</h4>
+                <p>
+                    LCFS expenditure shares are reported at COICOP division and group level, not
+                    at individual item level. Disaggregating to item weights uses within-group
+                    CPI weights, which are not gender-specific. The basket indices therefore
+                    capture differences in division-level spending allocations, not within-group
+                    variation in product choice.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Item continuity</h4>
+                <p>
+                    The tampon to sanitary towel bridge in February 2023 sits inside the
+                    inflation wave. The pipeline treats them as a continued series with a level
+                    shift dummy, but a structural change in product mix between the two ONS
+                    items is possible. A robustness check excludes the bridged item.
+                </p>
+            </div>
+            <div class="note-box">
+                <h4 style="color: var(--accent);">Coding subjectivity</h4>
+                <p>
+                    Items are coded female, male, or neutral based on ONS description text and
+                    typical use. Deodorant and shampoo are coded neutral here despite often being
+                    sold in gendered variants in supermarkets. A more permissive coding (treating
+                    deodorant as gendered) would change the sample but not the within-item
+                    identification.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- METHODOLOGICAL NOTES -->
+    <section id="methods" class="summary-section full-width-section">
+        <div class="container">
+            <h2>Methodological Notes</h2>
+
+            <div class="two-col">
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Data pipeline</h4>
+                    <p>
+                        Stage 1: download 72 monthly ONS price quote CSVs (Jan 2019 to Dec 2024)
+                        from the ONS website. Stage 2: filter to the personal care item set
+                        listed above, attach gender coding. Stage 3: parse pack size from item
+                        description where possible. Stage 4: assemble item-month panel. Stage 5:
+                        run DiD and basket index specifications. All steps in a single Python
+                        script with checkpointed intermediates.
+                    </p>
+                </div>
+                <div class="note-box">
+                    <h4 style="color: var(--accent);">Statistical methods</h4>
+                    <p>
+                        Within-item DiD: OLS with two-way fixed effects (item, month), standard
+                        errors clustered at item level using linearmodels.PanelOLS. Event study:
+                        same model with month-by-treatment interactions. Basket indices:
+                        Laspeyres and Tornqvist with January 2022 base. Decomposition: Oaxaca-
+                        Blinder-style split into within-item and between-item components.
+                        Robustness: drop bridged items, restrict to goods only, restrict to
+                        services only, alternative codings.
+                    </p>
+                </div>
+            </div>
+
+            <div id="skills-tags" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin: 2.5rem 0;"></div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/leoss14" target="_blank" class="social-link">GitHub</a>
+            <a href="mailto:l.luksic@lse.ac.uk" class="social-link">Email</a>
+        </div>
+        <p><strong>Gendered Inflation Incidence in the UK, 2022-2024</strong></p>
+        <p>Item-Level Difference-in-Differences and Basket-Weighted Indices</p>
+        <p>MPA in Data Science for Public Policy &middot; LSE &middot; 2025</p>
+    </footer>
+
+    <script src="../../js/nav.js"></script>
+    <script src="../../js/skills.js"></script>
+    <script>
+        renderSkills('skills-tags', ['methods_econ', 'data_tools']);
+    </script>
+</body>
+</html>

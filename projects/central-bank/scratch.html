@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCRATCH: Central-Bank Hypothesis Tests</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --navy:#1a2744; --slate:#3d4f5f; --accent:#c23a3a;
+    --grey-100:#f0f2f5; --grey-200:#e2e6eb; --border:#dde1e7;
+    --text-2:#2d3748; --text-mute:#6b7280;
+    --green:#2e7d4a; --green-bg:rgba(46,125,74,0.08);
+    --red:#b33a3a; --red-bg:rgba(179,58,58,0.08);
+    --amber:#b5830b; --amber-bg:#fdf6e3;
+    --mono:'IBM Plex Mono',Consolas,Monaco,monospace;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+    font-family:'Public Sans',system-ui,sans-serif;
+    color:#1a1a2e; background:#fff; line-height:1.6;
+    max-width:980px; margin:0 auto; padding:2.5rem 1.5rem 4rem;
+}
+h1 { color:var(--navy); font-size:1.75rem; margin-bottom:0.4rem; }
+h2 { color:var(--navy); font-size:1.25rem; margin:2rem 0 0.6rem; padding-bottom:0.4rem; border-bottom:1px solid var(--border); }
+h3 { color:var(--navy); font-size:1.05rem; margin:1.2rem 0 0.5rem; }
+.lead { color:var(--text-mute); font-size:0.95rem; margin-bottom:1.5rem; }
+p { margin-bottom:0.7rem; color:var(--text-2); font-size:0.96rem; }
+.hyp {
+    border:1px solid var(--border); border-radius:8px;
+    padding:1.2rem 1.5rem; margin:1.2rem 0;
+    background:#fff;
+}
+.hyp-head {
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:0.7rem; gap:1rem;
+}
+.hyp-head h3 { margin:0; flex:1; font-size:1rem; }
+.badge {
+    font-family:var(--mono); font-size:0.72rem; font-weight:600;
+    padding:0.22rem 0.7rem; border-radius:3px; white-space:nowrap;
+    letter-spacing:0.05em; text-transform:uppercase;
+}
+.b-sup { background:var(--green-bg); color:var(--green); border:1px solid rgba(46,125,74,0.3); }
+.b-rej { background:var(--red-bg); color:var(--red); border:1px solid rgba(179,58,58,0.3); }
+.b-qual{ background:var(--amber-bg); color:var(--amber); border:1px solid rgba(181,131,11,0.3); }
+.b-mix { background:#eef2ff; color:#3730a3; border:1px solid #c7d2fe; }
+.claim, .test, .result, .means {
+    margin:0.5rem 0; padding:0.55rem 0.85rem;
+    background:var(--grey-100); border-left:3px solid var(--navy);
+    border-radius:0 6px 6px 0; font-size:0.93rem;
+}
+.claim { border-left-color:var(--slate); }
+.test  { border-left-color:#7c3aed; }
+.result{ border-left-color:var(--accent); font-family:var(--mono); white-space:pre; line-height:1.55; font-size:0.85rem; }
+.means { border-left-color:var(--green); }
+.label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-mute); font-weight:600; }
+table { width:100%; border-collapse:collapse; margin:0.6rem 0; font-size:0.9rem; }
+th, td { padding:0.5rem 0.8rem; text-align:left; border-bottom:1px solid var(--grey-200); }
+th { background:var(--grey-100); font-weight:600; color:var(--navy); font-size:0.82rem; text-transform:uppercase; letter-spacing:0.03em; }
+td.num { text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums; }
+.summary {
+    background:var(--navy); color:#fff; padding:1.5rem 1.8rem;
+    border-radius:8px; margin:2rem 0;
+}
+.summary h2 { color:#fff; border:none; margin-top:0; }
+.summary p { color:rgba(255,255,255,0.92); font-size:0.96rem; }
+.summary ol { margin:0.6rem 0 0.3rem 1.5rem; }
+.summary li { color:rgba(255,255,255,0.92); margin-bottom:0.4rem; font-size:0.95rem; }
+strong { color:var(--navy); }
+.summary strong { color:#fff; }
+.meta { color:var(--text-mute); font-size:0.8rem; margin-top:2rem; padding-top:1rem; border-top:1px solid var(--border); }
+code { font-family:var(--mono); font-size:0.86em; background:var(--grey-100); padding:0.08em 0.35em; border-radius:3px; }
+</style>
+</head>
+<body>
+
+<h1>Scratch: testing the proposed restructure</h1>
+<p class="lead">
+    Seven hypotheses about what's wrong with the current central-bank page, each run against the actual data
+    (N=833, 1956-07 to 2025-12). The point: see what survives a quick test before rewriting anything.
+    Run with <code>code/scratch_hypothesis_tests.py</code>. This file is not linked from anywhere.
+</p>
+
+<div class="summary">
+<h2>Bottom line</h2>
+<p>Two of my critiques don't survive contact with the data. Two get stronger. The single most interesting result
+came from a hypothesis I added halfway through (H6, the counterfactual rule).</p>
+<ol>
+<li><strong>H1 (NAIRU drives the 1980 break) is mostly wrong.</strong> The Chow break at 1979-08 is highly significant under fixed 5% (F=27.9), CBO NAIRU (F=18.1), and no gap at all (F=14.7). NAIRU softens the break but doesn't kill it. The current page's claim that the break "disappears" with NAIRU is overstated.</li>
+<li><strong>H2 (compositional persistence) is the cleanest result on the page.</strong> AC(12) collapses from 0.73 unconditional to 0.28 inside the low regime. Keep this front and centre.</li>
+<li><strong>H3 (forecast horse race is noise) is wrong.</strong> Properly-baselined R² (vs expanding mean) is 0.95 at 1m and 0.50 at 12m. The page's reported R² = -27 numbers must come from a different baseline; either way, the models do have signal. Re-investigate before redrawing the chart.</li>
+<li><strong>H4 (real vs expected flips the Taylor principle) doesn't survive specification change.</strong> Static OLS gives high-regime 1+a&pi; = 0.81 realized, 0.56 expected, both below 1. The page's NLS-with-smoothing gives 1.20/1.42 (satisfied). The finding is real but extremely specification-dependent.</li>
+<li><strong>H5 (regime conditioning vs date split) is the most important methodological finding.</strong> A 1979-08 date split gives expected 1+a&pi; = 1.63 (Volcker break clearly satisfies Taylor). The regime-conditional version gives 0.56. The two units of analysis give opposite conclusions. The current page uses the one that obscures the conventional story.</li>
+<li><strong>H6 (counterfactual rule) is the page's missing payoff.</strong> A Taylor rule estimated on 1985-2007 prescribes rates 5.7pp above what Burns set in 1972-75, 1.1pp below what Volcker set in 1979-82, and 5.7pp above what Powell set in 2021-23. The 2021-23 Fed looks numerically identical to the 1970s Fed under this benchmark. That's the story.</li>
+<li><strong>H7 (LORO is orphaned) holds. Mean AUC 0.79.</strong> The work is decent but unrelated to the monetary policy thesis. Cut.</li>
+</ol>
+</div>
+
+<h2>H1 &middot; Does NAIRU choice make the 1980 break disappear?</h2>
+
+<div class="hyp">
+<div class="hyp-head">
+    <h3>Chow break test at 1979-08 under three unemployment-gap specifications</h3>
+    <span class="badge b-qual">Mostly rejected</span>
+</div>
+<div class="claim">
+    <div class="label">Page claim</div>
+    "When the unemployment gap is measured against CBO's time-varying natural rate rather than a fixed 5%,
+    no candidate break date exceeds the statistical significance threshold."
+</div>
+<div class="test">
+    <div class="label">Test</div>
+    Static OLS Taylor: i = c + (1+a&pi;)&pi; + a_u &middot; gap. Chow test compares pre-1979-08 and
+    post-1979-08 subsamples. Three gap definitions: fixed (u &minus; 5), CBO (u &minus; NROU), and a
+    no-gap variant.
+</div>
+<table>
+<thead><tr><th>Specification</th><th>Chow F</th><th>p-value</th><th>Verdict</th></tr></thead>
+<tbody>
+<tr><td>Fixed 5% unemployment gap</td><td class="num">27.94</td><td class="num">&lt;0.0001</td><td>Significant break</td></tr>
+<tr><td>CBO NAIRU gap</td><td class="num">18.09</td><td class="num">&lt;0.0001</td><td>Significant break</td></tr>
+<tr><td>No unemployment gap</td><td class="num">14.67</td><td class="num">&lt;0.0001</td><td>Significant break</td></tr>
+</tbody>
+</table>
+<div class="means">
+    <strong>What this means.</strong> CBO NAIRU reduces the F-statistic by ~35% but doesn't push the
+    p-value anywhere near non-significance. The break is robust to gap measurement. The page is making a
+    plausible-sounding claim that the data doesn't support cleanly. The sup-Wald test on the original
+    page may use a stricter threshold and so still report "no break", but the simple Chow says the break is real.
+</div>
+</div>
+
+<h2>H2 &middot; Is inflation persistence compositional?</h2>
+
+<div class="hyp">
+<div class="hyp-head">
+    <h3>Within-regime vs between-regime decomposition of AC(12)</h3>
+    <span class="badge b-sup">Supported</span>
+</div>
+<div class="claim">
+    <div class="label">Page claim</div>
+    "Within the low-inflation regime, AC(12) drops to 0.28. Roughly 40-60% of the apparent persistence comes
+    from mixing the two distributions, not from inflation actually being predictable within either one."
+</div>
+<div class="test">
+    <div class="label">Test</div>
+    Compute AC(12) on full sample and within each regime. Decompose total variance into within-regime
+    component (E[Var(&pi;|r)]) and between-regime component (Var(E[&pi;|r])).
+</div>
+<table>
+<thead><tr><th>Series</th><th>AC(12)</th><th>Variance contribution</th></tr></thead>
+<tbody>
+<tr><td>Full sample (N=833)</td><td class="num">0.731</td><td class="num">7.54</td></tr>
+<tr><td>Low-inflation regime (N=622)</td><td class="num">0.283</td><td class="num">4.22 (within)</td></tr>
+<tr><td>High-inflation regime (N=211)</td><td class="num">0.505</td><td class="num">12.67 (between, &gt;100% as regimes are persistent)</td></tr>
+</tbody>
+</table>
+<div class="means">
+    <strong>What this means.</strong> Strongest result. The mean shift between regimes accounts for more
+    variance than there is total variance to explain (the within-component partially offsets it because
+    regimes are temporally clustered, so within-regime data has below-sample variance). The clean takeaway:
+    if you condition on being in a regime, inflation barely autocorrelates at 12 months in the low regime.
+    The conventional view that inflation is "persistent" is largely a level-shift artifact.
+</div>
+</div>
+
+<h2>H3 &middot; Is the forecasting horse race noise?</h2>
+
+<div class="hyp">
+<div class="hyp-head">
+    <h3>Walk-forward CV at 1-month and 12-month horizons, R&sup2; vs expanding mean</h3>
+    <span class="badge b-rej">Rejected</span>
+</div>
+<div class="claim">
+    <div class="label">My critique</div>
+    The page reports R&sup2; = -27 at 12m for pooled Ridge. That's MSE 28x worse than the historical mean,
+    suggesting catastrophic model failure. The whole exercise looks like noise.
+</div>
+<div class="test">
+    <div class="label">Test</div>
+    Expanding-window walk-forward CV starting at month 120. Two models (AR with 4 inflation lags; full Ridge
+    with all lags plus unemployment gap, term spread, fed funds, regime probability). Baseline = expanding mean.
+</div>
+<table>
+<thead><tr><th>Horizon</th><th>Model</th><th>R&sup2; vs expanding mean</th><th>RMSE</th></tr></thead>
+<tbody>
+<tr><td>1 month</td><td>AR(4 lags)</td><td class="num">0.953</td><td class="num">0.638</td></tr>
+<tr><td>1 month</td><td>Full Ridge</td><td class="num">0.955</td><td class="num">0.625</td></tr>
+<tr><td>12 months</td><td>AR(4 lags)</td><td class="num">0.505</td><td class="num">2.092</td></tr>
+<tr><td>12 months</td><td>Full Ridge</td><td class="num">0.529</td><td class="num">2.040</td></tr>
+</tbody>
+</table>
+<div class="means">
+    <strong>What this means.</strong> The 12-month R&sup2; is not negative when baselined properly. Both
+    models retain real signal at 12 months. The full Ridge slightly beats AR (0.53 vs 0.50), so multi-feature
+    models do add something. The catastrophic R&sup2; numbers on the current page (down to -27) must come from
+    a different baseline (probably the test-window mean rather than expanding mean), which is essentially a
+    methodological mistake. Need to dig into the notebook to find the discrepancy before keeping or cutting
+    the forecasting section.
+</div>
+</div>
+
+<h2>H4 &middot; Does realized vs expected inflation flip the Taylor principle?</h2>
+
+<div class="hyp">
+<div class="hyp-head">
+    <h3>Static OLS Taylor rule, four sub-samples &times; two inflation measures</h3>
+    <span class="badge b-rej">Rejected at this specification</span>
+</div>
+<div class="claim">
+    <div class="label">Page claim</div>
+    "With expected inflation, the high-inflation regime satisfies the Taylor principle at 1.42; with realized
+    inflation, it does not clearly satisfy it in either regime."
+</div>
+<div class="test">
+    <div class="label">Test</div>
+    Static OLS Taylor: i = c + (1+a&pi;)&pi; + a_u &middot; gap_cbo, HAC SE with 12 lags. Two inflation
+    measures (CPI YoY vs Michigan / adaptive proxy). Three samples (full, high regime, low regime).
+</div>
+<table>
+<thead><tr><th>Sample</th><th>Realized 1+a&pi;</th><th>(SE)</th><th>Expected 1+a&pi;</th><th>(SE)</th></tr></thead>
+<tbody>
+<tr><td>Full sample</td><td class="num">0.89</td><td class="num">(0.12)</td><td class="num">0.98</td><td class="num">(0.19)</td></tr>
+<tr><td>Low inflation regime</td><td class="num">1.19</td><td class="num">(0.26)</td><td class="num">0.76</td><td class="num">(0.20)</td></tr>
+<tr><td>High inflation regime</td><td class="num">0.81</td><td class="num">(0.19)</td><td class="num">0.56</td><td class="num">(0.36)</td></tr>
+</tbody>
+</table>
+<div class="means">
+    <strong>What this means.</strong> Under a clean static OLS, switching to expected inflation makes the
+    Taylor principle worse, not better. The current page reports 1.20 (realized) and 1.42 (expected) for
+    the high regime, using a structural NLS with smoothing parameter &rho; &approx; 0.97. The structural
+    coefficient is the long-run response, which is mathematically a much larger number than the
+    contemporaneous OLS coefficient. So the two estimates are not directly comparable, but the page is
+    relying on the long-run interpretation to make the headline claim. Worth flagging: the result requires
+    the structural form. With static OLS (which is what readers would do as a check), the principle is
+    violated in both regimes under both inflation measures.
+</div>
+</div>
+
+<h2>H5 &middot; Does regime conditioning differ from a date split?</h2>
+
+<div class="hyp">
+<div class="hyp-head">
+    <h3>Pre-1979 vs post-1979 OLS Taylor rule, both inflation measures</h3>
+    <span class="badge b-sup">Supported (important)</span>
+</div>
+<div class="claim">
+    <div class="label">My critique</div>
+    Defining regimes on inflation and then estimating Taylor rules within them is partly tautological. A
+    simple date split (pre vs post Volcker, 1979-08) should give a cleaner test of the conventional story.
+</div>
+<table>
+<thead><tr><th>Split</th><th>Realized 1+a&pi;</th><th>Expected 1+a&pi;</th></tr></thead>
+<tbody>
+<tr><td>Pre-1979-08 (date)</td><td class="num">0.74 (0.04)</td><td class="num">0.76 (0.07)</td></tr>
+<tr><td>Post-1979-08 (date)</td><td class="num">1.04 (0.18)</td><td class="num"><strong>1.63 (0.29)</strong></td></tr>
+<tr><td>High-inflation regime</td><td class="num">0.81 (0.19)</td><td class="num">0.56 (0.36)</td></tr>
+<tr><td>Low-inflation regime</td><td class="num">1.19 (0.26)</td><td class="num">0.76 (0.20)</td></tr>
+</tbody>
+</table>
+<div class="means">
+    <strong>What this means.</strong> The conventional Volcker break shows up cleanly when split by date:
+    1+a&pi; = 0.76 pre, 1.63 post, expected inflation. That is the textbook Clarida-Gali-Gertler result. The
+    regime-based split gives 0.56 in the high regime and 0.76 in the low, both below 1. The two units of
+    analysis give opposite headline conclusions. The current page uses regime conditioning, which obscures
+    the very phenomenon it's trying to discuss. Either the page should drop the Taylor-principle question
+    and use regimes only for the persistence story, or it should switch to a date-based split for the
+    Volcker test.
+</div>
+</div>
+
+<h2>H6 &middot; Counterfactual rule, three episodes</h2>
+
+<div class="hyp">
+<div class="hyp-head">
+    <h3>Taylor rule estimated on 1985-2007, applied to Burns, Volcker, and post-COVID</h3>
+    <span class="badge b-sup">Supported, this is the payoff</span>
+</div>
+<div class="claim">
+    <div class="label">Proposed restructure</div>
+    The page's current conclusion is descriptive. A counterfactual gives it a normative anchor. Train a
+    Taylor rule on the anchored-expectations era (1985-2007) and ask what it would have prescribed at three
+    key inflation episodes.
+</div>
+<div class="test">
+    <div class="label">Test</div>
+    OLS on 1985-01 to 2007-12 (N=276): i = -0.84 + 2.01 &middot; &pi;<sub>e</sub> + (-0.72) &middot; gap_cbo.
+    Apply this rule out-of-sample to three episodes: Burns 1972-75, Volcker 1979-82, post-COVID 2021-23.
+</div>
+<table>
+<thead><tr><th>Episode</th><th>Actual FFR (mean)</th><th>Rule-prescribed (mean)</th><th>Gap (Actual &minus; Rule)</th></tr></thead>
+<tbody>
+<tr><td>Burns 1972-75</td><td class="num">7.37</td><td class="num">13.07</td><td class="num"><strong>&minus;5.69 pp</strong></td></tr>
+<tr><td>Volcker 1979-82</td><td class="num">13.83</td><td class="num">12.70</td><td class="num">+1.13 pp</td></tr>
+<tr><td>Post-COVID 2021-23</td><td class="num">2.26</td><td class="num">7.98</td><td class="num"><strong>&minus;5.72 pp</strong></td></tr>
+</tbody>
+</table>
+<div class="means">
+    <strong>What this means.</strong> Under the anchored-era Taylor rule, Burns was 5.7pp too easy on
+    average over 1972-75, Volcker was almost exactly on the rule (with a 1.1pp overshoot), and the
+    2021-23 Fed was 5.7pp too easy. The 2021-23 Fed looks numerically indistinguishable from the 1970s Fed
+    under this benchmark. <br><br>
+    That's a real claim with content, and it's the kind of thing the page should be doing. The
+    <code>outputs/leftovers/</code> folder already has <code>counterfactual_episodes.png</code> and
+    <code>counterfactual_rule_comparison.png</code> charts that probably show exactly this. They should
+    be central, not hidden.
+</div>
+</div>
+
+<h2>H7 &middot; LORO recession prediction</h2>
+
+<div class="hyp">
+<div class="hyp-head">
+    <h3>Logistic regression on term spread, leave-one-recession-out</h3>
+    <span class="badge b-qual">Orphaned but workable</span>
+</div>
+<table>
+<thead><tr><th>Hold-out recession</th><th>AUC</th></tr></thead>
+<tbody>
+<tr><td>1973-74 Oil Crisis</td><td class="num">0.719</td></tr>
+<tr><td>1980 Volcker I</td><td class="num">0.413</td></tr>
+<tr><td>1981-82 Volcker II</td><td class="num">0.919</td></tr>
+<tr><td>1990-91</td><td class="num">0.953</td></tr>
+<tr><td>2001 Dot-com</td><td class="num">0.893</td></tr>
+<tr><td>2007-09 GFC</td><td class="num">0.955</td></tr>
+<tr><td>2020 COVID</td><td class="num">0.692</td></tr>
+<tr><td><strong>Mean</strong></td><td class="num"><strong>0.792</strong></td></tr>
+</tbody>
+</table>
+<div class="means">
+    <strong>What this means.</strong> The simple term-spread model works decently (mean AUC 0.79). My test
+    finds 1980 and 2020 as worst cases; the current page reports 1990-91 and 2007-09 (probably because it
+    uses a multivariate model and a different held-out window). Either way, this is a separate research
+    question from the monetary-policy-rules thesis and would benefit from being its own page or being cut.
+</div>
+</div>
+
+<h2>Implications for the restructure</h2>
+
+<div class="hyp" style="border-color:var(--accent); border-left-width:5px;">
+<div class="label">Revised proposal</div>
+<p>The original four-conclusion structure of the page reflected genuine analytical work but tied together
+four largely independent results. The hypothesis tests above suggest a different shape:</p>
+<p><strong>Part I &middot; Inflation regimes.</strong> Keep the Markov-switching identification (it's clean).
+Keep the persistence decomposition (H2 strongly supported). Drop the 4-regime non-result.</p>
+<p><strong>Part II &middot; What a Taylor rule says about the modern Fed.</strong> Replace the regime-conditional
+Taylor rule (H5: gives opposite answer to the date split) with a clean date-based estimation on 1985-2007.
+Use this as the benchmark rule.</p>
+<p><strong>Part III &middot; Three episodes under one rule.</strong> H6 result: Burns 1972-75, Volcker 1979-82,
+post-COVID 2021-23 all compared to the same rule. This is the page's payoff. The leftovers folder already
+has the charts.</p>
+<p><strong>Section IV / Limitations.</strong> Honestly state that the 1980 break <em>does</em> survive even
+with NAIRU (H1: my critique of the page was wrong, the page's claim is overstated). Note the
+specification-sensitivity of the Taylor principle test (H4). Note that the page does NOT use real-time data
+and that this matters.</p>
+<p><strong>Drop:</strong> LORO recession analysis (H7: separate paper), the 6-way forecast horse race (the
+finding is that complex models barely beat AR, that's a one-table appendix point), the 4-state Markov-switching
+mentions.</p>
+</div>
+
+<div class="meta">
+    Script: <code>code/scratch_hypothesis_tests.py</code>. Data: 833 monthly obs 1956-07 to 2025-12.
+    All numbers above came from a single run of the script; verdicts and tables are populated by hand
+    from its stdout so there's no need to re-run to view this page. Re-run if you change the script.
+</div>
+
+</body>
+</html>

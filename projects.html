@@ -50,10 +50,11 @@
                     <div class="project-tag">Economic Complexity</div>
                     <h3 class="project-title">Industrial Upgrading in Resource-Rich Markets</h3>
                     <p class="project-desc">
-                        Capstone with Moody's Ratings. Panel of 56 resource-rich developing
-                        countries observed from 1995 to 2019, testing which structural conditions
-                        allow commodity exporters to develop value-added industries. Case studies
-                        on the Republic of Congo, Azerbaijan, and Chile.
+                        Capstone with Moody's Ratings on the structural conditions that allow
+                        commodity exporters to develop value-added industries. Panel
+                        fixed-effects regressions on a 1995 to 2019 country panel,
+                        k-means clustering on commodity export profiles, and seven supervised
+                        models benchmarked with SHAP attribution.
                     </p>
                 </div>
                 <div class="project-body">
@@ -69,37 +70,42 @@
                 </div>
             </div>
 
-            <!-- US Monetary Policy -->
-            <div class="project-card" onclick="location.href='projects/central-bank/page.html'">
+            <!-- Italian Manufacturing Zombies -->
+            <div class="project-card" onclick="location.href='projects/zombie-firms/page.html'">
                 <div class="project-header">
-                    <div class="project-tag">Econometrics</div>
-                    <h3 class="project-title">US Monetary Policy Rules</h3>
+                    <div class="project-tag">Spatial Econometrics</div>
+                    <h3 class="project-title">Zombie Firms in Italian Manufacturing</h3>
                     <p class="project-desc">
-                        Regime-switching analysis of Federal Reserve interest rate decisions using 
-                        70 years of macroeconomic data. Estimates Taylor rule parameters across 
-                        inflation regimes and tests for structural breaks in policy behaviour.
+                        Replication and expansion of a Bocconi thesis to all 20 Italian regions,
+                        74,726 manufacturing firms over 2016 to 2024. The standard
+                        province-by-sector spillover measure is null; a distance-weighted measure
+                        at 100 km radius produces a significant 2.9pp drop in healthy-firm
+                        investment. XGBoost early-warning model included.
                     </p>
                 </div>
                 <div class="project-body">
                     <div class="project-skills">
-                        <span class="skill-tag">Markov-Switching</span>
-                        <span class="skill-tag">Taylor Rule</span>
-                        <span class="skill-tag">Structural Breaks</span>
-                        <span class="skill-tag">Bootstrap Inference</span>
+                        <span class="skill-tag">PanelOLS</span>
+                        <span class="skill-tag">Inverse-Distance Weighting</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">SHAP</span>
                     </div>
                     <div class="project-footer">
                         <span class="project-link">View Details &rarr;</span>
                     </div>
                 </div>
             </div>
+
             <!-- Uber Spatial Analysis -->
             <div class="project-card" onclick="location.href='projects/uber/page.html'">
                 <div class="project-header">
                     <div class="project-tag">Spatial Analysis</div>
                     <h3 class="project-title">Uber NYC Demand Patterns</h3>
                     <p class="project-desc">
-                        Descriptive analysis of how Uber pickup geography shifted between 2018 and 2025. 
-                        Documents increased concentration at airports (+48%) and decline in Manhattan core zones.
+                        Analysis of how NYC's app-based ride-hailing market changed between
+                        2019 and 2026, using public Taxi and Limousine Commission trip records.
+                        Documents the spatial spread of pickup demand, the rise of platform
+                        margin, and the response to the January 2025 Manhattan congestion fee.
                     </p>
                 </div>
                 <div class="project-body">
@@ -120,10 +126,11 @@
                     <div class="project-tag">Text Analysis</div>
                     <h3 class="project-title">Pink Tax Classification</h3>
                     <p class="project-desc">
-                        A classifier that identifies gendered products in UK supermarket data using
-                        TF-IDF text features and colour extraction from product images. 84% accuracy
-                        against human labels, with a downstream regression decomposing observed price
-                        differences into category, store, and within-product effects.
+                        Two-stage pipeline classifying gendered products in UK supermarket data
+                        and decomposing observed price differences. A gradient-boosting classifier
+                        on TF-IDF text features and product colour reaches F1 = 0.79; a downstream
+                        regression decomposes the raw price gap into category-mix and
+                        within-category components.
                     </p>
                 </div>
                 <div class="project-body">
@@ -147,9 +154,9 @@
                     <h3 class="project-title">Chile Mineral Supply Chain</h3>
                     <p class="project-desc">
                         Directed network of mineral production, refinement, and export in Chile,
-                        covering 461 facilities across 32 minerals. Combines Sernageomin, COCHILCO,
-                        Aduanas, and USGS data into a single mapped pipeline with $62 billion in
-                        estimated 2024 production value.
+                        mapping 461 facilities across 32 minerals. Combines Sernageomin, COCHILCO,
+                        Aduanas, and USGS data into a unified pipeline with roughly $62 billion
+                        in 2024 production value.
                     </p>
                 </div>
                 <div class="project-body">

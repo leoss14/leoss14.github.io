@@ -1,0 +1,423 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 1. Data Preparation\n",
+    "\n",
+    "**Pipeline position:** first prep notebook. Reads the cleaned panel from the\n",
+    "main capstone repo (`Master.csv`, `clusters1995.csv`) and produces the panel\n",
+    "that every chart downstream consumes.\n",
+    "\n",
+    "## What this notebook does\n",
+    "\n",
+    "1. Loads `Master.csv` and applies the forest-adjusted sample selection\n",
+    "   (subtract forestry rents from total NR rents, keep countries with\n",
+    "   adjusted rents at or above 1% of GDP, force-include Gulf states).\n",
+    "2. Restricts to 1995–2019 and merges k=5 cluster labels.\n",
+    "3. Adds the derived columns the charts need (log GDP per capita, production\n",
+    "   per capita, scaled bubble size for the animated scatter, lagged ECI,\n",
+    "   log transforms, mean-centred interaction terms).\n",
+    "4. Saves the resulting panel as `panel.parquet` and the 1995 cluster\n",
+    "   assignments as `clusters_1995.csv`.\n",
+    "\n",
+    "## Outputs\n",
+    "\n",
+    "- `artifacts/panel.parquet` — country–year panel for the 38-country sample,\n",
+    "  with all derived columns. Used by every other notebook and every chart.\n",
+    "- `artifacts/clusters_1995.csv` — `Country Code, Country, ClusterLabels`\n",
+    "  for the cluster world map (chart 5).\n",
+    "- `artifacts/production_panel_world.csv` — every country with production data, 1995–2019, in long format (Resource × Year × Country) with USD value, USD per capita, and % of GDP. Used by the Resource Production Intensity world map (chart 1).\n",
+    "- `artifacts/sample.csv` — the list of 38 country codes, written so the\n",
+    "  robustness notebook can rebuild larger samples without re-doing this work.\n",
+    "\n",
+    "Run from `capstone_viz/prep/`. Expects `_config.py` in the same folder."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "0fe0d9b3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Reading from: /Users/leoss/Desktop/GitHub/leoss14.github.io/projects/capstone/New code/intermediary\n",
+      "Writing to:   /Users/leoss/Desktop/GitHub/leoss14.github.io/projects/capstone/artifacts\n"
+     ]
+    }
+   ],
+   "source": [
+    "# ── Imports and config ──────────────────────────────────────────────────────\n",
+    "import os, sys\n",
+    "sys.path.insert(0, os.path.dirname(os.path.abspath('')) + '/prep')\n",
+    "sys.path.insert(0, '.')\n",
+    "\n",
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "\n",
+    "from _config import (\n",
+    "    INTERMEDIARY, ARTIFACTS, GULF_STATES, NR_THRESHOLD, HIGH_INCOME_1995,\n",
+    "    YEAR_MIN, YEAR_MAX, LOG_COLS, ECI_COL,\n",
+    "    artifact_path, load_master, load_clusters_1995,\n",
+    ")\n",
+    "\n",
+    "print(f'Reading from: {INTERMEDIARY}')\n",
+    "print(f'Writing to:   {ARTIFACTS}')\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "09f4cebd",
+   "metadata": {},
+   "source": [
+    "## Sample selection\n",
+    "\n",
+    "The sample is defined on the 1995 snapshot. For each country we compute\n",
+    "adjusted natural-resource rents (total NR rents minus forestry rents,\n",
+    "clipped at zero) and keep those at or above 1% of GDP. We then drop\n",
+    "countries classified as high-income by WDI in 1995, which removes\n",
+    "Norway, Australia, Canada and similar advanced economies that pass the\n",
+    "rent threshold but lie outside the resource-rich developing-country focus\n",
+    "of the analysis. Gulf states are then force-included: their 1995\n",
+    "adjusted rents understate the oil sectors that come online later in the\n",
+    "panel, and several were already high-income in 1995, so the income filter\n",
+    "would otherwise drop them.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "a61d4f94",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "After 1% threshold:       131 countries\n",
+      "After income filter:      103 countries (dropped 28: ['ARE', 'AUS', 'AUT', 'BHR', 'BRB', 'BRN', 'CAN', 'CHE', 'CYP', 'DEU', 'DNK', 'ESP', 'FIN', 'FRA', 'GBR', 'GRC', 'IRL', 'ISR', 'ITA', 'JPN', 'KWT', 'NLD', 'NOR', 'NZL', 'PRT', 'QAT', 'SWE', 'USA'])\n",
+      "After Gulf force-include: 107 countries\n"
+     ]
+    }
+   ],
+   "source": [
+    "master = load_master()\n",
+    "\n",
+    "base_1995 = master[master['Year'] == 1995].copy()\n",
+    "base_1995['NR_adj'] = (\n",
+    "    base_1995['Total natural resources rents (% of GDP)'].fillna(0)\n",
+    "    - base_1995['Forestry rents (% of GDP)'].fillna(0)\n",
+    ").clip(lower=0)\n",
+    "\n",
+    "# Step 1: countries with adjusted NR rents at or above the threshold\n",
+    "include_lst = base_1995.loc[\n",
+    "    base_1995['NR_adj'] >= NR_THRESHOLD, 'Country Code'\n",
+    "].unique().tolist()\n",
+    "n_after_threshold = len(include_lst)\n",
+    "\n",
+    "# Step 2: drop 1995 high-income economies (developing-country focus)\n",
+    "dropped_hi = [c for c in include_lst if c in HIGH_INCOME_1995]\n",
+    "include_lst = [c for c in include_lst if c not in HIGH_INCOME_1995]\n",
+    "\n",
+    "# Step 3: force-include Gulf states (overrides the income filter for the six\n",
+    "# Gulf economies; their oil-sector trajectories are part of the resource-curse\n",
+    "# question even where income status excludes them)\n",
+    "for g in GULF_STATES:\n",
+    "    if g not in include_lst:\n",
+    "        include_lst.append(g)\n",
+    "\n",
+    "print(f'After 1% threshold:       {n_after_threshold} countries')\n",
+    "print(f'After income filter:      {n_after_threshold - len(dropped_hi)} countries '\n",
+    "      f'(dropped {len(dropped_hi)}: {sorted(dropped_hi)})')\n",
+    "print(f'After Gulf force-include: {len(include_lst)} countries')\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "20ca32ba",
+   "metadata": {},
+   "source": [
+    "## Build the panel\n",
+    "\n",
+    "Restrict `Master.csv` to the sample, attach cluster labels, add the columns\n",
+    "charts will need, and save.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "45ac0295",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Panel: 107 countries, 2,675 obs, 1995-2019\n"
+     ]
+    }
+   ],
+   "source": [
+    "clusters_1995 = load_clusters_1995()\n",
+    "cl_map = clusters_1995[['Country Code', 'ClusterLabels']].drop_duplicates('Country Code')\n",
+    "\n",
+    "panel = master[\n",
+    "    master['Year'].between(YEAR_MIN, YEAR_MAX)\n",
+    "    & master['Country Code'].isin(include_lst)\n",
+    "].copy()\n",
+    "\n",
+    "panel = panel.sort_values(['Country Code', 'Year']).reset_index(drop=True)\n",
+    "panel = panel.merge(cl_map, on='Country Code', how='left')\n",
+    "\n",
+    "# Derived columns used by the descriptive and animation charts ----------------\n",
+    "panel['Log_GDP_pc'] = np.log(\n",
+    "    panel['GDP per capita (constant prices, PPP)'].replace(0, np.nan)\n",
+    ")\n",
+    "panel['Total_Production_Value_Per_Capita'] = (\n",
+    "    panel['Total_Production_Value'] / panel['Population'].replace(0, np.nan)\n",
+    ")\n",
+    "panel['Prod_pc'] = panel['Total_Production_Value_Per_Capita']\n",
+    "panel['Bubble']  = np.sqrt(panel['Prod_pc'].fillna(0))\n",
+    "\n",
+    "bmin, bmax = panel['Bubble'].min(), panel['Bubble'].max()\n",
+    "panel['Bubble_Scaled'] = 8 + (panel['Bubble'] - bmin) / (bmax - bmin + 1e-9) * 42\n",
+    "\n",
+    "# Lagged ECI ------------------------------------------------------------------\n",
+    "panel['L1_ECI'] = panel.groupby('Country Code')[ECI_COL].shift(1)\n",
+    "\n",
+    "# Log-transform features used by the ML and regression notebooks --------------\n",
+    "for c in LOG_COLS:\n",
+    "    if c in panel.columns:\n",
+    "        panel[c] = np.log1p(panel[c]).replace([np.inf, -np.inf], np.nan)\n",
+    "\n",
+    "# Aliases used by the regression notebook (already log-transformed above) -----\n",
+    "panel['log_HCI']             = panel['Human capital index']\n",
+    "panel['log_GFCF']            = panel['Gross fixed capital formation, all, Constant prices, Percent of GDP']\n",
+    "panel['log_Production_Value']= panel['Total_Production_Value_Per_Capita']\n",
+    "\n",
+    "# Mean-centred interaction terms (regression notebook + ML notebook) ----------\n",
+    "hci_m  = panel['log_HCI'].mean()\n",
+    "gfcf_m = panel['log_GFCF'].mean()\n",
+    "prod_m = panel['log_Production_Value'].mean()\n",
+    "frt_m  = panel['Forestry rents (% of GDP)'].mean()\n",
+    "\n",
+    "panel['HCI_x_ProductionValue']  = (panel['log_HCI']  - hci_m)  * (panel['log_Production_Value'] - prod_m)\n",
+    "panel['GFCF_x_ProductionValue'] = (panel['log_GFCF'] - gfcf_m) * (panel['log_Production_Value'] - prod_m)\n",
+    "panel['log_HCI_x_log_Production']  = panel['HCI_x_ProductionValue']\n",
+    "panel['log_GFCF_x_log_Production'] = panel['GFCF_x_ProductionValue']\n",
+    "panel['log_HCI_x_forestry_rents']  = (panel['log_HCI']  - hci_m)  * (panel['Forestry rents (% of GDP)'] - frt_m)\n",
+    "panel['log_GFCF_x_forestry_rents'] = (panel['log_GFCF'] - gfcf_m) * (panel['Forestry rents (% of GDP)'] - frt_m)\n",
+    "\n",
+    "print(f'Panel: {panel[\"Country Code\"].nunique()} countries, '\n",
+    "      f'{len(panel):,} obs, {YEAR_MIN}-{YEAR_MAX}')\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9403e9b3",
+   "metadata": {},
+   "source": [
+    "## Production panel for the world map\n",
+    "\n",
+    "The Resource Production Intensity choropleth (chart 1) needs the\n",
+    "**full set of countries with production data**, not just the 49\n",
+    "forest-adjusted ones in the panel above. It also needs values per\n",
+    "resource (Oil, Natural Gas, Coal, Metals) per year, not a single\n",
+    "annual mean. We build that artifact here, separately from the\n",
+    "panel, by reading `NaturalResource.csv` (long format with\n",
+    "`Production_TotalValue` already in USD) plus the population and\n",
+    "GDP columns from `Master.csv` for the per-capita and %-of-GDP\n",
+    "normalisations.\n",
+    "\n",
+    "Resource buckets:\n",
+    "\n",
+    "- `Total` — sum across all resources for each country–year\n",
+    "- `Oil`, `Natural Gas`, `Coal` — kept as-is\n",
+    "- `Metals` — every other resource (industrial, precious, battery,\n",
+    "  rare-earth) summed into one bucket, matching the convention used\n",
+    "  in the portfolio."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "3ccd5e1c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "  Saved production_panel_world.csv (155 countries, 25 years, 5 buckets, 12,124 rows)\n"
+     ]
+    }
+   ],
+   "source": [
+    "# ── Production panel for the world map (chart 1) ────────────────────────────\n",
+    "# Reads NaturalResource.csv via load_natural_resource() in _config. The file\n",
+    "# is in wide format with separate Production / Reserves columns (no Metric\n",
+    "# column to filter on), so we use Production_TotalValue directly. Falls back\n",
+    "# to a Total-only build from Master.csv if the long file isn't available.\n",
+    "try:\n",
+    "    from _config import load_natural_resource\n",
+    "    nr = load_natural_resource()\n",
+    "    have_long = True\n",
+    "except (FileNotFoundError, ImportError):\n",
+    "    have_long = False\n",
+    "\n",
+    "if have_long:\n",
+    "    # Bucket: keep Oil / Natural Gas / Coal as-is, lump everything else into\n",
+    "    # Metals. Matching by Resource name handles the Coal-as-Hydrocarbon\n",
+    "    # category quirk; any unrecognised resource ends up in Metals.\n",
+    "    def _bucket(r):\n",
+    "        if r in (\"Oil\", \"Natural Gas\", \"Coal\"):\n",
+    "            return r\n",
+    "        return \"Metals\"\n",
+    "    nr = nr.copy()\n",
+    "    nr[\"Bucket\"] = nr[\"Resource\"].apply(_bucket)\n",
+    "\n",
+    "    # Pick the value column that actually exists. The wide file uses\n",
+    "    # Production_TotalValue; older long-format pipelines used Value.\n",
+    "    val_col = (\"Production_TotalValue\"\n",
+    "               if \"Production_TotalValue\" in nr.columns\n",
+    "               else \"Value\")\n",
+    "    nr = nr.dropna(subset=[val_col, \"Country Code\", \"Year\"])\n",
+    "    nr[\"Year\"] = nr[\"Year\"].astype(int)\n",
+    "\n",
+    "    by_bucket = (nr.groupby([\"Country Code\", \"Year\", \"Bucket\"], as_index=False)[val_col]\n",
+    "                   .sum()\n",
+    "                   .rename(columns={val_col: \"prod_usd\"}))\n",
+    "\n",
+    "    total = (nr.groupby([\"Country Code\", \"Year\"], as_index=False)[val_col]\n",
+    "               .sum()\n",
+    "               .rename(columns={val_col: \"prod_usd\"}))\n",
+    "    total[\"Bucket\"] = \"Total\"\n",
+    "    long_df = pd.concat([by_bucket, total[by_bucket.columns]], ignore_index=True)\n",
+    "else:\n",
+    "    print(\"  (NaturalResource.csv not found — building Total-only fallback)\")\n",
+    "    long_df = (master.dropna(subset=[\"Total_Production_Value\"])\n",
+    "                     [[\"Country Code\", \"Year\", \"Total_Production_Value\"]]\n",
+    "                     .rename(columns={\"Total_Production_Value\": \"prod_usd\"}))\n",
+    "    long_df[\"Bucket\"] = \"Total\"\n",
+    "\n",
+    "# Attach country name, population, GDP from Master.csv (for normalisations)\n",
+    "gdp_col = (\"GDP, current prices (PPP)\"\n",
+    "           if \"GDP, current prices (PPP)\" in master.columns\n",
+    "           else \"GDP per capita (constant prices, PPP)\")\n",
+    "meta_cols = [\"Country Code\", \"Country Name\", \"Year\", \"Population\", gdp_col]\n",
+    "meta_cols = [c for c in meta_cols if c in master.columns]\n",
+    "meta = master[meta_cols].drop_duplicates([\"Country Code\", \"Year\"])\n",
+    "\n",
+    "long_df = long_df.merge(meta, on=[\"Country Code\", \"Year\"], how=\"left\")\n",
+    "long_df = long_df[long_df[\"Year\"].between(YEAR_MIN, YEAR_MAX)]\n",
+    "\n",
+    "# Per-capita and %-of-GDP\n",
+    "long_df[\"prod_pc\"] = (long_df[\"prod_usd\"]\n",
+    "                      / long_df[\"Population\"].replace(0, np.nan))\n",
+    "if gdp_col == \"GDP, current prices (PPP)\":\n",
+    "    long_df[\"prod_pct_gdp\"] = 100.0 * long_df[\"prod_usd\"] / long_df[gdp_col].replace(0, np.nan)\n",
+    "else:\n",
+    "    gdp_total = long_df[gdp_col] * long_df[\"Population\"]\n",
+    "    long_df[\"prod_pct_gdp\"] = 100.0 * long_df[\"prod_usd\"] / gdp_total.replace(0, np.nan)\n",
+    "\n",
+    "long_df = (long_df.dropna(subset=[\"Country Code\"])\n",
+    "                  .reset_index(drop=True))\n",
+    "\n",
+    "BUCKET_ORDER = [\"Total\", \"Oil\", \"Natural Gas\", \"Coal\", \"Metals\"]\n",
+    "long_df[\"Bucket\"] = pd.Categorical(long_df[\"Bucket\"],\n",
+    "                                   categories=BUCKET_ORDER, ordered=True)\n",
+    "long_df = long_df.sort_values([\"Bucket\", \"Year\", \"Country Code\"]).reset_index(drop=True)\n",
+    "\n",
+    "long_df.to_csv(artifact_path('production_panel_world.csv'), index=False)\n",
+    "n_c = long_df['Country Code'].nunique()\n",
+    "n_y = long_df['Year'].nunique()\n",
+    "n_b = long_df['Bucket'].nunique()\n",
+    "print(f'  Saved production_panel_world.csv '\n",
+    "      f'({n_c} countries, {n_y} years, {n_b} buckets, {len(long_df):,} rows)')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7d6da8f4",
+   "metadata": {},
+   "source": [
+    "## Save artifacts\n",
+    "\n",
+    "Three files. The parquet is the heavy one (panel) and is read by every\n",
+    "other prep notebook. The two CSVs are tiny and used directly by the viz\n",
+    "notebooks.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "4aadc26d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "  Saved panel.parquet (2,675 rows, 65 cols)\n",
+      "  Saved clusters_1995.csv\n",
+      "  Saved sample.csv (107 countries)\n"
+     ]
+    }
+   ],
+   "source": [
+    "panel.to_parquet(artifact_path('panel.parquet'), index=False)\n",
+    "print(f'  Saved panel.parquet ({len(panel):,} rows, {panel.shape[1]} cols)')\n",
+    "\n",
+    "clusters_1995[['Country Code', 'Country', 'ClusterLabels']] \\\n",
+    "    .drop_duplicates('Country Code') \\\n",
+    "    .to_csv(artifact_path('clusters_1995.csv'), index=False)\n",
+    "print(f'  Saved clusters_1995.csv')\n",
+    "\n",
+    "pd.Series(include_lst, name='Country Code') \\\n",
+    "    .to_csv(artifact_path('sample.csv'), index=False)\n",
+    "print(f'  Saved sample.csv ({len(include_lst)} countries)')\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Summary\n",
+    "\n",
+    "| Step | Result |\n",
+    "|---|---|\n",
+    "| Master.csv loaded | full panel, all countries, 1995–2019 |\n",
+    "| Forest-adjusted threshold (≥1% + Gulf) | 38 countries kept |\n",
+    "| Derived columns added | log GDP per capita, production per capita, lagged ECI, log transforms, 4 interaction terms |\n",
+    "| Saved | panel.parquet, clusters_1995.csv, sample.csv, production_panel_world.csv |\n",
+    "\n",
+    "Run notebook 2 (`2_clusters.ipynb`) next."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

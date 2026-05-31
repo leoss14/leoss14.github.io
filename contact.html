@@ -12,49 +12,107 @@
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .contact-grid {
+        .contact-wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 6rem) 5rem;
+        }
+
+        .contact-cols {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 1rem;
         }
 
-        .contact-item {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            background: var(--grey-100);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            transition: border-color 0.2s ease;
-        }
-
-        .contact-item:hover {
-            border-color: var(--accent);
-        }
-
-        .contact-item .label {
+        .contact-block .block-label {
             font-size: 0.72rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--text-muted);
-            margin-bottom: 0.6rem;
+            margin-bottom: 1rem;
         }
 
-        .contact-item a {
+        .contact-block .block-lead {
+            font-size: 1rem;
+            line-height: 1.6;
             color: var(--text-primary);
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .contact-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.9rem 1.1rem;
+            background: var(--grey-100);
+            border: 1px solid var(--border);
+            border-radius: 6px;
             text-decoration: none;
+            color: var(--text-primary);
             font-size: 0.95rem;
             font-weight: 500;
-            transition: color 0.2s ease;
+            transition: border-color 0.2s ease, background 0.2s ease;
         }
 
-        .contact-item a:hover {
-            color: var(--accent);
+        .contact-action:hover {
+            border-color: var(--accent);
+            background: var(--white);
         }
 
-        @media (max-width: 600px) {
-            .contact-grid {
+        .contact-action .action-meta {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .contact-action.primary {
+            background: var(--accent);
+            color: var(--white);
+            border-color: var(--accent);
+        }
+
+        .contact-action.primary:hover {
+            background: var(--accent);
+            opacity: 0.92;
+        }
+
+        .contact-action.primary .action-meta {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .currently-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .currently-text strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .response-note {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 720px) {
+            .contact-cols {
                 grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
         }
     </style>
@@ -86,27 +144,60 @@
     </div>
 
     <!-- Page Header -->
-    <div class="project-hero" style="padding-bottom: 1.5rem;">
+    <div class="project-hero" style="padding-bottom: 1rem;">
         <h1>Contact</h1>
-        <p class="subtitle">For enquiries about work, research, or collaboration</p>
+        <p class="subtitle">
+            Open to full-time roles in data-driven policy work, applied econometrics, and economic consulting.
+            Based in London, comfortable with remote or hybrid, and willing to travel or relocate.
+        </p>
     </div>
 
     <!-- Contact -->
-    <section style="max-width: 800px; margin: 0 auto;">
-        <div class="contact-grid">
-            <div class="contact-item">
-                <p class="label">Email</p>
-                <a href="mailto:l.luksic@lse.ac.uk">l.luksic@lse.ac.uk</a>
+    <section class="contact-wrap">
+        <div class="contact-cols">
+
+            <!-- Left: primary actions -->
+            <div class="contact-block">
+                <p class="block-label">Get in touch</p>
+                <p class="block-lead">
+                    Email is the fastest way to reach me. CV and direct links are below.
+                </p>
+                <div class="contact-actions">
+                    <a class="contact-action primary" href="mailto:l.luksic@lse.ac.uk">
+                        <span>l.luksic@lse.ac.uk</span>
+                        <span class="action-meta">Email</span>
+                    </a>
+                    <a class="contact-action" href="assets/leonardo-luksic-cv.pdf" target="_blank">
+                        <span>Download CV</span>
+                        <span class="action-meta">PDF</span>
+                    </a>
+                    <a class="contact-action" href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank">
+                        <span>Leonardo Luksic</span>
+                        <span class="action-meta">LinkedIn</span>
+                    </a>
+                    <a class="contact-action" href="https://github.com/leoss14" target="_blank">
+                        <span>leoss14</span>
+                        <span class="action-meta">GitHub</span>
+                    </a>
+                </div>
             </div>
-            <div class="contact-item">
-                <p class="label">LinkedIn</p>
-                <a href="https://www.linkedin.com/in/leonardo-luksic-3b9251240/" target="_blank">Leonardo Luksic</a>
+
+            <!-- Right: current work / what to expect -->
+            <div class="contact-block">
+                <p class="block-label">Currently</p>
+                <p class="currently-text">
+                    Finalising my <strong>MPA in Data Science for Public Policy</strong> at LSE, with a
+                    capstone for Moody's Ratings on sovereign resource dependency and economic complexity.
+                </p>
+                <p class="currently-text" style="margin-top: 1rem;">
+                    Building out the portfolio on this site, mainly applied econometrics, clustering, and
+                    spatial analysis for policy evaluation. Recent work includes Uber NYC market structure
+                    after the FHV minimum pay rule and pricing analysis in UK retail.
+                </p>
             </div>
-            <div class="contact-item">
-                <p class="label">GitHub</p>
-                <a href="https://github.com/leoss14" target="_blank">leoss14</a>
-            </div>
+
         </div>
+
     </section>
 
     <!-- Footer -->
